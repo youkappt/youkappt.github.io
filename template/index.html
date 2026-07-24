@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>优卡的素材库 - 优卡PPT</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ===== Design Tokens (AuthKit Style Reference) ===== */
+:root {
+  --color-midnight-canvas: #05060f;
+  --color-frost-glow: #d1e4fa;
+  --color-ice-highlight: #d8ecf8;
+  --color-moon-mist: #c7d3ea;
+  --color-fog-veil: #9da7ba;
+  --color-pure-white: #ffffff;
+  --color-void-violet: #663af3;
+  --color-glass-edge: rgba(186, 215, 247, 0.12);
+  --color-luminous-fill: rgba(199, 211, 234, 0.12);
+  --surface-frosted: rgba(186, 214, 247, 0.03);
+  --surface-deep-glass: rgba(5, 6, 15, 0.97);
+
+  --font-ui: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-cards: 16px;
+  --radius-badges: 6px;
+  --radius-modals: 16px;
+  --radius-buttons: 999px;
+
+  --shadow-card: inset 0 1px 1px rgba(199, 211, 234, 0.12), inset 0 24px 48px rgba(199, 211, 234, 0.05), 0 24px 32px rgba(6, 6, 14, 0.7);
+  --shadow-modal: inset 0 1px 1px rgba(216, 236, 248, 0.2), inset 0 24px 48px rgba(168, 216, 245, 0.06), 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-ui);
+  background: var(--color-midnight-canvas);
+  color: var(--color-frost-glow);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== Ambient Background Layers ===== */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(186, 215, 247, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(186, 215, 247, 0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+  -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
+}
+
+.bg-halo {
+  position: fixed;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140vw;
+  height: 60vh;
+  z-index: 0;
+  pointer-events: none;
+  background: conic-gradient(at 50% 50%,
+    transparent 45%,
+    rgba(124, 145, 182, 0.3) 49%,
+    rgba(124, 145, 182, 0.5) 50%,
+    rgba(124, 145, 182, 0.3) 51%,
+    transparent 55%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 100% at 50% 50%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 60% 100% at 50% 50%, #000 0%, transparent 70%);
+  opacity: 0.6;
+}
+
+/* ===== Top Bar ===== */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 6, 15, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-glass-edge);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-bar .title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 左侧品牌区：logo + 文案紧贴 */
+.top-bar .brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-bar .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-moon-mist);
+  opacity: 0.7;
+}
+
+.top-bar .title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-ice-highlight);
+  letter-spacing: -0.3px;
+}
+
+.top-bar .logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--color-glass-edge);
+  box-shadow: 0 0 16px rgba(102, 58, 243, 0.2), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.top-bar .logo-img:hover {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 24px rgba(102, 58, 243, 0.35), 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.buy-btn {
+  background: var(--color-void-violet);
+  color: var(--color-pure-white);
+  border: none;
+  padding: 9px 22px;
+  border-radius: var(--radius-buttons);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-family: var(--font-ui);
+}
+
+.buy-btn:hover {
+  background: #5530d4;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(102, 58, 243, 0.4);
+}
+
+/* ===== Masonry Gallery ===== */
+.gallery {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 32px 24px 110px;   /* 底部多留白，容纳各列错位 */
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* 视口底部渐变蒙版：固定停在浏览器窗口底部，图片经过时自然淡出 */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  pointer-events: none;
+  z-index: 50;
+  background: linear-gradient(
+    to top,
+    var(--color-midnight-canvas) 0%,
+    rgba(5, 6, 15, 0.85) 30%,
+    rgba(5, 6, 15, 0.45) 60%,
+    transparent 100%
+  );
+}
+
+/* 底部固定购买引导条 */
+.cta-bar {
+  position: fixed;
+  bottom: 53px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  background: linear-gradient(135deg, rgba(102, 58, 243, 0.18), rgba(102, 58, 243, 0.08));
+  border: 1px solid rgba(102, 58, 243, 0.30);
+  border-radius: 16px;
+  padding: 12px 28px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 24px rgba(102, 58, 243, 0.10),
+    inset 0 1px 1px rgba(216, 236, 248, 0.08);
+  text-align: center;
+  max-width: 680px;
+  width: calc(100% - 48px);
+}
+
+.cta-bar .cta-text {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-ice-highlight);
+  letter-spacing: 0.02em;
+}
+
+.cta-price {
+  color: #b388ff;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.cta-wechat {
+  color: #90caf9;
+  font-weight: 600;
+}
+
+/* CTA 条悬停弹出二维码 */
+.cta-bar .qr-popup {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 70;
+  background: rgba(12, 14, 28, 0.95);
+  border: 1px solid rgba(102, 58, 243, 0.25);
+  border-radius: 16px;
+  padding: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    0 0 32px rgba(102, 58, 243, 0.12);
+}
+
+.cta-bar .qr-popup img {
+  display: block;
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.cta-bar .qr-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: rgba(102, 58, 243, 0.25);
+}
+
+.cta-bar:hover .qr-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 视口顶部渐变蒙版：固定在导航栏下方，图片从上方自然淡入 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 320px;
+  pointer-events: none;
+  z-index: 5;
+  background: linear-gradient(
+    to bottom,
+    var(--color-midnight-canvas) 0%,
+    rgba(5, 6, 15, 0.92) 20%,
+    rgba(5, 6, 15, 0.65) 45%,
+    rgba(5, 6, 15, 0.25) 70%,
+    transparent 100%
+  );
+}
+
+/* JS 瀑布流：列容器（每列独立一束卡片） */
+.masonry-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  will-change: transform;
+}
+
+.card {
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  background: var(--surface-frosted);
+  border: 1px solid var(--color-glass-edge);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(186, 215, 247, 0.28);
+  box-shadow:
+    inset 0 1px 1px rgba(216, 236, 248, 0.2),
+    inset 0 24px 48px rgba(168, 216, 245, 0.06),
+    0 16px 40px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(102, 58, 243, 0.15);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+/* Lazy load — 滚动到可视区域才加载，兼容 file:// 与 http:// */
+.card img { opacity: 0; transition: opacity 0.5s ease; }
+.card img.loaded { opacity: 1; }
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(5, 6, 15, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal {
+  background: var(--surface-deep-glass);
+  border: 1px solid var(--color-glass-edge);
+  border-radius: var(--radius-modals);
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-modal);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay.active .modal { transform: scale(1) translateY(0); }
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(5, 6, 15, 0.6);
+  backdrop-filter: blur(8px);
+  color: var(--color-frost-glow);
+  border: 1px solid var(--color-glass-edge);
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: rgba(186, 215, 247, 0.12);
+  color: var(--color-pure-white);
+}
+
+.modal-image-wrap img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-modals) var(--radius-modals) 0 0;
+}
+
+.modal-info { padding: 24px 28px 28px; }
+
+.modal-info h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--color-ice-highlight);
+}
+
+.modal-info .price {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-ice-highlight);
+  margin-bottom: 20px;
+  background: linear-gradient(0deg, #d8ecf8 0%, #98c0ef 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buy-btn-modal {
+  width: 100%;
+  background: var(--color-void-violet);
+  color: var(--color-pure-white);
+  border: none;
+  padding: 14px;
+  border-radius: var(--radius-buttons);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-ui);
+}
+
+.buy-btn-modal:hover {
+  background: #5530d4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(102, 58, 243, 0.45);
+}
+
+.modal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.modal-nav button {
+  background: var(--surface-frosted);
+  color: var(--color-frost-glow);
+  border: 1px solid var(--color-glass-edge);
+  padding: 10px 22px;
+  border-radius: var(--radius-buttons);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-ui);
+}
+
+.modal-nav button:hover:not(:disabled) {
+  background: rgba(186, 215, 247, 0.1);
+  border-color: rgba(186, 215, 247, 0.3);
+  color: var(--color-pure-white);
+}
+
+.modal-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.modal-nav #pageIndicator {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-moon-mist);
+  min-width: 56px;
+  text-align: center;
+}
+
+/* ===== Placeholder ===== */
+.placeholder {
+  position: relative;
+  z-index: 1;
+  column-span: all;
+  text-align: center;
+  padding: 100px 20px;
+  color: var(--color-fog-veil);
+}
+
+.placeholder h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-moon-mist);
+  margin-bottom: 12px;
+}
+
+.placeholder p { font-size: 14px; line-height: 1.8; }
+.placeholder code {
+  font-family: var(--font-mono);
+  background: rgba(186, 215, 247, 0.08);
+  padding: 2px 6px;
+  border-radius: var(--radius-badges);
+  color: var(--color-frost-glow);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .gallery { gap: 14px; }
+  .masonry-col { gap: 14px; }
+}
+@media (max-width: 768px) {
+  .gallery { gap: 12px; padding: 20px 16px 96px; }
+  .masonry-col { gap: 12px; }
+  .card { border-radius: 12px; }
+  .top-bar { padding: 12px 16px; }
+  .top-bar .title { font-size: 15px; }
+  .modal { max-height: 92vh; }
+  .modal-info { padding: 18px 20px 22px; }
+}
+@media (max-width: 480px) {
+  .gallery { padding: 16px 12px 88px; gap: 10px; }
+  .masonry-col { gap: 10px; }
+  .card { border-radius: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Ambient background -->
+<div class="bg-grid"></div>
+<div class="bg-halo"></div>
+
+<!-- Top Bar -->
+<header class="top-bar">
+  <div class="brand">
+    <img class="logo-img" src="logo.png" alt="优卡" title="优卡 PPT">
+    <div class="title-wrap">
+      <span class="eyebrow">Youka's Gallery</span>
+      <span class="title" id="templateTitle">优卡的素材库</span>
+    </div>
+  </div>
+</header>
+
+<!-- Masonry Gallery -->
+<main class="gallery" id="gallery"></main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-image-wrap"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-info">
+      <div class="modal-nav">
+        <button id="prevBtn" onclick="navigateModal(-1)">◀ 上一张</button>
+        <span id="pageIndicator">1 / 10</span>
+        <button id="nextBtn" onclick="navigateModal(1)">下一张 ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ========== 配置区（修改这里即可） ========== */
+var CONFIG = {
+  templateName: '优卡的素材库',   // 模板名称
+  price: '99',                         // 价格（数字）
+  buyLink: '',                         // 购买链接（留空则弹提示）
+    images: [
+    'slide-1.webp',
+    'slide-2.webp',
+    'slide-3.webp',
+    'slide-4.webp',
+    'slide-5.webp',
+    'slide-6.webp',
+    'slide-7.webp',
+    'slide-8.webp',
+    'slide-9.webp',
+    'slide-10.webp',
+    'slide-11.webp',
+    'slide-12.webp',
+    'slide-13.webp',
+    'slide-14.webp',
+    'slide-15.webp',
+    'slide-16.webp',
+    'slide-17.webp',
+    'slide-18.webp',
+    'slide-19.webp',
+    'slide-20.webp',
+    'slide-21.webp',
+    'slide-22.webp',
+    'slide-23.webp',
+    'slide-24.webp',
+    'slide-25.webp',
+    'slide-26.webp',
+    'slide-27.webp',
+    'slide-28.webp',
+    'slide-29.webp',
+    'slide-30.webp',
+    'slide-31.webp',
+    'slide-32.webp',
+    'slide-33.webp',
+    'slide-34.webp',
+    'slide-35.webp',
+    'slide-36.webp',
+    'slide-37.webp',
+    'slide-38.webp',
+    'slide-39.webp',
+    'slide-40.webp',
+    'slide-41.webp',
+    'slide-42.webp',
+    'slide-43.webp',
+    'slide-44.webp',
+    'slide-45.webp',
+    'slide-46.webp',
+    'slide-47.webp',
+    'slide-48.webp',
+    'slide-49.webp',
+    'slide-50.webp',
+    'slide-51.webp',
+    'slide-52.webp',
+    'slide-53.webp',
+    'slide-54.webp',
+    'slide-55.webp',
+    'slide-56.webp',
+    'slide-57.webp',
+    'slide-58.webp',
+    'slide-59.webp',
+    'slide-60.webp',
+    'slide-61.webp',
+    'slide-62.webp',
+    'slide-63.webp',
+    'slide-64.webp',
+    'slide-65.webp',
+    'slide-66.webp',
+    'slide-67.webp',
+    'slide-68.webp',
+    'slide-69.webp',
+    'slide-70.webp',
+    'slide-71.webp',
+    'slide-72.webp',
+    'slide-73.webp',
+    'slide-74.webp',
+    'slide-75.webp',
+    'slide-76.webp',
+    'slide-77.webp',
+    'slide-78.webp',
+    'slide-79.webp',
+    'slide-80.webp',
+    'slide-81.webp',
+    'slide-82.webp',
+    'slide-83.webp',
+    'slide-84.webp',
+    'slide-85.webp',
+    'slide-86.webp',
+    'slide-87.webp',
+    'slide-88.webp',
+    'slide-89.webp',
+    'slide-90.webp',
+    'slide-91.webp',
+    'slide-92.webp',
+    'slide-93.webp',
+    'slide-94.webp',
+    'slide-95.webp',
+    'slide-96.webp',
+    'slide-97.webp',
+    'slide-98.webp',
+    'slide-99.webp',
+    'slide-100.webp'
+  ]
+};
+/* ========================================= */
+
+var currentIndex = 0;
+
+function init() {
+  document.getElementById('templateTitle').textContent = CONFIG.templateName;
+
+  // 每次进入页面随机排列图片顺序（Fisher-Yates 原地洗牌）
+  for (var s = CONFIG.images.length - 1; s > 0; s--) {
+    var r = Math.floor(Math.random() * (s + 1));
+    var tmp = CONFIG.images[s]; CONFIG.images[s] = CONFIG.images[r]; CONFIG.images[r] = tmp;
+  }
+
+  var gallery = document.getElementById('gallery');
+
+  if (CONFIG.images.length === 0) {
+    gallery.innerHTML =
+      '<div class="placeholder">' +
+      '<h3>📷 还没有添加预览图</h3>' +
+      '<p>请将图片放入 <code>images/</code> 文件夹，<br>并在代码 CONFIG.images 中配置文件名。</p>' +
+      '</div>';
+    return;
+  }
+
+  buildMasonry();
+  updateNavButtons();
+}
+
+/* ===== 瀑布流：最短列优先 + 列错位（错落有致） ===== */
+var currentCols = 0;
+
+function getColCount() {
+  var w = window.innerWidth;
+  if (w <= 480) return 2;
+  if (w <= 768) return 2;
+  if (w <= 1024) return 3;
+  return 4;
+}
+
+// 每列顶部错位的视觉偏移（纯装饰，不参与高度计算），形成对角线错落
+function getOffsets(cols) {
+  if (cols >= 4) return [0, 54, 26, 80];
+  if (cols === 3) return [0, 42, 21];
+  return [0, 30];
+}
+
+// 每张卡片的稳定伪随机估计高度（260~580px），用于最短列均衡分配
+function estHeight(i) {
+  var x = Math.sin(i * 12.9898) * 43758.5453;
+  var f = x - Math.floor(x);
+  return 260 + f * 320;
+}
+
+function makeCard(src, i) {
+  var card = document.createElement('div');
+  card.className = 'card';
+  card.onclick = function() { openModal(i); };
+  var img = new Image();
+  img.alt = CONFIG.templateName + ' 第' + (i + 1) + '页';
+  img.dataset.src = 'images/' + src;   // 先挂 data-src，滚动到才真正加载
+  card.appendChild(img);
+  return card;
+}
+
+function buildMasonry() {
+  var gallery = document.getElementById('gallery');
+  var cols = getColCount();
+  currentCols = cols;
+  var offsets = getOffsets(cols);
+
+  gallery.innerHTML = '';
+  var colEls = [];
+  var colHeights = [];
+  for (var c = 0; c < cols; c++) {
+    var col = document.createElement('div');
+    col.className = 'masonry-col';
+    col.style.transform = 'translateY(' + offsets[c] + 'px)';
+    gallery.appendChild(col);
+    colEls.push(col);
+    colHeights.push(0);
+  }
+
+  CONFIG.images.forEach(function(src, i) {
+    var card = makeCard(src, i);
+    // 放入当前「估计高度」最小的列 → 各列高度均衡且错落
+    var minC = 0;
+    for (var c = 1; c < cols; c++) {
+      if (colHeights[c] < colHeights[minC]) minC = c;
+    }
+    colEls[minC].appendChild(card);
+    colHeights[minC] += estHeight(i) + 16;   // + 列内间距
+  });
+
+  setupLazy();
+}
+
+// 懒加载：滚动到可视区域才加载真实图片（兼容 file:// 与 http://）
+function setupLazy() {
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            img.onload = function() { img.classList.add('loaded'); };
+            observer.unobserve(img);
+          }
+        }
+      });
+    }, { rootMargin: '120px' });
+    document.querySelectorAll('.card img[data-src]').forEach(function(img) { observer.observe(img); });
+  } else {
+    document.querySelectorAll('.card img[data-src]').forEach(function(img) {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+      img.classList.add('loaded');
+    });
+  }
+}
+
+function openModal(index) {
+  currentIndex = index;
+  document.getElementById('modalImg').src = 'images/' + CONFIG.images[currentIndex];
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  updateNavButtons();
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === e.currentTarget) closeModal();
+}
+
+function navigateModal(dir) {
+  currentIndex += dir;
+  if (currentIndex < 0) currentIndex = CONFIG.images.length - 1;
+  if (currentIndex >= CONFIG.images.length) currentIndex = 0;
+  document.getElementById('modalImg').src = 'images/' + CONFIG.images[currentIndex];
+  updateNavButtons();
+}
+
+function updateNavButtons() {
+  var total = CONFIG.images.length;
+  document.getElementById('pageIndicator').textContent = (currentIndex + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = total <= 1;
+  document.getElementById('nextBtn').disabled = total <= 1;
+}
+
+function handlePurchase() {
+  if (CONFIG.buyLink) {
+    window.open(CONFIG.buyLink, '_blank');
+  } else {
+    alert('购买功能待配置\n\n请联系作者获取此模板：\n可在此处填写微信号 / 淘宝链接等');
+  }
+}
+
+function openQuickBuy() { handlePurchase(); }
+
+document.addEventListener('keydown', function(e) {
+  var overlay = document.getElementById('modalOverlay');
+  if (!overlay.classList.contains('active')) return;
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft') navigateModal(-1);
+  if (e.key === 'ArrowRight') navigateModal(1);
+});
+
+init();
+
+// 窗口尺寸变化时，若列数改变则重建瀑布流（错位随之重新计算）
+var resizeTimer = null;
+window.addEventListener('resize', function() {
+  if (resizeTimer) clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    if (getColCount() !== currentCols) buildMasonry();
+  }, 200);
+});
+</script>
+<!-- 底部固定购买引导条 -->
+<div class="cta-bar">
+  <div class="qr-popup">
+    <img src="qrcode.jpg" alt="微信二维码 - YOUKAPPT">
+  </div>
+  <div class="cta-text">
+    100页真实内容制成的PPT模板，仅需<span class="cta-price">￥39</span>，添加微信<span class="cta-wechat">YOUKAPPT</span>，转账获取。
+  </div>
+</div>
+
+</body>
+</html>
