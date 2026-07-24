@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>优卡导航 · AI 设计工具导航站 | AI生图/视频/PPT/3D/字体工具大全</title>
+<link rel="icon" type="image/png" href="./logo.png" />
+<link rel="apple-touch-icon" href="./logo.png" />
+<meta name="description" content="优卡导航精选 AI 设计工具与 AI 工具大全：AI 生图（即梦/Midjourney）、视频生成、PPT 模板、3D 模型、字体排版、图片素材一站直达，免费 AI 工具推荐。" />
+<meta name="keywords" content="优卡导航, AI工具导航, AI设计工具, AI生图, 即梦AI, Midjourney, 视频生成, 可灵, Runway, PPT模板, 优卡素材库, 3D模型, Tripo, 字体排版, 灵感素材, 图片素材, 设计导航站" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#05060f" />
+<link rel="canonical" href="https://youkappt.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="优卡导航" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:title" content="优卡导航 · AI 设计工具导航站" />
+<meta property="og:description" content="优卡导航精选 AI 设计工具与 AI 工具大全：AI 生图（即梦/Midjourney）、视频生成、PPT 模板、3D 模型、字体排版、图片素材一站直达，免费 AI 工具推荐。" />
+<meta property="og:url" content="https://youkappt.com/" />
+<meta property="og:image" content="./logo.png" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="优卡导航 · AI 设计工具导航站" />
+<meta name="twitter:description" content="优卡导航精选 AI 设计工具与 AI 工具大全：AI 生图（即梦/Midjourney）、视频生成、PPT 模板、3D 模型、字体排版、图片素材一站直达，免费 AI 工具推荐。" />
+<meta name="twitter:image" content="./logo.png" />
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "优卡导航",
+  "url": "https://youkappt.com/",
+  "description": "优卡导航精选 AI 设计工具与 AI 工具大全：AI 生图（即梦/Midjourney）、视频生成、PPT 模板、3D 模型、字体排版、图片素材一站直达，免费 AI 工具推荐。",
+  "inLanguage": "zh-CN",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://youkappt.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* Colors */
+    --color-midnight-canvas: #05060f;
+    --color-steel-plate: #2f343e;
+    --color-fog-veil: #9da7ba;
+    --color-moon-mist: #c7d3ea;
+    --color-frost-glow: #d1e4fa;
+    --color-ice-highlight: #d8ecf8;
+    --gradient-ice-highlight: linear-gradient(0deg, #d8ecf8 0%, #98c0ef 100%);
+    --color-pure-white: #ffffff;
+    --color-void-violet: #663af3;
+    --color-blueprint-blue: #b6d9fc;
+    --color-gridline-blue: #3f4959;
+    --color-glass-edge: rgba(186, 215, 247, 0.12);
+    --color-luminous-fill: rgba(199, 211, 234, 0.12);
+
+    /* Typography */
+    --font-display: 'Space Grotesk', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+    /* Spacing */
+    --page-max-width: 1200px;
+    --section-gap: 120px;
+    --card-padding: 24px;
+    --element-gap: 16px;
+
+    /* Radius */
+    --radius-cards: 16px;
+    --radius-badges: 6px;
+    --radius-inputs: 6px;
+    --radius-buttons: 999px;
+    --radius-iconcontainers: 9999px;
+
+    /* Shadows */
+    --shadow-card: rgba(199, 211, 234, 0.12) 0px 1px 1px 0px inset, rgba(199, 211, 234, 0.05) 0px 24px 48px 0px inset, rgba(6, 6, 14, 0.7) 0px 24px 32px 0px;
+    --shadow-glow: rgba(186, 207, 247, 0.32) 0px 0px 6px 0px, rgba(238, 186, 247, 0.18) 0px 0px 12px 0px;
+    --shadow-violet: rgba(102, 58, 243, 0.45) 0px 8px 24px 0px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-midnight-canvas);
+    color: var(--color-frost-glow);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image:
+      linear-gradient(rgba(186, 215, 247, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(186, 215, 247, 0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 35%, transparent 85%);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 35%, transparent 85%);
+    pointer-events: none;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    top: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 70vh;
+    z-index: -3;
+    background: conic-gradient(at 50% 0%, transparent 44%, rgba(124, 145, 182, 0.28) 49%, rgba(124, 145, 182, 0.5) 50%, rgba(124, 145, 182, 0.28) 51%, transparent 56%);
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  .container { width: 100%; max-width: var(--page-max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    background: rgba(5, 6, 15, 0.55);
+    border-bottom: 1px solid var(--color-glass-edge);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 18px; color: var(--color-frost-glow); letter-spacing: -0.01em; }
+  .brand .mark { width: 28px; height: 28px; border-radius: var(--radius-iconcontainers); background: linear-gradient(135deg, #98c0ef, #663af3); display: grid; place-items: center; font-size: 14px; font-weight: 700; color: #fff; box-shadow: var(--shadow-glow); }
+  .header-actions { display: flex; gap: 12px; align-items: center; }
+
+  /* Buttons */
+  .btn-pill {
+    border-radius: var(--radius-buttons); padding: 8px 16px; font-size: 14px; font-weight: 500; font-family: var(--font-body);
+    background: rgba(186, 214, 247, 0.06); color: var(--color-pure-white); border: 1px solid var(--color-glass-edge);
+    cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-pill:hover { background: rgba(186, 214, 247, 0.12); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--color-frost-glow); }
+
+  /* Eyebrow */
+  .eyebrow { display: inline-flex; align-items: center; gap: 16px; font-family: var(--font-mono); font-size: 15px; font-weight: 400; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-moon-mist); }
+  .eyebrow::before, .eyebrow::after { content: ""; width: 56px; height: 1px; background: linear-gradient(90deg, transparent, rgba(186, 215, 247, 0.12), transparent); }
+
+  /* Hero */
+  .hero { padding: 100px 0 40px; text-align: center; position: relative; }
+  .brand-logo { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid rgba(186, 215, 247, 0.15); vertical-align: middle; }
+
+  .hero .wordmark { font-family: var(--font-display); font-weight: 600; font-size: clamp(56px, 12vw, 132px); line-height: 1.05; letter-spacing: -0.02em; margin: 28px 0 18px; background: var(--gradient-ice-highlight); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--color-ice-highlight); text-shadow: 0 0 30px rgba(152, 192, 239, 0.25); }
+  .hero .tagline { font-size: clamp(16px, 2.4vw, 20px); color: var(--color-moon-mist); max-width: 560px; margin: 0 auto 40px; }
+
+  .search-wrap { max-width: 600px; margin: 0 auto; display: flex; gap: 10px; background: rgba(186, 214, 247, 0.04); border: 1px solid var(--color-glass-edge); border-radius: var(--radius-buttons); padding: 8px 8px 8px 20px; box-shadow: var(--shadow-card); transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+  .search-wrap:focus-within { border-color: rgba(186, 215, 247, 0.28); box-shadow: var(--shadow-card), var(--shadow-glow); }
+  .search-wrap .ico { color: var(--color-fog-veil); display: flex; align-items: center; }
+  .search-wrap input { flex: 1; background: transparent; border: none; outline: none; color: var(--color-pure-white); font-family: var(--font-body); font-size: 16px; }
+  .search-wrap input::placeholder { color: var(--color-fog-veil); opacity: 0.8; }
+  .search-btn { border: none; border-radius: var(--radius-buttons); padding: 10px 22px; font-size: 14px; font-weight: 600; font-family: var(--font-body); background: var(--color-void-violet); color: #fff; cursor: pointer; box-shadow: var(--shadow-violet); transition: transform 0.2s ease, filter 0.2s ease; white-space: nowrap; }
+  .search-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
+
+  .hero-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 780px; margin: 64px auto 0; align-items: stretch; }
+  .float-card { background: rgba(186, 214, 247, 0.04); border: 1px solid var(--color-glass-edge); border-radius: var(--radius-cards); padding: 22px; text-align: left; box-shadow: var(--shadow-card); transition: transform 0.25s ease, box-shadow 0.25s ease; animation: floaty 5s ease-in-out infinite; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 120px; }
+  .float-card:hover { transform: translateY(-8px) !important; box-shadow: var(--shadow-card), var(--shadow-glow); }
+  .float-card:nth-child(1) { animation-delay: 0s; }
+  .float-card:nth-child(2) { animation-delay: 0.4s; }
+  .float-card:nth-child(3) { animation-delay: 0.8s; }
+  @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .float-card .fc-ico { width: 44px; height: 44px; border-radius: var(--radius-iconcontainers); background: rgba(186, 214, 247, 0.08); display: grid; place-items: center; color: var(--color-frost-glow); margin-bottom: 14px; }
+  .float-card .fc-title { font-family: var(--font-display); font-weight: 500; font-size: 18px; color: var(--color-ice-highlight); margin-bottom: 6px; }
+  .float-card .fc-desc { font-size: 13px; color: var(--color-moon-mist); line-height: 1.5; }
+
+  /* Section */
+  .section { padding-top: var(--section-gap); }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-head h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(32px, 5vw, 44px); color: var(--color-ice-highlight); margin: 18px 0 14px; letter-spacing: -0.01em; }
+  .section-head p { font-size: 16px; color: var(--color-moon-mist); max-width: 640px; margin: 0 auto; }
+  .result-count { font-family: var(--font-mono); font-size: 13px; color: var(--color-fog-veil); margin-top: 14px; letter-spacing: 0.04em; }
+
+  .category { margin-bottom: 72px; }
+  .category-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--color-glass-edge); }
+  .category-head .cat-ico { width: 40px; height: 40px; border-radius: var(--radius-iconcontainers); background: rgba(186, 214, 247, 0.08); display: grid; place-items: center; color: var(--color-frost-glow); flex-shrink: 0; }
+  .category-head h3 { font-family: var(--font-display); font-weight: 500; font-size: 22px; color: var(--color-frost-glow); }
+  .category-head .cat-en { font-family: var(--font-mono); font-size: 12px; color: var(--color-fog-veil); letter-spacing: 0.08em; margin-left: auto; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .subcategory { margin-top: 28px; }
+  .subcategory-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .subcategory-head h4 { font-family: var(--font-display); font-weight: 500; font-size: 16px; color: var(--color-frost-glow); }
+  .subcategory-head::before { content: ""; width: 3px; height: 16px; border-radius: 2px; background: var(--color-violet, #663af3); flex-shrink: 0; }
+  .subcategory-head .cat-en { font-family: var(--font-mono); font-size: 11px; color: var(--color-fog-veil); letter-spacing: 0.08em; }
+  .tool-card { background: rgba(186, 214, 247, 0.03); border: 1px solid var(--color-glass-edge); border-radius: var(--radius-cards); padding: var(--card-padding); box-shadow: var(--shadow-card); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden; }
+  .tool-card::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-cards); background: linear-gradient(180deg, rgba(216,236,248,0.06), transparent 40%); opacity: 0; transition: opacity 0.25s ease; pointer-events: none; }
+  .tool-card:hover { transform: translateY(-6px); border-color: rgba(186, 215, 247, 0.24); box-shadow: var(--shadow-card), var(--shadow-glow); }
+  .tool-card:hover::after { opacity: 1; }
+  .tool-top { display: flex; align-items: center; gap: 12px; }
+  .tool-logo { width: 40px; height: 40px; border-radius: 10px; object-fit: contain; background: rgba(186, 214, 247, 0.06); border: 1px solid rgba(186, 215, 247, 0.08); flex-shrink: 0; padding: 4px; }
+  .tool-logo-fallback { display: grid; place-items: center; color: #fff; font-family: var(--font-display); font-weight: 600; font-size: 16px; }
+  .tool-name { font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--color-ice-highlight); }
+  .tool-tag { margin-left: auto; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; letter-spacing: 0.02em; }
+  .tag-free { color: #8fe3c4; background: rgba(64, 200, 150, 0.12); border: 1px solid rgba(64, 200, 150, 0.3); }
+  .tag-paid { color: #c0a8ff; background: rgba(102, 58, 243, 0.14); border: 1px solid rgba(102, 58, 243, 0.4); }
+  .tool-desc { font-size: 14px; color: var(--color-moon-mist); line-height: 1.5; flex: 1; }
+
+  .no-result { text-align: center; color: var(--color-fog-veil); font-size: 15px; padding: 60px 0; display: none; }
+  .notice { max-width: 640px; margin: 30px auto; padding: 20px 24px; border: 1px solid var(--color-glass-edge); border-radius: var(--radius-cards); background: rgba(186, 214, 247, 0.04); color: var(--color-moon-mist); font-size: 14px; line-height: 1.7; display: none; }
+  .notice code { font-family: var(--font-mono); color: var(--color-frost-glow); background: rgba(186, 214, 247, 0.08); padding: 2px 6px; border-radius: 4px; }
+  .loading { text-align: center; color: var(--color-fog-veil); font-size: 15px; padding: 60px 0; letter-spacing: .03em; }
+
+  .cat-nav { margin-top: var(--section-gap); padding: 38px 0 10px; border-top: 1px solid var(--color-glass-edge); }
+  .cat-nav.is-seo { /* 视觉隐藏，保留 DOM 给 SEO 爬虫与屏幕阅读器（a11y 标准写法，不被判作弊） */
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .cat-nav .cn-head { font-family: var(--font-display); color: var(--color-frost-glow); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .75; margin-bottom: 20px; }
+  .cn-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px 30px; }
+  .cn-item { display: flex; flex-direction: column; gap: 7px; }
+  .cn-link { font-family: var(--font-display); font-weight: 600; color: var(--color-frost-glow); font-size: 15px; text-decoration: none; transition: color .2s; }
+  .cn-link:hover { color: var(--color-void-violet); }
+  .cn-tools { font-size: 12px; color: var(--color-fog-veil); line-height: 1.55; }
+  footer { margin-top: var(--section-gap); border-top: 1px solid var(--color-glass-edge); padding: 40px 0 60px; text-align: center; }
+  footer .f-brand { font-family: var(--font-display); font-weight: 600; color: var(--color-frost-glow); font-size: 16px; margin-bottom: 10px; }
+  footer .f-note { font-size: 13px; color: var(--color-fog-veil); }
+
+  @media (max-width: 720px) {
+    .hero { padding: 64px 0 24px; }
+    .hero-cards { grid-template-columns: 1fr; gap: 14px; margin-top: 40px; max-width: 320px; }
+    .float-card { animation: none; }
+    .search-btn { padding: 10px 16px; }
+    .category-head .cat-en { display: none; }
+  }
+  .search-count {
+    font-size: 12px;
+    color: var(--color-fog-veil);
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+  .search-count b { color: var(--color-void-violet); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <img src="./logo.png" alt="优卡导航" class="brand-logo" />
+      <span>优卡导航</span>
+    </a>
+    <div class="header-actions">
+      <a class="btn-pill btn-ghost" href="#grid">浏览全部</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">AI × DESIGN × PPT</span>
+      <h1 class="wordmark">优卡导航</h1>
+      <p class="tagline">发现最好用的 AI 设计工具，一站直达。</p>
+
+      <form class="search-wrap" id="searchForm" role="search">
+        <span class="ico" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </span>
+        <input type="text" id="searchInput" placeholder="搜索工具 / 分类 / 关键词…" autocomplete="off" />
+        <span id="searchCount" class="search-count"></span>
+        <button type="submit" class="search-btn">搜索</button>
+      </form>
+
+      <div class="hero-cards" id="heroCards">
+        <a class="float-card is-static" data-index="0" href="./mockup/" target="_blank" rel="noopener">
+          <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+          <div class="fc-title">PPT作品展示图生成器</div>
+          <div class="fc-desc">多种版式，自定义调整，一键导出高清大图。</div>
+        </a>
+        <div class="float-card is-static" data-index="1">
+          <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg></div>
+          <div class="fc-title">PPT定制作品集</div>
+          <div class="fc-desc">承接各类PPT定制，欢迎咨询微信YOUKAPPT。</div>
+        </div>
+        <a class="float-card is-static" href="./template/" target="_blank" rel="noopener" data-index="2">
+          <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div class="fc-title">优卡的素材库</div>
+          <div class="fc-desc">PPT模板、图片、技巧，应有尽有。</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section class="section" id="grid">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">CURATED TOOLS</span>
+        <h2>AI × 设计 工具箱</h2>
+        <div class="result-count" id="resultCount"></div>
+      </div>
+      <div class="notice" id="notice"></div>
+      <div class="loading" id="loading">⏳ 正在加载工具列表…</div>
+      <div id="categories"></div>
+      <div class="no-result" id="noResult">没有匹配的工具，换个关键词试试～</div>
+    </div>
+  </section>
+</main>
+
+<nav class="cat-nav is-seo" aria-label="全部分类导航">
+  <div class="container">
+    <div class="cn-head">按分类浏览 · 全部 AI 设计工具</div>
+    <ul class="cn-list" id="catNav"></ul>
+  </div>
+</nav>
+
+<footer>
+  <div class="container">
+    <div class="f-brand">优卡导航</div>
+    <div class="f-note">由 优卡 / youka 整理 · 收录 AI+设计 工具 · 数据驱动自动更新</div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Icon + color helpers ----------
+  const ICONS = {
+    image: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>',
+    video: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg>',
+    ui: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>',
+    font: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg>',
+    d3: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>',
+    inspo: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2zM9 21h6"/></svg>',
+    default: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg>'
+  };
+  function iconFor(name) {
+    if (/绘画|图像|图/.test(name)) return ICONS.image;
+    if (/视频/.test(name)) return ICONS.video;
+    if (/UI|界面|设计/.test(name)) return ICONS.ui;
+    if (/字体|排版|字/.test(name)) return ICONS.font;
+    if (/3D|模型/.test(name)) return ICONS.d3;
+    if (/灵感|素材/.test(name)) return ICONS.inspo;
+    return ICONS.default;
+  }
+  const PALETTE = ['#663af3', '#0ea5e9', '#22c55e', '#ec4899', '#f59e0b', '#8b5cf6', '#14b8a6', '#3b82f6', '#a855f7', '#ef4444'];
+  function colorFor(str) {
+    let h = 0;
+    for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
+    return PALETTE[h % PALETTE.length];
+  }
+  function initial(name) { return name.replace(/[^\u4e00-\u9fa5A-Za-z0-9]/g, "").charAt(0).toUpperCase(); }
+  function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+  function toolTagHtml(t) {
+    if (!t.paid) return '';
+    const cls = t.paid === '付费' ? 'tag-paid' : 'tag-free';
+    return '<span class="tool-tag ' + cls + '">' + escapeHtml(t.paid) + '</span>';
+  }
+  function catEnHtml(cat) {
+    return cat.en ? '<span class="cat-en">' + escapeHtml(cat.en) + '</span>' : '';
+  }
+  // 所有 logo 已预下载到本地 ./logos/（由 fetch_logos.py 按 官网 apple-touch-icon → icon.horse(180px) → favicone 生成，仅收 ≥48px 高清；其余降级色块）。
+  // 运行时只引用本地文件，不再请求任何远程服务（抗墙、秒加载）。manifest.json 记录 域名→文件名。
+  function colorBlock(t) {
+    return '<div class="tool-logo tool-logo-fallback" style="background:' + escapeHtml(t.color) + '">' + escapeHtml(initial(t.name)) + '</div>';
+  }
+  function logoHtml(t) {
+    const domain = (t.url.match(/\/\/([^/]+)/) || [])[1] || '';
+    if (!domain) return colorBlock(t);
+    const file = LOGO_MAP[domain];
+    if (!file) return colorBlock(t);
+    return '<img class="tool-logo" src="./logos/' + escapeHtml(file) + '" alt="" loading="lazy" decoding="async"'
+         + ' data-color="' + escapeHtml(t.color) + '" data-initial="' + escapeHtml(initial(t.name)) + '" onerror="logoFail(this)">';
+  }
+  function logoFail(img) {
+    var block = document.createElement('div');
+    block.className = 'tool-logo tool-logo-fallback';
+    block.style.background = img.dataset.color || '#663af3';
+    block.textContent = img.dataset.initial || '';
+    img.replaceWith(block);
+  }
+
+  // ---------- Parse tools.md ----------
+  function splitTitle(s) {
+    let title = s.trim(), en = '';
+    const m = title.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+    if (m) { title = m[1].trim(); en = m[2].trim(); }
+    return { title, en };
+  }
+  function parseMarkdown(md) {
+    const lines = md.split(/\r?\n/);
+    const cats = [];
+    let cur = null;   // 当前 ## 分类
+    let sub = null;   // 当前 ### 子分类（属于 cur）
+    for (const raw of lines) {
+      const line = raw.trim();
+      if (!line) continue;
+      const h3 = line.match(/^###\s+(.*)$/);
+      if (h3) {
+        if (!cur) continue; // 无父分类的子分类忽略
+        const t = splitTitle(h3[1]);
+        sub = { name: t.title, en: t.en, tools: [] };
+        cur.subs.push(sub);
+        continue;
+      }
+      const h = line.match(/^##\s+(.*)$/);
+      if (h) {
+        const t = splitTitle(h[1]);
+        cur = { name: t.title, en: t.en, icon: iconFor(t.title), tools: [], subs: [] };
+        sub = null;
+        cats.push(cur);
+        continue;
+      }
+      const li = line.match(/^[-*]\s+\[([^\]]+)\]\(([^)]+)\)\s*[—\-:：]\s*(.+)$/);
+      if (li && cur) {
+        let desc = li[3].trim();
+        let paid = '';
+        const pm = desc.match(/\s*[｜|]\s*(付费|免费)\s*$/);
+        if (pm) { paid = pm[1]; desc = desc.replace(pm[0], '').trim(); }
+        const tool = { name: li[1].trim(), url: li[2].trim(), desc, paid, color: colorFor(li[1]) };
+        (sub ? sub.tools : cur.tools).push(tool);
+      }
+    }
+    const byPaid = (a, b) => (a.paid === '付费') - (b.paid === '付费');
+    cats.forEach(c => {
+      c.tools.sort(byPaid);
+      c.subs.forEach(s => s.tools.sort(byPaid));
+    });
+    return cats;
+  }
+  // 分类下全部工具（含子分类），供计数/搜索/SEO 使用
+  function allTools(cat) {
+    return cat.tools.concat((cat.subs || []).reduce((a, s) => a.concat(s.tools), []));
+  }
+
+  // ---------- Render ----------
+  const catsRoot = document.getElementById("categories");
+  const notice = document.getElementById("notice");
+  const loading = document.getElementById("loading");
+
+  function toolCardHtml(t) {
+    return '<a class="tool-card" href="' + escapeHtml(t.url) + '" target="_blank" rel="noopener">'
+      + '<div class="tool-top">'
+      + logoHtml(t)
+      + '<div class="tool-name">' + escapeHtml(t.name) + '</div>'
+      + toolTagHtml(t)
+      + '</div>'
+      + '<div class="tool-desc">' + escapeHtml(t.desc) + '</div>'
+      + '</a>';
+  }
+  function render(list) {
+    catsRoot.innerHTML = "";
+    let total = 0;
+    list.forEach(cat => {
+      const subs = (cat.subs || []).filter(s => s.tools.length);
+      const count = cat.tools.length + subs.reduce((a, s) => a + s.tools.length, 0);
+      if (!count) return;
+      total += count;
+      const sec = document.createElement("div");
+      sec.className = "category";
+      const slug = (cat.en || cat.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      if (slug) sec.id = "cat-" + slug;
+      const cards = cat.tools.map(toolCardHtml).join("");
+      let html = '<div class="category-head">'
+        + '<div class="cat-ico">' + cat.icon + '</div>'
+        + '<h3>' + escapeHtml(cat.name) + '</h3>'
+        + catEnHtml(cat)
+        + '</div>';
+      if (cards) html += '<div class="grid">' + cards + '</div>';
+      subs.forEach(s => {
+        html += '<div class="subcategory">'
+          + '<div class="subcategory-head"><h4>' + escapeHtml(s.name) + '</h4>'
+          + (s.en ? '<span class="cat-en">' + escapeHtml(s.en) + '</span>' : '')
+          + '</div>'
+          + '<div class="grid">' + s.tools.map(toolCardHtml).join("") + '</div>'
+          + '</div>';
+      });
+      sec.innerHTML = html;
+      catsRoot.appendChild(sec);
+    });
+    document.getElementById("resultCount").textContent = list === ALL
+      ? `共收录 ${total} 款工具`
+      : `匹配到 ${total} 款工具`;
+    document.getElementById("noResult").style.display = total ? "none" : "block";
+  }
+
+  // ---------- Load (single source of truth: tools.md) ----------
+  let ALL = [];
+  let LOGO_MAP = {};
+  async function load() {
+    try {
+      loading.style.display = 'block';
+      const res = await fetch('./tools.md');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const text = await res.text();
+      ALL = parseMarkdown(text);
+      if (!ALL.length) throw new Error('empty');
+      // 加载本地 logo 清单（best-effort，缺失则全部走色块降级）
+      try {
+        const mres = await fetch('./logos/manifest.json');
+        if (mres.ok) LOGO_MAP = await mres.json();
+      } catch (e) { LOGO_MAP = {}; }
+      notice.style.display = 'none';
+      loading.style.display = 'none';
+      render(ALL);
+      injectSEOMeta(ALL);
+      fillCatNav(ALL);
+      // 应用 URL ?q= 预搜索（让 Schema.org SearchAction / 分享链接真实可用）
+      try {
+        const q = new URLSearchParams(location.search).get('q');
+        if (q) { input.value = q; filter(q); }
+      } catch (e) {}
+    } catch (err) {
+      loading.style.display = 'none';
+      notice.style.display = 'block';
+      notice.innerHTML = '⚠️ 未能加载 <code>tools.md</code>（' + escapeHtml(String(err.message || err)) + '）。<br>' +
+        '浏览器在 <code>file://</code> 直接打开时会拦截本地文件读取。请用本地服务器预览：<br>' +
+        '在本目录运行 <code>python3 -m http.server 8000</code>，再访问 <code>http://localhost:8000</code>；<br>' +
+        '或把整个文件夹部署到任意静态托管（GitHub Pages / Vercel / 腾讯云等），即可自动读取并更新。';
+      catsRoot.innerHTML = '';
+    }
+  }
+
+  // ---------- SEO: 动态生成 keywords（随 tools.md 自动增长） ----------
+  function injectSEOMeta(list) {
+    const names = [];
+    list.forEach(c => {
+      names.push(c.name, c.en);
+      (c.subs || []).forEach(s => names.push(s.name, s.en));
+      allTools(c).forEach(t => names.push(t.name));
+    });
+    const kw = [...new Set(names)].join(', ');
+    let m = document.querySelector('meta[name="keywords"]');
+    if (!m) { m = document.createElement('meta'); m.name = 'keywords'; document.head.appendChild(m); }
+    m.content = kw;
+  }
+  function fillCatNav(list) {
+    const nav = document.getElementById("catNav");
+    if (!nav) return;
+    nav.innerHTML = list.map(cat => {
+      const ts = allTools(cat);
+      if (!ts.length) return '';
+      const slug = (cat.en || cat.name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      const names = ts.map(t => escapeHtml(t.name)).join('、');
+      return '<li class="cn-item"><a class="cn-link" href="#cat-' + slug + '">' + escapeHtml(cat.name) + '</a>'
+        + '<span class="cn-tools">' + names + '</span></li>';
+    }).join('');
+  }
+
+  // ---------- Search filter（分词 + 同义词 + 计数） ----------
+  const form = document.getElementById("searchForm");
+  const input = document.getElementById("searchInput");
+  const countEl = document.getElementById("searchCount");
+
+  // 同义词 / 别名归一：把用户口语词映射到站内术语
+  const ALIAS = {
+    'ai绘画': 'ai生图', 'ai绘图': 'ai生图', '绘画': 'ai生图', '画图': 'ai生图',
+    'mj': 'midjourney', 'midjourney': 'midjourney',
+    'sd': 'stable diffusion', 'stable diffusion': 'stable diffusion', '稳定扩散': 'stable diffusion',
+    'ai视频': '视频生成', '数字人': '视频生成', '口播': '视频生成',
+    'ppt生成': 'ppt', 'ppt模板': 'ppt', 'ppt': 'ppt', '幻灯片': 'ppt',
+    '素材库': '素材', '图片素材': '素材', '配图': '素材', '壁纸': '素材',
+    '抠图': '图片素材', '去背景': '图片素材', '去水印': '图片素材',
+    '字体': '字体排版', '排版': '字体排版', '字库': '字体排版'
+  };
+  function norm(s) {
+    s = s.toLowerCase();
+    for (const k in ALIAS) { if (s.indexOf(k) !== -1) s = s.split(k).join(' ' + ALIAS[k] + ' '); }
+    return s;
+  }
+  // 分词：英文/数字按词，中文逐字 + 整词（解决"生图 AI"顺序问题）
+  function tokens(s) {
+    s = s.trim().toLowerCase();
+    const en = (s.match(/[a-z0-9]+/g) || []);
+    const cn = (s.match(/[一-龥]/g) || []);
+    const cw = (s.match(/[一-龥]+/g) || []);
+    return [...new Set([...en, ...cn, ...cw])].filter(Boolean);
+  }
+  function hit(hay, qs) {
+    if (!qs.length) return true;
+    return qs.every(tk => hay.indexOf(tk) !== -1);
+  }
+  function updateCount(n, q) {
+    countEl.textContent = q ? '找到 ' + n + ' 个工具' : '';
+  }
+  function filter(q) {
+    q = q.trim();
+    if (!q) { render(ALL); updateCount(0, ''); return; }
+    const qs = tokens(norm(q));
+    const match = (t, cat, subName) => {
+      const hay = (t.name + ' ' + t.desc + ' ' + cat.name + ' ' + cat.en + ' ' + (subName || '') + ' ' + t.url).toLowerCase();
+      return hit(hay, qs);
+    };
+    const out = ALL.map(cat => {
+      const tools = cat.tools.filter(t => match(t, cat, ''));
+      const subs = (cat.subs || []).map(s => ({ ...s, tools: s.tools.filter(t => match(t, cat, s.name + ' ' + s.en)) }))
+        .filter(s => s.tools.length);
+      return { ...cat, tools, subs };
+    }).filter(cat => cat.tools.length || cat.subs.length);
+    render(out);
+    const n = out.reduce((a, c) => a + c.tools.length + c.subs.reduce((x, s) => x + s.tools.length, 0), 0);
+    updateCount(n, q);
+  }
+  form.addEventListener("submit", e => { e.preventDefault(); filter(input.value); });
+  input.addEventListener("input", () => filter(input.value));
+
+  // ---------- Hero cards scroll ----------
+  document.getElementById("heroCards").addEventListener("click", e => {
+    const card = e.target.closest(".float-card");
+    if (!card) return;
+    if (card.classList.contains("is-static")) return;  // 个人业务展示卡，不触发跳转
+    const idx = parseInt(card.dataset.index, 10);
+    const sec = catsRoot.children[idx];
+    if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  load();
+</script>
+</body>
+</html>
