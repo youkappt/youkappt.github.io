@@ -9,6 +9,18 @@
 >   - 末尾 `｜付费` / `｜免费` 为是否付费字段（枚举值仅此两项）
 > - 想增删工具，直接在本文件里加/删行即可；排序由网页自动处理（同分类/子分类内免费在前、付费在后）。
 
+## PPT模板 (PPT)
+- [OfficePlus](https://www.officeplus.cn/PPT/template/?popularity=Total&industry=&purpose=&color=&paymentMethod=0&keywords=&number=) — 微软官方免费 PPT 模板库，质量稳定、覆盖商务与教育多场景。｜免费
+- [第一PPT](https://www.1ppt.com/) — 国内老牌免费 PPT 模板与素材站，分类细、更新勤。｜免费
+- [Slidesgo](https://slidesgo.com/) — 免费+高级 PPT / Google Slides 模板，设计感强、配图精致。｜免费
+- [SlideModel](https://slidemodel.com/) — 专业 PPT 模板与图表库，按订阅或单套购买。｜付费
+- [SlidesCarnival](https://www.slidescarnival.com/) — 免费可商用 PPT 模板，Google Slides / PPT 双格式。｜免费
+- [PresentationGO](https://www.presentationgo.com/) — 免费 PPT 图表与模板，结构规范、可直接编辑。｜免费
+
+### 模板商城 (STORE)
+- [Envato Elements](https://elements.envato.com/presentation-templates/compatible-with-powerpoint) — 订阅制 PPT 模板库，海量优质模板无限下载。｜付费
+- [GraphicRiver](https://graphicriver.net/presentation-templates/powerpoint-templates) — Envato 旗下 PPT 模板市场，海量专业 PowerPoint 模板按需付费下载。｜付费
+
 ## AI生图 (IMAGE)
 - [Midjourney](https://www.midjourney.com) — 社群最强质感的图像生成模型，出图即壁纸级。｜付费
 - [DALL·E 3](https://openai.com/dall-e-3) — OpenAI 文生图，语义理解精准、文字渲染稳。｜付费
@@ -98,15 +110,3 @@
 
 ## AI资讯 (NEWS)
 - [AI HOT](https://aihot.virxact.com/) — 中文 AI 资讯聚合，每日热点、新品发布与前沿论文速览一站看。｜免费
-
-## PPT模板 (PPT)
-- [OfficePlus](https://www.officeplus.cn/PPT/template/?popularity=Total&industry=&purpose=&color=&paymentMethod=0&keywords=&number=) — 微软官方免费 PPT 模板库，质量稳定、覆盖商务与教育多场景。｜免费
-- [第一PPT](https://www.1ppt.com/) — 国内老牌免费 PPT 模板与素材站，分类细、更新勤。｜免费
-- [Slidesgo](https://slidesgo.com/) — 免费+高级 PPT / Google Slides 模板，设计感强、配图精致。｜免费
-- [SlideModel](https://slidemodel.com/) — 专业 PPT 模板与图表库，按订阅或单套购买。｜付费
-- [SlidesCarnival](https://www.slidescarnival.com/) — 免费可商用 PPT 模板，Google Slides / PPT 双格式。｜免费
-- [PresentationGO](https://www.presentationgo.com/) — 免费 PPT 图表与模板，结构规范、可直接编辑。｜免费
-
-### 模板商城 (STORE)
-- [Envato Elements](https://elements.envato.com/presentation-templates/compatible-with-powerpoint) — 订阅制 PPT 模板库，海量优质模板无限下载。｜付费
-- [GraphicRiver](https://graphicriver.net/presentation-templates/powerpoint-templates) — Envato 旗下 PPT 模板市场，海量专业 PowerPoint 模板按需付费下载。｜付费
