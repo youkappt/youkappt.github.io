@@ -101,8 +101,8 @@
 
     // ===== 字体与配色 =====
     'serif-sans': () => baGrid(
-      slide(`<div style="font:13px Georgia,serif;color:${BC.mist};line-height:1.5">正文衬线小字在屏幕上发虚，阅读吃力，容易串行，整体显旧。</div>`),
-      slide(col([`<div style="font:16px Georgia,serif;color:${BC.ice};font-weight:700">标题衬线</div>`, `<div style="font:13px Inter,sans-serif;color:${BC.mist};line-height:1.5">正文用无衬线，屏幕清晰，阅读轻松不串行。</div>`]))
+      slide(`<div style="font:13px var(--font-serif);color:${BC.mist};line-height:1.5">正文衬线小字在屏幕上发虚，阅读吃力，容易串行，整体显旧。</div>`),
+      slide(col([`<div style="font:16px var(--font-serif);color:${BC.ice};font-weight:700">标题衬线</div>`, `<div style="font:13px Inter,sans-serif;color:${BC.mist};line-height:1.5">正文用无衬线，屏幕清晰，阅读轻松不串行。</div>`]))
     ),
     'type-scale': () => baGrid(
       slide(col([txt('标题 24', BC.mist, 15), txt('小标题 23', BC.mist, 14), txt('正文 22', BC.mist, 13)])),
@@ -254,7 +254,7 @@
     ),
     'font-pairing': () => baGrid(
       slide(`<div style="font:13px Inter,sans-serif;color:${BC.mist};line-height:1.6">全用一种字体，标题正文没区分，版面平淡没性格。</div>`),
-      slide(col([`<div style="font:16px Georgia,serif;color:${BC.ice};font-weight:700">标题衬线</div>`, `<div style="font:13px Inter,sans-serif;color:${BC.mist};line-height:1.6">正文无衬线，与标题形成对比，有层次。</div>`]))
+      slide(col([`<div style="font:16px var(--font-serif);color:${BC.ice};font-weight:700">标题衬线</div>`, `<div style="font:13px Inter,sans-serif;color:${BC.mist};line-height:1.6">正文无衬线，与标题形成对比，有层次。</div>`]))
     ),
     'remove-bg': () => baGrid(
       slide(`<div style="position:relative;width:150px;height:100px;border-radius:6px;background:repeating-linear-gradient(45deg,#3a465c,#3a465c 6px,#2a3550 6px,#2a3550 12px)"><div style="position:absolute;left:42px;top:24px;width:66px;height:52px;border-radius:8px;background:linear-gradient(135deg,${BC.muted2},#8fa3b8)"></div></div><div style="font:11px 'Space Grotesk';color:${BC.fog}">实拍图带杂背景</div>`),
