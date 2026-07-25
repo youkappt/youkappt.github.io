@@ -141,7 +141,10 @@
   .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 18px; color: var(--color-frost-glow); letter-spacing: -0.01em; }
   .brand .mark { width: 28px; height: 28px; border-radius: var(--radius-iconcontainers); background: linear-gradient(135deg, #98c0ef, #663af3); display: grid; place-items: center; font-size: 14px; font-weight: 700; color: #fff; box-shadow: var(--shadow-glow); }
-  .header-actions { display: flex; gap: 12px; align-items: center; }
+  .header-actions { display: flex; gap: 12px; align-items: center; flex: 1; justify-content: flex-end; min-width: 0; }
+  .header-actions .search-wrap { flex: 1; max-width: 340px; margin: 0; padding: 4px 6px 4px 16px; }
+  .header-actions .search-wrap input { font-size: 14px; min-width: 0; }
+  .header-actions .search-btn { padding: 6px 16px; }
 
   /* Buttons */
   .btn-pill {
@@ -231,6 +234,100 @@
   .cn-link { font-family: var(--font-display); font-weight: 600; color: var(--color-frost-glow); font-size: 15px; text-decoration: none; transition: color .2s; }
   .cn-link:hover { color: var(--color-void-violet); }
   .cn-tools { font-size: 12px; color: var(--color-fog-veil); line-height: 1.55; }
+
+  /* Layout: 左侧 sticky 分类导航 + 右侧主内容 */
+  .layout-grid {
+    display: grid;
+    grid-template-columns: 232px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    margin-top: 8px;
+  }
+  .layout-main { min-width: 0; }
+
+  /* 侧边导航 */
+  .side-nav {
+    position: sticky;
+    top: 88px; /* header 64 + 24 留白 */
+    align-self: start;
+    background: rgba(186, 214, 247, 0.04);
+    border: 1px solid var(--color-glass-edge);
+    border-radius: var(--radius-cards);
+    padding: 20px 14px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-card);
+    max-height: calc(100vh - 112px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(186, 214, 247, 0.18) transparent;
+  }
+  .side-nav::-webkit-scrollbar { width: 6px; }
+  .side-nav::-webkit-scrollbar-thumb { background: rgba(186, 214, 247, 0.18); border-radius: 3px; }
+  .side-nav::-webkit-scrollbar-track { background: transparent; }
+  .sn-head {
+    font-family: var(--font-display);
+    color: var(--color-frost-glow);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 14px;
+    padding: 0 10px;
+  }
+  .sn-list { list-style: none; margin: 0; padding: 0; }
+  .sn-item { margin: 2px 0; }
+  .sn-item.is-sub { padding-left: 14px; }
+  .sn-link {
+    display: block;
+    padding: 7px 12px;
+    border-radius: var(--radius-inputs);
+    color: var(--color-frost-glow);
+    font-size: 14px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    line-height: 1.4;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .sn-item.is-sub .sn-link {
+    font-size: 13px;
+    color: var(--color-moon-mist);
+    font-weight: 400;
+    padding: 6px 10px;
+  }
+  .sn-link:hover { background: rgba(186, 214, 247, 0.06); color: var(--color-pure-white); }
+  .sn-link.is-active {
+    background: var(--color-void-violet);
+    color: #fff;
+    box-shadow: var(--shadow-violet);
+    transform: translateX(2px);
+  }
+  .sn-item.is-sub .sn-link.is-active {
+    background: rgba(102, 58, 243, 0.85);
+    transform: none;
+    font-weight: 500;
+  }
+  /* 移动端：折叠为顶部横向胶囊 */
+  @media (max-width: 920px) {
+    .layout-grid { grid-template-columns: 1fr; gap: 20px; }
+    .side-nav {
+      position: static;
+      max-height: none;
+      padding: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .sn-head { display: none; }
+    .sn-list { display: flex; flex-wrap: nowrap; gap: 8px; padding-bottom: 4px; }
+    .sn-item { flex: 0 0 auto; margin: 0; }
+    .sn-item.is-sub { padding-left: 0; }
+    .sn-link { white-space: nowrap; padding: 6px 14px; font-size: 13px; border: 1px solid var(--color-glass-edge); background: rgba(186, 214, 247, 0.04); }
+    .sn-link.is-active { transform: none; border-color: transparent; }
+  }
+
   footer { margin-top: var(--section-gap); border-top: 1px solid var(--color-glass-edge); padding: 40px 0 60px; text-align: center; }
   footer .f-brand { font-family: var(--font-display); font-weight: 600; color: var(--color-frost-glow); font-size: 16px; margin-bottom: 10px; }
   footer .f-note { font-size: 13px; color: var(--color-fog-veil); }
@@ -241,6 +338,13 @@
     .float-card { animation: none; }
     .search-btn { padding: 10px 16px; }
     .category-head .cat-en { display: none; }
+    .header-actions .search-count { display: none; }
+    .header-actions .search-wrap { max-width: 220px; padding: 6px 6px 6px 12px; }
+    .header-actions .search-btn { padding: 8px 12px; }
+  }
+  @media (max-width: 420px) {
+    .brand span { display: none; }
+    .header-actions .search-wrap { max-width: none; }
   }
   .search-count {
     font-size: 12px;
@@ -260,7 +364,14 @@
       <span>优卡导航</span>
     </a>
     <div class="header-actions">
-      <a class="btn-pill btn-ghost" href="#grid">浏览全部</a>
+      <form class="search-wrap" id="searchForm" role="search">
+        <span class="ico" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </span>
+        <input type="text" id="searchInput" placeholder="搜索工具 / 分类 / 关键词…" autocomplete="off" />
+        <span id="searchCount" class="search-count"></span>
+        <button type="submit" class="search-btn">搜索</button>
+      </form>
     </div>
   </div>
 </header>
@@ -273,26 +384,17 @@
       <h1 class="wordmark">优卡导航</h1>
       <p class="tagline">发现最好用的 AI 设计工具，一站直达。</p>
 
-      <form class="search-wrap" id="searchForm" role="search">
-        <span class="ico" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        </span>
-        <input type="text" id="searchInput" placeholder="搜索工具 / 分类 / 关键词…" autocomplete="off" />
-        <span id="searchCount" class="search-count"></span>
-        <button type="submit" class="search-btn">搜索</button>
-      </form>
-
       <div class="hero-cards" id="heroCards">
         <a class="float-card is-static" data-index="0" href="./mockup/" target="_blank" rel="noopener">
           <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
           <div class="fc-title">PPT作品展示图生成器</div>
           <div class="fc-desc">多种版式，自定义调整，一键导出高清大图。</div>
         </a>
-        <div class="float-card is-static" data-index="1">
+        <a class="float-card is-static" data-index="1" href="./ppthub/" target="_blank" rel="noopener">
           <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg></div>
-          <div class="fc-title">PPT定制作品集</div>
-          <div class="fc-desc">承接各类PPT定制，欢迎咨询微信YOUKAPPT。</div>
-        </div>
+          <div class="fc-title">PPT术语图鉴</div>
+          <div class="fc-desc">用大白话，搞懂 PPT 里那些听着耳熟、说不清的词。</div>
+        </a>
         <a class="float-card is-static" href="./template/" target="_blank" rel="noopener" data-index="2">
           <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
           <div class="fc-title">优卡的素材库</div>
@@ -312,8 +414,16 @@
       </div>
       <div class="notice" id="notice"></div>
       <div class="loading" id="loading">⏳ 正在加载工具列表…</div>
-      <div id="categories"></div>
-      <div class="no-result" id="noResult">没有匹配的工具，换个关键词试试～</div>
+    </div>
+    <div class="container layout-grid">
+      <aside class="side-nav" aria-label="分类导航">
+        <div class="sn-head">分类导航</div>
+        <ul class="sn-list" id="sideNav"></ul>
+      </aside>
+      <div class="layout-main">
+        <div id="categories"></div>
+        <div class="no-result" id="noResult">没有匹配的工具，换个关键词试试～</div>
+      </div>
     </div>
   </section>
 </main>
@@ -477,7 +587,8 @@
         + '</div>';
       if (cards) html += '<div class="grid">' + cards + '</div>';
       subs.forEach(s => {
-        html += '<div class="subcategory">'
+        const subSlug = (s.en || s.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+        html += '<div class="subcategory"' + (subSlug ? ' id="subcat-' + slug + '-' + subSlug + '"' : '') + '>'
           + '<div class="subcategory-head"><h4>' + escapeHtml(s.name) + '</h4>'
           + (s.en ? '<span class="cat-en">' + escapeHtml(s.en) + '</span>' : '')
           + '</div>'
@@ -514,6 +625,7 @@
       render(ALL);
       injectSEOMeta(ALL);
       fillCatNav(ALL);
+      fillSideNav(ALL);
       // 应用 URL ?q= 预搜索（让 Schema.org SearchAction / 分享链接真实可用）
       try {
         const q = new URLSearchParams(location.search).get('q');
@@ -555,6 +667,100 @@
         + '<span class="cn-tools">' + names + '</span></li>';
     }).join('');
   }
+
+  // ---------- 左侧分类导航（sticky sidebar + 滚动联动） ----------
+  let sideObserver = null;
+  const sideInt = new Set();
+  let sideActive = 'top';
+  const cssEscape = (s) => (window.CSS && CSS.escape ? CSS.escape(s) : s.replace(/["\\]/g, '\\$&'));
+  function setSideActive(slug) {
+    if (slug === sideActive) return;
+    sideActive = slug;
+    const nav = document.getElementById("sideNav");
+    if (!nav) return;
+    nav.querySelectorAll('.sn-link.is-active').forEach(a => a.classList.remove('is-active'));
+    let sel = null;
+    if (slug === 'top') sel = nav.querySelector('.sn-link[data-go="top"]');
+    else sel = nav.querySelector('.sn-link[data-slug="' + cssEscape(slug) + '"]');
+    if (sel) {
+      sel.classList.add('is-active');
+      try { sel.scrollIntoView({ block: 'nearest', inline: 'center' }); } catch (e) {}
+    }
+  }
+  function fillSideNav(list) {
+    const nav = document.getElementById("sideNav");
+    if (!nav) return;
+    let html = '<li class="sn-item"><a class="sn-link" href="#grid" data-go="top">全部</a></li>';
+    list.forEach(cat => {
+      const subs = (cat.subs || []).filter(s => s.tools.length);
+      if (!cat.tools.length && !subs.length) return;
+      const slug = (cat.en || cat.name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      html += '<li class="sn-item"><a class="sn-link" href="#cat-' + slug + '" data-slug="' + escapeHtml(slug) + '">' + escapeHtml(cat.name) + '</a></li>';
+      subs.forEach(s => {
+        const subSlug = (s.en || s.name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        const fullSlug = slug + '-' + subSlug;
+        html += '<li class="sn-item is-sub"><a class="sn-link" href="#subcat-' + slug + '-' + subSlug + '" data-slug="' + escapeHtml(fullSlug) + '">' + escapeHtml(s.name) + '</a></li>';
+      });
+    });
+    nav.innerHTML = html;
+    bindSideNav();
+  }
+  function bindSideNav() {
+    const nav = document.getElementById("sideNav");
+    if (!nav) return;
+    nav.querySelectorAll('.sn-link').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        if (a.dataset.go === 'top') {
+          const input = document.getElementById('searchInput');
+          if (input && input.value) { input.value = ''; filter(''); }
+          const grid = document.getElementById('grid');
+          if (grid) window.scrollTo({ top: grid.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+          return;
+        }
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          const top = target.getBoundingClientRect().top + window.scrollY - 88;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+    setupSideSpy();
+  }
+  function setupSideSpy() {
+    if (sideObserver) { sideObserver.disconnect(); sideInt.clear(); }
+    sideObserver = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        const id = en.target.id;
+        if (!id) return;
+        if (en.isIntersecting) sideInt.add(id);
+        else sideInt.delete(id);
+      });
+      if (sideInt.size) {
+        let best = null, bestTop = -Infinity;
+        sideInt.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const top = el.getBoundingClientRect().top;
+          if (top > bestTop) { bestTop = top; best = id; }
+        });
+        if (best) {
+          if (best.startsWith('subcat-')) setSideActive(best.substring('subcat-'.length));
+          else if (best.startsWith('cat-')) setSideActive(best.substring('cat-'.length));
+        }
+      }
+    }, { rootMargin: '-88px 0px -65% 0px', threshold: [0, 0.5] });
+    document.querySelectorAll('[id^="cat-"], [id^="subcat-"]').forEach(el => sideObserver.observe(el));
+  }
+  // 滚动回到 hero 区时，"全部" 高亮
+  window.addEventListener('scroll', () => {
+    if (!sideInt.size) { setSideActive('top'); return; }
+    const firstCat = document.querySelector('[id^="cat-"]');
+    if (firstCat) {
+      const rect = firstCat.getBoundingClientRect();
+      if (rect.top > 200) setSideActive('top');
+    }
+  }, { passive: true });
 
   // ---------- Search filter（分词 + 同义词 + 计数） ----------
   const form = document.getElementById("searchForm");
@@ -607,6 +813,7 @@
       return { ...cat, tools, subs };
     }).filter(cat => cat.tools.length || cat.subs.length);
     render(out);
+    fillSideNav(out);
     const n = out.reduce((a, c) => a + c.tools.length + c.subs.reduce((x, s) => x + s.tools.length, 0), 0);
     updateCount(n, q);
   }
