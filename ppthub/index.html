@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PPT 术语图鉴 · PPThub</title>
+  <meta name="description" content="暗色玻璃风的 PPT 术语图鉴：用大白话 + 专属交互演示，搞懂 PPT 里那些听着耳熟、说不清的词。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- atmosphere -->
+  <div class="bg-layer"></div>
+  <div class="bg-spotlight"></div>
+
+  <!-- Top navigation bar — 照搬 优卡导航 -->
+  <header class="top-nav" id="topNav">
+    <div class="container header-inner">
+      <a class="brand" href="../">
+        <img src="./logo.png" alt="优卡" class="brand-logo" />
+        <span>PPT 术语图鉴</span>
+      </a>
+      <div class="header-actions">
+        <form class="search-wrap" id="searchForm" role="search">
+          <span class="ico" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <input type="text" id="searchInput" placeholder="搜索术语…" autocomplete="off" />
+          <span id="searchCount" class="search-count"></span>
+          <button type="submit" class="search-btn" id="searchBtn">搜索</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero container">
+    <div class="eyebrow">「优卡说PPT 出品」</div>
+    <h1 class="hero-wordmark">PPT 术语图鉴</h1>
+    <p class="hero-sub">用大白话，搞懂 PPT 里那些听着耳熟、说不清的词。<br>每个术语都配专属图示与可交互演示。</p>
+  </header>
+
+  <!-- Content layout: category sidebar (left) + main term grid (right) -->
+  <div class="layout container">
+    <aside class="side-col">
+      <div class="cat-panel">
+        <div class="cat-panel-title">分类导航</div>
+        <nav id="catNav" class="cat-nav"></nav>
+      </div>
+    </aside>
+    <main class="main-col">
+      <div id="resultCount" class="result-count"></div>
+      <div id="termGrid" class="term-grid"></div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer container">
+    <p><strong>PPT 术语图鉴</strong> · PPThub</p>
+    <p style="margin-top:8px;font-size:13px">内容由「优卡」起草，持续补全中。微信公众号：优卡说PPT</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modalOverlay" class="modal-overlay">
+    <button class="modal-nav modal-nav-prev" id="modalPrev" aria-label="上一个术语" title="上一个术语">‹</button>
+    <div id="modalCard" class="modal-card" role="dialog" aria-modal="true"></div>
+    <button class="modal-nav modal-nav-next" id="modalNext" aria-label="下一个术语" title="下一个术语">›</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="demos.js"></script>
+  <script src="terms-extra.js"></script>
+  <script src="beforeafter.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
