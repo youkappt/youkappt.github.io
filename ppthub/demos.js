@@ -392,7 +392,7 @@ const DEMOS = {
       </div>`;
     const box = c.querySelector('#ssBox');
     c.querySelectorAll('[data-f]').forEach(b => b.onclick = () => {
-      box.style.fontFamily = b.dataset.f === 'serif' ? 'Georgia, "Songti SC", serif' : 'var(--font-display)';
+      box.style.fontFamily = b.dataset.f === 'serif' ? 'var(--font-serif)' : 'var(--font-display)';
     });
   },
 
@@ -1355,7 +1355,7 @@ const DEMOS = {
       if (m === 'on') {
         stage.innerHTML = `<div style="font:700 30px 'Space Grotesk',sans-serif;color:var(--color-ice-highlight)">Design</div><div style="font:12px var(--font-mono);color:#4fd1b3">字体正常，排版如你所愿</div>`;
       } else {
-        stage.innerHTML = `<div style="font:700 30px serif;color:var(--color-moon-mist)">Design</div><div style="font:12px var(--font-mono);color:#e46d4c">字体被替换成默认衬线，走样了</div>`;
+        stage.innerHTML = `<div style="font:700 30px var(--font-serif);color:var(--color-moon-mist)">Design</div><div style="font:12px var(--font-mono);color:#e46d4c">字体被替换成默认衬线，走样了</div>`;
       }
     }
     render('on');
@@ -1827,9 +1827,9 @@ const DEMOS = {
   },
   'font-pairing'(c) {
     const presets = {
-      sc:   { title: "'PingFang SC','Microsoft YaHei',sans-serif", body: "'Songti SC','SimSun',serif", note: '无衬线标题压场 + 衬线正文易读，经典对比' },
+      sc:   { title: "'PingFang SC','Microsoft YaHei',sans-serif", body: "var(--font-serif)", note: '无衬线标题压场 + 衬线正文易读，经典对比' },
       same: { title: "'PingFang SC',sans-serif", body: "'PingFang SC',sans-serif", note: '同族字体，标题 800 / 正文 400，统一不抢戏' },
-      mix:  { title: "'PingFang SC',sans-serif", body: "Georgia,'Times New Roman',serif", note: '中文黑体 + 西文衬线，中英混排互不打架' }
+      mix:  { title: "'PingFang SC',sans-serif", body: "var(--font-serif)", note: '衬线正文显雅致，与无衬线标题形成对比' }
     };
     c.innerHTML = `
       <div class="demo-stack">
@@ -2535,7 +2535,7 @@ const DEMOS = {
         </div>
       </div>`;
     const t = c.querySelector('#rfText');
-    const fam = { yahei: '"Microsoft YaHei",sans-serif', song: 'serif', kai: 'KaiTi,"楷体",serif', mono: 'monospace' };
+    const fam = { yahei: '"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif', song: 'var(--font-serif)', kai: 'KaiTi,"楷体","STKaiti","Noto Serif SC","Noto Serif CJK SC",serif', mono: 'monospace' };
     function render(m) { t.style.fontFamily = fam[m]; t.textContent = '优卡导航'; }
     render('yahei');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
