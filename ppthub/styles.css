@@ -29,6 +29,8 @@
   --font-display: 'Space Grotesk', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Inter', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  /* 跨平台中文衬线栈：macOS/iOS 宋体 → Windows 宋体 → 安卓 Noto Serif CJK，确保手机上「衬线」真的是衬线（不再回退成无衬线） */
+  --font-serif: "Songti SC", "SimSun", "STSong", "Noto Serif SC", "Noto Serif CJK SC", Georgia, "Times New Roman", serif;
 
   /* ---- Spacing ---- */
   --spacing-4: 4px;
