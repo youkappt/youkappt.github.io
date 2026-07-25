@@ -926,6 +926,258 @@ const TERMS = [
     detail: "透明度（不透明度百分比）让元素半透，叠在图片或色块上能透出底层，做出景深与融合感。常与对象效果搭配。",
     scenario: "半透明白块压在图片上，既遮杂乱又透出底图。",
     related: ["object-effect", "image-mask"], demo: "transparency"
+  },
+
+  /* ============ 补充：按优先级新增（2026-07-25） ============ */
+  {
+    id: "slide-size", name: "幻灯片大小 / 自定义尺寸", alias: "Slide Size",
+    category: "软件功能", level: "入门",
+    summary: "改画布比例（4:3 ↔ 16:9）和尺寸，决定每页能装多少、是否满屏。",
+    detail: "幻灯片大小（设计→幻灯片大小）设定画布宽高比与像素。传统 4:3 偏方、信息容量大；现代 16:9 宽屏更贴合投影与屏幕。改尺寸会整体缩放内容，大改小常被裁，先定尺寸再排版最稳。",
+    scenario: "给客户投屏用 16:9；做旧式打印讲义或扫码看的稿子可能需 4:3，提前定好别返工。",
+    related: ["widescreen", "margin", "bleed"], demo: "slide-size"
+  },
+  {
+    id: "replace-font", name: "替换字体", alias: "Replace Fonts",
+    category: "字体与配色", level: "进阶",
+    summary: "一键把全篇某字体换成另一种，救回「字体装不来就乱码」的稿子。",
+    detail: "替换字体（开始→编辑→替换字体）能把所有「微软雅黑」批量换成「思源黑体」等，省去逐页改。常用于换电脑没装原字体、或统一风格时。注意它只换字体，不改字号与颜色。",
+    scenario: "发给没装字体的同事前，先把特殊字体替换成通用字体，避免打开变宋体。",
+    related: ["find-replace", "font-weight", "type-scale"], demo: "replace-font"
+  },
+  {
+    id: "gridlines", name: "网格线", alias: "Gridlines",
+    category: "软件功能", level: "入门",
+    summary: "画布上更密的辅助格点，帮你对齐到「看不见的网格」。",
+    detail: "网格线（视图→显示→网格线）在画布铺一层等距小点阵，元素可吸附到格点，比参考线更密、适合精细排版。它与标尺、参考线互补：标尺看尺寸、参考线对齐单条、网格线对齐整片。",
+    scenario: "做图标矩阵、九宫格内容时开网格线，保证每个小图间距完全一致。",
+    related: ["ruler", "guides", "alignment"], demo: "gridlines"
+  },
+  {
+    id: "recolor", name: "图片重新着色 / 校正", alias: "Recolor & Correct",
+    category: "图形与图示", level: "进阶",
+    summary: "给图片/形状一键换色系（灰度、强调色、冲蚀），不动原图也能统一色调。",
+    detail: "重新着色（图片格式→颜色→重新着色）用主题色板把整张图映射到新色系，还能调饱和度、做冲蚀半调。它是「不修改原图就统一视觉」的利器，特别适合把彩色截图压成单色点缀。",
+    scenario: "把一堆彩色软件截图统一成「紫调单色」，瞬间和 PPT 主题融合。",
+    related: ["transparency", "image-mask", "object-effect"], demo: "recolor"
+  },
+  {
+    id: "coauthor", name: "共同创作 / 实时协作", alias: "Co-authoring",
+    category: "软件功能", level: "进阶",
+    summary: "多人同时在线编辑同一份 PPT，各自光标实时可见、改动即时合并。",
+    detail: "共同创作（存在 OneDrive/SharePoint 后「共享」）让团队成员同时打开编辑，能看到别人的选区光标与输入，改动自动合并、可看版本历史。告别「最终版_v3_真final.pptx」的邮件拉锯。",
+    scenario: "你和同事分头做不同章节，同一份文件并行推进，结束直接是成品。",
+    related: ["present-online", "comment", "compare-merge"], demo: "coauthor"
+  },
+  {
+    id: "text-margin", name: "文本框内部边距", alias: "Internal Margin",
+    category: "排版与布局", level: "入门",
+    summary: "文本框内部留白，决定文字离边框多远——调它比加空格更专业。",
+    detail: "文本框内部边距（右键文本框→设置形状格式→文本框→内部边距）控制文字与框线的距离。把它调大，文字更透气；做标注、引号框时常靠它。别用回车/空格硬挤，改边距才整齐可控。",
+    scenario: "做引用金句框时，把上下左右内边距调到 12–16px，文字立刻不顶边。",
+    related: ["margin", "column", "alignment"], demo: "text-margin"
+  },
+  {
+    id: "visual-flow", name: "视觉流", alias: "Visual Flow",
+    category: "设计原则", level: "进阶",
+    summary: "观众视线在页面上的移动路线，好的设计要「牵着眼睛走」。",
+    detail: "视觉流是读者视线自然扫过的路径，受大小、颜色、位置引导。强元素（大图、亮色、箭头）先被看到，弱元素后看。排版就是安排这条路径，让重点先入眼、逻辑顺下去。",
+    scenario: "一页想让人先看结论再看论据，就把结论放大置顶、论据缩小置下，路径自然成形。",
+    related: ["f-pattern", "focus", "hierarchy"], demo: "visual-flow"
+  },
+  {
+    id: "info-density", name: "信息密度", alias: "Information Density",
+    category: "设计原则", level: "进阶",
+    summary: "单位面积里塞了多少信息——太密喘不过气，太疏显空。",
+    detail: "信息密度指一页承载内容的多少。高密度适合数据密集的报表，低密度适合金句、封面。关键是「该密处密、该疏处疏」，用留白和分组控制节奏，而不是一味堆或一味空。",
+    scenario: "封面放一句话（低密度），数据页放图表+要点（高密度），靠密度差拉开节奏。",
+    related: ["whitespace", "less-is-more", "card-layout"], demo: "info-density"
+  },
+  {
+    id: "consistency", name: "视觉一致性 / 统一", alias: "Visual Consistency",
+    category: "设计原则", level: "进阶",
+    summary: "全篇字体、配色、间距、图标风格统一，专业感就来自这里。",
+    detail: "视觉一致性指整套幻灯片在相同元素上用相同规则：标题字号一致、主色不超三个、图标同风格、间距成节奏。一致减少认知负担，让人感觉「这是一套东西」。靠母版和主题最能保住它。",
+    scenario: "十页用三种图标风格、五个主色，看起来像拼凑；统一后立刻像专业出品。",
+    related: ["brand-vi", "theme", "icon-style"], demo: "consistency"
+  },
+
+  /* ============ 扩容补充（最该补 + 实用进阶） ============ */
+  {
+    id: "slide-sorter", name: "幻灯片浏览视图", alias: "Slide Sorter View",
+    category: "软件功能", level: "入门",
+    summary: "所有页面缩成缩略图排成一屏，拖一下就能重排、批量选中。",
+    detail: "幻灯片浏览视图把每一页缩成小图横竖排开，让你一眼看到全篇结构和顺序。在这里可以拖动缩略图重排页面、框选多页批量删除/移动、快速给某页加切换。长文档整理顺序时，它比在一页页普通视图里翻快得多。",
+    scenario: "做完 30 页汇报，要在中间插一章并重排，切到浏览视图拖拽即可，不用逐页找。",
+    related: ["outline-view", "section", "transition-fx"], demo: "slide-sorter"
+  },
+  {
+    id: "notes-page", name: "备注页视图", alias: "Notes Page View",
+    category: "软件功能", level: "入门",
+    summary: "每页下方一块「演讲稿」区域，专写你要讲的话，台上不穿帮。",
+    detail: "备注页视图在每页幻灯片下方留出备注区，你在那写逐字稿、数据口径、过渡话术，观众在投影上只看到幻灯片本身。配合演讲者视图，你能在自己屏幕上看到备注，观众看不到。区别于「备注母版」（统一备注区格式）和「演讲备注」（备注内容本身）。",
+    scenario: "路演、讲课把关键数据和接话写进备注，上台不慌、不念错。",
+    related: ["speaker-notes", "presenter-view", "notes-master"], demo: "notes-page"
+  },
+  {
+    id: "reading-view", name: "阅读视图", alias: "Reading View",
+    category: "软件功能", level: "入门",
+    summary: "像放幻灯片一样全屏自看，但不进正式放映，对稿自查最方便。",
+    detail: "阅读视图用接近放映的全屏方式播放当前文稿，但不会触发正式放映的那些控制（如黑屏、标注）。适合自己过一遍流程、检查动画顺序和文字有没有错别字，又不想被打断。按 Esc 随时退出。",
+    scenario: "上台前最后一遍默片自查，用阅读视图比正式放映轻、比普通视图沉浸。",
+    related: ["presenter-view", "autoplay", "screen-blank-pen"], demo: "reading-view"
+  },
+  {
+    id: "fill-rate", name: "版面率 / 图版率", alias: "Text-to-Image Ratio",
+    category: "设计原则", level: "进阶",
+    summary: "一页里图文占了多少面积——满则挤，空则飘，靠它控节奏。",
+    detail: "版面率（图版率）指页面被文字和图片覆盖的面积比例。高版面率信息量大、显得充实，但过满会喘不过气；低版面率留白多、显高级透气，但太空会单薄。封面、金句页常用低版面率，数据页用高版面率，靠差值制造节奏。",
+    scenario: "封面只放一句话（低版面率显高级），内页图表+要点（高版面率显充实）。",
+    related: ["whitespace", "less-is-more", "info-density"], demo: "fill-rate"
+  },
+  {
+    id: "cmyk-rgb", name: "印刷色 CMYK vs 屏幕色 RGB", alias: "CMYK vs RGB",
+    category: "输出与放映", level: "进阶",
+    summary: "屏幕用 RGB 发光，印刷用 CMYK 吸光——同一蓝打印常变灰变暗。",
+    detail: "屏幕靠 RGB 三色光叠加发光，色域广；印刷靠 CMYK 四色油墨吸光，色域窄。很多在屏幕上很艳的蓝、绿，落到印刷上会发灰发暗，这就是「色差」。交付印刷物前，最好在支持 CMYK 的软件里校色，或把主色选在两者重叠的安全区。",
+    scenario: "做要打印的画册/手册，先确认主色在 CMYK 下不塌，别等印出来才傻眼。",
+    related: ["export-pdf", "export-dpi", "muted-color"], demo: "cmyk-rgb"
+  },
+  {
+    id: "text-outline", name: "文字描边 / 轮廓", alias: "Text Outline",
+    category: "字体与配色", level: "进阶",
+    summary: "给字加一圈边，复杂背景上也能「立」住，不再糊成一团。",
+    detail: "文字描边（轮廓）是在文字边缘加一道同色或对比色的线条。当文字压在图片、渐变或花底上、单纯改颜色看不清时，描边能把字「勾」出来。常见用法：白字加细黑边、或深字加白边。描边太粗会显笨重，细一点更高级。",
+    scenario: "标题压在大图或渐变上，加一道半透明描边，字立刻清晰有质感。",
+    related: ["font-weight", "contrast", "wordart"], demo: "text-outline"
+  },
+  {
+    id: "bg-format", name: "幻灯片背景格式", alias: "Slide Background",
+    category: "软件功能", level: "入门",
+    summary: "纯色、渐变、图片一键铺满整页背景，统一氛围从这里开始。",
+    detail: "背景格式让你给单页或全部页面设背景：纯色最干净、渐变最现代、图片最沉浸（常配蒙版压暗保证文字可读）。设背景和加一个铺满的形状不同——背景不会被选中、不会挡内容，且能「应用到全部」一键统一。",
+    scenario: "做暗色科技风，用深蓝径向渐变做全局背景，比逐页拖矩形省事且不会被误选。",
+    related: ["theme", "gradient", "image-mask"], demo: "bg-format"
+  },
+  {
+    id: "action-settings", name: "动作设置", alias: "Action Settings",
+    category: "软件功能", level: "进阶",
+    summary: "点一下或划过，就触发跳转/运行/播声音——比超链接更「活」。",
+    detail: "动作设置给对象（图形、图片、按钮）绑定交互：单击或鼠标悬停时，可以跳到指定页、打开链接、运行程序、播放声音。它和「超链接」相似但更灵活（支持悬停触发、可加音效）；「动作按钮」其实就是预置好动作设置的图形。适合做目录页、问答互动。",
+    scenario: "目录页点章节名跳对应页，或鼠标悬停图标播放提示音，做交互课件很顺手。",
+    related: ["action-button", "hyperlink", "zoom-loc"], demo: "action-settings"
+  },
+  {
+    id: "vertical-text", name: "文字竖排", alias: "Vertical Text",
+    category: "字体与配色", level: "进阶",
+    summary: "中文从上往下排，做竖版海报、古风金句、侧边标题很对味。",
+    detail: "文字竖排让文本沿垂直方向从上往下阅读，是中文传统的排法。用在竖版海报、国风金句、页面侧边的小标题上，比横排更有韵味和仪式感。注意竖排时标点会变成直式标点，字号和行距要重新调，避免挤。",
+    scenario: "做国风封面或春联式金句页，标题竖排立刻有那味儿。",
+    related: ["serif-sans", "line-height", "tracking"], demo: "vertical-text"
+  },
+  {
+    id: "emphasis-fx", name: "动画强调效果", alias: "Emphasis Effects",
+    category: "动画与切换", level: "进阶",
+    summary: "对象不进不出、原地「动一下」吸引注意：放大、脉冲、陀螺旋…",
+    detail: "强调动画让已经在页面上的对象「原地动一下」来抓眼球：放大/缩小、脉冲（忽大忽小）、陀螺旋（旋转）、闪烁、填充颜色等。它和进入/退出不同——对象始终在画面里。适合讲到关键数据时点一下让它「跳」出来。",
+    scenario: "讲到一个核心数字，给它加个脉冲强调，观众视线立刻被钉住。",
+    related: ["anim-type", "anim-timing", "trigger"], demo: "emphasis-fx"
+  },
+  {
+    id: "icons", name: "图标（插入与获取）", alias: "Icons",
+    category: "图形与图示", level: "入门",
+    summary: "用图形符号代替大段文字，一眼就懂；Office 内置可搜可改色。",
+    detail: "图标是表意的极简图形符号，比文字更快被理解，也更能撑起版面。PPT 里可直接插入内置图标库（可搜索、可改填充色、可转形状二次编辑），也能用第三方图标网站。插入后记得统一风格、统一线宽，别混搭。",
+    scenario: "流程页用一组线性图标代替「步骤一/二/三」文字，清爽又好读。",
+    related: ["icon-style", "boolean", "smartart"], demo: "icons"
+  },
+  {
+    id: "autosave", name: "自动保存与恢复", alias: "AutoSave & Recover",
+    category: "效率与技巧", level: "入门",
+    summary: "开着自动保存，崩了也不慌；意外关了还能从恢复里捞回来。",
+    detail: "自动保存会定时把进度写盘，配合 OneDrive/本地缓存，软件崩溃或误关后能「文档恢复」找回未保存的版本。养成开着自动保存、关键节点手动存一次的习惯，比靠运气稳。注意：自动保存不等于版本历史，重要改动仍建议另存。",
+    scenario: "讲到一半软件崩了，重开弹出「恢复未保存的文件」，十几页白干的钱省回来了。",
+    related: ["shortcut", "template", "find-replace"], demo: "autosave"
+  },
+  {
+    id: "para-spacing", name: "段前 / 段后间距", alias: "Space Before & After",
+    category: "排版与布局", level: "入门",
+    summary: "段与段之间的呼吸感，靠段前/段后间距调，不是狂敲回车。",
+    detail: "段前/段后间距控制段落之间的垂直空白，单位通常是磅(pt)。它比在段落间狂敲回车专业：回车产生的空行会跟着字体缩放、复制时易错位，而段间距是「规则」，全局一致、改字号也不会乱。它和行距（段内行与行的距离）是两个维度，要分开调。",
+    scenario: "正文段落贴在一起喘不过气，加 6pt 段后间距，立刻清爽有节奏。",
+    related: ["margin", "alignment", "tracking"], demo: "para-spacing"
+  },
+  {
+    id: "chart-edit", name: "图表（插入与编辑）", alias: "Insert & Edit Chart",
+    category: "图形与图示", level: "入门",
+    summary: "把数据变成图表，双击进 Excel 改数，套用图表样式一键美。",
+    detail: "插入图表会生成一个联动的数据表，双击图表即可编辑底层数据，改数字图形实时变。还能套用「图表样式」、切换柱/饼/折线、设置数据标签与坐标轴。区别于「数据可视化 / 选对图表」（那是设计原则，讲该用什么图），这条讲怎么插入和编辑图表这个对象本身。",
+    scenario: "季度汇报把 Excel 数字粘成柱状图，老板改个数图表跟着变，不用重画。",
+    related: ["infographic", "table-beauty", "fill-rate"], demo: "chart-edit"
+  },
+  {
+    id: "audio-insert", name: "音频（插入与播放控制）", alias: "Insert Audio",
+    category: "软件功能", level: "入门",
+    summary: "插背景音乐或音效，设跨页播放、淡入淡出、点击触发。",
+    detail: "插入音频可把音乐/音效放进幻灯片，在「播放」选项卡设置：跨幻灯片播放、循环、淡入淡出、开始方式（单击/自动）。区别于「旁白录音」（那是现场录人声），这条是插入现成的音频文件并控制它的播放行为。",
+    scenario: "开场放段音乐烘托气氛，设「跨页播放+淡出」，切到内容页声音自然收住。",
+    related: ["narration", "export-media", "autoplay"], demo: "audio-insert"
+  },
+  {
+    id: "video-insert", name: "视频（插入与播放设置）", alias: "Insert Video",
+    category: "软件功能", level: "入门",
+    summary: "把视频当对象插进来，裁剪长度、全屏播放、点击才播。",
+    detail: "插入视频会作为一个可编辑对象，能裁剪入点/出点、设海报帧、选播放方式（单击/自动/全屏）。区别于「导出图片 / GIF / 视频」（那是把幻灯片输出成 mp4），这条是把外部视频放进页面里播放。",
+    scenario: "产品发布会插一段 15 秒宣传片，设全屏自动播放，现场效果拉满。",
+    related: ["export-media", "narration", "autoplay"], demo: "video-insert"
+  },
+  {
+    id: "a11y", name: "辅助功能检查器", alias: "Accessibility Checker",
+    category: "软件功能", level: "进阶",
+    summary: "一键扫出无障碍问题：缺 alt 文本、阅读顺序乱、对比度不够。",
+    detail: "辅助功能检查器会扫描幻灯片，标出图片没有替代文本、标题阅读顺序错乱、文字与背景对比度不足等问题。做对外 / 政府 / 大屏内容时尤其重要——既照顾视障用户，也避免大屏上看不清。检查器在「审阅」选项卡。",
+    scenario: "交政府汇报材料前跑一遍检查器，补上所有图片的 alt 文本，合规又专业。",
+    related: ["color-wheel", "type-scale", "hierarchy"], demo: "a11y"
+  },
+  {
+    id: "excel-table", name: "数据表（嵌入 Excel）", alias: "Embedded Excel Table",
+    category: "图形与图示", level: "进阶",
+    summary: "嵌一张活的 Excel 表，数据随源文件改，区别于静态美化表。",
+    detail: "嵌入 Excel 表格会把一个可编辑的电子表格放进幻灯片，双击进入 Excel 编辑，数据与源文件可联动更新；改源数据幻灯片里跟着变。区别于「表格美化」（那是把已有的静态表格做得好看），这条强调「活数据、可编辑、可更新」。",
+    scenario: "月度数据用嵌入表，财务改了 Excel，PPT 里点「更新链接」就同步，不用重抄。",
+    related: ["table-beauty", "infographic", "chart-edit"], demo: "excel-table"
+  },
+  {
+    id: "text-link", name: "文本框链接 / 文字溢出", alias: "Linked Text Boxes",
+    category: "排版与布局", level: "进阶",
+    summary: "一个框装不下，让文字自动流向下一个框，断页不断意。",
+    detail: "文本框链接让多个框共享同一段文字流：前一个框满了，剩余文字自动流到下一个框。适合杂志式多栏、长文跨页。区别于「文本框内部边距」（框内留白），这条讲框与框之间的文字流动。",
+    scenario: "一页放不下的长稿件，用两个链接框做左右分栏，文字自动续接不手抄。",
+    related: ["textbox-placeholder", "text-margin", "margin"], demo: "text-link"
+  },
+  {
+    id: "section-view", name: "节视图 / 折叠展开", alias: "Section View",
+    category: "软件功能", level: "入门",
+    summary: "用「节」把长文档分块，在大纲/浏览视图里折叠收起，清爽管理。",
+    detail: "节不仅能给幻灯片分组、加标题，还可以在大纲视图或幻灯片浏览视图里折叠/展开整节，长文档（几十上百页）瞬间从「一长条」变成「可折叠的章节树」。区别于「节」那条只讲分组概念，这条强调「视图里的折叠展开」这种管理方式。",
+    scenario: "80 页方案按章节折叠，汇报前只展开「执行摘要」一节，聚焦又不乱。",
+    related: ["section", "slide-sorter", "outline-view"], demo: "section-view"
+  },
+  {
+    id: "ai-gen", name: "AI 辅助生成", alias: "AI-Assisted Generation",
+    category: "软件功能", level: "进阶",
+    summary: "Copilot 类一键从主题/文档生成草稿、重排版面，人把关不代劳。",
+    detail: "现代 PPT 内置 AI（如 Copilot）：给个主题或丢进一份 Word，它能生成大纲、起草多页、重排版面、润色文案。但它产出的是「草稿」——结构、配色、事实仍需人来把关。和「设计器」（单页配色建议）不同，AI 辅助是端到端的从 0 到 1。",
+    scenario: "把年度总结文档丢给 AI，三分钟出 10 页初稿，你只改重点和配图。",
+    related: ["designer", "template", "reuse-slides"], demo: "ai-gen"
+  },
+  {
+    id: "gestalt", name: "格式塔原理", alias: "Gestalt Principles",
+    category: "设计原则", level: "进阶",
+    summary: "人脑会自动把相近/相似/闭合的元素看成一组，排版要顺着它。",
+    detail: "格式塔是感知心理学：相近律（挨得越近越被当成一组）、相似律（长得像的被当成一组）、闭合律（残缺轮廓脑补成完整）、连续律等。PPT 里「亲密性」「重复」这些原则底层就是格式塔——把相关的放近、用一致样式，观众自然读懂结构。",
+    scenario: "标题和配图挨在一起、和正文拉开距离，观众一眼就分清「这是一组」。",
+    related: ["proximity", "alignment", "repetition"], demo: "gestalt"
   }
 ];
 
