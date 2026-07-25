@@ -20,6 +20,7 @@
 
 ### 提示词 (PROMPT)
 - [AiWind](https://www.aiwind.org/) — AI 图像提示词库，海报/插画/摄影等风格 prompt 直接复制可用。｜免费
+- [Timi AI](https://www.timi.ai/zh) — 中文 AI 提示词生成与优化平台，文生图/文案等多场景 prompt 一键产出。｜免费
 
 ## 视频生成 (VIDEO)
 - [可灵](https://klingai.com) — 快手出品，长时长高清视频生成，运动稳定。｜免费
@@ -56,8 +57,12 @@
 - [Liblib](https://www.liblib.art) — 国内 AI 绘画模型与 LoRA 分享社区。｜免费
 - [Civitai](https://civitai.com) — 开源 AI 模型仓库，Stable Diffusion 资源集散地。｜免费
 
-## 网页灵感 (WEB)
+## 网页设计 (WEB)
+### 灵感参考 (REF)
 - [68Design 酷站](https://www.68design.net/cool/) — 国内老牌设计门户的网页灵感频道，精选酷站与优秀案例。｜免费
+
+### 提示词 (PROMPT)
+- [Refero](https://styles.refero.design/) — 按风格与行业筛选的真实网页/UI 设计灵感库，海量优质站点的版式、配色与组件参考。｜免费
 
 ## 图片素材 (PHOTO)
 - [Unsplash](https://unsplash.com) — 免费高质量摄影图库，CC0 授权可商用。｜免费
