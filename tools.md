@@ -87,11 +87,26 @@
 - [Y2Mate](https://y2mate.com) — YouTube 视频与音频下载，格式可选。｜免费
 - [TikMate](https://tikmate.online) — TikTok 视频无水印下载，操作简单。｜免费
 
-## 格式转换 (CONVERT)
+## 格式转换 / 文件处理 (CONVERT)
 - [FabConvert](https://fabconvert.com/cn/convert/ai#convert) — 免费在线文件格式转换器，AI / PDF / 图片等多格式互转。｜免费
 
 ### PDF处理 (PDF)
 - [LlamaParse](https://www.llamaindex.ai/llamaparse) — LlamaIndex 出品的 GenAI 文档解析，精准抽取表格图表与版面结构为 LLM 可用格式。｜付费
 
+### 图片处理 (IMAGE)
+- [LZL 工具箱·改 PNG 透明度](https://www.lzltool.cn/Toolkit/ChangePngOpacity) — 在线修改 PNG 图片透明度，一键去底/调透明，轻量免安装。｜免费
+
 ## AI资讯 (NEWS)
 - [AI HOT](https://aihot.virxact.com/) — 中文 AI 资讯聚合，每日热点、新品发布与前沿论文速览一站看。｜免费
+
+## PPT模板 (PPT)
+- [OfficePlus](https://www.officeplus.cn/PPT/template/?popularity=Total&industry=&purpose=&color=&paymentMethod=0&keywords=&number=) — 微软官方免费 PPT 模板库，质量稳定、覆盖商务与教育多场景。｜免费
+- [第一PPT](https://www.1ppt.com/) — 国内老牌免费 PPT 模板与素材站，分类细、更新勤。｜免费
+- [Slidesgo](https://slidesgo.com/) — 免费+高级 PPT / Google Slides 模板，设计感强、配图精致。｜免费
+- [SlideModel](https://slidemodel.com/) — 专业 PPT 模板与图表库，按订阅或单套购买。｜付费
+- [SlidesCarnival](https://www.slidescarnival.com/) — 免费可商用 PPT 模板，Google Slides / PPT 双格式。｜免费
+- [PresentationGO](https://www.presentationgo.com/) — 免费 PPT 图表与模板，结构规范、可直接编辑。｜免费
+
+### 模板商城 (STORE)
+- [Envato Elements](https://elements.envato.com/presentation-templates/compatible-with-powerpoint) — 订阅制 PPT 模板库，海量优质模板无限下载。｜付费
+- [GraphicRiver](https://graphicriver.net/presentation-templates/powerpoint-templates) — Envato 旗下 PPT 模板市场，海量专业 PowerPoint 模板按需付费下载。｜付费
