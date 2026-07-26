@@ -19,13 +19,13 @@
 <meta property="og:title" content="优卡导航 · AI 设计工具导航站" />
 <meta property="og:description" content="优卡导航精选 AI 设计工具与 AI 工具大全：AI 生图（即梦/Midjourney）、视频生成、PPT 模板、3D 模型、字体排版、图片素材一站直达，免费 AI 工具推荐。" />
 <meta property="og:url" content="https://youkappt.com/" />
-<meta property="og:image" content="./logo.png" />
+<meta property="og:image" content="https://youkappt.com/og-cover.png" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="优卡导航 · AI 设计工具导航站" />
 <meta name="twitter:description" content="优卡导航精选 AI 设计工具与 AI 工具大全：AI 生图（即梦/Midjourney）、视频生成、PPT 模板、3D 模型、字体排版、图片素材一站直达，免费 AI 工具推荐。" />
-<meta name="twitter:image" content="./logo.png" />
+<meta name="twitter:image" content="https://youkappt.com/og-cover.png" />
 
 <!-- 结构化数据 -->
 <script type="application/ld+json">
@@ -41,6 +41,45 @@
     "target": "https://youkappt.com/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "优卡导航",
+  "alternateName": "Youka Nav",
+  "url": "https://youkappt.com/",
+  "logo": "https://youkappt.com/logo.png",
+  "image": "https://youkappt.com/og-cover.png",
+  "description": "优卡导航精选 AI 设计工具与 AI 工具大全：AI 生图、视频生成、PPT 模板、3D 模型、字体排版、图片素材一站直达，免费 AI 工具推荐。",
+  "slogan": "发现最好用的 AI 设计工具",
+  "sameAs": [
+    "https://www.xiaohongshu.com/user/profile/55e286c0c2bdeb696556a64a"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "翁昕耀",
+    "alternateName": "优卡 / youka",
+    "sameAs": [
+      "https://www.xiaohongshu.com/user/profile/55e286c0c2bdeb696556a64a"
+    ]
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "name": "微信公众号：优卡说PPT",
+      "image": "https://youkappt.com/assets/contact/wechat-gzh-qr.jpg"
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "personal",
+      "name": "YOUKAPPT",
+      "image": "https://youkappt.com/assets/contact/wechat-qr-youkappt.jpg"
+    }
+  ]
 }
 </script>
 
@@ -175,12 +214,13 @@
   .search-btn { border: none; border-radius: var(--radius-buttons); padding: 10px 22px; font-size: 14px; font-weight: 600; font-family: var(--font-body); background: var(--color-void-violet); color: #fff; cursor: pointer; box-shadow: var(--shadow-violet); transition: transform 0.2s ease, filter 0.2s ease; white-space: nowrap; }
   .search-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
 
-  .hero-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 780px; margin: 64px auto 0; align-items: stretch; }
+  .hero-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1040px; margin: 64px auto 0; align-items: stretch; }
   .float-card { background: rgba(186, 214, 247, 0.04); border: 1px solid var(--color-glass-edge); border-radius: var(--radius-cards); padding: 22px; text-align: left; box-shadow: var(--shadow-card); transition: transform 0.25s ease, box-shadow 0.25s ease; animation: floaty 5s ease-in-out infinite; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 120px; }
   .float-card:hover { transform: translateY(-8px) !important; box-shadow: var(--shadow-card), var(--shadow-glow); }
   .float-card:nth-child(1) { animation-delay: 0s; }
   .float-card:nth-child(2) { animation-delay: 0.4s; }
   .float-card:nth-child(3) { animation-delay: 0.8s; }
+  .float-card:nth-child(4) { animation-delay: 1.2s; }
   @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   .float-card .fc-ico { width: 44px; height: 44px; border-radius: var(--radius-iconcontainers); background: rgba(186, 214, 247, 0.08); display: grid; place-items: center; color: var(--color-frost-glow); margin-bottom: 14px; }
   .float-card .fc-title { font-family: var(--font-display); font-weight: 500; font-size: 18px; color: var(--color-ice-highlight); margin-bottom: 6px; }
@@ -276,26 +316,45 @@
     padding: 0 10px;
   }
   .sn-list { list-style: none; margin: 0; padding: 0; }
-  .sn-item { margin: 2px 0; }
-  .sn-item.is-sub { padding-left: 14px; }
+  .sn-item { margin: 10px 0 1px; }            /* 父分类之间拉开间距，父与子贴紧成簇 */
+  .sn-item:first-child { margin-top: 2px; }
+  .sn-item.is-sub {
+    margin: 1px 0 1px 30px;                    /* 子分类缩进加深 */
+    padding-left: 14px;
+    border-left: 1px solid rgba(186, 214, 247, 0.14);  /* 左侧细灰连线，显层级 */
+  }
   .sn-link {
+    position: relative;
     display: block;
     padding: 7px 12px;
     border-radius: var(--radius-inputs);
-    color: var(--color-frost-glow);
-    font-size: 14px;
+    color: var(--color-pure-white);            /* 父分类：纯白 */
+    font-size: 15px;                           /* 父分类：放大 */
     font-family: var(--font-body);
-    font-weight: 500;
+    font-weight: 700;                          /* 父分类：加粗 */
     line-height: 1.4;
+    letter-spacing: 0.01em;
     transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
     cursor: pointer;
     user-select: none;
   }
+  /* 父分类左侧紫色竖条（视觉锚，呼应站点强调色 #663af3） */
+  .sn-link::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 3px; height: 60%;
+    border-radius: 2px;
+    background: rgba(102, 58, 243, 0.38);       /* 未激活：淡紫 */
+    transition: background 0.18s ease, height 0.18s ease;
+  }
+  .sn-item.is-sub .sn-link::before { display: none; }   /* 子分类无竖条 */
   .sn-item.is-sub .sn-link {
-    font-size: 13px;
-    color: var(--color-moon-mist);
+    font-size: 12px;                           /* 子分类：明显缩小 */
+    color: rgba(231, 240, 252, 0.5);           /* 子分类：明显变灰 */
     font-weight: 400;
-    padding: 6px 10px;
+    padding: 4px 10px;
   }
   .sn-link:hover { background: rgba(186, 214, 247, 0.06); color: var(--color-pure-white); }
   .sn-link.is-active {
@@ -304,10 +363,15 @@
     box-shadow: var(--shadow-violet);
     transform: translateX(2px);
   }
+  .sn-link.is-active::before {
+    background: var(--color-pure-white);      /* 激活：竖条转白加亮 */
+    height: 72%;
+  }
   .sn-item.is-sub .sn-link.is-active {
     background: rgba(102, 58, 243, 0.85);
     transform: none;
     font-weight: 500;
+    color: #fff;
   }
   /* 移动端：折叠为顶部横向胶囊 */
   @media (max-width: 920px) {
@@ -323,14 +387,28 @@
     .sn-head { display: none; }
     .sn-list { display: flex; flex-wrap: nowrap; gap: 8px; padding-bottom: 4px; }
     .sn-item { flex: 0 0 auto; margin: 0; }
-    .sn-item.is-sub { padding-left: 0; }
-    .sn-link { white-space: nowrap; padding: 6px 14px; font-size: 13px; border: 1px solid var(--color-glass-edge); background: rgba(186, 214, 247, 0.04); }
+    .sn-item.is-sub { padding-left: 0; border-left: none; margin: 0; }
+    .sn-link { white-space: nowrap; padding: 6px 14px; font-size: 13px; font-weight: 500; border: 1px solid var(--color-glass-edge); background: rgba(186, 214, 247, 0.04); }
+    .sn-link::before { display: none; }
+    .sn-item.is-sub .sn-link { font-size: 12px; }
     .sn-link.is-active { transform: none; border-color: transparent; }
   }
 
   footer { margin-top: var(--section-gap); border-top: 1px solid var(--color-glass-edge); padding: 40px 0 60px; text-align: center; }
   footer .f-brand { font-family: var(--font-display); font-weight: 600; color: var(--color-frost-glow); font-size: 16px; margin-bottom: 10px; }
   footer .f-note { font-size: 13px; color: var(--color-fog-veil); }
+  footer .f-contact { margin-top: 18px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+  footer .f-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; background: rgba(102,58,243,.10); border: 1px solid rgba(102,58,243,.25); color: var(--color-frost-glow); font-size: 12px; cursor: pointer; transition: background .2s, border-color .2s; }
+  footer .f-chip:hover { background: rgba(102,58,243,.20); border-color: rgba(102,58,243,.5); }
+  footer .f-chip svg { width: 13px; height: 13px; }
+  footer .f-qr-modal { display: none; position: fixed; inset: 0; background: rgba(5,6,15,.82); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+  footer .f-qr-modal.is-open { display: flex; }
+  footer .f-qr-card { background: rgba(20,22,38,.92); border: 1px solid rgba(102,58,243,.35); border-radius: 16px; padding: 24px; max-width: 320px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+  footer .f-qr-card img { max-width: min(280px, 70vw); max-height: 70vh; width: auto; height: auto; border-radius: 10px; background: #fff; padding: 8px; box-sizing: border-box; display: block; margin: 0 auto; }
+  footer .f-qr-card .f-qr-name { margin-top: 14px; color: var(--color-frost-glow); font-size: 14px; font-weight: 600; }
+  footer .f-qr-card .f-qr-id { color: var(--color-fog-veil); font-size: 12px; margin-top: 4px; letter-spacing: .5px; }
+  footer .f-qr-card .f-qr-hint { color: var(--color-fog-veil); font-size: 11px; margin-top: 10px; }
+  footer .f-qr-card .f-qr-close { margin-top: 14px; color: var(--color-fog-veil); font-size: 11px; cursor: pointer; background: none; border: none; padding: 4px 10px; }
 
   @media (max-width: 720px) {
     .hero { padding: 64px 0 24px; }
@@ -385,20 +463,25 @@
       <p class="tagline">发现最好用的 AI 设计工具，一站直达。</p>
 
       <div class="hero-cards" id="heroCards">
-        <a class="float-card is-static" data-index="0" href="./mockup/" target="_blank" rel="noopener">
-          <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
-          <div class="fc-title">PPT作品展示图生成器</div>
-          <div class="fc-desc">多种版式，自定义调整，一键导出高清大图。</div>
-        </a>
-        <a class="float-card is-static" data-index="1" href="./ppthub/" target="_blank" rel="noopener">
+        <a class="float-card is-static" data-index="0" href="./ppthub/" target="_blank" rel="noopener">
           <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg></div>
           <div class="fc-title">PPT术语图鉴</div>
           <div class="fc-desc">用大白话，搞懂 PPT 里那些听着耳熟、说不清的词。</div>
         </a>
-        <a class="float-card is-static" href="./template/" target="_blank" rel="noopener" data-index="2">
+        <a class="float-card is-static" data-index="1" href="./ppt-tips/" target="_blank" rel="noopener">
+          <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3 11.2V16h6v-1.8A6 6 0 0 0 12 3z"/></svg></div>
+          <div class="fc-title">PPT 制作技巧</div>
+          <div class="fc-desc">Before/After 对比 + 分步演示，跟着做就会。</div>
+        </a>
+        <a class="float-card is-static" data-index="2" href="./template/" target="_blank" rel="noopener">
           <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
           <div class="fc-title">优卡的素材库</div>
           <div class="fc-desc">PPT模板、图片、技巧，应有尽有。</div>
+        </a>
+        <a class="float-card" href="./mockup/" target="_blank" rel="noopener">
+          <div class="fc-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+          <div class="fc-title">PPT作品展示图生成器</div>
+          <div class="fc-desc">多种版式，自定义调整，一键导出高清大图。</div>
         </a>
       </div>
     </div>
@@ -439,8 +522,59 @@
   <div class="container">
     <div class="f-brand">优卡导航</div>
     <div class="f-note">由 优卡 / youka 整理 · 收录 AI+设计 工具 · 数据驱动自动更新</div>
+    <div class="f-contact">
+      <button class="f-chip" data-qr="wechat-gzh" type="button">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.4 4 2 6.7 2 10.1c0 1.9 1.1 3.6 2.9 4.7L4 17l2.5-1.3c.5.1 1 .2 1.5.2.2 0 .4 0 .6-.1-.1-.5-.2-1-.2-1.5 0-3.5 3.3-6.3 7.4-6.3h.5C15.5 5.7 12.8 4 9.5 4zm-2.8 4.5c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm5.5 0c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zM15.5 9c-3.6 0-6.5 2.4-6.5 5.5s2.9 5.5 6.5 5.5c.6 0 1.2-.1 1.8-.2L19 21l-.6-1.8c1.5-.9 2.6-2.5 2.6-4.2C21 11.4 18.5 9 15.5 9zm-2 3c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7zm4 0c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/></svg>
+        微信公众号：优卡说PPT
+      </button>
+      <a class="f-chip" href="https://www.xiaohongshu.com/user/profile/55e286c0c2bdeb696556a64a" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6.5C3 4.6 4.6 3 6.5 3h11C19.4 3 21 4.6 21 6.5v11c0 1.9-1.6 3.5-3.5 3.5h-11C4.6 21 3 19.4 3 17.5v-11zM6 8v8h2v-3h2l1.5 3H14l-1.7-3.4c1-.4 1.7-1.3 1.7-2.4 0-1.4-1.1-2.5-2.5-2.5H6zm2 2h2v1H8v-1zm6-2v8h2v-3h2v3h2V8h-2v3h-2V8h-2z"/></svg>
+        小红书：优卡
+      </a>
+      <button class="f-chip" data-qr="wechat-personal" type="button">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.4 4 2 6.7 2 10.1c0 1.9 1.1 3.6 2.9 4.7L4 17l2.5-1.3c.5.1 1 .2 1.5.2.2 0 .4 0 .6-.1-.1-.5-.2-1-.2-1.5 0-3.5 3.3-6.3 7.4-6.3h.5C15.5 5.7 12.8 4 9.5 4zM15.5 9c-3.6 0-6.5 2.4-6.5 5.5s2.9 5.5 6.5 5.5c.6 0 1.2-.1 1.8-.2L19 21l-.6-1.8c1.5-.9 2.6-2.5 2.6-4.2C21 11.4 18.5 9 15.5 9z"/></svg>
+        个人微信：YOUKAPPT
+      </button>
+    </div>
+  </div>
+  <div class="f-qr-modal" id="f-qr-modal" role="dialog" aria-hidden="true">
+    <div class="f-qr-card">
+      <img id="f-qr-img" src="" alt="二维码" />
+      <div class="f-qr-name" id="f-qr-name"></div>
+      <div class="f-qr-id" id="f-qr-id"></div>
+      <div class="f-qr-hint">长按图片识别 / 截图后用对应 App 扫码</div>
+      <button class="f-qr-close" type="button" id="f-qr-close">关闭</button>
+    </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var modal = document.getElementById('f-qr-modal');
+  var img = document.getElementById('f-qr-img');
+  var name = document.getElementById('f-qr-name');
+  var idEl = document.getElementById('f-qr-id');
+  var close = document.getElementById('f-qr-close');
+  var data = {
+    'wechat-gzh': { src: 'assets/contact/wechat-gzh-qr.jpg', n: '微信公众号', id: '优卡说PPT', use: '微信扫一扫识别公众号' },
+    'wechat-personal': { src: 'assets/contact/wechat-qr-youkappt.jpg', n: '个人微信号', id: 'YOUKAPPT', use: '微信扫一扫添加好友' }
+  };
+  function open(key) {
+    var d = data[key]; if (!d) return;
+    img.src = d.src; name.textContent = d.n; idEl.textContent = d.id;
+    document.querySelector('.f-qr-card .f-qr-hint').textContent = d.use;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function hide() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); }
+  document.querySelectorAll('.f-chip[data-qr]').forEach(function(b){
+    b.addEventListener('click', function(){ open(b.getAttribute('data-qr')); });
+  });
+  close.addEventListener('click', hide);
+  modal.addEventListener('click', function(e){ if (e.target === modal) hide(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') hide(); });
+})();
+</script>
 
 <script>
   // ---------- Icon + color helpers ----------
@@ -624,6 +758,7 @@
       loading.style.display = 'none';
       render(ALL);
       injectSEOMeta(ALL);
+      injectItemList(ALL);
       fillCatNav(ALL);
       fillSideNav(ALL);
       // 应用 URL ?q= 预搜索（让 Schema.org SearchAction / 分享链接真实可用）
@@ -655,6 +790,43 @@
     if (!m) { m = document.createElement('meta'); m.name = 'keywords'; document.head.appendChild(m); }
     m.content = kw;
   }
+
+  // ---------- SEO: 动态注入 ItemList JSON-LD（让爬虫直接拿到所有工具的结构化数据） ----------
+  function injectItemList(list) {
+    const items = [];
+    let pos = 0;
+    list.forEach(c => {
+      allTools(c).forEach(t => {
+        pos++;
+        items.push({
+          "@type": "ListItem",
+          "position": pos,
+          "item": {
+            "@type": "WebApplication",
+            "name": t.name,
+            "url": t.url,
+            "description": t.desc
+          }
+        });
+      });
+    });
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "优卡导航 · AI 设计工具收录",
+      "url": "https://youkappt.com/",
+      "numberOfItems": pos,
+      "itemListElement": items
+    };
+    const old = document.getElementById('ld-itemlist');
+    if (old) old.remove();
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.id = 'ld-itemlist';
+    try { s.textContent = JSON.stringify(data); } catch (e) { return; }
+    document.head.appendChild(s);
+  }
+
   function fillCatNav(list) {
     const nav = document.getElementById("catNav");
     if (!nav) return;
