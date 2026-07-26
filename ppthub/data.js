@@ -8,7 +8,7 @@ const TERMS = [
   /* ============ 软件功能 ============ */
   {
     id: "master", name: "母版", alias: "Slide Master",
-    category: "软件功能", level: "进阶",
+    category: "母版与版式", level: "进阶",
     summary: "改一处，全套幻灯片一起变——它是所有页面的「总模板」。",
     detail: "母版（Slide Master）是演示文稿底层的统一模板。在母版里放的 Logo、页脚、配色、字体，会出现在每一页；改母版，所有套用它的页面同步更新。它管的是「共性」，单页管的是「个性」。",
     scenario: "做公司汇报、课程讲义等几十页的文档时，先定母版再填内容，后期整体换风格只要动一次。",
@@ -16,7 +16,7 @@ const TERMS = [
   },
   {
     id: "layout", name: "版式", alias: "Slide Layout",
-    category: "软件功能", level: "入门",
+    category: "母版与版式", level: "入门",
     summary: "页面上预置的「标题放哪、正文放哪」的框框组合。",
     detail: "版式是母版下预设的内容骨架，比如「标题幻灯片」「标题+内容」「空白」。套用不同版式，占位符的位置和数量就变了，但都继承母版的统一风格。",
     scenario: "新建一页时，先选对版式（封面用标题版式、列表页用内容版式），比手动拖框快得多。",
@@ -24,7 +24,7 @@ const TERMS = [
   },
   {
     id: "placeholder", name: "占位符", alias: "Placeholder",
-    category: "软件功能", level: "入门",
+    category: "母版与版式", level: "入门",
     summary: "页面上虚线框起的「这里该填标题/这里该放图」的预留位。",
     detail: "占位符是版式里预先画好的虚线区域，标着「单击此处添加标题」。它规定了内容的类型和位置，你往里填字、插图就会自动套用对应样式。",
     scenario: "套用标题版式后，直接在占位符里打字，标题字号、位置都自动统一，不用手动调。",
@@ -48,7 +48,7 @@ const TERMS = [
   },
   {
     id: "boolean", name: "布尔运算", alias: "Boolean Operations",
-    category: "软件功能", level: "进阶",
+    category: "图片与多媒体", level: "进阶",
     summary: "把两个形状「联合/相减/相交」，拼出软件原本没有的奇怪图形。",
     detail: "布尔运算（合并形状）对两个及以上重叠图形做集合运算：联合（合并）、组合（去重叠）、拆分、相交（只留重叠）、减除（用上层的挖下层）。它是用基础图形造复杂图标的核心手段。",
     scenario: "想画一个「圆环缺口箭头」「汉字笔画形状」这类现成没有的图，就用布尔运算拼。",
@@ -88,7 +88,7 @@ const TERMS = [
   },
   {
     id: "theme", name: "主题", alias: "Theme",
-    category: "软件功能", level: "进阶",
+    category: "母版与版式", level: "进阶",
     summary: "一套「配色 + 字体 + 效果」的整体皮肤，换主题=全篇一键换装。",
     detail: "主题（Theme）是比母版更上层的整体风格包：主题颜色（一组配色）、主题字体（标题+正文字体对）、主题效果（阴影/线条质感）打包在一起。切换主题，全篇的颜色和字体同步改头换面。它和母版分工——主题管「用什么色什么字」，母版管「元素摆在哪」。",
     scenario: "同一份内容想试深色/浅色两种风格，切两套主题秒切，不用逐页改色。",
@@ -136,7 +136,7 @@ const TERMS = [
   },
   {
     id: "screen-record", name: "屏幕录制", alias: "Screen Recording",
-    category: "软件功能", level: "入门",
+    category: "图片与多媒体", level: "入门",
     summary: "PPT 内置录屏——框选区域录下操作，自动嵌成一段视频。",
     detail: "屏幕录制（Screen Recording）是 PowerPoint 自带的功能：框选屏幕任意区域，录制操作过程（可含声音、鼠标），停止后视频自动插入当前页。不用额外装录屏软件，做软件演示、操作教程很方便。",
     scenario: "讲一个软件操作步骤，直接录一段屏嵌进 PPT，比截图逐步说清楚。",
@@ -245,10 +245,10 @@ const TERMS = [
   {
     id: "tracking", name: "字间距", alias: "Letter Spacing",
     category: "字体与配色", level: "进阶",
-    summary: "字母之间松一点还是紧一点，气质全变——大标题尤其要调。",
-    detail: "字间距（tracking）控制字符间的空隙。大号标题常略微收紧显紧凑高级；全大写小标签则放宽显从容。它也影响一行能塞多少字和整体呼吸感。",
-    scenario: "英文大标题把字间距调到 -2%，中文标题 +1%，精致度立现。",
-    related: ["type-scale"], demo: "tracking"
+    summary: "字与字之间的疏密(tracking)——标题要松、正文要紧，排版细节。",
+    detail: "「开始 → 字体 → 字符间距」(或右键字体→高级)可调「加宽/紧缩」磅值，或直接选「稀疏/很松」。大标题适当加宽更透气高级，英文大写标题尤其吃这套；正文一般用默认。区别于「行距」(行与行),字间距是字与字；也区别于「字号」,间距调的是留白不是大小。",
+    scenario: "英文大标题设「加宽 2 磅」，瞬间有杂志封面那种高级疏朗感。",
+    related: ["font-pairing", "color-psychology", "tri-color"], demo: "tracking"
   },
   {
     id: "analogous", name: "邻近色", alias: "Analogous Colors",
@@ -514,7 +514,7 @@ const TERMS = [
   },
   {
     id: "compress", name: "图片压缩", alias: "Image Compression",
-    category: "效率与技巧", level: "入门",
+    category: "图片与多媒体", level: "入门",
     summary: "文件动辄几十 MB？压缩图片，体积骤降、画质肉眼无差。",
     detail: "图片压缩在不明显损画质的前提下减小文件体积（降低分辨率、转 WebP/优化 png）。PPT 里用「压缩图片」功能，能大幅瘦身，放映不卡、发送不崩。",
     scenario: "塞了 20 张高清图后文件 80MB，压缩后 8MB，邮件轻松发。",
@@ -572,7 +572,7 @@ const TERMS = [
   },
   {
     id: "image-mask", name: "蒙版 / 图片裁剪为形状", alias: "Crop to Shape",
-    category: "图形与图示", level: "进阶",
+    category: "图片与多媒体", level: "进阶",
     summary: "把方方正正的照片裁成圆形、星形甚至文字形——图片秒变造型。",
     detail: "蒙版（图片裁剪为形状）用一个形状当「窗口」，只露出图片落在窗口内的部分。PPT 里可把图片裁成圆、圆角矩形、任意形状，甚至用布尔运算把图片填进文字里。它是做头像、异形拼图、文字填图的核心技法。",
     scenario: "把团队合照里每个人裁成圆形头像并排，比原始方图精致统一。",
@@ -679,10 +679,10 @@ const TERMS = [
   {
     id: "rehearse", name: "排练计时", alias: "Rehearse Timings",
     category: "输出与放映", level: "进阶",
-    summary: "先彩排一遍，软件帮你记下每页讲了多久，好卡总时长、也能存成自动播放。",
-    detail: "排练计时（Rehearse Timings）进入一个特殊放映模式，你正常讲一遍，它记录每页停留的时间和总时长。练完可选择「保留计时」，这些时间就成了自动播放的换片节奏。既能帮你控场（超时提醒），又能一键生成无人值守的自动演示。",
-    scenario: "限时 10 分钟的路演，用排练计时练两遍，看哪页拖太久，精准砍到 10 分钟内。",
-    related: ["autoplay", "presenter-view", "speaker-notes"], demo: "rehearse"
+    summary: "带计时彩排——边讲边录下每页停留时长，自动设定放映节奏。",
+    detail: "「幻灯片放映 → 排练计时」进入彩排：从第一页开始讲，讲完切下一页，PPT 会默默记下每页用了多久。彩排结束可选「保留计时」，之后「演讲者放映(自动)」就会按你练的节奏自动翻页。适合要控时的演讲、比赛、汇报。区别于「手动翻页」，排练是把时间「存」进文件；也区别于「切换时长」(单页动画时长)，排练是整页停留时长。",
+    scenario: "比赛前彩排一遍，正式讲时自动按练习节奏走，不用担心超时。",
+    related: ["presenter-view", "notes-page", "export-pdf"], demo: "rehearse"
   },
   {
     id: "export-dpi", name: "导出分辨率 / DPI", alias: "Export DPI",
@@ -728,7 +728,7 @@ const TERMS = [
   },
   {
     id: "remove-bg", name: "抠图 / 去背", alias: "Remove BG",
-    category: "图形与图示", level: "进阶",
+    category: "图片与多媒体", level: "进阶",
     summary: "把照片里的人或产品「抠」出来，丢掉杂乱背景，干净地放进幻灯片。",
     detail: "去背（Remove Background）是移除图片多余背景、只留主体的处理。主体孤立后能自由缩放、加投影、叠在任意底色上，不会和页面背景「打架」。PPT 自带删除背景工具，也能用在线抠图。",
     scenario: "把实拍的产品图去背后放在渐变底色上，比直接贴一张带杂乱背景的方图高级太多。",
@@ -752,7 +752,7 @@ const TERMS = [
   },
   {
     id: "notes-master", name: "讲义 / 备注母版", alias: "Notes Master",
-    category: "软件功能", level: "进阶",
+    category: "母版与版式", level: "进阶",
     summary: "管「打印出来的讲义」和「演讲者备注页」长什么样的隐藏母版。",
     detail: "除了幻灯片母版，PPT 还有备注母版和讲义母版：备注母版决定演讲者视图里备注页的排版（ logo、页眉页脚、缩略图位置）；讲义母版决定打印讲义时「每页排几张幻灯片」及边栏。改一次，所有备注页/讲义统一变。",
     scenario: "要发纸质讲义给学员，在讲义母版设「每页 3 张 + 右侧笔记区」，打印出来刚好能边上记。",
@@ -825,7 +825,7 @@ const TERMS = [
   },
   {
     id: "theme-variant", name: "主题变体", alias: "Theme Variants",
-    category: "软件功能", level: "入门",
+    category: "母版与版式", level: "入门",
     summary: "同一主题下切换配色/字体变体，一键换肤不丢排版。",
     detail: "主题决定整套配色与字体；变体是主题下的「口味选项」——同一主题常有多种配色与字体组合。切变体能让演示瞬间换风格，却保持版式结构不变。",
     scenario: "给同一份提案做「蓝版」「橙版」两套配色给不同客户看。",
@@ -857,7 +857,7 @@ const TERMS = [
   },
   {
     id: "template", name: "模板", alias: "Template",
-    category: "软件功能", level: "入门",
+    category: "母版与版式", level: "入门",
     summary: "区别于主题的整页版式骨架，开新文件就套好。",
     detail: "主题只管配色字体，模板还带了封面、目录、内页等现成版式与占位符。套模板能秒出统一风格；但别被花哨模板绑架，内容>装饰。",
     scenario: "用公司模板新建，封面/页眉/页脚自动带好 logo 和色条。",
@@ -889,7 +889,7 @@ const TERMS = [
   },
   {
     id: "textbox-placeholder", name: "文本框 vs 占位符", alias: "Box vs Holder",
-    category: "软件功能", level: "入门",
+    category: "母版与版式", level: "入门",
     summary: "占位符跟母版走、能批量改；文本框是自由散兵。",
     detail: "占位符是版式/母版里预设的框，改母版一处、所有页同步；文本框是你在页面随手画的，独立于母版。量产型文字用占位符，临时标注用文本框。",
     scenario: "标题要全站统一样式→用占位符；一句旁注→用文本框。",
@@ -955,7 +955,7 @@ const TERMS = [
   },
   {
     id: "recolor", name: "图片重新着色 / 校正", alias: "Recolor & Correct",
-    category: "图形与图示", level: "进阶",
+    category: "图片与多媒体", level: "进阶",
     summary: "给图片/形状一键换色系（灰度、强调色、冲蚀），不动原图也能统一色调。",
     detail: "重新着色（图片格式→颜色→重新着色）用主题色板把整张图映射到新色系，还能调饱和度、做冲蚀半调。它是「不修改原图就统一视觉」的利器，特别适合把彩色截图压成单色点缀。",
     scenario: "把一堆彩色软件截图统一成「紫调单色」，瞬间和 PPT 主题融合。",
@@ -1053,7 +1053,7 @@ const TERMS = [
   },
   {
     id: "bg-format", name: "幻灯片背景格式", alias: "Slide Background",
-    category: "软件功能", level: "入门",
+    category: "母版与版式", level: "入门",
     summary: "纯色、渐变、图片一键铺满整页背景，统一氛围从这里开始。",
     detail: "背景格式让你给单页或全部页面设背景：纯色最干净、渐变最现代、图片最沉浸（常配蒙版压暗保证文字可读）。设背景和加一个铺满的形状不同——背景不会被选中、不会挡内容，且能「应用到全部」一键统一。",
     scenario: "做暗色科技风，用深蓝径向渐变做全局背景，比逐页拖矩形省事且不会被误选。",
@@ -1117,7 +1117,7 @@ const TERMS = [
   },
   {
     id: "audio-insert", name: "音频（插入与播放控制）", alias: "Insert Audio",
-    category: "软件功能", level: "入门",
+    category: "图片与多媒体", level: "入门",
     summary: "插背景音乐或音效，设跨页播放、淡入淡出、点击触发。",
     detail: "插入音频可把音乐/音效放进幻灯片，在「播放」选项卡设置：跨幻灯片播放、循环、淡入淡出、开始方式（单击/自动）。区别于「旁白录音」（那是现场录人声），这条是插入现成的音频文件并控制它的播放行为。",
     scenario: "开场放段音乐烘托气氛，设「跨页播放+淡出」，切到内容页声音自然收住。",
@@ -1125,7 +1125,7 @@ const TERMS = [
   },
   {
     id: "video-insert", name: "视频（插入与播放设置）", alias: "Insert Video",
-    category: "软件功能", level: "入门",
+    category: "图片与多媒体", level: "入门",
     summary: "把视频当对象插进来，裁剪长度、全屏播放、点击才播。",
     detail: "插入视频会作为一个可编辑对象，能裁剪入点/出点、设海报帧、选播放方式（单击/自动/全屏）。区别于「导出图片 / GIF / 视频」（那是把幻灯片输出成 mp4），这条是把外部视频放进页面里播放。",
     scenario: "产品发布会插一段 15 秒宣传片，设全屏自动播放，现场效果拉满。",
@@ -1178,6 +1178,246 @@ const TERMS = [
     detail: "格式塔是感知心理学：相近律（挨得越近越被当成一组）、相似律（长得像的被当成一组）、闭合律（残缺轮廓脑补成完整）、连续律等。PPT 里「亲密性」「重复」这些原则底层就是格式塔——把相关的放近、用一致样式，观众自然读懂结构。",
     scenario: "标题和配图挨在一起、和正文拉开距离，观众一眼就分清「这是一组」。",
     related: ["proximity", "alignment", "repetition"], demo: "gestalt"
+  },
+  {
+    id: "embed-link", name: "嵌入 vs 链接", alias: "Embed vs Link",
+    category: "图片与多媒体", level: "进阶",
+    summary: "插图片/视频选「链接到文件」换电脑就丢图、但体积小；「嵌入」反之。",
+    detail: "往 PPT 里插图片或视频时有个隐藏开关：「链接到文件」只记住一个文件路径，文件体积小、改原素材会同步，但换电脑或发给别人就找不到图、变成空白；「嵌入」（默认）把媒体直接打包进 PPT，体积大却到哪都能放。区别于「嵌入字体」（那条只讲文字字形），这条讲图片/视频等媒体的嵌入与链接取舍。",
+    scenario: "要发给客户的方案，插图一定用嵌入，否则对方打开全是图裂；内部临时稿可用链接省体积。",
+    related: ["video-insert", "image-mask", "embed-font"], demo: "embed-link"
+  },
+  {
+    id: "theme-palette", name: "主题色板 12 色", alias: "Theme Colors (12)",
+    category: "字体与配色", level: "进阶",
+    summary: "Theme Colors 为什么改一个颜色全篇联动？6 浅 6 深 + 超链接色的机制。",
+    detail: "PPT 主题的「颜色」不是单一色，而是一套 12 色板：6 个浅色（用于背景、大字）、6 个深色（用于文字、强调），外加超链接与已访问链接色。你在「设计 → 变体 → 颜色」里改其中任一格，所有用了「主题色」（而非手动写死颜色）的对象会全局联动。这就是母版、版式要用主题色、别手填死色的原因。",
+    scenario: "甲方中途换品牌色，只改主题色板里对应的那格，全篇几十页自动统一换色，比逐页改快百倍。",
+    related: ["theme", "theme-variant", "color-reuse"], demo: "theme-palette"
+  },
+  {
+    id: "doc-inspector", name: "文档检查器", alias: "Document Inspector",
+    category: "效率与技巧", level: "进阶",
+    summary: "发给客户前一键清除备注、批注、隐藏数据、个人信息。",
+    detail: "文档检查器（文件 → 信息 → 检查问题 → 检查文档）会扫描并帮你删除：备注里的草稿想法、批注评论、隐藏的元数据（作者、公司）、上一个人的编辑记录等。对外交付前跑一遍，避免把内部吐槽或隐私随文件发出去。",
+    scenario: "把给客户的终稿发出去前，检查器清掉所有备注和批注，只留干净页面。",
+    related: ["comment", "speaker-notes", "notes-master"], demo: "doc-inspector"
+  },
+  {
+    id: "live-caption", name: "实时字幕 / 翻译", alias: "Live Captions & Subtitles",
+    category: "输出与放映", level: "进阶",
+    summary: "放映时用 AI 实时生成中/英文字幕，双语演讲神器。",
+    detail: "放映选项卡里有「字幕」功能：开启后 PPT 用语音识别把你说的每句话实时转成字幕显示在画面上，还能选择翻译语言（比如你讲中文、观众看英文）。适合面向外文听众、或现场收音不清时兜底。区别于「旁白录音」（那是提前录好的声音），这是放映时实时生成的文字。",
+    scenario: "给外国客户做英文发布会，开实时字幕翻译成英文，你说中文观众看英文字幕。",
+    related: ["presenter-view", "narration", "present-online"], demo: "live-caption"
+  },
+  {
+    id: "version-history", name: "版本历史", alias: "Version History",
+    category: "软件功能", level: "进阶",
+    summary: "误删/改崩后找回早期版本，区别于自动保存的临时恢复。",
+    detail: "若 PPT 存在 OneDrive / SharePoint / 365 中，「文件 → 信息 → 版本历史」会列出每次自动保存的时间点，你能回看并一键还原任意旧版本。它和「自动保存」是搭档：自动保存保证不丢，版本历史保证能「回到过去」；本地没同步的草稿文件通常没有这个功能。",
+    scenario: "改崩了想找回两小时前的结构，开版本历史，选那个时间点「还原」。",
+    related: ["autosave", "coauthor", "compare-merge"], demo: "version-history"
+  },
+  {
+    id: "ink-draw", name: "墨迹书写", alias: "Ink & Draw",
+    category: "软件功能", level: "入门",
+    summary: "Draw 选项卡的荧光笔、手绘，会议白板式标注与圈画。",
+    detail: "「绘图」(Draw) 选项卡提供荧光笔、钢笔、手绘笔等墨迹工具，可用触屏或手写笔在幻灯片上直接画圈、划线、写批注，像白板一样。它画的是浮在内容上方的一层墨迹，放映时也能实时标注。区别于「标注笔」（放映时的临时笔、退出即消失），墨迹书写是保存到文件里的笔迹。",
+    scenario: "评审会上用触屏在方案上圈出要改的地方，保存下来下次接着聊。",
+    related: ["screen-blank-pen", "comment", "presenter-view"], demo: "ink-draw"
+  },
+  {
+    id: "color-psychology", name: "色彩心理学", alias: "Color Psychology",
+    category: "字体与配色", level: "进阶",
+    summary: "红=警示/热情、蓝=信任、绿=生长…配色决策的底层依据。",
+    detail: "颜色会触发人的潜意识情绪：红代表警示、紧迫、热情；蓝代表专业、信任、冷静；绿代表生长、安全、自然；黄代表活力、提醒；黑与金代表高端、奢华。选主题色时先想「想让观众什么感觉」，而不是只看好不好看——它是配色选择的「为什么这样配」的底层逻辑。",
+    scenario: "金融汇报用深蓝建立信任感；促销用红橙制造紧迫；环保主题用绿。",
+    related: ["tri-color", "analogous", "muted-color"], demo: "color-psychology"
+  },
+  {
+    id: "warm-cool", name: "冷暖色", alias: "Warm & Cool Colors",
+    category: "字体与配色", level: "入门",
+    summary: "暖色前进/冷色后退，影响层次与情绪，基础却常被忽略。",
+    detail: "色轮上红橙黄属暖色，给人温暖、靠近、活跃之感，视觉上「前进」；蓝绿紫属冷色，给人冷静、遥远、安静之感，视觉上「后退」。同一页面里暖色元素会跳到前面、冷色沉到后面，善用这点能天然做出层次，不必靠大小对比。",
+    scenario: "重点数据用暖色（红/橙）让它跳出来，背景与辅助信息用冷色（蓝）往后退。",
+    related: ["color-wheel", "complementary", "analogous"], demo: "warm-cool"
+  },
+  {
+    id: "stagger", name: "错落出现", alias: "Staggered Animation",
+    category: "动画与切换", level: "进阶",
+    summary: "多对象 stagger 进入的节奏感，比单纯循环更高级。",
+    detail: "错落（stagger）是让一组对象「依次、有微小间隔」地进入画面，而非同时啪一下全出现。做法：给每个对象加同样的进入动画，在动画窗格里把它们的「延迟」依次设成 0.1s、0.2s、0.3s…形成波浪式节奏。它让重点逐个浮现、引导视线，比「全部一起出现」或「无限循环」都更有设计感。",
+    scenario: "三个要点卡片设 0.15s 错落淡入，观众视线跟着一个一个点过。",
+    related: ["anim-timing", "anim-type", "loop-anim"], demo: "stagger"
+  },
+  {
+    id: "package", name: "打包演示文稿", alias: "Package Presentation",
+    category: "输出与放映", level: "进阶",
+    summary: "换电脑放映字体/图片丢失？用「打包成 CD」或导出视频根治。",
+    detail: "把 PPT 拷到别的电脑放映，常遇字体变、图片裂、视频播不了——因为那台机器没装你的字体、没有你的素材。「打包成 CD / 导出」（文件 → 导出 → 打包成 CD）会把所有字体、图片、视频、链接文件收进一个文件夹，到哪都能原样放；或直接「导出为视频」，连 PowerPoint 都不用装。区别于「导出 PDF」（静态、不能动画），打包保留全部可编辑素材。",
+    scenario: "去客户现场演讲前，把文件「打包成 CD」存 U 盘，换任何电脑都不翻车。",
+    related: ["embed-font", "export-media", "export-pdf"], demo: "package"
+  },
+  {
+    id: "rotate-flip", name: "旋转与翻转", alias: "Rotate & Flip",
+    category: "图形与图示", level: "入门",
+    summary: "自由旋转角度、水平/垂直翻转、镜像——最基础也最易忽略的对象操作。",
+    detail: "选中对象后拖动顶部旋转手柄可自由转任意角度；右键「旋转」菜单里有「水平翻转 / 垂直翻转」，把图形左右或上下镜像。翻转常用于做对称构图、做反向箭头、或把素材适配版面。区别于「旋转 90°」（只转直角），自由旋转能精确到小数角度。注意旋转后文字也会跟着斜，需要正文字时先把文字单独放。",
+    scenario: "把一张猫的图水平翻转让它面朝页面主体；把箭头垂直翻转指向上方。",
+    related: ["boolean", "edit-points", "group"], demo: "rotate-flip"
+  },
+  {
+    id: "print", name: "打印 / 讲义打印", alias: "Print & Handout",
+    category: "输出与放映", level: "入门",
+    summary: "打印设置、讲义母版排版、备注页打印、黑白打印——汇报/教案高频刚需。",
+    detail: "文件 → 打印里能选：打印范围（全部/当前/自定义）、版式（整页幻灯片 / 备注页 / 大纲 / 讲义，讲义可一页排 2/3/4/6/9 张并带线条）、颜色（彩色/灰度/纯黑白，现场没彩打时选灰度更清晰）、是否加框。讲义版式由「讲义母版」控制页眉页脚和每页张数；备注页打印会把演讲者备注也带上。区别于「导出 PDF」（电子交付），打印是物理纸张场景。",
+    scenario: "培训讲义选「讲义-每页 6 张」打印发学员；给领导留底选「备注页」把讲稿一起打。",
+    related: ["notes-page", "presenter-view", "export-pdf", "notes-master"], demo: "print"
+  },
+  {
+    id: "color-603010", name: "60-30-10 配色法则", alias: "60-30-10 Rule",
+    category: "字体与配色", level: "进阶",
+    summary: "主色 60% + 辅色 30% + 点缀 10% 的经典配色比例，让页面稳而不乱。",
+    detail: "60-30-10 是室内与视觉设计的经典配色法则：60% 给主色（通常是背景/大色块，定调性）、30% 给辅色（次级元素，制造对比层次）、10% 给点缀色（强调关键数据/按钮，画龙点睛）。用在 PPT 上：背景与大面积用主色、卡片与图表用辅色、关键数字用点缀色。比例稳，画面就不花；点缀超 10% 会喧宾夺主。",
+    scenario: "深蓝主色铺背景(60%)、浅蓝卡片(30%)、橙色高亮核心数字(10%)，页面稳又跳。",
+    related: ["color-psychology", "color-wheel", "tri-color"], demo: "color-603010"
+  },
+  {
+    id: "autoshape", name: "自选图形 / 形状", alias: "AutoShapes",
+    category: "图形与图示", level: "入门",
+    summary: "PPT 最基础的矢量元素——矩形/圆/箭头/流程图符号，搭一切图形的积木。",
+    detail: "「插入 → 形状」里有上百种自选图形：基础几何（矩形、椭圆、三角形）、线条与箭头、流程图符号、标注气泡、星与旗帜等。它们是矢量，可任意改大小/颜色/描边，是做信息图、流程图、图标化排版的「积木」。区别于「图片」（位图、放大糊），自选图形是矢量、永远清晰；也区别于「图标」（预设小符号），形状要自己拼。",
+    scenario: "用圆角矩形做卡片、箭头指关系、圆做头像底，拼出一个流程信息图。",
+    related: ["boolean", "edit-points", "rotate-flip"], demo: "autoshape"
+  },
+  {
+    id: "chart-elements", name: "图表元素", alias: "Chart Elements",
+    category: "图形与图示", level: "入门",
+    summary: "图表内部构件——数据标签、图例、坐标轴、网格线、趋势线，决定图表能否读懂。",
+    detail: "一个图表由多个构件组成：数据标签（直接标数值）、图例（区分系列）、坐标轴与刻度（量纲参照）、网格线（辅助读数）、趋势线（拟合走向）。很多图表「看不懂」是因为构件没配好：标签太密、图例冗余、坐标轴起点不实。在「图表元素」(+号) 里按需勾选，宁可少不可乱。区别于「图表类型」，那是选柱状/饼/折线，构件是选里头显示什么。",
+    scenario: "删掉多余图例、给关键柱加数据标签、加趋势线，老板一眼看懂增长。",
+    related: ["data-viz", "chart-edit", "excel-table"], demo: "chart-elements"
+  },
+  {
+    id: "text-anim-level", name: "文本动画分级", alias: "Text Animation Level",
+    category: "动画与切换", level: "进阶",
+    summary: "文本进入动画的分级——整批/按段落/按词/按字，控制文字怎么「长出来」。",
+    detail: "给文本加进入动画后，在「效果选项」里能选出现单位：整批（整段一起）、按段落（一段段出）、按词（一词词出）、按字（一字字出）。做金句或标题时「按字」浮现很有仪式感；做要点列表用「按段落」逐条出，配合错落更自然。区别于「动画顺序」(谁先谁后)，分级是单个文本框内部怎么拆。",
+    scenario: "大标题设「按字」淡入做开场仪式感；要点列表「按段落」逐条出现。",
+    related: ["emphasis-fx", "animation-pane", "anim-timing"], demo: "text-anim-level"
+  },
+  {
+    id: "image-crop", name: "图片裁剪 / 艺术效果", alias: "Crop & Artistic Effect",
+    category: "图片与多媒体", level: "入门",
+    summary: "基础裁剪、艺术效果、图片样式——除了裁成形状，普通裁切和滤镜也别漏。",
+    detail: "选中图片后「图片格式」里有：裁剪（拖边框裁掉多余、按比例或按形状裁）、更正（亮度/对比度/锐化一键调）、颜色（重新着色、透明度）、艺术效果（铅笔素描/虚化/塑封等滤镜）、图片样式（预设边框阴影）。很多人只记得「裁剪为形状」，其实普通裁剪去边、艺术效果做质感同样常用。区别于「抠图」(去背)，裁剪只是切掉、不透明。",
+    scenario: "裁掉商品图多余背景、加「虚化」艺术效果做高级感封面、调亮度救暗图。",
+    related: ["image-mask", "recolor", "compress", "remove-bg"], demo: "image-crop"
+  },
+  {
+    id: "header-footer", name: "页眉页脚 / 编号", alias: "Header, Footer & Slide Number",
+    category: "母版与版式", level: "入门",
+    summary: "自动页码、日期、页眉页脚——在母版里设一次，全篇统一不手抖。",
+    detail: "插入 → 页眉和页脚（或在母版里）可勾选：幻灯片编号（自动页码）、日期和时间（可自动更新）、页脚文字（如「机密」）。在母版视图里设好，所有版式自动套用，改一次全篇更新，比手动每页写页码稳得多。还支持「标题幻灯片不显示」(封面不加页码)。区别于「文本框手打页码」，那是死的、容易错。",
+    scenario: "在母版勾选自动页码+日期，几十页汇报页脚统一、换日期一键全改。",
+    related: ["master", "layout", "notes-master"], demo: "header-footer"
+  },
+  {
+    id: "connector", name: "连接线 / 流程图连接符", alias: "Connector",
+    category: "图形与图示", level: "进阶",
+    summary: "流程图里的连接线/连接符——自动跟随图形移动，画流程图刚需。",
+    detail: "「插入 → 形状 → 线条」里的「连接符」（肘形/直线/曲线连接符）是特殊的线：把两端「吸」到图形上后，移动图形时线会自动跟随重连，不会脱节。画流程图、架构图时比普通直线稳——普通线移动图形后要手动对齐。磁吸点是图形边缘的小圆点。区别于「箭头」(普通线靠手对)，连接符是智能跟随。",
+    scenario: "用肘形连接符串起流程框，拖动任一方框，连线自动重排不脱钩。",
+    related: ["autoshape", "edit-points", "group"], demo: "connector"
+  },
+  {
+    id: "macro-vba", name: "宏 / VBA 自动化", alias: "Macro & VBA",
+    category: "效率与技巧", level: "进阶",
+    summary: "宏 / VBA——把重复操作录成一键脚本，批量处理救大命。",
+    detail: "「视图 → 宏」可录制/编写宏：把一连串重复操作（如统一改所有标题字号、批量加边框、批量导出图片）录下来，以后一键重放；进阶可用 VBA 代码做更复杂自动化。适合每周都要重复做的版式整理、上百页的批量规整。注意宏文件要存成 .pptm（启用宏的格式），发给别人可能触发安全警告。区别于「快捷操作」，宏是可复用、可编程的脚本。",
+    scenario: "录个宏把 80 页标题统一成 32 号加粗，3 秒搞定原本半小时的活。",
+    related: ["autosave", "doc-inspector", "export-pdf"], demo: "macro-vba"
+  },
+  {
+    id: "exit-anim", name: "退出动画", alias: "Exit Animation",
+    category: "动画与切换", level: "入门",
+    summary: "对象「退场」的动画——飞出、淡出、缩小消失，常用在要点收尾。",
+    detail: "动画面板里「退出」一栏的效果(飞出/淡出/缩小/轮子)：让对象在播放中离开舞台。常和「进入动画」配成一对——要点出现再消失，画面不堆砌。比如强调完一句要点、让它淡出，再让下一句进入。区别于「进入动画」(来)，退出是「走」；也区别于「切换」(整页换)，退出是页内对象动。",
+    scenario: "每点完一个要点让它淡出，画面始终只留当前重点，不杂乱。",
+    related: ["emphasis-fx", "animation-pane", "anim-timing"], demo: "exit-anim"
+  },
+  {
+    id: "chart-anim", name: "图表动画", alias: "Chart Animation",
+    category: "动画与切换", level: "进阶",
+    summary: "让图表按系列/类别「长」出来——比整图淡入更有讲故事感。",
+    detail: "给图表加进入动画后，在「效果选项」里可选「按系列」(一条系列一条出现)或「按类别」(一类一类出)，甚至「按元素」。做业绩汇报时让柱子一根根长出来，比「整图啪一下淡入」更有节奏、更抓眼。区别于「图表元素」(显示什么构件)，图表动画是「怎么动出来」。",
+    scenario: "季度复盘让四个季度柱子依次长出，边讲边出，数据有层次。",
+    related: ["chart-elements", "data-viz", "anim-timing"], demo: "chart-anim"
+  },
+  {
+    id: "smart-guides", name: "智能参考线", alias: "Smart Guides",
+    category: "图形与图示", level: "入门",
+    summary: "拖动对象时自动浮现的对齐虚线——居中、等距、边缘对齐一键对齐。",
+    detail: "移动/缩放对象时，PPT 会自动显示紫色虚线参考线：对象中心对齐另一对象、边缘对齐、等间距分布都会亮线提示，松手即吸附。比手动拖更准、比「对齐工具」更即时。可在「视图 → 显示 → 参考线/网格」开关。区别于「网格」(固定底纹)，智能参考线是动态的、随对象出现。",
+    scenario: "拖一个圆，自动出现居中虚线，一松手就正中对齐，不歪不偏。",
+    related: ["alignment", "autoshape", "group"], demo: "smart-guides"
+  },
+  {
+    id: "3d-model", name: "3D 模型", alias: "3D Model",
+    category: "图形与图示", level: "进阶",
+    summary: "插入可旋转的 3D 模型(365)——产品/结构展示比平面更质感。",
+    detail: "「插入 → 3D 模型」可插入内置或本地 .glb/.fbx 模型，选中后能拖动旋转、缩放，甚至加「转盘」动画让它自转。适合展示产品外观、分子结构、建筑。区别于「图片」(死的平面图)，3D 是可交互旋转的；也区别于「图标」(小符号)。注意非 365 版本可能无此功能。",
+    scenario: "插一个产品 3D 模型，加转盘动画让它慢慢自转，演示更有科技感。",
+    related: ["autoshape", "rotate-flip", "image-mask"], demo: "3d-model"
+  },
+  {
+    id: "zoom", name: "缩放定位", alias: "Zoom & Summary Zoom",
+    category: "输出与放映", level: "进阶",
+    summary: "缩放定位——点缩略图跳转章节，做非线性、可回看的演示导航。",
+    detail: "「插入 → 缩放定位」有「幻灯片缩放」(单页缩略图,点它跳过去)、「摘要缩放」(把多节缩略图拼成菜单)、「节缩放」。适合目录页：点哪节跳哪节，讲完还能回到目录，实现非线性放映。区别于「超链接」(文字跳转)，缩放是可视化缩略图；也区别于「自定义放映」(预设顺序)，缩放是现场自由导航。",
+    scenario: "封面放摘要缩放菜单，现场按听众兴趣点不同章节，自由穿梭。",
+    related: ["presenter-view", "section", "custom-show"], demo: "zoom"
+  },
+  {
+    id: "watermark", name: "水印", alias: "Watermark",
+    category: "母版与版式", level: "入门",
+    summary: "母版里加 Logo/「机密」水印——全篇统一、改一次全更新。",
+    detail: "在「幻灯片母版」里放一个半透明的 Logo 或「机密/草稿」文字，所有应用该版式的页面自动带上，避免一页页手加工。比直接在各页贴图更统一、好改。区别于「页眉页脚」(页码日期文本)，水印是装饰性半透明图层；也区别于「背景」(整页铺满)，水印是局部标记。",
+    scenario: "母版里放半透明「机密」水印，发出的方案书每页都有、防外传。",
+    related: ["master", "layout", "notes-master"], demo: "watermark"
+  },
+  {
+    id: "screenshot", name: "屏幕截图", alias: "Screenshot",
+    category: "图片与多媒体", level: "入门",
+    summary: "直接截屏贴进幻灯片——不用先存图再插入，一步到位。",
+    detail: "「插入 → 屏幕截图」可截取当前打开的窗口(缩略图直接选)或「屏幕剪辑」(框选区域)，截图立刻进幻灯片。适合引用网页、软件界面、聊天记录，省去「截图→存盘→插入」三步。区别于「图片」(插入已有文件)，截图是现截现用；也区别于「屏幕录制」(录视频)，截图是静态。",
+    scenario: "讲竞品时直接截它官网窗口贴进 PPT，对比一目了然。",
+    related: ["image-crop", "compress", "remove-bg"], demo: "screenshot"
+  },
+  {
+    id: "autofit", name: "文本自动适配", alias: "AutoFit Text",
+    category: "排版与布局", level: "入门",
+    summary: "文本框自动缩字/溢出提示——文字多了不爆框、不丑。",
+    detail: "选中文本框点右下角小图标可调「自动调整」：自动缩小文本(字多时缩小字号塞进框)、不自动调整(溢出框外、会显红旗警告)、形状中的文字换行(只扩高度)。默认常是「溢出时缩字」，但长文会小到看不清，这时该手动分框。区别于「文本框大小」(手动拉)，自动适配是智能响应内容。",
+    scenario: "要点塞太多，文本框自动缩字号救场；太挤就手动拆成两框。",
+    related: ["textbox-placeholder", "para-spacing", "slide-size"], demo: "autofit"
+  },
+  {
+    id: "bullets", name: "项目符号", alias: "Bullets & Numbering",
+    category: "排版与布局", level: "入门",
+    summary: "列表的圆点/数字符号——条理清晰，比纯文字段落好读。",
+    detail: "「开始 → 项目符号/编号」给列表加圆点、方块、箭头或 1.2.3 编号；还能「定义新项目符号」换图标。相较于整段文字，列表更好扫读，编号适合步骤/排名。区别于「段落间距」(行距留白)，符号是每行的标记；也区别于「多级列表」，那是带缩进的层级。",
+    scenario: "三点建议用圆点列表，一屏扫完；步骤用 1.2.3 编号显顺序。",
+    related: ["para-spacing", "alignment", "repetition"], demo: "bullets"
+  },
+  {
+    id: "pptx-format", name: "文件格式", alias: "PPTX / PPTM / PPSX",
+    category: "软件功能", level: "入门",
+    summary: "存成哪种格式——发给别人/自动放映/存宏，选错就翻车。",
+    detail: "常见格式：.pptx(默认,可编辑)、.pdf(发给客户防改)、.ppsx(双击直接放映,适合交给别人播)、.pptm(含宏,普通 pptx 装不了宏会丢)、.potx(模板)。发终稿给别人用 pdf 或 ppsx；要带宏必须存 pptm；当模板分发用 potx。区别于「导出图片/视频」，那是转成媒体文件。",
+    scenario: "给客户的终稿存 pdf 防改；交会务播的存 ppsx 双击就放。",
+    related: ["template", "export-pdf", "export-media"], demo: "pptx-format"
   }
 ];
 
