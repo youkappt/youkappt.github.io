@@ -187,6 +187,7 @@ body {
   flex: 1;
   max-width: 340px;
   margin: 0;
+  padding: 4px 6px 4px 16px;
 }
 .search-wrap:focus-within {
   border-color: rgba(186, 215, 247, 0.28);
@@ -852,7 +853,7 @@ body {
   .hero { padding-top: var(--spacing-100); }
   .modal-card { padding: var(--spacing-24); }
   .modal-title { font-size: 28px; }
-  .header-actions .search-wrap { max-width: 220px; padding: 6px 6px 6px 12px; gap: 6px; }
+  .header-actions .search-wrap { max-width: 220px; padding: 6px 6px 6px 12px; }
   .header-actions .search-wrap input { font-size: 14px; }
   .header-actions .search-btn { padding: 8px 12px; }
   .brand span { font-size: 16px; }
