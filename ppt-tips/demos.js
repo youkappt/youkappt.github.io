@@ -63,7 +63,7 @@
     /* 2. 参考线对齐：吸附到同一条线 */
     alignSnap(c) {
       c.innerHTML = `<div class="demo-stack">
-        <div class="demo-label">点「对齐」让三个按钮吸附到同一条线</div>
+        <div class="demo-label">点「对齐」让三个按钮顶端吸附到参考线</div>
         <div class="demo-row">
           <button class="demo-btn active" data-a="align" id="asAlign">对齐</button>
           <button class="demo-btn" data-a="shuffle" id="asShuffle">打乱</button>
@@ -71,14 +71,24 @@
         <div class="mini-slide" id="asSlide"></div>
       </div>`;
       const slide = c.querySelector('#asSlide');
-      const pos = [{ t: 30, l: 10 }, { t: 46, l: 40 }, { t: 24, l: 70 }];
+      const GUIDE_T = 42;                 // 参考线纵向位置 (%)
+      const LEFT = [10, 40, 70];          // 三框横向位置 (%)
+      const messyT = [22, 46, 30];        // 打乱：顶边高低不齐，明显偏离参考线
       function render(aligned) {
         slide.innerHTML = '';
-        if (aligned) slide.innerHTML = '<div style="position:absolute;left:8%;top:46%;width:84%;height:1px;background:rgba(216,236,248,.5)"></div>';
+        // 参考线：始终显示；对齐时高亮成紫色虚线 + 微光
+        const guide = document.createElement('div');
+        guide.style.cssText = `position:absolute;left:6%;top:${GUIDE_T}%;width:88%;height:0;border-top:1px dashed ${aligned ? 'rgba(160,120,255,.95)' : 'rgba(216,236,248,.45)'}`;
+        slide.appendChild(guide);
+        if (aligned) {
+          const glow = document.createElement('div');
+          glow.style.cssText = `position:absolute;left:6%;top:${GUIDE_T - 1}%;width:88%;height:2px;background:rgba(160,120,255,.35);filter:blur(1px)`;
+          slide.appendChild(glow);
+        }
         for (let i = 0; i < 3; i++) {
-          const p = aligned ? { t: 40, l: 10 + i * 30 } : pos[i];
+          const t = aligned ? GUIDE_T : messyT[i];
           const b = document.createElement('div');
-          b.style.cssText = `position:absolute;left:${p.l}%;top:${p.t}%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.85;transition:all .35s ease`;
+          b.style.cssText = `position:absolute;left:${LEFT[i]}%;top:${t}%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:${aligned ? '0 0 0 2px rgba(160,120,255,.5)' : 'none'};transition:all .35s ease`;
           slide.appendChild(b);
         }
       }
@@ -90,6 +100,7 @@
     /* 3. SmartArt：逐步生成流程图 */
     smartartBuild(c) {
       const labels = ['开始', '处理', '完成'];
+      const cols = [6, 39, 72];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点「添加节点」逐步生成流程图</div>
         <div class="demo-row">
@@ -102,16 +113,21 @@
       let n = 0;
       function render() {
         slide.innerHTML = '';
-        const cols = [12, 42, 72];
         for (let i = 0; i < n; i++) {
           const box = document.createElement('div');
-          box.style.cssText = `position:absolute;left:${cols[i]}%;top:40%;width:22%;height:18%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body);transition:all .3s ease`;
+          box.style.cssText = `position:absolute;left:${cols[i]}%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body);transition:all .3s ease`;
           box.textContent = labels[i];
           slide.appendChild(box);
           if (i > 0) {
+            const start = cols[i - 1] + 22;
+            const gap = cols[i] - start;
             const line = document.createElement('div');
-            line.style.cssText = `position:absolute;left:${cols[i - 1] + 22}%;top:48%;width:20%;height:2px;background:rgba(216,236,248,.6)`;
+            line.style.cssText = `position:absolute;left:${start}%;top:41%;width:${gap}%;height:2px;background:rgba(216,236,248,.6)`;
             slide.appendChild(line);
+            const arrow = document.createElement('div');
+            arrow.style.cssText = `position:absolute;left:${cols[i] - 2.4}%;top:40%;color:rgba(216,236,248,.75);font:10px/1 sans-serif`;
+            arrow.textContent = '▶';
+            slide.appendChild(arrow);
           }
         }
       }
@@ -301,10 +317,42 @@
         <div class="mini-slide" id="icSlide"></div>
       </div>`;
       const slide = c.querySelector('#icSlide');
-      function text() { slide.innerHTML = '<div style="position:absolute;left:8%;top:16%;width:84%;height:14%;background:rgba(255,255,255,.12);border-radius:4px"></div><div style="position:absolute;left:8%;top:36%;width:84%;height:14%;background:rgba(255,255,255,.12);border-radius:4px"></div><div style="position:absolute;left:8%;top:56%;width:84%;height:14%;background:rgba(255,255,255,.12);border-radius:4px"></div>'; }
+      function svgIcon(name, color) {
+        const P = {
+          target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/>',
+          chart: '<line x1="5" y1="20" x2="5" y2="13"/><line x1="12" y1="20" x2="12" y2="6"/><line x1="19" y1="20" x2="19" y2="15"/><line x1="3.5" y1="20" x2="20.5" y2="20"/>',
+          rocket: '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>'
+        };
+        return '<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="' + color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + P[name] + '</svg>';
+      }
+      function text() {
+        slide.innerHTML = '<div style="position:absolute;left:8%;top:14%;width:52%;height:5%;background:rgba(255,255,255,.28);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:22%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:27%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:32%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:44%;width:52%;height:5%;background:rgba(255,255,255,.28);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:52%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:57%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:62%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:74%;width:52%;height:5%;background:rgba(255,255,255,.28);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:82%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:87%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:92%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>';
+      }
       function icon() {
-        const cols = ['#663af3', '#027dea', '#269684']; let h = '';
-        for (let i = 0; i < 3; i++) h += `<div style="position:absolute;left:${8 + i * 30}%;top:24%;width:24%;height:34%;background:${cols[i]}22;border:1px solid ${cols[i]};border-radius:8px"></div><div style="position:absolute;left:${14 + i * 30}%;top:30%;width:12%;height:12%;border-radius:50%;background:${cols[i]};opacity:.9"></div>`;
+        const cards = [
+          { c: '#663af3', n: 'target', t: '目标市场', d: '锁定核心用户' },
+          { c: '#027dea', n: 'chart', t: '数据增长', d: '月度 +38%' },
+          { c: '#269684', n: 'rocket', t: '正式发布', d: 'Q3 上线' }
+        ];
+        let h = '';
+        cards.forEach((k, i) => {
+          const left = 8 + i * 30;
+          h += '<div style="position:absolute;left:' + left + '%;top:16%;width:24%;height:52%;background:' + k.c + '22;border:1px solid ' + k.c + ';border-radius:8px"></div>';
+          h += '<div style="position:absolute;left:' + (left + 7) + '%;top:22%;width:46px;height:46px">' + svgIcon(k.n, k.c) + '</div>';
+          h += '<div style="position:absolute;left:' + left + '%;top:47%;width:24%;text-align:center;font:600 12px var(--font-body);color:#fff">' + k.t + '</div>';
+          h += '<div style="position:absolute;left:' + left + '%;top:60%;width:24%;text-align:center;font:10px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + k.d + '</div>';
+        });
         slide.innerHTML = h;
       }
       icon();
