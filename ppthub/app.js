@@ -303,4 +303,13 @@
   /* ---- init ---- */
   buildNav();
   render();
+
+  /* ---- 深链：?term=<id> 打开对应术语 Modal（供 PPT 制作技巧页互链跳转） ---- */
+  window.openTermById = openModal;
+  try {
+    const deepId = new URLSearchParams(location.search).get('term');
+    if (deepId && terms.some(t => t.id === deepId)) {
+      setTimeout(() => openModal(deepId), 80);
+    }
+  } catch (e) {}
 })();
