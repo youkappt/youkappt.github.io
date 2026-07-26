@@ -18,6 +18,17 @@ function txt(x, y, w, s, size, color, bold) {
 function circ(x, y, d, color) {
   return '<div style="position:absolute;left:' + x + '%;top:' + y + '%;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:' + color + '"></div>';
 }
+/* 线性 SVG 图标（AuthKit 风格，零远程请求），name: target / chart / rocket */
+function icon(name, x, y, size, color) {
+  const P = {
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/>',
+    chart: '<line x1="5" y1="20" x2="5" y2="13"/><line x1="12" y1="20" x2="12" y2="6"/><line x1="19" y1="20" x2="19" y2="15"/><line x1="3.5" y1="20" x2="20.5" y2="20"/>',
+    rocket: '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>'
+  };
+  return '<div style="position:absolute;left:' + x + '%;top:' + y + '%;width:' + size + 'px;height:' + size + 'px;color:' + color + '">'
+    + '<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + P[name] + '</svg>'
+    + '</div>';
+}
 
 const TECHNIQUES = [
   /* ===================== 职场汇报 ===================== */
@@ -59,18 +70,20 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "三个按钮高低不齐，靠肉眼拖永远差一点点。",
       visual: slide(
-        '<div style="position:absolute;left:10%;top:30%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:6%;top:42%;width:88%;height:0;border-top:1px dashed rgba(216,236,248,.45)"></div>' +
+        '<div style="position:absolute;left:10%;top:22%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>' +
         '<div style="position:absolute;left:40%;top:46%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>' +
-        '<div style="position:absolute;left:70%;top:24%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>'
+        '<div style="position:absolute;left:70%;top:30%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>'
       )
     },
     after: {
-      tag: "改后", desc: "一键顶端对齐 + 横向分布，整齐如一。",
+      tag: "改后", desc: "一键顶端对齐，三个按钮齐刷刷吸附到参考线。",
       visual: slide(
-        '<div style="position:absolute;left:10%;top:40%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:40%;top:40%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:70%;top:40%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:8%;top:34%;width:84%;height:1px;background:rgba(216,236,248,.5)"></div>'
+        '<div style="position:absolute;left:6%;top:42%;width:88%;height:0;border-top:1px dashed rgba(160,120,255,.95)"></div>' +
+        '<div style="position:absolute;left:6%;top:41%;width:88%;height:2px;background:rgba(160,120,255,.35);filter:blur(1px)"></div>' +
+        '<div style="position:absolute;left:10%;top:42%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>' +
+        '<div style="position:absolute;left:40%;top:42%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>' +
+        '<div style="position:absolute;left:70%;top:42%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>'
       )
     },
     steps: [
@@ -89,20 +102,23 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "手画几个框加连线，歪歪扭扭还对不齐。",
       visual: slide(
-        '<div style="position:absolute;left:12%;top:18%;width:24%;height:16%;background:#e4483c;border-radius:6px;opacity:.7"></div>' +
-        '<div style="position:absolute;left:58%;top:18%;width:24%;height:16%;background:#e4483c;border-radius:6px;opacity:.7"></div>' +
-        '<div style="position:absolute;left:35%;top:58%;width:24%;height:16%;background:#e4483c;border-radius:6px;opacity:.7"></div>' +
-        '<div style="position:absolute;left:20%;top:34%;width:2px;height:18%;background:rgba(255,255,255,.3);transform:rotate(30deg)"></div>'
+        '<div style="position:absolute;left:7%;top:22%;width:20%;height:14%;background:#e4483c;border-radius:5px;opacity:.7;transform:rotate(-4deg)"></div>' +
+        '<div style="position:absolute;left:47%;top:54%;width:21%;height:13%;background:#e4483c;border-radius:5px;opacity:.7;transform:rotate(3deg)"></div>' +
+        '<div style="position:absolute;left:81%;top:18%;width:18%;height:15%;background:#e4483c;border-radius:5px;opacity:.7;transform:rotate(-2deg)"></div>' +
+        '<div style="position:absolute;left:25%;top:30%;width:2px;height:24%;background:rgba(228,120,110,.55);transform:rotate(36deg)"></div>' +
+        '<div style="position:absolute;left:66%;top:50%;width:2px;height:22%;background:rgba(228,120,110,.55);transform:rotate(-42deg)"></div>'
       )
     },
     after: {
       tag: "改后", desc: "SmartArt 自动排版，统一又整齐。",
       visual: slide(
-        '<div style="position:absolute;left:10%;top:20%;width:22%;height:15%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:60%;top:20%;width:22%;height:15%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:35%;top:58%;width:22%;height:15%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:32%;top:28%;width:24%;height:2px;background:rgba(216,236,248,.6)"></div>' +
-        '<div style="position:absolute;left:32%;top:27%;width:2px;height:30%;background:rgba(216,236,248,.6)"></div>'
+        '<div style="position:absolute;left:6%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body)">开始</div>' +
+        '<div style="position:absolute;left:39%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body)">处理</div>' +
+        '<div style="position:absolute;left:72%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body)">完成</div>' +
+        '<div style="position:absolute;left:28%;top:41%;width:11%;height:2px;background:rgba(216,236,248,.6)"></div>' +
+        '<div style="position:absolute;left:36.6%;top:40%;color:rgba(216,236,248,.75);font:10px/1 sans-serif">▶</div>' +
+        '<div style="position:absolute;left:61%;top:41%;width:11%;height:2px;background:rgba(216,236,248,.6)"></div>' +
+        '<div style="position:absolute;left:69.6%;top:40%;color:rgba(216,236,248,.75);font:10px/1 sans-serif">▶</div>'
       )
     },
     steps: [
@@ -366,18 +382,35 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "一页塞满段落文字，没人看。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:18%;width:84%;height:14%;background:rgba(255,255,255,.12);border-radius:4px"></div>' +
-        '<div style="position:absolute;left:8%;top:38%;width:84%;height:14%;background:rgba(255,255,255,.12);border-radius:4px"></div>' +
-        '<div style="position:absolute;left:8%;top:58%;width:84%;height:14%;background:rgba(255,255,255,.12);border-radius:4px"></div>'
+        '<div style="position:absolute;left:8%;top:14%;width:52%;height:5%;background:rgba(255,255,255,.30);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:22%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:27%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:32%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:44%;width:52%;height:5%;background:rgba(255,255,255,.30);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:52%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:57%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:62%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:74%;width:52%;height:5%;background:rgba(255,255,255,.30);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:82%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:87%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:92%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
       )
     },
     after: {
       tag: "改后", desc: "3 个「图标+短句」卡片，扫一眼就懂。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:20%;width:26%;height:30%;background:rgba(102,58,243,.18);border:1px solid rgba(102,58,243,.4);border-radius:8px"></div>' +
-        '<div style="position:absolute;left:37%;top:20%;width:26%;height:30%;background:rgba(2,125,234,.18);border:1px solid rgba(2,125,234,.4);border-radius:8px"></div>' +
-        '<div style="position:absolute;left:66%;top:20%;width:26%;height:30%;background:rgba(38,150,132,.18);border:1px solid rgba(38,150,132,.4);border-radius:8px"></div>' +
-        circ(16, 28, 14, "#663af3") + circ(45, 28, 14, "#027dea") + circ(74, 28, 14, "#269684")
+        '<div style="position:absolute;left:8%;top:16%;width:26%;height:52%;background:rgba(102,58,243,.16);border:1px solid rgba(102,58,243,.42);border-radius:8px"></div>' +
+        '<div style="position:absolute;left:37%;top:16%;width:26%;height:52%;background:rgba(2,125,234,.16);border:1px solid rgba(2,125,234,.42);border-radius:8px"></div>' +
+        '<div style="position:absolute;left:66%;top:16%;width:26%;height:52%;background:rgba(38,150,132,.16);border:1px solid rgba(38,150,132,.42);border-radius:8px"></div>' +
+        icon('target', 17, 22, 38, '#9a7bff') +
+        icon('chart', 46, 22, 38, '#4db5ff') +
+        icon('rocket', 75, 22, 38, '#5fe0bf') +
+        '<div style="position:absolute;left:8%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#fff">目标市场</div>' +
+        '<div style="position:absolute;left:37%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#fff">数据增长</div>' +
+        '<div style="position:absolute;left:66%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#fff">正式发布</div>' +
+        '<div style="position:absolute;left:8%;top:60%;width:26%;text-align:center;font:11px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">锁定核心用户群</div>' +
+        '<div style="position:absolute;left:37%;top:60%;width:26%;text-align:center;font:11px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">月度增长 +38%</div>' +
+        '<div style="position:absolute;left:66%;top:60%;width:26%;text-align:center;font:11px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Q3 正式上线</div>'
       )
     },
     steps: [
