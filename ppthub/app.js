@@ -22,8 +22,18 @@
   let activeCat = '全部';
   let query = '';
 
-  /* ---- derive categories ---- */
-  const categories = ['全部', ...Array.from(new Set(terms.map(t => t.category)))];
+  /* ---- derive categories (curated logical order) ---- */
+  // 按「学习/制作流程」排定，比首次出现顺序更顺手；
+  // 未来若 data.js 新增分类，不在下表里的会按出现顺序自动追加到末尾，不会丢。
+  const CATEGORY_ORDER = [
+    '字体与配色', '排版与布局', '图形与图示', '图片与多媒体',
+    '母版与版式', '动画与切换', '设计原则', '效率与技巧',
+    '软件功能', '输出与放映'
+  ];
+  const presentCats = Array.from(new Set(terms.map(t => t.category)));
+  const orderedCats = CATEGORY_ORDER.filter(c => presentCats.includes(c));
+  const extraCats = presentCats.filter(c => !CATEGORY_ORDER.includes(c));
+  const categories = ['全部', ...orderedCats, ...extraCats];
 
   /* ---- build category nav ---- */
   function buildNav() {
