@@ -19,7 +19,8 @@
 <meta name="twitter:image" content="https://youkappt.com/og-cover.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
 <style>
 /* ===== Design Tokens (AuthKit Style Reference) ===== */
 :root {
@@ -764,8 +765,13 @@ function makeCard(src, i) {
   var card = document.createElement('div');
   card.className = 'card';
   card.onclick = function() { openModal(i); };
+  // 关键：图片未加载前给卡片占位高度，否则所有卡片塌缩在首屏、
+  // IntersectionObserver 会一次性触发全部图片加载（懒加载失效）
+  card.style.minHeight = Math.round(estHeight(i)) + 'px';
   var img = new Image();
   img.alt = CONFIG.templateName + ' 第' + (i + 1) + '页';
+  img.loading = 'lazy';
+  img.decoding = 'async';
   img.dataset.src = 'images/' + src;   // 先挂 data-src，滚动到才真正加载
   card.appendChild(img);
   return card;
@@ -813,7 +819,11 @@ function setupLazy() {
           if (img.dataset.src) {
             img.src = img.dataset.src;
             img.removeAttribute('data-src');
-            img.onload = function() { img.classList.add('loaded'); };
+            img.onload = function() {
+              img.classList.add('loaded');
+              // 真图到位后撤掉占位高度，让卡片按真实图高排版
+              if (img.parentNode) img.parentNode.style.minHeight = '';
+            };
             observer.unobserve(img);
           }
         }
