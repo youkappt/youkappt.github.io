@@ -85,7 +85,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 <style>
   :root {
     /* Colors */
@@ -233,7 +234,7 @@
   .section-head p { font-size: 16px; color: var(--color-moon-mist); max-width: 640px; margin: 0 auto; }
   .result-count { font-family: var(--font-mono); font-size: 13px; color: var(--color-fog-veil); margin-top: 14px; letter-spacing: 0.04em; }
 
-  .category { margin-bottom: 72px; }
+  .category { margin-bottom: 72px; content-visibility: auto; contain-intrinsic-size: auto 640px; }
   .category-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--color-glass-edge); }
   .category-head .cat-ico { width: 40px; height: 40px; border-radius: var(--radius-iconcontainers); background: rgba(186, 214, 247, 0.08); display: grid; place-items: center; color: var(--color-frost-glow); flex-shrink: 0; }
   .category-head h3 { font-family: var(--font-display); font-weight: 500; font-size: 22px; color: var(--color-frost-glow); }
@@ -856,7 +857,19 @@
     else sel = nav.querySelector('.sn-link[data-slug="' + cssEscape(slug) + '"]');
     if (sel) {
       sel.classList.add('is-active');
-      try { sel.scrollIntoView({ block: 'nearest', inline: 'center' }); } catch (e) {}
+      // 只滚动导航容器自身，绝不触发页面纵向滚动（scrollIntoView 会连带拽动 window，
+      // 在移动端横向导航条下会导致"向下滚动被反复往回拽"的 bug）
+      try {
+        const navRect = nav.getBoundingClientRect();
+        const selRect = sel.getBoundingClientRect();
+        if (nav.scrollWidth > nav.clientWidth + 1) {           // 移动端：横向导航条 → 横向居中
+          const delta = (selRect.left + selRect.width / 2) - (navRect.left + navRect.width / 2);
+          nav.scrollBy({ left: delta, behavior: 'smooth' });
+        } else if (nav.scrollHeight > nav.clientHeight + 1) {  // 桌面端：竖直侧栏 → 纵向居中（仅滚容器）
+          const delta = (selRect.top + selRect.height / 2) - (navRect.top + navRect.height / 2);
+          nav.scrollBy({ top: delta, behavior: 'smooth' });
+        }
+      } catch (e) {}
     }
   }
   function fillSideNav(list) {
