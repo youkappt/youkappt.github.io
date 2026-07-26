@@ -1,0 +1,18 @@
+# 优卡导航
+> AI × DESIGN × PPT 工具导航站。精选最好用的 AI 设计工具，一站直达——发现、对比、直接用。
+
+## 核心页面
+- [优卡导航](https://youkappt.com/): 主站。27 个分类、134 个 AI 设计工具大全，覆盖 AI 生图、视频生成、PPT 模板、3D 模型、字体排版、图片素材等。
+- [PPT 术语图鉴](https://youkappt.com/ppthub/): 用大白话 + 专属交互演示，讲清 PPT 里那些听着耳熟、说不清的词。
+- [PPT 制作技巧](https://youkappt.com/ppt-tips/): 每个技巧配 Before/After 对比、分步操作与可交互演示，跟着一步步做出好 PPT。
+- [PPT 作品展示图生成器](https://youkappt.com/mockup/): 一键生成风格统一、可直接用于 PPT 的作品展示配图。
+- [优卡的素材库](https://youkappt.com/template/): 精选可商用 PPT 模板、图示与配图，做幻灯片直接拖用。
+
+## 关于
+优卡导航由翁昕耀（网名：优卡 / youka）创建，定位「发现最好用的 AI 设计工具」。
+站点为纯静态导航站，工具数据维护在 tools.md，所有图标本地化以保证秒开与抗墙。
+
+## 官方渠道
+- 微信公众号：优卡说PPT（[二维码](https://youkappt.com/assets/contact/wechat-gzh-qr.jpg)）
+- [小红书](https://www.xiaohongshu.com/user/profile/55e286c0c2bdeb696556a64a): 优卡的小红书主页
+- 个人微信号：YOUKAPPT（[二维码](https://youkappt.com/assets/contact/wechat-qr-youkappt.jpg)，扫码添加好友）
