@@ -64,9 +64,9 @@
     c.innerHTML = `
       <div class="term-card-head"><span class="term-name">${esc(t.name)}</span></div>
       <div class="tech-thumbs">
-        <div class="tech-thumb"><span class="tech-thumb-tag before">${esc(t.before.tag)}</span><img class="tech-shot" src="thumbs/${t.id}_before.png" alt="${esc(t.before.tag)}"></div>
+        <div class="tech-thumb"><span class="tech-thumb-tag before">${esc(t.before.tag)}</span><img class="tech-shot" src="thumbs/${t.id}_before.png" alt="${esc(t.before.tag)}" loading="lazy" decoding="async"></div>
         <span class="tech-vs">VS</span>
-        <div class="tech-thumb"><span class="tech-thumb-tag after">${esc(t.after.tag)}</span><img class="tech-shot" src="thumbs/${t.id}_after.png" alt="${esc(t.after.tag)}"></div>
+        <div class="tech-thumb"><span class="tech-thumb-tag after">${esc(t.after.tag)}</span><img class="tech-shot" src="thumbs/${t.id}_after.png" alt="${esc(t.after.tag)}" loading="lazy" decoding="async"></div>
       </div>
       <div class="tech-summary">${esc(t.summary)}</div>
       <div class="term-meta">
