@@ -33,7 +33,13 @@
     'replace-font': '替换字体', 'selection-pane': '选择窗格', 'group': '组合', 'remove-bg': '删除背景',
     'presenter-view': '演示者视图', 'designer': '设计灵感', 'combo-chart': '组合图表', 'anim-painter': '动画刷',
     'edit-points': '编辑顶点', 'recolor': '重新着色', 'custom-show': '自定义放映', 'narrate': '录制旁白', 'table-beauty': '表格美化',
-    'outline': '大纲视图', 'word-to-ppt': 'Word转PPT', 'live-caption': '实时字幕', 'crop-shape': '裁剪为形状', 'hyperlink': '超链接', 'ink': '墨迹批注', 'motion-path': '路径动画', 'qat': '快速访问栏'
+    'outline': '大纲视图', 'word-to-ppt': 'Word转PPT', 'live-caption': '实时字幕', 'crop-shape': '裁剪为形状', 'hyperlink': '超链接', 'ink': '墨迹批注', 'motion-path': '路径动画', 'qat': '快速访问栏',
+    'data-label': '数据标签', 'timeline': '动画时间轴', 'morph-force': '平滑强制配对',
+    'guides': '参考线', 'summary-zoom': '摘要缩放', '3d-model': '3D模型', 'variants': '主题变体',
+    'theme': '主题', 'theme-variant': '主题变体', 'smart-align': '智能对齐', 'alignment': '对齐',
+    'artistic-effect': '艺术效果', 'picture-correct': '图片更正', 'picture-style': '图片样式', 'change-picture': '更换图片保留格式',
+    'excel-link': 'Excel 链接更新', 'data-bars': '数据条', 'video-trim': '视频裁剪', 'a11y-check': '辅助功能检查',
+    'reuse-slides': '重用幻灯片', 'ink-math': '墨迹公式', 'map-chart': '地图图表',
   };
 
   const els = {
