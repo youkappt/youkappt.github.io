@@ -613,7 +613,7 @@ body {
   border: 1px solid var(--color-glass-edge);
   border-radius: var(--radius-modals);
   box-shadow: var(--shadow-modal);
-  max-width: 760px;
+  max-width: 860px;
   width: 100%;
   padding: var(--spacing-40);
   position: relative;
@@ -732,11 +732,11 @@ body {
 .modal-ba { font-size: 15px; color: var(--color-frost-glow); line-height: 1.6; }
 .modal-extra { font-size: 15px; color: var(--color-frost-glow); line-height: 1.6; }
 
-/* 改前 vs 改后 · 静态视觉对比图 */
-.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-12); margin-top: var(--spacing-12); }
-.ba-panel { display: flex; flex-direction: column; gap: var(--spacing-8); min-width: 0; }
+/* 改前 vs 改后 · 上下排版 + 放大区域（竖排更清晰） */
+.ba-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-24); margin-top: var(--spacing-16); }
+.ba-panel { display: flex; flex-direction: column; gap: var(--spacing-10); min-width: 0; }
 /* 详情页改前/改后大图：直接用与卡片同款的 PNG 截图，固定 480:270 舞台 + object-fit:cover */
-.ba-shot { width: 100%; aspect-ratio: 480 / 270; object-fit: cover; display: block;
+.ba-shot { width: 100%; max-width: 680px; aspect-ratio: 480 / 270; object-fit: cover; display: block;
   border: 1px solid var(--color-glass-edge); border-radius: var(--radius-cards); background: #0b0d18; }
 .ba-tag {
   align-self: flex-start;
