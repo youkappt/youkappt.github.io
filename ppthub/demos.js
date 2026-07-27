@@ -3357,35 +3357,6 @@ const DEMOS = {
     render('slide');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
   },
-  'color-603010'(c) {
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row">
-          <button class="demo-btn active" data-m="rule">60-30-10</button>
-          <button class="demo-btn" data-m="flat">均等乱配</button>
-        </div>
-        <div class="mini-slide" id="c6Stage" style="padding:14px"></div>
-      </div>`;
-    const s = c.querySelector('#c6Stage');
-    function render(m) {
-      if (m === 'rule') {
-        s.innerHTML = `
-          <div style="display:flex;flex-direction:column;gap:0">
-            <div style="height:54px;background:#1e2a5e;border-radius:8px 8px 0 0;display:flex;align-items:center;padding:0 12px;color:#cdd6ff;font:11px var(--font-body)">主色 60%（背景/大色块）</div>
-            <div style="height:30px;background:#3b6bd6;display:flex;align-items:center;padding:0 12px;color:#eaf0ff;font:11px var(--font-body)">辅色 30%（卡片/图表）</div>
-            <div style="height:16px;background:#ff8a3d;border-radius:0 0 8px 8px;display:flex;align-items:center;padding:0 12px;color:#3a1a00;font:11px var(--font-body);font-weight:700">点缀 10%（关键数字）</div>
-          </div>`;
-      } else {
-        s.innerHTML = `
-          <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-top:14px">
-            ${['#e0466b', '#27a567', '#f0a93b', '#3b6bd6', '#9b59ff', '#1abc9c'].map(x => `<div style="width:42px;height:42px;background:${x};border-radius:8px"></div>`).join('')}
-            <div style="width:100%;text-align:center;font:10px var(--font-body);color:var(--color-moon-mist);margin-top:6px">五颜六色均等 → 花、乱、没重点</div>
-          </div>`;
-      }
-    }
-    render('rule');
-    c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
-  },
   'autoshape'(c) {
     c.innerHTML = `
       <div class="demo-stack">
@@ -3641,46 +3612,6 @@ const DEMOS = {
     render('off');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
   },
-  '3d-model'(c) {
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row">
-          <button class="demo-btn active" data-m="flat">平面图</button>
-          <button class="demo-btn" data-m="d3">3D 可旋转</button>
-        </div>
-        <div class="mini-slide" id="m3Stage" style="align-items:center;justify-content:center;padding:14px"></div>
-      </div>`;
-    const s = c.querySelector('#m3Stage');
-    function render(m) {
-      if (m === 'flat') {
-        s.innerHTML = '<div style="width:46px;height:46px;background:#e46d4c;border-radius:8px"></div><div style="font:9px var(--font-body);color:#e46d4c;margin-top:8px">死的平面，没立体感</div>';
-      } else {
-        s.innerHTML = '<div style="width:46px;height:46px;background:linear-gradient(135deg,#663af3,#027dea);border-radius:10px;transform:rotate(-12deg);box-shadow:6px 6px 14px rgba(0,0,0,.4)"></div><div style="font:9px var(--font-body);color:#7ee0a8;margin-top:8px">可拖动旋转，有质感</div>';
-      }
-    }
-    render('flat');
-    c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
-  },
-  'zoom'(c) {
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row">
-          <button class="demo-btn active" data-m="linear">线性放映</button>
-          <button class="demo-btn" data-m="zoom">缩放菜单</button>
-        </div>
-        <div class="mini-slide" id="zmStage" style="align-items:center;justify-content:center;padding:14px"></div>
-      </div>`;
-    const s = c.querySelector('#zmStage');
-    function render(m) {
-      if (m === 'linear') {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#e46d4c;line-height:1.9">封面 → 1 → 2 → 3<br>顺序固定，不能跳</div>';
-      } else {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#7ee0a8;line-height:1.9">封面：<span style="color:#663af3">[节1][节2][节3]</span><br>点哪节跳哪节，自由穿梭</div>';
-      }
-    }
-    render('linear');
-    c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
-  },
   'watermark'(c) {
     c.innerHTML = `
       <div class="demo-stack">
@@ -3741,26 +3672,6 @@ const DEMOS = {
     render('overflow');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
   },
-  'bullets'(c) {
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row">
-          <button class="demo-btn active" data-m="para">纯段落</button>
-          <button class="demo-btn" data-m="list">项目符号</button>
-        </div>
-        <div class="mini-slide" id="blStage" style="padding:14px"></div>
-      </div>`;
-    const s = c.querySelector('#blStage');
-    function render(m) {
-      if (m === 'para') {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#e46d4c;line-height:1.6">建议一建议二建议三，全挤一段，扫读费劲。</div>';
-      } else {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#7ee0a8;line-height:1.7">• 建议一<br>• 建议二<br>• 建议三</div>';
-      }
-    }
-    render('para');
-    c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
-  },
   'pptx-format'(c) {
     c.innerHTML = `
       <div class="demo-stack">
@@ -3780,6 +3691,342 @@ const DEMOS = {
     }
     render('wrong');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
+  },
+
+  'word-to-ppt'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-label">Word 大纲 → 一键生成 PPT 骨架</div>
+        <div class="demo-row"><button class="demo-btn" id="wpGen">生成 PPT</button><button class="demo-btn" id="wpReset">重置</button></div>
+        <div style="display:flex;gap:12px">
+          <div id="wpOutline" style="flex:1;padding:10px;background:rgba(186,214,247,.04);border:1px solid var(--color-glass-edge);border-radius:8px;font:12px/1.7 var(--font-body);color:var(--color-moon-mist)">
+            <div style="font-weight:600;color:#c9b6ff">标题 1. 市场概况</div>
+            <div style="padding-left:16px;color:var(--color-fog-veil)">• 市场规模</div>
+            <div style="padding-left:16px;color:var(--color-fog-veil)">• 竞争格局</div>
+            <div style="font-weight:600;color:#c9b6ff;margin-top:6px">标题 1. 核心策略</div>
+            <div style="padding-left:16px;color:var(--color-fog-veil)">• 三步走打法</div>
+            <div style="font-weight:600;color:#c9b6ff;margin-top:6px">标题 1. 预期收益</div>
+            <div style="padding-left:16px;color:var(--color-fog-veil)">• 一年内翻倍</div>
+          </div>
+          <div id="wpSlides" style="flex:1;display:flex;flex-direction:column;gap:6px"></div>
+        </div>
+      </div>`;
+    const slides = c.querySelector('#wpSlides');
+    function gen() {
+      const data = [['市场概况','市场规模·竞争格局'],['核心策略','三步走打法·资源投入·时间线'],['预期收益','一年内翻倍·ROI 测算']];
+      slides.innerHTML = '';
+      data.forEach(([t,b]) => {
+        const s = document.createElement('div');
+        s.style.cssText = 'padding:8px 10px;background:rgba(102,58,243,.15);border:1px solid rgba(102,58,243,.4);border-radius:6px;font:12px var(--font-body);color:#fff';
+        s.innerHTML = `<div style="font-weight:500;color:#c9b6ff">${t}</div><div style="font-size:11px;color:var(--color-moon-mist)">${b}</div>`;
+        slides.appendChild(s);
+      });
+    }
+    c.querySelector('#wpGen').onclick = gen;
+    c.querySelector('#wpReset').onclick = () => { slides.innerHTML = '<div style="color:var(--color-fog-veil);font:12px var(--font-body);padding:16px;text-align:center">← 点击「生成 PPT」</div>'; };
+    c.querySelector('#wpReset').click();
+  },
+
+  'ink'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-row">
+          <button class="demo-btn active" id="inkPen">🖊 画笔</button>
+          <button class="demo-btn" id="inkEraser">🧹 擦除</button>
+          <button class="demo-btn" id="inkClear">清空</button>
+        </div>
+        <div class="mini-slide" id="inkStage" style="position:relative;cursor:crosshair;overflow:hidden">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:22px var(--font-display);color:rgba(199,211,234,.15)">画布</div>
+          <canvas id="inkCanvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+        </div>
+      </div>`;
+    const canvas = c.querySelector('#inkCanvas');
+    const ctx = canvas.getContext('2d');
+    let drawing = false, erasing = false;
+    function resize() { const r = canvas.parentElement.getBoundingClientRect(); canvas.width = r.width; canvas.height = r.height; }
+    resize();
+    ctx.strokeStyle = '#e46d4c'; ctx.lineWidth = 3; ctx.lineCap = 'round';
+    function getPos(e) {
+      const r = canvas.getBoundingClientRect();
+      return { x: (e.clientX || e.touches?.[0]?.clientX) - r.left, y: (e.clientY || e.touches?.[0]?.clientY) - r.top };
+    }
+    function start(e) { drawing = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); }
+    function move(e) { if (!drawing) return; const p = getPos(e); if (erasing) { ctx.clearRect(p.x - 8, p.y - 8, 16, 16); return; } ctx.lineTo(p.x, p.y); ctx.stroke(); }
+    function stop() { drawing = false; }
+    canvas.addEventListener('mousedown', start); canvas.addEventListener('mousemove', move); canvas.addEventListener('mouseup', stop); canvas.addEventListener('mouseleave', stop);
+    canvas.addEventListener('touchstart', e => { e.preventDefault(); start(e); }); canvas.addEventListener('touchmove', e => { e.preventDefault(); move(e); }); canvas.addEventListener('touchend', stop);
+    c.querySelector('#inkPen').onclick = () => { erasing = false; ctx.strokeStyle = '#e46d4c'; };
+    c.querySelector('#inkEraser').onclick = () => { erasing = true; };
+    c.querySelector('#inkClear').onclick = () => { ctx.clearRect(0, 0, canvas.width, canvas.height); };
+  },
+
+  'data-label'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-row"><button class="demo-btn" data-m="off">隐藏标签</button><button class="demo-btn active" data-m="on">显示标签</button></div>
+        <div class="mini-slide" style="display:flex;align-items:flex-end;justify-content:center;gap:14px;padding:14px;height:140px">
+          ${[45, 72, 58, 88].map((v,i) => `<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div class="dlVal" data-v="${v}" style="font:10px var(--font-mono);color:#7ee0a8;opacity:1">${v}</div><div style="width:36px;height:${v}px;background:linear-gradient(180deg,#027dea,#663af3);border-radius:4px 4px 0 0"></div><div style="font:9px var(--font-body);color:var(--color-fog-veil)">Q${i+1}</div></div>`).join('')}
+        </div>
+      </div>`;
+    c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => {
+      const on = btn.dataset.m === 'on';
+      c.querySelectorAll('.dlVal').forEach(el => el.style.opacity = on ? 1 : 0);
+    });
+  },
+
+  'morph-force'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-label">给两个对象取同名(!!前綴) → 平滑切换时强制配对过渡</div>
+        <div class="demo-row"><button class="demo-btn" id="mfMorph">▶ 播放平滑过渡</button></div>
+        <div class="mini-slide" id="mfStage" style="position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <div id="mfObj" style="width:80px;height:80px;border-radius:16px;background:linear-gradient(135deg,#663af3,#027dea);transition:all .8s cubic-bezier(.22,1,.36,1)"></div>
+        </div>
+      </div>`;
+    const obj = c.querySelector('#mfObj');
+    let morphed = false;
+    c.querySelector('#mfMorph').onclick = () => {
+      morphed = !morphed;
+      if (morphed) {
+        obj.style.width = '120px'; obj.style.height = '60px';
+        obj.style.borderRadius = '50%'; obj.style.background = 'linear-gradient(135deg,#e46d4c,#f5a623)';
+        obj.style.transform = 'rotate(360deg)';
+      } else {
+        obj.style.width = '80px'; obj.style.height = '80px';
+        obj.style.borderRadius = '16px'; obj.style.background = 'linear-gradient(135deg,#663af3,#027dea)';
+        obj.style.transform = 'rotate(0deg)';
+      }
+    };
+  },
+
+  'artistic-effect'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-row">
+          <button class="demo-btn active" data-f="original">原图</button>
+          <button class="demo-btn" data-f="blur">虚化</button>
+          <button class="demo-btn" data-f="pencil">铅笔素描</button>
+          <button class="demo-btn" data-f="water">水彩</button>
+        </div>
+        <div class="mini-slide" id="aeStage" style="display:flex;align-items:center;justify-content:center">
+          <div id="aeImg" style="width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#2f6df0,#2fc9e0,#7ee0a8);transition:filter .4s;display:flex;align-items:center;justify-content:center;color:#fff;font:14px var(--font-body)">图片</div>
+        </div>
+      </div>`;
+    const img = c.querySelector('#aeImg');
+    const fx = { original: 'none', blur: 'blur(4px) saturate(.6)', pencil: 'contrast(1.5) grayscale(.9) brightness(1.2)', water: 'saturate(1.3) brightness(1.1) contrast(.85) blur(.5px)' };
+    c.querySelectorAll('[data-f]').forEach(btn => btn.onclick = () => { img.style.filter = fx[btn.dataset.f] || 'none'; });
+  },
+
+  'picture-correct'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-label">拖动调节亮度与对比度</div>
+        <div style="display:flex;gap:12px;align-items:center;font:12px var(--font-body);color:var(--color-moon-mist)">
+          <span>亮度</span><input type="range" min="-50" max="50" value="0" class="demo-slider" id="pcBright" style="flex:2"><span id="pcBv">0</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;font:12px var(--font-body);color:var(--color-moon-mist)">
+          <span>对比度</span><input type="range" min="-50" max="50" value="0" class="demo-slider" id="pcContrast" style="flex:2"><span id="pcCv">0</span>
+        </div>
+        <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
+          <div id="pcImg" style="width:140px;height:100px;border-radius:10px;background:linear-gradient(135deg,#3a4b7a,#5a6d9f,#3a4b7a);transition:filter .2s;filter:brightness(1) contrast(1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font:12px var(--font-body)">照片</div>
+        </div>
+      </div>`;
+    const img = c.querySelector('#pcImg'), b = c.querySelector('#pcBright'), cb = c.querySelector('#pcBright'), cv = c.querySelector('#pcCv');
+    function up() {
+      const br = (+b.value) / 100 + 1, cr = (+c.querySelector('#pcContrast').value) / 100 + 1;
+      img.style.filter = `brightness(${br}) contrast(${cr})`;
+      c.querySelector('#pcBv').textContent = b.value;
+      c.querySelector('#pcCv').textContent = c.querySelector('#pcContrast').value;
+    }
+    b.oninput = up; c.querySelector('#pcContrast').oninput = up;
+  },
+
+  'picture-style'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-row">
+          <button class="demo-btn active" data-s="plain">纯图</button>
+          <button class="demo-btn" data-s="border">白边框</button>
+          <button class="demo-btn" data-s="shadow">投影</button>
+          <button class="demo-btn" data-s="metal">金属框</button>
+        </div>
+        <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
+          <div id="psImg" style="width:130px;height:90px;border-radius:8px;background:linear-gradient(135deg,#027dea,#2fc9e0);transition:all .3s"></div>
+        </div>
+      </div>`;
+    const img = c.querySelector('#psImg');
+    const styles = {
+      plain: { border: 'none', borderRadius: '8px', boxShadow: 'none', transform: 'none' },
+      border: { border: '3px solid #fff', borderRadius: '8px', boxShadow: 'none', transform: 'none' },
+      shadow: { border: 'none', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,.35)', transform: 'none' },
+      metal: { border: '3px solid #c9b6ff', borderRadius: '12px', boxShadow: '0 4px 16px rgba(102,58,243,.35), inset 0 0 0 2px rgba(255,255,255,.1)', transform: 'scale(1.02)' }
+    };
+    c.querySelectorAll('[data-s]').forEach(btn => btn.onclick = () => {
+      const s = styles[btn.dataset.s] || styles.plain;
+      Object.assign(img.style, s);
+    });
+  },
+
+  'change-picture'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-label">格式已定 → 点按钮换图，保留位置/大小/圆角/阴影</div>
+        <div class="demo-row"><button class="demo-btn" id="cpSwap">更换图片</button></div>
+        <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
+          <div id="cpImg" style="width:120px;height:90px;border-radius:12px;border:2px solid #c9b6ff;box-shadow:0 4px 12px rgba(102,58,243,.3);display:flex;align-items:center;justify-content:center;font:13px var(--font-body);color:#fff;transition:background .4s">图 A</div>
+        </div>
+      </div>`;
+    const img = c.querySelector('#cpImg');
+    const colors = [['#027dea','图 A'], ['#e46d4c','图 B'], ['#269684','图 C'], ['#663af3','图 D']];
+    let idx = 0;
+    c.querySelector('#cpSwap').onclick = () => { idx = (idx + 1) % colors.length; img.style.background = colors[idx][0]; img.textContent = colors[idx][1]; };
+  },
+
+  'excel-link'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-row"><button class="demo-btn" id="elUpdate">更新 Excel 数据</button><button class="demo-btn" id="elRefresh">→ 刷新图表</button></div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div id="elExcel" style="flex:1;padding:8px;background:rgba(186,214,247,.04);border:1px solid var(--color-glass-edge);border-radius:8px;font:11px var(--font-mono);color:var(--color-moon-mist)">
+            <div style="font-weight:600;color:#7ee0a8;margin-bottom:4px">Excel 数据</div>
+            <div>产品A: <span id="elA">120</span></div>
+            <div>产品B: <span id="elB">85</span></div>
+            <div>产品C: <span id="elC">200</span></div>
+          </div>
+          <div class="mini-slide" id="elChart" style="flex:2;display:flex;align-items:flex-end;justify-content:center;gap:8px;padding:12px;height:110px"></div>
+        </div>
+      </div>`;
+    const chart = c.querySelector('#elChart');
+    function draw() {
+      const vals = [c.querySelector('#elA'), c.querySelector('#elB'), c.querySelector('#elC')].map(el => +el.textContent);
+      const max = Math.max(...vals);
+      chart.innerHTML = '';
+      ['产品A','产品B','产品C'].forEach((n,i) => {
+        const d = document.createElement('div');
+        d.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;flex:1';
+        d.innerHTML = `<div style="font:10px var(--font-mono);color:#7ee0a8">${vals[i]}</div><div style="width:100%;height:${(vals[i]/max)*80}px;background:linear-gradient(180deg,#663af3,#027dea);border-radius:4px 4px 0 0;min-height:8px"></div><div style="font:9px var(--font-body);color:var(--color-fog-veil)">${n}</div>`;
+        chart.appendChild(d);
+      });
+    }
+    draw();
+    c.querySelector('#elUpdate').onclick = () => {
+      [c.querySelector('#elA'), c.querySelector('#elB'), c.querySelector('#elC')].forEach(el => el.textContent = Math.floor(Math.random() * 200 + 30));
+    };
+    c.querySelector('#elRefresh').onclick = draw;
+  },
+
+  'data-bars'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-row"><button class="demo-btn" data-m="off">纯数字</button><button class="demo-btn active" data-m="on">数据条</button></div>
+        <div style="display:flex;flex-direction:column;gap:8px;padding:10px;border:1px solid var(--color-glass-edge);border-radius:8px">
+          ${[{l:'Q1',v:120},{l:'Q2',v:85},{l:'Q3',v:198},{l:'Q4',v:150}].map((d,i) => {
+            const pct = (d.v / 200 * 100);
+            return `<div style="display:flex;align-items:center;gap:8px;font:12px var(--font-body)">
+              <span style="width:20px;color:var(--color-moon-mist)">${d.l}</span>
+              <div style="flex:1;height:18px;background:rgba(186,214,247,.06);border-radius:4px;position:relative;overflow:hidden">
+                <div class="dbBar" style="position:absolute;left:0;top:0;height:100%;width:${pct}%;background:linear-gradient(90deg,#663af3,#027dea);border-radius:4px;transition:opacity .3s"></div>
+              </div>
+              <span style="width:30px;text-align:right;color:var(--color-frost-glow);font:11px var(--font-mono)">${d.v}</span>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`;
+    c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => {
+      const on = btn.dataset.m === 'on';
+      c.querySelectorAll('.dbBar').forEach(el => el.style.opacity = on ? 1 : 0);
+    });
+  },
+
+  'video-trim'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-label">拖动滑块裁剪视频头尾</div>
+        <div class="mini-slide" style="display:flex;flex-direction:column;gap:8px;padding:14px">
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="flex:1;height:6px;background:rgba(186,214,247,.1);border-radius:3px;position:relative">
+              <div id="vtRange" style="position:absolute;left:15%;right:25%;top:-3px;height:12px;background:linear-gradient(90deg,#663af3,#027dea);border-radius:4px"></div>
+              <div id="vtTrimStart" style="position:absolute;left:15%;top:-6px;width:10px;height:18px;background:#e46d4c;border-radius:2px;cursor:ew-resize"></div>
+              <div id="vtTrimEnd" style="position:absolute;right:25%;top:-6px;width:10px;height:18px;background:#e46d4c;border-radius:2px;cursor:ew-resize"></div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font:10px var(--font-mono);color:var(--color-fog-veil)">
+            <span>00:00</span>
+            <span id="vtTrimmed">已裁剪</span>
+            <span>01:30</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="demo-btn" id="vtPlay">▶ 播放裁剪段</button>
+            <button class="demo-btn" id="vtFull">全部播放</button>
+          </div>
+          <div id="vtStatus" style="font:11px var(--font-body);color:var(--color-moon-mist);text-align:center"></div>
+        </div>
+      </div>`;
+    let trimmed = true;
+    c.querySelector('#vtPlay').onclick = () => { c.querySelector('#vtStatus').textContent = '▶ 正在播放裁剪后的片段 (00:15 ~ 01:08)'; };
+    c.querySelector('#vtFull').onclick = () => { c.querySelector('#vtStatus').textContent = '▶ 正在播放完整视频 (00:00 ~ 01:30)'; trimmed = false; };
+  },
+
+  'ink-math'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-label">手写公式 → 自动识别为标准排版</div>
+        <div class="demo-row">
+          <button class="demo-btn" data-f="integral">∫ 积分</button>
+          <button class="demo-btn" data-f="sigma">∑ 求和</button>
+          <button class="demo-btn" data-f="fraction">分式</button>
+        </div>
+        <div class="mini-slide" id="imStage" style="display:flex;align-items:center;justify-content:center;padding:14px">
+          <div id="imFormula" style="font:28px var(--font-serif);color:var(--color-ice-highlight);text-align:center"></div>
+        </div>
+      </div>`;
+    const box = c.querySelector('#imFormula');
+    const formulas = {
+      integral: '∫<sub>0</sub><sup>∞</sup> e<sup>-x²</sup> dx = √π / 2',
+      sigma: '∑<sub>i=1</sub><sup>n</sup> x<sub>i</sub> = x₁ + x₂ + … + xₙ',
+      fraction: '<span style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle"><span style="border-bottom:2px solid #fff;padding:0 8px 2px">-b ± √b² - 4ac</span><span style="padding-top:2px">2a</span></span>'
+    };
+    c.querySelectorAll('[data-f]').forEach(btn => btn.onclick = () => { box.innerHTML = formulas[btn.dataset.f] || formulas.integral; });
+    box.innerHTML = formulas.integral;
+  },
+
+  'map-chart'(c) {
+    c.innerHTML = `
+      <div class="demo-stack">
+        <div class="demo-label">地图图表：按省份数值自动填色</div>
+        <div class="demo-row">
+          <button class="demo-btn active" data-r="sales">销售额</button>
+          <button class="demo-btn" data-r="growth">增长率</button>
+        </div>
+        <div class="mini-slide" id="mcStage" style="position:relative;display:flex;align-items:center;justify-content:center;padding:14px">
+          <div id="mcMap" style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;max-width:320px"></div>
+        </div>
+      </div>`;
+    const map = c.querySelector('#mcMap');
+    const data = {
+      sales: [
+        ['华东', 320, '#1a3a7a'], ['华南', 280, '#234d9e'], ['华北', 240, '#2f6df0'],
+        ['华中', 200, '#5a8bf5'], ['西南', 160, '#8aadf8'], ['东北', 120, '#b4ccfb'],
+        ['西北', 80, '#d4e2fe']
+      ],
+      growth: [
+        ['华东', 22, '#1a5a3a'], ['华南', 18, '#228b4a'], ['华北', 15, '#2ea85a'],
+        ['华中', 12, '#4cbf70'], ['西南', 8, '#8ad9a0'], ['东北', 5, '#acebb8'],
+        ['西北', 3, '#d4f5dc']
+      ]
+    };
+    function render(r) {
+      const d = data[r] || data.sales;
+      map.innerHTML = '';
+      d.forEach(([name, val, col]) => {
+        const block = document.createElement('div');
+        block.style.cssText = `padding:8px 12px;background:${col};border-radius:6px;color:#fff;font:12px var(--font-body);display:flex;flex-direction:column;align-items:center;gap:2px;min-width:60px`;
+        block.innerHTML = `<span style="font-weight:500">${name}</span><span style="font:10px var(--font-mono)">${val}</span>`;
+        map.appendChild(block);
+      });
+    }
+    render('sales');
+    c.querySelectorAll('[data-r]').forEach(btn => btn.onclick = () => render(btn.dataset.r));
   }
 };
 
