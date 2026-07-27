@@ -1,4 +1,4 @@
-<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 161 个工具 · 单 commit 同步 (Git Data API) -->
+<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 172 个工具 · 单 commit 同步 (Git Data API) -->
 # 优卡导航 · 工具数据
 
 > 本文件是「优卡导航」网站的唯一数据源。修改后刷新页面（或重新部署）即自动更新，无需改代码。
@@ -171,6 +171,14 @@
 - [Blush](https://blush.design/zh-CN) — 免费可商用矢量插画，PPT 配图缺插画时的好来源。｜免费
 - [Mockupworld](https://www.mockupworld.co/) — 免费高清样机素材库，作品集/PPT 展示图套壳利器。｜免费
 - [Shots](https://shots.so/) — 一键给图片套精美设备外壳 Mockup，社媒/PPT 展示即出片。｜免费
+- [视觉工具箱](https://tool.jjgoworks.cn/) — 特效生成器合集，粒子/像素/ASCII/故障/液态金属/3D 动态字一键出图。｜免费
+- [爱给网·AI元素](https://www.aigei.com/element/ai/) — 爱给网 AI 矢量元素频道，图标/插画/装饰素材直接下载。｜免费
+- [Typographic Posters](https://www.typographicposters.com/) — 精选字体海报画廊，排版与平面设计灵感参考。｜免费
+- [Trendlist](https://trendlist.org/) — 设计趋势收集站，配色与字体流行趋势一站看。｜免费
+- [UI Notes](https://uinotes.com/) — 国内大厂 App 界面截图收集，移动端设计参考实时更新。｜免费
+- [Brand Style Guides](https://brandingstyleguides.com/language/chinese/) — 全球品牌视觉规范库（含中文），Logo/色彩/字体标准参考。｜免费
+- [Mitapix 样机](https://mockup.mitapix.com/) — 在线样机生成器，一键给作品套设备外壳，PPT/作品集展示利器。｜免费
+- [LS Graphics 样机](https://www.ls.graphics/free-mockups) — 免费高质量样机素材包，手机/电脑/海报展示模板齐全。｜免费
 
 ## 脑图 / 流程图 (MIND)
 - [ProcessOn](https://www.processon.com/) — 在线流程图/思维导图，结构梳理即转 PPT 框架。｜免费
@@ -203,6 +211,7 @@
 - [Freepik](https://www.freepik.com/) — 国际综合素材站，免费+会员的图/矢量/PSD/视频资源海量。｜免费
 - [包图网](https://ibaotu.com/) — 国内综合素材站，中文模板/PSD/插画/视频会员制海量。｜付费
 - [千图网](https://www.58pic.com/) — 国内老牌素材站，海报/UI/电商模板与图片资源齐全。｜付费
+- [CNU 视觉联盟](http://www.cnu.cc/) — 国内摄影社区，高质量摄影作品与专题，找图与版式灵感源。｜免费
 
 ## 图标素材 (ICON)
 - [Magnific Icons](https://www.magnific.com/icons#from_element=mainmenu) — Magnific 出品的 AI 图标库，风格统一、检索下载便捷，配套图像增强能力。｜付费
@@ -233,6 +242,8 @@
 - [Photopea](https://www.photopea.com) — 免费在线 Photoshop，图层/蒙版/修图全功能，PPT 配图编辑神器。｜免费
 - [Upscayl](https://www.upscayl.org/) — 开源免费 AI 图片无损放大，模糊图秒变超清。｜免费
 - [Palette.fm](https://palette.fm/) — 黑白照片一键 AI 上色，10 秒出 20 种配色方案。｜免费
+- [Pixian](https://pixian.ai/) — AI 一键去背景，国内访问比 Remove.bg 更稳，人像/商品抠图利器。｜免费
+- [抠图兔](https://www.koukoutu.com/removebgtool/all) — 国产 AI 抠图工具，批量去背景、国内访问快。｜免费
 
 ### 翻译 (TRANSLATE)
 - [DeepL](https://www.deepl.com/) — 译文最自然的翻译引擎，PPT 英文素材翻译标配。｜免费

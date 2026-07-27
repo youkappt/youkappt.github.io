@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fcfaf5" />
 <title>优卡的素材库 - 优卡PPT</title>
 <meta name="description" content="优卡导航旗下素材库：精选可商用 PPT 模板、图示与配图，做幻灯片直接拖用，省去到处找素材的时间。" />
 <link rel="canonical" href="https://youkappt.com/template/" />
@@ -19,34 +20,35 @@
 <meta name="twitter:image" content="https://youkappt.com/og-cover.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <style>
-/* ===== Design Tokens (AuthKit Style Reference) ===== */
+/* ===== Design Tokens (Cream Paper / Forest Ink / Highlighter) ===== */
 :root {
-  --color-midnight-canvas: #05060f;
-  --color-frost-glow: #d1e4fa;
-  --color-ice-highlight: #d8ecf8;
-  --color-moon-mist: #c7d3ea;
-  --color-fog-veil: #9da7ba;
-  --color-pure-white: #ffffff;
-  --color-void-violet: #663af3;
-  --color-glass-edge: rgba(186, 215, 247, 0.12);
-  --color-luminous-fill: rgba(199, 211, 234, 0.12);
-  --surface-frosted: rgba(186, 214, 247, 0.03);
-  --surface-deep-glass: rgba(5, 6, 15, 0.97);
+  --color-cream-paper:#fcfaf5;
+  --color-forest-ink:#1a3300;
+  --color-forest-ink-deep:#223f08;
+  --color-highlighter-yellow:#ffe95c;
+  --color-pencil-gray:#b6b6b6;
+  --color-whisper-gray:#f1f1f1;
+  --color-fog-veil:#6b6b6b;
+  --color-moon-mist:#565c47;
+  --color-terracotta:#cb5521;
+  --color-sticky-note-mint:#d5f5c2;
+  --color-sticky-note-teal:#a8e5e5;
+  --color-glass-edge:rgba(26,51,0,.12);
 
-  --font-ui: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-ui:'Inter','Noto Sans SC','PingFang SC',sans-serif;
+  --font-display:'Bricolage Grotesque','Noto Sans SC','PingFang SC',sans-serif;
+  --font-mono:'Roboto Mono',ui-monospace,monospace;
 
-  --radius-cards: 16px;
-  --radius-badges: 6px;
-  --radius-modals: 16px;
-  --radius-buttons: 999px;
+  --radius-cards:12px;
+  --radius-badges:9999px;
+  --radius-modals:16px;
+  --radius-buttons:9999px;
 
-  --shadow-card: inset 0 1px 1px rgba(199, 211, 234, 0.12), inset 0 24px 48px rgba(199, 211, 234, 0.05), 0 24px 32px rgba(6, 6, 14, 0.7);
-  --shadow-modal: inset 0 1px 1px rgba(216, 236, 248, 0.2), inset 0 24px 48px rgba(168, 216, 245, 0.06), 0 16px 32px rgba(0, 0, 0, 0.3);
+  --shadow-card:rgba(26,51,0,.06) 0 1px 2px 0, rgba(26,51,0,.05) 0 8px 24px 0;
+  --shadow-modal:rgba(26,51,0,.10) 0 16px 48px 0;
 }
 
 /* ===== Reset & Base ===== */
@@ -54,22 +56,22 @@
 
 body {
   font-family: var(--font-ui);
-  background: var(--color-midnight-canvas);
-  color: var(--color-frost-glow);
+  background: var(--color-cream-paper);
+  color: var(--color-forest-ink);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* ===== Ambient Background Layers ===== */
+/* ===== Ambient Background Layers (subtle forest tint) ===== */
 .bg-grid {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(186, 215, 247, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(186, 215, 247, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(26, 51, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 51, 0, 0.04) 1px, transparent 1px);
   background-size: 80px 80px;
   -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
   mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
@@ -86,13 +88,13 @@ body {
   pointer-events: none;
   background: conic-gradient(at 50% 50%,
     transparent 45%,
-    rgba(124, 145, 182, 0.3) 49%,
-    rgba(124, 145, 182, 0.5) 50%,
-    rgba(124, 145, 182, 0.3) 51%,
+    rgba(213, 245, 194, 0.45) 49%,
+    rgba(213, 245, 194, 0.65) 50%,
+    rgba(213, 245, 194, 0.45) 51%,
     transparent 55%);
   -webkit-mask-image: radial-gradient(ellipse 60% 100% at 50% 50%, #000 0%, transparent 70%);
   mask-image: radial-gradient(ellipse 60% 100% at 50% 50%, #000 0%, transparent 70%);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* ===== Top Bar ===== */
@@ -100,10 +102,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(5, 6, 15, 0.6);
+  background: rgba(252, 250, 245, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--color-glass-edge);
+  border-bottom: 1px solid var(--color-pencil-gray);
   padding: 14px 28px;
   display: flex;
   align-items: center;
@@ -122,7 +124,7 @@ body {
   align-items: center;
   gap: 14px;
   text-decoration: none;
-  color: inherit;
+  color: var(--color-forest-ink);
 }
 
 .top-bar .eyebrow {
@@ -130,15 +132,15 @@ body {
   font-size: 11px;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--color-moon-mist);
+  color: var(--color-fog-veil);
   opacity: 0.7;
 }
 
 .top-bar .title {
   font-family: var(--font-display);
   font-size: 18px;
-  font-weight: 500;
-  color: var(--color-ice-highlight);
+  font-weight: 600;
+  color: var(--color-forest-ink);
   letter-spacing: -0.3px;
 }
 
@@ -148,19 +150,19 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid var(--color-glass-edge);
-  box-shadow: 0 0 16px rgba(102, 58, 243, 0.2), 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(26, 51, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-shrink: 0;
 }
 
 .top-bar .logo-img:hover {
   transform: scale(1.08) rotate(3deg);
-  box-shadow: 0 0 24px rgba(102, 58, 243, 0.35), 0 6px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 16px rgba(26, 51, 0, 0.18);
 }
 
 .buy-btn {
-  background: var(--color-void-violet);
-  color: var(--color-pure-white);
+  background: var(--color-forest-ink);
+  color: var(--color-cream-paper);
   border: none;
   padding: 9px 22px;
   border-radius: var(--radius-buttons);
@@ -174,9 +176,9 @@ body {
 }
 
 .buy-btn:hover {
-  background: #5530d4;
+  background: var(--color-forest-ink-deep);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(102, 58, 243, 0.4);
+  box-shadow: 0 4px 16px rgba(26, 51, 0, 0.25);
 }
 
 /* ===== Masonry Gallery ===== */
@@ -203,9 +205,9 @@ body::after {
   z-index: 50;
   background: linear-gradient(
     to top,
-    var(--color-midnight-canvas) 0%,
-    rgba(5, 6, 15, 0.85) 30%,
-    rgba(5, 6, 15, 0.45) 60%,
+    var(--color-cream-paper) 0%,
+    rgba(252, 250, 245, 0.85) 30%,
+    rgba(252, 250, 245, 0.45) 60%,
     transparent 100%
   );
 }
@@ -213,20 +215,19 @@ body::after {
 /* 底部固定购买引导条 */
 .cta-bar {
   position: fixed;
-  bottom: 53px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 60;
-  background: linear-gradient(135deg, rgba(102, 58, 243, 0.18), rgba(102, 58, 243, 0.08));
-  border: 1px solid rgba(102, 58, 243, 0.30);
+  background: var(--color-forest-ink);
+  border: 1px solid var(--color-forest-ink);
   border-radius: 16px;
   padding: 12px 28px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 24px rgba(102, 58, 243, 0.10),
-    inset 0 1px 1px rgba(216, 236, 248, 0.08);
+    0 8px 32px rgba(26, 51, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.06);
   text-align: center;
   max-width: 680px;
   width: calc(100% - 48px);
@@ -236,18 +237,18 @@ body::after {
   font-family: var(--font-ui);
   font-size: 14px;
   line-height: 1.6;
-  color: var(--color-ice-highlight);
+  color: var(--color-cream-paper);
   letter-spacing: 0.02em;
 }
 
 .cta-price {
-  color: #b388ff;
+  color: var(--color-highlighter-yellow);
   font-weight: 700;
   font-size: 17px;
 }
 
 .cta-wechat {
-  color: #90caf9;
+  color: var(--color-sticky-note-teal);
   font-weight: 600;
 }
 
@@ -262,24 +263,18 @@ body::after {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 70;
-  background: rgba(12, 14, 28, 0.95);
-  border: 1px solid rgba(102, 58, 243, 0.25);
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--color-pencil-gray);
   border-radius: 16px;
   padding: 16px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow:
-    0 16px 48px rgba(0, 0, 0, 0.5),
-    0 0 32px rgba(102, 58, 243, 0.12);
+  box-shadow: 0 16px 48px rgba(26, 51, 0, 0.2);
 }
-
 .cta-bar .qr-popup img {
   display: block;
   width: 200px;
   height: auto;
   border-radius: 10px;
 }
-
 .cta-bar .qr-popup::after {
   content: '';
   position: absolute;
@@ -287,9 +282,8 @@ body::after {
   left: 50%;
   transform: translateX(-50%);
   border: 8px solid transparent;
-  border-top-color: rgba(102, 58, 243, 0.25);
+  border-top-color: var(--color-pencil-gray);
 }
-
 .cta-bar:hover .qr-popup {
   opacity: 1;
   visibility: visible;
@@ -308,10 +302,10 @@ body::before {
   z-index: 5;
   background: linear-gradient(
     to bottom,
-    var(--color-midnight-canvas) 0%,
-    rgba(5, 6, 15, 0.92) 20%,
-    rgba(5, 6, 15, 0.65) 45%,
-    rgba(5, 6, 15, 0.25) 70%,
+    var(--color-cream-paper) 0%,
+    rgba(252, 250, 245, 0.92) 20%,
+    rgba(252, 250, 245, 0.65) 45%,
+    rgba(252, 250, 245, 0.25) 70%,
     transparent 100%
   );
 }
@@ -329,8 +323,8 @@ body::before {
 .card {
   border-radius: var(--radius-cards);
   overflow: hidden;
-  background: var(--surface-frosted);
-  border: 1px solid var(--color-glass-edge);
+  background: #fff;
+  border: 1px solid var(--color-pencil-gray);
   box-shadow: var(--shadow-card);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -339,12 +333,10 @@ body::before {
 
 .card:hover {
   transform: translateY(-5px);
-  border-color: rgba(186, 215, 247, 0.28);
+  border-color: var(--color-forest-ink);
   box-shadow:
-    inset 0 1px 1px rgba(216, 236, 248, 0.2),
-    inset 0 24px 48px rgba(168, 216, 245, 0.06),
-    0 16px 40px rgba(0, 0, 0, 0.5),
-    0 0 24px rgba(102, 58, 243, 0.15);
+    rgba(26, 51, 0, 0.08) 0 1px 2px 0,
+    rgba(26, 51, 0, 0.12) 0 16px 40px 0;
 }
 
 .card img {
@@ -366,7 +358,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: rgba(5, 6, 15, 0.7);
+  background: rgba(26, 51, 0, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
@@ -381,8 +373,8 @@ body::before {
 .modal-overlay.active { opacity: 1; visibility: visible; }
 
 .modal {
-  background: var(--surface-deep-glass);
-  border: 1px solid var(--color-glass-edge);
+  background: #fff;
+  border: 1px solid var(--color-pencil-gray);
   border-radius: var(--radius-modals);
   max-width: 760px;
   width: 100%;
@@ -403,10 +395,9 @@ body::before {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(5, 6, 15, 0.6);
-  backdrop-filter: blur(8px);
-  color: var(--color-frost-glow);
-  border: 1px solid var(--color-glass-edge);
+  background: var(--color-whisper-gray);
+  color: var(--color-forest-ink);
+  border: 1px solid var(--color-pencil-gray);
   font-size: 18px;
   cursor: pointer;
   z-index: 10;
@@ -417,8 +408,8 @@ body::before {
 }
 
 .modal-close:hover {
-  background: rgba(186, 215, 247, 0.12);
-  color: var(--color-pure-white);
+  background: var(--color-highlighter-yellow);
+  color: var(--color-forest-ink);
 }
 
 .modal-image-wrap img {
@@ -432,27 +423,23 @@ body::before {
 .modal-info h2 {
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 6px;
-  color: var(--color-ice-highlight);
+  color: var(--color-forest-ink);
 }
 
 .modal-info .price {
   font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 500;
-  color: var(--color-ice-highlight);
+  font-weight: 600;
+  color: var(--color-terracotta);
   margin-bottom: 20px;
-  background: linear-gradient(0deg, #d8ecf8 0%, #98c0ef 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .buy-btn-modal {
   width: 100%;
-  background: var(--color-void-violet);
-  color: var(--color-pure-white);
+  background: var(--color-forest-ink);
+  color: var(--color-cream-paper);
   border: none;
   padding: 14px;
   border-radius: var(--radius-buttons);
@@ -464,9 +451,9 @@ body::before {
 }
 
 .buy-btn-modal:hover {
-  background: #5530d4;
+  background: var(--color-forest-ink-deep);
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(102, 58, 243, 0.45);
+  box-shadow: 0 6px 24px rgba(26, 51, 0, 0.3);
 }
 
 .modal-nav {
@@ -478,9 +465,9 @@ body::before {
 }
 
 .modal-nav button {
-  background: var(--surface-frosted);
-  color: var(--color-frost-glow);
-  border: 1px solid var(--color-glass-edge);
+  background: var(--color-whisper-gray);
+  color: var(--color-forest-ink);
+  border: 1px solid var(--color-pencil-gray);
   padding: 10px 22px;
   border-radius: var(--radius-buttons);
   font-size: 14px;
@@ -491,9 +478,9 @@ body::before {
 }
 
 .modal-nav button:hover:not(:disabled) {
-  background: rgba(186, 215, 247, 0.1);
-  border-color: rgba(186, 215, 247, 0.3);
-  color: var(--color-pure-white);
+  background: var(--color-highlighter-yellow);
+  border-color: var(--color-forest-ink);
+  color: var(--color-forest-ink);
 }
 
 .modal-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
@@ -501,7 +488,7 @@ body::before {
 .modal-nav #pageIndicator {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--color-moon-mist);
+  color: var(--color-fog-veil);
   min-width: 56px;
   text-align: center;
 }
@@ -519,18 +506,18 @@ body::before {
 .placeholder h3 {
   font-family: var(--font-display);
   font-size: 20px;
-  font-weight: 500;
-  color: var(--color-moon-mist);
+  font-weight: 600;
+  color: var(--color-forest-ink);
   margin-bottom: 12px;
 }
 
 .placeholder p { font-size: 14px; line-height: 1.8; }
 .placeholder code {
   font-family: var(--font-mono);
-  background: rgba(186, 215, 247, 0.08);
+  background: rgba(26, 51, 0, 0.06);
   padding: 2px 6px;
   border-radius: var(--radius-badges);
-  color: var(--color-frost-glow);
+  color: var(--color-forest-ink);
 }
 
 /* ===== Responsive ===== */
@@ -902,9 +889,9 @@ window.addEventListener('resize', function() {
 </script>
 <!-- 页脚（品牌联系区，与主站同款；底部留白避开固定购买条） -->
 <link rel="stylesheet" href="assets/contact/contact.css" />
-<footer style="margin-top:72px; padding:36px 24px 150px; border-top:1px solid rgba(186,214,247,.14); text-align:center;">
-  <div style="font-weight:600; color:var(--color-frost-glow); font-size:15px; margin-bottom:8px;">优卡的素材库</div>
-  <div style="font-size:13px; color:rgba(231,240,252,.5);">由 优卡 / youka 整理 · 微信公众号：优卡说PPT</div>
+<footer style="margin-top:72px; padding:36px 24px 150px; border-top:1px solid var(--color-pencil-gray); text-align:center;">
+  <div style="font-weight:600; color:var(--color-forest-ink); font-size:15px; margin-bottom:8px;">优卡的素材库</div>
+  <div style="font-size:13px; color:var(--color-fog-veil);">由 优卡 / youka 整理 · 微信公众号：优卡说PPT</div>
   <div class="f-contact-shared">
   <button class="f-chip" data-qr="wechat-gzh" type="button">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.4 4 2 6.7 2 10.1c0 1.9 1.1 3.6 2.9 4.7L4 17l2.5-1.3c.5.1 1 .2 1.5.2.2 0 .4 0 .6-.1-.1-.5-.2-1-.2-1.5 0-3.5 3.3-6.3 7.4-6.3h.5C15.5 5.7 12.8 4 9.5 4zm-2.8 4.5c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm5.5 0c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zM15.5 9c-3.6 0-6.5 2.4-6.5 5.5s2.9 5.5 6.5 5.5c.6 0 1.2-.1 1.8-.2L19 21l-.6-1.8c1.5-.9 2.6-2.5 2.6-4.2C21 11.4 18.5 9 15.5 9zm-2 3c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7zm4 0c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/></svg>

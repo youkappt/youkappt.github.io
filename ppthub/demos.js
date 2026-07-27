@@ -13,10 +13,10 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">改「母版」的强调色 → 所有页面同步更新</div>
         <div class="demo-row">
-          <button class="demo-btn active" data-c="#663af3">紫</button>
-          <button class="demo-btn" data-c="#027dea">蓝</button>
-          <button class="demo-btn" data-c="#269684">绿</button>
-          <button class="demo-btn" data-c="#e46d4c">橙</button>
+          <button class="demo-btn active" data-c="#2f6f3a">紫</button>
+          <button class="demo-btn" data-c="#2f6f3a">蓝</button>
+          <button class="demo-btn" data-c="#2f6f3a">绿</button>
+          <button class="demo-btn" data-c="#cb5521">橙</button>
         </div>
         <div class="demo-row" id="mSlides" style="gap:12px"></div>
       </div>`;
@@ -28,13 +28,13 @@ const DEMOS = {
         s.className = 'mini-slide';
         s.style.borderTop = `6px solid ${col}`;
         s.innerHTML = `<div style="position:absolute;top:18%;left:8%;width:50%;height:12%;background:${col};border-radius:4px;opacity:.85"></div>
-          <div style="position:absolute;top:42%;left:8%;width:70%;height:6%;background:rgba(255,255,255,.18);border-radius:3px"></div>
-          <div style="position:absolute;top:54%;left:8%;width:55%;height:6%;background:rgba(255,255,255,.12);border-radius:3px"></div>
-          <div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.4)">第 ${i} 页</div>`;
+          <div style="position:absolute;top:42%;left:8%;width:70%;height:6%;background:rgba(26,51,0,.18;border-radius:3px"></div>
+          <div style="position:absolute;top:54%;left:8%;width:55%;height:6%;background:rgba(26,51,0,.12;border-radius:3px"></div>
+          <div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(26,51,0,.4">第 ${i} 页</div>`;
         slides.appendChild(s);
       }
     }
-    render('#663af3');
+    render('#2f6f3a');
     c.querySelectorAll('[data-c]').forEach(b => b.onclick = () => render(b.dataset.c));
   },
 
@@ -50,9 +50,9 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#lySlide');
     function render(t) {
-      if (t === 'title') s.innerHTML = `<div style="position:absolute;top:38%;left:10%;width:80%;height:14%;background:rgba(216,236,248,.85);border-radius:4px"></div><div style="position:absolute;top:56%;left:10%;width:50%;height:7%;background:rgba(199,211,234,.4);border-radius:3px"></div>`;
-      else if (t === 'content') s.innerHTML = `<div style="position:absolute;top:10%;left:10%;width:60%;height:10%;background:rgba(216,236,248,.85);border-radius:4px"></div><div style="position:absolute;top:30%;left:10%;width:80%;height:6%;background:rgba(199,211,234,.3);border-radius:3px"></div><div style="position:absolute;top:42%;left:10%;width:80%;height:6%;background:rgba(199,211,234,.3);border-radius:3px"></div><div style="position:absolute;top:54%;left:10%;width:60%;height:6%;background:rgba(199,211,234,.3);border-radius:3px"></div>`;
-      else s.innerHTML = `<div style="position:absolute;top:46%;left:46%;color:rgba(199,211,234,.3);font:12px var(--font-mono)">空白版式</div>`;
+      if (t === 'title') s.innerHTML = `<div style="position:absolute;top:38%;left:10%;width:80%;height:14%;background:rgba(26,51,0,.85);border-radius:4px"></div><div style="position:absolute;top:56%;left:10%;width:50%;height:7%;background:rgba(26,51,0,.4);border-radius:3px"></div>`;
+      else if (t === 'content') s.innerHTML = `<div style="position:absolute;top:10%;left:10%;width:60%;height:10%;background:rgba(26,51,0,.85);border-radius:4px"></div><div style="position:absolute;top:30%;left:10%;width:80%;height:6%;background:rgba(26,51,0,.3);border-radius:3px"></div><div style="position:absolute;top:42%;left:10%;width:80%;height:6%;background:rgba(26,51,0,.3);border-radius:3px"></div><div style="position:absolute;top:54%;left:10%;width:60%;height:6%;background:rgba(26,51,0,.3);border-radius:3px"></div>`;
+      else s.innerHTML = `<div style="position:absolute;top:46%;left:46%;color:rgba(26,51,0,.3);font:12px var(--font-mono)">空白版式</div>`;
     }
     render('title');
     c.querySelectorAll('[data-l]').forEach(b => b.onclick = () => render(b.dataset.l));
@@ -61,14 +61,14 @@ const DEMOS = {
   placeholder(c) {
     c.innerHTML = `
       <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-        <div id="phBox" style="width:70%;height:22%;border:2px dashed rgba(186,214,247,.5);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(199,211,234,.6);font:14px var(--font-body);cursor:text">单击此处添加标题</div>
+        <div id="phBox" style="width:70%;height:22%;border:2px dashed rgba(26,51,0,.5);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.6);font:14px var(--font-body);cursor:text">单击此处添加标题</div>
       </div>`;
     const box = c.querySelector('#phBox');
     box.onclick = () => {
       const inp = document.createElement('input');
       inp.value = '';
       inp.placeholder = '输入标题…';
-      inp.style.cssText = 'width:90%;background:transparent;border:none;outline:none;color:#fff;font:16px var(--font-body);text-align:center';
+      inp.style.cssText = 'width:90%;background:transparent;border:none;outline:none;color:#ffffff;font:16px var(--font-body);text-align:center';
       box.replaceWith(inp); inp.focus();
     };
   },
@@ -85,10 +85,10 @@ const DEMOS = {
     items.forEach((t, i) => {
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:center;gap:10px;font:13px var(--font-body);color:var(--color-moon-mist)';
-      row.innerHTML = `<span style="width:20px;height:20px;border-radius:50%;background:rgba(102,58,243,.25);border:1px solid rgba(102,58,243,.5);display:flex;align-items:center;justify-content:center;font:11px var(--font-mono);color:#c9b6ff">${i + 1}</span><span>${t}</span>`;
+      row.innerHTML = `<span style="width:20px;height:20px;border-radius:50%;background:rgba(47,111,58,.25;border:1px solid rgba(47,111,58,.5;display:flex;align-items:center;justify-content:center;font:11px var(--font-mono);color:#1a3300">${i + 1}</span><span>${t}</span>`;
       pane.appendChild(row);
       const obj = document.createElement('div');
-      obj.style.cssText = 'padding:6px 12px;background:rgba(186,214,247,.1);border:1px solid var(--color-glass-edge);border-radius:8px;color:#fff;font:13px var(--font-body);opacity:0;transform:translateY(8px)';
+      obj.style.cssText = 'padding:6px 12px;background:rgba(26,51,0,.1);border:1px solid var(--color-glass-edge);border-radius:8px;color:#ffffff;font:13px var(--font-body);opacity:0;transform:translateY(8px)';
       obj.textContent = t; stage.appendChild(obj);
     });
     const objs = [...stage.children];
@@ -107,8 +107,8 @@ const DEMOS = {
         <div class="demo-label">拖动滑块移动蓝色方块，靠近中线会自动吸附到参考线</div>
         <input type="range" min="0" max="100" value="20" class="demo-slider" id="gSlide">
         <div class="mini-slide" id="gStage" style="position:relative">
-          <div id="gLine" style="position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(102,58,243,.5)"></div>
-          <div id="gBox" style="position:absolute;top:40%;width:14%;height:20%;background:rgba(102,58,243,.6);border-radius:6px;left:20%;transition:left .05s"></div>
+          <div id="gLine" style="position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(47,111,58,.5"></div>
+          <div id="gBox" style="position:absolute;top:40%;width:14%;height:20%;background:rgba(47,111,58,.6;border-radius:6px;left:20%;transition:left .05s"></div>
         </div>
       </div>`;
     const slide = c.querySelector('#gSlide'), box = c.querySelector('#gBox');
@@ -126,15 +126,15 @@ const DEMOS = {
         <div class="demo-label">点任意色块 → 吸取到「当前色」</div>
         <div class="demo-row" id="edSwatches" style="gap:8px"></div>
         <div class="demo-row" style="align-items:center;gap:12px">
-          <div id="edCur" style="width:48px;height:48px;border-radius:10px;background:#663af3;border:1px solid var(--color-glass-edge)"></div>
-          <div id="edHex" style="font:14px var(--font-mono);color:var(--color-frost-glow)">#663AF3</div>
+          <div id="edCur" style="width:60px;height:60px;border-radius:12px;background:#2f6f3a;border:1px solid var(--color-glass-edge)"></div>
+          <div id="edHex" style="font:14px var(--font-mono);color:var(--color-frost-glow)">#2f6f3a</div>
         </div>
       </div>`;
-    const cols = ['#663af3', '#027dea', '#269684', '#e46d4c', '#d8ecf8', '#9da7ba'];
+    const cols = ['#2f6f3a', '#cb5521', '#3a7bd5', '#e3ecd9', '#8b5cf6', '#d4a574'];
     const sw = c.querySelector('#edSwatches'), cur = c.querySelector('#edCur'), hex = c.querySelector('#edHex');
     cols.forEach(col => {
       const b = document.createElement('div');
-      b.style.cssText = `width:40px;height:40px;border-radius:8px;background:${col};cursor:pointer;border:1px solid var(--color-glass-edge)`;
+      b.style.cssText = `width:52px;height:52px;border-radius:10px;background:${col};cursor:pointer;border:1px solid var(--color-glass-edge)`;
       b.onclick = () => { cur.style.background = col; hex.textContent = col.toUpperCase(); };
       sw.appendChild(b);
     });
@@ -153,10 +153,10 @@ const DEMOS = {
       </div>`;
     const box = c.querySelector('#saBox');
     function render(t) {
-      if (t === 'list') box.innerHTML = `<div style="display:flex;flex-direction:column;gap:8px;width:60%">${['目标','策略','执行'].map(x=>`<div style="padding:8px 12px;background:rgba(102,58,243,.2);border:1px solid rgba(102,58,243,.5);border-radius:6px;color:#fff;font:13px var(--font-body)">${x}</div>`).join('')}</div>`;
-      else if (t === 'process') box.innerHTML = `<div style="display:flex;gap:6px;align-items:center">${['开始','处理','结束'].map((x,i)=>`<div style="padding:8px 10px;background:rgba(2,125,234,.2);border:1px solid rgba(2,125,234,.5);border-radius:6px;color:#fff;font:12px var(--font-body)">${x}</div>${i<2?'<span style="color:rgba(199,211,234,.6)">→</span>':''}`).join('')}</div>`;
-      else if (t === 'cycle') box.innerHTML = `<div style="width:90px;height:90px;border-radius:50%;border:3px dashed rgba(38,150,132,.7);display:flex;align-items:center;justify-content:center;color:#7fe3cf;font:12px var(--font-body)">循环</div>`;
-      else box.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div style="padding:8px 20px;background:rgba(102,58,243,.3);border-radius:6px;color:#fff;font:13px var(--font-body)">总经理</div><div style="display:flex;gap:14px">${['部门A','部门B','部门C'].map(x=>`<div style="padding:6px 10px;background:rgba(186,214,247,.12);border-radius:6px;color:#fff;font:12px var(--font-body)">${x}</div>`).join('')}</div></div>`;
+      if (t === 'list') box.innerHTML = `<div style="display:flex;flex-direction:column;gap:8px;width:60%">${['目标','策略','执行'].map(x=>`<div style="padding:8px 12px;background:rgba(47,111,58,.2;border:1px solid rgba(47,111,58,.5;border-radius:6px;color:#ffffff;font:13px var(--font-body)">${x}</div>`).join('')}</div>`;
+      else if (t === 'process') box.innerHTML = `<div style="display:flex;gap:6px;align-items:center">${['开始','处理','结束'].map((x,i)=>`<div style="padding:8px 10px;background:rgba(47,111,58,.2;border:1px solid rgba(47,111,58,.5;border-radius:6px;color:#ffffff;font:12px var(--font-body)">${x}</div>${i<2?'<span style="color:rgba(26,51,0,.6)">→</span>':''}`).join('')}</div>`;
+      else if (t === 'cycle') box.innerHTML = `<svg viewBox="0 0 280 280" width="260" height="260" style="overflow:visible"><defs><marker id="saArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="rgba(47,111,58,.8)"/></marker></defs><circle cx="140" cy="80" r="34" fill="rgba(47,111,58,.3)" stroke="rgba(47,111,58,.7)" stroke-width="2"/><text x="140" y="86" text-anchor="middle" fill="#1a3300" font-size="15" font-weight="600" font-family="var(--font-body)">计划</text><circle cx="205" cy="185" r="34" fill="rgba(203,85,33,.3)" stroke="rgba(203,85,33,.7)" stroke-width="2"/><text x="205" y="191" text-anchor="middle" fill="#1a3300" font-size="15" font-weight="600" font-family="var(--font-body)">执行</text><circle cx="75" cy="185" r="34" fill="rgba(58,123,213,.3)" stroke="rgba(58,123,213,.7)" stroke-width="2"/><text x="75" y="191" text-anchor="middle" fill="#1a3300" font-size="15" font-weight="600" font-family="var(--font-body)">复盘</text><path d="M165,105 Q195,135 183,155" fill="none" stroke="rgba(47,111,58,.7)" stroke-width="2.5" marker-end="url(#saArrow)"/><path d="M182,203 Q140,228 98,203" fill="none" stroke="rgba(203,85,33,.7)" stroke-width="2.5" marker-end="url(#saArrow)"/><path d="M93,158 Q78,130 108,108" fill="none" stroke="rgba(58,123,213,.7)" stroke-width="2.5" marker-end="url(#saArrow)"/></svg>`;
+      else box.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><div style="padding:8px 20px;background:rgba(47,111,58,.3;border-radius:6px;color:#ffffff;font:13px var(--font-body)">总经理</div><div style="display:flex;gap:14px">${['部门A','部门B','部门C'].map(x=>`<div style="padding:6px 10px;background:rgba(26,51,0,.12);border-radius:6px;color:#ffffff;font:12px var(--font-body)">${x}</div>`).join('')}</div></div>`;
     }
     render('list');
     c.querySelectorAll('[data-t]').forEach(b => b.onclick = () => render(b.dataset.t));
@@ -179,7 +179,7 @@ const DEMOS = {
       list.innerHTML = '';
       data.forEach((d, i) => {
         const head = document.createElement('div');
-        head.style.cssText = `padding:6px 10px;background:rgba(102,58,243,.18);border:1px solid rgba(102,58,243,.4);border-radius:6px;color:#c9b6ff;font-weight:500`;
+        head.style.cssText = `padding:6px 10px;background:rgba(47,111,58,.18;border:1px solid rgba(47,111,58,.4;border-radius:6px;color:#1a3300;font-weight:500`;
         head.textContent = (i === 1 && collapsed ? '▸ ' : '▾ ') + d.sec;
         list.appendChild(head);
         if (!(i === 1 && collapsed)) d.items.forEach(it => {
@@ -201,16 +201,16 @@ const DEMOS = {
         <div class="mini-slide" id="zlStage" style="display:flex;align-items:center;justify-content:center;overflow:hidden"></div>
       </div>`;
     const menu = c.querySelector('#zlMenu'), stage = c.querySelector('#zlStage');
-    const secs = [['背景', '#027dea'], ['方案', '#663af3'], ['总结', '#269684']];
+    const secs = [['背景', '#2f6f3a'], ['方案', '#2f6f3a'], ['总结', '#2f6f3a']];
     secs.forEach(([n, col], i) => {
       const t = document.createElement('div');
-      t.style.cssText = `flex:1;aspect-ratio:16/9;background:${col}22;border:1px solid ${col}88;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font:13px var(--font-body);cursor:pointer`;
+      t.style.cssText = `flex:1;aspect-ratio:16/9;background:${col}22;border:1px solid ${col}88;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:13px var(--font-body);cursor:pointer`;
       t.textContent = n;
-      t.onclick = () => { stage.style.background = col + '22'; stage.innerHTML = `<div style="text-align:center;color:#fff"><div style="font:24px var(--font-display)">${n}</div><button class="demo-btn" id="zlBack" style="margin-top:10px">← 返回目录</button></div>`;
+      t.onclick = () => { stage.style.background = col + '22'; stage.innerHTML = `<div style="text-align:center;color:#ffffff"><div style="font:24px var(--font-display)">${n}</div><button class="demo-btn" id="zlBack" style="margin-top:10px">← 返回目录</button></div>`;
         stage.querySelector('#zlBack').onclick = reset; };
       menu.appendChild(t);
     });
-    function reset() { stage.style.background = 'transparent'; stage.innerHTML = '<div style="color:rgba(199,211,234,.5);font:13px var(--font-body)">← 点上方目录进入对应章节</div>'; }
+    function reset() { stage.style.background = 'transparent'; stage.innerHTML = '<div style="color:rgba(26,51,0,.5);font:13px var(--font-body)">← 点上方目录进入对应章节</div>'; }
     reset();
   },
 
@@ -236,8 +236,8 @@ const DEMOS = {
       a.innerHTML = ''; b.innerHTML = '';
       bars.forEach((w, i) => {
         const off = m === 'off' ? (i * 12) : 0;
-        const ba = document.createElement('div'); ba.style.cssText = `height:14px;width:${w}%;margin-left:${off}px;background:rgba(199,211,234,.3);border-radius:4px`;
-        const bb = document.createElement('div'); bb.style.cssText = `height:14px;width:${w}%;background:rgba(102,58,243,.5);border-radius:4px`;
+        const ba = document.createElement('div'); ba.style.cssText = `height:14px;width:${w}%;margin-left:${off}px;background:rgba(26,51,0,.3);border-radius:4px`;
+        const bb = document.createElement('div'); bb.style.cssText = `height:14px;width:${w}%;background:rgba(47,111,58,.5;border-radius:4px`;
         a.appendChild(ba); b.appendChild(bb);
       });
     }
@@ -256,10 +256,10 @@ const DEMOS = {
       const g1 = (m === 'tight') ? 'gap:6px' : 'gap:30px';
       const g2 = (m === 'tight') ? 'gap:6px' : 'gap:34px';
       const pad = (m === 'tight') ? 'padding:10px' : 'padding:10px';
-      s.innerHTML = `<div style="${pad};background:rgba(102,58,243,.12);border:1px solid rgba(102,58,243,.4);border-radius:8px;display:flex;flex-direction:column;${g1}">
-          <div style="width:30px;height:10px;background:#c9b6ff;border-radius:3px"></div><div style="width:24px;height:10px;background:#c9b6ff;border-radius:3px"></div></div>
-        <div style="${pad};background:rgba(2,125,234,.12);border:1px solid rgba(2,125,234,.4);border-radius:8px;display:flex;flex-direction:column;${g2}">
-          <div style="width:30px;height:10px;background:#9ec9ff;border-radius:3px"></div><div style="width:24px;height:10px;background:#9ec9ff;border-radius:3px"></div></div>`;
+      s.innerHTML = `<div style="${pad};background:rgba(47,111,58,.12;border:1px solid rgba(47,111,58,.4;border-radius:8px;display:flex;flex-direction:column;${g1}">
+          <div style="width:30px;height:10px;background:#e3ecd9;border-radius:3px"></div><div style="width:24px;height:10px;background:#e3ecd9;border-radius:3px"></div></div>
+        <div style="${pad};background:rgba(47,111,58,.12;border:1px solid rgba(47,111,58,.4;border-radius:8px;display:flex;flex-direction:column;${g2}">
+          <div style="width:30px;height:10px;background:#e3ecd9;border-radius:3px"></div><div style="width:24px;height:10px;background:#e3ecd9;border-radius:3px"></div></div>`;
     }
     render('loose');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
@@ -273,7 +273,7 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#ctStage');
     function render(m) {
-      if (m === 'weak') s.innerHTML = `<div style="display:flex;flex-direction:column;gap:10px;align-items:center"><div style="font:18px var(--font-body);color:rgba(199,211,234,.55)">本月营收</div><div style="font:26px var(--font-body);color:rgba(199,211,234,.7)">¥1,280,000</div></div>`;
+      if (m === 'weak') s.innerHTML = `<div style="display:flex;flex-direction:column;gap:10px;align-items:center"><div style="font:18px var(--font-body);color:rgba(26,51,0,.55)">本月营收</div><div style="font:26px var(--font-body);color:rgba(26,51,0,.7)">¥1,280,000</div></div>`;
       else s.innerHTML = `<div style="display:flex;flex-direction:column;gap:10px;align-items:center"><div style="font:14px var(--font-mono);color:var(--color-fog-veil);letter-spacing:.1em">本月营收</div><div style="font:46px var(--font-display);background:var(--gradient-ice-highlight);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">¥1,280,000</div></div>`;
     }
     render('weak');
@@ -294,19 +294,19 @@ const DEMOS = {
       { title: '核心策略', body: '三步走打法' },
       { title: '预期收益', body: '一年内翻倍' },
     ];
-    const accents = ['#e46d4c', '#269684', '#027dea'];
+    const accents = ['#cb5521', '#2f6f3a', '#2f6f3a'];
     const aligns = ['left', 'center', 'right'];
     const bullets = ['●', '▲', '◆'];
     function render(m) {
       const unified = m === 'unified';
       deck.innerHTML = '';
       pages.forEach((p, i) => {
-        const accent = unified ? '#663af3' : accents[i];
+        const accent = unified ? '#2f6f3a' : accents[i];
         const align = unified ? 'left' : aligns[i];
         const bullet = unified ? '■' : bullets[i];
         const barSelf = align === 'center' ? 'center' : (align === 'right' ? 'flex-end' : 'flex-start');
         const page = document.createElement('div');
-        page.style.cssText = 'width:132px;height:98px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--color-glass-edge);padding:10px;display:flex;flex-direction:column;gap:6px;overflow:hidden;transition:all .3s ease';
+        page.style.cssText = 'width:132px;height:98px;border-radius:8px;background:rgba(26,51,0,.04;border:1px solid var(--color-glass-edge);padding:10px;display:flex;flex-direction:column;gap:6px;overflow:hidden;transition:all .3s ease';
         page.innerHTML = `
           <div style="height:6px;width:${unified ? '100%' : (45 + i * 18) + '%'};background:${accent};border-radius:3px;align-self:${barSelf};transition:all .3s ease"></div>
           <div style="font:13px var(--font-display);color:var(--color-ice-highlight);text-align:${align}">${p.title}</div>
@@ -360,7 +360,7 @@ const DEMOS = {
       cards.forEach((t, i) => {
         const dim = (m === 'on' && i !== 1);
         const d = document.createElement('div');
-        d.style.cssText = `width:60px;height:60px;border-radius:12px;display:flex;align-items:center;justify-content:center;font:20px var(--font-display);transition:all .3s;${dim ? 'background:rgba(186,214,247,.05);color:rgba(199,211,234,.3);filter:blur(1px)' : 'background:rgba(102,58,243,.4);color:#fff;box-shadow:0 0 18px rgba(102,58,243,.5)'}`;
+        d.style.cssText = `width:60px;height:60px;border-radius:12px;display:flex;align-items:center;justify-content:center;font:20px var(--font-display);transition:all .3s;${dim ? 'background:rgba(26,51,0,.05);color:rgba(26,51,0,.3);filter:blur(1px)' : 'background:rgba(47,111,58,.4;color:#ffffff;box-shadow:0 0 18px rgba(47,111,58,.5'}`;
         d.textContent = t; s.appendChild(d);
       });
     }
@@ -373,10 +373,10 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn active" data-m="off">无栅格</button><button class="demo-btn" data-m="on">显示栅格</button></div>
         <div class="mini-slide" id="grStage" style="position:relative">
-          <div id="grLines" style="position:absolute;inset:0;background-image:linear-gradient(rgba(186,214,247,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(186,214,247,.18) 1px,transparent 1px);background-size:25% 25%;display:none"></div>
-          <div style="position:absolute;top:25%;left:25%;width:25%;height:25%;background:rgba(102,58,243,.5);border-radius:6px"></div>
-          <div style="position:absolute;top:25%;left:50%;width:25%;height:25%;background:rgba(2,125,234,.5);border-radius:6px"></div>
-          <div style="position:absolute;top:50%;left:25%;width:25%;height:25%;background:rgba(38,150,132,.5);border-radius:6px"></div>
+          <div id="grLines" style="position:absolute;inset:0;background-image:linear-gradient(rgba(26,51,0,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(26,51,0,.18) 1px,transparent 1px);background-size:25% 25%;display:none"></div>
+          <div style="position:absolute;top:25%;left:25%;width:25%;height:25%;background:rgba(47,111,58,.5;border-radius:6px"></div>
+          <div style="position:absolute;top:25%;left:50%;width:25%;height:25%;background:rgba(47,111,58,.5;border-radius:6px"></div>
+          <div style="position:absolute;top:50%;left:25%;width:25%;height:25%;background:rgba(47,111,58,.5;border-radius:6px"></div>
         </div>
       </div>`;
     const lines = c.querySelector('#grLines');
@@ -427,7 +427,7 @@ const DEMOS = {
     c.innerHTML = `<div class="demo-stack">
       <div class="demo-label">色环相邻：蓝 → 蓝绿 → 绿，天生协调</div>
       <div style="display:flex;height:80px;border-radius:10px;overflow:hidden">
-        <div style="flex:1;background:#2f6df0"></div><div style="flex:1;background:#2f9df0"></div><div style="flex:1;background:#2fc9e0"></div><div style="flex:1;background:#2fd98a"></div>
+        <div style="flex:1;background:#2f6f3a"></div><div style="flex:1;background:#2f6f3a"></div><div style="flex:1;background:#2f6f3a"></div><div style="flex:1;background:#2f6f3a"></div>
       </div></div>`;
   },
 
@@ -436,8 +436,8 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">正对面：蓝 vs 橙，互相提亮</div>
         <div style="display:flex;height:90px;border-radius:10px;overflow:hidden">
-          <div style="flex:1;background:#027dea;display:flex;align-items:center;justify-content:center;color:#fff;font:14px var(--font-body)">背景</div>
-          <div style="flex:0 0 90px;background:#e46d4c;display:flex;align-items:center;justify-content:center;color:#fff;font:13px var(--font-body);box-shadow:0 0 20px rgba(228,109,76,.6)">CTA</div>
+          <div style="flex:1;background:#2f6f3a;display:flex;align-items:center;justify-content:center;color:#ffffff;font:14px var(--font-body)">背景</div>
+          <div style="flex:0 0 90px;background:#cb5521;display:flex;align-items:center;justify-content:center;color:#ffffff;font:13px var(--font-body);box-shadow:0 0 20px rgba(203,85,33,.6">CTA</div>
         </div></div>`;
   },
 
@@ -445,8 +445,8 @@ const DEMOS = {
     c.innerHTML = `<div class="demo-stack">
       <div class="demo-label">60-30-10：主色 60% · 辅色 30% · 点缀 10%</div>
       <div style="display:flex;flex-direction:column;border-radius:10px;overflow:hidden;border:1px solid var(--color-glass-edge)">
-        <div style="height:120px;background:#0e1530;display:flex;align-items:center;justify-content:center;color:rgba(199,211,234,.7);font:13px var(--font-body)">主色 60%</div>
-        <div style="display:flex;height:60px"><div style="flex:1;background:#2f343e;display:flex;align-items:center;justify-content:center;color:#c7d3ea;font:12px var(--font-body)">辅色 30%</div><div style="flex:0 0 30px;background:#e46d4c;display:flex;align-items:center;justify-content:center;color:#fff;font:11px var(--font-body)">10%</div></div>
+        <div style="height:120px;background:#ffffff;display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.7);font:13px var(--font-body)">主色 60%</div>
+        <div style="display:flex;height:60px"><div style="flex:1;background:#2f6f3a;display:flex;align-items:center;justify-content:center;color:#1a3300;font:12px var(--font-body)">辅色 30%</div><div style="flex:0 0 30px;background:#cb5521;display:flex;align-items:center;justify-content:center;color:#ffffff;font:11px var(--font-body)">10%</div></div>
       </div></div>`;
   },
 
@@ -454,11 +454,11 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-row">
-          <input type="color" value="#663af3" id="gA" style="width:36px;height:30px;background:none;border:1px solid var(--color-glass-edge);border-radius:6px">
-          <input type="color" value="#027dea" id="gB" style="width:36px;height:30px;background:none;border:1px solid var(--color-glass-edge);border-radius:6px">
+          <input type="color" value="#2f6f3a" id="gA" style="width:36px;height:30px;background:none;border:1px solid var(--color-glass-edge);border-radius:6px">
+          <input type="color" value="#2f6f3a" id="gB" style="width:36px;height:30px;background:none;border:1px solid var(--color-glass-edge);border-radius:6px">
           <button class="demo-btn active" data-d="0">纵向</button><button class="demo-btn" data-d="90">横向</button>
         </div>
-        <div id="gBox" style="height:110px;border-radius:10px;background:linear-gradient(0deg,#663af3,#027dea)"></div>
+        <div id="gBox" style="height:110px;border-radius:10px;background:linear-gradient(0deg,#2f6f3a,#2f6f3a)"></div>
       </div>`;
     const a = c.querySelector('#gA'), b = c.querySelector('#gB'), box = c.querySelector('#gBox');
     let dir = 0;
@@ -477,7 +477,7 @@ const DEMOS = {
           <button class="demo-btn" data-t="emph">强调·脉冲</button>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="atBox" style="padding:14px 22px;background:rgba(102,58,243,.5);border-radius:10px;color:#fff;font:15px var(--font-body)">我是一个对象</div>
+          <div id="atBox" style="padding:14px 22px;background:rgba(47,111,58,.5;border-radius:10px;color:#ffffff;font:15px var(--font-body)">我是一个对象</div>
         </div>
       </div>`;
     const box = c.querySelector('#atBox');
@@ -495,8 +495,8 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" data-t="smooth">淡入（平滑）</button><button class="demo-btn" data-t="abrupt">出现（突然）</button></div>
         <div class="mini-slide" style="display:flex;gap:16px;align-items:center;justify-content:center">
-          <div id="smBox" style="padding:14px 20px;background:rgba(2,125,234,.5);border-radius:10px;color:#fff;font:14px var(--font-body);opacity:1">我</div>
-          <div id="abBox" style="padding:14px 20px;background:rgba(38,150,132,.5);border-radius:10px;color:#fff;font:14px var(--font-body);opacity:1">我</div>
+          <div id="smBox" style="padding:14px 20px;background:rgba(47,111,58,.5;border-radius:10px;color:#ffffff;font:14px var(--font-body);opacity:1">我</div>
+          <div id="abBox" style="padding:14px 20px;background:rgba(47,111,58,.5;border-radius:10px;color:#ffffff;font:14px var(--font-body);opacity:1">我</div>
         </div>
       </div>`;
     const sm = c.querySelector('#smBox'), ab = c.querySelector('#abBox');
@@ -517,11 +517,11 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" data-e="linear">匀速</button><button class="demo-btn" data-e="ease">缓出</button></div>
-        <div style="position:relative;height:40px;background:rgba(186,214,247,.05);border-radius:8px;margin-top:6px">
-          <div id="ezA" style="position:absolute;top:10px;left:4px;width:20px;height:20px;border-radius:50%;background:#027dea"></div>
+        <div style="position:relative;height:40px;background:rgba(26,51,0,.05);border-radius:8px;margin-top:6px">
+          <div id="ezA" style="position:absolute;top:10px;left:4px;width:20px;height:20px;border-radius:50%;background:#2f6f3a"></div>
         </div>
-        <div style="position:relative;height:40px;background:rgba(186,214,247,.05);border-radius:8px">
-          <div id="ezB" style="position:absolute;top:10px;left:4px;width:20px;height:20px;border-radius:50%;background:#663af3"></div>
+        <div style="position:relative;height:40px;background:rgba(26,51,0,.05);border-radius:8px">
+          <div id="ezB" style="position:absolute;top:10px;left:4px;width:20px;height:20px;border-radius:50%;background:#2f6f3a"></div>
         </div>
       </div>`;
     const a = c.querySelector('#ezA'), b = c.querySelector('#ezB');
@@ -537,9 +537,9 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" data-t="click">单击开始</button><button class="demo-btn" data-t="with">与上一同时</button><button class="demo-btn" data-t="after">上一之后</button></div>
         <div class="mini-slide" style="display:flex;gap:12px;align-items:center;justify-content:center">
-          <div class="tg" style="padding:10px 16px;background:rgba(102,58,243,.4);border-radius:8px;color:#fff;font:13px var(--font-body);opacity:.25">A</div>
-          <div class="tg" style="padding:10px 16px;background:rgba(2,125,234,.4);border-radius:8px;color:#fff;font:13px var(--font-body);opacity:.25">B</div>
-          <div class="tg" style="padding:10px 16px;background:rgba(38,150,132,.4);border-radius:8px;color:#fff;font:13px var(--font-body);opacity:.25">C</div>
+          <div class="tg" style="padding:10px 16px;background:rgba(47,111,58,.4;border-radius:8px;color:#ffffff;font:13px var(--font-body);opacity:.25">A</div>
+          <div class="tg" style="padding:10px 16px;background:rgba(47,111,58,.4;border-radius:8px;color:#ffffff;font:13px var(--font-body);opacity:.25">B</div>
+          <div class="tg" style="padding:10px 16px;background:rgba(47,111,58,.4;border-radius:8px;color:#ffffff;font:13px var(--font-body);opacity:.25">C</div>
         </div>
       </div>`;
     const objs = [...c.querySelectorAll('.tg')];
@@ -557,8 +557,8 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" data-f="fade">淡变</button><button class="demo-btn" data-f="push">推入</button><button class="demo-btn" data-f="wipe">擦除</button></div>
         <div class="mini-slide" id="tfStage" style="position:relative;overflow:hidden">
-          <div class="tfPage" style="position:absolute;inset:0;background:#027dea;display:flex;align-items:center;justify-content:center;color:#fff;font:18px var(--font-body)">页面 1</div>
-          <div class="tfPage" style="position:absolute;inset:0;background:#663af3;display:flex;align-items:center;justify-content:center;color:#fff;font:18px var(--font-body);opacity:0">页面 2</div>
+          <div class="tfPage" style="position:absolute;inset:0;background:#2f6f3a;display:flex;align-items:center;justify-content:center;color:#ffffff;font:18px var(--font-body)">页面 1</div>
+          <div class="tfPage" style="position:absolute;inset:0;background:#2f6f3a;display:flex;align-items:center;justify-content:center;color:#ffffff;font:18px var(--font-body);opacity:0">页面 2</div>
         </div>
       </div>`;
     const pages = [...c.querySelectorAll('.tfPage')];
@@ -584,7 +584,7 @@ const DEMOS = {
         <div class="demo-label">拖动时间轴，看对象按错峰顺序出现</div>
         <input type="range" min="0" max="100" value="0" class="demo-slider" id="tlSlide">
         <div class="mini-slide" style="display:flex;gap:10px;align-items:center;justify-content:center;position:relative">
-          ${['标题','配图','数据'].map((t,i)=>`<div class="tlObj" data-at="${i*30}" style="padding:10px 14px;background:rgba(102,58,243,.4);border-radius:8px;color:#fff;font:13px var(--font-body);opacity:.2">${t}</div>`).join('')}
+          ${['标题','配图','数据'].map((t,i)=>`<div class="tlObj" data-at="${i*30}" style="padding:10px 14px;background:rgba(47,111,58,.4;border-radius:8px;color:#ffffff;font:13px var(--font-body);opacity:.2">${t}</div>`).join('')}
         </div>
       </div>`;
     const slide = c.querySelector('#tlSlide'), objs = [...c.querySelectorAll('.tlObj')];
@@ -600,8 +600,8 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">黄金分割 ≈ 1.618（图 : 文）</div>
         <div style="display:flex;height:120px;border-radius:10px;overflow:hidden;border:1px solid var(--color-glass-edge)">
-          <div style="flex:1.618;background:linear-gradient(135deg,#1b2347,#27345f);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font:13px var(--font-body)">图 61.8%</div>
-          <div style="flex:1;background:rgba(186,214,247,.06);display:flex;align-items:center;justify-content:center;color:var(--color-moon-mist);font:13px var(--font-body)">文 38.2%</div>
+          <div style="flex:1.618;background:linear-gradient(135deg,#ffffff,#2f6f3a);display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.85;font:13px var(--font-body)">图 61.8%</div>
+          <div style="flex:1;background:rgba(26,51,0,.06);display:flex;align-items:center;justify-content:center;color:var(--color-moon-mist);font:13px var(--font-body)">文 38.2%</div>
         </div>
       </div>`;
   },
@@ -609,9 +609,9 @@ const DEMOS = {
   'rule-of-thirds'(c) {
     c.innerHTML = `
       <div class="mini-slide" style="position:relative">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#22304f,#33476f)"></div>
-        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px);background-size:33.33% 33.33%;background-position:center"></div>
-        <div style="position:absolute;top:66%;left:66%;transform:translate(-50%,-50%);width:26%;height:30%;border-radius:8px;background:rgba(228,109,76,.85);display:flex;align-items:center;justify-content:center;color:#fff;font:12px var(--font-body)">主体放交点</div>
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)"></div>
+        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(26,51,0,.25 1px,transparent 1px),linear-gradient(90deg,rgba(26,51,0,.25 1px,transparent 1px);background-size:33.33% 33.33%;background-position:center"></div>
+        <div style="position:absolute;top:66%;left:66%;transform:translate(-50%,-50%);width:26%;height:30%;border-radius:8px;background:rgba(203,85,33,.85;display:flex;align-items:center;justify-content:center;color:#ffffff;font:12px var(--font-body)">主体放交点</div>
       </div>`;
   },
 
@@ -629,7 +629,7 @@ const DEMOS = {
     const lines = [...c.querySelectorAll('[data-line]')];
     c.querySelector('#fpPlay').onclick = () => {
       lines.forEach(l => l.style.background = 'transparent');
-      lines.forEach((l, i) => setTimeout(() => { l.style.transition = 'background .4s'; l.style.background = 'rgba(102,58,243,.2)'; }, i * 500));
+      lines.forEach((l, i) => setTimeout(() => { l.style.transition = 'background .4s'; l.style.background = 'rgba(47,111,58,.2'; }, i * 500));
     };
   },
 
@@ -644,7 +644,7 @@ const DEMOS = {
       const isCenter = m === 'center';
       s.style.alignItems = isCenter ? 'center' : 'flex-start';
       s.style.textAlign = isCenter ? 'center' : 'left';
-      s.innerHTML = `<div style="font:24px var(--font-display);color:var(--color-ice-highlight);width:100%">对称之美</div><div style="font:14px var(--font-body);color:var(--color-moon-mist);width:100%">庄重 · 平衡 · 仪式感</div><div style="width:40px;height:3px;background:#663af3;border-radius:2px"></div>`;
+      s.innerHTML = `<div style="font:24px var(--font-display);color:var(--color-ice-highlight);width:100%">对称之美</div><div style="font:14px var(--font-body);color:var(--color-moon-mist);width:100%">庄重 · 平衡 · 仪式感</div><div style="width:40px;height:3px;background:#2f6f3a;border-radius:2px"></div>`;
     }
     render('center');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
@@ -655,8 +655,8 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">拖动调节页边距</div>
         <input type="range" min="2" max="20" value="4" class="demo-slider" id="mgSlide">
-        <div class="mini-slide" id="mgStage" style="background:linear-gradient(135deg,#1b2347,#27345f)">
-          <div id="mgInner" style="position:absolute;inset:4%;background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font:13px var(--font-body)">内容区</div>
+        <div class="mini-slide" id="mgStage" style="background:linear-gradient(135deg,#ffffff,#2f6f3a)">
+          <div id="mgInner" style="position:absolute;inset:4%;background:rgba(26,51,0,.08;border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.8;font:13px var(--font-body)">内容区</div>
         </div>
       </div>`;
     const slide = c.querySelector('#mgSlide'), inner = c.querySelector('#mgInner');
@@ -680,16 +680,16 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">先点「源样式」，再点目标框，样式被刷过去</div>
         <div class="demo-row" style="gap:12px;align-items:stretch">
-          <div id="fpSrc" style="flex:1;padding:14px;background:rgba(102,58,243,.5);border:2px solid #8a6bff;border-radius:10px;color:#fff;font:13px var(--font-body);cursor:pointer">源样式（点我）</div>
-          <div class="fpTgt" style="flex:1;padding:14px;background:rgba(186,214,247,.06);border:2px solid var(--color-glass-edge);border-radius:10px;color:var(--color-moon-mist);font:13px var(--font-body);cursor:pointer">目标 A</div>
-          <div class="fpTgt" style="flex:1;padding:14px;background:rgba(186,214,247,.06);border:2px solid var(--color-glass-edge);border-radius:10px;color:var(--color-moon-mist);font:13px var(--font-body);cursor:pointer">目标 B</div>
+          <div id="fpSrc" style="flex:1;padding:14px;background:rgba(47,111,58,.5;border:2px solid #2f6f3a;border-radius:10px;color:#ffffff;font:13px var(--font-body);cursor:pointer">源样式（点我）</div>
+          <div class="fpTgt" style="flex:1;padding:14px;background:rgba(26,51,0,.06);border:2px solid var(--color-glass-edge);border-radius:10px;color:var(--color-moon-mist);font:13px var(--font-body);cursor:pointer">目标 A</div>
+          <div class="fpTgt" style="flex:1;padding:14px;background:rgba(26,51,0,.06);border:2px solid var(--color-glass-edge);border-radius:10px;color:var(--color-moon-mist);font:13px var(--font-body);cursor:pointer">目标 B</div>
         </div>
       </div>`;
     const src = c.querySelector('#fpSrc'); let armed = false;
-    src.onclick = () => { armed = true; src.style.outline = '2px dashed #fff'; };
+    src.onclick = () => { armed = true; src.style.outline = '2px dashed #ffffff'; };
     c.querySelectorAll('.fpTgt').forEach(t => t.onclick = () => {
       if (!armed) return;
-      t.style.background = 'rgba(102,58,243,.5)'; t.style.borderColor = '#8a6bff'; t.style.color = '#fff'; armed = false; src.style.outline = 'none';
+      t.style.background = 'rgba(47,111,58,.5'; t.style.borderColor = '#2f6f3a'; t.style.color = '#ffffff'; armed = false; src.style.outline = 'none';
     });
   },
 
@@ -698,17 +698,17 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">模拟按键（也可在键盘按 D / G）</div>
         <div class="demo-row" style="gap:10px">
-          <div class="scKey" data-k="d" style="padding:10px 14px;background:rgba(186,214,247,.06);border:1px solid var(--color-glass-edge);border-radius:8px;font:13px var(--font-mono);color:var(--color-frost-glow)">Ctrl + D 复制</div>
-          <div class="scKey" data-k="g" style="padding:10px 14px;background:rgba(186,214,247,.06);border:1px solid var(--color-glass-edge);border-radius:8px;font:13px var(--font-mono);color:var(--color-frost-glow)">Ctrl + G 成组</div>
+          <div class="scKey" data-k="d" style="padding:10px 14px;background:rgba(26,51,0,.06);border:1px solid var(--color-glass-edge);border-radius:8px;font:13px var(--font-mono);color:var(--color-frost-glow)">Ctrl + D 复制</div>
+          <div class="scKey" data-k="g" style="padding:10px 14px;background:rgba(26,51,0,.06);border:1px solid var(--color-glass-edge);border-radius:8px;font:13px var(--font-mono);color:var(--color-frost-glow)">Ctrl + G 成组</div>
         </div>
-        <div id="scStage" class="mini-slide" style="display:flex;gap:10px;align-items:center;justify-content:center"><div style="padding:10px 14px;background:rgba(102,58,243,.4);border-radius:8px;color:#fff;font:13px var(--font-body)">原对象</div></div>
+        <div id="scStage" class="mini-slide" style="display:flex;gap:10px;align-items:center;justify-content:center"><div style="padding:10px 14px;background:rgba(47,111,58,.4;border-radius:8px;color:#ffffff;font:13px var(--font-body)">原对象</div></div>
       </div>`;
     const stage = c.querySelector('#scStage');
     function flash(k) {
       const key = c.querySelector(`[data-k="${k}"]`); if (!key) return;
-      key.style.background = 'rgba(102,58,243,.4)'; key.style.borderColor = '#8a6bff';
-      setTimeout(() => { key.style.background = 'rgba(186,214,247,.06)'; key.style.borderColor = 'var(--color-glass-edge)'; }, 250);
-      const d = document.createElement('div'); d.style.cssText = 'padding:10px 14px;background:rgba(102,58,243,.4);border-radius:8px;color:#fff;font:13px var(--font-body)'; d.textContent = k === 'd' ? '副本' : '成组'; stage.appendChild(d);
+      key.style.background = 'rgba(47,111,58,.4'; key.style.borderColor = '#2f6f3a';
+      setTimeout(() => { key.style.background = 'rgba(26,51,0,.06)'; key.style.borderColor = 'var(--color-glass-edge)'; }, 250);
+      const d = document.createElement('div'); d.style.cssText = 'padding:10px 14px;background:rgba(47,111,58,.4;border-radius:8px;color:#ffffff;font:13px var(--font-body)'; d.textContent = k === 'd' ? '副本' : '成组'; stage.appendChild(d);
     }
     c.querySelectorAll('.scKey').forEach(k => k.onclick = () => flash(k.dataset.k));
     const handler = (e) => { if (e.key === 'd') flash('d'); if (e.key === 'g') flash('g'); };
@@ -729,7 +729,7 @@ const DEMOS = {
       wrap.style.cssText = 'display:flex;width:92%;align-items:center;flex-wrap:nowrap';
       const boxes = [0, 1, 2, 3].map(() => {
         const d = document.createElement('div');
-        d.style.cssText = 'width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#663af3,#027dea);flex:0 0 auto';
+        d.style.cssText = 'width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);flex:0 0 auto';
         return d;
       });
       if (m === 'even') {
@@ -751,19 +751,19 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">改「主题色」→ 所有引用处同步变</div>
         <div class="demo-row">
-          <button class="demo-btn active" data-c="#663af3">紫主题</button>
-          <button class="demo-btn" data-c="#027dea">蓝主题</button>
-          <button class="demo-btn" data-c="#269684">绿主题</button>
+          <button class="demo-btn active" data-c="#2f6f3a">紫主题</button>
+          <button class="demo-btn" data-c="#2f6f3a">蓝主题</button>
+          <button class="demo-btn" data-c="#2f6f3a">绿主题</button>
         </div>
         <div class="mini-slide" id="crStage" style="display:flex;gap:12px;align-items:center;justify-content:center"></div>
       </div>`;
     const s = c.querySelector('#crStage');
     function render(col) {
-      s.innerHTML = `<div style="padding:12px 18px;background:${col};border-radius:8px;color:#fff;font:13px var(--font-body)">标题</div>
+      s.innerHTML = `<div style="padding:12px 18px;background:${col};border-radius:8px;color:#ffffff;font:13px var(--font-body)">标题</div>
         <div style="width:40px;height:40px;border-radius:50%;background:${col}"></div>
-        <div style="padding:8px 14px;background:${col}33;border:1px solid ${col};border-radius:999px;color:#fff;font:12px var(--font-body)">按钮</div>`;
+        <div style="padding:8px 14px;background:${col}33;border:1px solid ${col};border-radius:999px;color:#ffffff;font:12px var(--font-body)">按钮</div>`;
     }
-    render('#663af3');
+    render('#2f6f3a');
     c.querySelectorAll('[data-c]').forEach(b => b.onclick = () => render(b.dataset.c));
   },
 
@@ -773,8 +773,8 @@ const DEMOS = {
         <div class="demo-label">拖动放大 —— 矢量清晰 / 位图糊</div>
         <input type="range" min="100" max="300" value="100" class="demo-slider" id="vrSlide">
         <div class="demo-row" style="gap:16px">
-          <div style="flex:1;text-align:center"><div class="demo-label">矢量图标</div><svg id="vrVec" viewBox="0 0 50 50" style="width:100%;max-width:120px"><circle cx="25" cy="25" r="20" fill="none" stroke="#663af3" stroke-width="3"/><path d="M18 25 l5 5 l10 -12" fill="none" stroke="#663af3" stroke-width="3"/></svg></div>
-          <div style="flex:1;text-align:center"><div class="demo-label">位图照片</div><div id="vrRas" style="width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;background:repeating-conic-gradient(#445 0% 25%, #223 0% 50%);background-size:10px 10px;border-radius:6px"></div></div>
+          <div style="flex:1;text-align:center"><div class="demo-label">矢量图标</div><svg id="vrVec" viewBox="0 0 50 50" style="width:100%;max-width:120px"><circle cx="25" cy="25" r="20" fill="none" stroke="#2f6f3a" stroke-width="3"/><path d="M18 25 l5 5 l10 -12" fill="none" stroke="#2f6f3a" stroke-width="3"/></svg></div>
+          <div style="flex:1;text-align:center"><div class="demo-label">位图照片</div><div id="vrRas" style="width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;background:repeating-conic-gradient(#2f6f3a 0% 25%, #ffffff 0% 50%);background-size:10px 10px;border-radius:6px"></div></div>
         </div>
       </div>`;
     const slide = c.querySelector('#vrSlide'), vec = c.querySelector('#vrVec'), ras = c.querySelector('#vrRas');
@@ -792,7 +792,7 @@ const DEMOS = {
         <input type="range" min="10" max="100" value="100" class="demo-slider" id="cpSlide">
         <div class="demo-row" style="justify-content:space-between">
           <div id="cpSize" style="font:14px var(--font-mono);color:var(--color-frost-glow)">8.0 MB</div>
-          <div id="cpBar" style="flex:1;height:10px;margin:0 12px;background:rgba(186,214,247,.1);border-radius:5px;overflow:hidden"><div id="cpFill" style="height:100%;width:100%;background:linear-gradient(90deg,#663af3,#027dea)"></div></div>
+          <div id="cpBar" style="flex:1;height:10px;margin:0 12px;background:rgba(26,51,0,.1);border-radius:5px;overflow:hidden"><div id="cpFill" style="height:100%;width:100%;background:linear-gradient(90deg,#2f6f3a,#2f6f3a)"></div></div>
           <div id="cpQ" style="font:13px var(--font-body);color:var(--color-moon-mist)">原画质</div>
         </div>
       </div>`;
@@ -815,26 +815,26 @@ const DEMOS = {
           <button class="demo-btn" data-op="intersect">相交</button>
           <button class="demo-btn" data-op="subtract">减除</button>
         </div>
-        <svg viewBox="0 0 200 120" style="width:100%;height:160px">
+        <svg viewBox="0 0 300 180" style="width:100%;height:220px">
           <defs>
-            <clipPath id="smCA"><circle cx="85" cy="60" r="40"/></clipPath>
-            <clipPath id="smCB"><rect x="95" y="30" width="60" height="60" rx="8"/></clipPath>
-            <mask id="smMask"><rect x="0" y="0" width="200" height="120" fill="white"/><rect x="95" y="30" width="60" height="60" rx="8" fill="black"/></mask>
-            <mask id="smMaskA"><rect x="0" y="0" width="200" height="120" fill="white"/><circle cx="85" cy="60" r="40" fill="black"/></mask>
+            <clipPath id="smCA"><circle cx="128" cy="90" r="60"/></clipPath>
+            <clipPath id="smCB"><rect x="143" y="45" width="90" height="90" rx="12"/></clipPath>
+            <mask id="smMask"><rect x="0" y="0" width="300" height="180" fill="white"/><rect x="143" y="45" width="90" height="90" rx="12" fill="black"/></mask>
+            <mask id="smMaskA"><rect x="0" y="0" width="300" height="180" fill="white"/><circle cx="128" cy="90" r="60" fill="black"/></mask>
           </defs>
-          <g id="smRes" fill="#663af3" stroke="rgba(186,214,247,.45)" stroke-width="1.5"></g>
+          <g id="smRes" fill="#2f6f3a" stroke="rgba(26,51,0,.45)" stroke-width="2"></g>
         </svg>
       </div>`;
     const g = c.querySelector('#smRes');
     const ops = {
       // 联合：圆 + 矩 合并为单一实心，无内部描边 → 合为一体
-      union: '<g fill="#663af3" stroke="none"><circle cx="85" cy="60" r="40"/><rect x="95" y="30" width="60" height="60" rx="8"/></g>',
+      union: '<g fill="#2f6f3a" stroke="none"><circle cx="128" cy="90" r="60"/><rect x="143" y="45" width="90" height="90" rx="12"/></g>',
       // 组合：并集但重叠区挖空（evenodd 使重叠变透明洞）
-      combine: '<g fill-rule="evenodd"><circle cx="85" cy="60" r="40"/><rect x="95" y="30" width="60" height="60" rx="8"/></g>',
+      combine: '<g fill-rule="evenodd"><circle cx="128" cy="90" r="60"/><rect x="143" y="45" width="90" height="90" rx="12"/></g>',
       // 拆分：拆成 3 个独立碎片（圆独有 / 矩独有 / 重叠透镜），错开+三色区分
-      split: '<g transform="translate(-15,0)"><circle cx="85" cy="60" r="40" mask="url(#smMask)" fill="#663af3"/></g>'
-           + '<g transform="translate(15,0)"><rect x="95" y="30" width="60" height="60" rx="8" mask="url(#smMaskA)" fill="#027dea"/></g>'
-           + '<g transform="translate(0,18)" clip-path="url(#smCB)"><rect x="0" y="0" width="200" height="120" clip-path="url(#smCA)" fill="#8a6bff"/></g>',
+      split: '<g transform="translate(-22,0)"><circle cx="128" cy="90" r="60" mask="url(#smMask)" fill="#2f6f3a"/></g>'
+           + '<g transform="translate(22,0)"><rect x="143" y="45" width="90" height="90" rx="12" mask="url(#smMaskA)" fill="#2f6f3a"/></g>'
+           + '<g transform="translate(0,27)" clip-path="url(#smCB)"><rect x="0" y="0" width="300" height="180" clip-path="url(#smCA)" fill="#2f6f3a"/></g>',
       // 相交：圆 ∩ 矩 = 重叠透镜区 → 嵌套 clip
       intersect: '<g clip-path="url(#smCB)"><rect x="0" y="0" width="200" height="120" clip-path="url(#smCA)"/></g>',
       // 减除：圆 减去 矩 → 用 mask 抠掉矩形区域
@@ -854,8 +854,8 @@ const DEMOS = {
     function render(m) {
       s.innerHTML = '';
       const make = (type) => {
-        if (m === 'line' || (m === 'mix' && type === 'a')) return `<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#d1e4fa" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>`;
-        return `<svg width="34" height="34" viewBox="0 0 24 24" fill="#663af3"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke="#fff" stroke-width="1.6" fill="none"/></svg>`;
+        if (m === 'line' || (m === 'mix' && type === 'a')) return `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2f6f3a" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>`;
+        return `<svg width="48" height="48" viewBox="0 0 24 24" fill="#2f6f3a"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke="#ffffff" stroke-width="1.8" fill="none"/></svg>`;
       };
       for (let i = 0; i < 3; i++) { const d = document.createElement('div'); d.innerHTML = make(i === 1 ? 'b' : 'a'); s.appendChild(d); }
     }
@@ -875,8 +875,8 @@ const DEMOS = {
       s.innerHTML = '';
       vals.forEach(v => {
         const d = document.createElement('div');
-        if (m === 'ugly') d.style.cssText = `width:34px;height:${v}%;background:#c00000;border:1px solid #000`;
-        else d.style.cssText = `width:34px;height:${v}%;background:linear-gradient(180deg,#8a6bff,#663af3);border-radius:4px 4px 0 0`;
+        if (m === 'ugly') d.style.cssText = `width:34px;height:${v}%;background:#cb5521;border:1px solid #ffffff`;
+        else d.style.cssText = `width:34px;height:${v}%;background:linear-gradient(180deg,#2f6f3a,#2f6f3a);border-radius:4px 4px 0 0`;
         s.appendChild(d);
       });
     }
@@ -896,8 +896,8 @@ const DEMOS = {
       const items = ['步骤一', '步骤二', '步骤三'];
       items.forEach((t, i) => {
         const d = document.createElement('div');
-        if (m === 'before') d.style.cssText = 'padding:8px 16px;background:rgba(102,58,243,.2);border:1px solid rgba(102,58,243,.5);border-radius:6px;color:#fff;font:13px var(--font-body)';
-        else { const sc = 1 + i * 0.12; d.style.cssText = `padding:8px 16px;background:rgba(2,125,234,.3);border:1px solid rgba(2,125,234,.6);border-radius:${10 + i * 6}px;color:#fff;font:${13 + i}px var(--font-body);transform:scale(${sc})`; }
+        if (m === 'before') d.style.cssText = 'padding:8px 16px;background:rgba(47,111,58,.2;border:1px solid rgba(47,111,58,.5;border-radius:6px;color:#ffffff;font:13px var(--font-body)';
+        else { const sc = 1 + i * 0.12; d.style.cssText = `padding:8px 16px;background:rgba(47,111,58,.3;border:1px solid rgba(47,111,58,.6;border-radius:${10 + i * 6}px;color:#ffffff;font:${13 + i}px var(--font-body);transform:scale(${sc})`; }
         d.textContent = t; s.appendChild(d);
       });
     }
@@ -910,7 +910,7 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn active" data-m="43">4:3 老比例</button><button class="demo-btn" data-m="169">16:9 宽屏</button></div>
-        <div style="display:flex;justify-content:center"><div id="wsBox" style="background:linear-gradient(135deg,#1b2347,#27345f);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font:13px var(--font-body)">内容</div></div>
+        <div style="display:flex;justify-content:center"><div id="wsBox" style="background:linear-gradient(135deg,#ffffff,#2f6f3a);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.85;font:13px var(--font-body)">内容</div></div>
       </div>`;
     const box = c.querySelector('#wsBox');
     function render(m) { if (m === '43') { box.style.width = '180px'; box.style.height = '135px'; box.textContent = '4:3（两侧黑边）'; } else { box.style.width = '240px'; box.style.height = '135px'; box.textContent = '16:9（满屏）'; } }
@@ -940,11 +940,11 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">同一时刻：观众屏（左） vs 演讲者屏（右）</div>
         <div class="demo-row" style="gap:12px;align-items:stretch">
-          <div style="flex:1;background:linear-gradient(135deg,#1b2347,#27345f);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font:15px var(--font-display)">观众：正片</div>
+          <div style="flex:1;background:linear-gradient(135deg,#ffffff,#2f6f3a);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:15px var(--font-display)">观众：正片</div>
           <div style="flex:1;display:flex;flex-direction:column;gap:6px">
-            <div style="flex:2;background:linear-gradient(135deg,#202a4d,#2c3a66);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font:13px var(--font-body)">当前页</div>
-            <div style="flex:1;background:rgba(186,214,247,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-moon-mist);font:12px var(--font-body)">下一页预览</div>
-            <div style="flex:1;background:rgba(102,58,243,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#c9b6ff;font:11px var(--font-mono)">备注：强调第三点</div>
+            <div style="flex:2;background:linear-gradient(135deg,#ffffff,#2f6f3a);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:13px var(--font-body)">当前页</div>
+            <div style="flex:1;background:rgba(26,51,0,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-moon-mist);font:12px var(--font-body)">下一页预览</div>
+            <div style="flex:1;background:rgba(47,111,58,.15;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#1a3300;font:11px var(--font-mono)">备注：强调第三点</div>
           </div>
         </div>
       </div>`;
@@ -956,16 +956,16 @@ const DEMOS = {
         <div class="demo-label">点下方链接 → 跳到「第 3 页」</div>
         <div class="mini-slide" id="hlStage" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px">
           <div style="font:18px var(--font-display);color:var(--color-ice-highlight)">目录</div>
-          <div class="hlLink" style="color:#8a6bff;font:14px var(--font-body);cursor:pointer;text-decoration:underline">→ 跳到第 3 页</div>
+          <div class="hlLink" style="color:#2f6f3a;font:14px var(--font-body);cursor:pointer;text-decoration:underline">→ 跳到第 3 页</div>
         </div>
       </div>`;
     const stage = c.querySelector('#hlStage');
     function showDir() {
-      stage.innerHTML = `<div style="font:18px var(--font-display);color:var(--color-ice-highlight)">目录</div><div class="hlLink" style="color:#8a6bff;font:14px var(--font-body);cursor:pointer;text-decoration:underline">→ 跳到第 3 页</div>`;
+      stage.innerHTML = `<div style="font:18px var(--font-display);color:var(--color-ice-highlight)">目录</div><div class="hlLink" style="color:#2f6f3a;font:14px var(--font-body);cursor:pointer;text-decoration:underline">→ 跳到第 3 页</div>`;
       stage.querySelector('.hlLink').onclick = showPage;
     }
     function showPage() {
-      stage.innerHTML = `<div style="font:18px var(--font-display);color:var(--color-ice-highlight)">第 3 页</div><div style="font:14px var(--font-body);color:var(--color-moon-mist)">已通过超链接跳转到此</div><div class="hlBack" style="color:#8a6bff;font:13px var(--font-body);cursor:pointer;text-decoration:underline;margin-top:6px">← 返回目录</div>`;
+      stage.innerHTML = `<div style="font:18px var(--font-display);color:var(--color-ice-highlight)">第 3 页</div><div style="font:14px var(--font-body);color:var(--color-moon-mist)">已通过超链接跳转到此</div><div class="hlBack" style="color:#2f6f3a;font:13px var(--font-body);cursor:pointer;text-decoration:underline;margin-top:6px">← 返回目录</div>`;
       stage.querySelector('.hlBack').onclick = showDir;
     }
     stage.querySelector('.hlLink').onclick = showPage;
@@ -975,7 +975,7 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" id="apPlay2">▶ 自动播放</button><button class="demo-btn" id="apPause2">⏸ 暂停</button></div>
-        <div class="mini-slide" id="apStage2" style="display:flex;align-items:center;justify-content:center;color:#fff;font:18px var(--font-display)">第 1 页</div>
+        <div class="mini-slide" id="apStage2" style="display:flex;align-items:center;justify-content:center;color:#ffffff;font:18px var(--font-display)">第 1 页</div>
       </div>`;
     const stage = c.querySelector('#apStage2');
     let n = 1, timer = null;
@@ -989,9 +989,9 @@ const DEMOS = {
   /* ---------- 软件功能 ---------- */
   theme(c) {
     const themes = {
-      deep:  { name: '暗夜紫', bg: 'linear-gradient(135deg,#0e1020,#1a1636)', accent: '#8a6bff', font: "'Space Grotesk',sans-serif", label: '现代科技' },
-      light: { name: '简约浅', bg: 'linear-gradient(135deg,#eef2fb,#dbe4f5)', accent: '#027dea', font: "'Inter',sans-serif", label: '清爽商务', dark: true },
-      warm:  { name: '暖橙调', bg: 'linear-gradient(135deg,#2a1a12,#3d2417)', accent: '#e46d4c', font: "'Space Grotesk',sans-serif", label: '温暖亲和' },
+      deep:  { name: '暗夜紫', bg: 'linear-gradient(135deg,#ffffff,#ffffff)', accent: '#2f6f3a', font: "'Space Grotesk',sans-serif", label: '现代科技' },
+      light: { name: '简约浅', bg: 'linear-gradient(135deg,#e3ecd9,#e3ecd9)', accent: '#2f6f3a', font: "'Inter',sans-serif", label: '清爽商务', dark: true },
+      warm:  { name: '暖橙调', bg: 'linear-gradient(135deg,#ffffff,#ffffff)', accent: '#cb5521', font: "'Space Grotesk',sans-serif", label: '温暖亲和' },
     };
     c.innerHTML = `
       <div class="demo-stack">
@@ -1006,14 +1006,14 @@ const DEMOS = {
     const stage = c.querySelector('#thStage');
     function render(k) {
       const t = themes[k];
-      const txt = t.dark ? '#1a2340' : '#fff';
-      const sub = t.dark ? 'rgba(26,35,64,.6)' : 'rgba(255,255,255,.6)';
+      const txt = t.dark ? '#ffffff' : '#ffffff';
+      const sub = t.dark ? 'rgba(26,51,0,.6' : 'rgba(26,51,0,.6';
       stage.style.background = t.bg;
       stage.innerHTML = `
         <div style="font:600 22px ${t.font};color:${txt}">主题标题</div>
         <div style="height:6px;width:40%;background:${t.accent};border-radius:3px"></div>
         <div style="font:13px ${t.font};color:${sub}">正文说明文字随主题字体切换</div>
-        <div style="align-self:flex-start;margin-top:4px;padding:6px 14px;background:${t.accent};border-radius:999px;color:#fff;font:12px ${t.font}">${t.label}</div>`;
+        <div style="align-self:flex-start;margin-top:4px;padding:6px 14px;background:${t.accent};border-radius:999px;color:#ffffff;font:12px ${t.font}">${t.label}</div>`;
     }
     render('deep');
     c.querySelectorAll('[data-k]').forEach(b => b.onclick = () => {
@@ -1024,9 +1024,9 @@ const DEMOS = {
 
   'selection-pane'(c) {
     const layers = [
-      { id: 'L1', name: '背景色块', color: 'rgba(102,58,243,.35)', pos: 'top:14%;left:8%;width:84%;height:70%' },
-      { id: 'L2', name: '标题文字', color: 'rgba(216,236,248,.9)', pos: 'top:26%;left:16%;width:50%;height:14%' },
-      { id: 'L3', name: '装饰圆', color: 'rgba(228,109,76,.7)', pos: 'top:50%;left:64%;width:22%;height:38%;border-radius:50%' },
+      { id: 'L1', name: '背景色块', color: 'rgba(47,111,58,.35', pos: 'top:14%;left:8%;width:84%;height:70%' },
+      { id: 'L2', name: '标题文字', color: 'rgba(26,51,0,.9)', pos: 'top:26%;left:16%;width:50%;height:14%' },
+      { id: 'L3', name: '装饰圆', color: 'rgba(203,85,33,.7', pos: 'top:50%;left:64%;width:22%;height:38%;border-radius:50%' },
     ];
     const vis = { L1: true, L2: true, L3: true };
     c.innerHTML = `
@@ -1046,7 +1046,7 @@ const DEMOS = {
       list.innerHTML = '';
       layers.forEach(l => {
         const row = document.createElement('div');
-        row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(186,214,247,.05);border:1px solid var(--color-glass-edge);border-radius:8px';
+        row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(26,51,0,.05);border:1px solid var(--color-glass-edge);border-radius:8px';
         row.innerHTML = `<span style="cursor:pointer;font-size:15px;opacity:${vis[l.id] ? 1 : .3}">${vis[l.id] ? '👁' : '🚫'}</span><span style="font:13px var(--font-body);color:var(--color-frost-glow)">${l.name}</span>`;
         row.querySelector('span').onclick = () => { vis[l.id] = !vis[l.id]; renderList(); renderStage(); };
         list.appendChild(row);
@@ -1064,9 +1064,9 @@ const DEMOS = {
       </div>`;
     const stage = c.querySelector('#zStage');
     const blocks = [
-      { id: 'A', color: '#663af3', x: '18%', y: '20%' },
-      { id: 'B', color: '#027dea', x: '34%', y: '34%' },
-      { id: 'C', color: '#e46d4c', x: '50%', y: '48%' },
+      { id: 'A', color: '#2f6f3a', x: '18%', y: '20%' },
+      { id: 'B', color: '#3a7bd5', x: '34%', y: '34%' },
+      { id: 'C', color: '#cb5521', x: '50%', y: '48%' },
     ];
     let order = ['A', 'B', 'C'], sel = 'A';
     function render() {
@@ -1074,7 +1074,7 @@ const DEMOS = {
       blocks.forEach(b => {
         const z = order.indexOf(b.id);
         const d = document.createElement('div');
-        d.style.cssText = `position:absolute;left:${b.x};top:${b.y};width:38%;height:44%;background:${b.color};border-radius:10px;z-index:${z};display:flex;align-items:center;justify-content:center;color:#fff;font:18px var(--font-display);cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.35);outline:${sel === b.id ? '2px solid #fff' : 'none'};outline-offset:2px`;
+        d.style.cssText = `position:absolute;left:${b.x};top:${b.y};width:38%;height:44%;background:${b.color};border-radius:10px;z-index:${z};display:flex;align-items:center;justify-content:center;color:#ffffff;font:18px var(--font-display);cursor:pointer;box-shadow:0 6px 16px rgba(26,51,0,.35;outline:${sel === b.id ? '2px solid #ffffff' : 'none'};outline-offset:2px`;
         d.textContent = b.id;
         d.onclick = () => { sel = b.id; render(); };
         stage.appendChild(d);
@@ -1101,8 +1101,8 @@ const DEMOS = {
       const shift = moved ? 90 : 0;
       const groupShift = grouped ? shift : 0;
       stage.innerHTML = `
-        <div style="position:absolute;top:30%;left:12%;transform:translateX(${grouped ? shift : shift}px);transition:transform .5s ease;width:32%;height:40%;background:rgba(102,58,243,.5);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font:14px var(--font-body)">块A</div>
-        <div style="position:absolute;top:30%;left:50%;transform:translateX(${grouped ? shift : 0}px);transition:transform .5s ease;width:32%;height:40%;background:rgba(2,125,234,.5);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font:14px var(--font-body)">块B</div>`;
+        <div style="position:absolute;top:30%;left:12%;transform:translateX(${grouped ? shift : shift}px);transition:transform .5s ease;width:32%;height:40%;background:rgba(47,111,58,.5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:14px var(--font-body)">块A</div>
+        <div style="position:absolute;top:30%;left:50%;transform:translateX(${grouped ? shift : 0}px);transition:transform .5s ease;width:32%;height:40%;background:rgba(47,111,58,.5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:14px var(--font-body)">块B</div>`;
     }
     render();
     c.querySelectorAll('[data-g]').forEach(b => b.onclick = () => {
@@ -1125,9 +1125,9 @@ const DEMOS = {
     const stage = c.querySelector('#dgStage'), opts = c.querySelector('#dgOptions');
     function plain() { stage.style.background = ''; stage.innerHTML = `<div style="font:14px var(--font-body);color:var(--color-moon-mist)">2025 年度增长</div><div style="font:13px var(--font-body);color:var(--color-fog-veil)">营收 +38%，用户破百万</div>`; }
     const designs = [
-      () => { stage.style.background = 'linear-gradient(135deg,#1b2347,#2c3a66)'; stage.innerHTML = `<div style="font:600 26px var(--font-display);color:#fff">+38%</div><div style="font:13px var(--font-body);color:rgba(255,255,255,.7)">2025 营收增长 · 用户破百万</div>`; },
-      () => { stage.style.background = 'linear-gradient(135deg,#1a1636,#2a1f52)'; stage.innerHTML = `<div style="display:flex;gap:12px;align-items:center"><div style="font:600 30px var(--font-display);color:#8a6bff">100万</div><div style="font:12px var(--font-body);color:rgba(255,255,255,.7)">用户里程碑<br>营收 +38%</div></div>`; },
-      () => { stage.style.background = 'linear-gradient(135deg,#12241f,#1c3a30)'; stage.innerHTML = `<div style="font:600 18px var(--font-display);color:#4fd1b3">2025 年度增长</div><div style="height:5px;width:50%;background:#269684;border-radius:3px"></div><div style="font:13px var(--font-body);color:rgba(255,255,255,.7)">营收 +38% · 用户破百万</div>`; },
+      () => { stage.style.background = 'linear-gradient(135deg,#ffffff,#2f6f3a)'; stage.innerHTML = `<div style="font:600 26px var(--font-display);color:#ffffff">+38%</div><div style="font:13px var(--font-body);color:rgba(26,51,0,.7">2025 营收增长 · 用户破百万</div>`; },
+      () => { stage.style.background = 'linear-gradient(135deg,#ffffff,#ffffff)'; stage.innerHTML = `<div style="display:flex;gap:12px;align-items:center"><div style="font:600 30px var(--font-display);color:#2f6f3a">100万</div><div style="font:12px var(--font-body);color:rgba(26,51,0,.7">用户里程碑<br>营收 +38%</div></div>`; },
+      () => { stage.style.background = 'linear-gradient(135deg,#ffffff,#2f6f3a)'; stage.innerHTML = `<div style="font:600 18px var(--font-display);color:#2f6f3a">2025 年度增长</div><div style="height:5px;width:50%;background:#2f6f3a;border-radius:3px"></div><div style="font:13px var(--font-body);color:rgba(26,51,0,.7">营收 +38% · 用户破百万</div>`; },
     ];
     plain();
     c.querySelector('#dgGo').onclick = () => {
@@ -1174,7 +1174,7 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" data-m="morph">Morph 平滑切换</button><button class="demo-btn" data-m="cut">普通切换（直接跳）</button><button class="demo-btn" data-a="reset">⟲ 复位</button></div>
         <div class="mini-slide" id="mpStage" style="position:relative">
-          <div id="mpBox" style="position:absolute;left:10%;top:60%;width:16%;height:22%;background:linear-gradient(135deg,#8a6bff,#663af3);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font:12px var(--font-body)">对象</div>
+          <div id="mpBox" style="position:absolute;left:10%;top:60%;width:16%;height:22%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:12px var(--font-body)">对象</div>
         </div>
       </div>`;
     const box = c.querySelector('#mpBox');
@@ -1196,9 +1196,9 @@ const DEMOS = {
         <div class="demo-row"><button class="demo-btn" data-p="curve">▶ 曲线路径</button><button class="demo-btn" data-p="line">▶ 直线路径</button></div>
         <div class="mini-slide" id="mtStage" style="position:relative">
           <svg viewBox="0 0 300 160" style="position:absolute;inset:0;width:100%;height:100%">
-            <path id="mtPath" d="M30,130 Q150,10 270,110" fill="none" stroke="rgba(186,214,247,.35)" stroke-width="2" stroke-dasharray="5 5"/>
+            <path id="mtPath" d="M30,130 Q150,10 270,110" fill="none" stroke="rgba(26,51,0,.35)" stroke-width="2" stroke-dasharray="5 5"/>
           </svg>
-          <div id="mtBall" style="position:absolute;width:20px;height:20px;border-radius:50%;background:#e46d4c;offset-path:path('M30,130 Q150,10 270,110');offset-distance:0%;box-shadow:0 0 12px rgba(228,109,76,.6)"></div>
+          <div id="mtBall" style="position:absolute;width:20px;height:20px;border-radius:50%;background:#cb5521;offset-path:path('M30,130 Q150,10 270,110');offset-distance:0%;box-shadow:0 0 12px rgba(203,85,33,.6"></div>
         </div>
       </div>`;
     const ball = c.querySelector('#mtBall'), path = c.querySelector('#mtPath');
@@ -1220,7 +1220,7 @@ const DEMOS = {
         <div class="demo-row" style="justify-content:space-between"><span class="demo-label">延迟</span><span class="demo-label" id="atDelV">0.0s</span></div>
         <input type="range" class="demo-slider" id="atDel" min="0" max="1.5" step="0.1" value="0">
         <div class="demo-row"><button class="demo-btn" id="atPlay">▶ 播放</button></div>
-        <div class="mini-slide" style="display:flex;align-items:center;justify-content:center"><div id="atBox" style="width:90px;height:90px;background:linear-gradient(135deg,#8a6bff,#663af3);border-radius:14px;opacity:1"></div></div>
+        <div class="mini-slide" style="display:flex;align-items:center;justify-content:center"><div id="atBox" style="width:90px;height:90px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:14px;opacity:1"></div></div>
       </div>`;
     const dur = c.querySelector('#atDur'), del = c.querySelector('#atDel'), box = c.querySelector('#atBox');
     dur.oninput = () => c.querySelector('#atDurV').textContent = Number(dur.value).toFixed(1) + 's';
@@ -1244,7 +1244,7 @@ const DEMOS = {
     const stage = c.querySelector('#blStage');
     function render(m) {
       const pad = m === 'margin' ? '14px' : '0';
-      stage.innerHTML = `<div style="position:absolute;inset:${pad};background:linear-gradient(135deg,#27345f,#3a4d85);border-radius:${m === 'margin' ? '8px' : '0'};display:flex;align-items:flex-end;padding:16px;transition:all .4s ease"><span style="font:600 18px var(--font-display);color:#fff">${m === 'margin' ? '留边距 · 精致克制' : '满版出血 · 气势沉浸'}</span></div>`;
+      stage.innerHTML = `<div style="position:absolute;inset:${pad};background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:${m === 'margin' ? '8px' : '0'};display:flex;align-items:flex-end;padding:16px;transition:all .4s ease"><span style="font:600 18px var(--font-display);color:#ffffff">${m === 'margin' ? '留边距 · 精致克制' : '满版出血 · 气势沉浸'}</span></div>`;
     }
     render('bleed');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { c.querySelectorAll('[data-m]').forEach(x => x.classList.remove('active')); b.classList.add('active'); render(b.dataset.m); });
@@ -1262,7 +1262,7 @@ const DEMOS = {
       if (m === 'list') {
         stage.innerHTML = `<div style="display:flex;flex-direction:column;gap:10px">${items.map(i => `<div style="font:14px var(--font-body);color:var(--color-moon-mist)">· ${i[1]}：${i[2]}</div>`).join('')}</div>`;
       } else {
-        stage.innerHTML = `<div style="display:flex;gap:10px">${items.map(i => `<div style="flex:1;background:rgba(186,214,247,.06);border:1px solid var(--color-glass-edge);border-radius:12px;padding:14px 10px;text-align:center"><div style="font-size:22px">${i[0]}</div><div style="font:600 14px var(--font-display);color:var(--color-ice-highlight);margin-top:6px">${i[1]}</div><div style="font:12px var(--font-body);color:var(--color-fog-veil);margin-top:2px">${i[2]}</div></div>`).join('')}</div>`;
+        stage.innerHTML = `<div style="display:flex;gap:10px">${items.map(i => `<div style="flex:1;background:rgba(26,51,0,.06);border:1px solid var(--color-glass-edge);border-radius:12px;padding:14px 10px;text-align:center"><div style="font-size:22px">${i[0]}</div><div style="font:600 14px var(--font-display);color:var(--color-ice-highlight);margin-top:6px">${i[1]}</div><div style="font:12px var(--font-body);color:var(--color-fog-veil);margin-top:2px">${i[2]}</div></div>`).join('')}</div>`;
       }
     }
     render('card');
@@ -1287,7 +1287,7 @@ const DEMOS = {
           <button class="demo-btn" data-s="star">星形</button>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="imBox" style="width:160px;height:160px;background:linear-gradient(135deg,#e46d4c,#663af3,#027dea);transition:clip-path .3s ease,border-radius .3s"></div>
+          <div id="imBox" style="width:160px;height:160px;background:linear-gradient(135deg,#cb5521,#2f6f3a,#2f6f3a);transition:clip-path .3s ease,border-radius .3s"></div>
         </div>
       </div>`;
     const box = c.querySelector('#imBox');
@@ -1307,7 +1307,7 @@ const DEMOS = {
         <div class="demo-label" id="dvTip">${tips.bar}</div>
       </div>`;
     const stage = c.querySelector('#dvStage'), tip = c.querySelector('#dvTip');
-    const cols = ['#663af3', '#027dea', '#269684', '#e46d4c'];
+    const cols = ['#2f6f3a', '#2f6f3a', '#2f6f3a', '#cb5521'];
     function render(t) {
       tip.textContent = tips[t];
       if (t === 'bar') {
@@ -1317,7 +1317,7 @@ const DEMOS = {
         stage.innerHTML = `<div style="display:flex;justify-content:center;align-items:center;height:180px"><div style="width:150px;height:150px;border-radius:50%;background:conic-gradient(${segs})"></div></div>`;
       } else {
         const pts = vals.map((v, i) => `${30 + i * 90},${160 - v}`).join(' ');
-        stage.innerHTML = `<svg viewBox="0 0 340 180" style="width:100%;height:180px"><polyline points="${pts}" fill="none" stroke="#8a6bff" stroke-width="4"/>${vals.map((v, i) => `<circle cx="${30 + i * 90}" cy="${160 - v}" r="5" fill="#e46d4c"/>`).join('')}</svg>`;
+        stage.innerHTML = `<svg viewBox="0 0 340 180" style="width:100%;height:180px"><polyline points="${pts}" fill="none" stroke="#2f6f3a" stroke-width="4"/>${vals.map((v, i) => `<circle cx="${30 + i * 90}" cy="${160 - v}" r="5" fill="#cb5521"/>`).join('')}</svg>`;
       }
     }
     render('bar');
@@ -1333,9 +1333,9 @@ const DEMOS = {
     const stage = c.querySelector('#fsStage');
     function render(m) {
       if (m === 'flat') {
-        stage.innerHTML = `<div style="width:80px;height:80px;border-radius:16px;background:#027dea"></div><div style="padding:10px 22px;border-radius:8px;background:#663af3;color:#fff;font:14px var(--font-body)">按钮</div>`;
+        stage.innerHTML = `<div style="width:120px;height:120px;border-radius:20px;background:#2f6f3a"></div><div style="padding:14px 28px;border-radius:10px;background:#2f6f3a;color:#ffffff;font:16px var(--font-body)">按钮</div>`;
       } else {
-        stage.innerHTML = `<div style="width:80px;height:80px;border-radius:16px;background:linear-gradient(145deg,#3aa0ff,#0159b3);box-shadow:inset 0 2px 4px rgba(255,255,255,.5),inset 0 -4px 8px rgba(0,0,0,.4),0 8px 16px rgba(0,0,0,.4)"></div><div style="padding:10px 22px;border-radius:8px;background:linear-gradient(180deg,#8a6bff,#4a24c0);color:#fff;font:14px var(--font-body);box-shadow:inset 0 1px 2px rgba(255,255,255,.5),0 6px 12px rgba(0,0,0,.4);text-shadow:0 1px 2px rgba(0,0,0,.4)">按钮</div>`;
+        stage.innerHTML = `<div style="width:120px;height:120px;border-radius:20px;background:linear-gradient(145deg,#4a8f54,#1a4a24);box-shadow:inset 0 2px 4px rgba(26,51,0,.5),inset 0 -4px 8px rgba(26,51,0,.4),0 8px 16px rgba(26,51,0,.4)"></div><div style="padding:14px 28px;border-radius:10px;background:linear-gradient(180deg,#4a8f54,#1a4a24);color:#ffffff;font:16px var(--font-body);box-shadow:inset 0 1px 2px rgba(26,51,0,.5),0 6px 12px rgba(26,51,0,.4),text-shadow:0 1px 2px rgba(26,51,0,.4)">按钮</div>`;
       }
     }
     render('flat');
@@ -1353,9 +1353,9 @@ const DEMOS = {
     const stage = c.querySelector('#efStage');
     function render(m) {
       if (m === 'on') {
-        stage.innerHTML = `<div style="font:700 30px 'Space Grotesk',sans-serif;color:var(--color-ice-highlight)">Design</div><div style="font:12px var(--font-mono);color:#4fd1b3">字体正常，排版如你所愿</div>`;
+        stage.innerHTML = `<div style="font:700 30px 'Space Grotesk',sans-serif;color:var(--color-ice-highlight)">Design</div><div style="font:12px var(--font-mono);color:#2f6f3a">字体正常，排版如你所愿</div>`;
       } else {
-        stage.innerHTML = `<div style="font:700 30px var(--font-serif);color:var(--color-moon-mist)">Design</div><div style="font:12px var(--font-mono);color:#e46d4c">字体被替换成默认衬线，走样了</div>`;
+        stage.innerHTML = `<div style="font:700 30px var(--font-serif);color:var(--color-moon-mist)">Design</div><div style="font:12px var(--font-mono);color:#cb5521">字体被替换成默认衬线，走样了</div>`;
       }
     }
     render('on');
@@ -1394,16 +1394,16 @@ const DEMOS = {
       </div>`;
     const lib = c.querySelector('#rsLib'), target = c.querySelector('#rsTarget');
     let mode = 'theme';
-    const srcCols = ['#e46d4c', '#269684', '#d99a2b'];
-    const themeCol = '#663af3';
+    const srcCols = ['#cb5521', '#2f6f3a', '#cb5521'];
+    const themeCol = '#2f6f3a';
     srcCols.forEach(col => {
       const d = document.createElement('div');
-      d.style.cssText = `width:64px;height:40px;border-radius:6px;border-top:4px solid ${col};background:rgba(186,214,247,.06);cursor:pointer;position:relative`;
-      d.innerHTML = `<div style="position:absolute;top:9px;left:6px;width:60%;height:5px;background:${col};border-radius:2px;opacity:.85"></div><div style="position:absolute;top:19px;left:6px;width:76%;height:4px;background:rgba(255,255,255,.2);border-radius:2px"></div>`;
+      d.style.cssText = `width:64px;height:40px;border-radius:6px;border-top:4px solid ${col};background:rgba(26,51,0,.06);cursor:pointer;position:relative`;
+      d.innerHTML = `<div style="position:absolute;top:9px;left:6px;width:60%;height:5px;background:${col};border-radius:2px;opacity:.85"></div><div style="position:absolute;top:19px;left:6px;width:76%;height:4px;background:rgba(26,51,0,.2;border-radius:2px"></div>`;
       d.onclick = () => {
         const col2 = mode === 'theme' ? themeCol : col;
         target.style.color = '';
-        target.innerHTML = `<div style="position:absolute;top:16%;left:8%;width:55%;height:14%;background:${col2};border-radius:4px"></div><div style="position:absolute;top:44%;left:8%;width:72%;height:6%;background:rgba(255,255,255,.18);border-radius:3px"></div><div style="position:absolute;top:56%;left:8%;width:58%;height:6%;background:rgba(255,255,255,.12);border-radius:3px"></div><div style="position:absolute;bottom:8%;right:8%;font:10px var(--font-mono);color:rgba(255,255,255,.45)">${mode === 'theme' ? '已套用主题紫' : '保留源色'}</div>`;
+        target.innerHTML = `<div style="position:absolute;top:16%;left:8%;width:55%;height:14%;background:${col2};border-radius:4px"></div><div style="position:absolute;top:44%;left:8%;width:72%;height:6%;background:rgba(26,51,0,.18;border-radius:3px"></div><div style="position:absolute;top:56%;left:8%;width:58%;height:6%;background:rgba(26,51,0,.12;border-radius:3px"></div><div style="position:absolute;bottom:8%;right:8%;font:10px var(--font-mono);color:rgba(26,51,0,.45">${mode === 'theme' ? '已套用主题紫' : '保留源色'}</div>`;
       };
       lib.appendChild(d);
     });
@@ -1416,8 +1416,8 @@ const DEMOS = {
         <div class="demo-row"><button class="demo-btn" id="srBtn">● 开始录制</button><span class="demo-label" id="srTime" style="font-family:var(--font-mono)">00:00</span></div>
         <div class="mini-slide" id="srStage" style="position:relative;overflow:hidden">
           <div id="srHint" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--color-fog-veil);font:13px var(--font-body);text-align:center;padding:0 20px">先框选屏幕上要录的区域，再点「开始录制」</div>
-          <div id="srRegion" style="position:absolute;left:16%;top:20%;width:68%;height:60%;border:2px dashed rgba(186,214,247,.5);border-radius:6px;transition:border-color .2s"></div>
-          <div id="srDot" style="position:absolute;left:20%;top:24%;width:10px;height:10px;border-radius:50%;background:#e4483c;display:none"></div>
+          <div id="srRegion" style="position:absolute;left:16%;top:20%;width:68%;height:60%;border:2px dashed rgba(26,51,0,.5);border-radius:6px;transition:border-color .2s"></div>
+          <div id="srDot" style="position:absolute;left:20%;top:24%;width:10px;height:10px;border-radius:50%;background:#cb5521;display:none"></div>
         </div>
       </div>`;
     const btn = c.querySelector('#srBtn'), time = c.querySelector('#srTime'), dot = c.querySelector('#srDot'), region = c.querySelector('#srRegion'), hint = c.querySelector('#srHint');
@@ -1428,14 +1428,14 @@ const DEMOS = {
       on = !on;
       if (on) {
         sec = 0; time.textContent = '00:00'; dot.style.display = 'block'; dot.style.opacity = '1';
-        region.style.borderColor = '#e4483c'; btn.textContent = '■ 停止录制'; btn.classList.add('active');
+        region.style.borderColor = '#cb5521'; btn.textContent = '■ 停止录制'; btn.classList.add('active');
         hint.textContent = '录制中…'; region.innerHTML = '';
         blink = setInterval(() => dot.style.opacity = dot.style.opacity === '0' ? '1' : '0', 500); timers.push(blink);
         timer = setInterval(() => { sec++; time.textContent = fmt(sec); }, 1000); timers.push(timer);
       } else {
         clearInterval(timer); clearInterval(blink); dot.style.display = 'none';
         btn.textContent = '● 开始录制'; btn.classList.remove('active'); hint.textContent = '';
-        region.style.borderColor = 'rgba(102,58,243,.5)'; region.style.borderStyle = 'solid'; region.style.background = 'rgba(102,58,243,.14)';
+        region.style.borderColor = 'rgba(47,111,58,.5'; region.style.borderStyle = 'solid'; region.style.background = 'rgba(47,111,58,.14';
         region.innerHTML = `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--color-ice-highlight)">▶</div><div style="position:absolute;bottom:5px;right:7px;font:10px var(--font-mono);color:var(--color-fog-veil)">${fmt(sec)} 已插入</div>`;
       }
     };
@@ -1454,11 +1454,11 @@ const DEMOS = {
       if (m === 'much') {
         tip.textContent = '什么都想说 = 什么都没说清';
         let blocks = '';
-        for (let i = 0; i < 9; i++) blocks += `<div style="background:rgba(186,214,247,.08);border:1px solid var(--color-glass-edge);border-radius:5px;padding:6px;font:10px var(--font-body);color:var(--color-moon-mist)">要点 ${i + 1} · 一堆说明文字塞进来</div>`;
+        for (let i = 0; i < 9; i++) blocks += `<div style="background:rgba(26,51,0,.08);border:1px solid var(--color-glass-edge);border-radius:5px;padding:6px;font:10px var(--font-body);color:var(--color-moon-mist)">要点 ${i + 1} · 一堆说明文字塞进来</div>`;
         stage.innerHTML = `<div style="position:absolute;inset:0;padding:12px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;align-content:start">${blocks}</div>`;
       } else {
         tip.textContent = '一页只讲一件事，重点自己会跳出来';
-        stage.innerHTML = `<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px"><div style="font:700 34px var(--font-display);background:linear-gradient(120deg,#d8ecf8,#98c0ef);-webkit-background-clip:text;background-clip:text;color:transparent">3×</div><div style="font:14px var(--font-body);color:var(--color-moon-mist)">效率提升</div></div>`;
+        stage.innerHTML = `<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px"><div style="font:700 34px var(--font-display);background:linear-gradient(120deg,#e3ecd9,#e3ecd9);-webkit-background-clip:text;background-clip:text;color:transparent">3×</div><div style="font:14px var(--font-body);color:var(--color-moon-mist)">效率提升</div></div>`;
       }
     }
     render('less');
@@ -1476,8 +1476,8 @@ const DEMOS = {
         <div class="demo-row" style="justify-content:space-between"><span class="demo-label">明度 B</span><span class="demo-label" id="cwBV" style="font-family:var(--font-mono)">95%</span></div>
         <input type="range" class="demo-slider" id="cwB" min="0" max="100" step="1" value="95">
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center;gap:16px">
-          <div id="cwSwatch" style="width:130px;height:130px;border-radius:20px;box-shadow:0 8px 24px rgba(0,0,0,.35)"></div>
-          <div style="font:15px var(--font-mono);color:var(--color-fog-veil)" id="cwHex">#8a6bff</div>
+          <div id="cwSwatch" style="width:130px;height:130px;border-radius:20px;box-shadow:0 8px 24px rgba(26,51,0,.35"></div>
+          <div style="font:15px var(--font-mono);color:var(--color-fog-veil)" id="cwHex">#2f6f3a</div>
         </div>
       </div>`;
     const H = c.querySelector('#cwH'), S = c.querySelector('#cwS'), B = c.querySelector('#cwB');
@@ -1515,7 +1515,7 @@ const DEMOS = {
       const h = +H.value; let cols;
       if (mode === 'mono') { cols = [82, 66, 52, 38, 26].map(l => hsl(h, 60, l)); tip.textContent = '同一色相靠深浅明暗分层，天生和谐'; }
       else { cols = [0, 70, 140, 210, 300].map(off => hsl((h + off) % 360, 68, 55)); tip.textContent = '五个不同色相并排 → 花、乱、抢镜'; }
-      stage.innerHTML = cols.map(col => `<div style="width:46px;height:70px;border-radius:8px;background:${col}"></div>`).join('');
+      stage.innerHTML = cols.map(col => `<div style="width:60px;height:90px;border-radius:10px;background:${col}"></div>`).join('');
     }
     H.oninput = render;
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { mode = b.dataset.m; render(); });
@@ -1529,16 +1529,16 @@ const DEMOS = {
         <div class="demo-row" style="justify-content:space-between"><span class="demo-label">蒙层深度</span><span class="demo-label" id="fiV" style="font-family:var(--font-mono)">55%</span></div>
         <input type="range" class="demo-slider" id="fiMask" min="0" max="80" step="5" value="55">
         <div class="mini-slide" id="fiStage" style="position:relative;padding:0;overflow:hidden">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#3a4d85 0%,#8a6bff 45%,#e46d4c 100%)"></div>
-          <div id="fiMaskLayer" style="position:absolute;inset:0;background:rgba(5,6,15,.55)"></div>
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px"><div style="font:700 26px var(--font-display);color:#fff">全图型封面</div><div style="font:13px var(--font-body);color:rgba(255,255,255,.85)">大图铺满 · 文字压上</div></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#2f6f3a 0%,#2f6f3a 45%,#cb5521 100%)"></div>
+          <div id="fiMaskLayer" style="position:absolute;inset:0;background:rgba(26,51,0,.55"></div>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px"><div style="font:700 26px var(--font-display);color:#ffffff">全图型封面</div><div style="font:13px var(--font-body);color:rgba(26,51,0,.85">大图铺满 · 文字压上</div></div>
         </div>
         <div class="demo-label" id="fiTip">加暗蒙层 → 白字才在花图上看得清</div>
       </div>`;
     const sl = c.querySelector('#fiMask'), layer = c.querySelector('#fiMaskLayer'), tip = c.querySelector('#fiTip');
     sl.oninput = () => {
       c.querySelector('#fiV').textContent = sl.value + '%';
-      layer.style.background = `rgba(5,6,15,${sl.value / 100})`;
+      layer.style.background = `rgba(26,51,0,${sl.value / 100}`;
       tip.textContent = +sl.value < 25 ? '蒙层太浅 → 白字被花图吃掉，看不清' : '加暗蒙层 → 白字才在花图上看得清';
     };
   },
@@ -1552,13 +1552,13 @@ const DEMOS = {
       </div>`;
     const stage = c.querySelector('#vbStage'), tip = c.querySelector('#vbTip');
     function render(m) {
-      const big = `<div style="position:absolute;left:6%;top:14%;width:40%;height:72%;background:linear-gradient(135deg,#27345f,#8a6bff);border-radius:10px"></div>`;
+      const big = `<div style="position:absolute;left:6%;top:14%;width:40%;height:72%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:10px"></div>`;
       if (m === 'off') {
         tip.textContent = '左边一坨重、右边全空 → 画面向左坠，别扭';
         stage.innerHTML = big;
       } else {
         tip.textContent = '右侧加标题+文字+色块，把左边大图的分量配平';
-        stage.innerHTML = big + `<div style="position:absolute;right:7%;top:22%;width:38%;height:9%;background:rgba(255,255,255,.85);border-radius:4px"></div><div style="position:absolute;right:7%;top:37%;width:44%;height:5%;background:rgba(186,214,247,.35);border-radius:3px"></div><div style="position:absolute;right:7%;top:46%;width:36%;height:5%;background:rgba(186,214,247,.25);border-radius:3px"></div><div style="position:absolute;right:7%;top:62%;width:22%;height:16%;background:#e46d4c;border-radius:8px"></div>`;
+        stage.innerHTML = big + `<div style="position:absolute;right:7%;top:22%;width:38%;height:9%;background:rgba(26,51,0,.85;border-radius:4px"></div><div style="position:absolute;right:7%;top:37%;width:44%;height:5%;background:rgba(26,51,0,.35);border-radius:3px"></div><div style="position:absolute;right:7%;top:46%;width:36%;height:5%;background:rgba(26,51,0,.25);border-radius:3px"></div><div style="position:absolute;right:7%;top:62%;width:22%;height:16%;background:#cb5521;border-radius:8px"></div>`;
       }
     }
     render('on');
@@ -1579,7 +1579,7 @@ const DEMOS = {
       for (let i = 1; i <= 3; i++) {
         const d = document.createElement('div');
         d.className = 'apCard';
-        d.style.cssText = `width:72px;height:88px;border-radius:10px;background:${i === 1 ? 'linear-gradient(135deg,#8a6bff,#663af3)' : 'rgba(186,214,247,.08)'};border:1px solid var(--color-glass-edge);display:flex;align-items:center;justify-content:center;font:12px var(--font-body);color:#fff`;
+        d.style.cssText = `width:72px;height:88px;border-radius:10px;background:${i === 1 ? 'linear-gradient(135deg,#2f6f3a,#2f6f3a)' : 'rgba(26,51,0,.08)'};border:1px solid var(--color-glass-edge);display:flex;align-items:center;justify-content:center;font:12px var(--font-body);color:#ffffff`;
         d.textContent = '卡片 ' + i;
         d.dataset.done = i === 1 ? '1' : '0';
         row.appendChild(d);
@@ -1597,7 +1597,7 @@ const DEMOS = {
     c.querySelector('#apBrush').onclick = () => {
       [...row.children].forEach((d, i) => {
         if (i === 0) return;
-        d.style.background = 'linear-gradient(135deg,#8a6bff,#663af3)'; d.dataset.done = '1';
+        d.style.background = 'linear-gradient(135deg,#2f6f3a,#2f6f3a)'; d.dataset.done = '1';
         playCard(d, i * 0.2);
       });
     };
@@ -1618,9 +1618,9 @@ const DEMOS = {
     const stage = c.querySelector('#plStage');
     function render(p) {
       const d = data[p];
-      stage.innerHTML = `<div style="flex:1;text-align:center"><div style="font:11px var(--font-mono);color:var(--color-fog-veil);margin-bottom:6px">手动</div><div style="background:rgba(228,109,76,.12);border:1px solid rgba(228,109,76,.35);border-radius:8px;padding:12px 8px;font:12px var(--font-body);color:#f0a48c;min-height:56px;display:flex;align-items:center;justify-content:center">${d.before}</div></div>
+      stage.innerHTML = `<div style="flex:1;text-align:center"><div style="font:11px var(--font-mono);color:var(--color-fog-veil);margin-bottom:6px">手动</div><div style="background:rgba(203,85,33,.12;border:1px solid rgba(203,85,33,.35;border-radius:8px;padding:12px 8px;font:12px var(--font-body);color:#cb5521;min-height:56px;display:flex;align-items:center;justify-content:center">${d.before}</div></div>
         <div style="font-size:22px;color:var(--color-ice-highlight)">→</div>
-        <div style="flex:1;text-align:center"><div style="font:11px var(--font-mono);color:#8a6bff;margin-bottom:6px">${d.name}</div><div style="background:rgba(102,58,243,.14);border:1px solid rgba(102,58,243,.4);border-radius:8px;padding:12px 8px;font:12px var(--font-body);color:#c9bcff;min-height:56px;display:flex;align-items:center;justify-content:center">${d.after}</div></div>`;
+        <div style="flex:1;text-align:center"><div style="font:11px var(--font-mono);color:#2f6f3a;margin-bottom:6px">${d.name}</div><div style="background:rgba(47,111,58,.14;border:1px solid rgba(47,111,58,.4;border-radius:8px;padding:12px 8px;font:12px var(--font-body);color:#1a3300;min-height:56px;display:flex;align-items:center;justify-content:center">${d.after}</div></div>`;
     }
     render('islide');
     c.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { c.querySelectorAll('[data-p]').forEach(x => x.classList.remove('active')); b.classList.add('active'); render(b.dataset.p); });
@@ -1631,10 +1631,10 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-label">拖滑块移动蓝块 → 接近对齐位时自动「吸附」并显示参考线</div>
         <div class="mini-slide" id="saStage" style="position:relative;padding:0;overflow:hidden;min-height:160px">
-          <div style="position:absolute;left:16%;top:30%;width:60px;height:60px;background:rgba(186,214,247,.14);border:1px solid var(--color-glass-edge);border-radius:10px"></div>
-          <div style="position:absolute;left:16%;top:56%;width:60px;height:60px;background:rgba(186,214,247,.14);border:1px solid var(--color-glass-edge);border-radius:10px"></div>
-          <div id="saGuide" style="position:absolute;left:calc(16% + 30px);top:0;bottom:0;width:1px;background:#e4483c;opacity:0;transition:opacity .12s"></div>
-          <div id="saBox" style="position:absolute;top:43%;width:60px;height:60px;background:linear-gradient(135deg,#8a6bff,#663af3);border-radius:10px;box-shadow:0 4px 12px rgba(102,58,243,.4)"></div>
+          <div style="position:absolute;left:16%;top:30%;width:60px;height:60px;background:rgba(26,51,0,.14);border:1px solid var(--color-glass-edge);border-radius:10px"></div>
+          <div style="position:absolute;left:16%;top:56%;width:60px;height:60px;background:rgba(26,51,0,.14);border:1px solid var(--color-glass-edge);border-radius:10px"></div>
+          <div id="saGuide" style="position:absolute;left:calc(16% + 30px);top:0;bottom:0;width:1px;background:#cb5521;opacity:0;transition:opacity .12s"></div>
+          <div id="saBox" style="position:absolute;top:43%;width:60px;height:60px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:10px;box-shadow:0 4px 12px rgba(47,111,58,.4"></div>
         </div>
         <input type="range" class="demo-slider" id="saPos" min="6" max="80" step="0.5" value="55">
         <div class="demo-label" id="saTip">　</div>
@@ -1648,9 +1648,9 @@ const DEMOS = {
       const curPx = w * x / 100;
       if (Math.abs(curPx - targetPx) < 12) { // 吸附区
         x = TARGET; guide.style.opacity = '1'; tip.textContent = '✓ 已吸附：与上方两块左对齐';
-        box.style.boxShadow = '0 0 0 2px #e4483c, 0 4px 12px rgba(102,58,243,.4)';
+        box.style.boxShadow = '0 0 0 2px #cb5521, 0 4px 12px rgba(47,111,58,.4';
       } else {
-        guide.style.opacity = '0'; tip.textContent = '　'; box.style.boxShadow = '0 4px 12px rgba(102,58,243,.4)';
+        guide.style.opacity = '0'; tip.textContent = '　'; box.style.boxShadow = '0 4px 12px rgba(47,111,58,.4';
       }
       box.style.left = x + '%';
     }
@@ -1668,11 +1668,11 @@ const DEMOS = {
     const rows = [['产品', '销量', '增长'], ['A 方案', '1,280', '+12%'], ['B 方案', '2,050', '+31%'], ['C 方案', '960', '-4%']];
     function render(m) {
       if (m === 'raw') {
-        stage.innerHTML = `<table style="border-collapse:collapse;font:12px var(--font-body);color:var(--color-moon-mist)">${rows.map(r => `<tr>${r.map(cell => `<td style="border:1px solid #7f8aa3;padding:5px 12px">${cell}</td>`).join('')}</tr>`).join('')}</table>`;
+        stage.innerHTML = `<table style="border-collapse:collapse;font:12px var(--font-body);color:var(--color-moon-mist)">${rows.map(r => `<tr>${r.map(cell => `<td style="border:1px solid #2f6f3a;padding:5px 12px">${cell}</td>`).join('')}</tr>`).join('')}</table>`;
       } else {
-        stage.innerHTML = `<table style="border-collapse:collapse;font:12px var(--font-body);color:var(--color-frost-glow);width:100%">${rows.map((r, ri) => `<tr style="background:${ri === 0 ? 'rgba(102,58,243,.28)' : ri % 2 ? 'rgba(186,214,247,.04)' : 'transparent'}">${r.map((cell, ci) => {
+        stage.innerHTML = `<table style="border-collapse:collapse;font:12px var(--font-body);color:var(--color-frost-glow);width:100%">${rows.map((r, ri) => `<tr style="background:${ri === 0 ? 'rgba(47,111,58,.28' : ri % 2 ? 'rgba(26,51,0,.04)' : 'transparent'}">${r.map((cell, ci) => {
           const isGrow = ci === 2 && ri > 0;
-          const col = isGrow ? (cell[0] === '-' ? '#4fd1b3' : '#ff6b6b') : (ri === 0 ? '#fff' : 'inherit');
+          const col = isGrow ? (cell[0] === '-' ? '#2f6f3a' : '#cb5521') : (ri === 0 ? '#ffffff' : 'inherit');
           const fw = ri === 0 ? '600' : (isGrow ? '600' : '400');
           return `<td style="border:none;border-bottom:1px solid var(--color-glass-edge);padding:8px 14px;color:${col};font-weight:${fw}">${cell}</td>`;
         }).join('')}</tr>`).join('')}</table>`;
@@ -1694,14 +1694,14 @@ const DEMOS = {
       </div>`;
     const cube = c.querySelector('#m3Cube'), sl = c.querySelector('#m3Rot');
     const faces = [
-      ['translateZ(60px)', 'linear-gradient(135deg,#8a6bff,#663af3)'],
-      ['rotateY(180deg) translateZ(60px)', 'linear-gradient(135deg,#663af3,#4a24c0)'],
-      ['rotateY(90deg) translateZ(60px)', 'linear-gradient(135deg,#027dea,#0159b3)'],
-      ['rotateY(-90deg) translateZ(60px)', 'linear-gradient(135deg,#3aa0ff,#027dea)'],
-      ['rotateX(90deg) translateZ(60px)', 'linear-gradient(135deg,#269684,#1b6b5e)'],
-      ['rotateX(-90deg) translateZ(60px)', 'linear-gradient(135deg,#e46d4c,#c04a2b)'],
+      ['translateZ(60px)', 'linear-gradient(135deg,#2f6f3a,#2f6f3a)'],
+      ['rotateY(180deg) translateZ(60px)', 'linear-gradient(135deg,#2f6f3a,#2f6f3a)'],
+      ['rotateY(90deg) translateZ(60px)', 'linear-gradient(135deg,#2f6f3a,#2f6f3a)'],
+      ['rotateY(-90deg) translateZ(60px)', 'linear-gradient(135deg,#2f6f3a,#2f6f3a)'],
+      ['rotateX(90deg) translateZ(60px)', 'linear-gradient(135deg,#2f6f3a,#2f6f3a)'],
+      ['rotateX(-90deg) translateZ(60px)', 'linear-gradient(135deg,#cb5521,#cb5521)'],
     ];
-    cube.innerHTML = faces.map(f => `<div style="position:absolute;width:120px;height:120px;border:1px solid rgba(255,255,255,.25);${'transform:' + f[0]};background:${f[1]};opacity:.92"></div>`).join('');
+    cube.innerHTML = faces.map(f => `<div style="position:absolute;width:120px;height:120px;border:1px solid rgba(26,51,0,.25;${'transform:' + f[0]};background:${f[1]};opacity:.92"></div>`).join('');
     let ry = 30, rx = -18, spin = null;
     const timers = (window.__demoTimers ||= []);
     function apply() { cube.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`; }
@@ -1722,14 +1722,14 @@ const DEMOS = {
         <div class="demo-label" id="snTip">演讲者屏能看到备注；观众屏只有干净正片</div>
       </div>`;
     const stage = c.querySelector('#snStage'), tip = c.querySelector('#snTip');
-    const slideHTML = `<div style="background:linear-gradient(135deg,#27345f,#3a4d85);border-radius:8px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px"><div style="font:700 20px var(--font-display);color:#fff">Q3 营收增长 31%</div><div style="font:12px var(--font-body);color:rgba(255,255,255,.8)">三大业务线全面上扬</div></div>`;
+    const slideHTML = `<div style="background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:8px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px"><div style="font:700 20px var(--font-display);color:#ffffff">Q3 营收增长 31%</div><div style="font:12px var(--font-body);color:rgba(26,51,0,.8">三大业务线全面上扬</div></div>`;
     function render(m) {
       if (m === 'audience') {
         tip.textContent = '观众屏：只有正片，看不到你的小抄';
         stage.innerHTML = slideHTML;
       } else {
         tip.textContent = '演讲者屏：正片 + 备注 + 计时，只有你看得到';
-        stage.innerHTML = `<div style="display:flex;gap:10px">${slideHTML.replace('height:96px', 'height:96px;flex:1')}<div style="width:34%;background:rgba(186,214,247,.05);border:1px dashed var(--color-glass-edge);border-radius:8px;padding:8px;font:11px var(--font-body);color:var(--color-moon-mist)"><div style="font:10px var(--font-mono);color:var(--color-fog-veil);margin-bottom:4px">📝 备注</div>先抛数字，再讲三条主因，别念 PPT</div></div>`;
+        stage.innerHTML = `<div style="display:flex;gap:10px">${slideHTML.replace('height:96px', 'height:96px;flex:1')}<div style="width:34%;background:rgba(26,51,0,.05);border:1px dashed var(--color-glass-edge);border-radius:8px;padding:8px;font:11px var(--font-body);color:var(--color-moon-mist)"><div style="font:10px var(--font-mono);color:var(--color-fog-veil);margin-bottom:4px">📝 备注</div>先抛数字，再讲三条主因，别念 PPT</div></div>`;
       }
     }
     render('presenter');
@@ -1773,7 +1773,7 @@ const DEMOS = {
         <input type="range" class="demo-slider" id="edDpi" min="72" max="300" step="1" value="96">
         <div class="mini-slide" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;overflow:hidden">
           <div id="edText" style="font:700 36px var(--font-display);color:var(--color-ice-highlight)">高清导出</div>
-          <div id="edImg" style="width:160px;height:80px;border-radius:10px;background:linear-gradient(135deg,#8a6bff,#027dea)"></div>
+          <div id="edImg" style="width:160px;height:80px;border-radius:10px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)"></div>
           <div class="demo-label" id="edTip">96 DPI：屏幕看还行，放大 / 印刷就糊</div>
         </div>
       </div>`;
@@ -1813,8 +1813,8 @@ const DEMOS = {
           </div>`).join('');
       } else {
         box.innerHTML = data.map((s, i) => `
-          <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;padding:8px 10px;background:rgba(186,214,247,0.04);border:1px solid rgba(186,214,247,0.12);border-radius:8px">
-            <div style="flex:0 0 26px;height:26px;border-radius:6px;background:linear-gradient(135deg,#8a6bff,#027dea);display:flex;align-items:center;justify-content:center;font:600 12px var(--font-mono);color:#fff">${i+1}</div>
+          <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;padding:8px 10px;background:rgba(26,51,0,0.04);border:1px solid rgba(26,51,0,0.12);border-radius:8px">
+            <div style="flex:0 0 26px;height:26px;border-radius:6px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);display:flex;align-items:center;justify-content:center;font:600 12px var(--font-mono);color:#ffffff">${i+1}</div>
             <div><div style="font:600 13px var(--font-display);color:var(--color-ice-highlight)">${s.t}</div><div style="font:12px var(--font-body);color:var(--color-fog-veil)">${s.b.join(' · ')}</div></div>
           </div>`).join('');
       }
@@ -1866,11 +1866,11 @@ const DEMOS = {
       if (mode === 'sym') {
         box.innerHTML = `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:30px">
           <div style="text-align:right"><div style="font:700 18px var(--font-display);color:var(--color-ice-highlight)">左栏标题</div><div class="demo-label">对称 · 稳重</div></div>
-          <div style="width:90px;height:90px;border-radius:12px;background:linear-gradient(135deg,#8a6bff,#027dea)"></div>
+          <div style="width:90px;height:90px;border-radius:12px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)"></div>
           <div style="text-align:left"><div style="font:700 18px var(--font-display);color:var(--color-ice-highlight)">右栏标题</div><div class="demo-label">镜像平衡</div></div></div>`;
       } else {
         box.innerHTML = `<div style="position:absolute;left:18px;top:18px"><div style="font:700 18px var(--font-display);color:var(--color-ice-highlight)">偏左上标题</div><div class="demo-label">非对称 · 灵动</div></div>
-          <div style="position:absolute;right:24px;bottom:18px;width:110px;height:80px;border-radius:12px;background:linear-gradient(135deg,#8a6bff,#027dea)"></div>`;
+          <div style="position:absolute;right:24px;bottom:18px;width:110px;height:80px;border-radius:12px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)"></div>`;
       }
     }
     render('sym');
@@ -1887,12 +1887,12 @@ const DEMOS = {
           <button class="demo-btn" data-a="play">▶ 播放视线流</button>
           <span class="demo-label">眼睛从左上扫到右下</span>
         </div>
-        <div class="mini-slide" style="position:relative;height:180px;overflow:hidden;background:rgba(186,214,247,0.03)">
-          <svg width="100%" height="100%" style="position:absolute;inset:0"><line x1="14%" y1="18%" x2="80%" y2="78%" stroke="rgba(139,107,255,0.5)" stroke-width="2" stroke-dasharray="5 5"/></svg>
+        <div class="mini-slide" style="position:relative;height:180px;overflow:hidden;background:rgba(26,51,0,0.03)">
+          <svg width="100%" height="100%" style="position:absolute;inset:0"><line x1="14%" y1="18%" x2="80%" y2="78%" stroke="rgba(47,111,58,0.5" stroke-width="2" stroke-dasharray="5 5"/></svg>
           <div style="position:absolute;left:14%;top:18%;transform:translate(-50%,-50%);font:600 15px var(--font-display);color:var(--color-ice-highlight)">标题</div>
-          <div style="position:absolute;left:46%;top:48%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:14px;background:linear-gradient(135deg,#8a6bff,#027dea)"></div>
+          <div style="position:absolute;left:46%;top:48%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:14px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)"></div>
           <div style="position:absolute;left:80%;top:78%;transform:translate(-50%,-50%);font:600 15px var(--font-display);color:var(--color-ice-highlight)">结论</div>
-          <div id="dfDot" style="position:absolute;left:14%;top:22%;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,0.25);transform:translate(-50%,-50%)"></div>
+          <div id="dfDot" style="position:absolute;left:14%;top:22%;width:14px;height:14px;border-radius:50%;background:#ffffff;box-shadow:0 0 0 4px rgba(26,51,0,0.25;transform:translate(-50%,-50%)"></div>
         </div>
       </div>`;
     const dot = c.querySelector('#dfDot');
@@ -1915,11 +1915,11 @@ const DEMOS = {
     const box = c.querySelector('#rbBox');
     function render(mode) {
       if (mode === 'raw') {
-        box.style.background = 'repeating-linear-gradient(45deg,#1b2233,#1b2233 8px,#222b40 8px,#222b40 16px)';
-        box.innerHTML = `<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#ffb86b,#ff7eb6)"></div>`;
+        box.style.background = 'repeating-linear-gradient(45deg,#ffffff,#ffffff 8px,#ffffff 8px,#ffffff 16px)';
+        box.innerHTML = `<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#f6e3d6,#cb5521)"></div>`;
       } else {
-        box.style.background = 'linear-gradient(135deg,#0a0e1a,#141b2e)';
-        box.innerHTML = `<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#ffb86b,#ff7eb6);box-shadow:0 12px 30px rgba(0,0,0,0.5)"></div>`;
+        box.style.background = 'linear-gradient(135deg,#ffffff,#ffffff)';
+        box.innerHTML = `<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#f6e3d6,#cb5521);box-shadow:0 12px 30px rgba(26,51,0,0.5"></div>`;
       }
     }
     render('raw');
@@ -1942,14 +1942,14 @@ const DEMOS = {
     const box = c.querySelector('#igBox');
     function render(k) {
       if (k === 'timeline') {
-        box.innerHTML = `<div style="position:relative;padding-left:18px"><div style="position:absolute;left:5px;top:4px;bottom:4px;width:2px;background:linear-gradient(#8a6bff,#027dea)"></div>
-          ${[['2023','起步'],['2024','增长'],['2025','规模化']].map(([y,t]) => `<div style="position:relative;margin:0 0 14px 0"><div style="position:absolute;left:-16px;top:4px;width:10px;height:10px;border-radius:50%;background:#8a6bff"></div><b style="color:var(--color-ice-highlight);font:600 14px var(--font-display)">${y}</b> <span class="demo-label">${t}</span></div>`).join('')}</div>`;
+        box.innerHTML = `<div style="position:relative;padding-left:18px"><div style="position:absolute;left:5px;top:4px;bottom:4px;width:2px;background:linear-gradient(#2f6f3a,#2f6f3a)"></div>
+          ${[['2023','起步'],['2024','增长'],['2025','规模化']].map(([y,t]) => `<div style="position:relative;margin:0 0 14px 0"><div style="position:absolute;left:-16px;top:4px;width:10px;height:10px;border-radius:50%;background:#2f6f3a"></div><b style="color:var(--color-ice-highlight);font:600 14px var(--font-display)">${y}</b> <span class="demo-label">${t}</span></div>`).join('')}</div>`;
       } else if (k === 'flow') {
-        box.innerHTML = [['开始','#8a6bff'],['处理','#027dea'],['完成','#19c37d']].map(([t,col],i) => `<span style="display:inline-flex;align-items:center;gap:8px"><span style="padding:6px 12px;border-radius:8px;background:${col};color:#fff;font:600 13px var(--font-display)">${t}</span>${i<2?'<span style="color:var(--color-fog-veil)">→</span>':''}</span>`).join('');
+        box.innerHTML = [['开始','#2f6f3a'],['处理','#2f6f3a'],['完成','#2f6f3a']].map(([t,col],i) => `<span style="display:inline-flex;align-items:center;gap:8px"><span style="padding:6px 12px;border-radius:8px;background:${col};color:#ffffff;font:600 13px var(--font-display)">${t}</span>${i<2?'<span style="color:var(--color-fog-veil)">→</span>':''}</span>`).join('');
       } else if (k === 'compare') {
-        box.innerHTML = `<div style="display:flex;gap:12px"><div style="flex:1;padding:10px;border-radius:8px;background:rgba(25,195,125,0.12);border:1px solid rgba(25,195,125,0.4)"><div style="font:600 13px var(--font-display);color:#19c37d">方案 A</div><div class="demo-label">快 · 省</div></div><div style="flex:1;padding:10px;border-radius:8px;background:rgba(255,126,182,0.12);border:1px solid rgba(255,126,182,0.4)"><div style="font:600 13px var(--font-display);color:#ff7eb6">方案 B</div><div class="demo-label">稳 · 全</div></div></div>`;
+        box.innerHTML = `<div style="display:flex;gap:12px"><div style="flex:1;padding:10px;border-radius:8px;background:rgba(47,111,58,0.12;border:1px solid rgba(47,111,58,0.4"><div style="font:600 13px var(--font-display);color:#2f6f3a">方案 A</div><div class="demo-label">快 · 省</div></div><div style="flex:1;padding:10px;border-radius:8px;background:rgba(203,85,33,0.12;border:1px solid rgba(203,85,33,0.4"><div style="font:600 13px var(--font-display);color:#cb5521">方案 B</div><div class="demo-label">稳 · 全</div></div></div>`;
       } else {
-        box.innerHTML = `<div style="display:flex;gap:10px">${[['+38%','转化率'],['2.1x','留存'],['¥0','边际成本']].map(([n,l]) => `<div style="flex:1;padding:12px;border-radius:8px;background:rgba(186,214,247,0.05);border:1px solid rgba(186,214,247,0.12)"><div style="font:700 20px var(--font-display);color:var(--color-ice-highlight)">${n}</div><div class="demo-label">${l}</div></div>`).join('')}</div>`;
+        box.innerHTML = `<div style="display:flex;gap:10px">${[['+38%','转化率'],['2.1x','留存'],['¥0','边际成本']].map(([n,l]) => `<div style="flex:1;padding:12px;border-radius:8px;background:rgba(26,51,0,0.05);border:1px solid rgba(26,51,0,0.12)"><div style="font:700 20px var(--font-display);color:var(--color-ice-highlight)">${n}</div><div class="demo-label">${l}</div></div>`).join('')}</div>`;
       }
     }
     render('timeline');
@@ -1968,13 +1968,13 @@ const DEMOS = {
         <div id="viBox" class="mini-slide" style="display:flex;gap:8px;justify-content:center"></div>
       </div>`;
     const box = c.querySelector('#viBox');
-    const mk = (bg, accent, side) => `<div style="width:70px;height:48px;border-radius:6px;background:${bg};position:relative;border:1px solid rgba(186,214,247,0.15)"><div style="position:absolute;top:6px;${side==='left'?'left:6px':'right:6px'};width:14px;height:14px;border-radius:3px;background:${accent}"></div></div>`;
+    const mk = (bg, accent, side) => `<div style="width:100px;height:68px;border-radius:8px;background:${bg};position:relative;border:1px solid rgba(26,51,0,0.15)"><div style="position:absolute;top:8px;${side==='left'?'left:8px':'right:8px'};width:18px;height:18px;border-radius:4px;background:${accent}"></div></div>`;
     function render(mode) {
       if (mode === 'ok') {
-        const bg = 'linear-gradient(135deg,#0d1430,#16203f)', a = '#027dea';
+        const bg = 'linear-gradient(135deg,#ffffff,#ffffff)', a = '#2f6f3a';
         box.innerHTML = [mk(bg,a,'left'),mk(bg,a,'left'),mk(bg,a,'left')].join('');
       } else {
-        box.innerHTML = [mk('#1a1030','#ff7eb6','right'),mk('#102a1a','#19c37d','left'),mk('#2a1a10','#ffb86b','right')].join('');
+        box.innerHTML = [mk('#ffffff','#cb5521','right'),mk('#ffffff','#2f6f3a','left'),mk('#ffffff','#f6e3d6','right')].join('');
       }
     }
     render('ok');
@@ -1995,16 +1995,16 @@ const DEMOS = {
           <button class="demo-btn" data-n="6">6</button>
           <button class="demo-btn" data-n="9">9</button>
         </div>
-        <div class="mini-slide" style="background:#fff;border-radius:6px;padding:10px">
+        <div class="mini-slide" style="background:#ffffff;border-radius:6px;padding:10px">
           <div id="nmGrid" style="display:grid;gap:6px"></div>
-          <div id="nmNote" class="demo-label" style="color:#475569;margin-top:8px"></div>
+          <div id="nmNote" class="demo-label" style="color:#2f6f3a;margin-top:8px"></div>
         </div>
       </div>`;
     const grid = c.querySelector('#nmGrid'), note = c.querySelector('#nmNote');
     function render(n) {
       const cols = n <= 1 ? 1 : n <= 4 ? 2 : 3;
       grid.style.gridTemplateColumns = `repeat(${cols},1fr)`;
-      grid.innerHTML = Array.from({length:n}, (_,i) => `<div style="aspect-ratio:4/3;border-radius:4px;background:#e2e8f0;display:flex;align-items:center;justify-content:center;font:600 12px #94a3b8">${i+1}</div>`).join('');
+      grid.innerHTML = Array.from({length:n}, (_,i) => `<div style="aspect-ratio:4/3;border-radius:4px;background:#e3ecd9;display:flex;align-items:center;justify-content:center;font:600 12px #2f6f3a">${i+1}</div>`).join('');
       note.textContent = `讲义母版：每页 ${n} 张，可加边栏笔记区`;
     }
     render(3);
@@ -2019,13 +2019,13 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-label">快速访问工具栏（点命令钉上 / 取消）</div>
-        <div id="qaBar" style="display:flex;gap:6px;padding:8px 10px;background:rgba(186,214,247,0.05);border:1px solid rgba(186,214,247,0.15);border-radius:8px;flex-wrap:wrap"></div>
+        <div id="qaBar" style="display:flex;gap:6px;padding:8px 10px;background:rgba(26,51,0,0.05);border:1px solid rgba(26,51,0,0.15);border-radius:8px;flex-wrap:wrap"></div>
         <div class="demo-row" id="qaCmds" style="flex-wrap:wrap">
           ${all.map(x => `<button class="demo-btn" data-qa="${x}">＋ ${x}</button>`).join('')}
         </div>
       </div>`;
     const bar = c.querySelector('#qaBar');
-    function renderBar() { bar.innerHTML = pinned.map(x => `<span style="padding:4px 10px;border-radius:6px;background:linear-gradient(135deg,#8a6bff,#027dea);color:#fff;font:600 12px var(--font-display)">${x}</span>`).join(''); }
+    function renderBar() { bar.innerHTML = pinned.map(x => `<span style="padding:4px 10px;border-radius:6px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);color:#ffffff;font:600 12px var(--font-display)">${x}</span>`).join(''); }
     renderBar();
     c.querySelectorAll('[data-qa]').forEach(btn => btn.onclick = () => {
       const x = btn.dataset.qa, i = pinned.indexOf(x);
@@ -2039,15 +2039,15 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-row" style="gap:8px;flex-wrap:wrap;align-items:center">
-          <input id="frFind" value="旧名" style="width:70px;padding:5px 8px;border-radius:6px;border:1px solid rgba(186,214,247,0.25);background:rgba(186,214,247,0.06);color:var(--color-ice-highlight);font:13px var(--font-body)">
+          <input id="frFind" value="旧名" style="width:70px;padding:5px 8px;border-radius:6px;border:1px solid rgba(26,51,0,0.25);background:rgba(26,51,0,0.06);color:var(--color-ice-highlight);font:13px var(--font-body)">
           <span class="demo-label">→</span>
-          <input id="frRep" value="新名" style="width:70px;padding:5px 8px;border-radius:6px;border:1px solid rgba(186,214,247,0.25);background:rgba(186,214,247,0.06);color:var(--color-ice-highlight);font:13px var(--font-body)">
+          <input id="frRep" value="新名" style="width:70px;padding:5px 8px;border-radius:6px;border:1px solid rgba(26,51,0,0.25);background:rgba(26,51,0,0.06);color:var(--color-ice-highlight);font:13px var(--font-body)">
           <button class="demo-btn" data-a="go">替换全部</button>
         </div>
         <div id="frBox" class="mini-slide" style="text-align:left"></div>
       </div>`;
     const box = c.querySelector('#frBox'), fEl = c.querySelector('#frFind'), rEl = c.querySelector('#frRep');
-    function hl(s, f) { return s.split(f).join(`<mark style="background:rgba(255,200,80,0.35);color:#fff;border-radius:3px;padding:0 2px">${f}</mark>`); }
+    function hl(s, f) { return s.split(f).join(`<mark style="background:rgba(246,227,214,0.35;color:#ffffff;border-radius:3px;padding:0 2px">${f}</mark>`); }
     function render() { const f = fEl.value || '旧名'; box.innerHTML = lines.map(l => `<div style="margin:6px 0;font:13px var(--font-body);color:var(--color-fog-veil)">${hl(l, f)}</div>`).join(''); }
     render();
     c.querySelector('[data-a="go"]').onclick = () => {
@@ -2065,7 +2065,7 @@ const DEMOS = {
           <span class="demo-label">循环：持续旋转</span>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="laShape" style="width:100px;height:100px;border-radius:20px;background:linear-gradient(135deg,#8a6bff,#027dea)"></div>
+          <div id="laShape" style="width:100px;height:100px;border-radius:20px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)"></div>
         </div>
       </div>`;
     const shape = c.querySelector('#laShape'), btn = c.querySelector('[data-a="toggle"]');
@@ -2094,7 +2094,7 @@ const DEMOS = {
       const inc = sets[k];
       box.innerHTML = Array.from({length:6}, (_,i) => {
         const on = inc.includes(i+1);
-        return `<div style="width:46px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;font:600 13px var(--font-display);${on?'background:linear-gradient(135deg,#8a6bff,#027dea);color:#fff':'background:rgba(186,214,247,0.06);color:var(--color-fog-veil);opacity:0.4'}">${i+1}</div>`;
+        return `<div style="width:64px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;font:600 15px var(--font-display);${on?'background:linear-gradient(135deg,#2f6f3a,#1a4a24);color:#ffffff':'background:rgba(26,51,0,0.06);color:var(--color-fog-veil);opacity:0.4'}">${i+1}</div>`;
       }).join('');
       note.textContent = `本场放映 ${inc.length} 页：${inc.join(' → ')}`;
     }
@@ -2113,22 +2113,22 @@ const DEMOS = {
           <button class="demo-btn" data-sb="white">白屏 (W)</button>
           <button class="demo-btn" data-sb="pen">标注笔 (P)</button>
         </div>
-        <div id="sbBox" class="mini-slide" style="position:relative;height:150px;overflow:hidden;background:#0a0e1a;display:flex;align-items:center;justify-content:center">
+        <div id="sbBox" class="mini-slide" style="position:relative;height:150px;overflow:hidden;background:#ffffff;display:flex;align-items:center;justify-content:center">
           <div id="sbText" style="font:600 16px var(--font-display);color:var(--color-ice-highlight)">当前幻灯片内容</div>
           <svg id="sbSvg" width="100%" height="100%" style="position:absolute;inset:0;display:none">
-            <circle cx="40%" cy="40%" r="26" fill="none" stroke="#ff4d4f" stroke-width="3"/>
-            <circle cx="68%" cy="62%" r="20" fill="none" stroke="#ff4d4f" stroke-width="3"/>
-            <path d="M40% 40% Q54% 52% 68% 62%" fill="none" stroke="#ffd34d" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle cx="40%" cy="40%" r="26" fill="none" stroke="#cb5521" stroke-width="3"/>
+            <circle cx="68%" cy="62%" r="20" fill="none" stroke="#cb5521" stroke-width="3"/>
+            <path d="M40% 40% Q54% 52% 68% 62%" fill="none" stroke="#fbf3cf" stroke-width="2" stroke-dasharray="4 3"/>
           </svg>
         </div>
       </div>`;
     const box = c.querySelector('#sbBox'), text = c.querySelector('#sbText'), svg = c.querySelector('#sbSvg');
     function render(m) {
       svg.style.display = 'none';
-      if (m === 'normal') { box.style.background = '#0a0e1a'; text.style.display = 'block'; text.style.color = 'var(--color-ice-highlight)'; }
-      else if (m === 'black') { box.style.background = '#000'; text.style.display = 'none'; }
-      else if (m === 'white') { box.style.background = '#fff'; text.style.display = 'block'; text.style.color = '#0a0e1a'; }
-      else if (m === 'pen') { box.style.background = '#0a0e1a'; text.style.display = 'block'; svg.style.display = 'block'; }
+      if (m === 'normal') { box.style.background = '#ffffff'; text.style.display = 'block'; text.style.color = 'var(--color-ice-highlight)'; }
+      else if (m === 'black') { box.style.background = '#ffffff'; text.style.display = 'none'; }
+      else if (m === 'white') { box.style.background = '#ffffff'; text.style.display = 'block'; text.style.color = '#ffffff'; }
+      else if (m === 'pen') { box.style.background = '#ffffff'; text.style.display = 'block'; svg.style.display = 'block'; }
     }
     render('normal');
     c.querySelectorAll('[data-sb]').forEach(btn => btn.onclick = () => {
@@ -2154,9 +2154,9 @@ const DEMOS = {
         box.innerHTML = `<div class="demo-label">未连接，观众看不到你的放映</div>`;
       } else {
         box.innerHTML = `
-          <div style="display:flex;align-items:center;gap:8px"><span id="poDot" style="width:10px;height:10px;border-radius:50%;background:#19c37d"></span><b style="color:var(--color-ice-highlight);font:600 14px var(--font-display)">正在放映 · 已同步</b></div>
-          <div class="demo-label" style="margin-top:6px">3 位远程观众已连接，跟着你翻页</div>
-          <div style="display:flex;gap:6px;margin-top:8px">${['A','B','C'].map(n=>`<span style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#8a6bff,#027dea);color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px var(--font-display)">${n}</span>`).join('')}</div>`;
+          <div style="display:flex;align-items:center;gap:10px"><span id="poDot" style="width:14px;height:14px;border-radius:50%;background:#2f6f3a"></span><b style="color:var(--color-ice-highlight);font:600 16px var(--font-display)">正在放映 · 已同步</b></div>
+          <div class="demo-label" style="margin-top:8px">3 位远程观众已连接，跟着你翻页</div>
+          <div style="display:flex;gap:8px;margin-top:10px">${['A','B','C'].map(n=>`<span style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#2f6f3a,#1a4a24);color:#ffffff;display:flex;align-items:center;justify-content:center;font:600 14px var(--font-display)">${n}</span>`).join('')}</div>`;
         const dot = box.querySelector('#poDot');
         pulse = setInterval(() => { dot.style.opacity = dot.style.opacity === '0.3' ? '1' : '0.3'; }, 600);
         timers.push(pulse);
@@ -2188,9 +2188,9 @@ const DEMOS = {
     const box = c.querySelector('#flBox');
     function render(filter) {
       box.innerHTML = fonts.filter(x => filter === 'all' || (filter === 'free' ? x.f : !x.f))
-        .map(x => `<div style="display:flex;align-items:center;justify-content:space-between;margin:6px 0;padding:6px 10px;border-radius:6px;background:rgba(186,214,247,0.05);border:1px solid rgba(186,214,247,0.12)">
+        .map(x => `<div style="display:flex;align-items:center;justify-content:space-between;margin:6px 0;padding:6px 10px;border-radius:6px;background:rgba(26,51,0,0.05);border:1px solid rgba(26,51,0,0.12)">
           <span style="font:600 13px var(--font-display);color:var(--color-ice-highlight)">${x.n}</span>
-          <span style="font:600 12px var(--font-mono);color:${x.f?'#19c37d':'#ff7eb6'}">${x.t}</span></div>`).join('');
+          <span style="font:600 12px var(--font-mono);color:${x.f?'#2f6f3a':'#cb5521'}">${x.t}</span></div>`).join('');
     }
     render('all');
     c.querySelectorAll('[data-f]').forEach(btn => btn.onclick = () => {
@@ -2211,9 +2211,9 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#epStage');
     function render(m) {
-      if (m === 'normal') s.innerHTML = `<svg viewBox="0 0 200 120" style="width:160px;height:96px"><rect x="40" y="30" width="120" height="60" rx="18" fill="#663af3"/></svg>`;
-      else if (m === 'points') s.innerHTML = `<svg viewBox="0 0 200 120" style="width:160px;height:96px"><rect x="40" y="30" width="120" height="60" rx="18" fill="rgba(102,58,243,.5)" stroke="#8a6bff"/><g fill="#19c37d" stroke="#fff" stroke-width="1"><rect x="36" y="26" width="8" height="8"/><rect x="156" y="26" width="8" height="8"/><rect x="36" y="86" width="8" height="8"/><rect x="156" y="86" width="8" height="8"/></g></svg>`;
-      else s.innerHTML = `<svg viewBox="0 0 200 120" style="width:160px;height:96px"><path d="M70,90 Q40,60 70,30 Q110,30 110,60 Q110,90 70,90 Z" fill="#663af3"/><circle cx="100" cy="42" r="5" fill="#19c37d" stroke="#fff"/></svg>`;
+      if (m === 'normal') s.innerHTML = `<svg viewBox="0 0 300 180" style="width:240px;height:144px"><rect x="60" y="45" width="180" height="90" rx="27" fill="#2f6f3a"/></svg>`;
+      else if (m === 'points') s.innerHTML = `<svg viewBox="0 0 300 180" style="width:240px;height:144px"><rect x="60" y="45" width="180" height="90" rx="27" fill="rgba(47,111,58,.5)" stroke="#2f6f3a" stroke-width="2"/><g fill="#2f6f3a" stroke="#ffffff" stroke-width="1.5"><rect x="54" y="39" width="12" height="12" rx="2"/><rect x="234" y="39" width="12" height="12" rx="2"/><rect x="54" y="129" width="12" height="12" rx="2"/><rect x="234" y="129" width="12" height="12" rx="2"/></g></svg>`;
+      else s.innerHTML = `<svg viewBox="0 0 300 180" style="width:240px;height:144px"><path d="M105,135 Q60,90 105,45 Q165,45 165,90 Q165,135 105,135 Z" fill="#2f6f3a"/><circle cx="150" cy="63" r="8" fill="#2f6f3a" stroke="#ffffff" stroke-width="2"/></svg>`;
     }
     render('normal');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2231,7 +2231,7 @@ const DEMOS = {
         <div class="mini-slide" id="tvStage" style="display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;padding:14px"></div>
       </div>`;
     const s = c.querySelector('#tvStage');
-    const pal = { blue: ['#3aa0ff', '#027dea'], orange: ['#ff9d4d', '#e8692a'], green: ['#36c98e', '#1b8f63'], purple: ['#8a6bff', '#663af3'] };
+    const pal = { blue: ['#2f6f3a', '#2f6f3a'], orange: ['#cb5521', '#cb5521'], green: ['#2f6f3a', '#2f6f3a'], purple: ['#2f6f3a', '#2f6f3a'] };
     function render(m) {
       const [a, b] = pal[m];
       s.innerHTML = `<div style="font:700 20px var(--font-display);color:${b}">项目提案</div><div style="display:flex;gap:8px"><div style="width:46px;height:10px;border-radius:5px;background:${a}"></div><div style="width:70px;height:10px;border-radius:5px;background:${b}"></div></div><div style="width:90px;height:34px;border-radius:6px;background:linear-gradient(135deg,${a},${b})"></div>`;
@@ -2249,7 +2249,7 @@ const DEMOS = {
           <button class="demo-btn" data-m="link">打开链接</button>
         </div>
         <div class="mini-slide" id="abStage" style="display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center">
-          <div id="abBtn" style="padding:10px 18px;border-radius:24px;background:linear-gradient(135deg,#8a6bff,#663af3);color:#fff;font:600 14px var(--font-display);cursor:pointer">点击我</div>
+          <div id="abBtn" style="padding:10px 18px;border-radius:24px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);color:#ffffff;font:600 14px var(--font-display);cursor:pointer">点击我</div>
           <div id="abMsg" style="font:13px var(--font-mono);color:var(--color-fog-veil)">点按钮看动作效果</div>
         </div>
       </div>`;
@@ -2271,8 +2271,8 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#cmStage');
     function render(m) {
-      if (m === 'show') s.innerHTML = `<div style="font:600 15px var(--font-display);color:var(--color-ice-highlight)">季度复盘</div><div style="margin-top:8px;font:13px var(--font-mono);color:var(--color-fog-veil)">这段结论太笼统</div><div style="position:absolute;right:14px;top:14px;width:26px;height:26px;border-radius:50%;background:#ff7eb6;color:#fff;display:flex;align-items:center;justify-content:center;font:600 13px var(--font-display)">1</div><div style="position:absolute;right:8px;top:42px;max-width:120px;padding:8px 10px;border-radius:8px;background:rgba(255,126,182,.15);border:1px solid rgba(255,126,182,.4);font:12px var(--font-mono);color:#ffd4e8">同事：这里再加个数据支撑？</div>`;
-      else s.innerHTML = `<div style="font:600 15px var(--font-display);color:var(--color-ice-highlight)">季度复盘</div><div style="margin-top:8px;font:13px var(--font-mono);color:var(--color-fog-veil)">这段结论太笼统</div><div style="margin-top:10px;font:12px var(--font-mono);color:#19c37d">✓ 批注已解决，从版面移除</div>`;
+      if (m === 'show') s.innerHTML = `<div style="font:600 15px var(--font-display);color:var(--color-ice-highlight)">季度复盘</div><div style="margin-top:8px;font:13px var(--font-mono);color:var(--color-fog-veil)">这段结论太笼统</div><div style="position:absolute;right:14px;top:14px;width:26px;height:26px;border-radius:50%;background:#cb5521;color:#ffffff;display:flex;align-items:center;justify-content:center;font:600 13px var(--font-display)">1</div><div style="position:absolute;right:8px;top:42px;max-width:120px;padding:8px 10px;border-radius:8px;background:rgba(203,85,33,.15;border:1px solid rgba(203,85,33,.4;font:12px var(--font-mono);color:#1a3300">同事：这里再加个数据支撑？</div>`;
+      else s.innerHTML = `<div style="font:600 15px var(--font-display);color:var(--color-ice-highlight)">季度复盘</div><div style="margin-top:8px;font:13px var(--font-mono);color:var(--color-fog-veil)">这段结论太笼统</div><div style="margin-top:10px;font:12px var(--font-mono);color:#2f6f3a">✓ 批注已解决，从版面移除</div>`;
     }
     render('show');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2289,8 +2289,8 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#ruStage');
     function render(m) {
-      if (m === 'off') { s.innerHTML = `<div style="position:absolute;left:20%;top:40%;width:60%;height:24%;background:rgba(102,58,243,.5);border-radius:4px"></div>`; return; }
-      s.innerHTML = `<div style="position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,rgba(186,214,247,.25) 0 1px,transparent 1px 20px)"></div><div style="position:absolute;top:0;bottom:0;left:14px;width:14px;background:repeating-linear-gradient(0deg,rgba(186,214,247,.25) 0 1px,transparent 1px 20px)"></div><div style="position:absolute;left:20%;top:38%;width:60%;height:26%;background:rgba(102,58,243,.5);border-radius:4px"></div>`;
+      if (m === 'off') { s.innerHTML = `<div style="position:absolute;left:20%;top:40%;width:60%;height:24%;background:rgba(47,111,58,.5;border-radius:4px"></div>`; return; }
+      s.innerHTML = `<div style="position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,rgba(26,51,0,.25) 0 1px,transparent 1px 20px)"></div><div style="position:absolute;top:0;bottom:0;left:14px;width:14px;background:repeating-linear-gradient(0deg,rgba(26,51,0,.25) 0 1px,transparent 1px 20px)"></div><div style="position:absolute;left:20%;top:38%;width:60%;height:26%;background:rgba(47,111,58,.5;border-radius:4px"></div>`;
     }
     render('on');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2308,7 +2308,7 @@ const DEMOS = {
     const s = c.querySelector('#tpStage');
     function render(m) {
       if (m === 'blank') s.innerHTML = `<div style="font:600 15px var(--font-display);color:var(--color-fog-veil)">空白页…自己排版</div>`;
-      else s.innerHTML = `<div style="position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#663af3,#027dea)"></div><div style="position:absolute;top:10px;right:12px;width:18px;height:18px;border-radius:4px;background:#027dea;color:#fff;font:700 10px var(--font-display);display:flex;align-items:center;justify-content:center">Y</div><div style="font:700 18px var(--font-display);color:var(--color-ice-highlight)">封面标题</div><div style="width:80px;height:8px;border-radius:4px;background:rgba(102,58,243,.6)"></div>`;
+      else s.innerHTML = `<div style="position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#2f6f3a,#2f6f3a)"></div><div style="position:absolute;top:10px;right:12px;width:18px;height:18px;border-radius:4px;background:#2f6f3a;color:#ffffff;font:700 10px var(--font-display);display:flex;align-items:center;justify-content:center">Y</div><div style="font:700 18px var(--font-display);color:var(--color-ice-highlight)">封面标题</div><div style="width:80px;height:8px;border-radius:4px;background:rgba(47,111,58,.6"></div>`;
     }
     render('blank');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2326,12 +2326,12 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#cmpStage');
     function page(label, lines, diff) {
-      return `<div style="width:44%;height:84%;border:1px solid ${diff ? '#ff7eb6' : 'var(--color-glass-edge)'};border-radius:6px;padding:8px;background:rgba(186,214,247,.04);display:flex;flex-direction:column;gap:5px"><div style="font:600 11px var(--font-display);color:var(--color-ice-highlight)">${label}</div>${lines.map(l => `<div style="height:6px;border-radius:3px;background:${l}"></div>`).join('')}${diff ? '<div style="font:10px var(--font-mono);color:#ff7eb6">● 此页有改动</div>' : ''}</div>`;
+      return `<div style="width:44%;height:84%;border:1px solid ${diff ? '#cb5521' : 'var(--color-glass-edge)'};border-radius:6px;padding:8px;background:rgba(26,51,0,.04);display:flex;flex-direction:column;gap:5px"><div style="font:600 11px var(--font-display);color:var(--color-ice-highlight)">${label}</div>${lines.map(l => `<div style="height:6px;border-radius:3px;background:${l}"></div>`).join('')}${diff ? '<div style="font:10px var(--font-mono);color:#cb5521">● 此页有改动</div>' : ''}</div>`;
     }
     function render(m) {
-      if (m === 'mine') s.innerHTML = page('我的版', ['#663af3', 'rgba(186,214,247,.3)', '#027dea'], false) + page('他的版', ['#663af3', 'rgba(186,214,247,.3)', '#ff7eb6'], true);
-      else if (m === 'his') s.innerHTML = page('我的版', ['#663af3', 'rgba(186,214,247,.3)', '#027dea'], true) + page('他的版', ['#663af3', 'rgba(186,214,247,.3)', '#ff7eb6'], false);
-      else s.innerHTML = page('合并后', ['#663af3', 'rgba(186,214,247,.3)', '#ff7eb6'], false) + page('合并后', ['#663af3', 'rgba(186,214,247,.3)', '#ff7eb6'], false);
+      if (m === 'mine') s.innerHTML = page('我的版', ['#2f6f3a', 'rgba(26,51,0,.3)', '#2f6f3a'], false) + page('他的版', ['#2f6f3a', 'rgba(26,51,0,.3)', '#cb5521'], true);
+      else if (m === 'his') s.innerHTML = page('我的版', ['#2f6f3a', 'rgba(26,51,0,.3)', '#2f6f3a'], true) + page('他的版', ['#2f6f3a', 'rgba(26,51,0,.3)', '#cb5521'], false);
+      else s.innerHTML = page('合并后', ['#2f6f3a', 'rgba(26,51,0,.3)', '#cb5521'], false) + page('合并后', ['#2f6f3a', 'rgba(26,51,0,.3)', '#cb5521'], false);
     }
     render('mine');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2350,8 +2350,8 @@ const DEMOS = {
     const s = c.querySelector('#waStage');
     function render(m) {
       if (m === 'plain') s.innerHTML = `<div style="font:800 30px var(--font-display);color:var(--color-ice-highlight)">标题</div>`;
-      else if (m === 'wa') s.innerHTML = `<div style="font:800 30px var(--font-display);background:linear-gradient(180deg,#ffd76b,#e8692a);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 6px rgba(232,105,42,.4)">标题</div>`;
-      else s.innerHTML = `<div style="font:800 30px var(--font-display);background:linear-gradient(90deg,#8a6bff,#027dea,#19c37d,#ff7eb6);-webkit-background-clip:text;background-clip:text;color:transparent;transform:skewX(-8deg)">标题</div>`;
+      else if (m === 'wa') s.innerHTML = `<div style="font:800 30px var(--font-display);background:linear-gradient(180deg,#f6e3d6,#cb5521);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 6px rgba(203,85,33,.4">标题</div>`;
+      else s.innerHTML = `<div style="font:800 30px var(--font-display);background:linear-gradient(90deg,#2f6f3a,#2f6f3a,#2f6f3a,#cb5521);-webkit-background-clip:text;background-clip:text;color:transparent;transform:skewX(-8deg)">标题</div>`;
     }
     render('plain');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2370,9 +2370,9 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#oeStage');
     function render(m) {
-      const st = { none: 'none', shadow: '0 10px 18px rgba(0,0,0,.5)', glow: '0 0 18px 4px rgba(138,107,255,.7)', reflection: 'none' }[m];
-      const extra = m === 'reflection' ? `<div style="margin-top:6px;width:80px;height:22px;border-radius:10px;background:linear-gradient(180deg,rgba(102,58,243,.5),transparent);transform:scaleY(-1);opacity:.5"></div>` : '';
-      s.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center"><div style="width:80px;height:44px;border-radius:12px;background:linear-gradient(135deg,#8a6bff,#027dea);box-shadow:${st}"></div>${extra}</div>`;
+      const st = { none: 'none', shadow: '0 10px 18px rgba(26,51,0,.5', glow: '0 0 18px 4px rgba(47,111,58,.7', reflection: 'none' }[m];
+      const extra = m === 'reflection' ? `<div style="margin-top:8px;width:120px;height:30px;border-radius:14px;background:linear-gradient(180deg,rgba(47,111,58,.5),transparent);transform:scaleY(-1);opacity:.5"></div>` : '';
+      s.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center"><div style="width:120px;height:66px;border-radius:16px;background:linear-gradient(135deg,#2f6f3a,#1a4a24);box-shadow:${st}"></div>${extra}</div>`;
     }
     render('none');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2389,8 +2389,8 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#tpStage2');
     function render(m) {
-      if (m === 'ph') s.innerHTML = `<div style="font:600 12px var(--font-mono);color:#19c37d">改母版标题色 → 所有页同步</div><div style="padding:8px 10px;border:1px dashed rgba(25,195,125,.5);border-radius:6px;color:var(--color-ice-highlight);font:600 14px var(--font-display)">标题占位符</div><div style="padding:8px 10px;border:1px dashed rgba(25,195,125,.5);border-radius:6px;color:var(--color-ice-highlight);font:600 14px var(--font-display)">标题占位符</div>`;
-      else s.innerHTML = `<div style="font:600 12px var(--font-mono);color:#ff7eb6">文本框独立 → 改一处只改这一页</div><div style="padding:8px 10px;border:1px solid var(--color-glass-edge);border-radius:6px;color:var(--color-ice-highlight);font:600 14px var(--font-display)">文本框 A</div><div style="padding:8px 10px;border:1px solid var(--color-glass-edge);border-radius:6px;color:var(--color-fog-veil);font:600 14px var(--font-display)">文本框 B（样式不同）</div>`;
+      if (m === 'ph') s.innerHTML = `<div style="font:600 12px var(--font-mono);color:#2f6f3a">改母版标题色 → 所有页同步</div><div style="padding:8px 10px;border:1px dashed rgba(47,111,58,.5;border-radius:6px;color:var(--color-ice-highlight);font:600 14px var(--font-display)">标题占位符</div><div style="padding:8px 10px;border:1px dashed rgba(47,111,58,.5;border-radius:6px;color:var(--color-ice-highlight);font:600 14px var(--font-display)">标题占位符</div>`;
+      else s.innerHTML = `<div style="font:600 12px var(--font-mono);color:#cb5521">文本框独立 → 改一处只改这一页</div><div style="padding:8px 10px;border:1px solid var(--color-glass-edge);border-radius:6px;color:var(--color-ice-highlight);font:600 14px var(--font-display)">文本框 A</div><div style="padding:8px 10px;border:1px solid var(--color-glass-edge);border-radius:6px;color:var(--color-fog-veil);font:600 14px var(--font-display)">文本框 B（样式不同）</div>`;
     }
     render('ph');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2411,9 +2411,9 @@ const DEMOS = {
     const items = ['核心观点一', '核心观点二', '核心观点三'];
     function render(m) {
       if (m === 'none') s.innerHTML = items.map(t => `<div style="font:13px var(--font-mono);color:var(--color-frost-glow)">${t}</div>`).join('');
-      else if (m === 'dot') s.innerHTML = items.map(t => `<div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#8a6bff">●</span> ${t}</div>`).join('');
-      else if (m === 'num') s.innerHTML = items.map((t, i) => `<div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#027dea;font-weight:700">${i + 1}.</span> ${t}</div>`).join('');
-      else s.innerHTML = `<div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#8a6bff">●</span> 一级标题</div><div style="font:13px var(--font-mono);color:var(--color-fog-veil);margin-left:18px"><span style="color:#027dea">–</span> 二级要点</div><div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#8a6bff">●</span> 一级标题</div>`;
+      else if (m === 'dot') s.innerHTML = items.map(t => `<div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#2f6f3a">●</span> ${t}</div>`).join('');
+      else if (m === 'num') s.innerHTML = items.map((t, i) => `<div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#2f6f3a;font-weight:700">${i + 1}.</span> ${t}</div>`).join('');
+      else s.innerHTML = `<div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#2f6f3a">●</span> 一级标题</div><div style="font:13px var(--font-mono);color:var(--color-fog-veil);margin-left:18px"><span style="color:#2f6f3a">–</span> 二级要点</div><div style="font:13px var(--font-mono);color:var(--color-frost-glow)"><span style="color:#2f6f3a">●</span> 一级标题</div>`;
     }
     render('none');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2432,11 +2432,11 @@ const DEMOS = {
     function thumb(n, hidden, shown) {
       const op = hidden && !shown ? .25 : 1;
       const tag = hidden ? (shown ? '显' : '隐') : '';
-      return `<div style="position:relative;width:30px;height:22px;border-radius:4px;background:${n === 2 ? '#663af3' : 'rgba(186,214,247,.18)'};opacity:${op};display:flex;align-items:center;justify-content:center;font:600 9px var(--font-display);color:#fff">${n}${tag ? '<span style="position:absolute;top:-3px;right:-3px;background:#ff7eb6;color:#fff;border-radius:6px;font:600 7px var(--font-mono);padding:0 2px">' + tag + '</span>' : ''}</div>`;
+      return `<div style="position:relative;width:30px;height:22px;border-radius:4px;background:${n === 2 ? '#2f6f3a' : 'rgba(26,51,0,.18)'};opacity:${op};display:flex;align-items:center;justify-content:center;font:600 9px var(--font-display);color:#ffffff">${n}${tag ? '<span style="position:absolute;top:-3px;right:-3px;background:#cb5521;color:#ffffff;border-radius:6px;font:600 7px var(--font-mono);padding:0 2px">' + tag + '</span>' : ''}</div>`;
     }
     function render(m) {
       const shown = m === 'show';
-      s.innerHTML = [1, 2, 3, 4].map(n => thumb(n, n === 2, shown)).join('') + `<div style="margin-left:6px;font:11px var(--font-mono);color:${shown ? '#19c37d' : 'var(--color-fog-veil)'}">${shown ? '第2页临时放出' : '第2页被跳过'}</div>`;
+      s.innerHTML = [1, 2, 3, 4].map(n => thumb(n, n === 2, shown)).join('') + `<div style="margin-left:6px;font:11px var(--font-mono);color:${shown ? '#2f6f3a' : 'var(--color-fog-veil)'}">${shown ? '第2页临时放出' : '第2页被跳过'}</div>`;
     }
     render('skip');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2459,7 +2459,7 @@ const DEMOS = {
     const rec = c.querySelector('#naRec');
     const play = c.querySelector('#naPlay');
     const timers = (window.__demoTimers ||= []);
-    const bars = Array.from({ length: 14 }, () => { const b = document.createElement('div'); b.style.cssText = 'width:4px;height:8px;background:rgba(186,214,247,.4);border-radius:2px'; wave.appendChild(b); return b; });
+    const bars = Array.from({ length: 14 }, () => { const b = document.createElement('div'); b.style.cssText = 'width:4px;height:8px;background:rgba(26,51,0,.4);border-radius:2px'; wave.appendChild(b); return b; });
     let t = 0, recTimer = null;
     rec.onclick = () => {
       if (recTimer) { clearInterval(recTimer); recTimer = null; time.textContent = '录制完成 ' + t + 's'; rec.textContent = '● 录制旁白'; return; }
@@ -2488,7 +2488,7 @@ const DEMOS = {
     const s = c.querySelector('#trStage');
     function render(m) {
       const op = m === 'op100' ? 1 : m === 'op50' ? 0.5 : 0.2;
-      s.innerHTML = `<div style="position:relative;width:120px;height:80px;border-radius:10px;background:linear-gradient(135deg,#027dea,#1b8f63)"><div style="position:absolute;inset:0;border-radius:10px;background:rgba(255,255,255,.9);opacity:${op};display:flex;align-items:center;justify-content:center;font:600 13px var(--font-mono);color:#333">白块 ${op * 100}%</div></div>`;
+      s.innerHTML = `<div style="position:relative;width:120px;height:80px;border-radius:10px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)"><div style="position:absolute;inset:0;border-radius:10px;background:rgba(26,51,0,.9;opacity:${op};display:flex;align-items:center;justify-content:center;font:600 13px var(--font-mono);color:#e6e6e0">白块 ${op * 100}%</div></div>`;
     }
     render('op100');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2504,7 +2504,7 @@ const DEMOS = {
           <button class="demo-btn" data-m="a4">A4 打印</button>
         </div>
         <div class="demo-row" style="justify-content:center">
-          <div id="ssBox" style="background:linear-gradient(135deg,#663af3,#027dea);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font:600 14px var(--font-mono);box-shadow:0 10px 30px rgba(0,0,0,.4)"></div>
+          <div id="ssBox" style="background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:600 14px var(--font-mono);box-shadow:0 10px 30px rgba(26,51,0,.4"></div>
         </div>
         <div class="demo-label" id="ssTip"></div>
       </div>`;
@@ -2530,8 +2530,8 @@ const DEMOS = {
           <button class="demo-btn" data-m="mono">等宽</button>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px">
-          <div id="rfText" style="font-size:24px;color:#fff"></div>
-          <div style="font:12px var(--font-mono);color:rgba(199,211,234,.5)">同一段字，换字体气质全变</div>
+          <div id="rfText" style="font-size:24px;color:#ffffff"></div>
+          <div style="font:12px var(--font-mono);color:rgba(26,51,0,.5)">同一段字，换字体气质全变</div>
         </div>
       </div>`;
     const t = c.querySelector('#rfText');
@@ -2554,10 +2554,10 @@ const DEMOS = {
     function render(m) {
       const on = m === 'on';
       s.style.background = on
-        ? 'linear-gradient(rgba(186,214,247,.20) 1px,transparent 1px),linear-gradient(90deg,rgba(186,214,247,.20) 1px,transparent 1px),var(--surface-frosted-glass)'
+        ? 'linear-gradient(rgba(26,51,0,.20) 1px,transparent 1px),linear-gradient(90deg,rgba(26,51,0,.20) 1px,transparent 1px),var(--surface-frosted-glass)'
         : 'var(--surface-frosted-glass)';
       s.style.backgroundSize = on ? '14px 14px' : 'auto';
-      s.innerHTML = on ? '<div style="position:absolute;left:20%;top:28%;width:42%;height:26%;background:rgba(102,58,243,.5);border-radius:6px"></div>' : '';
+      s.innerHTML = on ? '<div style="position:absolute;left:20%;top:28%;width:42%;height:26%;background:rgba(47,111,58,.5;border-radius:6px"></div>' : '';
     }
     render('on');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2573,7 +2573,7 @@ const DEMOS = {
           <button class="demo-btn" data-m="wash">冲蚀</button>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="rcBox" style="width:120px;height:120px;border-radius:10px;background:conic-gradient(from 0deg,#ff6b6b,#ffd93d,#6bcb77,#4d96ff,#b06bff,#ff6b6b)"></div>
+          <div id="rcBox" style="width:160px;height:160px;border-radius:14px;background:conic-gradient(from 0deg,#cb5521,#fbf3cf,#2f6f3a,#1a4a24,#1a3300,#cb5521)"></div>
         </div>
       </div>`;
     const box = c.querySelector('#rcBox');
@@ -2593,10 +2593,10 @@ const DEMOS = {
         <div class="mini-slide" id="caStage" style="position:relative;overflow:hidden"></div>
       </div>`;
     const s = c.querySelector('#caStage');
-    const ppl = [{ x: 22, y: 26, c: '#663af3', n: '优卡' }, { x: 56, y: 52, c: '#269684', n: '小林' }];
+    const ppl = [{ x: 22, y: 26, c: '#2f6f3a', n: '优卡' }, { x: 56, y: 52, c: '#2f6f3a', n: '小林' }];
     function render(m) {
-      if (m === 'solo') { s.innerHTML = '<div style="position:absolute;left:22%;top:28%;width:46%;height:28%;background:rgba(102,58,243,.4);border-radius:6px"></div>'; return; }
-      s.innerHTML = ppl.map(p => `<div style="position:absolute;left:${p.x}%;top:${p.y}%;display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:${p.c};display:inline-block"></span><span style="font:11px var(--font-body);color:#fff;background:${p.c};padding:1px 6px;border-radius:4px">${p.n}</span></div>`).join('') + '<div style="position:absolute;left:22%;top:28%;width:46%;height:28%;background:rgba(102,58,243,.22);border:1px dashed rgba(102,58,243,.6);border-radius:6px"></div>';
+      if (m === 'solo') { s.innerHTML = '<div style="position:absolute;left:22%;top:28%;width:46%;height:28%;background:rgba(47,111,58,.4;border-radius:6px"></div>'; return; }
+      s.innerHTML = ppl.map(p => `<div style="position:absolute;left:${p.x}%;top:${p.y}%;display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:${p.c};display:inline-block"></span><span style="font:11px var(--font-body);color:#ffffff;background:${p.c};padding:1px 6px;border-radius:4px">${p.n}</span></div>`).join('') + '<div style="position:absolute;left:22%;top:28%;width:46%;height:28%;background:rgba(47,111,58,.22;border:1px dashed rgba(47,111,58,.6;border-radius:6px"></div>';
     }
     render('multi');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2610,7 +2610,7 @@ const DEMOS = {
           <button class="demo-btn" data-m="loose">内边距 16px</button>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="tmBox" style="width:62%;background:rgba(102,58,243,.18);border:1px solid rgba(102,58,243,.5);border-radius:8px;color:#fff;font:13px var(--font-body)">金句框：留白让文字更透气</div>
+          <div id="tmBox" style="width:62%;background:rgba(47,111,58,.18;border:1px solid rgba(47,111,58,.5;border-radius:8px;color:#ffffff;font:13px var(--font-body)">金句框：留白让文字更透气</div>
         </div>
       </div>`;
     const b = c.querySelector('#tmBox');
@@ -2631,9 +2631,9 @@ const DEMOS = {
     const s = c.querySelector('#vfStage');
     function render(m) {
       if (m === 'good') {
-        s.innerHTML = '<div style="position:absolute;left:14%;top:16%;width:34%;height:20%;background:rgba(102,58,243,.5);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font:12px var(--font-body)">① 大标题</div><div style="position:absolute;left:14%;top:50%;width:34%;height:18%;background:rgba(186,214,247,.2);border-radius:6px"></div><div style="position:absolute;left:56%;top:32%;width:30%;height:34%;background:rgba(38,150,132,.4);border-radius:6px"></div><div style="position:absolute;left:42%;top:28%;color:#fff;font:18px var(--font-mono)">↓→</div>';
+        s.innerHTML = '<div style="position:absolute;left:14%;top:16%;width:34%;height:20%;background:rgba(47,111,58,.5;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:12px var(--font-body)">① 大标题</div><div style="position:absolute;left:14%;top:50%;width:34%;height:18%;background:rgba(26,51,0,.2);border-radius:6px"></div><div style="position:absolute;left:56%;top:32%;width:30%;height:34%;background:rgba(47,111,58,.4;border-radius:6px"></div><div style="position:absolute;left:42%;top:28%;color:#ffffff;font:18px var(--font-mono)">↓→</div>';
       } else {
-        s.innerHTML = '<div style="position:absolute;left:60%;top:14%;width:28%;height:16%;background:rgba(228,109,76,.5);border-radius:6px"></div><div style="position:absolute;left:12%;top:60%;width:30%;height:20%;background:rgba(102,58,243,.4);border-radius:6px"></div><div style="position:absolute;left:58%;top:62%;width:28%;height:18%;background:rgba(186,214,247,.2);border-radius:6px"></div><div style="position:absolute;left:30%;top:20%;color:#ffb4a8;font:11px var(--font-mono)">眼睛到处乱飞</div>';
+        s.innerHTML = '<div style="position:absolute;left:60%;top:14%;width:28%;height:16%;background:rgba(203,85,33,.5;border-radius:6px"></div><div style="position:absolute;left:12%;top:60%;width:30%;height:20%;background:rgba(47,111,58,.4;border-radius:6px"></div><div style="position:absolute;left:58%;top:62%;width:28%;height:18%;background:rgba(26,51,0,.2);border-radius:6px"></div><div style="position:absolute;left:30%;top:20%;color:#1a3300;font:11px var(--font-mono)">眼睛到处乱飞</div>';
       }
     }
     render('good');
@@ -2652,11 +2652,11 @@ const DEMOS = {
     const s = c.querySelector('#idStage');
     function render(m) {
       if (m === 'low') {
-        s.innerHTML = '<div style="position:absolute;left:0;right:0;top:44%;text-align:center;color:#fff;font:600 18px var(--font-body)">一句话金句</div>';
+        s.innerHTML = '<div style="position:absolute;left:0;right:0;top:44%;text-align:center;color:#ffffff;font:600 18px var(--font-body)">一句话金句</div>';
       } else {
         let bars = '';
-        for (let i = 0; i < 5; i++) bars += `<div style="position:absolute;left:${10 + i * 18}%;top:${18 + (i % 2) * 22}%;width:14%;height:30%;background:rgba(102,58,243,${0.25 + i * 0.12});border-radius:4px"></div>`;
-        s.innerHTML = bars + '<div style="position:absolute;left:10%;top:8%;color:#fff;font:11px var(--font-mono)">图表 + 要点密集排布</div>';
+        for (let i = 0; i < 5; i++) bars += `<div style="position:absolute;left:${10 + i * 18}%;top:${18 + (i % 2) * 22}%;width:14%;height:30%;background:rgba(47,111,58,${0.25 + i * 0.12};border-radius:4px"></div>`;
+        s.innerHTML = bars + '<div style="position:absolute;left:10%;top:8%;color:#ffffff;font:11px var(--font-mono)">图表 + 要点密集排布</div>';
       }
     }
     render('low');
@@ -2673,12 +2673,12 @@ const DEMOS = {
         <div class="mini-slide" id="csStage" style="position:relative"></div>
       </div>`;
     const s = c.querySelector('#csStage');
-    function chip(x, y, col, txt) { return `<div style="position:absolute;left:${x}%;top:${y}%;width:30%;height:18%;background:${col};border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font:11px var(--font-body)">${txt}</div>`; }
+    function chip(x, y, col, txt) { return `<div style="position:absolute;left:${x}%;top:${y}%;width:30%;height:18%;background:${col};border-radius:6px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:11px var(--font-body)">${txt}</div>`; }
     function render(m) {
       if (m === 'unified') {
-        s.innerHTML = chip(12, 30, 'rgba(102,58,243,.5)', '同色同圆角') + chip(50, 30, 'rgba(102,58,243,.5)', '同色同圆角') + chip(12, 56, 'rgba(102,58,243,.5)', '同色同圆角') + chip(50, 56, 'rgba(102,58,243,.5)', '同色同圆角');
+        s.innerHTML = chip(12, 30, 'rgba(47,111,58,.5', '同色同圆角') + chip(50, 30, 'rgba(47,111,58,.5', '同色同圆角') + chip(12, 56, 'rgba(47,111,58,.5', '同色同圆角') + chip(50, 56, 'rgba(47,111,58,.5', '同色同圆角');
       } else {
-        s.innerHTML = chip(12, 30, 'rgba(102,58,243,.5)', '紫·圆角') + chip(50, 30, 'rgba(228,109,76,.6)', '橙·方角') + chip(12, 56, 'rgba(38,150,132,.5)', '绿·虚线') + chip(50, 56, 'rgba(186,214,247,.3)', '灰·异形');
+        s.innerHTML = chip(12, 30, 'rgba(47,111,58,.5', '紫·圆角') + chip(50, 30, 'rgba(203,85,33,.6', '橙·方角') + chip(12, 56, 'rgba(47,111,58,.5', '绿·虚线') + chip(50, 56, 'rgba(26,51,0,.3)', '灰·异形');
       }
     }
     render('unified');
@@ -2696,11 +2696,11 @@ const DEMOS = {
     function render(m) {
       if (m === 'single') {
         s.style.flexDirection = 'column'; s.style.flexWrap = 'nowrap'; s.style.alignItems = 'center'; s.style.gap = '10px';
-        s.innerHTML = `<div style="width:80%;aspect-ratio:16/9;background:rgba(186,214,247,.08);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-fog-veil);font:13px var(--font-body)">当前页（一次只看一页）</div>`;
+        s.innerHTML = `<div style="width:80%;aspect-ratio:16/9;background:rgba(26,51,0,.08);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-fog-veil);font:13px var(--font-body)">当前页（一次只看一页）</div>`;
       } else {
         s.style.flexDirection = 'row'; s.style.flexWrap = 'wrap'; s.style.alignItems = 'flex-start'; s.style.gap = '10px';
         let h = '';
-        for (let i = 1; i <= 8; i++) h += `<div style="width:30%;aspect-ratio:16/9;background:rgba(102,58,243,.12);border:1px solid rgba(102,58,243,.4);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#c9b6ff;font:12px var(--font-mono)">${i}</div>`;
+        for (let i = 1; i <= 8; i++) h += `<div style="width:30%;aspect-ratio:16/9;background:rgba(47,111,58,.12;border:1px solid rgba(47,111,58,.4;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#1a3300;font:12px var(--font-mono)">${i}</div>`;
         s.innerHTML = h;
       }
     }
@@ -2715,9 +2715,9 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#npStage');
     function render(m) {
-      const slide = `<div style="width:100%;aspect-ratio:16/9;background:rgba(186,214,247,.08);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-fog-veil);font:13px var(--font-body)">幻灯片（观众看到）</div>`;
+      const slide = `<div style="width:100%;aspect-ratio:16/9;background:rgba(26,51,0,.08);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-fog-veil);font:13px var(--font-body)">幻灯片（观众看到）</div>`;
       s.innerHTML = m === 'notes'
-        ? slide + `<div style="width:100%;min-height:44px;background:rgba(102,58,243,.1);border:1px dashed rgba(102,58,243,.5);border-radius:8px;padding:8px 10px;color:#c9b6ff;font:12px var(--font-body)">备注区：逐字稿 / 数据口径（只有你看到）</div>`
+        ? slide + `<div style="width:100%;min-height:44px;background:rgba(47,111,58,.1;border:1px dashed rgba(47,111,58,.5;border-radius:8px;padding:8px 10px;color:#1a3300;font:12px var(--font-body)">备注区：逐字稿 / 数据口径（只有你看到）</div>`
         : slide;
     }
     render('slide');
@@ -2733,10 +2733,10 @@ const DEMOS = {
     function render(m) {
       if (m === 'normal') {
         s.style.background = 'transparent';
-        s.innerHTML = `<div style="width:62%;aspect-ratio:16/9;background:rgba(186,214,247,.08);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-fog-veil);font:13px var(--font-body)">编辑态（有标尺 / 缩略图）</div>`;
+        s.innerHTML = `<div style="width:62%;aspect-ratio:16/9;background:rgba(26,51,0,.08);border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-fog-veil);font:13px var(--font-body)">编辑态（有标尺 / 缩略图）</div>`;
       } else {
-        s.style.background = 'rgba(0,0,0,.55)';
-        s.innerHTML = `<div style="width:82%;aspect-ratio:16/9;background:#0e1530;border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-ice-highlight);font:20px var(--font-display)">全屏沉浸自查（Esc 退出）</div>`;
+        s.style.background = 'rgba(26,51,0,.55';
+        s.innerHTML = `<div style="width:82%;aspect-ratio:16/9;background:#ffffff;border:1px solid var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-ice-highlight);font:20px var(--font-display)">全屏沉浸自查（Esc 退出）</div>`;
       }
     }
     render('normal');
@@ -2751,7 +2751,7 @@ const DEMOS = {
     const s = c.querySelector('#frStage');
     function render(m) {
       if (m === 'high') {
-        s.innerHTML = `<div style="font:16px var(--font-display);color:var(--color-ice-highlight)">季度复盘</div>` + Array(5).fill(0).map((_, i) => `<div style="height:10px;background:rgba(199,211,234,.25);border-radius:3px;width:${90 - i * 8}%"></div>`).join('');
+        s.innerHTML = `<div style="font:16px var(--font-display);color:var(--color-ice-highlight)">季度复盘</div>` + Array(5).fill(0).map((_, i) => `<div style="height:10px;background:rgba(26,51,0,.25);border-radius:3px;width:${90 - i * 8}%"></div>`).join('');
       } else {
         s.innerHTML = `<div style="font:13px var(--font-mono);letter-spacing:.1em;color:var(--color-fog-veil)">QUARTERLY</div><div style="font:40px var(--font-display);background:var(--gradient-ice-highlight);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">复盘</div>`;
       }
@@ -2767,9 +2767,9 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#crStage');
     function render(m) {
-      const rgb = 'linear-gradient(135deg,#2f7bff,#00c2ff)';
-      const cmyk = 'linear-gradient(135deg,#3a6fcf,#3f9bbf)';
-      s.innerHTML = `<div style="width:88px;height:88px;border-radius:14px;background:${m === 'rgb' ? rgb : cmyk};box-shadow:0 0 18px ${m === 'rgb' ? 'rgba(47,123,255,.5)' : 'rgba(58,111,207,.3)'}"></div><div style="font:13px var(--font-body);color:var(--color-moon-mist);max-width:120px">${m === 'rgb' ? '屏幕发光、色域广、更艳' : '印刷吸光、色域窄，蓝绿常发灰发暗'}</div>`;
+      const rgb = 'linear-gradient(135deg,#2f6f3a,#2f6f3a)';
+      const cmyk = 'linear-gradient(135deg,#2f6f3a,#2f6f3a)';
+      s.innerHTML = `<div style="width:120px;height:120px;border-radius:18px;background:${m === 'rgb' ? 'linear-gradient(135deg,#2f6f3a,#1a4a24)' : 'linear-gradient(135deg,#4a7a5a,#2a5a3a)'};box-shadow:0 0 22px ${m === 'rgb' ? 'rgba(47,111,58,.5)' : 'rgba(47,111,58,.3)'}"></div><div style="font:14px var(--font-body);color:var(--color-moon-mist);max-width:140px;text-align:center">${m === 'rgb' ? '屏幕发光、色域广、更艳' : '印刷吸光、色域窄，蓝绿常发灰发暗'}</div>`;
     }
     render('rgb');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2778,14 +2778,14 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn active" data-m="off">无描边</button><button class="demo-btn" data-m="on">加描边</button></div>
-        <div id="toStage" class="mini-slide" style="display:flex;align-items:center;justify-content:center;padding:18px;background:linear-gradient(135deg,#0b1c3a,#27345f)"></div>
+        <div id="toStage" class="mini-slide" style="display:flex;align-items:center;justify-content:center;padding:18px;background:linear-gradient(135deg,#ffffff,#2f6f3a)"></div>
       </div>`;
     const s = c.querySelector('#toStage');
     function render(m) {
       const fs = '40px var(--font-display)';
       s.innerHTML = m === 'off'
-        ? `<div style="font:${fs};color:#dfe7f5">标题压花底</div>`
-        : `<div style="font:${fs};color:#fff;-webkit-text-stroke:2px rgba(10,15,30,.85);text-shadow:0 2px 8px rgba(0,0,0,.4)">标题压花底</div>`;
+        ? `<div style="font:${fs};color:#1a3300">标题压花底</div>`
+        : `<div style="font:${fs};color:#ffffff;-webkit-text-stroke:2px rgba(26,51,0,.85;text-shadow:0 2px 8px rgba(26,51,0,.4">标题压花底</div>`;
     }
     render('off');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2798,8 +2798,8 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#bgStage');
     function render(m) {
-      s.style.background = m === 'solid' ? 'rgba(186,214,247,.1)' : m === 'grad' ? 'radial-gradient(circle at 30% 30%,#27345f,#0b1c3a)' : 'linear-gradient(135deg,rgba(11,28,58,.85),rgba(39,52,95,.85)),repeating-linear-gradient(45deg,#1b2347,#1b2347 10px,#222c52 10px,#222c52 20px)';
-      s.innerHTML = `<div style="font:22px var(--font-display);color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5)">背景不挡内容</div>`;
+      s.style.background = m === 'solid' ? 'rgba(26,51,0,.1)' : m === 'grad' ? 'radial-gradient(circle at 30% 30%,#2f6f3a,#ffffff)' : 'linear-gradient(135deg,rgba(26,51,0,.85,rgba(47,111,58,.85),repeating-linear-gradient(45deg,#ffffff,#ffffff 10px,#2f6f3a 10px,#2f6f3a 20px)';
+      s.innerHTML = `<div style="font:22px var(--font-display);color:#ffffff;text-shadow:0 2px 10px rgba(26,51,0,.5">背景不挡内容</div>`;
     }
     render('solid');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2814,7 +2814,7 @@ const DEMOS = {
       </div>`;
     const btn = c.querySelector('#asBtn');
     let n = 1;
-    btn.onclick = () => { n = (n % 3) + 1; btn.textContent = '目录 · 章节' + n; btn.style.boxShadow = '0 0 16px rgba(102,58,243,.6)'; };
+    btn.onclick = () => { n = (n % 3) + 1; btn.textContent = '目录 · 章节' + n; btn.style.boxShadow = '0 0 16px rgba(47,111,58,.6'; };
   },
   'emphasis-fx'(c) {
     c.innerHTML = `
@@ -2825,7 +2825,7 @@ const DEMOS = {
     const s = c.querySelector('#efStage');
     function render(m) {
       const anim = m === 'pulse' ? 'efPulse 1s ease-in-out infinite' : m === 'spin' ? 'efSpin 2s linear infinite' : 'efGrow 1.2s ease-in-out infinite alternate';
-      s.innerHTML = `<div style="width:90px;height:90px;border-radius:18px;background:rgba(102,58,243,.5);border:1px solid #8a6bff;display:flex;align-items:center;justify-content:center;color:#fff;font:14px var(--font-body);animation:${anim};box-shadow:0 0 18px rgba(102,58,243,.5)">核心</div>`;
+      s.innerHTML = `<div style="width:130px;height:130px;border-radius:22px;background:rgba(47,111,58,.5);border:2px solid #2f6f3a;display:flex;align-items:center;justify-content:center;color:#ffffff;font:18px var(--font-body);animation:${anim};box-shadow:0 0 22px rgba(47,111,58,.5)">核心</div>`;
     }
     render('pulse');
     c.querySelectorAll('[data-m]').forEach(b => b.onclick = () => render(b.dataset.m));
@@ -2838,9 +2838,9 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#icStage');
     function draw(style) {
-      const mk = (b, col, bd) => `<div style="width:46px;height:46px;border-radius:12px;background:${b};border:${bd};display:flex;align-items:center;justify-content:center;color:${col};font:20px var(--font-display)">◧</div>`;
-      if (style === 'mix') return mk('rgba(2,125,234,.2)', '#5fb0ff', '2px solid #027dea') + mk('rgba(228,109,76,.25)', '#e46d4c', '2px dashed #e46d4c') + mk('rgba(38,150,132,.2)', '#4fd0b8', '2px solid #269684');
-      return mk('rgba(102,58,243,.18)', '#b79bff', '2px solid #663af3') + mk('rgba(102,58,243,.18)', '#b79bff', '2px solid #663af3') + mk('rgba(102,58,243,.18)', '#b79bff', '2px solid #663af3');
+      const mk = (b, col, bd) => `<div style="width:68px;height:68px;border-radius:16px;background:${b};border:${bd};display:flex;align-items:center;justify-content:center;color:${col};font:26px var(--font-display)">◧</div>`;
+      if (style === 'mix') return mk('rgba(47,111,58,.2', '#2f6f3a', '2px solid #2f6f3a') + mk('rgba(203,85,33,.25', '#cb5521', '2px dashed #cb5521') + mk('rgba(47,111,58,.2', '#2f6f3a', '2px solid #2f6f3a');
+      return mk('rgba(47,111,58,.18', '#2f6f3a', '2px solid #2f6f3a') + mk('rgba(47,111,58,.18', '#2f6f3a', '2px solid #2f6f3a') + mk('rgba(47,111,58,.18', '#2f6f3a', '2px solid #2f6f3a');
     }
     function render(m) { s.innerHTML = draw(m); }
     render('mix');
@@ -2854,9 +2854,9 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#asvStage');
     s.innerHTML = `
-      <div style="display:flex;align-items:center;gap:10px"><div style="width:14px;height:14px;border-radius:50%;background:#269684;box-shadow:0 0 10px rgba(38,150,132,.6)"></div><span style="font:13px var(--font-body);color:var(--color-moon-mist)">自动保存：每 5 分钟写盘</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:14px;height:14px;border-radius:50%;background:#2f6f3a;box-shadow:0 0 10px rgba(47,111,58,.6"></div><span style="font:13px var(--font-body);color:var(--color-moon-mist)">自动保存：每 5 分钟写盘</span></div>
       <div style="font:13px var(--font-body);color:var(--color-fog-veil)">软件崩溃 / 误关 → 重开弹出「恢复未保存的文件」</div>
-      <div style="font:11px var(--font-mono);color:#c9b6ff">提示：关键节点仍建议手动另存一次</div>`;
+      <div style="font:11px var(--font-mono);color:#1a3300">提示：关键节点仍建议手动另存一次</div>`;
   },
   'vertical-text'(c) {
     c.innerHTML = `
@@ -2905,7 +2905,7 @@ const DEMOS = {
         s.innerHTML = `<div style="font:13px var(--font-body);color:var(--color-moon-mist)">Q1 120　Q2 180　Q3 90　Q4 210</div>`;
       } else {
         s.innerHTML = `<div style="display:flex;align-items:flex-end;gap:16px;height:120px">` +
-          data.map(v => `<div style="width:36px;height:${v / max * 100}%;background:linear-gradient(180deg,#663af3,#9a7bff);border-radius:6px 6px 0 0;display:flex;align-items:flex-start;justify-content:center;color:#fff;font:11px var(--font-mono);padding-top:4px">${v}</div>`).join('') +
+          data.map(v => `<div style="width:36px;height:${v / max * 100}%;background:linear-gradient(180deg,#2f6f3a,#2f6f3a);border-radius:6px 6px 0 0;display:flex;align-items:flex-start;justify-content:center;color:#ffffff;font:11px var(--font-mono);padding-top:4px">${v}</div>`).join('') +
           `</div>`;
       }
     }
@@ -2921,9 +2921,9 @@ const DEMOS = {
     const s = c.querySelector('#auStage');
     function render(m) {
       const on = m === 'on';
-      s.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;gap:10px">
-        <div style="width:88px;height:88px;border-radius:50%;background:${on ? 'rgba(102,58,243,.25)' : 'rgba(199,211,234,.1)'};border:1px solid ${on ? '#663af3' : 'var(--color-glass-edge)'};display:flex;align-items:center;justify-content:center;font-size:32px">${on ? '🔊' : '🔇'}</div>
-        <div style="font:13px var(--font-body);color:var(--color-moon-mist)">${on ? '背景乐 · 跨页播放 · 淡出' : '无音频'}</div>
+      s.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:120px;height:120px;border-radius:50%;background:${on ? 'rgba(47,111,58,.25)' : 'rgba(26,51,0,.1)'};border:2px solid ${on ? '#2f6f3a' : 'var(--color-glass-edge)'};display:flex;align-items:center;justify-content:center;font-size:40px">${on ? '🔊' : '🔇'}</div>
+        <div style="font:14px var(--font-body);color:var(--color-moon-mist)">${on ? '背景乐 · 跨页播放 · 淡出' : '无音频'}</div>
       </div>`;
     }
     render('off');
@@ -2938,8 +2938,8 @@ const DEMOS = {
     const s = c.querySelector('#viStage');
     function render(m) {
       const on = m === 'on';
-      s.innerHTML = `<div style="position:relative;width:200px;height:112px;border-radius:10px;background:${on ? 'linear-gradient(135deg,#027dea,#1b8f63)' : 'rgba(199,211,234,.12)'};display:flex;align-items:center;justify-content:center;border:1px solid var(--color-glass-edge)">
-        ${on ? '<div style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:#663af3;font-size:18px">▶</div><div style="position:absolute;bottom:6px;right:8px;font:11px var(--font-mono);color:#fff">全屏 · 自动播</div>' : '<div style="font:12px var(--font-body);color:var(--color-fog-veil)">视频截图</div>'}
+      s.innerHTML = `<div style="position:relative;width:220px;height:124px;border-radius:12px;background:${on ? 'linear-gradient(135deg,#2f6f3a,#1a4a24)' : 'rgba(26,51,0,.12)'};display:flex;align-items:center;justify-content:center;border:1px solid var(--color-glass-edge)">
+        ${on ? '<div style="width:64px;height:64px;border-radius:50%;background:rgba(26,51,0,.92);display:flex;align-items:center;justify-content:center;color:#2f6f3a;font-size:24px">▶</div><div style="position:absolute;bottom:8px;right:10px;font:13px var(--font-mono);color:#ffffff">全屏 · 自动播</div>' : '<div style="font:14px var(--font-body);color:var(--color-fog-veil)">视频截图</div>'}
       </div>`;
     }
     render('off');
@@ -2955,10 +2955,10 @@ const DEMOS = {
     function render(m) {
       const ok = m === 'ok';
       s.innerHTML = `<div style="display:flex;align-items:center;gap:14px">
-        <div style="position:relative;width:96px;height:64px;border-radius:8px;background:linear-gradient(135deg,#663af3,#027dea)">
-          <div style="position:absolute;bottom:4px;left:4px;font:10px var(--font-mono);color:${ok ? '#9affb0' : '#ff9a9a'};background:rgba(0,0,0,.45);padding:1px 4px;border-radius:3px">alt ${ok ? '✓' : '✗'}</div>
+        <div style="position:relative;width:96px;height:64px;border-radius:8px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)">
+          <div style="position:absolute;bottom:4px;left:4px;font:10px var(--font-mono);color:${ok ? '#e3ecd9' : '#cb5521'};background:rgba(26,51,0,.45;padding:1px 4px;border-radius:3px">alt ${ok ? '✓' : '✗'}</div>
         </div>
-        <div style="font:13px var(--font-body);color:${ok ? '#9affb0' : '#ff9a9a'};text-align:left">${ok ? 'alt 齐全 · 对比度达标<br>阅读顺序正确' : '缺 alt · 对比度不足<br>顺序错乱'}</div>
+        <div style="font:13px var(--font-body);color:${ok ? '#e3ecd9' : '#cb5521'};text-align:left">${ok ? 'alt 齐全 · 对比度达标<br>阅读顺序正确' : '缺 alt · 对比度不足<br>顺序错乱'}</div>
       </div>`;
     }
     render('bad');
@@ -2976,7 +2976,7 @@ const DEMOS = {
       rows.map(r => '<tr>' + r.map(x => `<td style="border:1px solid var(--color-glass-edge);padding:4px 12px">${x}</td>`).join('') + '</tr>').join('') + '</table>';
     function render(m) {
       const live = m === 'live';
-      s.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;gap:8px">${tbl}<div style="font:12px var(--font-body);color:${live ? '#9a7bff' : 'var(--color-fog-veil)'}">${live ? '嵌入活表 · 双击改数 · 更新链接同步' : '截图表格 · 改了得重做'}</div></div>`;
+      s.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;gap:8px">${tbl}<div style="font:12px var(--font-body);color:${live ? '#2f6f3a' : 'var(--color-fog-veil)'}">${live ? '嵌入活表 · 双击改数 · 更新链接同步' : '截图表格 · 改了得重做'}</div></div>`;
     }
     render('static');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
@@ -2994,8 +2994,8 @@ const DEMOS = {
         s.innerHTML = `<div style="width:160px;height:96px;border:1px dashed var(--color-glass-edge);border-radius:8px;padding:8px;font:12px var(--font-body);color:var(--color-moon-mist);overflow:hidden;text-align:left">这是一段较长的文字，单框装不下就会溢出或被截断，读起来不完整……（溢出部分丢失）</div>`;
       } else {
         s.innerHTML = `<div style="display:flex;gap:10px">
-          <div style="width:92px;height:96px;border:1px solid #663af3;border-radius:8px;padding:6px;font:11px var(--font-body);color:var(--color-moon-mist);overflow:hidden;text-align:left">这是一段较长的文字，第一个框装不下的</div>
-          <div style="width:92px;height:96px;border:1px solid #663af3;border-radius:8px;padding:6px;font:11px var(--font-body);color:var(--color-moon-mist);overflow:hidden;text-align:left">部分，自动流进第二个框，文字不断意。</div>
+          <div style="width:92px;height:96px;border:1px solid #2f6f3a;border-radius:8px;padding:6px;font:11px var(--font-body);color:var(--color-moon-mist);overflow:hidden;text-align:left">这是一段较长的文字，第一个框装不下的</div>
+          <div style="width:92px;height:96px;border:1px solid #2f6f3a;border-radius:8px;padding:6px;font:11px var(--font-body);color:var(--color-moon-mist);overflow:hidden;text-align:left">部分，自动流进第二个框，文字不断意。</div>
         </div>`;
       }
     }
@@ -3013,13 +3013,13 @@ const DEMOS = {
       const folded = m === 'fold';
       if (!folded) {
         s.innerHTML = `<div style="display:flex;flex-direction:column;gap:4px;width:240px">` +
-          Array.from({ length: 8 }, () => `<div style="height:16px;border-radius:4px;background:rgba(199,211,234,.12)"></div>`).join('') +
+          Array.from({ length: 8 }, () => `<div style="height:16px;border-radius:4px;background:rgba(26,51,0,.12)"></div>`).join('') +
           `<div style="font:11px var(--font-body);color:var(--color-fog-veil);margin-top:4px">80 页一整条，找页靠滚</div></div>`;
       } else {
         s.innerHTML = `<div style="display:flex;flex-direction:column;gap:8px;width:240px;text-align:left">
-          <div style="font:12px var(--font-body);color:#fff">▾ 执行摘要（3 页）</div>
-          <div style="font:12px var(--font-body);color:#fff;opacity:.5">▸ 市场分析（20 页）</div>
-          <div style="font:12px var(--font-body);color:#fff;opacity:.5">▸ 方案详情（40 页）</div>
+          <div style="font:12px var(--font-body);color:#ffffff">▾ 执行摘要（3 页）</div>
+          <div style="font:12px var(--font-body);color:#ffffff;opacity:.5">▸ 市场分析（20 页）</div>
+          <div style="font:12px var(--font-body);color:#ffffff;opacity:.5">▸ 方案详情（40 页）</div>
           <div style="font:11px var(--font-body);color:var(--color-fog-veil)">按节折叠，只展开要讲的</div>
         </div>`;
       }
@@ -3037,11 +3037,11 @@ const DEMOS = {
     function render(m) {
       const gen = m === 'gen';
       if (!gen) {
-        s.innerHTML = `<div style="width:180px;height:110px;border:1px dashed var(--color-glass-edge);border-radius:8px;display:flex;align-items:center;justify-content:center;font:12px var(--font-body);color:var(--color-fog-veil)">空白页…从哪下手？</div>`;
+        s.innerHTML = `<div style="width:220px;height:140px;border:2px dashed var(--color-glass-edge);border-radius:12px;display:flex;align-items:center;justify-content:center;font:15px var(--font-body);color:var(--color-fog-veil)">空白页…从哪下手？</div>`;
       } else {
         s.innerHTML = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:200px">
-          ${Array.from({ length: 6 }, () => `<div style="height:30px;border-radius:4px;background:rgba(102,58,243,.3);border:1px solid rgba(102,58,243,.5)"></div>`).join('')}
-          <div style="grid-column:1/4;font:11px var(--font-body);color:#9a7bff">AI 出 10 页初稿 · 你改重点</div>
+          ${Array.from({ length: 6 }, () => `<div style="height:30px;border-radius:4px;background:rgba(47,111,58,.3;border:1px solid rgba(47,111,58,.5"></div>`).join('')}
+          <div style="grid-column:1/4;font:11px var(--font-body);color:#2f6f3a">AI 出 10 页初稿 · 你改重点</div>
         </div>`;
       }
     }
@@ -3059,17 +3059,17 @@ const DEMOS = {
       const grouped = m === 'group';
       if (!grouped) {
         s.innerHTML = `<div style="position:relative;width:240px;height:110px">
-          <div style="position:absolute;left:20px;top:20px;width:26px;height:26px;border-radius:50%;background:rgba(199,211,234,.4)"></div>
-          <div style="position:absolute;left:182px;top:14px;width:26px;height:26px;border-radius:50%;background:rgba(199,211,234,.4)"></div>
-          <div style="position:absolute;left:96px;top:72px;width:26px;height:26px;border-radius:50%;background:rgba(199,211,234,.4)"></div>
+          <div style="position:absolute;left:20px;top:20px;width:26px;height:26px;border-radius:50%;background:rgba(26,51,0,.4)"></div>
+          <div style="position:absolute;left:182px;top:14px;width:26px;height:26px;border-radius:50%;background:rgba(26,51,0,.4)"></div>
+          <div style="position:absolute;left:96px;top:72px;width:26px;height:26px;border-radius:50%;background:rgba(26,51,0,.4)"></div>
           <div style="position:absolute;left:20px;top:82px;height:0">元素散落，读不出谁和谁一组</div>
         </div>`;
       } else {
         s.innerHTML = `<div style="position:relative;width:240px;height:110px">
-          <div style="position:absolute;left:32px;top:26px;width:26px;height:26px;border-radius:50%;background:#663af3"></div>
-          <div style="position:absolute;left:66px;top:26px;width:26px;height:26px;border-radius:50%;background:#663af3"></div>
-          <div style="position:absolute;left:100px;top:26px;width:26px;height:26px;border-radius:50%;background:#663af3"></div>
-          <div style="position:absolute;left:150px;top:70px;font:11px var(--font-body);color:#fff">相近 → 被看成一组</div>
+          <div style="position:absolute;left:32px;top:26px;width:26px;height:26px;border-radius:50%;background:#2f6f3a"></div>
+          <div style="position:absolute;left:66px;top:26px;width:26px;height:26px;border-radius:50%;background:#2f6f3a"></div>
+          <div style="position:absolute;left:100px;top:26px;width:26px;height:26px;border-radius:50%;background:#2f6f3a"></div>
+          <div style="position:absolute;left:150px;top:70px;font:11px var(--font-body);color:#ffffff">相近 → 被看成一组</div>
         </div>`;
       }
     }
@@ -3081,17 +3081,17 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn active" data-m="embed">嵌入</button><button class="demo-btn" data-m="link">链接</button></div>
         <div class="mini-slide" id="elStage" style="align-items:center;justify-content:center"></div>
-        <div style="font:11px var(--font-mono);color:rgba(255,255,255,.45);text-align:center" id="elNote"></div>
+        <div style="font:11px var(--font-mono);color:rgba(26,51,0,.45;text-align:center" id="elNote"></div>
       </div>`;
     const s = c.querySelector('#elStage');
     const note = c.querySelector('#elNote');
     function render(m) {
       const isEmbed = m === 'embed';
       if (isEmbed) {
-        s.innerHTML = `<div style="width:150px;height:100px;border-radius:8px;background:linear-gradient(135deg,#663af3,#8b5cf6);display:flex;align-items:center;justify-content:center;font:12px var(--font-body);color:#fff">✓ 图片正常显示</div>`;
+        s.innerHTML = `<div style="width:190px;height:130px;border-radius:12px;background:linear-gradient(135deg,#2f6f3a,#1a4a24);display:flex;align-items:center;justify-content:center;font:15px var(--font-body);color:#ffffff">✓ 图片正常显示</div>`;
         note.textContent = '体积大，但换电脑 / 发出去都能放';
       } else {
-        s.innerHTML = `<div style="width:150px;height:100px;border-radius:8px;border:1px dashed #e46d4c;display:flex;align-items:center;justify-content:center;font:12px var(--font-body);color:#e46d4c;text-align:center;padding:8px;line-height:1.4">⚠ 找不到文件<br>图片变空白</div>`;
+        s.innerHTML = `<div style="width:190px;height:130px;border-radius:12px;border:1px dashed #cb5521;display:flex;align-items:center;justify-content:center;font:14px var(--font-body);color:#cb5521;text-align:center;padding:10px;line-height:1.5">⚠ 找不到文件<br>图片变空白</div>`;
         note.textContent = '体积小，但换电脑就丢图';
       }
     }
@@ -3107,8 +3107,8 @@ const DEMOS = {
       </div>`;
     const sw = c.querySelector('#tpSwatches');
     const sl = c.querySelector('#tpSlides');
-    const cols = { violet:'#663af3', teal:'#269684', amber:'#e6952b' };
-    sw.innerHTML = Array.from({ length:12 }, (_, i) => `<div style="width:18px;height:18px;border-radius:4px;background:${i < 6 ? 'rgba(255,255,255,.25)' : 'rgba(255,255,255,.5)'}"></div>`).join('');
+    const cols = { violet:'#2f6f3a', teal:'#2f6f3a', amber:'#cb5521' };
+    sw.innerHTML = Array.from({ length:12 }, (_, i) => `<div style="width:26px;height:26px;border-radius:5px;background:${i < 6 ? 'rgba(26,51,0,.25)' : 'rgba(26,51,0,.5)'}"></div>`).join('');
     function render(m) {
       const col = cols[m];
       sl.innerHTML = '';
@@ -3116,7 +3116,7 @@ const DEMOS = {
         const d = document.createElement('div');
         d.className = 'mini-slide';
         d.style.borderTop = `5px solid ${col}`;
-        d.innerHTML = `<div style="position:absolute;top:20%;left:10%;width:55%;height:10%;background:${col};border-radius:3px;opacity:.85"></div><div style="position:absolute;top:45%;left:10%;width:70%;height:6%;background:rgba(255,255,255,.15);border-radius:3px"></div>`;
+        d.innerHTML = `<div style="position:absolute;top:20%;left:10%;width:55%;height:10%;background:${col};border-radius:3px;opacity:.85"></div><div style="position:absolute;top:45%;left:10%;width:70%;height:6%;background:rgba(26,51,0,.15;border-radius:3px"></div>`;
         sl.appendChild(d);
       }
     }
@@ -3133,15 +3133,15 @@ const DEMOS = {
     function render(m) {
       if (m === 'before') {
         s.innerHTML = `
-          <div style="width:80%;height:10px;background:rgba(255,255,255,.3);border-radius:3px;margin-bottom:10px"></div>
-          <div style="width:60%;height:8px;background:rgba(255,255,255,.18);border-radius:3px;margin-bottom:14px"></div>
-          <div style="position:absolute;top:38px;right:16px;background:#e6c84c;color:#1a1505;font:10px var(--font-body);padding:3px 7px;border-radius:10px">批注：这段先别写死</div>
-          <div style="position:absolute;bottom:14px;left:14px;font:10px var(--font-mono);color:#e46d4c">备注：内部草稿… 作者：翁昕耀</div>`;
+          <div style="width:80%;height:10px;background:rgba(26,51,0,.3;border-radius:3px;margin-bottom:10px"></div>
+          <div style="width:60%;height:8px;background:rgba(26,51,0,.18;border-radius:3px;margin-bottom:14px"></div>
+          <div style="position:absolute;top:38px;right:16px;background:#fbf3cf;color:#ffffff;font:10px var(--font-body);padding:3px 7px;border-radius:10px">批注：这段先别写死</div>
+          <div style="position:absolute;bottom:14px;left:14px;font:10px var(--font-mono);color:#cb5521">备注：内部草稿… 作者：翁昕耀</div>`;
       } else {
         s.innerHTML = `
-          <div style="width:80%;height:10px;background:rgba(255,255,255,.3);border-radius:3px;margin-bottom:10px"></div>
-          <div style="width:60%;height:8px;background:rgba(255,255,255,.18);border-radius:3px;margin-bottom:14px"></div>
-          <div style="font:11px var(--font-body);color:#7ee0a8;margin-top:18px">✓ 已清除：批注 ×1 · 备注 ×1 · 元数据</div>`;
+          <div style="width:80%;height:10px;background:rgba(26,51,0,.3;border-radius:3px;margin-bottom:10px"></div>
+          <div style="width:60%;height:8px;background:rgba(26,51,0,.18;border-radius:3px;margin-bottom:14px"></div>
+          <div style="font:11px var(--font-body);color:#1a3300;margin-top:18px">✓ 已清除：批注 ×1 · 备注 ×1 · 元数据</div>`;
       }
     }
     render('before');
@@ -3152,8 +3152,8 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn active" data-m="off">关闭</button><button class="demo-btn" data-m="on">开启（译英）</button></div>
         <div class="mini-slide" id="lcStage" style="position:relative;align-items:center;justify-content:center">
-          <div style="width:70%;text-align:center;font:12px var(--font-body);color:rgba(255,255,255,.8)">第三季度成果汇报</div>
-          <div id="lcCap" style="position:absolute;bottom:10px;left:8%;right:8%;display:none;background:rgba(0,0,0,.6);color:#fff;font:11px var(--font-body);padding:5px 8px;border-radius:6px;text-align:center"></div>
+          <div style="width:70%;text-align:center;font:12px var(--font-body);color:rgba(26,51,0,.8">第三季度成果汇报</div>
+          <div id="lcCap" style="position:absolute;bottom:10px;left:8%;right:8%;display:none;background:rgba(26,51,0,.6;color:#ffffff;font:11px var(--font-body);padding:5px 8px;border-radius:6px;text-align:center"></div>
         </div>
       </div>`;
     const cap = c.querySelector('#lcCap');
@@ -3172,16 +3172,16 @@ const DEMOS = {
     c.innerHTML = `
       <div class="demo-stack">
         <div class="demo-row" id="vhList" style="gap:8px;flex-wrap:wrap;justify-content:center"></div>
-        <div class="mini-slide" id="vhStage" style="align-items:center;justify-content:center;font:11px var(--font-body);color:rgba(255,255,255,.8);text-align:center;line-height:1.6"></div>
+        <div class="mini-slide" id="vhStage" style="align-items:center;justify-content:center;font:11px var(--font-body);color:rgba(26,51,0,.8;text-align:center;line-height:1.6"></div>
       </div>`;
     const list = c.querySelector('#vhList');
     const s = c.querySelector('#vhStage');
     const vers = [
-      { t: 'v3 · 现在（改崩）', d: '结构乱、配色崩', col: '#e46d4c' },
-      { t: 'v2 · 30 分钟前', d: '微调中', col: 'rgba(255,255,255,.4)' },
-      { t: 'v1 · 2 小时前', d: '结构清晰 ✓', col: '#663af3' }
+      { t: 'v3 · 现在（改崩）', d: '结构乱、配色崩', col: '#cb5521' },
+      { t: 'v2 · 30 分钟前', d: '微调中', col: 'rgba(26,51,0,.4' },
+      { t: 'v1 · 2 小时前', d: '结构清晰 ✓', col: '#2f6f3a' }
     ];
-    list.innerHTML = vers.map((v, i) => `<button class="demo-btn ${i === 0 ? 'active' : ''}" data-i="${i}" style="flex-direction:column;gap:2px;align-items:flex-start"><span style="font-size:11px">${v.t}</span><span style="font-size:9px;opacity:.6">${v.d}</span></button>`).join('');
+    list.innerHTML = vers.map((v, i) => `<button class="demo-btn ${i === 0 ? 'active' : ''}" data-i="${i}" style="flex-direction:column;gap:3px;align-items:flex-start"><span style="font-size:13px">${v.t}</span><span style="font-size:11px;opacity:.6">${v.d}</span></button>`).join('');
     function render(i) {
       const v = vers[i];
       s.innerHTML = `还原到「${v.t}」<br><span style="color:${v.col}">${v.d}</span>`;
@@ -3199,19 +3199,19 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn active" data-m="before">批注前</button><button class="demo-btn" data-m="after">批注后</button></div>
         <div class="mini-slide" id="idStage" style="position:relative;align-items:flex-start;justify-content:flex-start;padding:14px">
-          <div style="width:75%;height:9px;background:rgba(255,255,255,.3);border-radius:3px;margin-bottom:9px"></div>
-          <div style="width:55%;height:7px;background:rgba(255,255,255,.18);border-radius:3px"></div>
+          <div style="width:75%;height:9px;background:rgba(26,51,0,.3;border-radius:3px;margin-bottom:9px"></div>
+          <div style="width:55%;height:7px;background:rgba(26,51,0,.18;border-radius:3px"></div>
         </div>
       </div>`;
     const s = c.querySelector('#idStage');
     function render(m) {
-      const base = `<div style="width:75%;height:9px;background:rgba(255,255,255,.3);border-radius:3px;margin-bottom:9px"></div><div style="width:55%;height:7px;background:rgba(255,255,255,.18);border-radius:3px"></div>`;
+      const base = `<div style="width:75%;height:9px;background:rgba(26,51,0,.3;border-radius:3px;margin-bottom:9px"></div><div style="width:55%;height:7px;background:rgba(26,51,0,.18;border-radius:3px"></div>`;
       if (m === 'after') {
         s.innerHTML = base + `
           <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 200 120" preserveAspectRatio="none">
-            <ellipse cx="72" cy="42" rx="60" ry="28" fill="none" stroke="#e6c84c" stroke-width="3" opacity=".9"/>
-            <path d="M152 96 L170 70" stroke="#e46d4c" stroke-width="3" fill="none"/>
-            <text x="150" y="66" font-size="11" fill="#e46d4c" font-family="sans-serif">改这里</text>
+            <ellipse cx="72" cy="42" rx="60" ry="28" fill="none" stroke="#fbf3cf" stroke-width="3" opacity=".9"/>
+            <path d="M152 96 L170 70" stroke="#cb5521" stroke-width="3" fill="none"/>
+            <text x="150" y="66" font-size="11" fill="#cb5521" font-family="sans-serif">改这里</text>
           </svg>`;
       } else {
         s.innerHTML = base;
@@ -3225,17 +3225,17 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn active" data-m="red">红</button><button class="demo-btn" data-m="blue">蓝</button><button class="demo-btn" data-m="green">绿</button><button class="demo-btn" data-m="yellow">黄</button></div>
         <div class="mini-slide" id="cpStage" style="align-items:center;justify-content:center;flex-direction:column;gap:10px">
-          <div id="cpName" style="width:54px;height:54px;border-radius:50%"></div>
-          <div id="cpWords" style="font:11px var(--font-body);color:#fff;text-align:center;line-height:1.5"></div>
+          <div id="cpName" style="width:76px;height:76px;border-radius:50%"></div>
+          <div id="cpWords" style="font:13px var(--font-body);color:#ffffff;text-align:center;line-height:1.5"></div>
         </div>
       </div>`;
     const name = c.querySelector('#cpName');
     const words = c.querySelector('#cpWords');
     const map = {
-      red:    { c: '#e6483d', w: '紧迫 · 热情 · 警示' },
-      blue:   { c: '#2f6fdb', w: '信任 · 专业 · 冷静' },
-      green:  { c: '#2f9e6b', w: '生长 · 自然 · 安全' },
-      yellow: { c: '#e6b800', w: '活力 · 提醒 · 乐观' }
+      red:    { c: '#cb5521', w: '紧迫 · 热情 · 警示' },
+      blue:   { c: '#2f6f3a', w: '信任 · 专业 · 冷静' },
+      green:  { c: '#2f6f3a', w: '生长 · 自然 · 安全' },
+      yellow: { c: '#e6c84c', w: '活力 · 提醒 · 乐观' }
     };
     function render(m) {
       name.style.background = map[m].c;
@@ -3252,12 +3252,12 @@ const DEMOS = {
       </div>`;
     const s = c.querySelector('#wcStage');
     function render(m) {
-      const warm = '#e6833d', cool = '#3d7fe6';
+      const warm = '#cb5521', cool = '#2f6f3a';
       const main = m === 'warm' ? warm : cool;
       const sub = m === 'warm' ? cool : warm;
       s.innerHTML = `
-        <div style="width:64px;height:64px;border-radius:12px;background:${main};box-shadow:0 0 18px ${main}66;display:flex;align-items:center;justify-content:center;font:12px var(--font-body);color:#fff">重点</div>
-        <div style="width:48px;height:48px;border-radius:10px;background:${sub};opacity:.55"></div>`;
+        <div style="width:96px;height:96px;border-radius:16px;background:${main};box-shadow:0 0 22px ${main}66;display:flex;align-items:center;justify-content:center;font:16px var(--font-body);color:#ffffff">重点</div>
+        <div style="width:72px;height:72px;border-radius:14px;background:${sub};opacity:.55"></div>`;
     }
     render('warm');
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => render(btn.dataset.m));
@@ -3274,7 +3274,7 @@ const DEMOS = {
       s.innerHTML = '';
       for (let i = 1; i <= 4; i++) {
         const d = document.createElement('div');
-        d.style.cssText = 'width:34px;height:34px;border-radius:8px;background:rgba(102,58,243,.55);border:1px solid rgba(102,58,243,.7);opacity:0;transition:opacity .4s';
+        d.style.cssText = 'width:34px;height:34px;border-radius:8px;background:rgba(47,111,58,.55;border:1px solid rgba(47,111,58,.7;opacity:0;transition:opacity .4s';
         d.style.transitionDelay = stagger ? (i * 0.15) + 's' : '0s';
         s.appendChild(d);
         requestAnimationFrame(() => { d.style.opacity = '1'; });
@@ -3293,12 +3293,12 @@ const DEMOS = {
     function render(m) {
       if (m === 'copy') {
         s.innerHTML = `
-          <div style="width:70%;height:9px;background:rgba(255,255,255,.3);border-radius:3px;margin-bottom:10px"></div>
-          <div style="position:absolute;top:42px;left:14px;color:#e46d4c;font:10px var(--font-body);line-height:1.6">⚠ 字体丢失 → 宋体替代<br>⚠ 图片裂开<br>⚠ 视频播不了</div>`;
+          <div style="width:70%;height:9px;background:rgba(26,51,0,.3;border-radius:3px;margin-bottom:10px"></div>
+          <div style="position:absolute;top:42px;left:14px;color:#cb5521;font:10px var(--font-body);line-height:1.6">⚠ 字体丢失 → 宋体替代<br>⚠ 图片裂开<br>⚠ 视频播不了</div>`;
       } else {
         s.innerHTML = `
-          <div style="width:70%;height:9px;background:rgba(255,255,255,.3);border-radius:3px;margin-bottom:10px"></div>
-          <div style="position:absolute;top:42px;left:14px;color:#7ee0a8;font:10px var(--font-body);line-height:1.6">✓ 含字体 / 图片 / 视频 一体<br>换任何电脑原样放</div>`;
+          <div style="width:70%;height:9px;background:rgba(26,51,0,.3;border-radius:3px;margin-bottom:10px"></div>
+          <div style="position:absolute;top:42px;left:14px;color:#1a3300;font:10px var(--font-body);line-height:1.6">✓ 含字体 / 图片 / 视频 一体<br>换任何电脑原样放</div>`;
       }
     }
     render('copy');
@@ -3320,8 +3320,8 @@ const DEMOS = {
       const note = m === 'normal' ? '原图' : m === 'rot' ? '自由旋转：拖手柄任意角' : '水平翻转：左右镜像';
       s.innerHTML = `
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
-          <div style="width:90px;height:64px;border-radius:14px;background:linear-gradient(135deg,#663af3,#027dea);transform:${tf};box-shadow:0 8px 24px rgba(102,58,243,.35)"></div>
-          <div style="font:11px var(--font-body);color:var(--color-moon-mist)">${note}</div>
+          <div style="width:140px;height:100px;border-radius:18px;background:linear-gradient(135deg,#2f6f3a,#1a4a24);transform:${tf};box-shadow:0 8px 24px rgba(47,111,58,.35)"></div>
+          <div style="font:13px var(--font-body);color:var(--color-moon-mist)">${note}</div>
         </div>`;
     }
     render('normal');
@@ -3341,15 +3341,15 @@ const DEMOS = {
     const s = c.querySelector('#prStage');
     function render(m) {
       const map = {
-        slide: ['整页幻灯片', '一页一张大图，适合张贴/胶片', '#7ee0a8'],
-        notes: ['备注页', '幻灯片 + 下方演讲备注，备课留底', '#7ee0a8'],
-        handout: ['讲义(每页6张)', '多张缩略图带横线，发学员', '#7ee0a8'],
-        bw: ['灰度打印', '去彩色保清晰，现场没彩打就它', '#e8c46a']
+        slide: ['整页幻灯片', '一页一张大图，适合张贴/胶片', '#e3ecd9'],
+        notes: ['备注页', '幻灯片 + 下方演讲备注，备课留底', '#e3ecd9'],
+        handout: ['讲义(每页6张)', '多张缩略图带横线，发学员', '#e3ecd9'],
+        bw: ['灰度打印', '去彩色保清晰，现场没彩打就它', '#f6e3d6']
       };
       const [t, d, col] = map[m];
       s.innerHTML = `
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:100%">
-          <div style="width:78%;height:46px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:8px"></div>
+          <div style="width:78%;height:46px;background:rgba(26,51,0,.12;border:1px solid rgba(26,51,0,.2;border-radius:8px"></div>
           <div style="font:12px var(--font-body);color:${col};font-weight:700">${t}</div>
           <div style="font:10px var(--font-body);color:var(--color-moon-mist);text-align:center;line-height:1.5">${d}</div>
         </div>`;
@@ -3370,9 +3370,9 @@ const DEMOS = {
     const s = c.querySelector('#asStage');
     function render(m) {
       const map = {
-        card: ['width:120px;height:54px;border-radius:12px;background:rgba(102,58,243,.25);border:1px solid #663af3', '圆角矩形 → 信息卡片'],
-        arrow: ['width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-left:60px solid #027dea', '箭头 → 指关系 / 流向'],
-        circle: ['width:70px;height:70px;border-radius:50%;background:radial-gradient(circle, #8a6bff, #663af3)', '圆 → 头像底 / 节点']
+        card: ['width:120px;height:54px;border-radius:12px;background:rgba(47,111,58,.25;border:1px solid #2f6f3a', '圆角矩形 → 信息卡片'],
+        arrow: ['width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-left:60px solid #2f6f3a', '箭头 → 指关系 / 流向'],
+        circle: ['width:70px;height:70px;border-radius:50%;background:radial-gradient(circle, #2f6f3a, #2f6f3a)', '圆 → 头像底 / 节点']
       };
       const [style, note] = map[m];
       s.innerHTML = `
@@ -3397,25 +3397,25 @@ const DEMOS = {
     function render(m) {
       if (m === 'clean') {
         s.innerHTML = `
-          <div style="width:82%;background:rgba(255,255,255,.06);border-radius:8px;padding:12px 10px">
+          <div style="width:82%;background:rgba(26,51,0,.06;border-radius:8px;padding:12px 10px">
             <div style="display:flex;align-items:flex-end;gap:10px;height:54px">
-              <div style="flex:1;background:#663af3;border-radius:4px 4px 0 0;height:60%"></div>
-              <div style="flex:1;background:#027dea;border-radius:4px 4px 0 0;height:90%"></div>
-              <div style="flex:1;background:#663af3;border-radius:4px 4px 0 0;height:45%"></div>
+              <div style="flex:1;background:#2f6f3a;border-radius:4px 4px 0 0;height:60%"></div>
+              <div style="flex:1;background:#2f6f3a;border-radius:4px 4px 0 0;height:90%"></div>
+              <div style="flex:1;background:#2f6f3a;border-radius:4px 4px 0 0;height:45%"></div>
             </div>
             <div style="display:flex;justify-content:space-between;margin-top:6px;font:9px var(--font-body);color:var(--color-moon-mist)"><span>Q1 120</span><span>Q2 180</span><span>Q3 92</span></div>
-            <div style="font:9px var(--font-body);color:#7ee0a8;margin-top:4px">✓ 数据标签 + 删冗余图例</div>
+            <div style="font:9px var(--font-body);color:#1a3300;margin-top:4px">✓ 数据标签 + 删冗余图例</div>
           </div>`;
       } else {
         s.innerHTML = `
-          <div style="width:82%;background:rgba(255,255,255,.06);border-radius:8px;padding:12px 10px">
-            <div style="display:flex;align-items:flex-end;gap:6px;height:54px;border:1px dashed rgba(255,255,255,.25)">
-              <div style="flex:1;background:#e0466b;border-radius:4px 4px 0 0;height:60%"></div>
-              <div style="flex:1;background:#27a567;border-radius:4px 0 0;height:90%"></div>
-              <div style="flex:1;background:#f0a93b;border-radius:4px 4px 0 0;height:45%"></div>
+          <div style="width:82%;background:rgba(26,51,0,.06;border-radius:8px;padding:12px 10px">
+            <div style="display:flex;align-items:flex-end;gap:6px;height:54px;border:1px dashed rgba(26,51,0,.25">
+              <div style="flex:1;background:#cb5521;border-radius:4px 4px 0 0;height:60%"></div>
+              <div style="flex:1;background:#2f6f3a;border-radius:4px 0 0;height:90%"></div>
+              <div style="flex:1;background:#cb5521;border-radius:4px 4px 0 0;height:45%"></div>
             </div>
             <div style="font:9px var(--font-body);color:var(--color-moon-mist);margin-top:6px">图例+网格+坐标轴全开、标签密</div>
-            <div style="font:9px var(--font-body);color:#e46d4c;margin-top:2px">✗ 看不懂、重点被淹</div>
+            <div style="font:9px var(--font-body);color:#cb5521;margin-top:2px">✗ 看不懂、重点被淹</div>
           </div>`;
       }
     }
@@ -3455,9 +3455,9 @@ const DEMOS = {
     const s = c.querySelector('#icStage');
     function render(m) {
       let inner;
-      if (m === 'raw') inner = `<div style="width:96px;height:64px;background:linear-gradient(135deg,#888,#bbb);position:relative"><div style="position:absolute;right:-6px;bottom:-6px;width:24px;height:20px;background:#ccc"></div><div style="font:9px var(--font-body);color:#444;position:absolute;left:6px;top:6px">多余边</div></div><div style="font:10px var(--font-body);color:var(--color-moon-mist);margin-top:8px">原图带杂边、偏暗</div>`;
-      else if (m === 'crop') inner = `<div style="width:80px;height:64px;background:linear-gradient(135deg,#9aa,#ccc);overflow:hidden;border-radius:6px"></div><div style="font:10px var(--font-body);color:#7ee0a8;margin-top:8px">✓ 裁掉杂边，干净聚焦</div>`;
-      else inner = `<div style="width:80px;height:64px;background:linear-gradient(135deg,#663af3,#027dea);filter:blur(1px) saturate(1.4);border-radius:6px"></div><div style="font:10px var(--font-body);color:#7ee0a8;margin-top:8px">✓ 虚化艺术效果，高级感</div>`;
+      if (m === 'raw') inner = `<div style="width:140px;height:95px;background:linear-gradient(135deg,#e6e6e0,#d8d8d2);position:relative;border-radius:8px"><div style="position:absolute;right:-8px;bottom:-8px;width:32px;height:26px;background:#e6e6e0;border-radius:4px"></div><div style="font:12px var(--font-body);color:#999;position:absolute;left:8px;top:8px">多余边</div></div><div style="font:13px var(--font-body);color:var(--color-moon-mist);margin-top:10px">原图带杂边、偏暗</div>`;
+      else if (m === 'crop') inner = `<div style="width:120px;height:95px;background:linear-gradient(135deg,#2f6f3a,#e6e6e0);overflow:hidden;border-radius:8px"></div><div style="font:13px var(--font-body);color:#1a3300;margin-top:10px">✓ 裁掉杂边，干净聚焦</div>`;
+      else inner = `<div style="width:120px;height:95px;background:linear-gradient(135deg,#2f6f3a,#1a4a24);filter:blur(1.2px) saturate(1.4);border-radius:8px"></div><div style="font:13px var(--font-body);color:#1a3300;margin-top:10px">✓ 虚化艺术效果，高级感</div>`;
       s.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center">${inner}</div>`;
     }
     render('raw');
@@ -3477,14 +3477,14 @@ const DEMOS = {
       if (m === 'on') {
         s.innerHTML = `
           <div style="display:flex;flex-direction:column;gap:6px">
-            ${[1, 2, 3, 4].map(n => `<div style="height:26px;background:rgba(255,255,255,.08);border-radius:6px;position:relative"><span style="position:absolute;right:8px;bottom:3px;font:9px var(--font-body);color:var(--color-moon-mist)">${n} / 4　2026-07-26</span></div>`).join('')}
-            <div style="font:10px var(--font-body);color:#7ee0a8;margin-top:4px">✓ 母版设一次，全篇自动+改日期一键全改</div>
+            ${[1, 2, 3, 4].map(n => `<div style="height:26px;background:rgba(26,51,0,.08;border-radius:6px;position:relative"><span style="position:absolute;right:8px;bottom:3px;font:9px var(--font-body);color:var(--color-moon-mist)">${n} / 4　2026-07-26</span></div>`).join('')}
+            <div style="font:10px var(--font-body);color:#1a3300;margin-top:4px">✓ 母版设一次，全篇自动+改日期一键全改</div>
           </div>`;
       } else {
         s.innerHTML = `
           <div style="display:flex;flex-direction:column;gap:6px">
-            ${[1, 2, 3, 4].map(n => `<div style="height:26px;background:rgba(255,255,255,.08);border-radius:6px;position:relative"><span style="position:absolute;right:8px;bottom:3px;font:9px var(--font-body);color:var(--color-moon-mist)">第 ${n} 页</span></div>`).join('')}
-            <div style="font:10px var(--font-body);color:#e46d4c;margin-top:4px">✗ 手打易错、改日期要页页动</div>
+            ${[1, 2, 3, 4].map(n => `<div style="height:26px;background:rgba(26,51,0,.08;border-radius:6px;position:relative"><span style="position:absolute;right:8px;bottom:3px;font:9px var(--font-body);color:var(--color-moon-mist)">第 ${n} 页</span></div>`).join('')}
+            <div style="font:10px var(--font-body);color:#cb5521;margin-top:4px">✗ 手打易错、改日期要页页动</div>
           </div>`;
       }
     }
@@ -3505,18 +3505,18 @@ const DEMOS = {
       if (m === 'smart') {
         s.innerHTML = `
           <div style="position:relative;width:84%;height:70px">
-            <div style="position:absolute;left:0;top:18px;width:40px;height:34px;background:#663af3;border-radius:6px"></div>
-            <div style="position:absolute;right:0;top:18px;width:40px;height:34px;background:#027dea;border-radius:6px"></div>
-            <svg viewBox="0 0 200 70" style="position:absolute;inset:0;width:100%;height:100%"><path d="M40 35 H160" stroke="#7ee0a8" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#cnArr)"/><defs><marker id="cnArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#7ee0a8"/></marker></defs></svg>
-            <div style="position:absolute;left:0;right:0;bottom:-2px;text-align:center;font:9px var(--font-body);color:#7ee0a8">拖动方框 → 线自动跟随</div>
+            <div style="position:absolute;left:0;top:18px;width:40px;height:34px;background:#2f6f3a;border-radius:6px"></div>
+            <div style="position:absolute;right:0;top:18px;width:40px;height:34px;background:#2f6f3a;border-radius:6px"></div>
+            <svg viewBox="0 0 200 70" style="position:absolute;inset:0;width:100%;height:100%"><path d="M40 35 H160" stroke="#2f6f3a" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#cnArr)"/><defs><marker id="cnArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#2f6f3a"/></marker></defs></svg>
+            <div style="position:absolute;left:0;right:0;bottom:-2px;text-align:center;font:9px var(--font-body);color:#1a3300">拖动方框 → 线自动跟随</div>
           </div>`;
       } else {
         s.innerHTML = `
           <div style="position:relative;width:84%;height:70px">
-            <div style="position:absolute;left:0;top:18px;width:40px;height:34px;background:#663af3;border-radius:6px"></div>
-            <div style="position:absolute;right:0;top:0;width:40px;height:34px;background:#027dea;border-radius:6px"></div>
-            <svg viewBox="0 0 200 70" style="position:absolute;inset:0;width:100%;height:100%"><path d="M40 35 H160" stroke="#e46d4c" stroke-width="2" marker-end="url(#cnArr2)"/><defs><marker id="cnArr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#e46d4c"/></marker></defs></svg>
-            <div style="position:absolute;left:0;right:0;bottom:-2px;text-align:center;font:9px var(--font-body);color:#e46d4c">线没吸上 → 移框就脱节</div>
+            <div style="position:absolute;left:0;top:18px;width:40px;height:34px;background:#2f6f3a;border-radius:6px"></div>
+            <div style="position:absolute;right:0;top:0;width:40px;height:34px;background:#2f6f3a;border-radius:6px"></div>
+            <svg viewBox="0 0 200 70" style="position:absolute;inset:0;width:100%;height:100%"><path d="M40 35 H160" stroke="#cb5521" stroke-width="2" marker-end="url(#cnArr2)"/><defs><marker id="cnArr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#cb5521"/></marker></defs></svg>
+            <div style="position:absolute;left:0;right:0;bottom:-2px;text-align:center;font:9px var(--font-body);color:#cb5521">线没吸上 → 移框就脱节</div>
           </div>`;
       }
     }
@@ -3538,14 +3538,14 @@ const DEMOS = {
         s.innerHTML = `
           <div style="font:10px var(--font-body);color:var(--color-moon-mist);line-height:1.7">
             第 1 页 改字号…<br>第 2 页 改字号…<br>第 3 页 改字号…<br>
-            <span style="color:#e46d4c">…重复 80 次，半小时起步，还容易漏</span>
+            <span style="color:#cb5521">…重复 80 次，半小时起步，还容易漏</span>
           </div>`;
       } else {
         s.innerHTML = `
           <div style="font:10px var(--font-body);color:var(--color-moon-mist);line-height:1.7">
-            <span style="color:#7ee0a8">● 录制：把改标题字号的操作录一遍</span><br>
-            <span style="color:#7ee0a8">● 重放：一键套用全部 80 页</span><br>
-            <span style="color:#7ee0a8">✓ 3 秒搞定，零遗漏</span>
+            <span style="color:#1a3300">● 录制：把改标题字号的操作录一遍</span><br>
+            <span style="color:#1a3300">● 重放：一键套用全部 80 页</span><br>
+            <span style="color:#1a3300">✓ 3 秒搞定，零遗漏</span>
           </div>`;
       }
     }
@@ -3564,9 +3564,9 @@ const DEMOS = {
     const s = c.querySelector('#esiStage');
     function render(m) {
       if (m === 'in') {
-        s.innerHTML = '<div style="font:13px var(--font-body);color:#e46d4c">要点A　要点B　要点C　要点D</div><div style="font:9px var(--font-body);color:var(--color-moon-mist);margin-top:6px">全堆着，越讲越乱</div>';
+        s.innerHTML = '<div style="font:13px var(--font-body);color:#cb5521">要点A　要点B　要点C　要点D</div><div style="font:9px var(--font-body);color:var(--color-moon-mist);margin-top:6px">全堆着，越讲越乱</div>';
       } else {
-        s.innerHTML = '<div style="font:13px var(--font-body);color:#7ee0a8">要点A ✓　（B、C、D 讲完已淡出）</div><div style="font:9px var(--font-body);color:var(--color-moon-mist);margin-top:6px">始终只留当前重点</div>';
+        s.innerHTML = '<div style="font:13px var(--font-body);color:#1a3300">要点A ✓　（B、C、D 讲完已淡出）</div><div style="font:9px var(--font-body);color:var(--color-moon-mist);margin-top:6px">始终只留当前重点</div>';
       }
     }
     render('in');
@@ -3584,9 +3584,9 @@ const DEMOS = {
     const s = c.querySelector('#caStage');
     function render(m) {
       if (m === 'whole') {
-        s.innerHTML = '<div style="display:flex;align-items:flex-end;gap:10px;height:56px"><div style="width:18px;height:40px;background:#663af3"></div><div style="width:18px;height:30px;background:#027dea"></div><div style="width:18px;height:48px;background:#7ee0a8"></div><div style="width:18px;height:24px;background:#e46d4c"></div></div><div style="font:9px var(--font-body);color:#e46d4c;margin-top:8px">整图啪一下淡入，没节奏</div>';
+        s.innerHTML = '<div style="display:flex;align-items:flex-end;gap:14px;height:80px"><div style="width:26px;height:56px;background:#2f6f3a;border-radius:4px"></div><div style="width:26px;height:42px;background:#2f6f3a;border-radius:4px"></div><div style="width:26px;height:66px;background:rgba(47,111,58,.35);border-radius:4px"></div><div style="width:26px;height:34px;background:#cb5521;border-radius:4px"></div></div><div style="font:12px var(--font-body);color:#cb5521;margin-top:10px">整图啪一下淡入，没节奏</div>';
       } else {
-        s.innerHTML = '<div style="display:flex;align-items:flex-end;gap:10px;height:56px"><div style="width:18px;height:40px;background:#663af3"></div><div style="width:18px;height:30px;background:#027dea"></div><div style="width:18px;height:48px;background:#7ee0a8"></div><div style="width:18px;height:24px;background:#e46d4c"></div></div><div style="font:9px var(--font-body);color:#7ee0a8;margin-top:8px">一根根长出，边讲边出有层次</div>';
+        s.innerHTML = '<div style="display:flex;align-items:flex-end;gap:14px;height:80px"><div style="width:26px;height:56px;background:#2f6f3a;border-radius:4px"></div><div style="width:26px;height:42px;background:#2f6f3a;border-radius:4px"></div><div style="width:26px;height:66px;background:rgba(47,111,58,.35);border-radius:4px"></div><div style="width:26px;height:34px;background:#cb5521;border-radius:4px"></div></div><div style="font:12px var(--font-body);color:#1a3300;margin-top:10px">一根根长出，边讲边出有层次</div>';
       }
     }
     render('whole');
@@ -3604,9 +3604,9 @@ const DEMOS = {
     const s = c.querySelector('#sgStage');
     function render(m) {
       if (m === 'off') {
-        s.innerHTML = '<div style="position:relative;width:80%;height:54px"><div style="position:absolute;left:6px;top:8px;width:38px;height:30px;background:#e46d4c;border-radius:5px"></div><div style="position:absolute;right:4px;top:14px;width:38px;height:30px;background:#e46d4c;border-radius:5px"></div><div style="position:absolute;left:0;right:0;bottom:0;text-align:center;font:9px var(--font-body);color:#e46d4c">凭手感，对不齐</div></div>';
+        s.innerHTML = '<div style="position:relative;width:80%;height:54px"><div style="position:absolute;left:6px;top:8px;width:38px;height:30px;background:#cb5521;border-radius:5px"></div><div style="position:absolute;right:4px;top:14px;width:38px;height:30px;background:#cb5521;border-radius:5px"></div><div style="position:absolute;left:0;right:0;bottom:0;text-align:center;font:9px var(--font-body);color:#cb5521">凭手感，对不齐</div></div>';
       } else {
-        s.innerHTML = '<div style="position:relative;width:80%;height:54px"><div style="position:absolute;left:0;right:0;top:50%;height:0;border-top:1px dashed #7ee0a8"></div><div style="position:absolute;left:18px;top:8px;width:38px;height:30px;background:#663af3;border-radius:5px"></div><div style="position:absolute;right:18px;top:8px;width:38px;height:30px;background:#663af3;border-radius:5px"></div><div style="position:absolute;left:0;right:0;bottom:0;text-align:center;font:9px var(--font-body);color:#7ee0a8">虚线一亮，自动居中</div></div>';
+        s.innerHTML = '<div style="position:relative;width:80%;height:54px"><div style="position:absolute;left:0;right:0;top:50%;height:0;border-top:1px dashed #2f6f3a"></div><div style="position:absolute;left:18px;top:8px;width:38px;height:30px;background:#2f6f3a;border-radius:5px"></div><div style="position:absolute;right:18px;top:8px;width:38px;height:30px;background:#2f6f3a;border-radius:5px"></div><div style="position:absolute;left:0;right:0;bottom:0;text-align:center;font:9px var(--font-body);color:#1a3300">虚线一亮，自动居中</div></div>';
       }
     }
     render('off');
@@ -3624,9 +3624,9 @@ const DEMOS = {
     const s = c.querySelector('#wmStage');
     function render(m) {
       if (m === 'off') {
-        s.innerHTML = '<div style="width:74%;height:46px;background:#1a1f2e;border-radius:6px"></div><div style="font:9px var(--font-body);color:#e46d4c;margin-top:8px">每页手贴，改一次累死</div>';
+        s.innerHTML = '<div style="width:74%;height:46px;background:#ffffff;border-radius:6px"></div><div style="font:9px var(--font-body);color:#cb5521;margin-top:8px">每页手贴，改一次累死</div>';
       } else {
-        s.innerHTML = '<div style="position:relative;width:74%;height:46px;background:#1a1f2e;border-radius:6px"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.18);font:700 13px var(--font-body);transform:rotate(-18deg)">机密</div></div><div style="font:9px var(--font-body);color:#7ee0a8;margin-top:8px">母版设一次，全篇统一</div>';
+        s.innerHTML = '<div style="position:relative;width:74%;height:46px;background:#ffffff;border-radius:6px"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.18;font:700 13px var(--font-body);transform:rotate(-18deg)">机密</div></div><div style="font:9px var(--font-body);color:#1a3300;margin-top:8px">母版设一次，全篇统一</div>';
       }
     }
     render('off');
@@ -3644,9 +3644,9 @@ const DEMOS = {
     const s = c.querySelector('#scStage');
     function render(m) {
       if (m === 'old') {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#e46d4c;line-height:1.9">截图 → 存盘 → 插入 → 找文件<br>三步，麻烦</div>';
+        s.innerHTML = '<div style="font:10px var(--font-body);color:#cb5521;line-height:1.9">截图 → 存盘 → 插入 → 找文件<br>三步，麻烦</div>';
       } else {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#7ee0a8;line-height:1.9">插入 → 屏幕截图 → 框选<br><span>一步进幻灯片 ✓</span></div>';
+        s.innerHTML = '<div style="font:10px var(--font-body);color:#1a3300;line-height:1.9">插入 → 屏幕截图 → 框选<br><span>一步进幻灯片 ✓</span></div>';
       }
     }
     render('old');
@@ -3664,9 +3664,9 @@ const DEMOS = {
     const s = c.querySelector('#afStage');
     function render(m) {
       if (m === 'overflow') {
-        s.innerHTML = '<div style="font:11px var(--font-body);color:#e46d4c;line-height:1.5;border:1px dashed #e46d4c;padding:6px;height:42px;overflow:hidden">要点一要点二要点三要点四要点五要点六要点七…<br><span style="font-size:9px">⚠ 溢出框外丢字</span></div>';
+        s.innerHTML = '<div style="font:13px var(--font-body);color:#cb5521;line-height:1.5;border:1px dashed #cb5521;padding:8px;height:52px;overflow:hidden">要点一要点二要点三要点四要点五要点六要点七…<br><span style="font-size:11px">⚠ 溢出框外丢字</span></div>';
       } else {
-        s.innerHTML = '<div style="font:8px var(--font-body);color:#7ee0a8;line-height:1.5;border:1px dashed #7ee0a8;padding:6px;height:42px;overflow:hidden">要点一要点二要点三要点四要点五要点六要点七…<br><span style="font-size:9px">✓ 自动缩字塞进框</span></div>';
+        s.innerHTML = '<div style="font:10px var(--font-body);color:#1a3300;line-height:1.5;border:1px dashed #e3ecd9;padding:8px;height:52px;overflow:hidden">要点一要点二要点三要点四要点五要点六要点七…<br><span style="font-size:11px">✓ 自动缩字塞进框</span></div>';
       }
     }
     render('overflow');
@@ -3684,9 +3684,9 @@ const DEMOS = {
     const s = c.querySelector('#pfStage');
     function render(m) {
       if (m === 'wrong') {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#e46d4c;line-height:1.7">发 .pptx → 客户能改能乱版<br><span>⚠ 终稿被改花</span></div>';
+        s.innerHTML = '<div style="font:10px var(--font-body);color:#cb5521;line-height:1.7">发 .pptx → 客户能改能乱版<br><span>⚠ 终稿被改花</span></div>';
       } else {
-        s.innerHTML = '<div style="font:10px var(--font-body);color:#7ee0a8;line-height:1.7">发 .pdf → 防改防乱版<br><span>✓ 终稿稳了；要播用 .ppsx</span></div>';
+        s.innerHTML = '<div style="font:10px var(--font-body);color:#1a3300;line-height:1.7">发 .pdf → 防改防乱版<br><span>✓ 终稿稳了；要播用 .ppsx</span></div>';
       }
     }
     render('wrong');
@@ -3699,13 +3699,13 @@ const DEMOS = {
         <div class="demo-label">Word 大纲 → 一键生成 PPT 骨架</div>
         <div class="demo-row"><button class="demo-btn" id="wpGen">生成 PPT</button><button class="demo-btn" id="wpReset">重置</button></div>
         <div style="display:flex;gap:12px">
-          <div id="wpOutline" style="flex:1;padding:10px;background:rgba(186,214,247,.04);border:1px solid var(--color-glass-edge);border-radius:8px;font:12px/1.7 var(--font-body);color:var(--color-moon-mist)">
-            <div style="font-weight:600;color:#c9b6ff">标题 1. 市场概况</div>
+          <div id="wpOutline" style="flex:1;padding:10px;background:rgba(26,51,0,.04);border:1px solid var(--color-glass-edge);border-radius:8px;font:12px/1.7 var(--font-body);color:var(--color-moon-mist)">
+            <div style="font-weight:600;color:#1a3300">标题 1. 市场概况</div>
             <div style="padding-left:16px;color:var(--color-fog-veil)">• 市场规模</div>
             <div style="padding-left:16px;color:var(--color-fog-veil)">• 竞争格局</div>
-            <div style="font-weight:600;color:#c9b6ff;margin-top:6px">标题 1. 核心策略</div>
+            <div style="font-weight:600;color:#1a3300;margin-top:6px">标题 1. 核心策略</div>
             <div style="padding-left:16px;color:var(--color-fog-veil)">• 三步走打法</div>
-            <div style="font-weight:600;color:#c9b6ff;margin-top:6px">标题 1. 预期收益</div>
+            <div style="font-weight:600;color:#1a3300;margin-top:6px">标题 1. 预期收益</div>
             <div style="padding-left:16px;color:var(--color-fog-veil)">• 一年内翻倍</div>
           </div>
           <div id="wpSlides" style="flex:1;display:flex;flex-direction:column;gap:6px"></div>
@@ -3717,8 +3717,8 @@ const DEMOS = {
       slides.innerHTML = '';
       data.forEach(([t,b]) => {
         const s = document.createElement('div');
-        s.style.cssText = 'padding:8px 10px;background:rgba(102,58,243,.15);border:1px solid rgba(102,58,243,.4);border-radius:6px;font:12px var(--font-body);color:#fff';
-        s.innerHTML = `<div style="font-weight:500;color:#c9b6ff">${t}</div><div style="font-size:11px;color:var(--color-moon-mist)">${b}</div>`;
+        s.style.cssText = 'padding:8px 10px;background:rgba(47,111,58,.15;border:1px solid rgba(47,111,58,.4;border-radius:6px;font:12px var(--font-body);color:#ffffff';
+        s.innerHTML = `<div style="font-weight:500;color:#1a3300;font-size:14px">${t}</div><div style="font-size:13px;color:var(--color-moon-mist)">${b}</div>`;
         slides.appendChild(s);
       });
     }
@@ -3736,7 +3736,7 @@ const DEMOS = {
           <button class="demo-btn" id="inkClear">清空</button>
         </div>
         <div class="mini-slide" id="inkStage" style="position:relative;cursor:crosshair;overflow:hidden">
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:22px var(--font-display);color:rgba(199,211,234,.15)">画布</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:22px var(--font-display);color:rgba(26,51,0,.15)">画布</div>
           <canvas id="inkCanvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
         </div>
       </div>`;
@@ -3745,7 +3745,7 @@ const DEMOS = {
     let drawing = false, erasing = false;
     function resize() { const r = canvas.parentElement.getBoundingClientRect(); canvas.width = r.width; canvas.height = r.height; }
     resize();
-    ctx.strokeStyle = '#e46d4c'; ctx.lineWidth = 3; ctx.lineCap = 'round';
+    ctx.strokeStyle = '#cb5521'; ctx.lineWidth = 3; ctx.lineCap = 'round';
     function getPos(e) {
       const r = canvas.getBoundingClientRect();
       return { x: (e.clientX || e.touches?.[0]?.clientX) - r.left, y: (e.clientY || e.touches?.[0]?.clientY) - r.top };
@@ -3755,7 +3755,7 @@ const DEMOS = {
     function stop() { drawing = false; }
     canvas.addEventListener('mousedown', start); canvas.addEventListener('mousemove', move); canvas.addEventListener('mouseup', stop); canvas.addEventListener('mouseleave', stop);
     canvas.addEventListener('touchstart', e => { e.preventDefault(); start(e); }); canvas.addEventListener('touchmove', e => { e.preventDefault(); move(e); }); canvas.addEventListener('touchend', stop);
-    c.querySelector('#inkPen').onclick = () => { erasing = false; ctx.strokeStyle = '#e46d4c'; };
+    c.querySelector('#inkPen').onclick = () => { erasing = false; ctx.strokeStyle = '#cb5521'; };
     c.querySelector('#inkEraser').onclick = () => { erasing = true; };
     c.querySelector('#inkClear').onclick = () => { ctx.clearRect(0, 0, canvas.width, canvas.height); };
   },
@@ -3765,7 +3765,7 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" data-m="off">隐藏标签</button><button class="demo-btn active" data-m="on">显示标签</button></div>
         <div class="mini-slide" style="display:flex;align-items:flex-end;justify-content:center;gap:14px;padding:14px;height:140px">
-          ${[45, 72, 58, 88].map((v,i) => `<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div class="dlVal" data-v="${v}" style="font:10px var(--font-mono);color:#7ee0a8;opacity:1">${v}</div><div style="width:36px;height:${v}px;background:linear-gradient(180deg,#027dea,#663af3);border-radius:4px 4px 0 0"></div><div style="font:9px var(--font-body);color:var(--color-fog-veil)">Q${i+1}</div></div>`).join('')}
+          ${[45, 72, 58, 88].map((v,i) => `<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div class="dlVal" data-v="${v}" style="font:10px var(--font-mono);color:#1a3300;opacity:1">${v}</div><div style="width:36px;height:${v}px;background:linear-gradient(180deg,#2f6f3a,#2f6f3a);border-radius:4px 4px 0 0"></div><div style="font:9px var(--font-body);color:var(--color-fog-veil)">Q${i+1}</div></div>`).join('')}
         </div>
       </div>`;
     c.querySelectorAll('[data-m]').forEach(btn => btn.onclick = () => {
@@ -3780,7 +3780,7 @@ const DEMOS = {
         <div class="demo-label">给两个对象取同名(!!前綴) → 平滑切换时强制配对过渡</div>
         <div class="demo-row"><button class="demo-btn" id="mfMorph">▶ 播放平滑过渡</button></div>
         <div class="mini-slide" id="mfStage" style="position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden">
-          <div id="mfObj" style="width:80px;height:80px;border-radius:16px;background:linear-gradient(135deg,#663af3,#027dea);transition:all .8s cubic-bezier(.22,1,.36,1)"></div>
+          <div id="mfObj" style="width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#2f6f3a,#1a4a24);transition:all .8s cubic-bezier(.22,1,.36,1)"></div>
         </div>
       </div>`;
     const obj = c.querySelector('#mfObj');
@@ -3788,12 +3788,12 @@ const DEMOS = {
     c.querySelector('#mfMorph').onclick = () => {
       morphed = !morphed;
       if (morphed) {
-        obj.style.width = '120px'; obj.style.height = '60px';
-        obj.style.borderRadius = '50%'; obj.style.background = 'linear-gradient(135deg,#e46d4c,#f5a623)';
+        obj.style.width = '160px'; obj.style.height = '80px';
+        obj.style.borderRadius = '50%'; obj.style.background = 'linear-gradient(135deg,#cb5521,#a33a10)';
         obj.style.transform = 'rotate(360deg)';
       } else {
-        obj.style.width = '80px'; obj.style.height = '80px';
-        obj.style.borderRadius = '16px'; obj.style.background = 'linear-gradient(135deg,#663af3,#027dea)';
+        obj.style.width = '120px'; obj.style.height = '120px';
+        obj.style.borderRadius = '20px'; obj.style.background = 'linear-gradient(135deg,#2f6f3a,#1a4a24)';
         obj.style.transform = 'rotate(0deg)';
       }
     };
@@ -3809,7 +3809,7 @@ const DEMOS = {
           <button class="demo-btn" data-f="water">水彩</button>
         </div>
         <div class="mini-slide" id="aeStage" style="display:flex;align-items:center;justify-content:center">
-          <div id="aeImg" style="width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#2f6df0,#2fc9e0,#7ee0a8);transition:filter .4s;display:flex;align-items:center;justify-content:center;color:#fff;font:14px var(--font-body)">图片</div>
+          <div id="aeImg" style="width:160px;height:160px;border-radius:16px;background:linear-gradient(135deg,#2f6f3a,#1a4a24,#e3ecd9);transition:filter .4s;display:flex;align-items:center;justify-content:center;color:#ffffff;font:18px var(--font-body)">图片</div>
         </div>
       </div>`;
     const img = c.querySelector('#aeImg');
@@ -3828,7 +3828,7 @@ const DEMOS = {
           <span>对比度</span><input type="range" min="-50" max="50" value="0" class="demo-slider" id="pcContrast" style="flex:2"><span id="pcCv">0</span>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="pcImg" style="width:140px;height:100px;border-radius:10px;background:linear-gradient(135deg,#3a4b7a,#5a6d9f,#3a4b7a);transition:filter .2s;filter:brightness(1) contrast(1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font:12px var(--font-body)">照片</div>
+          <div id="pcImg" style="width:180px;height:130px;border-radius:14px;background:linear-gradient(135deg,#2f6f3a,#1a4a24);transition:filter .2s;filter:brightness(1) contrast(1);display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.7);font:15px var(--font-body)">照片</div>
         </div>
       </div>`;
     const img = c.querySelector('#pcImg'), b = c.querySelector('#pcBright'), cb = c.querySelector('#pcBright'), cv = c.querySelector('#pcCv');
@@ -3851,15 +3851,15 @@ const DEMOS = {
           <button class="demo-btn" data-s="metal">金属框</button>
         </div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="psImg" style="width:130px;height:90px;border-radius:8px;background:linear-gradient(135deg,#027dea,#2fc9e0);transition:all .3s"></div>
+          <div id="psImg" style="width:170px;height:120px;border-radius:12px;background:linear-gradient(135deg,#2f6f3a,#1a4a24);transition:all .3s"></div>
         </div>
       </div>`;
     const img = c.querySelector('#psImg');
     const styles = {
       plain: { border: 'none', borderRadius: '8px', boxShadow: 'none', transform: 'none' },
-      border: { border: '3px solid #fff', borderRadius: '8px', boxShadow: 'none', transform: 'none' },
-      shadow: { border: 'none', borderRadius: '8px', boxShadow: '0 6px 20px rgba(0,0,0,.35)', transform: 'none' },
-      metal: { border: '3px solid #c9b6ff', borderRadius: '12px', boxShadow: '0 4px 16px rgba(102,58,243,.35), inset 0 0 0 2px rgba(255,255,255,.1)', transform: 'scale(1.02)' }
+      border: { border: '3px solid #ffffff', borderRadius: '8px', boxShadow: 'none', transform: 'none' },
+      shadow: { border: 'none', borderRadius: '8px', boxShadow: '0 6px 20px rgba(26,51,0,.35', transform: 'none' },
+      metal: { border: '3px solid #e3ecd9', borderRadius: '12px', boxShadow: '0 4px 16px rgba(47,111,58,.35, inset 0 0 0 2px rgba(26,51,0,.1', transform: 'scale(1.02)' }
     };
     c.querySelectorAll('[data-s]').forEach(btn => btn.onclick = () => {
       const s = styles[btn.dataset.s] || styles.plain;
@@ -3873,11 +3873,11 @@ const DEMOS = {
         <div class="demo-label">格式已定 → 点按钮换图，保留位置/大小/圆角/阴影</div>
         <div class="demo-row"><button class="demo-btn" id="cpSwap">更换图片</button></div>
         <div class="mini-slide" style="display:flex;align-items:center;justify-content:center">
-          <div id="cpImg" style="width:120px;height:90px;border-radius:12px;border:2px solid #c9b6ff;box-shadow:0 4px 12px rgba(102,58,243,.3);display:flex;align-items:center;justify-content:center;font:13px var(--font-body);color:#fff;transition:background .4s">图 A</div>
+          <div id="cpImg" style="width:160px;height:120px;border-radius:16px;border:2px solid #e3ecd9;box-shadow:0 4px 12px rgba(47,111,58,.3);display:flex;align-items:center;justify-content:center;font:16px var(--font-body);color:#ffffff;transition:background .4s">图 A</div>
         </div>
       </div>`;
     const img = c.querySelector('#cpImg');
-    const colors = [['#027dea','图 A'], ['#e46d4c','图 B'], ['#269684','图 C'], ['#663af3','图 D']];
+    const colors = [['#2f6f3a','图 A'], ['#cb5521','图 B'], ['#2f6f3a','图 C'], ['#2f6f3a','图 D']];
     let idx = 0;
     c.querySelector('#cpSwap').onclick = () => { idx = (idx + 1) % colors.length; img.style.background = colors[idx][0]; img.textContent = colors[idx][1]; };
   },
@@ -3887,8 +3887,8 @@ const DEMOS = {
       <div class="demo-stack">
         <div class="demo-row"><button class="demo-btn" id="elUpdate">更新 Excel 数据</button><button class="demo-btn" id="elRefresh">→ 刷新图表</button></div>
         <div style="display:flex;gap:12px;align-items:flex-start">
-          <div id="elExcel" style="flex:1;padding:8px;background:rgba(186,214,247,.04);border:1px solid var(--color-glass-edge);border-radius:8px;font:11px var(--font-mono);color:var(--color-moon-mist)">
-            <div style="font-weight:600;color:#7ee0a8;margin-bottom:4px">Excel 数据</div>
+          <div id="elExcel" style="flex:1;padding:8px;background:rgba(26,51,0,.04);border:1px solid var(--color-glass-edge);border-radius:8px;font:11px var(--font-mono);color:var(--color-moon-mist)">
+            <div style="font-weight:600;color:#1a3300;margin-bottom:4px">Excel 数据</div>
             <div>产品A: <span id="elA">120</span></div>
             <div>产品B: <span id="elB">85</span></div>
             <div>产品C: <span id="elC">200</span></div>
@@ -3904,7 +3904,7 @@ const DEMOS = {
       ['产品A','产品B','产品C'].forEach((n,i) => {
         const d = document.createElement('div');
         d.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;flex:1';
-        d.innerHTML = `<div style="font:10px var(--font-mono);color:#7ee0a8">${vals[i]}</div><div style="width:100%;height:${(vals[i]/max)*80}px;background:linear-gradient(180deg,#663af3,#027dea);border-radius:4px 4px 0 0;min-height:8px"></div><div style="font:9px var(--font-body);color:var(--color-fog-veil)">${n}</div>`;
+        d.innerHTML = `<div style="font:10px var(--font-mono);color:#1a3300">${vals[i]}</div><div style="width:100%;height:${(vals[i]/max)*80}px;background:linear-gradient(180deg,#2f6f3a,#2f6f3a);border-radius:4px 4px 0 0;min-height:8px"></div><div style="font:9px var(--font-body);color:var(--color-fog-veil)">${n}</div>`;
         chart.appendChild(d);
       });
     }
@@ -3924,8 +3924,8 @@ const DEMOS = {
             const pct = (d.v / 200 * 100);
             return `<div style="display:flex;align-items:center;gap:8px;font:12px var(--font-body)">
               <span style="width:20px;color:var(--color-moon-mist)">${d.l}</span>
-              <div style="flex:1;height:18px;background:rgba(186,214,247,.06);border-radius:4px;position:relative;overflow:hidden">
-                <div class="dbBar" style="position:absolute;left:0;top:0;height:100%;width:${pct}%;background:linear-gradient(90deg,#663af3,#027dea);border-radius:4px;transition:opacity .3s"></div>
+              <div style="flex:1;height:18px;background:rgba(26,51,0,.06);border-radius:4px;position:relative;overflow:hidden">
+                <div class="dbBar" style="position:absolute;left:0;top:0;height:100%;width:${pct}%;background:linear-gradient(90deg,#2f6f3a,#2f6f3a);border-radius:4px;transition:opacity .3s"></div>
               </div>
               <span style="width:30px;text-align:right;color:var(--color-frost-glow);font:11px var(--font-mono)">${d.v}</span>
             </div>`;
@@ -3944,10 +3944,10 @@ const DEMOS = {
         <div class="demo-label">拖动滑块裁剪视频头尾</div>
         <div class="mini-slide" style="display:flex;flex-direction:column;gap:8px;padding:14px">
           <div style="display:flex;gap:10px;align-items:center">
-            <div style="flex:1;height:6px;background:rgba(186,214,247,.1);border-radius:3px;position:relative">
-              <div id="vtRange" style="position:absolute;left:15%;right:25%;top:-3px;height:12px;background:linear-gradient(90deg,#663af3,#027dea);border-radius:4px"></div>
-              <div id="vtTrimStart" style="position:absolute;left:15%;top:-6px;width:10px;height:18px;background:#e46d4c;border-radius:2px;cursor:ew-resize"></div>
-              <div id="vtTrimEnd" style="position:absolute;right:25%;top:-6px;width:10px;height:18px;background:#e46d4c;border-radius:2px;cursor:ew-resize"></div>
+            <div style="flex:1;height:6px;background:rgba(26,51,0,.1);border-radius:3px;position:relative">
+              <div id="vtRange" style="position:absolute;left:15%;right:25%;top:-3px;height:12px;background:linear-gradient(90deg,#2f6f3a,#2f6f3a);border-radius:4px"></div>
+              <div id="vtTrimStart" style="position:absolute;left:15%;top:-6px;width:10px;height:18px;background:#cb5521;border-radius:2px;cursor:ew-resize"></div>
+              <div id="vtTrimEnd" style="position:absolute;right:25%;top:-6px;width:10px;height:18px;background:#cb5521;border-radius:2px;cursor:ew-resize"></div>
             </div>
           </div>
           <div style="display:flex;justify-content:space-between;font:10px var(--font-mono);color:var(--color-fog-veil)">
@@ -3984,7 +3984,7 @@ const DEMOS = {
     const formulas = {
       integral: '∫<sub>0</sub><sup>∞</sup> e<sup>-x²</sup> dx = √π / 2',
       sigma: '∑<sub>i=1</sub><sup>n</sup> x<sub>i</sub> = x₁ + x₂ + … + xₙ',
-      fraction: '<span style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle"><span style="border-bottom:2px solid #fff;padding:0 8px 2px">-b ± √b² - 4ac</span><span style="padding-top:2px">2a</span></span>'
+      fraction: '<span style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle"><span style="border-bottom:2px solid #ffffff;padding:0 8px 2px">-b ± √b² - 4ac</span><span style="padding-top:2px">2a</span></span>'
     };
     c.querySelectorAll('[data-f]').forEach(btn => btn.onclick = () => { box.innerHTML = formulas[btn.dataset.f] || formulas.integral; });
     box.innerHTML = formulas.integral;
@@ -4005,14 +4005,14 @@ const DEMOS = {
     const map = c.querySelector('#mcMap');
     const data = {
       sales: [
-        ['华东', 320, '#1a3a7a'], ['华南', 280, '#234d9e'], ['华北', 240, '#2f6df0'],
-        ['华中', 200, '#5a8bf5'], ['西南', 160, '#8aadf8'], ['东北', 120, '#b4ccfb'],
-        ['西北', 80, '#d4e2fe']
+        ['华东', 320, '#2f6f3a'], ['华南', 280, '#2f6f3a'], ['华北', 240, '#2f6f3a'],
+        ['华中', 200, '#2f6f3a'], ['西南', 160, '#2f6f3a'], ['东北', 120, 'rgba(47,111,58,.4)'],
+        ['西北', 80, 'rgba(47,111,58,.28)']
       ],
       growth: [
-        ['华东', 22, '#1a5a3a'], ['华南', 18, '#228b4a'], ['华北', 15, '#2ea85a'],
-        ['华中', 12, '#4cbf70'], ['西南', 8, '#8ad9a0'], ['东北', 5, '#acebb8'],
-        ['西北', 3, '#d4f5dc']
+        ['华东', 22, '#2f6f3a'], ['华南', 18, '#2f6f3a'], ['华北', 15, '#2f6f3a'],
+        ['华中', 12, '#2f6f3a'], ['西南', 8, 'rgba(47,111,58,.4)'], ['东北', 5, 'rgba(47,111,58,.28)'],
+        ['西北', 3, 'rgba(47,111,58,.2)']
       ]
     };
     function render(r) {
@@ -4020,7 +4020,7 @@ const DEMOS = {
       map.innerHTML = '';
       d.forEach(([name, val, col]) => {
         const block = document.createElement('div');
-        block.style.cssText = `padding:8px 12px;background:${col};border-radius:6px;color:#fff;font:12px var(--font-body);display:flex;flex-direction:column;align-items:center;gap:2px;min-width:60px`;
+        block.style.cssText = `padding:8px 12px;background:${col};border-radius:6px;color:#ffffff;font:12px var(--font-body);display:flex;flex-direction:column;align-items:center;gap:2px;min-width:60px`;
         block.innerHTML = `<span style="font-weight:500">${name}</span><span style="font:10px var(--font-mono)">${val}</span>`;
         map.appendChild(block);
       });

@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#05060f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#fcfaf5" />
   <link rel="icon" type="image/png" href="./assets/youka.png" />
   <title>PPT作品展示图生成器</title>
   <meta name="description" content="优卡导航出品的 PPT 作品展示图生成器：一键生成风格统一、可直接用于 PPT 的作品展示配图，AI 文生图出图快、适配演示场景。" />
@@ -33,6 +36,18 @@
 </script>
 </head>
   <body>
+    <header class="mockup-nav">
+      <div class="header-pill">
+        <a class="brand" href="../">
+          <span class="mark"><img src="./assets/youka.png" alt="优卡" /></span>
+          <span>PPT 作品展示图生成器</span>
+        </a>
+        <div class="header-actions">
+          <a class="back-link" href="../">返回优卡导航</a>
+        </div>
+      </div>
+    </header>
+
     <div id="root"></div>
 
     <link rel="stylesheet" href="./assets/contact/contact.css" />
@@ -44,18 +59,85 @@
         bottom: 16px;
         transform: translateX(-50%);
         z-index: 9000;
-        background: rgba(20,22,38,.82);
-        border: 1px solid rgba(102,58,243,.30);
+        background: rgba(252,250,245,.92);
+        border: 1px solid rgba(26,51,0,.15);
         border-radius: 999px;
         padding: 8px 16px;
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
-        box-shadow: 0 8px 28px rgba(0,0,0,.5), 0 0 18px rgba(102,58,243,.10);
+        box-shadow: 0 8px 28px rgba(26,51,0,.12), 0 0 18px rgba(26,51,0,.05);
         max-width: calc(100vw - 32px);
         overflow-x: auto;
         white-space: nowrap;
       }
       .mockup-contact-bar::-webkit-scrollbar { display: none; }
+
+      /* mockup 顶部导航 — 复用 优卡导航 header-pill 风格，与 ppthub / ppt-tips 一致 */
+      .mockup-nav {
+        position: sticky; top: 0; z-index: 50;
+        padding: 14px 16px 0;
+        background: transparent;
+      }
+      .mockup-nav .header-pill {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        background: #fcfaf5;
+        border: 1px solid #b6b6b6;
+        border-radius: 16px;
+        padding: 8px 12px;
+        box-shadow: 0 0 24px rgba(26,51,0,.05), 0 10px 30px rgba(26,51,0,.06);
+      }
+      .mockup-nav .brand { display: flex; align-items: center; gap: 10px; font-family: 'Inter','Noto Sans SC',sans-serif; font-weight: 700; font-size: 18px; color: #1a3300; letter-spacing: -0.01em; text-decoration: none; }
+      .mockup-nav .brand .mark { width: 36px; height: 36px; border-radius: 10px; background: #ffe95c; display: grid; place-items: center; overflow: hidden; border: 1px solid #1a3300; flex-shrink: 0; }
+      .mockup-nav .brand .mark img { width: 100%; height: 100%; object-fit: cover; }
+      .mockup-nav .header-actions { display: flex; gap: 12px; align-items: center; }
+      .mockup-nav .back-link {
+        display: inline-flex; align-items: center;
+        font-family: 'Inter','Noto Sans SC',sans-serif; font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
+        color: #1a3300; text-decoration: none; white-space: nowrap;
+        background: #ffffff; border: 1px solid #1a3300; border-radius: 6px;
+        height: 38px; padding: 0 20px;
+        transition: background .2s, border-color .2s;
+      }
+      .mockup-nav .back-link:hover { background: #d5f5c2; }
+
+      /* === SPA 内部样式覆盖：隐藏内部顶栏 + 区块去阴影改白底 === */
+      /* 隐藏 React 自带的标题栏（头像+PPT MOCKUP GENERATOR）*/
+      .topbar { display: none !important; }
+
+      /* 主区块（01选择图片数量 / 02选择版式 等）— 白底无阴影 */
+      .workflow-panel,
+      .workflow-panel.panel-block,
+      .workflow-panel.setup-step {
+        background: #ffffff !important;
+        box-shadow: none !important;
+        border: 1px solid #e8e8e0;
+        border-radius: 12px;
+      }
+
+      /* 版式选项卡片 — 白底 */
+      .layout-option {
+        background: #ffffff !important;
+        border: 1px solid #e8e8e0;
+        border-radius: 10px;
+      }
+
+      /* 版式预览 SVG — 去掉 inset 阴影 */
+      .layout-option svg {
+        box-shadow: none !important;
+        background: rgba(26, 51, 0, 0.02) !important;
+      }
+
+      /* 蓝图网格背景 — 减淡 */
+      .blueprint-grid {
+        opacity: 0.35;
+      }
+
+      /* 预览画布（SHOW YOUR PPT 区域）— 去阴影 */
+      .stage-surface {
+        box-shadow: none !important;
+      }
     </style>
     <div class="mockup-contact-bar">
       <div class="f-contact-shared" style="margin: 0; gap: 12px;">

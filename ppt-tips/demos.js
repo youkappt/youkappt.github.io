@@ -36,10 +36,10 @@
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">选主题色 → 三页同步换装</div>
         <div class="demo-row">
-          <button class="demo-btn active" data-c="#663af3">紫罗兰</button>
-          <button class="demo-btn" data-c="#027dea">信号蓝</button>
-          <button class="demo-btn" data-c="#269684">深青</button>
-          <button class="demo-btn" data-c="#e46d4c">暖橙</button>
+          <button class="demo-btn active" data-c="#2f6f3a">紫罗兰</button>
+          <button class="demo-btn" data-c="#2f6f3a">信号蓝</button>
+          <button class="demo-btn" data-c="#2f6f3a">深青</button>
+          <button class="demo-btn" data-c="#cb5521">暖橙</button>
         </div>
         <div class="demo-row" id="tsSlides" style="gap:12px"></div>
       </div>`;
@@ -50,13 +50,13 @@
           const s = document.createElement('div'); s.className = 'mini-slide';
           s.style.borderTop = '6px solid ' + col;
           s.innerHTML = `<div style="position:absolute;top:16%;left:8%;width:50%;height:12%;background:${col};border-radius:4px;opacity:.85"></div>`
-            + `<div style="position:absolute;top:40%;left:8%;width:70%;height:6%;background:rgba(255,255,255,.2);border-radius:3px"></div>`
-            + `<div style="position:absolute;top:54%;left:8%;width:55%;height:6%;background:rgba(255,255,255,.13);border-radius:3px"></div>`
-            + `<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.4)">第 ${i} 页</div>`;
+            + `<div style="position:absolute;top:40%;left:8%;width:70%;height:6%;background:rgba(255,255,255,.2;border-radius:3px"></div>`
+            + `<div style="position:absolute;top:54%;left:8%;width:55%;height:6%;background:rgba(255,255,255,.13;border-radius:3px"></div>`
+            + `<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.4">第 ${i} 页</div>`;
           wrap.appendChild(s);
         }
       }
-      render('#663af3');
+      render('#2f6f3a');
       c.querySelectorAll('[data-c]').forEach(b => b.onclick = () => render(b.dataset.c));
     },
 
@@ -78,17 +78,17 @@
         slide.innerHTML = '';
         // 参考线：始终显示；对齐时高亮成紫色虚线 + 微光
         const guide = document.createElement('div');
-        guide.style.cssText = `position:absolute;left:6%;top:${GUIDE_T}%;width:88%;height:0;border-top:1px dashed ${aligned ? 'rgba(160,120,255,.95)' : 'rgba(216,236,248,.45)'}`;
+        guide.style.cssText = `position:absolute;left:6%;top:${GUIDE_T}%;width:88%;height:0;border-top:1px dashed ${aligned ? 'rgba(47,111,58,.95' : 'rgba(26,51,0,.45'}`;
         slide.appendChild(guide);
         if (aligned) {
           const glow = document.createElement('div');
-          glow.style.cssText = `position:absolute;left:6%;top:${GUIDE_T - 1}%;width:88%;height:2px;background:rgba(160,120,255,.35);filter:blur(1px)`;
+          glow.style.cssText = `position:absolute;left:6%;top:${GUIDE_T - 1}%;width:88%;height:2px;background:rgba(47,111,58,.35;filter:blur(1px)`;
           slide.appendChild(glow);
         }
         for (let i = 0; i < 3; i++) {
           const t = aligned ? GUIDE_T : messyT[i];
           const b = document.createElement('div');
-          b.style.cssText = `position:absolute;left:${LEFT[i]}%;top:${t}%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:${aligned ? '0 0 0 2px rgba(160,120,255,.5)' : 'none'};transition:all .35s ease`;
+          b.style.cssText = `position:absolute;left:${LEFT[i]}%;top:${t}%;width:22%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:${aligned ? '0 0 0 2px rgba(47,111,58,.5' : 'none'};transition:all .35s ease`;
           slide.appendChild(b);
         }
       }
@@ -115,17 +115,17 @@
         slide.innerHTML = '';
         for (let i = 0; i < n; i++) {
           const box = document.createElement('div');
-          box.style.cssText = `position:absolute;left:${cols[i]}%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body);transition:all .3s ease`;
+          box.style.cssText = `position:absolute;left:${cols[i]}%;top:34%;width:22%;height:16%;background:#2f6f3a;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#ffffff;font:13px var(--font-body);transition:all .3s ease`;
           box.textContent = labels[i];
           slide.appendChild(box);
           if (i > 0) {
             const start = cols[i - 1] + 22;
             const gap = cols[i] - start;
             const line = document.createElement('div');
-            line.style.cssText = `position:absolute;left:${start}%;top:41%;width:${gap}%;height:2px;background:rgba(216,236,248,.6)`;
+            line.style.cssText = `position:absolute;left:${start}%;top:41%;width:${gap}%;height:2px;background:rgba(26,51,0,.6`;
             slide.appendChild(line);
             const arrow = document.createElement('div');
-            arrow.style.cssText = `position:absolute;left:${cols[i] - 2.4}%;top:40%;color:rgba(216,236,248,.75);font:10px/1 sans-serif`;
+            arrow.style.cssText = `position:absolute;left:${cols[i] - 2.4}%;top:40%;color:rgba(26,51,0,.75;font:10px/1 sans-serif`;
             arrow.textContent = '▶';
             slide.appendChild(arrow);
           }
@@ -138,23 +138,23 @@
 
     /* 4. 缩放定位：点目录跳转 */
     zoomNav(c) {
-      const cats = [['背景', '#663af3'], ['方案', '#027dea'], ['总结', '#269684']];
+      const cats = [['背景', '#2f6f3a'], ['方案', '#2f6f3a'], ['总结', '#2f6f3a']];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点目录缩略图，跳转到对应章节</div>
         <div class="demo-row" id="znCats" style="gap:10px"></div>
-        <div class="mini-slide" id="znPage"><div style="color:rgba(199,211,234,.4);font:13px var(--font-body)">← 点上面的章节缩略图跳转</div></div>
+        <div class="mini-slide" id="znPage"><div style="color:rgba(26,51,0,.4;font:13px var(--font-body)">← 点上面的章节缩略图跳转</div></div>
       </div>`;
       const row = c.querySelector('#znCats');
       const page = c.querySelector('#znPage');
       cats.forEach(([name, col]) => {
         const t = document.createElement('div');
-        t.style.cssText = `width:30%;aspect-ratio:16/9;background:${col};border-radius:6px;opacity:.85;cursor:pointer;display:grid;place-items:center;color:#fff;font:12px var(--font-body);transition:transform .2s`;
+        t.style.cssText = `width:30%;aspect-ratio:16/9;background:${col};border-radius:6px;opacity:.85;cursor:pointer;display:grid;place-items:center;color:#ffffff;font:12px var(--font-body);transition:transform .2s`;
         t.textContent = name;
         t.onclick = () => {
           page.innerHTML = `<div style="position:absolute;top:20%;left:8%;width:60%;height:12%;background:${col};border-radius:4px"></div>`
-            + `<div style="position:absolute;top:44%;left:8%;width:80%;height:5%;background:rgba(255,255,255,.2);border-radius:3px"></div>`
-            + `<div style="position:absolute;top:56%;left:8%;width:60%;height:5%;background:rgba(255,255,255,.13);border-radius:3px"></div>`
-            + `<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.5)">${name} 章</div>`;
+            + `<div style="position:absolute;top:44%;left:8%;width:80%;height:5%;background:rgba(255,255,255,.2;border-radius:3px"></div>`
+            + `<div style="position:absolute;top:56%;left:8%;width:60%;height:5%;background:rgba(255,255,255,.13;border-radius:3px"></div>`
+            + `<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.5">${name} 章</div>`;
         };
         row.appendChild(t);
       });
@@ -177,7 +177,7 @@
         slide.innerHTML = '';
         for (let i = 0; i < n; i++) {
           const p = document.createElement('div');
-          p.style.cssText = `position:absolute;left:10%;top:${20 + i * 16}%;width:80%;height:12%;background:rgba(159,227,197,.16);border:1px solid rgba(38,150,132,.5);border-radius:6px;display:flex;align-items:center;padding-left:12px;color:#9fe3c5;font:13px var(--font-body)`;
+          p.style.cssText = `position:absolute;left:10%;top:${20 + i * 16}%;width:80%;height:12%;background:rgba(213,245,194,.16;border:1px solid rgba(47,111,58,.5;border-radius:6px;display:flex;align-items:center;padding-left:12px;color:#1a3300;font:13px var(--font-body)`;
           p.textContent = '· ' + items[i];
           slide.appendChild(p);
         }
@@ -189,7 +189,7 @@
 
     /* 6. 节：折叠 / 展开 */
     sectionNav(c) {
-      const secs = [['背景', '#663af3', 3], ['方案', '#027dea', 2], ['总结', '#269684', 1]];
+      const secs = [['背景', '#2f6f3a', 3], ['方案', '#2f6f3a', 2], ['总结', '#2f6f3a', 1]];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点章节标题，折叠 / 展开该章</div>
         <div class="demo-stack" id="snList" style="gap:8px"></div>
@@ -202,7 +202,7 @@
         head.innerHTML = `<span class="sn-caret">▾</span> ${name} <span style="color:var(--color-fog-veil);font:12px var(--font-mono)">${cnt} 页</span>`;
         const body = document.createElement('div');
         body.style.cssText = 'display:flex;gap:6px;margin-top:6px;flex-wrap:wrap';
-        for (let i = 0; i < cnt; i++) { const p = document.createElement('div'); p.style.cssText = 'width:40px;height:26px;background:rgba(255,255,255,.1);border-radius:4px'; body.appendChild(p); }
+        for (let i = 0; i < cnt; i++) { const p = document.createElement('div'); p.style.cssText = 'width:40px;height:26px;background:rgba(255,255,255,.1;border-radius:4px'; body.appendChild(p); }
         let open = true;
         head.onclick = () => { open = !open; body.style.display = open ? 'flex' : 'none'; head.querySelector('.sn-caret').textContent = open ? '▾' : '▸'; };
         grp.appendChild(head); grp.appendChild(body); list.appendChild(grp);
@@ -222,9 +222,9 @@
       </div>`;
       const slide = c.querySelector('#bbSlide');
       function render(op) {
-        if (op === 'sub') slide.innerHTML = `<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;border:14px solid #663af3;border-radius:50%;box-sizing:border-box;opacity:.9"></div>`;
-        else if (op === 'inter') slide.innerHTML = `<div style="position:absolute;left:40%;top:40%;width:20%;height:20%;background:#663af3;border-radius:6px;opacity:.9"></div>`;
-        else slide.innerHTML = `<div style="position:absolute;left:32%;top:32%;width:36%;height:36%;background:#663af3;border-radius:8px;opacity:.85"></div>`;
+        if (op === 'sub') slide.innerHTML = `<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;border:14px solid #2f6f3a;border-radius:50%;box-sizing:border-box;opacity:.9"></div>`;
+        else if (op === 'inter') slide.innerHTML = `<div style="position:absolute;left:40%;top:40%;width:20%;height:20%;background:#2f6f3a;border-radius:6px;opacity:.9"></div>`;
+        else slide.innerHTML = `<div style="position:absolute;left:32%;top:32%;width:36%;height:36%;background:#2f6f3a;border-radius:8px;opacity:.85"></div>`;
       }
       render('sub');
       c.querySelectorAll('[data-op]').forEach(b => b.onclick = () => render(b.dataset.op));
@@ -235,13 +235,13 @@
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点「吸色」从 Logo 取色填文字</div>
         <div class="demo-row">
-          <div style="width:34px;height:34px;border-radius:8px;background:#f59e0b;display:grid;place-items:center;color:#fff;font:600 12px var(--font-body)">Logo</div>
+          <div style="width:34px;height:34px;border-radius:8px;background:#cb5521;display:grid;place-items:center;color:#ffffff;font:600 12px var(--font-body)">Logo</div>
           <button class="demo-btn" data-a="pick" id="edPick">吸色器取色</button>
         </div>
-        <div class="mini-slide" id="edSlide"><div id="edText" style="color:#e6b35a;font:600 18px var(--font-body)">优卡说PPT</div></div>
+        <div class="mini-slide" id="edSlide"><div id="edText" style="color:#1a3300;font:600 18px var(--font-body)">优卡说PPT</div></div>
       </div>`;
       const text = c.querySelector('#edText');
-      c.querySelector('#edPick').onclick = () => { text.style.transition = 'color .4s'; text.style.color = '#f59e0b'; };
+      c.querySelector('#edPick').onclick = () => { text.style.transition = 'color .4s'; text.style.color = '#cb5521'; };
     },
 
     /* 9. 母版批量：开关母版元素 */
@@ -259,7 +259,7 @@
         wrap.innerHTML = '';
         for (let i = 1; i <= 3; i++) {
           const s = document.createElement('div'); s.className = 'mini-slide';
-          s.innerHTML = `<div style="position:absolute;left:6%;top:7%;width:12%;height:9%;background:${on ? '#663af3' : 'rgba(255,255,255,.12)'};border-radius:4px;opacity:${on ? '.9' : '.5'}"></div>`
+          s.innerHTML = `<div style="position:absolute;left:6%;top:7%;width:12%;height:9%;background:${on ? '#2f6f3a' : 'rgba(255,255,255,.12'};border-radius:4px;opacity:${on ? '.9' : '.5'}"></div>`
             + `<div style="position:absolute;right:6%;bottom:7%;font:11px var(--font-mono);color:rgba(216,236,248,${on ? '.6' : '.3'})">${i}</div>`;
           wrap.appendChild(s);
         }
@@ -272,9 +272,9 @@
     /* 10. 高级感封面：三步成型 */
     coverBuild(c) {
       const steps = [
-        () => `<div style="position:absolute;left:10%;top:30%;width:60%;height:2px;background:rgba(216,236,248,.25)"></div>`,
-        () => `<div style="position:absolute;left:10%;top:30%;width:60%;height:2px;background:rgba(216,236,248,.4)"></div><div style="position:absolute;left:10%;top:14%;width:70%;height:14%;background:rgba(216,236,248,.92);border-radius:4px"></div>`,
-        () => `<div style="position:absolute;left:10%;top:14%;width:70%;height:14%;background:rgba(216,236,248,.92);border-radius:4px"></div><div style="position:absolute;left:10%;top:34%;width:50%;height:6%;background:rgba(199,211,234,.6);border-radius:3px"></div><div style="position:absolute;left:10%;top:48%;width:18%;height:12%;background:#663af3;border-radius:6px;opacity:.9"></div><div style="position:absolute;left:10%;top:30%;width:60%;height:2px;background:rgba(216,236,248,.4)"></div>`
+        () => `<div style="position:absolute;left:10%;top:30%;width:60%;height:2px;background:rgba(26,51,0,.25"></div>`,
+        () => `<div style="position:absolute;left:10%;top:30%;width:60%;height:2px;background:rgba(26,51,0,.4"></div><div style="position:absolute;left:10%;top:14%;width:70%;height:14%;background:rgba(26,51,0,.92;border-radius:4px"></div>`,
+        () => `<div style="position:absolute;left:10%;top:14%;width:70%;height:14%;background:rgba(26,51,0,.92;border-radius:4px"></div><div style="position:absolute;left:10%;top:34%;width:50%;height:6%;background:rgba(26,51,0,.6;border-radius:3px"></div><div style="position:absolute;left:10%;top:48%;width:18%;height:12%;background:#2f6f3a;border-radius:6px;opacity:.9"></div><div style="position:absolute;left:10%;top:30%;width:60%;height:2px;background:rgba(26,51,0,.4"></div>`
       ];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点「播放」看封面三步成型</div>
@@ -297,8 +297,8 @@
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">拖动滑杆：方形硬边 → 圆形裁切</div>
         <div class="ba-slider" id="rbSlider">
-          <div class="ba-img before">${slide('<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;background:linear-gradient(135deg,#e4483c,#f59e0b);opacity:.85"></div><div style="position:absolute;left:30%;top:26%;width:40%;height:40%;border:1px solid rgba(255,255,255,.3)"></div>')}</div>
-          <div class="ba-img after">${slide('<div style="position:absolute;left:33%;top:29%;width:34%;height:34%;border-radius:50%;background:linear-gradient(135deg,#663af3,#027dea);opacity:.92"></div>')}</div>
+          <div class="ba-img before">${slide('<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;background:linear-gradient(135deg,#cb5521,#cb5521);opacity:.85"></div><div style="position:absolute;left:30%;top:26%;width:40%;height:40%;border:1px solid rgba(255,255,255,.3"></div>')}</div>
+          <div class="ba-img after">${slide('<div style="position:absolute;left:33%;top:29%;width:34%;height:34%;border-radius:50%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);opacity:.92"></div>')}</div>
           <div class="ba-label before">方形</div><div class="ba-label after">圆形</div>
           <div class="ba-handle"></div>
         </div>
@@ -326,32 +326,32 @@
         return '<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="' + color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + P[name] + '</svg>';
       }
       function text() {
-        slide.innerHTML = '<div style="position:absolute;left:8%;top:14%;width:52%;height:5%;background:rgba(255,255,255,.28);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:22%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:27%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:32%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:44%;width:52%;height:5%;background:rgba(255,255,255,.28);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:52%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:57%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:62%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:74%;width:52%;height:5%;background:rgba(255,255,255,.28);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:82%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:87%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:8%;top:92%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>';
+        slide.innerHTML = '<div style="position:absolute;left:8%;top:14%;width:52%;height:5%;background:rgba(255,255,255,.28;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:22%;width:84%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:27%;width:84%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:32%;width:62%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:44%;width:52%;height:5%;background:rgba(255,255,255,.28;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:52%;width:84%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:57%;width:84%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:62%;width:62%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:74%;width:52%;height:5%;background:rgba(255,255,255,.28;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:82%;width:84%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:87%;width:84%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:8%;top:92%;width:62%;height:3%;background:rgba(255,255,255,.12;border-radius:3px"></div>';
       }
       function icon() {
         const cards = [
-          { c: '#663af3', n: 'target', t: '目标市场', d: '锁定核心用户' },
-          { c: '#027dea', n: 'chart', t: '数据增长', d: '月度 +38%' },
-          { c: '#269684', n: 'rocket', t: '正式发布', d: 'Q3 上线' }
+          { c: '#2f6f3a', n: 'target', t: '目标市场', d: '锁定核心用户' },
+          { c: '#2f6f3a', n: 'chart', t: '数据增长', d: '月度 +38%' },
+          { c: '#2f6f3a', n: 'rocket', t: '正式发布', d: 'Q3 上线' }
         ];
         let h = '';
         cards.forEach((k, i) => {
           const left = 8 + i * 30;
           h += '<div style="position:absolute;left:' + left + '%;top:16%;width:24%;height:52%;background:' + k.c + '22;border:1px solid ' + k.c + ';border-radius:8px"></div>';
           h += '<div style="position:absolute;left:' + (left + 7) + '%;top:22%;width:46px;height:46px">' + svgIcon(k.n, k.c) + '</div>';
-          h += '<div style="position:absolute;left:' + left + '%;top:47%;width:24%;text-align:center;font:600 12px var(--font-body);color:#fff">' + k.t + '</div>';
-          h += '<div style="position:absolute;left:' + left + '%;top:60%;width:24%;text-align:center;font:10px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + k.d + '</div>';
+          h += '<div style="position:absolute;left:' + left + '%;top:47%;width:24%;text-align:center;font:600 12px var(--font-body);color:#ffffff">' + k.t + '</div>';
+          h += '<div style="position:absolute;left:' + left + '%;top:60%;width:24%;text-align:center;font:10px var(--font-body);color:rgba(26,51,0,.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + k.d + '</div>';
         });
         slide.innerHTML = h;
       }
@@ -373,12 +373,12 @@
       const slide = c.querySelector('#efSlide');
       function render(on) {
         slide.innerHTML = on
-          ? '<div style="position:absolute;top:18%;left:8%;width:30%;height:9%;background:#663af3;border-radius:4px;opacity:.9"></div>'
-            + '<div style="position:absolute;top:42%;left:8%;font:600 20px var(--font-body);color:#9fe3c5">优卡说PPT</div>'
-            + '<div style="position:absolute;bottom:10%;left:8%;font:12px var(--font-mono);color:#9fe3c5">✓ 原样显示</div>'
-          : '<div style="position:absolute;top:18%;left:8%;width:30%;height:9%;background:#e4483c;border-radius:4px;opacity:.85"></div>'
-            + '<div style="position:absolute;top:42%;left:8%;font:600 20px var(--font-serif);color:#e6b35a">优卡说PPT</div>'
-            + '<div style="position:absolute;bottom:10%;left:8%;font:12px var(--font-mono);color:#f0a59a">⚠ 变宋体</div>';
+          ? '<div style="position:absolute;top:18%;left:8%;width:30%;height:9%;background:#2f6f3a;border-radius:4px;opacity:.9"></div>'
+            + '<div style="position:absolute;top:42%;left:8%;font:600 20px var(--font-body);color:#1a3300">优卡说PPT</div>'
+            + '<div style="position:absolute;bottom:10%;left:8%;font:12px var(--font-mono);color:#1a3300">✓ 原样显示</div>'
+          : '<div style="position:absolute;top:18%;left:8%;width:30%;height:9%;background:#cb5521;border-radius:4px;opacity:.85"></div>'
+            + '<div style="position:absolute;top:42%;left:8%;font:600 20px var(--font-serif);color:#1a3300">优卡说PPT</div>'
+            + '<div style="position:absolute;bottom:10%;left:8%;font:12px var(--font-mono);color:#1a3300">⚠ 变宋体</div>';
       }
       render(true);
       c.querySelector('#efOn').onclick = () => { c.querySelector('#efOn').classList.add('active'); c.querySelector('#efOff').classList.remove('active'); render(true); };
@@ -400,11 +400,11 @@
       const slide = c.querySelector('#skSlide');
       function render() {
         let h = '';
-        if (state.snap) h += '<div style="position:absolute;left:8%;top:50%;width:84%;height:1px;background:rgba(216,236,248,.5)"></div>';
+        if (state.snap) h += '<div style="position:absolute;left:8%;top:50%;width:84%;height:1px;background:rgba(26,51,0,.5"></div>';
         const cols = state.dup ? [10, 32, 54, 76] : [10, 40, 70];
         const top = state.snap ? 44 : 34;
         for (let i = 0; i < cols.length; i++) {
-          const col = state.fmt ? '#663af3' : 'rgba(255,255,255,.3)';
+          const col = state.fmt ? '#2f6f3a' : 'rgba(255,255,255,.3';
           h += `<div style="position:absolute;left:${cols[i]}%;top:${top}%;width:18%;height:12%;background:${col};border-radius:6px;opacity:${state.fmt ? .85 : .6};transition:all .3s ease"></div>`;
         }
         slide.innerHTML = h;
@@ -429,10 +429,10 @@
       const slide = c.querySelector('#ecSlide');
       function render(hi) {
         slide.innerHTML = hi
-          ? '<div style="position:absolute;left:33%;top:25%;width:34%;height:34%;background:linear-gradient(135deg,#663af3,#027dea);border-radius:4px;opacity:.95"></div>'
-            + '<div style="position:absolute;left:8%;top:70%;font:12px var(--font-mono);color:#9fe3c5">超大型 · 压缩后 12MB</div>'
-          : '<div style="position:absolute;left:30%;top:22%;width:40%;height:40%;background:linear-gradient(135deg,#e4483c,#f59e0b);border-radius:4px;opacity:.5;filter:blur(2px)"></div>'
-            + '<div style="position:absolute;left:8%;top:70%;font:12px var(--font-mono);color:#f0a59a">1280 宽 · 86MB</div>';
+          ? '<div style="position:absolute;left:33%;top:25%;width:34%;height:34%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:4px;opacity:.95"></div>'
+            + '<div style="position:absolute;left:8%;top:70%;font:12px var(--font-mono);color:#1a3300">超大型 · 压缩后 12MB</div>'
+          : '<div style="position:absolute;left:30%;top:22%;width:40%;height:40%;background:linear-gradient(135deg,#cb5521,#cb5521);border-radius:4px;opacity:.5;filter:blur(2px)"></div>'
+            + '<div style="position:absolute;left:8%;top:70%;font:12px var(--font-mono);color:#1a3300">1280 宽 · 86MB</div>';
       }
       render(true);
       c.querySelector('#ecHi').onclick = () => { c.querySelector('#ecHi').classList.add('active'); c.querySelector('#ecLo').classList.remove('active'); render(true); };
@@ -447,7 +447,7 @@
           <button class="demo-btn active" data-a="play" id="moPlay">▶ 播放</button>
           <button class="demo-btn" data-a="reset" id="moReset">⟲ 复位</button>
         </div>
-        <div class="mini-slide" id="moSlide"><div id="moBox" style="position:absolute;left:10%;top:40%;width:26%;height:20%;background:#663af3;border-radius:8px;opacity:.9;transition:all .8s ease;display:grid;place-items:center;color:#fff;font:13px var(--font-body)">标题</div></div>
+        <div class="mini-slide" id="moSlide"><div id="moBox" style="position:absolute;left:10%;top:40%;width:26%;height:20%;background:#2f6f3a;border-radius:8px;opacity:.9;transition:all .8s ease;display:grid;place-items:center;color:#ffffff;font:13px var(--font-body)">标题</div></div>
       </div>`;
       const box = c.querySelector('#moBox');
       c.querySelector('#moPlay').onclick = () => { box.style.left = '55%'; box.style.top = '30%'; box.style.width = '34%'; box.style.height = '26%'; };
@@ -468,11 +468,11 @@
       function render(pretty) {
         const cols = [12, 28, 44, 60];
         const hs = [50, 34, 58, 42];
-        let h = pretty ? '' : '<div style="position:absolute;left:12%;top:18%;width:56%;height:1px;background:rgba(255,255,255,.18)"></div>';
+        let h = pretty ? '' : '<div style="position:absolute;left:12%;top:18%;width:56%;height:1px;background:rgba(255,255,255,.18"></div>';
         for (let i = 0; i < 4; i++) {
-          const col = pretty ? (i === 2 ? '#9fe3c5' : '#663af3') : 'rgba(255,255,255,.3)';
+          const col = pretty ? (i === 2 ? '#2f6f3a' : '#2f6f3a') : 'rgba(255,255,255,.3';
           h += `<div style="position:absolute;left:${cols[i]}%;top:${78 - hs[i]}%;width:8%;height:${hs[i]}%;background:${col};border-radius:3px 3px 0 0;transition:all .35s ease"></div>`;
-          if (pretty) h += `<div style="position:absolute;left:${cols[i]}%;top:${74 - hs[i]}%;width:8%;text-align:center;font:10px var(--font-mono);color:rgba(216,236,248,.8)">${hs[i]}</div>`;
+          if (pretty) h += `<div style="position:absolute;left:${cols[i]}%;top:${74 - hs[i]}%;width:8%;text-align:center;font:10px var(--font-mono);color:rgba(26,51,0,.8">${hs[i]}</div>`;
         }
         slide.innerHTML = h;
       }
@@ -490,8 +490,8 @@
           <button class="demo-btn" data-a="hide" id="trHide">收起</button>
         </div>
         <div class="mini-slide" id="trSlide">
-          <div style="position:absolute;top:20%;left:8%;font:600 15px var(--font-body);color:rgba(216,236,248,.85)">Q：PPT 全称？</div>
-          <div id="trAns" style="position:absolute;top:46%;left:8%;width:84%;height:14%;background:rgba(159,227,197,.16);border:1px solid rgba(38,150,132,.5);border-radius:6px;display:flex;align-items:center;padding-left:12px;color:#9fe3c5;font:13px var(--font-body);opacity:0;transition:opacity .4s">A：PowerPoint</div>
+          <div style="position:absolute;top:20%;left:8%;font:600 15px var(--font-body);color:rgba(26,51,0,.85">Q：PPT 全称？</div>
+          <div id="trAns" style="position:absolute;top:46%;left:8%;width:84%;height:14%;background:rgba(213,245,194,.16;border:1px solid rgba(47,111,58,.5;border-radius:6px;display:flex;align-items:center;padding-left:12px;color:#1a3300;font:13px var(--font-body);opacity:0;transition:opacity .4s">A：PowerPoint</div>
         </div>
       </div>`;
       const ans = c.querySelector('#trAns');
@@ -511,9 +511,9 @@
       </div>`;
       const slide = c.querySelector('#rfSlide');
       function render(swapped) {
-        slide.innerHTML = `<div style="position:absolute;top:22%;left:10%;font:600 20px ${swapped ? 'var(--font-body)' : 'var(--font-serif)'};color:${swapped ? '#9fe3c5' : '#e6b35a'}">优卡说PPT</div>`
-          + `<div style="position:absolute;top:48%;left:10%;width:80%;height:3%;background:rgba(255,255,255,.18);border-radius:3px"></div>`
-          + `<div style="position:absolute;bottom:10%;left:10%;font:12px var(--font-mono);color:${swapped ? '#9fe3c5' : '#f0a59a'}">${swapped ? '18 处已替换 · 全篇统一' : '特殊字体 · 对方易变样'}</div>`;
+        slide.innerHTML = `<div style="position:absolute;top:22%;left:10%;font:600 20px ${swapped ? 'var(--font-body)' : 'var(--font-serif)'};color:${swapped ? '#2f6f3a' : '#1a3300'}">优卡说PPT</div>`
+          + `<div style="position:absolute;top:48%;left:10%;width:80%;height:3%;background:rgba(255,255,255,.18;border-radius:3px"></div>`
+          + `<div style="position:absolute;bottom:10%;left:10%;font:12px var(--font-mono);color:${swapped ? '#2f6f3a' : '#1a3300'}">${swapped ? '18 处已替换 · 全篇统一' : '特殊字体 · 对方易变样'}</div>`;
       }
       render(false);
       c.querySelector('#rfSwap').onclick = () => { render(true); c.querySelector('#rfSwap').classList.add('active'); c.querySelector('#rfReset').classList.remove('active'); };
@@ -523,7 +523,7 @@
     /* 20. 选择窗格：点名选中、眼睛显隐 */
     selectionPane(c) {
       const objs = [['标题文字', true], ['蓝色块', true], ['绿色块', true], ['红底', false]];
-      const cols = { '标题文字': 'rgba(255,255,255,.85)', '蓝色块': '#027dea', '绿色块': '#269684', '红底': '#e4483c' };
+      const cols = { '标题文字': 'rgba(255,255,255,.85', '蓝色块': '#2f6f3a', '绿色块': '#2f6f3a', '红底': '#cb5521' };
       const pos = { '标题文字': 'top:18%;left:10%;width:70%;height:8%', '蓝色块': 'top:40%;left:12%;width:34%;height:20%', '绿色块': 'top:44%;left:52%;width:30%;height:16%', '红底': 'top:30%;left:30%;width:40%;height:36%' };
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点对象名显隐；列表里点名就选中</div>
@@ -538,7 +538,7 @@
           if (!on) return;
           const d = document.createElement('div');
           const isText = name === '标题文字';
-          d.style.cssText = 'position:absolute;' + pos[name] + ';background:' + (isText ? 'rgba(255,255,255,.85)' : cols[name]) + ';border-radius:6px;opacity:.9' + (isText ? ';display:flex;align-items:center;padding-left:8px;color:#0b0d18;font:600 12px var(--font-body);z-index:2' : ';z-index:' + (name === '红底' ? '0' : '1'));
+          d.style.cssText = 'position:absolute;' + pos[name] + ';background:' + (isText ? 'rgba(255,255,255,.85' : cols[name]) + ';border-radius:6px;opacity:.9' + (isText ? ';display:flex;align-items:center;padding-left:8px;color:#1a3300;font:600 12px var(--font-body);z-index:2' : ';z-index:' + (name === '红底' ? '0' : '1'));
           if (isText) d.textContent = name;
           slide.appendChild(d);
         });
@@ -564,7 +564,7 @@
         <div class="mini-slide" id="gdSlide"></div>
       </div>`;
       const slide = c.querySelector('#gdSlide');
-      const items = [['#663af3', 10, 30, 18, 14], ['#9fe3c5', 40, 44, 14, 10], ['#027dea', 66, 28, 11, 11]];
+      const items = [['#2f6f3a', 10, 30, 18, 14], ['#2f6f3a', 40, 44, 14, 10], ['#2f6f3a', 66, 28, 11, 11]];
       function render(grouped) {
         slide.innerHTML = '';
         if (grouped) {
@@ -574,7 +574,7 @@
             minY = Math.min(minY, y); maxY = Math.max(maxY, y + h);
           });
           const pad = 2;
-          slide.innerHTML = '<div style="position:absolute;left:' + (minX - pad) + '%;top:' + (minY - pad) + '%;width:' + (maxX - minX + pad * 2) + '%;height:' + (maxY - minY + pad * 2) + '%;border:2px dashed #663af3;border-radius:10px;opacity:.9"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:' + (minX - pad) + '%;top:' + (minY - pad) + '%;width:' + (maxX - minX + pad * 2) + '%;height:' + (maxY - minY + pad * 2) + '%;border:2px dashed #2f6f3a;border-radius:10px;opacity:.9"></div>';
         }
         items.forEach(([col, x, y, w, h]) => {
           const d = document.createElement('div');
@@ -599,9 +599,9 @@
       </div>`;
       const slide = c.querySelector('#rb2Slide');
       function render(bg) {
-        slide.innerHTML = (bg ? '<div style="position:absolute;left:24%;top:20%;width:52%;height:52%;background:#c9ccd6;border-radius:6px;opacity:.85"></div>' : '')
-          + '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;background:linear-gradient(135deg,#663af3,#027dea);border-radius:50%;opacity:.95"></div>'
-          + '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;border-radius:50%;border:2px solid rgba(216,236,248,.4)"></div>';
+        slide.innerHTML = (bg ? '<div style="position:absolute;left:24%;top:20%;width:52%;height:52%;background:#b6b6b6;border-radius:6px;opacity:.85"></div>' : '')
+          + '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:50%;opacity:.95"></div>'
+          + '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;border-radius:50%;border:2px solid rgba(26,51,0,.4"></div>';
       }
       render(false);
       c.querySelector('#rb2On').onclick = () => { render(false); c.querySelector('#rb2On').classList.add('active'); c.querySelector('#rb2Off').classList.remove('active'); };
@@ -621,16 +621,16 @@
       const slide = c.querySelector('#pvSlide');
       function render(pre) {
         if (pre) {
-          slide.innerHTML = '<div style="position:absolute;left:6%;top:8%;width:56%;height:52%;background:rgba(255,255,255,.06);border:1px solid rgba(216,236,248,.2);border-radius:8px"></div>'
-            + '<div style="position:absolute;left:6%;top:64%;width:56%;height:24%;background:rgba(102,58,243,.16);border:1px solid rgba(102,58,243,.5);border-radius:6px;padding:6px 8px;color:#9fe3c5;font:11px var(--font-body)">备注：本页讲核心结论…</div>'
-            + '<div style="position:absolute;left:64%;top:8%;width:30%;height:38%;background:rgba(2,125,234,.16);border:1px solid rgba(2,125,234,.5);border-radius:6px"></div>'
-            + '<div style="position:absolute;left:64%;top:50%;width:30%;height:14%;background:rgba(255,255,255,.1);border-radius:4px"></div>'
-            + '<div style="position:absolute;left:64%;top:68%;font:10px var(--font-mono);color:rgba(216,236,248,.6)">下一页预览</div>';
+          slide.innerHTML = '<div style="position:absolute;left:6%;top:8%;width:56%;height:52%;background:rgba(255,255,255,.06;border:1px solid rgba(26,51,0,.2;border-radius:8px"></div>'
+            + '<div style="position:absolute;left:6%;top:64%;width:56%;height:24%;background:rgba(47,111,58,.16;border:1px solid rgba(47,111,58,.5;border-radius:6px;padding:6px 8px;color:#1a3300;font:11px var(--font-body)">备注：本页讲核心结论…</div>'
+            + '<div style="position:absolute;left:64%;top:8%;width:30%;height:38%;background:rgba(47,111,58,.16;border:1px solid rgba(47,111,58,.5;border-radius:6px"></div>'
+            + '<div style="position:absolute;left:64%;top:50%;width:30%;height:14%;background:rgba(255,255,255,.1;border-radius:4px"></div>'
+            + '<div style="position:absolute;left:64%;top:68%;font:10px var(--font-mono);color:rgba(26,51,0,.6">下一页预览</div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:18%;top:24%;width:64%;height:8%;background:rgba(216,236,248,.9);border-radius:4px"></div>'
-            + '<div style="position:absolute;left:18%;top:40%;width:64%;height:3%;background:rgba(255,255,255,.2);border-radius:3px"></div>'
-            + '<div style="position:absolute;left:18%;top:48%;width:64%;height:3%;background:rgba(255,255,255,.13);border-radius:3px"></div>'
-            + '<div style="position:absolute;left:18%;top:70%;font:10px var(--font-mono);color:rgba(216,236,248,.4)">观众只看到这一页</div>';
+          slide.innerHTML = '<div style="position:absolute;left:18%;top:24%;width:64%;height:8%;background:rgba(26,51,0,.9;border-radius:4px"></div>'
+            + '<div style="position:absolute;left:18%;top:40%;width:64%;height:3%;background:rgba(255,255,255,.2;border-radius:3px"></div>'
+            + '<div style="position:absolute;left:18%;top:48%;width:64%;height:3%;background:rgba(255,255,255,.13;border-radius:3px"></div>'
+            + '<div style="position:absolute;left:18%;top:70%;font:10px var(--font-mono);color:rgba(26,51,0,.4">观众只看到这一页</div>';
         }
       }
       render(true);
@@ -651,18 +651,18 @@
       const slide = c.querySelector('#ddSlide');
       function render(on) {
         if (!on) {
-          slide.innerHTML = '<div style="position:absolute;left:8%;top:18%;width:50%;height:6%;background:rgba(255,255,255,.3);border-radius:3px"></div>'
-            + '<div style="position:absolute;left:8%;top:28%;width:84%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>'
-            + '<div style="position:absolute;left:8%;top:34%;width:84%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>'
-            + '<div style="position:absolute;left:8%;top:74%;font:11px var(--font-mono);color:rgba(216,236,248,.4)">← 选中文字后右侧出现灵感</div>';
+          slide.innerHTML = '<div style="position:absolute;left:8%;top:18%;width:50%;height:6%;background:rgba(255,255,255,.3;border-radius:3px"></div>'
+            + '<div style="position:absolute;left:8%;top:28%;width:84%;height:3%;background:rgba(255,255,255,.14;border-radius:3px"></div>'
+            + '<div style="position:absolute;left:8%;top:34%;width:84%;height:3%;background:rgba(255,255,255,.14;border-radius:3px"></div>'
+            + '<div style="position:absolute;left:8%;top:74%;font:11px var(--font-mono);color:rgba(26,51,0,.4">← 选中文字后右侧出现灵感</div>';
           return;
         }
-        slide.innerHTML = '<div style="position:absolute;left:6%;top:12%;width:28%;height:30%;background:linear-gradient(135deg,#663af3,#027dea);border-radius:6px;opacity:.9"></div>'
-          + '<div style="position:absolute;left:38%;top:12%;width:28%;height:30%;background:rgba(38,150,132,.3);border:1px solid rgba(38,150,132,.6);border-radius:6px"></div>'
-          + '<div style="position:absolute;left:70%;top:12%;width:24%;height:30%;background:rgba(245,158,11,.3);border:1px solid rgba(245,158,11,.6);border-radius:6px"></div>'
-          + '<div style="position:absolute;left:6%;top:48%;width:88%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:6%;top:56%;width:88%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:6%;top:74%;font:11px var(--font-mono);color:#9fe3c5">3 个 AI 版式 · 点一下套用</div>';
+        slide.innerHTML = '<div style="position:absolute;left:6%;top:12%;width:28%;height:30%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:6px;opacity:.9"></div>'
+          + '<div style="position:absolute;left:38%;top:12%;width:28%;height:30%;background:rgba(47,111,58,.3;border:1px solid rgba(47,111,58,.6;border-radius:6px"></div>'
+          + '<div style="position:absolute;left:70%;top:12%;width:24%;height:30%;background:rgba(203,85,33,.3;border:1px solid rgba(203,85,33,.6;border-radius:6px"></div>'
+          + '<div style="position:absolute;left:6%;top:48%;width:88%;height:3%;background:rgba(255,255,255,.14;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:6%;top:56%;width:88%;height:3%;background:rgba(255,255,255,.14;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:6%;top:74%;font:11px var(--font-mono);color:#1a3300">3 个 AI 版式 · 点一下套用</div>';
       }
       render(false);
       c.querySelector('#ddGen').onclick = () => { render(true); c.querySelector('#ddGen').classList.add('active'); c.querySelector('#ddClear').classList.remove('active'); };
@@ -683,12 +683,12 @@
       const slide = c.querySelector('#ccSlide');
       function render(withLine) {
         let h = '';
-        bars.forEach(([x, h2]) => { h += '<div style="position:absolute;left:' + x + '%;top:' + (78 - h2) + '%;width:8%;height:' + h2 + '%;background:#663af3;border-radius:3px 3px 0 0;transition:all .3s ease"></div>'; });
+        bars.forEach(([x, h2]) => { h += '<div style="position:absolute;left:' + x + '%;top:' + (78 - h2) + '%;width:8%;height:' + h2 + '%;background:#2f6f3a;border-radius:3px 3px 0 0;transition:all .3s ease"></div>'; });
         if (withLine) {
           const pts = bars.map(([x, h2]) => (x + 4) + ',' + (78 - h2 - 2)).join(' ');
-          h += '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polyline points="' + pts + '" fill="none" stroke="#9fe3c5" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
+          h += '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polyline points="' + pts + '" fill="none" stroke="#2f6f3a" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
         }
-        h += '<div style="position:absolute;bottom:6%;left:8%;font:11px var(--font-mono);color:' + (withLine ? '#9fe3c5' : 'rgba(216,236,248,.5)') + '">' + (withLine ? '柱=量 · 线=率' : '仅柱：量') + '</div>';
+        h += '<div style="position:absolute;bottom:6%;left:8%;font:11px var(--font-mono);color:' + (withLine ? '#2f6f3a' : 'rgba(26,51,0,.5') + '">' + (withLine ? '柱=量 · 线=率' : '仅柱：量') + '</div>';
         slide.innerHTML = h;
       }
       render(true);
@@ -712,11 +712,11 @@
         [10, 42, 70].forEach((x, i) => {
           const on = painted[i];
           const d = document.createElement('div');
-          d.style.cssText = 'position:absolute;left:' + x + '%;top:40%;width:18%;height:14%;background:' + (on ? '#663af3' : 'rgba(255,255,255,.3)') + ';border-radius:6px;opacity:.9;' + (on ? 'box-shadow:0 0 0 2px rgba(159,227,197,.6)' : '');
+          d.style.cssText = 'position:absolute;left:' + x + '%;top:40%;width:18%;height:14%;background:' + (on ? '#2f6f3a' : 'rgba(255,255,255,.3') + ';border-radius:6px;opacity:.9;' + (on ? 'box-shadow:0 0 0 2px rgba(213,245,194,.6' : '');
           slide.appendChild(d);
         });
         const note = document.createElement('div');
-        note.style.cssText = 'position:absolute;bottom:8%;left:8%;font:11px var(--font-mono);color:' + ((painted[0] && painted[1] && painted[2]) ? '#9fe3c5' : 'rgba(216,236,248,.5)');
+        note.style.cssText = 'position:absolute;bottom:8%;left:8%;font:11px var(--font-mono);color:' + ((painted[0] && painted[1] && painted[2]) ? '#2f6f3a' : 'rgba(26,51,0,.5');
         note.textContent = (painted[0] && painted[1] && painted[2]) ? '三对象同款动画 · 统一节奏' : '源对象已设动画，待刷';
         slide.appendChild(note);
       }
@@ -738,8 +738,8 @@
       const slide = c.querySelector('#epSlide');
       function render(edited) {
         slide.innerHTML = edited
-          ? '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;left:28%;top:24%;width:44%;height:52%"><path d="M20 12 Q 50 0 80 12 Q 96 50 80 88 Q 50 100 20 88 Q 4 50 20 12 Z" fill="rgba(102,58,243,.5)" stroke="#9fe3c5" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>'
-          : '<div style="position:absolute;left:32%;top:28%;width:36%;height:44%;background:rgba(255,255,255,.2);border:1px dashed rgba(255,255,255,.4)"></div>';
+          ? '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;left:28%;top:24%;width:44%;height:52%"><path d="M20 12 Q 50 0 80 12 Q 96 50 80 88 Q 50 100 20 88 Q 4 50 20 12 Z" fill="rgba(47,111,58,.5" stroke="#2f6f3a" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>'
+          : '<div style="position:absolute;left:32%;top:28%;width:36%;height:44%;background:rgba(255,255,255,.2;border:1px dashed rgba(255,255,255,.4"></div>';
       }
       render(false);
       c.querySelector('#epEdit').onclick = () => { render(true); c.querySelector('#epEdit').classList.add('active'); c.querySelector('#epReset').classList.remove('active'); };
@@ -758,9 +758,9 @@
       </div>`;
       const slide = c.querySelector('#rcSlide');
       function render(state) {
-        if (state === 'trans') slide.innerHTML = '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;background:#663af3;border-radius:50%"></div>';
-        else if (state === 'recolor') slide.innerHTML = '<div style="position:absolute;left:30%;top:28%;width:40%;height:40%;background:#663af3;border-radius:8px"></div><div style="position:absolute;left:38%;top:36%;width:24%;height:24%;background:#fff;border-radius:50%"></div>';
-        else slide.innerHTML = '<div style="position:absolute;left:30%;top:28%;width:40%;height:40%;background:#fff;border-radius:8px"></div><div style="position:absolute;left:38%;top:36%;width:24%;height:24%;background:#e46d4c;border-radius:50%"></div>';
+        if (state === 'trans') slide.innerHTML = '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;background:#2f6f3a;border-radius:50%"></div>';
+        else if (state === 'recolor') slide.innerHTML = '<div style="position:absolute;left:30%;top:28%;width:40%;height:40%;background:#2f6f3a;border-radius:8px"></div><div style="position:absolute;left:38%;top:36%;width:24%;height:24%;background:#ffffff;border-radius:50%"></div>';
+        else slide.innerHTML = '<div style="position:absolute;left:30%;top:28%;width:40%;height:40%;background:#ffffff;border-radius:8px"></div><div style="position:absolute;left:38%;top:36%;width:24%;height:24%;background:#cb5521;border-radius:50%"></div>';
       }
       render('reset');
       function rcActive(id) { ['rcTrans','rcRecolor','rcReset'].forEach(i => c.querySelector('#'+i).classList.toggle('active', i === id)); }
@@ -783,11 +783,11 @@
         slide.innerHTML = '';
         [24, 46, 68].forEach((x, i) => {
           const d = document.createElement('div');
-          d.style.cssText = 'position:absolute;left:' + x + '%;top:38%;width:18%;height:16%;background:' + (painted || i === 0 ? '#663af3' : 'rgba(255,255,255,.25)') + ';border-radius:4px;opacity:.9';
+          d.style.cssText = 'position:absolute;left:' + x + '%;top:38%;width:18%;height:16%;background:' + (painted || i === 0 ? '#2f6f3a' : 'rgba(255,255,255,.25') + ';border-radius:4px;opacity:.9';
           slide.appendChild(d);
         });
         const note = document.createElement('div');
-        note.style.cssText = 'position:absolute;bottom:8%;left:8%;font:11px var(--font-mono);color:' + (painted ? '#9fe3c5' : 'rgba(216,236,248,.5)');
+        note.style.cssText = 'position:absolute;bottom:8%;left:8%;font:11px var(--font-mono);color:' + (painted ? '#2f6f3a' : 'rgba(26,51,0,.5');
         note.textContent = painted ? '全同款 · 一键统一' : '源已调好，待刷';
         slide.appendChild(note);
       }
@@ -809,9 +809,9 @@
         wrap.innerHTML = '';
         for (let i = 1; i <= 3; i++) {
           const s = document.createElement('div'); s.className = 'mini-slide';
-          s.innerHTML = '<div style="position:absolute;top:14%;left:10%;width:' + (used ? '42%' : '30%') + '%;height:9%;background:' + (used ? '#663af3' : 'rgba(255,255,255,.3)') + ';border-radius:4px;opacity:' + (used ? '.85' : '1') + '"></div>' +
-            '<div style="position:absolute;top:32%;left:10%;width:70%;height:5%;background:rgba(255,255,255,.18);border-radius:3px"></div>' +
-            '<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.4)">第' + i + '页</div>';
+          s.innerHTML = '<div style="position:absolute;top:14%;left:10%;width:' + (used ? '42%' : '30%') + '%;height:9%;background:' + (used ? '#2f6f3a' : 'rgba(255,255,255,.3') + ';border-radius:4px;opacity:' + (used ? '.85' : '1') + '"></div>' +
+            '<div style="position:absolute;top:32%;left:10%;width:70%;height:5%;background:rgba(255,255,255,.18;border-radius:3px"></div>' +
+            '<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.4">第' + i + '页</div>';
           wrap.appendChild(s);
         }
       }
@@ -836,11 +836,11 @@
         [12, 40, 68].forEach((x, i) => {
           const on = pick.indexOf(i) >= 0;
           const d = document.createElement('div');
-          d.style.cssText = 'position:absolute;left:' + x + '%;top:26%;width:22%;height:48%;background:' + (on ? '#663af3' : 'rgba(255,255,255,.18)') + ';border-radius:6px;opacity:' + (on ? '.8' : '1');
+          d.style.cssText = 'position:absolute;left:' + x + '%;top:26%;width:22%;height:48%;background:' + (on ? '#2f6f3a' : 'rgba(255,255,255,.18') + ';border-radius:6px;opacity:' + (on ? '.8' : '1');
           slide.appendChild(d);
         });
         const note = document.createElement('div');
-        note.style.cssText = 'position:absolute;bottom:8%;left:8%;font:11px var(--font-mono);color:' + (who ? '#9fe3c5' : 'rgba(216,236,248,.5)');
+        note.style.cssText = 'position:absolute;bottom:8%;left:8%;font:11px var(--font-mono);color:' + (who ? '#2f6f3a' : 'rgba(26,51,0,.5');
         note.textContent = who === 'boss' ? '精简：挑 2 页' : who === 'tech' ? '完整：挑 3 页' : '待选受众';
         slide.appendChild(note);
       }
@@ -859,7 +859,7 @@
         <div class="mini-slide" id="nrSlide"></div>
       </div>`;
       const slide = c.querySelector('#nrSlide');
-      slide.innerHTML = '<div style="position:absolute;left:30%;top:40%;width:40%;height:6%;background:rgba(255,255,255,.18);border-radius:3px"><div id="nrBar" style="width:0%;height:100%;background:#9fe3c5;border-radius:3px"></div></div><div id="nrTxt" style="position:absolute;bottom:30%;left:0;width:100%;text-align:center;font:11px var(--font-mono);color:rgba(216,236,248,.6)">未录制</div>';
+      slide.innerHTML = '<div style="position:absolute;left:30%;top:40%;width:40%;height:6%;background:rgba(255,255,255,.18;border-radius:3px"><div id="nrBar" style="width:0%;height:100%;background:rgba(47,111,58,.25);border-radius:3px"></div></div><div id="nrTxt" style="position:absolute;bottom:30%;left:0;width:100%;text-align:center;font:11px var(--font-mono);color:rgba(26,51,0,.6">未录制</div>';
       const bar = slide.querySelector('#nrBar');
       const txt = slide.querySelector('#nrTxt');
       let t = null, p = 0;
@@ -884,9 +884,9 @@
       const slide = c.querySelector('#tbSlide');
       function render(beauty) {
         if (beauty) {
-          slide.innerHTML = '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden"><div style="position:absolute;left:0;top:0;width:100%;height:25%;background:#663af3;opacity:.85"></div><div style="position:absolute;left:0;top:50%;width:100%;height:25%;background:rgba(159,227,197,.18)"></div></div>';
+          slide.innerHTML = '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:rgba(255,255,255,.05;border-radius:6px;overflow:hidden"><div style="position:absolute;left:0;top:0;width:100%;height:25%;background:#2f6f3a;opacity:.85"></div><div style="position:absolute;left:0;top:50%;width:100%;height:25%;background:rgba(213,245,194,.18"></div></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25)"><div style="position:absolute;left:0;top:25%;width:100%;height:1px;background:rgba(255,255,255,.25)"></div><div style="position:absolute;left:0;top:50%;width:100%;height:1px;background:rgba(255,255,255,.25)"></div><div style="position:absolute;left:0;top:75%;width:100%;height:1px;background:rgba(255,255,255,.25)"></div></div>';
+          slide.innerHTML = '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:rgba(255,255,255,.1;border:1px solid rgba(255,255,255,.25"><div style="position:absolute;left:0;top:25%;width:100%;height:1px;background:rgba(255,255,255,.25"></div><div style="position:absolute;left:0;top:50%;width:100%;height:1px;background:rgba(255,255,255,.25"></div><div style="position:absolute;left:0;top:75%;width:100%;height:1px;background:rgba(255,255,255,.25"></div></div>';
         }
       }
       render(false);
@@ -906,8 +906,8 @@
       const slide = c.querySelector('#cpSlide');
       function render(done) {
         slide.innerHTML = done
-          ? '<div style="position:absolute;left:16%;top:26%;width:26%;height:32%;background:#663af3;border-radius:6px;opacity:.8"></div><div style="position:absolute;left:48%;top:26%;width:26%;height:32%;background:#663af3;border-radius:6px;opacity:.8"></div><div style="position:absolute;left:8%;top:80%;font:11px var(--font-mono);color:#9fe3c5">12MB · 轻快</div>'
-          : '<div style="position:absolute;left:16%;top:26%;width:26%;height:32%;background:rgba(255,255,255,.2);border-radius:6px"></div><div style="position:absolute;left:48%;top:26%;width:26%;height:32%;background:rgba(255,255,255,.2);border-radius:6px"></div><div style="position:absolute;left:8%;top:80%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">50MB · 卡</div>';
+          ? '<div style="position:absolute;left:16%;top:26%;width:26%;height:32%;background:#2f6f3a;border-radius:6px;opacity:.8"></div><div style="position:absolute;left:48%;top:26%;width:26%;height:32%;background:#2f6f3a;border-radius:6px;opacity:.8"></div><div style="position:absolute;left:8%;top:80%;font:11px var(--font-mono);color:#1a3300">12MB · 轻快</div>'
+          : '<div style="position:absolute;left:16%;top:26%;width:26%;height:32%;background:rgba(255,255,255,.2;border-radius:6px"></div><div style="position:absolute;left:48%;top:26%;width:26%;height:32%;background:rgba(255,255,255,.2;border-radius:6px"></div><div style="position:absolute;left:8%;top:80%;font:11px var(--font-mono);color:rgba(26,51,0,.5">50MB · 卡</div>';
       }
       render(false);
       c.querySelector('#cpCompress').onclick = () => { render(true); c.querySelector('#cpCompress').classList.add('active'); c.querySelector('#cpReset').classList.remove('active'); };
@@ -925,9 +925,9 @@
       const slide = c.querySelector('#ovSlide');
       function render(outline) {
         if (outline) {
-          slide.innerHTML = '<div style="position:absolute;left:6%;top:10%;width:34%;height:80%;background:rgba(255,255,255,.07)"></div><div style="position:absolute;left:9%;top:16%;width:28%;height:6%;background:#9fe3c5;border-radius:3px;opacity:.8"></div><div style="position:absolute;left:11%;top:28%;width:24%;height:4%;background:rgba(255,255,255,.25);border-radius:3px"></div><div style="position:absolute;left:11%;top:38%;width:24%;height:4%;background:rgba(255,255,255,.25);border-radius:3px"></div><div style="position:absolute;left:9%;top:54%;width:28%;height:6%;background:#9fe3c5;border-radius:3px;opacity:.8"></div><div style="position:absolute;left:52%;top:18%;width:40%;height:46%;background:rgba(255,255,255,.14);border-radius:6px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:6%;top:10%;width:34%;height:80%;background:rgba(255,255,255,.07"></div><div style="position:absolute;left:9%;top:16%;width:28%;height:6%;background:rgba(47,111,58,.25);border-radius:3px;opacity:.8"></div><div style="position:absolute;left:11%;top:28%;width:24%;height:4%;background:rgba(255,255,255,.25;border-radius:3px"></div><div style="position:absolute;left:11%;top:38%;width:24%;height:4%;background:rgba(255,255,255,.25;border-radius:3px"></div><div style="position:absolute;left:9%;top:54%;width:28%;height:6%;background:rgba(47,111,58,.25);border-radius:3px;opacity:.8"></div><div style="position:absolute;left:52%;top:18%;width:40%;height:46%;background:rgba(255,255,255,.14;border-radius:6px"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:10%;top:18%;width:80%;height:8%;background:rgba(255,255,255,.16);border-radius:4px"></div><div style="position:absolute;left:10%;top:32%;width:80%;height:5%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:10%;top:42%;width:80%;height:5%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:10%;top:52%;width:62%;height:5%;background:rgba(255,255,255,.1);border-radius:4px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:10%;top:18%;width:80%;height:8%;background:rgba(255,255,255,.16;border-radius:4px"></div><div style="position:absolute;left:10%;top:32%;width:80%;height:5%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:10%;top:42%;width:80%;height:5%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:10%;top:52%;width:62%;height:5%;background:rgba(255,255,255,.1;border-radius:4px"></div>';
         }
       }
       render(false);
@@ -946,9 +946,9 @@
       const slide = c.querySelector('#wpSlide');
       function render(gen) {
         if (gen) {
-          slide.innerHTML = '<div style="position:absolute;left:12%;top:16%;width:34%;height:30%;background:rgba(255,255,255,.14);border-radius:6px"></div><div style="position:absolute;left:15%;top:19%;width:28%;height:5%;background:#9fe3c5;border-radius:3px;opacity:.8"></div><div style="position:absolute;left:54%;top:16%;width:34%;height:30%;background:rgba(255,255,255,.14);border-radius:6px"></div><div style="position:absolute;left:57%;top:19%;width:28%;height:5%;background:#9fe3c5;border-radius:3px;opacity:.8"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:12%;top:16%;width:34%;height:30%;background:rgba(255,255,255,.14;border-radius:6px"></div><div style="position:absolute;left:15%;top:19%;width:28%;height:5%;background:rgba(47,111,58,.25);border-radius:3px;opacity:.8"></div><div style="position:absolute;left:54%;top:16%;width:34%;height:30%;background:rgba(255,255,255,.14;border-radius:6px"></div><div style="position:absolute;left:57%;top:19%;width:28%;height:5%;background:rgba(47,111,58,.25);border-radius:3px;opacity:.8"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:10%;top:16%;width:80%;height:9%;background:rgba(255,255,255,.16);border-radius:4px"></div><div style="position:absolute;left:10%;top:30%;width:80%;height:5%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:10%;top:40%;width:80%;height:5%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:10%;top:50%;width:80%;height:5%;background:rgba(255,255,255,.1);border-radius:4px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:10%;top:16%;width:80%;height:9%;background:rgba(255,255,255,.16;border-radius:4px"></div><div style="position:absolute;left:10%;top:30%;width:80%;height:5%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:10%;top:40%;width:80%;height:5%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:10%;top:50%;width:80%;height:5%;background:rgba(255,255,255,.1;border-radius:4px"></div>';
         }
       }
       render(false);
@@ -967,9 +967,9 @@
       const slide = c.querySelector('#lcSlide');
       function render(on) {
         if (on) {
-          slide.innerHTML = '<div style="position:absolute;left:12%;top:14%;width:76%;height:42%;background:rgba(255,255,255,.14);border-radius:6px"></div><div style="position:absolute;left:12%;top:62%;width:76%;height:13%;background:rgba(0,0,0,.55);border-radius:4px"></div><div style="position:absolute;left:16%;top:65%;width:68%;height:7%;background:rgba(255,255,255,.85);border-radius:3px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:12%;top:14%;width:76%;height:42%;background:rgba(255,255,255,.14;border-radius:6px"></div><div style="position:absolute;left:12%;top:62%;width:76%;height:13%;background:rgba(26,51,0,.55;border-radius:4px"></div><div style="position:absolute;left:16%;top:65%;width:68%;height:7%;background:rgba(255,255,255,.85;border-radius:3px"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:12%;top:14%;width:76%;height:42%;background:rgba(255,255,255,.14);border-radius:6px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:12%;top:14%;width:76%;height:42%;background:rgba(255,255,255,.14;border-radius:6px"></div>';
         }
       }
       render(false);
@@ -988,9 +988,9 @@
       const slide = c.querySelector('#csSlide');
       function render(shaped) {
         if (shaped) {
-          slide.innerHTML = '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;border-radius:50%;background:#9fe3c5;opacity:.85"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;border-radius:50%;background:rgba(47,111,58,.25);opacity:.85"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;background:rgba(255,255,255,.16);border-radius:6px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;background:rgba(255,255,255,.16;border-radius:6px"></div>';
         }
       }
       render(false);
@@ -1009,9 +1009,9 @@
       const slide = c.querySelector('#hlSlide');
       function render(linked) {
         if (linked) {
-          slide.innerHTML = '<div style="position:absolute;left:14%;top:18%;width:72%;height:9%;background:rgba(255,255,255,.14);border-radius:4px"></div><div style="position:absolute;left:18%;top:20%;width:40%;height:5%;background:#9fe3c5;border-radius:3px;opacity:.85"></div><div style="position:absolute;left:14%;top:34%;width:72%;height:9%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:14%;top:50%;width:72%;height:9%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:18%;top:72%;width:60%;height:5%;background:#027dea;border-radius:3px;opacity:.7"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:14%;top:18%;width:72%;height:9%;background:rgba(255,255,255,.14;border-radius:4px"></div><div style="position:absolute;left:18%;top:20%;width:40%;height:5%;background:rgba(47,111,58,.25);border-radius:3px;opacity:.85"></div><div style="position:absolute;left:14%;top:34%;width:72%;height:9%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:14%;top:50%;width:72%;height:9%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:18%;top:72%;width:60%;height:5%;background:#2f6f3a;border-radius:3px;opacity:.7"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:14%;top:18%;width:72%;height:9%;background:rgba(255,255,255,.14);border-radius:4px"></div><div style="position:absolute;left:18%;top:20%;width:40%;height:5%;background:rgba(255,255,255,.3);border-radius:3px"></div><div style="position:absolute;left:14%;top:34%;width:72%;height:9%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:14%;top:50%;width:72%;height:9%;background:rgba(255,255,255,.1);border-radius:4px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:14%;top:18%;width:72%;height:9%;background:rgba(255,255,255,.14;border-radius:4px"></div><div style="position:absolute;left:18%;top:20%;width:40%;height:5%;background:rgba(255,255,255,.3;border-radius:3px"></div><div style="position:absolute;left:14%;top:34%;width:72%;height:9%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:14%;top:50%;width:72%;height:9%;background:rgba(255,255,255,.1;border-radius:4px"></div>';
         }
       }
       render(false);
@@ -1030,9 +1030,9 @@
       const slide = c.querySelector('#inkSlide');
       function render(on) {
         if (on) {
-          slide.innerHTML = '<div style="position:absolute;left:20%;top:22%;width:44%;height:30%;background:rgba(255,255,255,.14);border-radius:6px"></div><svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><ellipse cx="42" cy="52" rx="22" ry="14" fill="none" stroke="#e4483c" stroke-width="2.5"/></svg><div style="position:absolute;left:72%;top:28%;width:8px;height:8px;border-radius:50%;background:#e4483c"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:20%;top:22%;width:44%;height:30%;background:rgba(255,255,255,.14;border-radius:6px"></div><svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><ellipse cx="42" cy="52" rx="22" ry="14" fill="none" stroke="#cb5521" stroke-width="2.5"/></svg><div style="position:absolute;left:72%;top:28%;width:8px;height:8px;border-radius:50%;background:#cb5521"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:20%;top:22%;width:44%;height:30%;background:rgba(255,255,255,.14);border-radius:6px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:20%;top:22%;width:44%;height:30%;background:rgba(255,255,255,.14;border-radius:6px"></div>';
         }
       }
       render(false);
@@ -1051,9 +1051,9 @@
       const slide = c.querySelector('#mpSlide');
       function render(path) {
         if (path) {
-          slide.innerHTML = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M12,78 C40,30 60,70 88,22" fill="none" stroke="#663af3" stroke-width="2" stroke-dasharray="4 3"/></svg><div style="position:absolute;left:10%;top:72%;width:9%;height:9%;background:#9fe3c5;border-radius:4px;opacity:.95"></div><div style="position:absolute;left:84%;top:16%;width:9%;height:9%;background:#027dea;border-radius:4px;opacity:.95"></div>';
+          slide.innerHTML = '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M12,78 C40,30 60,70 88,22" fill="none" stroke="#2f6f3a" stroke-width="2" stroke-dasharray="4 3"/></svg><div style="position:absolute;left:10%;top:72%;width:9%;height:9%;background:rgba(47,111,58,.25);border-radius:4px;opacity:.95"></div><div style="position:absolute;left:84%;top:16%;width:9%;height:9%;background:#2f6f3a;border-radius:4px;opacity:.95"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:12%;top:72%;width:9%;height:9%;background:#9fe3c5;border-radius:4px;opacity:.95"></div><div style="position:absolute;left:84%;top:16%;width:9%;height:9%;background:#027dea;border-radius:4px;opacity:.95"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:12%;top:72%;width:9%;height:9%;background:rgba(47,111,58,.25);border-radius:4px;opacity:.95"></div><div style="position:absolute;left:84%;top:16%;width:9%;height:9%;background:#2f6f3a;border-radius:4px;opacity:.95"></div>';
         }
       }
       render(false);
@@ -1072,9 +1072,9 @@
       const slide = c.querySelector('#qatSlide');
       function render(pinned) {
         if (pinned) {
-          slide.innerHTML = '<div style="position:absolute;left:8%;top:22%;width:84%;height:11%;background:rgba(255,255,255,.1);border-radius:4px"></div><div style="position:absolute;left:10%;top:25%;width:9%;height:6%;background:#663af3;border-radius:3px;opacity:.9"></div><div style="position:absolute;left:22%;top:25%;width:9%;height:6%;background:#663af3;border-radius:3px;opacity:.9"></div><div style="position:absolute;left:34%;top:25%;width:9%;height:6%;background:#663af3;border-radius:3px;opacity:.9"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:8%;top:22%;width:84%;height:11%;background:rgba(255,255,255,.1;border-radius:4px"></div><div style="position:absolute;left:10%;top:25%;width:9%;height:6%;background:#2f6f3a;border-radius:3px;opacity:.9"></div><div style="position:absolute;left:22%;top:25%;width:9%;height:6%;background:#2f6f3a;border-radius:3px;opacity:.9"></div><div style="position:absolute;left:34%;top:25%;width:9%;height:6%;background:#2f6f3a;border-radius:3px;opacity:.9"></div>';
         } else {
-          slide.innerHTML = '<div style="position:absolute;left:8%;top:22%;width:84%;height:11%;background:rgba(255,255,255,.1);border-radius:4px"></div>';
+          slide.innerHTML = '<div style="position:absolute;left:8%;top:22%;width:84%;height:11%;background:rgba(255,255,255,.1;border-radius:4px"></div>';
         }
       }
       render(false);
@@ -1084,8 +1084,8 @@
     dataLabel(c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">图表数据标签：开启前后</div><div class="demo-row"><button class="demo-btn active" id="dlOff">无标签</button><button class="demo-btn" id="dlOn">显示标签</button></div><div class="mini-slide" id="dlSlide"></div></div>';
       function render(on) {
-        let h = '<div style="position:absolute;left:10%;top:24%;width:22%;height:48%;background:#663af3;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:38%;top:36%;width:22%;height:36%;background:#663af3;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:66%;top:20%;width:22%;height:52%;background:#663af3;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:6%;top:72%;width:88%;height:1%;background:rgba(255,255,255,.2)"></div>';
-        if (on) h += '<div style="position:absolute;left:11%;top:16%;width:20%;text-align:center;color:#9fe3c5;font:bold 12px var(--font-mono)">120</div><div style="position:absolute;left:39%;top:28%;width:20%;text-align:center;color:#9fe3c5;font:bold 12px var(--font-mono)">85</div><div style="position:absolute;left:67%;top:12%;width:20%;text-align:center;color:#9fe3c5;font:bold 12px var(--font-mono)">198</div>';
+        let h = '<div style="position:absolute;left:10%;top:24%;width:22%;height:48%;background:#2f6f3a;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:38%;top:36%;width:22%;height:36%;background:#2f6f3a;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:66%;top:20%;width:22%;height:52%;background:#2f6f3a;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:6%;top:72%;width:88%;height:1%;background:rgba(255,255,255,.2"></div>';
+        if (on) h += '<div style="position:absolute;left:11%;top:16%;width:20%;text-align:center;color:#1a3300;font:bold 12px var(--font-mono)">120</div><div style="position:absolute;left:39%;top:28%;width:20%;text-align:center;color:#1a3300;font:bold 12px var(--font-mono)">85</div><div style="position:absolute;left:67%;top:12%;width:20%;text-align:center;color:#1a3300;font:bold 12px var(--font-mono)">198</div>';
         document.getElementById('dlSlide').innerHTML = h;
       }
       render(false);
@@ -1097,7 +1097,7 @@
       let tlTimer;
       function play(delays) {
         clearInterval(tlTimer);
-        document.getElementById('tlSlide').innerHTML = '<div style="position:absolute;left:10%;top:30%;width:24%;height:22%;background:#663af3;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl1"></div><div style="position:absolute;left:38%;top:30%;width:24%;height:22%;background:#663af3;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl2"></div><div style="position:absolute;left:66%;top:30%;width:24%;height:22%;background:#663af3;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl3"></div>';
+        document.getElementById('tlSlide').innerHTML = '<div style="position:absolute;left:10%;top:30%;width:24%;height:22%;background:#2f6f3a;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl1"></div><div style="position:absolute;left:38%;top:30%;width:24%;height:22%;background:#2f6f3a;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl2"></div><div style="position:absolute;left:66%;top:30%;width:24%;height:22%;background:#2f6f3a;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl3"></div>';
         let i = 0;
         tlTimer = setInterval(() => {
           if (i >= delays.length) { clearInterval(tlTimer); return; }
@@ -1113,8 +1113,8 @@
     morphForce(c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">!!前缀强制配对 → 方块平滑变圆形</div><div class="demo-row"><button class="demo-btn active" id="mfReset">方块</button><button class="demo-btn" id="mfMorph">平滑变</button></div><div class="mini-slide" id="mfSlide"></div></div>';
       function render(morphed) {
-        if (morphed) document.getElementById('mfSlide').innerHTML = '<div style="position:absolute;left:30%;top:26%;width:40%;height:48%;background:#663af3;border-radius:50%;transition:all .6s cubic-bezier(.4,0,.2,1);opacity:.9"></div><div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">!!shape 配对 → 平滑变</div>';
-        else document.getElementById('mfSlide').innerHTML = '<div style="position:absolute;left:20%;top:30%;width:35%;height:40%;background:#663af3;border-radius:8px;opacity:.9"></div><div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#f0a59a;font:11px var(--font-mono)">不同形状 → 无过渡</div>';
+        if (morphed) document.getElementById('mfSlide').innerHTML = '<div style="position:absolute;left:30%;top:26%;width:40%;height:48%;background:#2f6f3a;border-radius:50%;transition:all .6s cubic-bezier(.4,0,.2,1);opacity:.9"></div><div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">!!shape 配对 → 平滑变</div>';
+        else document.getElementById('mfSlide').innerHTML = '<div style="position:absolute;left:20%;top:30%;width:35%;height:40%;background:#2f6f3a;border-radius:8px;opacity:.9"></div><div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">不同形状 → 无过渡</div>';
       }
       render(false);
       c.querySelector('#mfReset').onclick = () => { render(false); c.querySelector('#mfReset').classList.add('active'); c.querySelector('#mfMorph').classList.remove('active'); };
@@ -1124,9 +1124,9 @@
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">参考线 + 网格吸附</div><div class="demo-row"><button class="demo-btn active" id="gdFree">自由摆放</button><button class="demo-btn" id="gdSnap">吸附对齐</button></div><div class="mini-slide" id="gdSlide"></div></div>';
       function render(snap) {
         if (snap) {
-          document.getElementById('gdSlide').innerHTML = '<div style="position:absolute;left:6%;top:18%;width:88%;height:1%;background:#9fe3c5;opacity:.25"></div><div style="position:absolute;left:6%;top:48%;width:88%;height:1%;background:#9fe3c5;opacity:.25"></div><div style="position:absolute;left:22%;top:6%;width:1%;height:62%;background:#663af3;opacity:.25"></div><div style="position:absolute;left:55%;top:6%;width:1%;height:62%;background:#663af3;opacity:.25"></div><div style="position:absolute;left:24%;top:20%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div><div style="position:absolute;left:24%;top:50%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div><div style="position:absolute;left:57%;top:20%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div><div style="position:absolute;left:57%;top:50%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div>';
+          document.getElementById('gdSlide').innerHTML = '<div style="position:absolute;left:6%;top:18%;width:88%;height:1%;background:rgba(47,111,58,.25);opacity:.25"></div><div style="position:absolute;left:6%;top:48%;width:88%;height:1%;background:rgba(47,111,58,.25);opacity:.25"></div><div style="position:absolute;left:22%;top:6%;width:1%;height:62%;background:#2f6f3a;opacity:.25"></div><div style="position:absolute;left:55%;top:6%;width:1%;height:62%;background:#2f6f3a;opacity:.25"></div><div style="position:absolute;left:24%;top:20%;width:29%;height:14%;background:rgba(255,255,255,.15;border-radius:6px"></div><div style="position:absolute;left:24%;top:50%;width:29%;height:14%;background:rgba(255,255,255,.15;border-radius:6px"></div><div style="position:absolute;left:57%;top:20%;width:29%;height:14%;background:rgba(255,255,255,.15;border-radius:6px"></div><div style="position:absolute;left:57%;top:50%;width:29%;height:14%;background:rgba(255,255,255,.15;border-radius:6px"></div>';
         } else {
-          document.getElementById('gdSlide').innerHTML = '<div style="position:absolute;left:8%;top:22%;width:18%;height:16%;background:rgba(255,255,255,.12);border-radius:6px"></div><div style="position:absolute;left:34%;top:18%;width:18%;height:18%;background:rgba(255,255,255,.12);border-radius:6px"></div><div style="position:absolute;left:60%;top:26%;width:18%;height:14%;background:rgba(255,255,255,.12);border-radius:6px"></div><div style="position:absolute;left:76%;top:38%;width:18%;height:12%;background:rgba(255,255,255,.12);border-radius:6px"></div>';
+          document.getElementById('gdSlide').innerHTML = '<div style="position:absolute;left:8%;top:22%;width:18%;height:16%;background:rgba(255,255,255,.12;border-radius:6px"></div><div style="position:absolute;left:34%;top:18%;width:18%;height:18%;background:rgba(255,255,255,.12;border-radius:6px"></div><div style="position:absolute;left:60%;top:26%;width:18%;height:14%;background:rgba(255,255,255,.12;border-radius:6px"></div><div style="position:absolute;left:76%;top:38%;width:18%;height:12%;background:rgba(255,255,255,.12;border-radius:6px"></div>';
         }
       }
       render(false);
@@ -1140,9 +1140,9 @@
         let h = '';
         pages.forEach((p,i) => {
           const x = 4 + (i % 3) * 32; const y = i < 3 ? 10 : 50;
-          h += '<div style="position:absolute;left:' + x + '%;top:' + y + '%;width:28%;height:28%;background:' + (i === active ? 'rgba(102,58,243,.4)' : 'rgba(255,255,255,.08)') + ';border-radius:8px;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center" data-sz="' + i + '"><span style="color:' + (i === active ? '#fff' : 'rgba(216,236,248,.5)') + ';font:12px var(--font-body)">' + p + '</span></div>';
+          h += '<div style="position:absolute;left:' + x + '%;top:' + y + '%;width:28%;height:28%;background:' + (i === active ? 'rgba(47,111,58,.4' : 'rgba(255,255,255,.08') + ';border-radius:8px;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center" data-sz="' + i + '"><span style="color:' + (i === active ? '#ffffff' : 'rgba(26,51,0,.5') + ';font:12px var(--font-body)">' + p + '</span></div>';
         });
-        h += '<div style="position:absolute;left:4%;top:82%;width:92%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">点击卡片跳转到对应节</div>';
+        h += '<div style="position:absolute;left:4%;top:82%;width:92%;text-align:center;color:#1a3300;font:11px var(--font-mono)">点击卡片跳转到对应节</div>';
         document.getElementById('szSlide').innerHTML = h;
         document.querySelectorAll('#szSlide [data-sz]').forEach(el => {
           el.onclick = () => render(parseInt(el.dataset.sz));
@@ -1153,19 +1153,19 @@
     ['3dModel'](c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">3D 立方体旋转</div><div class="demo-row"><button class="demo-btn active" id="d3Reset">正面</button><button class="demo-btn" id="d3Rotate">旋转</button></div><div class="mini-slide" id="d3Slide"></div></div>';
       const faces = [
-        { points: '50,16 82,36 82,68 50,88 18,68 18,36', fill: 'rgba(102,58,243,.35)', stroke: '#663af3' },
-        { points: '50,16 82,36 50,42 18,36', fill: 'rgba(102,58,243,.55)', stroke: '#663af3' }
+        { points: '50,16 82,36 82,68 50,88 18,68 18,36', fill: 'rgba(47,111,58,.35', stroke: '#2f6f3a' },
+        { points: '50,16 82,36 50,42 18,36', fill: 'rgba(47,111,58,.55', stroke: '#2f6f3a' }
       ];
       function render(rotated) {
         let h = '<svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%">';
         if (rotated) {
-          h += '<polygon points="50,10 88,34 88,66 50,90 12,66 12,34" fill="rgba(102,58,243,.25)" stroke="#663af3" stroke-width="1"/>';
-          h += '<polygon points="50,10 88,34 50,44 12,34" fill="rgba(102,58,243,.5)" stroke="#663af3" stroke-width="1"/>';
-          h += '<line x1="50" y1="44" x2="50" y2="90" stroke="#663af3" stroke-width="1"/>';
-          h += '<text x="82" y="28" fill="#9fe3c5" font-size="10">↻</text>';
+          h += '<polygon points="50,10 88,34 88,66 50,90 12,66 12,34" fill="rgba(47,111,58,.25" stroke="#2f6f3a" stroke-width="1"/>';
+          h += '<polygon points="50,10 88,34 50,44 12,34" fill="rgba(47,111,58,.5" stroke="#2f6f3a" stroke-width="1"/>';
+          h += '<line x1="50" y1="44" x2="50" y2="90" stroke="#2f6f3a" stroke-width="1"/>';
+          h += '<text x="82" y="28" fill="#2f6f3a" font-size="10">↻</text>';
         } else {
-          h += '<polygon points="50,18 80,36 80,68 50,86 20,68 20,36" fill="rgba(102,58,243,.4)" stroke="#663af3" stroke-width="1"/>';
-          h += '<polygon points="50,18 80,36 50,44 20,36" fill="rgba(102,58,243,.6)" stroke="#663af3" stroke-width="1"/>';
+          h += '<polygon points="50,18 80,36 80,68 50,86 20,68 20,36" fill="rgba(47,111,58,.4" stroke="#2f6f3a" stroke-width="1"/>';
+          h += '<polygon points="50,18 80,36 50,44 20,36" fill="rgba(47,111,58,.6" stroke="#2f6f3a" stroke-width="1"/>';
         }
         h += '</svg>';
         document.getElementById('d3Slide').innerHTML = h;
@@ -1177,9 +1177,9 @@
     variants(c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">主题变体：切换配色方案</div><div class="demo-row"><button class="demo-btn active" id="vrPurple">蓝紫</button><button class="demo-btn" id="vrGreen">绿色</button><button class="demo-btn" id="vrOrange">暖橙</button></div><div class="mini-slide" id="vrSlide"></div></div>';
       const schemes = {
-        purple: { bg: '#1a1a4e', accent: '#663af3', accent2: 'rgba(102,58,243,.3)' },
-        green: { bg: '#1a2e1a', accent: '#269684', accent2: 'rgba(38,150,132,.3)' },
-        orange: { bg: '#2e2217', accent: '#e07b4c', accent2: 'rgba(224,123,76,.3)' }
+        purple: { bg: '#2f6f3a', accent: '#2f6f3a', accent2: 'rgba(47,111,58,.3' },
+        green: { bg: '#2f6f3a', accent: '#2f6f3a', accent2: 'rgba(47,111,58,.3' },
+        orange: { bg: '#cb5521', accent: '#cb5521', accent2: 'rgba(203,85,33,.3' }
       };
       function render(scheme) {
         const s = schemes[scheme];
@@ -1193,12 +1193,12 @@
     artisticEffect(c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">艺术效果：图片风格化</div><div class="demo-row"><button class="demo-btn active" id="aeOrig">原图</button><button class="demo-btn" id="aeSketch">素描</button><button class="demo-btn" id="aeBlur">虚化</button></div><div class="mini-slide" id="aeSlide"></div></div>';
       const styles = {
-        orig: 'background:linear-gradient(135deg,rgba(102,58,243,.25),rgba(38,150,132,.15));border-radius:8px',
-        sketch: 'background:linear-gradient(135deg,rgba(102,58,243,.1),rgba(38,150,132,.08));border-radius:8px;filter:grayscale(.6) contrast(1.4)',
-        blur: 'background:linear-gradient(135deg,rgba(102,58,243,.15),rgba(38,150,132,.1));border-radius:8px;filter:blur(3px)'
+        orig: 'background:linear-gradient(135deg,rgba(47,111,58,.25,rgba(47,111,58,.15);border-radius:8px',
+        sketch: 'background:linear-gradient(135deg,rgba(47,111,58,.1,rgba(47,111,58,.08);border-radius:8px;filter:grayscale(.6) contrast(1.4)',
+        blur: 'background:linear-gradient(135deg,rgba(47,111,58,.15,rgba(47,111,58,.1);border-radius:8px;filter:blur(3px)'
       };
       function render(style) {
-        document.getElementById('aeSlide').innerHTML = '<div style="position:absolute;left:20%;top:16%;width:60%;height:60%;' + styles[style] + '"></div>' + (style !== 'orig' ? '<div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">' + (style === 'sketch' ? '铅笔素描' : '虚化效果') + '</div>' : '');
+        document.getElementById('aeSlide').innerHTML = '<div style="position:absolute;left:20%;top:16%;width:60%;height:60%;' + styles[style] + '"></div>' + (style !== 'orig' ? '<div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">' + (style === 'sketch' ? '铅笔素描' : '虚化效果') + '</div>' : '');
       }
       render('orig');
       c.querySelector('#aeOrig').onclick = () => { render('orig'); c.querySelector('#aeOrig').classList.add('active'); c.querySelector('#aeSketch').classList.remove('active'); c.querySelector('#aeBlur').classList.remove('active'); };
@@ -1208,7 +1208,7 @@
     pictureCorrect(c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">图片更正：亮度+对比度</div><div class="demo-row"><button class="demo-btn active" id="pcDark">偏暗</button><button class="demo-btn" id="pcBright">提亮</button></div><div class="mini-slide" id="pcSlide"></div></div>';
       function render(bright) {
-        document.getElementById('pcSlide').innerHTML = '<div style="position:absolute;left:20%;top:16%;width:60%;height:56%;border-radius:8px;background:linear-gradient(135deg,rgba(102,58,243,' + (bright ? '.35' : '.08') + '),rgba(38,150,132,' + (bright ? '.25' : '.04') + '))"></div>' + (bright ? '<div style="position:absolute;left:8%;top:80%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">亮度+30% 对比度+20%</div>' : '');
+        document.getElementById('pcSlide').innerHTML = '<div style="position:absolute;left:20%;top:16%;width:60%;height:56%;border-radius:8px;background:linear-gradient(135deg,rgba(102,58,243,' + (bright ? '.35' : '.08') + '),rgba(38,150,132,' + (bright ? '.25' : '.04') + '))"></div>' + (bright ? '<div style="position:absolute;left:8%;top:80%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">亮度+30% 对比度+20%</div>' : '');
       }
       render(false);
       c.querySelector('#pcDark').onclick = () => { render(false); c.querySelector('#pcDark').classList.add('active'); c.querySelector('#pcBright').classList.remove('active'); };
@@ -1218,9 +1218,9 @@
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">图片样式：一键套框</div><div class="demo-row"><button class="demo-btn active" id="psPlain">朴素</button><button class="demo-btn" id="psStyled">套样式</button></div><div class="mini-slide" id="psSlide"></div></div>';
       function render(styled) {
         if (styled) {
-          document.getElementById('psSlide').innerHTML = '<div style="position:absolute;left:24%;top:12%;width:52%;height:48%;border-radius:10px;background:linear-gradient(135deg,rgba(102,58,243,.15),rgba(38,150,132,.1));box-shadow:0 4px 18px rgba(0,0,0,.4),0 0 0 3px rgba(102,58,243,.25)"></div><div style="position:absolute;left:22%;top:10%;width:52%;height:48%;border-radius:10px;background:linear-gradient(135deg,rgba(102,58,243,.1),rgba(38,150,132,.05));opacity:.4;transform:scaleY(-1);filter:blur(2px)"></div>';
+          document.getElementById('psSlide').innerHTML = '<div style="position:absolute;left:24%;top:12%;width:52%;height:48%;border-radius:10px;background:linear-gradient(135deg,rgba(47,111,58,.15,rgba(47,111,58,.1);box-shadow:0 4px 18px rgba(26,51,0,.4,0 0 0 3px rgba(47,111,58,.25"></div><div style="position:absolute;left:22%;top:10%;width:52%;height:48%;border-radius:10px;background:linear-gradient(135deg,rgba(47,111,58,.1,rgba(47,111,58,.05);opacity:.4;transform:scaleY(-1);filter:blur(2px)"></div>';
         } else {
-          document.getElementById('psSlide').innerHTML = '<div style="position:absolute;left:28%;top:18%;width:44%;height:44%;border-radius:4px;background:rgba(255,255,255,.08)"></div>';
+          document.getElementById('psSlide').innerHTML = '<div style="position:absolute;left:28%;top:18%;width:44%;height:44%;border-radius:4px;background:rgba(255,255,255,.08"></div>';
         }
       }
       render(false);
@@ -1232,9 +1232,9 @@
       function render(changed) {
         const shape = 'border-radius:50%;width:40%;height:44%;position:absolute;left:30%;top:16%';
         if (changed) {
-          document.getElementById('cpSlide').innerHTML = '<div style="' + shape + ';background:linear-gradient(135deg,#269684,rgba(38,150,132,.4));box-shadow:0 0 0 3px rgba(102,58,243,.3),0 4px 18px rgba(0,0,0,.4);border-radius:50%"></div><div style="position:absolute;left:8%;top:72%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">边框+投影保留→换图</div>';
+          document.getElementById('cpSlide').innerHTML = '<div style="' + shape + ';background:linear-gradient(135deg,#2f6f3a,rgba(47,111,58,.4);box-shadow:0 0 0 3px rgba(47,111,58,.3,0 4px 18px rgba(26,51,0,.4;border-radius:50%"></div><div style="position:absolute;left:8%;top:72%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">边框+投影保留→换图</div>';
         } else {
-          document.getElementById('cpSlide').innerHTML = '<div style="' + shape + ';background:linear-gradient(135deg,#663af3,rgba(102,58,243,.4));box-shadow:0 0 0 3px rgba(102,58,243,.3),0 4px 18px rgba(0,0,0,.4);border-radius:50%"></div>';
+          document.getElementById('cpSlide').innerHTML = '<div style="' + shape + ';background:linear-gradient(135deg,#2f6f3a,rgba(47,111,58,.4);box-shadow:0 0 0 3px rgba(47,111,58,.3,0 4px 18px rgba(26,51,0,.4;border-radius:50%"></div>';
         }
       }
       render(false);
@@ -1244,9 +1244,9 @@
     excelLink(c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">Excel→PPT 链接刷新</div><div class="demo-row"><button class="demo-btn active" id="elStatic">静态</button><button class="demo-btn" id="elLinked">链接</button></div><div class="mini-slide" id="elSlide"></div></div>';
       function render(linked) {
-        let h = '<div style="position:absolute;left:8%;top:20%;width:36%;height:40%;background:rgba(255,255,255,.04);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(216,236,248,.4);font:11px var(--font-body)">Excel</div><div style="position:absolute;left:56%;top:20%;width:36%;height:40%;background:rgba(102,58,243,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font:12px var(--font-body)">📊</div>';
-        h += '<div style="position:absolute;left:48%;top:28%;color:' + (linked ? '#9fe3c5' : '#f0a59a') + ';font:bold 18px var(--font-mono)">' + (linked ? '⇄' : '→') + '</div>';
-        if (linked) h += '<div style="position:absolute;left:8%;top:72%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">源数据更新 → 右键刷新</div>';
+        let h = '<div style="position:absolute;left:8%;top:20%;width:36%;height:40%;background:rgba(255,255,255,.04;border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.4;font:11px var(--font-body)">Excel</div><div style="position:absolute;left:56%;top:20%;width:36%;height:40%;background:rgba(47,111,58,.08;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ffffff;font:12px var(--font-body)">📊</div>';
+        h += '<div style="position:absolute;left:48%;top:28%;color:' + (linked ? '#2f6f3a' : '#1a3300') + ';font:bold 18px var(--font-mono)">' + (linked ? '⇄' : '→') + '</div>';
+        if (linked) h += '<div style="position:absolute;left:8%;top:72%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">源数据更新 → 右键刷新</div>';
         document.getElementById('elSlide').innerHTML = h;
       }
       render(false);
@@ -1261,9 +1261,9 @@
         data.forEach((d,i) => {
           const y = 16 + i * 24, w = bars ? Math.round(d.v / 200 * 60) : 0;
           h += '<div style="position:absolute;left:8%;top:' + y + '%;width:84%;height:14%;background:rgba(255,255,255,' + (i % 2 ? '.03' : '.06') + ');border-radius:4px"></div>';
-          h += '<div style="position:absolute;left:10%;top:' + (y + 3) + '%;color:rgba(216,236,248,.5);font:10px var(--font-body)">' + d.n + '</div>';
-          if (bars) h += '<div style="position:absolute;left:24%;top:' + (y + 3) + '%;width:' + w + '%;height:8%;background:#663af3;opacity:.5;border-radius:3px"></div>';
-          h += '<div style="position:absolute;right:8%;top:' + (y + 3) + '%;color:#fff;font:bold 11px var(--font-mono);text-align:right">' + d.v + '</div>';
+          h += '<div style="position:absolute;left:10%;top:' + (y + 3) + '%;color:rgba(26,51,0,.5;font:10px var(--font-body)">' + d.n + '</div>';
+          if (bars) h += '<div style="position:absolute;left:24%;top:' + (y + 3) + '%;width:' + w + '%;height:8%;background:#2f6f3a;opacity:.5;border-radius:3px"></div>';
+          h += '<div style="position:absolute;right:8%;top:' + (y + 3) + '%;color:#ffffff;font:bold 11px var(--font-mono);text-align:right">' + d.v + '</div>';
         });
         document.getElementById('dbSlide').innerHTML = h;
       }
@@ -1274,16 +1274,16 @@
     videoTrim(c) {
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">视频裁剪+书签</div><div class="demo-row"><button class="demo-btn active" id="vtFull">全长</button><button class="demo-btn" id="vtTrim">裁剪</button></div><div class="mini-slide" id="vtSlide"></div></div>';
       function render(trimmed) {
-        let h = '<div style="position:absolute;left:6%;top:30%;width:88%;height:12%;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden">';
+        let h = '<div style="position:absolute;left:6%;top:30%;width:88%;height:12%;background:rgba(255,255,255,.06;border-radius:6px;overflow:hidden">';
         if (trimmed) {
-          h += '<div style="position:absolute;left:30%;top:0;width:28%;height:100%;background:#663af3;opacity:.35;border-radius:3px"></div>';
-          h += '<div style="position:absolute;left:28%;top:50%;width:2px;height:100%;background:#9fe3c5;transform:translateY(-50%)"></div>';
-          h += '<div style="position:absolute;left:56%;top:50%;width:2px;height:100%;background:#9fe3c5;transform:translateY(-50%)"></div>';
+          h += '<div style="position:absolute;left:30%;top:0;width:28%;height:100%;background:#2f6f3a;opacity:.35;border-radius:3px"></div>';
+          h += '<div style="position:absolute;left:28%;top:50%;width:2px;height:100%;background:rgba(47,111,58,.25);transform:translateY(-50%)"></div>';
+          h += '<div style="position:absolute;left:56%;top:50%;width:2px;height:100%;background:rgba(47,111,58,.25);transform:translateY(-50%)"></div>';
         } else {
-          h += '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#663af3;opacity:.2;border-radius:3px"></div>';
+          h += '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#2f6f3a;opacity:.2;border-radius:3px"></div>';
         }
         h += '</div>';
-        if (trimmed) h += '<div style="position:absolute;left:6%;top:50%;width:88%;text-align:center;color:#9fe3c5;font:10px var(--font-mono)">裁剪 30%-58% + 书签</div>';
+        if (trimmed) h += '<div style="position:absolute;left:6%;top:50%;width:88%;text-align:center;color:#1a3300;font:10px var(--font-mono)">裁剪 30%-58% + 书签</div>';
         document.getElementById('vtSlide').innerHTML = h;
       }
       render(false);
@@ -1296,12 +1296,12 @@
         const items = ['图片 Alt 文本','阅读顺序','颜色对比度'];
         let h = '';
         items.forEach((item,i) => {
-          h += '<div style="position:absolute;left:8%;top:' + (16 + i * 24) + '%;width:84%;height:16%;background:rgba(255,255,255,.04);border-radius:6px;display:flex;align-items:center;padding:0 12px">';
-          h += '<span style="color:' + (ok ? '#9fe3c5' : '#f0a59a') + ';font:11px var(--font-body)">' + (ok ? '✓' : '⚠') + ' ' + item + '</span>';
+          h += '<div style="position:absolute;left:8%;top:' + (16 + i * 24) + '%;width:84%;height:16%;background:rgba(255,255,255,.04;border-radius:6px;display:flex;align-items:center;padding:0 12px">';
+          h += '<span style="color:' + (ok ? '#2f6f3a' : '#1a3300') + ';font:11px var(--font-body)">' + (ok ? '✓' : '⚠') + ' ' + item + '</span>';
           h += '</div>';
         });
-        if (ok) h += '<div style="position:absolute;left:8%;top:68%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">检查通过 ✓</div>';
-        else h += '<div style="position:absolute;left:8%;top:68%;width:84%;text-align:center;color:#f0a59a;font:11px var(--font-mono)">3 个问题需修复</div>';
+        if (ok) h += '<div style="position:absolute;left:8%;top:68%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">检查通过 ✓</div>';
+        else h += '<div style="position:absolute;left:8%;top:68%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">3 个问题需修复</div>';
         document.getElementById('acSlide').innerHTML = h;
       }
       render(false);
@@ -1312,9 +1312,9 @@
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">幻灯片重用：从库拉页</div><div class="demo-row"><button class="demo-btn" id="rsNone">空页</button><button class="demo-btn" id="rsImport">导入</button></div><div class="mini-slide" id="rsSlide"></div></div>';
       function render(hasSlide) {
         if (hasSlide) {
-          document.getElementById('rsSlide').innerHTML = '<div style="position:absolute;left:8%;top:12%;width:84%;height:60%;background:rgba(255,255,255,.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px"><div style="width:60%;height:8%;background:rgba(102,58,243,.3);border-radius:3px"></div><div style="width:40%;height:6%;background:rgba(255,255,255,.08);border-radius:3px"></div><div style="width:50%;height:6%;background:rgba(255,255,255,.06);border-radius:3px"></div></div><div style="position:absolute;left:8%;top:80%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">格式原样保留 ✓</div>';
+          document.getElementById('rsSlide').innerHTML = '<div style="position:absolute;left:8%;top:12%;width:84%;height:60%;background:rgba(255,255,255,.06;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px"><div style="width:60%;height:8%;background:rgba(47,111,58,.3;border-radius:3px"></div><div style="width:40%;height:6%;background:rgba(255,255,255,.08;border-radius:3px"></div><div style="width:50%;height:6%;background:rgba(255,255,255,.06;border-radius:3px"></div></div><div style="position:absolute;left:8%;top:80%;width:84%;text-align:center;color:#1a3300;font:11px var(--font-mono)">格式原样保留 ✓</div>';
         } else {
-          document.getElementById('rsSlide').innerHTML = '<div style="position:absolute;left:8%;top:12%;width:84%;height:60%;border:1px dashed rgba(255,255,255,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(216,236,248,.2);font:12px var(--font-body)">空白页</div>';
+          document.getElementById('rsSlide').innerHTML = '<div style="position:absolute;left:8%;top:12%;width:84%;height:60%;border:1px dashed rgba(255,255,255,.08;border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(26,51,0,.2;font:12px var(--font-body)">空白页</div>';
         }
       }
       render(false);
@@ -1325,9 +1325,9 @@
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">墨迹公式：手写→标准公式</div><div class="demo-row"><button class="demo-btn active" id="imType">打字</button><button class="demo-btn" id="imInk">墨迹</button></div><div class="mini-slide" id="imSlide"></div></div>';
       function render(ink) {
         if (ink) {
-          document.getElementById('imSlide').innerHTML = '<div style="position:absolute;left:10%;top:16%;width:80%;height:52%;background:rgba(255,255,180,.05);border-radius:8px"></div><div style="position:absolute;left:16%;top:28%;color:#9fe3c5;font:italic 24px serif">x² + bx + c = 0</div><div style="position:absolute;left:8%;top:78%;width:84%;text-align:center;color:#9fe3c5;font:10px var(--font-mono)">✎ 手写公式 → 标准排版</div>';
+          document.getElementById('imSlide').innerHTML = '<div style="position:absolute;left:10%;top:16%;width:80%;height:52%;background:rgba(251,243,207,.05;border-radius:8px"></div><div style="position:absolute;left:16%;top:28%;color:#1a3300;font:italic 24px serif">x² + bx + c = 0</div><div style="position:absolute;left:8%;top:78%;width:84%;text-align:center;color:#1a3300;font:10px var(--font-mono)">✎ 手写公式 → 标准排版</div>';
         } else {
-          document.getElementById('imSlide').innerHTML = '<div style="position:absolute;left:14%;top:28%;color:rgba(216,236,248,.4);font:14px var(--font-body)">x = (-b ± √(b²-4ac)) / 2a</div>';
+          document.getElementById('imSlide').innerHTML = '<div style="position:absolute;left:14%;top:28%;color:rgba(26,51,0,.4;font:14px var(--font-body)">x = (-b ± √(b²-4ac)) / 2a</div>';
         }
       }
       render(false);
@@ -1338,9 +1338,9 @@
       c.innerHTML = '<div class="demo-stack"><div class="demo-label">地图图表：区域着色</div><div class="demo-row"><button class="demo-btn active" id="mcTable">表格</button><button class="demo-btn" id="mcMap">地图</button></div><div class="mini-slide" id="mcSlide"></div></div>';
       function render(map) {
         if (map) {
-          document.getElementById('mcSlide').innerHTML = '<div style="position:absolute;left:8%;top:8%;width:84%;height:72%;background:rgba(102,58,243,.04);border-radius:8px"><div style="position:absolute;left:10%;top:14%;width:20%;height:20%;background:#663af3;opacity:.7;border-radius:4px"></div><div style="position:absolute;left:34%;top:18%;width:18%;height:18%;background:#663af3;opacity:.5;border-radius:4px"></div><div style="position:absolute;left:56%;top:10%;width:22%;height:22%;background:#663af3;opacity:.6;border-radius:4px"></div><div style="position:absolute;left:14%;top:40%;width:16%;height:18%;background:#663af3;opacity:.3;border-radius:4px"></div><div style="position:absolute;left:38%;top:44%;width:20%;height:16%;background:#663af3;opacity:.4;border-radius:4px"></div><div style="position:absolute;left:62%;top:38%;width:18%;height:20%;background:#663af3;opacity:.7;border-radius:4px"></div></div><div style="position:absolute;left:6%;top:86%;display:flex;gap:8px;align-items:center"><div style="width:16px;height:6px;background:#663af3;opacity:.7;border-radius:2px"></div><div style="width:16px;height:6px;background:#663af3;opacity:.3;border-radius:2px"></div><span style="color:rgba(216,236,248,.4);font:9px var(--font-mono)">深 ← 数值 → 浅</span></div>';
+          document.getElementById('mcSlide').innerHTML = '<div style="position:absolute;left:8%;top:8%;width:84%;height:72%;background:rgba(47,111,58,.04;border-radius:8px"><div style="position:absolute;left:10%;top:14%;width:20%;height:20%;background:#2f6f3a;opacity:.7;border-radius:4px"></div><div style="position:absolute;left:34%;top:18%;width:18%;height:18%;background:#2f6f3a;opacity:.5;border-radius:4px"></div><div style="position:absolute;left:56%;top:10%;width:22%;height:22%;background:#2f6f3a;opacity:.6;border-radius:4px"></div><div style="position:absolute;left:14%;top:40%;width:16%;height:18%;background:#2f6f3a;opacity:.3;border-radius:4px"></div><div style="position:absolute;left:38%;top:44%;width:20%;height:16%;background:#2f6f3a;opacity:.4;border-radius:4px"></div><div style="position:absolute;left:62%;top:38%;width:18%;height:20%;background:#2f6f3a;opacity:.7;border-radius:4px"></div></div><div style="position:absolute;left:6%;top:86%;display:flex;gap:8px;align-items:center"><div style="width:16px;height:6px;background:#2f6f3a;opacity:.7;border-radius:2px"></div><div style="width:16px;height:6px;background:#2f6f3a;opacity:.3;border-radius:2px"></div><span style="color:rgba(26,51,0,.4;font:9px var(--font-mono)">深 ← 数值 → 浅</span></div>';
         } else {
-          document.getElementById('mcSlide').innerHTML = '<div style="position:absolute;left:8%;top:18%;width:84%;height:52%;background:rgba(255,255,255,.04);border-radius:8px"><div style="position:absolute;left:10%;top:14%;color:rgba(216,236,248,.4);font:11px var(--font-body)">地区  |  销量</div><div style="position:absolute;left:10%;top:34%;color:rgba(216,236,248,.3);font:10px var(--font-body)">A区  |  340</div><div style="position:absolute;left:10%;top:52%;color:rgba(216,236,248,.3);font:10px var(--font-body)">B区  |  210</div><div style="position:absolute;left:10%;top:70%;color:rgba(216,236,248,.3);font:10px var(--font-body)">C区  |  580</div></div>';
+          document.getElementById('mcSlide').innerHTML = '<div style="position:absolute;left:8%;top:18%;width:84%;height:52%;background:rgba(255,255,255,.04;border-radius:8px"><div style="position:absolute;left:10%;top:14%;color:rgba(26,51,0,.4;font:11px var(--font-body)">地区  |  销量</div><div style="position:absolute;left:10%;top:34%;color:rgba(26,51,0,.3;font:10px var(--font-body)">A区  |  340</div><div style="position:absolute;left:10%;top:52%;color:rgba(26,51,0,.3;font:10px var(--font-body)">B区  |  210</div><div style="position:absolute;left:10%;top:70%;color:rgba(26,51,0,.3;font:10px var(--font-body)">C区  |  580</div></div>';
         }
       }
       render(false);
@@ -1365,8 +1365,8 @@
         slide.innerHTML =
           '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover">' +
           '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(5,6,15,' + dark + ')"></div>' +
-          '<div style="position:absolute;left:8%;top:38%;width:84%;font:600 ' + (clear ? 22 : 20) + 'px var(--font-body);color:' + (clear ? '#fff' : 'rgba(255,255,255,.5)') + ';text-shadow:' + (clear ? '0 2px 8px rgba(0,0,0,.5)' : 'none') + '">AI 驱动未来</div>' +
-          '<div style="position:absolute;left:8%;top:56%;width:72%;font:13px var(--font-body);color:' + (clear ? 'rgba(255,255,255,.85)' : 'rgba(255,255,255,.42)') + '">让数据自己说话</div>';
+          '<div style="position:absolute;left:8%;top:38%;width:84%;font:600 ' + (clear ? 22 : 20) + 'px var(--font-body);color:' + (clear ? '#ffffff' : 'rgba(255,255,255,.5') + ';text-shadow:' + (clear ? '0 2px 8px rgba(26,51,0,.5' : 'none') + '">AI 驱动未来</div>' +
+          '<div style="position:absolute;left:8%;top:56%;width:72%;font:13px var(--font-body);color:' + (clear ? 'rgba(255,255,255,.85' : 'rgba(255,255,255,.42') + '">让数据自己说话</div>';
       }
       render(0);
       range.oninput = () => render(+range.value);
@@ -1389,16 +1389,16 @@
           const cell = document.createElement('div');
           const isBackup = v === 'backup';
           cell.style.cssText = 'position:absolute;left:' + (4 + i * 23) + '%;top:25%;width:19%;height:50%;border-radius:6px;' +
-            (isBackup && hidden ? 'background:rgba(255,255,255,.04);' : 'background:' + (isBackup ? '#e46d4c' : 'rgba(255,255,255,.10)') + ';');
+            (isBackup && hidden ? 'background:rgba(255,255,255,.04;' : 'background:' + (isBackup ? '#cb5521' : 'rgba(255,255,255,.10') + ';');
           if (isBackup && hidden) {
             const slash = document.createElement('div');
-            slash.style.cssText = 'position:absolute;left:50%;top:-12%;width:2px;height:124%;background:rgba(228,77,60,.85);transform:rotate(35deg)';
+            slash.style.cssText = 'position:absolute;left:50%;top:-12%;width:2px;height:124%;background:rgba(203,85,33,.85;transform:rotate(35deg)';
             cell.appendChild(slash);
-            cell.innerHTML += '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:rgba(159,227,197,.95);font:9px var(--font-body)">隐藏</div>';
+            cell.innerHTML += '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:rgba(213,245,194,.95;font:9px var(--font-body)">隐藏</div>';
           } else if (isBackup) {
-            cell.innerHTML = '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:#fff;font:9px var(--font-body)">备用</div>';
+            cell.innerHTML = '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:#ffffff;font:9px var(--font-body)">备用</div>';
           } else {
-            cell.innerHTML = '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:rgba(216,236,248,.6);font:10px var(--font-body)">' + v + '</div>';
+            cell.innerHTML = '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:rgba(26,51,0,.6;font:10px var(--font-body)">' + v + '</div>';
           }
           slide.appendChild(cell);
         });
@@ -1420,10 +1420,10 @@
       let outlined = false, grad = false;
       function render() {
         if (!outlined) {
-          slide.innerHTML = '<div style="position:absolute;left:18%;top:34%;width:64%;height:32%;border:1px dashed rgba(216,236,248,.5);border-radius:6px;display:grid;place-items:center"><span style="color:rgba(216,236,248,.85);font:600 22px var(--font-body)">标题文字</span></div>';
+          slide.innerHTML = '<div style="position:absolute;left:18%;top:34%;width:64%;height:32%;border:1px dashed rgba(26,51,0,.5;border-radius:6px;display:grid;place-items:center"><span style="color:rgba(26,51,0,.85;font:600 22px var(--font-body)">标题文字</span></div>';
         } else {
-          const col = grad ? 'linear-gradient(90deg,#a78bfa,#663af3)' : '#663af3';
-          slide.innerHTML = '<div style="position:absolute;left:18%;top:34%;width:64%;height:32%;border-radius:6px;display:grid;place-items:center;background:rgba(102,58,243,.08)"><span style="font:600 24px var(--font-body);background:' + col + ';-webkit-background-clip:text;background-clip:text;color:transparent">标题文字</span></div>';
+          const col = grad ? 'linear-gradient(90deg,#2f6f3a,#2f6f3a)' : '#2f6f3a';
+          slide.innerHTML = '<div style="position:absolute;left:18%;top:34%;width:64%;height:32%;border-radius:6px;display:grid;place-items:center;background:rgba(47,111,58,.08"><span style="font:600 24px var(--font-body);background:' + col + ';-webkit-background-clip:text;background-clip:text;color:transparent">标题文字</span></div>';
         }
       }
       render();
@@ -1446,11 +1446,11 @@
       let ungrouped = false;
       function render() {
         if (!ungrouped) {
-          slide.innerHTML = box(10, 32, 22, 16, '#663af3', .85) + box(39, 32, 22, 16, '#663af3', .85) + box(68, 32, 22, 16, '#663af3', .85) +
-            box(30, 40, 9, 2, 'rgba(216,236,248,.5)', 1) + box(59, 40, 9, 2, 'rgba(216,236,248,.5)', 1);
+          slide.innerHTML = box(10, 32, 22, 16, '#2f6f3a', .85) + box(39, 32, 22, 16, '#2f6f3a', .85) + box(68, 32, 22, 16, '#2f6f3a', .85) +
+            box(30, 40, 9, 2, 'rgba(26,51,0,.5', 1) + box(59, 40, 9, 2, 'rgba(26,51,0,.5', 1);
         } else {
-          slide.innerHTML = box(8, 28, 20, 15, '#663af3', .9) + box(42, 42, 20, 15, '#027dea', .9) + box(72, 30, 18, 14, '#269684', .9) +
-            '<div style="position:absolute;left:60%;top:54%;width:16%;height:2px;background:rgba(216,236,248,.4);transform:rotate(-32deg)"></div>';
+          slide.innerHTML = box(8, 28, 20, 15, '#2f6f3a', .9) + box(42, 42, 20, 15, '#2f6f3a', .9) + box(72, 30, 18, 14, '#2f6f3a', .9) +
+            '<div style="position:absolute;left:60%;top:54%;width:16%;height:2px;background:rgba(26,51,0,.4;transform:rotate(-32deg)"></div>';
         }
       }
       render();
@@ -1460,9 +1460,9 @@
     /* 渐变填充做高级背景/文字（真实图片 + 渐变蒙版） */
     gradientFill(c) {
       const presets = [
-        { name: '紫罗兰', c: 'linear-gradient(135deg,#663af3,#9a6bff)' },
-        { name: '蓝紫', c: 'linear-gradient(135deg,#663af3,#027dea)' },
-        { name: '青绿', c: 'linear-gradient(135deg,#027dea,#269684)' }
+        { name: '紫罗兰', c: 'linear-gradient(135deg,#2f6f3a,#2f6f3a)' },
+        { name: '蓝紫', c: 'linear-gradient(135deg,#2f6f3a,#2f6f3a)' },
+        { name: '青绿', c: 'linear-gradient(135deg,#2f6f3a,#2f6f3a)' }
       ];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点预设切换背景渐变（真实图片 + 渐变蒙版）</div>
@@ -1476,7 +1476,7 @@
         const p = presets[cur];
         slide.innerHTML = '<img src="img/tech2.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover">' +
           '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:' + p.c + ';opacity:.6"></div>' +
-          '<div style="position:absolute;left:8%;top:40%;width:84%;font:600 22px var(--font-body);color:#fff">渐变更高级</div>';
+          '<div style="position:absolute;left:8%;top:40%;width:84%;font:600 22px var(--font-body);color:#ffffff">渐变更高级</div>';
       }
       presets.forEach((p, i) => {
         const b = document.createElement('button');
@@ -1499,20 +1499,20 @@
       const btn = c.querySelector('#pbToggle');
       let airy = false;
       function cramped() {
-        return '<div style="position:absolute;left:8%;top:18%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:25%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:32%;width:70%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:39%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:46%;width:60%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:53%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>';
+        return '<div style="position:absolute;left:8%;top:18%;width:84%;height:3%;background:rgba(26,51,0,.5;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:25%;width:84%;height:3%;background:rgba(26,51,0,.5;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:32%;width:70%;height:3%;background:rgba(26,51,0,.5;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:39%;width:84%;height:3%;background:rgba(26,51,0,.5;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:46%;width:60%;height:3%;background:rgba(26,51,0,.5;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:53%;width:84%;height:3%;background:rgba(26,51,0,.5;border-radius:2px"></div>';
       }
       function airyLines() {
-        return '<div style="position:absolute;left:8%;top:14%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:22%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:30%;width:70%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:42%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:50%;width:60%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
-          '<div style="position:absolute;left:8%;top:62%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>';
+        return '<div style="position:absolute;left:8%;top:14%;width:84%;height:3.4%;background:rgba(213,245,194,.7;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:22%;width:84%;height:3.4%;background:rgba(213,245,194,.7;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:30%;width:70%;height:3.4%;background:rgba(213,245,194,.7;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:42%;width:84%;height:3.4%;background:rgba(213,245,194,.7;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:50%;width:60%;height:3.4%;background:rgba(213,245,194,.7;border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:62%;width:84%;height:3.4%;background:rgba(213,245,194,.7;border-radius:2px"></div>';
       }
       slide.innerHTML = cramped();
       btn.onclick = () => { airy = !airy; btn.classList.toggle('active', airy); btn.textContent = airy ? '还原紧凑' : '优化行距'; slide.innerHTML = airy ? airyLines() : cramped(); };
@@ -1528,15 +1528,15 @@
       const slide = c.querySelector('#evSlide');
       const btn = c.querySelector('#evBtn');
       function idle() {
-        slide.innerHTML = '<div style="position:absolute;left:38%;top:22%;width:24%;height:34%;border-radius:6px;background:rgba(228,77,60,.18);border:1px solid rgba(228,77,60,.5);display:grid;place-items:center;color:#f0a59a;font:600 12px var(--font-body)">.pptx</div>';
+        slide.innerHTML = '<div style="position:absolute;left:38%;top:22%;width:24%;height:34%;border-radius:6px;background:rgba(203,85,33,.18;border:1px solid rgba(203,85,33,.5;display:grid;place-items:center;color:#1a3300;font:600 12px var(--font-body)">.pptx</div>';
       }
       function playing() {
-        slide.innerHTML = '<div style="position:absolute;left:34%;top:20%;width:32%;height:38%;border-radius:8px;background:linear-gradient(135deg,#0b1020,#101830);border:1px solid rgba(102,58,243,.5);overflow:hidden"><div style="position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:600 13px var(--font-body)">▶ 自动播放中</div></div>';
+        slide.innerHTML = '<div style="position:absolute;left:34%;top:20%;width:32%;height:38%;border-radius:8px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border:1px solid rgba(47,111,58,.5;overflow:hidden"><div style="position:absolute;inset:0;display:grid;place-items:center;color:#ffffff;font:600 13px var(--font-body)">▶ 自动播放中</div></div>';
       }
       idle();
       btn.onclick = () => {
         btn.disabled = true; btn.textContent = '渲染中…';
-        slide.innerHTML = '<div style="position:absolute;left:20%;top:46%;width:60%;height:8px;border-radius:6px;background:rgba(255,255,255,.1)"><div id="evBar" style="height:100%;width:0;background:#663af3;border-radius:6px;transition:width 1.6s ease"></div></div>';
+        slide.innerHTML = '<div style="position:absolute;left:20%;top:46%;width:60%;height:8px;border-radius:6px;background:rgba(255,255,255,.1"><div id="evBar" style="height:100%;width:0;background:#2f6f3a;border-radius:6px;transition:width 1.6s ease"></div></div>';
         requestAnimationFrame(() => { const bar = slide.querySelector('#evBar'); if (bar) bar.style.width = '100%'; });
         setTimeout(() => { btn.disabled = false; btn.textContent = '重新导出'; playing(); }, 1700);
       };
@@ -1552,11 +1552,11 @@
       const slide = c.querySelector('#bwSlide');
       function show(mode) {
         if (mode === 'black') {
-          slide.innerHTML = '<div style="position:absolute;inset:0;background:#05060f"></div><div style="position:absolute;left:8%;top:44%;width:84%;text-align:center;color:rgba(216,236,248,.7);font:14px var(--font-body)">屏幕已黑 · 任意键继续</div>';
+          slide.innerHTML = '<div style="position:absolute;inset:0;background:#1a3300"></div><div style="position:absolute;left:8%;top:44%;width:84%;text-align:center;color:rgba(26,51,0,.7;font:14px var(--font-body)">屏幕已黑 · 任意键继续</div>';
         } else if (mode === 'white') {
-          slide.innerHTML = '<div style="position:absolute;inset:0;background:#f4f7fb"></div><div style="position:absolute;left:8%;top:44%;width:84%;text-align:center;color:rgba(40,50,70,.7);font:14px var(--font-body)">屏幕已白 · 任意键继续</div>';
+          slide.innerHTML = '<div style="position:absolute;inset:0;background:#f1f1f1"></div><div style="position:absolute;left:8%;top:44%;width:84%;text-align:center;color:rgba(47,111,58,.7;font:14px var(--font-body)">屏幕已白 · 任意键继续</div>';
         } else {
-          slide.innerHTML = '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:.6"><div style="position:absolute;left:8%;top:42%;width:84%;color:#fff;font:600 14px var(--font-body)">放映中 · 画面正常</div>';
+          slide.innerHTML = '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:.6"><div style="position:absolute;left:8%;top:42%;width:84%;color:#ffffff;font:600 14px var(--font-body)">放映中 · 画面正常</div>';
         }
       }
       show('normal');
@@ -1577,11 +1577,11 @@
       let done = false;
       function render() {
         slide.innerHTML = done
-          ? '<div style="position:absolute;left:30%;top:20%;width:18%;height:26%;background:rgba(102,58,243,.18);border:1px solid rgba(102,58,243,.55);border-radius:6px;display:grid;place-items:center;color:#b9a6ff;font:11px var(--font-body)">.docx</div>'
-            + '<div style="position:absolute;left:52%;top:26%;width:30%;height:30%;background:rgba(159,227,197,.1);border:1px dashed rgba(159,227,197,.5);border-radius:4px"></div>'
-            + '<div style="position:absolute;left:52%;top:64%;width:30%;height:3%;background:rgba(159,227,197,.4);border-radius:2px"></div>'
-          : '<div style="position:absolute;left:38%;top:22%;width:24%;height:30%;background:rgba(228,77,60,.15);border:1px solid rgba(228,77,60,.5);border-radius:6px;display:grid;place-items:center;color:#f0a59a;font:11px var(--font-body)">.pptx</div>'
-            + '<div style="position:absolute;left:14%;top:64%;width:72%;height:3%;background:rgba(216,236,248,.3);border-radius:2px"></div>';
+          ? '<div style="position:absolute;left:30%;top:20%;width:18%;height:26%;background:rgba(47,111,58,.18;border:1px solid rgba(47,111,58,.55;border-radius:6px;display:grid;place-items:center;color:#1a3300;font:11px var(--font-body)">.docx</div>'
+            + '<div style="position:absolute;left:52%;top:26%;width:30%;height:30%;background:rgba(213,245,194,.1;border:1px dashed rgba(213,245,194,.5;border-radius:4px"></div>'
+            + '<div style="position:absolute;left:52%;top:64%;width:30%;height:3%;background:rgba(213,245,194,.4;border-radius:2px"></div>'
+          : '<div style="position:absolute;left:38%;top:22%;width:24%;height:30%;background:rgba(203,85,33,.15;border:1px solid rgba(203,85,33,.5;border-radius:6px;display:grid;place-items:center;color:#1a3300;font:11px var(--font-body)">.pptx</div>'
+            + '<div style="position:absolute;left:14%;top:64%;width:72%;height:3%;background:rgba(26,51,0,.3;border-radius:2px"></div>';
       }
       render();
       btn.onclick = () => { done = !done; btn.classList.toggle('active', done); btn.textContent = done ? '还原 PPT' : '导出为 Word'; render(); };
@@ -1599,10 +1599,10 @@
       let crashed = false;
       function render() {
         slide.innerHTML = crashed
-          ? '<div style="position:absolute;left:14%;top:18%;width:72%;height:30%;background:rgba(38,150,132,.1);border:1px solid rgba(38,150,132,.5);border-radius:6px;padding:6px 8px;box-sizing:border-box"><div style="color:#9be3c3;font:11px var(--font-body)">↻ 自动恢复版本</div><div style="color:rgba(216,236,248,.6);font:10px var(--font-body);margin-top:4px">演示文稿1（10分钟前）</div></div>'
-            + '<div style="position:absolute;left:14%;top:54%;width:72%;height:3%;background:rgba(159,227,197,.4);border-radius:2px"></div>'
-          : '<div style="position:absolute;left:36%;top:26%;width:28%;height:24%;border-radius:50%;border:3px solid rgba(228,77,60,.6);display:grid;place-items:center;color:#f0a59a;font:600 18px var(--font-body)">✕</div>'
-            + '<div style="position:absolute;left:24%;top:58%;width:52%;height:3%;background:rgba(216,236,248,.25);border-radius:2px"></div>';
+          ? '<div style="position:absolute;left:14%;top:18%;width:72%;height:30%;background:rgba(47,111,58,.1;border:1px solid rgba(47,111,58,.5;border-radius:6px;padding:6px 8px;box-sizing:border-box"><div style="color:#1a3300;font:11px var(--font-body)">↻ 自动恢复版本</div><div style="color:rgba(26,51,0,.6;font:10px var(--font-body);margin-top:4px">演示文稿1（10分钟前）</div></div>'
+            + '<div style="position:absolute;left:14%;top:54%;width:72%;height:3%;background:rgba(213,245,194,.4;border-radius:2px"></div>'
+          : '<div style="position:absolute;left:36%;top:26%;width:28%;height:24%;border-radius:50%;border:3px solid rgba(203,85,33,.6;display:grid;place-items:center;color:#1a3300;font:600 18px var(--font-body)">✕</div>'
+            + '<div style="position:absolute;left:24%;top:58%;width:52%;height:3%;background:rgba(26,51,0,.25;border-radius:2px"></div>';
       }
       render();
       btn.onclick = () => { crashed = !crashed; btn.classList.toggle('active', crashed); btn.textContent = crashed ? '恢复正常' : '模拟崩溃'; render(); };
@@ -1611,8 +1611,8 @@
     /* 幻灯片尺寸/比例切换 */
     slideSize(c) {
       const ratio = [
-        { n: '4:3', w: 64, h: 78, col: 'rgba(228,77,60,.5)' },
-        { n: '16:9', w: 84, h: 64, col: 'rgba(102,58,243,.6)' }
+        { n: '4:3', w: 64, h: 78, col: 'rgba(203,85,33,.5' },
+        { n: '16:9', w: 84, h: 64, col: 'rgba(47,111,58,.6' }
       ];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点「切换比例」看内容如何自适应铺满</div>
@@ -1625,8 +1625,8 @@
       function render() {
         const r = ratio[wide ? 1 : 0];
         slide.innerHTML = '<div style="position:absolute;left:' + (50 - r.w / 2) + '%;top:' + (50 - r.h / 2) + '%;width:' + r.w + '%;height:' + r.h + '%;background:' + r.col + ';border-radius:4px;opacity:.85"></div>'
-          + '<div style="position:absolute;left:' + (50 - r.w / 2 + 6) + '%;top:' + (50 - r.h / 2 + 6) + '%;width:' + (r.w - 12) + '%;height:6%;background:rgba(255,255,255,.25);border-radius:3px"></div>'
-          + '<div style="position:absolute;left:6%;top:80%;width:88%;text-align:center;color:rgba(216,236,248,.7);font:11px var(--font-body)">' + r.n + ' · ' + (wide ? '最大化铺满' : '投宽屏被裁') + '</div>';
+          + '<div style="position:absolute;left:' + (50 - r.w / 2 + 6) + '%;top:' + (50 - r.h / 2 + 6) + '%;width:' + (r.w - 12) + '%;height:6%;background:rgba(255,255,255,.25;border-radius:3px"></div>'
+          + '<div style="position:absolute;left:6%;top:80%;width:88%;text-align:center;color:rgba(26,51,0,.7;font:11px var(--font-body)">' + r.n + ' · ' + (wide ? '最大化铺满' : '投宽屏被裁') + '</div>';
       }
       render();
       btn.onclick = () => { wide = !wide; btn.classList.toggle('active', wide); btn.textContent = wide ? '切回 4:3' : '切换为 16:9'; render(); };
@@ -1644,8 +1644,8 @@
       let rec = false;
       function render() {
         slide.innerHTML = rec
-          ? '<div style="position:absolute;left:24%;top:22%;width:52%;height:34%;border-radius:8px;background:linear-gradient(135deg,rgba(102,58,243,.2),rgba(2,125,234,.2));border:1px solid rgba(102,58,243,.5);display:grid;place-items:center;color:#b9a6ff;font:11px var(--font-body)">● REC 录制中</div>'
-          : '<div style="position:absolute;left:24%;top:26%;width:52%;height:30%;border-radius:8px;background:rgba(255,255,255,.05);border:1px dashed rgba(216,236,248,.35);display:grid;place-items:center;color:rgba(216,236,248,.6);font:11px var(--font-body)">插入 → 屏幕录制</div>';
+          ? '<div style="position:absolute;left:24%;top:22%;width:52%;height:34%;border-radius:8px;background:linear-gradient(135deg,rgba(47,111,58,.2,rgba(47,111,58,.2);border:1px solid rgba(47,111,58,.5;display:grid;place-items:center;color:#1a3300;font:11px var(--font-body)">● REC 录制中</div>'
+          : '<div style="position:absolute;left:24%;top:26%;width:52%;height:30%;border-radius:8px;background:rgba(255,255,255,.05;border:1px dashed rgba(26,51,0,.35;display:grid;place-items:center;color:rgba(26,51,0,.6;font:11px var(--font-body)">插入 → 屏幕录制</div>';
       }
       render();
       btn.onclick = () => { rec = !rec; btn.classList.toggle('active', rec); btn.textContent = rec ? '停止并落入页面' : '开始录制'; render(); };
@@ -1655,7 +1655,7 @@
     rehearse(c) {
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点「开始排练」模拟逐页计时</div>
-        <div class="demo-row"><button class="demo-btn" id="rhBtn">开始排练</button><span id="rhTime" style="color:rgba(216,236,248,.7);font:12px var(--font-body)">0:00</span></div>
+        <div class="demo-row"><button class="demo-btn" id="rhBtn">开始排练</button><span id="rhTime" style="color:rgba(26,51,0,.7;font:12px var(--font-body)">0:00</span></div>
         <div class="mini-slide" id="rhSlide"></div>
       </div>`;
       const slide = c.querySelector('#rhSlide');
@@ -1664,8 +1664,8 @@
       let t = 0, timer = null;
       function render() {
         tlabel.textContent = '0:' + (t < 10 ? '0' + t : t);
-        slide.innerHTML = '<div style="position:absolute;left:30%;top:30%;width:40%;height:36%;border-radius:50%;background:rgba(38,150,132,.12);border:3px solid rgba(38,150,132,.5);display:grid;place-items:center;color:#9be3c3;font:600 16px var(--font-body)">' + (timer ? '录制中' : '0:' + (t < 10 ? '0' + t : t)) + '</div>'
-          + '<div style="position:absolute;left:14%;top:74%;width:72%;height:4%;background:rgba(159,227,197,.3);border-radius:2px"></div>';
+        slide.innerHTML = '<div style="position:absolute;left:30%;top:30%;width:40%;height:36%;border-radius:50%;background:rgba(47,111,58,.12;border:3px solid rgba(47,111,58,.5;display:grid;place-items:center;color:#1a3300;font:600 16px var(--font-body)">' + (timer ? '录制中' : '0:' + (t < 10 ? '0' + t : t)) + '</div>'
+          + '<div style="position:absolute;left:14%;top:74%;width:72%;height:4%;background:rgba(213,245,194,.3;border-radius:2px"></div>';
       }
       render();
       btn.onclick = () => {
@@ -1698,9 +1698,9 @@
         for (let i = 0; i < n; i++) {
           const cx = 14 + (i % cols) * (76 / cols);
           const cy = 16 + Math.floor(i / cols) * (68 / rows);
-          html += '<div style="position:absolute;left:' + cx + '%;top:' + cy + '%;width:' + (76 / cols - 3) + '%;height:' + (68 / rows - 3) + '%;border:1px solid rgba(159,227,197,.5);border-radius:3px"></div>';
+          html += '<div style="position:absolute;left:' + cx + '%;top:' + cy + '%;width:' + (76 / cols - 3) + '%;height:' + (68 / rows - 3) + '%;border:1px solid rgba(213,245,194,.5;border-radius:3px"></div>';
         }
-        slide.innerHTML = html + '<div style="position:absolute;left:8%;top:88%;width:84%;text-align:center;color:rgba(159,227,197,.85);font:11px var(--font-body)">一页 ' + n + ' 张 · 带框线</div>';
+        slide.innerHTML = html + '<div style="position:absolute;left:8%;top:88%;width:84%;text-align:center;color:rgba(213,245,194,.85;font:11px var(--font-body)">一页 ' + n + ' 张 · 带框线</div>';
       }
       per.forEach((p, i) => {
         const b = document.createElement('button');
@@ -1715,10 +1715,10 @@
     /* 形状效果：阴影/发光/映像 */
     shapeEffect(c) {
       const fx = [
-        { n: '无', s: 'background:#663af3' },
-        { n: '阴影', s: 'background:linear-gradient(135deg,#7c5cff,#663af3);box-shadow:0 14px 30px rgba(102,58,243,.45)' },
-        { n: '发光', s: 'background:linear-gradient(135deg,#7c5cff,#663af3);box-shadow:0 0 22px rgba(124,92,255,.75)' },
-        { n: '映像', s: 'background:linear-gradient(135deg,#7c5cff,#663af3)' }
+        { n: '无', s: 'background:#2f6f3a' },
+        { n: '阴影', s: 'background:linear-gradient(135deg,#2f6f3a,#2f6f3a);box-shadow:0 14px 30px rgba(47,111,58,.45' },
+        { n: '发光', s: 'background:linear-gradient(135deg,#2f6f3a,#2f6f3a);box-shadow:0 0 22px rgba(47,111,58,.75' },
+        { n: '映像', s: 'background:linear-gradient(135deg,#2f6f3a,#2f6f3a)' }
       ];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点效果按钮，看色块质感变化</div>
@@ -1731,8 +1731,8 @@
       function render() {
         const f = fx[cur];
         slide.innerHTML = '<div style="position:absolute;left:34%;top:24%;width:32%;height:34%;border-radius:8px;' + f.s + '"></div>'
-          + (f.n === '映像' ? '<div style="position:absolute;left:34%;top:60%;width:32%;height:8%;background:linear-gradient(180deg,rgba(124,92,255,.4),transparent);border-radius:0 0 8px 8px;filter:blur(2px)"></div>' : '')
-          + '<div style="position:absolute;left:8%;top:86%;width:84%;text-align:center;color:rgba(216,236,248,.7);font:11px var(--font-body)">效果：' + f.n + '</div>';
+          + (f.n === '映像' ? '<div style="position:absolute;left:34%;top:60%;width:32%;height:8%;background:linear-gradient(180deg,rgba(47,111,58,.4,transparent);border-radius:0 0 8px 8px;filter:blur(2px)"></div>' : '')
+          + '<div style="position:absolute;left:8%;top:86%;width:84%;text-align:center;color:rgba(26,51,0,.7;font:11px var(--font-body)">效果：' + f.n + '</div>';
       }
       fx.forEach((f, i) => {
         const b = document.createElement('button');
@@ -1756,8 +1756,8 @@
       let vert = false;
       function render() {
         slide.innerHTML = vert
-          ? '<div style="position:absolute;left:42%;top:16%;width:16%;height:64%;writing-mode:vertical-rl;text-orientation:upright;display:grid;place-items:center;color:#b9a6ff;font:600 22px var(--font-body);letter-spacing:4px">年度盛典</div><div style="position:absolute;left:40%;top:16%;width:2px;height:64%;background:rgba(185,166,255,.6)"></div>'
-          : '<div style="position:absolute;left:20%;top:34%;width:60%;text-align:center;color:rgba(216,236,248,.8);font:600 20px var(--font-body)">年度盛典</div><div style="position:absolute;left:20%;top:54%;width:60%;height:3%;background:rgba(216,236,248,.3);border-radius:2px"></div>';
+          ? '<div style="position:absolute;left:42%;top:16%;width:16%;height:64%;writing-mode:vertical-rl;text-orientation:upright;display:grid;place-items:center;color:#1a3300;font:600 22px var(--font-body);letter-spacing:4px">年度盛典</div><div style="position:absolute;left:40%;top:16%;width:2px;height:64%;background:rgba(26,51,0,.6"></div>'
+          : '<div style="position:absolute;left:20%;top:34%;width:60%;text-align:center;color:rgba(26,51,0,.8;font:600 20px var(--font-body)">年度盛典</div><div style="position:absolute;left:20%;top:54%;width:60%;height:3%;background:rgba(26,51,0,.3;border-radius:2px"></div>';
       }
       render();
       btn.onclick = () => { vert = !vert; btn.classList.toggle('active', vert); btn.textContent = vert ? '横排' : '竖排'; render(); };
@@ -1766,10 +1766,10 @@
     /* 自定义项目符号 */
     customBullet(c) {
       const syms = [
-        { n: '默认圆点', s: '●', col: 'rgba(216,236,248,.5)' },
-        { n: '品牌方块', s: '■', col: 'rgba(102,58,243,.9)' },
-        { n: '勾选', s: '✓', col: 'rgba(38,150,132,.9)' },
-        { n: '箭头', s: '➜', col: 'rgba(2,125,234,.9)' }
+        { n: '默认圆点', s: '●', col: 'rgba(26,51,0,.5' },
+        { n: '品牌方块', s: '■', col: 'rgba(47,111,58,.9' },
+        { n: '勾选', s: '✓', col: 'rgba(47,111,58,.9' },
+        { n: '箭头', s: '➜', col: 'rgba(47,111,58,.9' }
       ];
       c.innerHTML = `<div class="demo-stack">
         <div class="demo-label">点符号按钮，换列表项目符号</div>
@@ -1785,7 +1785,7 @@
         const ys = [22, 40, 58];
         ys.forEach(y => {
           html += '<div style="position:absolute;left:18%;top:' + y + '%;width:6%;text-align:center;color:' + f.col + ';font:14px var(--font-body)">' + f.s + '</div>'
-            + '<div style="position:absolute;left:28%;top:' + (y + 1) + '%;width:50%;height:3%;background:rgba(216,236,248,.3);border-radius:2px"></div>';
+            + '<div style="position:absolute;left:28%;top:' + (y + 1) + '%;width:50%;height:3%;background:rgba(26,51,0,.3;border-radius:2px"></div>';
         });
         slide.innerHTML = html;
       }
@@ -1814,9 +1814,9 @@
         let html = '';
         for (let i = 0; i < count; i++) {
           const x = 16 + i * 22;
-          html += '<div style="position:absolute;left:' + x + '%;top:30%;width:18%;height:30%;border-radius:6px;' + (set ? 'background:linear-gradient(135deg,#7c5cff,#663af3);box-shadow:0 8px 18px rgba(102,58,243,.4)' : 'border:1px solid rgba(216,236,248,.4)') + '"></div>';
+          html += '<div style="position:absolute;left:' + x + '%;top:30%;width:18%;height:30%;border-radius:6px;' + (set ? 'background:linear-gradient(135deg,#2f6f3a,#2f6f3a);box-shadow:0 8px 18px rgba(47,111,58,.4' : 'border:1px solid rgba(26,51,0,.4') + '"></div>';
         }
-        slide.innerHTML = html + '<div style="position:absolute;left:10%;top:74%;width:80%;text-align:center;color:rgba(216,236,248,.7);font:11px var(--font-body)">' + (set ? '已设为默认 · 新形状自动套用' : '未设默认 · 插入是空心框') + '</div>';
+        slide.innerHTML = html + '<div style="position:absolute;left:10%;top:74%;width:80%;text-align:center;color:rgba(26,51,0,.7;font:11px var(--font-body)">' + (set ? '已设为默认 · 新形状自动套用' : '未设默认 · 插入是空心框') + '</div>';
       }
       render();
       setBtn.onclick = () => { set = !set; setBtn.classList.toggle('active', set); setBtn.textContent = set ? '取消默认' : '设为默认形状'; render(); };

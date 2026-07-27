@@ -39,19 +39,19 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "每页手动改色改字，风格越改越乱、对不齐。",
       visual: slide(
-        r(8, 16, 50, 9, "#e4483c", .85) + r(8, 32, 70, 5, "rgba(255,255,255,.18)") +
-        r(8, 52, 84, 4, "rgba(255,255,255,.12)") +
-        '<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.4)">第 1 页 · 红</div>' +
+        r(8, 16, 50, 9, "#cb5521", .85) + r(8, 32, 70, 5, "#777777)") +
+        r(8, 52, 84, 4, "#777777)") +
+        '<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:#777777)">第 1 页 · 红</div>' +
         '<div style="position:absolute;top:40%;right:6%;width:30%;height:30%;background:#22c55e;border-radius:6px;opacity:.8"></div>'
       )
     },
     after: {
       tag: "改后", desc: "改主题/母版一次，全篇同步换装。",
       visual: slide(
-        r(8, 16, 50, 9, "#663af3", .9) + r(8, 32, 70, 5, "rgba(255,255,255,.2)") +
-        r(8, 52, 84, 4, "rgba(255,255,255,.13)") +
-        '<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:rgba(255,255,255,.4)">第 1 页 · 紫</div>' +
-        '<div style="position:absolute;top:40%;right:6%;width:30%;height:30%;background:#663af3;border-radius:6px;opacity:.85"></div>'
+        r(8, 16, 50, 9, "#2f6f3a", .9) + r(8, 32, 70, 5, "#777777)") +
+        r(8, 52, 84, 4, "#777777)") +
+        '<div style="position:absolute;bottom:8%;right:8%;font:11px var(--font-mono);color:#777777)">第 1 页 · 紫</div>' +
+        '<div style="position:absolute;top:40%;right:6%;width:30%;height:30%;background:#2f6f3a;border-radius:6px;opacity:.85"></div>'
       )
     },
     steps: [
@@ -71,9 +71,9 @@ const TECHNIQUES = [
       tag: "改前", desc: "三个按钮高低不齐，靠肉眼拖永远差一点点。",
       visual: slide(
         '<div style="position:absolute;left:6%;top:42%;width:88%;height:0;border-top:1px dashed rgba(216,236,248,.45)"></div>' +
-        '<div style="position:absolute;left:10%;top:22%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>' +
-        '<div style="position:absolute;left:40%;top:46%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>' +
-        '<div style="position:absolute;left:70%;top:30%;width:22%;height:14%;background:#e4483c;border-radius:6px;opacity:.8"></div>'
+        '<div style="position:absolute;left:10%;top:22%;width:22%;height:14%;background:#cb5521;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:40%;top:46%;width:22%;height:14%;background:#cb5521;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:70%;top:30%;width:22%;height:14%;background:#cb5521;border-radius:6px;opacity:.8"></div>'
       )
     },
     after: {
@@ -81,9 +81,9 @@ const TECHNIQUES = [
       visual: slide(
         '<div style="position:absolute;left:6%;top:42%;width:88%;height:0;border-top:1px dashed rgba(160,120,255,.95)"></div>' +
         '<div style="position:absolute;left:6%;top:41%;width:88%;height:2px;background:rgba(160,120,255,.35);filter:blur(1px)"></div>' +
-        '<div style="position:absolute;left:10%;top:42%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>' +
-        '<div style="position:absolute;left:40%;top:42%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>' +
-        '<div style="position:absolute;left:70%;top:42%;width:22%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>'
+        '<div style="position:absolute;left:10%;top:42%;width:22%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>' +
+        '<div style="position:absolute;left:40%;top:42%;width:22%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>' +
+        '<div style="position:absolute;left:70%;top:42%;width:22%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(160,120,255,.5)"></div>'
       )
     },
     steps: [
@@ -102,9 +102,9 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "手画几个框加连线，歪歪扭扭还对不齐。",
       visual: slide(
-        '<div style="position:absolute;left:7%;top:22%;width:20%;height:14%;background:#e4483c;border-radius:5px;opacity:.7;transform:rotate(-4deg)"></div>' +
-        '<div style="position:absolute;left:47%;top:54%;width:21%;height:13%;background:#e4483c;border-radius:5px;opacity:.7;transform:rotate(3deg)"></div>' +
-        '<div style="position:absolute;left:81%;top:18%;width:18%;height:15%;background:#e4483c;border-radius:5px;opacity:.7;transform:rotate(-2deg)"></div>' +
+        '<div style="position:absolute;left:7%;top:22%;width:20%;height:14%;background:#cb5521;border-radius:5px;opacity:.7;transform:rotate(-4deg)"></div>' +
+        '<div style="position:absolute;left:47%;top:54%;width:21%;height:13%;background:#cb5521;border-radius:5px;opacity:.7;transform:rotate(3deg)"></div>' +
+        '<div style="position:absolute;left:81%;top:18%;width:18%;height:15%;background:#cb5521;border-radius:5px;opacity:.7;transform:rotate(-2deg)"></div>' +
         '<div style="position:absolute;left:25%;top:30%;width:2px;height:24%;background:rgba(228,120,110,.55);transform:rotate(36deg)"></div>' +
         '<div style="position:absolute;left:66%;top:50%;width:2px;height:22%;background:rgba(228,120,110,.55);transform:rotate(-42deg)"></div>'
       )
@@ -112,9 +112,9 @@ const TECHNIQUES = [
     after: {
       tag: "改后", desc: "SmartArt 自动排版，统一又整齐。",
       visual: slide(
-        '<div style="position:absolute;left:6%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body)">开始</div>' +
-        '<div style="position:absolute;left:39%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body)">处理</div>' +
-        '<div style="position:absolute;left:72%;top:34%;width:22%;height:16%;background:#663af3;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#fff;font:13px var(--font-body)">完成</div>' +
+        '<div style="position:absolute;left:6%;top:34%;width:22%;height:16%;background:#2f6f3a;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#3a8a8a;font:13px var(--font-body)">开始</div>' +
+        '<div style="position:absolute;left:39%;top:34%;width:22%;height:16%;background:#2f6f3a;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#3a8a8a;font:13px var(--font-body)">处理</div>' +
+        '<div style="position:absolute;left:72%;top:34%;width:22%;height:16%;background:#2f6f3a;border-radius:6px;opacity:.9;display:grid;place-items:center;color:#3a8a8a;font:13px var(--font-body)">完成</div>' +
         '<div style="position:absolute;left:28%;top:41%;width:11%;height:2px;background:rgba(216,236,248,.6)"></div>' +
         '<div style="position:absolute;left:36.6%;top:40%;color:rgba(216,236,248,.75);font:10px/1 sans-serif">▶</div>' +
         '<div style="position:absolute;left:61%;top:41%;width:11%;height:2px;background:rgba(216,236,248,.6)"></div>' +
@@ -140,17 +140,17 @@ const TECHNIQUES = [
       tag: "改前", desc: "普通文字目录，不能点，只能顺序翻。",
       visual: slide(
         txt(10, 24, 70, "目录", 22, "rgba(216,236,248,.85)", true) +
-        txt(12, 44, 70, "1. 背景", 14, "rgba(255,255,255,.5)") +
-        txt(12, 56, 70, "2. 方案", 14, "rgba(255,255,255,.5)") +
-        txt(12, 68, 70, "3. 总结", 14, "rgba(255,255,255,.5)")
+        txt(12, 44, 70, "1. 背景", 14, "#777777)") +
+        txt(12, 56, 70, "2. 方案", 14, "#777777)") +
+        txt(12, 68, 70, "3. 总结", 14, "#777777)")
       )
     },
     after: {
       tag: "改后", desc: "目录页带缩略图，点哪跳哪。",
       visual: slide(
         txt(10, 14, 70, "目录", 18, "rgba(216,236,248,.85)", true) +
-        '<div style="position:absolute;left:12%;top:40%;width:22%;height:26%;background:#663af3;border-radius:6px;opacity:.8"></div>' +
-        '<div style="position:absolute;left:39%;top:40%;width:22%;height:26%;background:#027dea;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:12%;top:40%;width:22%;height:26%;background:#2f6f3a;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:39%;top:40%;width:22%;height:26%;background:#cb5521;border-radius:6px;opacity:.8"></div>' +
         '<div style="position:absolute;left:66%;top:40%;width:22%;height:26%;background:#269684;border-radius:6px;opacity:.8"></div>'
       )
     },
@@ -170,9 +170,9 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "所有要点同时出现，一打开就糊成一团。",
       visual: slide(
-        txt(10, 22, 80, "· 要点一 · 要点二", 15, "rgba(255,255,255,.7)") +
-        txt(10, 40, 80, "· 要点三 · 要点四", 15, "rgba(255,255,255,.7)") +
-        txt(10, 58, 80, "· 要点五 · 要点六", 15, "rgba(255,255,255,.7)")
+        txt(10, 22, 80, "· 要点一 · 要点二", 15, "#777777)") +
+        txt(10, 40, 80, "· 要点三 · 要点四", 15, "#777777)") +
+        txt(10, 58, 80, "· 要点五 · 要点六", 15, "#777777)")
       )
     },
     after: {
@@ -180,7 +180,7 @@ const TECHNIQUES = [
       visual: slide(
         txt(10, 22, 80, "· 要点一", 15, "#9fe3c5") +
         txt(10, 40, 80, "· 要点二", 15, "#9fe3c5") +
-        '<div style="position:absolute;left:10%;top:56%;width:6%;height:5%;background:#663af3;border-radius:3px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:10%;top:56%;width:6%;height:5%;background:#2f6f3a;border-radius:3px;opacity:.8"></div>' +
         txt(18, 57, 70, "要点三（即将出现）", 13, "rgba(216,236,248,.45)")
       )
     },
@@ -200,21 +200,21 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "60 页扁平列表，找不到章在哪。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:18%;width:84%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>' +
-        '<div style="position:absolute;left:8%;top:28%;width:84%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>' +
-        '<div style="position:absolute;left:8%;top:38%;width:84%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>' +
-        '<div style="position:absolute;left:8%;top:48%;width:84%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>' +
-        '<div style="position:absolute;left:8%;top:58%;width:84%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>'
+        '<div style="position:absolute;left:8%;top:18%;width:84%;height:4%;background:#777777);border-radius:2px"></div>' +
+        '<div style="position:absolute;left:8%;top:28%;width:84%;height:4%;background:#777777);border-radius:2px"></div>' +
+        '<div style="position:absolute;left:8%;top:38%;width:84%;height:4%;background:#777777);border-radius:2px"></div>' +
+        '<div style="position:absolute;left:8%;top:48%;width:84%;height:4%;background:#777777);border-radius:2px"></div>' +
+        '<div style="position:absolute;left:8%;top:58%;width:84%;height:4%;background:#777777);border-radius:2px"></div>'
       )
     },
     after: {
       tag: "改后", desc: "缩略图按节折叠分组，整节快进。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:18%;width:84%;height:7%;background:#663af3;border-radius:5px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:12%;top:30%;width:80%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>' +
-        '<div style="position:absolute;left:12%;top:38%;width:80%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>' +
-        '<div style="position:absolute;left:8%;top:50%;width:84%;height:7%;background:#027dea;border-radius:5px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:12%;top:62%;width:80%;height:4%;background:rgba(255,255,255,.12);border-radius:2px"></div>'
+        '<div style="position:absolute;left:8%;top:18%;width:84%;height:7%;background:#2f6f3a;border-radius:5px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:12%;top:30%;width:80%;height:4%;background:#777777);border-radius:2px"></div>' +
+        '<div style="position:absolute;left:12%;top:38%;width:80%;height:4%;background:#777777);border-radius:2px"></div>' +
+        '<div style="position:absolute;left:8%;top:50%;width:84%;height:7%;background:#cb5521;border-radius:5px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:12%;top:62%;width:80%;height:4%;background:#777777);border-radius:2px"></div>'
       )
     },
     steps: [
@@ -235,15 +235,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "现成图标库没有想要的图形，方片凑很难看。",
       visual: slide(
-        '<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;border:2px solid #e4483c;border-radius:50%;opacity:.85"></div>' +
-        '<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;background:#e4483c;border-radius:6px;opacity:.4"></div>'
+        '<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;border:2px solid #cb5521;border-radius:50%;opacity:.85"></div>' +
+        '<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;background:#cb5521;border-radius:6px;opacity:.4"></div>'
       )
     },
     after: {
       tag: "改后", desc: "两圆相减，得到干净圆环箭头。",
       visual: slide(
-        '<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;border:14px solid #663af3;border-radius:50%;box-sizing:border-box;opacity:.9"></div>' +
-        '<div style="position:absolute;left:62%;top:34%;width:14%;height:14%;background:#663af3;clip-path:polygon(0 30%,70% 30%,70% 0,100% 50%,70% 100%,70% 70%,0 70%);"></div>'
+        '<div style="position:absolute;left:34%;top:34%;width:32%;height:32%;border:14px solid #2f6f3a;border-radius:50%;box-sizing:border-box;opacity:.9"></div>' +
+        '<div style="position:absolute;left:62%;top:34%;width:14%;height:14%;background:#2f6f3a;clip-path:polygon(0 30%,70% 30%,70% 0,100% 50%,70% 100%,70% 70%,0 70%);"></div>'
       )
     },
     steps: [
@@ -264,7 +264,7 @@ const TECHNIQUES = [
       visual: slide(
         '<div style="position:absolute;left:10%;top:24%;width:18%;height:18%;background:#f59e0b;border-radius:8px;opacity:.9"></div>' +
         txt(34, 26, 55, "优卡说PPT", 18, "#e6b35a", true) +
-        txt(10, 56, 80, "标题用了近似黄，和 Logo 差一口气", 13, "rgba(255,255,255,.5)")
+        txt(10, 56, 80, "标题用了近似黄，和 Logo 差一口气", 13, "#777777)")
       )
     },
     after: {
@@ -272,7 +272,7 @@ const TECHNIQUES = [
       visual: slide(
         '<div style="position:absolute;left:10%;top:24%;width:18%;height:18%;background:#f59e0b;border-radius:8px;opacity:.95"></div>' +
         txt(34, 26, 55, "优卡说PPT", 18, "#f59e0b", true) +
-        txt(10, 56, 80, "标题 = Logo 品牌色，完全一致", 13, "rgba(255,255,255,.6)")
+        txt(10, 56, 80, "标题 = Logo 品牌色，完全一致", 13, "#777777)")
       )
     },
     steps: [
@@ -291,18 +291,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "每页手动贴 Logo/页码，位置还不一。",
       visual: slide(
-        '<div style="position:absolute;left:6%;top:6%;width:10%;height:8%;background:#e4483c;border-radius:4px;opacity:.7"></div>' +
-        '<div style="position:absolute;right:6%;bottom:6%;font:11px var(--font-mono);color:rgba(255,255,255,.4)">1</div>' +
-        '<div style="position:absolute;left:40%;top:46%;width:30%;height:5%;background:rgba(255,255,255,.14);border-radius:3px"></div>'
+        '<div style="position:absolute;left:6%;top:6%;width:10%;height:8%;background:#cb5521;border-radius:4px;opacity:.7"></div>' +
+        '<div style="position:absolute;right:6%;bottom:6%;font:11px var(--font-mono);color:#777777)">1</div>' +
+        '<div style="position:absolute;left:40%;top:46%;width:30%;height:5%;background:#777777);border-radius:3px"></div>'
       )
     },
     after: {
       tag: "改后", desc: "母版一次加，所有页统一带。",
       visual: slide(
-        '<div style="position:absolute;left:6%;top:6%;width:10%;height:8%;background:#663af3;border-radius:4px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:6%;top:6%;width:10%;height:8%;background:#2f6f3a;border-radius:4px;opacity:.85"></div>' +
         '<div style="position:absolute;right:6%;bottom:6%;font:11px var(--font-mono);color:rgba(216,236,248,.6)">1</div>' +
         '<div style="position:absolute;left:6%;bottom:6%;width:20%;height:3%;background:rgba(216,236,248,.3);border-radius:2px"></div>' +
-        '<div style="position:absolute;left:40%;top:46%;width:30%;height:5%;background:rgba(255,255,255,.18);border-radius:3px"></div>'
+        '<div style="position:absolute;left:40%;top:46%;width:30%;height:5%;background:#777777);border-radius:3px"></div>'
       )
     },
     steps: [
@@ -323,11 +323,11 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "封面堆满元素、字小、杂乱无重点。",
       visual: slide(
-        txt(8, 14, 80, "新品发布会", 13, "rgba(255,255,255,.6)") +
-        txt(8, 30, 80, "2026 春季", 12, "rgba(255,255,255,.4)") +
-        '<div style="position:absolute;left:8%;top:50%;width:30%;height:18%;background:#e4483c;border-radius:6px;opacity:.6"></div>' +
+        txt(8, 14, 80, "新品发布会", 13, "#777777)") +
+        txt(8, 30, 80, "2026 春季", 12, "#777777)") +
+        '<div style="position:absolute;left:8%;top:50%;width:30%;height:18%;background:#cb5521;border-radius:6px;opacity:.6"></div>' +
         '<div style="position:absolute;left:42%;top:62%;width:20%;height:12%;background:#22c55e;border-radius:6px;opacity:.6"></div>' +
-        txt(8, 82, 80, "时间：3月 地点：杭州", 11, "rgba(255,255,255,.4)")
+        txt(8, 82, 80, "时间：3月 地点：杭州", 11, "#777777)")
       )
     },
     after: {
@@ -335,7 +335,7 @@ const TECHNIQUES = [
       visual: slide(
         txt(10, 30, 84, "全新发布", 40, "rgba(216,236,248,.92)", true) +
         txt(10, 50, 84, "为创作而生", 16, "rgba(199,211,234,.6)") +
-        '<div style="position:absolute;left:10%;top:64%;width:18%;height:10%;background:#663af3;border-radius:6px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:10%;top:64%;width:18%;height:10%;background:#2f6f3a;border-radius:6px;opacity:.9"></div>' +
         '<div style="position:absolute;left:10%;top:30%;width:60%;height:2px;background:rgba(216,236,248,.4)"></div>'
       )
     },
@@ -355,14 +355,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "方形硬边图，和圆角版面不搭。",
       visual: slide(
-        '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;background:linear-gradient(135deg,#e4483c,#f59e0b);border-radius:2px;opacity:.8"></div>' +
-        '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;border:1px solid rgba(255,255,255,.3)"></div>'
+        '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;background:linear-gradient(135deg,#cb5521,#f59e0b);border-radius:2px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:30%;top:26%;width:40%;height:40%;border:1px solid #777777)"></div>'
       )
     },
     after: {
       tag: "改后", desc: "裁成圆形，融入版面更精致。",
       visual: slide(
-        '<div style="position:absolute;left:33%;top:29%;width:34%;height:34%;border-radius:50%;background:linear-gradient(135deg,#663af3,#027dea);opacity:.92"></div>' +
+        '<div style="position:absolute;left:33%;top:29%;width:34%;height:34%;border-radius:50%;background:linear-gradient(135deg,#2f6f3a,#cb5521);opacity:.92"></div>' +
         '<div style="position:absolute;left:33%;top:29%;width:34%;height:34%;border-radius:50%;border:2px solid rgba(216,236,248,.4)"></div>'
       )
     },
@@ -382,18 +382,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "一页塞满段落文字，没人看。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:14%;width:52%;height:5%;background:rgba(255,255,255,.30);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:22%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:27%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:32%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:44%;width:52%;height:5%;background:rgba(255,255,255,.30);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:52%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:57%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:62%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:74%;width:52%;height:5%;background:rgba(255,255,255,.30);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:82%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:87%;width:84%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:92%;width:62%;height:3%;background:rgba(255,255,255,.12);border-radius:3px"></div>'
+        '<div style="position:absolute;left:8%;top:14%;width:52%;height:5%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:22%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:27%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:32%;width:62%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:44%;width:52%;height:5%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:52%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:57%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:62%;width:62%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:74%;width:52%;height:5%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:82%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:87%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:92%;width:62%;height:3%;background:#777777);border-radius:3px"></div>'
       )
     },
     after: {
@@ -402,12 +402,12 @@ const TECHNIQUES = [
         '<div style="position:absolute;left:8%;top:16%;width:26%;height:52%;background:rgba(102,58,243,.16);border:1px solid rgba(102,58,243,.42);border-radius:8px"></div>' +
         '<div style="position:absolute;left:37%;top:16%;width:26%;height:52%;background:rgba(2,125,234,.16);border:1px solid rgba(2,125,234,.42);border-radius:8px"></div>' +
         '<div style="position:absolute;left:66%;top:16%;width:26%;height:52%;background:rgba(38,150,132,.16);border:1px solid rgba(38,150,132,.42);border-radius:8px"></div>' +
-        icon('target', 17, 22, 38, '#9a7bff') +
-        icon('chart', 46, 22, 38, '#4db5ff') +
+        icon('target', 17, 22, 38, '#2f6f3a') +
+        icon('chart', 46, 22, 38, '#cb5521') +
         icon('rocket', 75, 22, 38, '#5fe0bf') +
-        '<div style="position:absolute;left:8%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#fff">目标市场</div>' +
-        '<div style="position:absolute;left:37%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#fff">数据增长</div>' +
-        '<div style="position:absolute;left:66%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#fff">正式发布</div>' +
+        '<div style="position:absolute;left:8%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#3a8a8a">目标市场</div>' +
+        '<div style="position:absolute;left:37%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#3a8a8a">数据增长</div>' +
+        '<div style="position:absolute;left:66%;top:47%;width:26%;text-align:center;font:600 13px var(--font-body);color:#3a8a8a">正式发布</div>' +
         '<div style="position:absolute;left:8%;top:60%;width:26%;text-align:center;font:11px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">锁定核心用户群</div>' +
         '<div style="position:absolute;left:37%;top:60%;width:26%;text-align:center;font:11px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">月度增长 +38%</div>' +
         '<div style="position:absolute;left:66%;top:60%;width:26%;text-align:center;font:11px var(--font-body);color:rgba(216,236,248,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Q3 正式上线</div>'
@@ -431,7 +431,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "用了非系统字体却没嵌入，对方电脑一打开变宋体。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:16%;width:28%;height:7%;background:#e4483c;border-radius:4px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:8%;top:16%;width:28%;height:7%;background:#cb5521;border-radius:4px;opacity:.85"></div>' +
         txt(8, 38, 80, "优卡说PPT", 22, "#e6b35a", true) +
         '<div style="position:absolute;left:8%;top:66%;font:12px var(--font-mono);color:#f0a59a">⚠ 对方无此字体 → 全变宋体</div>'
       )
@@ -439,7 +439,7 @@ const TECHNIQUES = [
     after: {
       tag: "改后", desc: "勾选嵌入字体，任何电脑都原样显示。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:16%;width:28%;height:7%;background:#663af3;border-radius:4px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:8%;top:16%;width:28%;height:7%;background:#2f6f3a;border-radius:4px;opacity:.9"></div>' +
         txt(8, 38, 80, "优卡说PPT", 22, "#9fe3c5", true) +
         '<div style="position:absolute;left:8%;top:66%;font:12px var(--font-mono);color:#9fe3c5">✓ 已嵌入，换电脑也原样</div>'
       )
@@ -460,18 +460,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "重复改格式、拖拽还错位，纯手动慢。",
       visual: slide(
-        '<div style="position:absolute;left:10%;top:30%;width:20%;height:14%;background:#e4483c;border-radius:6px;opacity:.7"></div>' +
-        '<div style="position:absolute;left:44%;top:50%;width:20%;height:14%;background:#e4483c;border-radius:6px;opacity:.7"></div>' +
-        '<div style="position:absolute;left:70%;top:26%;width:20%;height:14%;background:#e4483c;border-radius:6px;opacity:.7"></div>' +
+        '<div style="position:absolute;left:10%;top:30%;width:20%;height:14%;background:#cb5521;border-radius:6px;opacity:.7"></div>' +
+        '<div style="position:absolute;left:44%;top:50%;width:20%;height:14%;background:#cb5521;border-radius:6px;opacity:.7"></div>' +
+        '<div style="position:absolute;left:70%;top:26%;width:20%;height:14%;background:#cb5521;border-radius:6px;opacity:.7"></div>' +
         '<div style="position:absolute;left:8%;top:72%;font:12px var(--font-mono);color:#f0a59a">重复操作 ×N，慢</div>'
       )
     },
     after: {
       tag: "改后", desc: "快捷键流：连刷、复制、对齐一气呵成。",
       visual: slide(
-        '<div style="position:absolute;left:10%;top:34%;width:20%;height:14%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:40%;top:34%;width:20%;height:14%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:70%;top:34%;width:20%;height:14%;background:#663af3;border-radius:6px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:10%;top:34%;width:20%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:40%;top:34%;width:20%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:70%;top:34%;width:20%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.85"></div>' +
         '<div style="position:absolute;left:8%;top:58%;font:11px var(--font-mono);color:rgba(216,236,248,.55)">双击格式刷</div>' +
         '<div style="position:absolute;left:36%;top:58%;font:11px var(--font-mono);color:rgba(216,236,248,.55)">Ctrl+拖拽</div>' +
         '<div style="position:absolute;left:64%;top:58%;font:11px var(--font-mono);color:rgba(216,236,248,.55)">Alt 吸附</div>'
@@ -493,14 +493,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "导出图糊、文件巨大，微信都发不出去。",
       visual: slide(
-        '<div style="position:absolute;left:30%;top:22%;width:40%;height:40%;background:linear-gradient(135deg,#e4483c,#f59e0b);border-radius:4px;opacity:.5;filter:blur(2px)"></div>' +
+        '<div style="position:absolute;left:30%;top:22%;width:40%;height:40%;background:linear-gradient(135deg,#cb5521,#f59e0b);border-radius:4px;opacity:.5;filter:blur(2px)"></div>' +
         '<div style="position:absolute;left:8%;top:72%;font:12px var(--font-mono);color:#f0a59a">图糊 · 文件 86MB</div>'
       )
     },
     after: {
       tag: "改后", desc: "超大型导出保高清，压缩后体积骤降。",
       visual: slide(
-        '<div style="position:absolute;left:33%;top:25%;width:34%;height:34%;background:linear-gradient(135deg,#663af3,#027dea);border-radius:4px;opacity:.95"></div>' +
+        '<div style="position:absolute;left:33%;top:25%;width:34%;height:34%;background:linear-gradient(135deg,#2f6f3a,#cb5521);border-radius:4px;opacity:.95"></div>' +
         '<div style="position:absolute;left:8%;top:72%;font:12px var(--font-mono);color:#9fe3c5">超大型导出 · 压缩后 12MB</div>'
       )
     },
@@ -523,7 +523,7 @@ const TECHNIQUES = [
       tag: "改前", desc: "翻页硬切，元素凭空跳变，没过渡。",
       visual: slide(
         txt(10, 30, 70, "2026 目标", 18, "#f0a59a", true) +
-        '<div style="position:absolute;left:60%;top:56%;width:24%;height:16%;background:#e4483c;border-radius:6px;opacity:.5"></div>' +
+        '<div style="position:absolute;left:60%;top:56%;width:24%;height:16%;background:#cb5521;border-radius:6px;opacity:.5"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">跳转硬切，无过渡</div>'
       )
     },
@@ -531,7 +531,7 @@ const TECHNIQUES = [
       tag: "改后", desc: "平滑切换：元素自动从旧位置过渡到新位置。",
       visual: slide(
         txt(10, 22, 70, "2026 目标", 16, "#9fe3c5", true) +
-        '<div style="position:absolute;left:36%;top:48%;width:28%;height:18%;background:#663af3;border-radius:6px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:36%;top:48%;width:28%;height:18%;background:#2f6f3a;border-radius:6px;opacity:.9"></div>' +
         '<div style="position:absolute;left:10%;top:74%;font:12px var(--font-mono);color:#9fe3c5">平滑：自动位移 / 变形</div>'
       )
     },
@@ -553,21 +553,21 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "默认灰图表：网格线乱、无数据标签。",
       visual: slide(
-        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:rgba(255,255,255,.3)"></div>' +
-        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:rgba(255,255,255,.3)"></div>' +
-        '<div style="position:absolute;left:44%;top:22%;width:8%;height:58%;background:rgba(255,255,255,.3)"></div>' +
-        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:rgba(255,255,255,.3)"></div>' +
-        '<div style="position:absolute;left:12%;top:18%;width:56%;height:1px;background:rgba(255,255,255,.18)"></div>' +
+        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:#777777)"></div>' +
+        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:#777777)"></div>' +
+        '<div style="position:absolute;left:44%;top:22%;width:8%;height:58%;background:#777777)"></div>' +
+        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:#777777)"></div>' +
+        '<div style="position:absolute;left:12%;top:18%;width:56%;height:1px;background:#777777)"></div>' +
         '<div style="position:absolute;left:8%;top:84%;font:11px var(--font-mono);color:#f0a59a">默认灰图表 · 无标签</div>'
       )
     },
     after: {
       tag: "改后", desc: "去网格、品牌色、数据标签，清爽高级。",
       visual: slide(
-        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:#663af3;border-radius:3px 3px 0 0"></div>' +
-        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:#663af3;border-radius:3px 3px 0 0"></div>' +
+        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:#2f6f3a;border-radius:3px 3px 0 0"></div>' +
+        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:#2f6f3a;border-radius:3px 3px 0 0"></div>' +
         '<div style="position:absolute;left:44%;top:22%;width:8%;height:58%;background:#9fe3c5;border-radius:3px 3px 0 0"></div>' +
-        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:#663af3;border-radius:3px 3px 0 0"></div>' +
+        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:#2f6f3a;border-radius:3px 3px 0 0"></div>' +
         '<div style="position:absolute;left:8%;top:84%;font:11px var(--font-mono);color:#9fe3c5">去网格 · 品牌色 · 数据标签</div>'
       )
     },
@@ -599,7 +599,7 @@ const TECHNIQUES = [
       tag: "改后", desc: "点「显示答案」才出现，互动提问。",
       visual: slide(
         txt(10, 24, 80, "Q：PPT 全称？", 15, "rgba(216,236,248,.85)", true) +
-        '<div style="position:absolute;left:10%;top:48%;width:30%;height:12%;background:#663af3;border-radius:6px;opacity:.85;display:grid;place-items:center;color:#fff;font:12px var(--font-body)">显示答案</div>' +
+        '<div style="position:absolute;left:10%;top:48%;width:30%;height:12%;background:#2f6f3a;border-radius:6px;opacity:.85;display:grid;place-items:center;color:#3a8a8a;font:12px var(--font-body)">显示答案</div>' +
         '<div style="position:absolute;left:46%;top:48%;width:44%;height:12%;background:rgba(159,227,197,.16);border:1px dashed rgba(38,150,132,.5);border-radius:6px"></div>' +
         '<div style="position:absolute;left:8%;top:66%;font:11px var(--font-mono);color:#9fe3c5">点「显示答案」才出现</div>'
       )
@@ -622,18 +622,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "特殊字体想换成通用字体，几十页逐页改到崩溃。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:16%;width:30%;height:7%;background:#e4483c;border-radius:4px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:8%;top:16%;width:30%;height:7%;background:#cb5521;border-radius:4px;opacity:.85"></div>' +
         txt(8, 38, 80, "优卡说PPT", 22, "#e6b35a", true) +
-        txt(8, 56, 80, "用「优卡体」写了 30 页", 13, "rgba(255,255,255,.5)") +
+        txt(8, 56, 80, "用「优卡体」写了 30 页", 13, "#777777)") +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">逐页改 ×30，慢</div>'
       )
     },
     after: {
       tag: "改后", desc: "替换字体一次，全篇同步换衣。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:16%;width:30%;height:7%;background:#663af3;border-radius:4px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:8%;top:16%;width:30%;height:7%;background:#2f6f3a;border-radius:4px;opacity:.9"></div>' +
         txt(8, 38, 80, "优卡说PPT", 22, "#9fe3c5", true) +
-        txt(8, 56, 80, "全篇已是通用字体", 13, "rgba(255,255,255,.6)") +
+        txt(8, 56, 80, "全篇已是通用字体", 13, "#777777)") +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#9fe3c5">替换字体 → 30 处已换</div>'
       )
     },
@@ -653,18 +653,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "元素层层叠叠，点不到下面那个，也分不清谁是谁。",
       visual: slide(
-        '<div style="position:absolute;left:30%;top:24%;width:40%;height:34%;background:#e4483c;border-radius:8px;opacity:.55"></div>' +
+        '<div style="position:absolute;left:30%;top:24%;width:40%;height:34%;background:#cb5521;border-radius:8px;opacity:.55"></div>' +
         '<div style="position:absolute;left:36%;top:36%;width:30%;height:22%;background:#22c55e;border-radius:8px;opacity:.55"></div>' +
-        '<div style="position:absolute;left:44%;top:50%;width:24%;height:14%;background:#027dea;border-radius:8px;opacity:.6"></div>' +
+        '<div style="position:absolute;left:44%;top:50%;width:24%;height:14%;background:#cb5521;border-radius:8px;opacity:.6"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">点不到 · 分不清</div>'
       )
     },
     after: {
       tag: "改后", desc: "右侧图层列表：点名选中、眼睛显隐、拖动调序。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:18%;width:40%;height:64%;background:rgba(255,255,255,.06);border:1px solid rgba(216,236,248,.25);border-radius:8px;padding:8px 10px">' +
+        '<div style="position:absolute;left:8%;top:18%;width:40%;height:64%;background:#777777);border:1px solid rgba(216,236,248,.25);border-radius:8px;padding:8px 10px">' +
         '<div style="font:11px var(--font-mono);color:#9fe3c5;line-height:1.9">● 标题文字<br>● 蓝色块<br>● 绿色块<br>○ 红底(隐藏)</div></div>' +
-        '<div style="position:absolute;right:10%;top:34%;width:34%;height:22%;background:#663af3;border-radius:8px;opacity:.85"></div>' +
+        '<div style="position:absolute;right:10%;top:34%;width:34%;height:22%;background:#2f6f3a;border-radius:8px;opacity:.85"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#9fe3c5">列表里点名就选中</div>'
       )
     },
@@ -684,19 +684,19 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "几个元素各管各，一移动就错位散架。",
       visual: slide(
-        '<div style="position:absolute;left:18%;top:30%;width:20%;height:14%;background:#e4483c;border-radius:6px;opacity:.7;transform:rotate(-6deg)"></div>' +
+        '<div style="position:absolute;left:18%;top:30%;width:20%;height:14%;background:#cb5521;border-radius:6px;opacity:.7;transform:rotate(-6deg)"></div>' +
         '<div style="position:absolute;left:46%;top:40%;width:18%;height:12%;background:#22c55e;border-radius:6px;opacity:.7;transform:rotate(4deg)"></div>' +
-        '<div style="position:absolute;left:66%;top:28%;width:16%;height:16%;background:#027dea;border-radius:50%;opacity:.7"></div>' +
+        '<div style="position:absolute;left:66%;top:28%;width:16%;height:16%;background:#cb5521;border-radius:50%;opacity:.7"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">一动就散</div>'
       )
     },
     after: {
       tag: "改后", desc: "组合后当一块搬，位置纹丝不动。",
         visual: slide(
-        '<div style="position:absolute;left:30%;top:32%;width:47%;height:24%;border:2px dashed #663af3;border-radius:10px;opacity:.9"></div>' +
-        '<div style="position:absolute;left:32%;top:38%;width:16%;height:12%;background:#663af3;border-radius:6px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:30%;top:32%;width:47%;height:24%;border:2px dashed #2f6f3a;border-radius:10px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:32%;top:38%;width:16%;height:12%;background:#2f6f3a;border-radius:6px;opacity:.9"></div>' +
         '<div style="position:absolute;left:52%;top:44%;width:14%;height:10%;background:#9fe3c5;border-radius:6px;opacity:.9"></div>' +
-        '<div style="position:absolute;left:64%;top:34%;width:11%;height:11%;background:#027dea;border-radius:50%;opacity:.9"></div>' +
+        '<div style="position:absolute;left:64%;top:34%;width:11%;height:11%;background:#cb5521;border-radius:50%;opacity:.9"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#9fe3c5">Ctrl+G 打包 → 整体移动</div>'
       )
     },
@@ -719,14 +719,14 @@ const TECHNIQUES = [
       tag: "改前", desc: "人物 / 产品带杂背景，和版面打架。",
       visual: slide(
         '<div style="position:absolute;left:24%;top:20%;width:52%;height:52%;background:#c9ccd6;border-radius:6px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:38%;top:34%;width:24%;height:30%;background:linear-gradient(135deg,#e4483c,#f59e0b);border-radius:50%;opacity:.9"></div>' +
+        '<div style="position:absolute;left:38%;top:34%;width:24%;height:30%;background:linear-gradient(135deg,#cb5521,#f59e0b);border-radius:50%;opacity:.9"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">杂背景 · 显廉价</div>'
       )
     },
     after: {
       tag: "改后", desc: "去背后主体悬浮，干净融入版面。",
       visual: slide(
-        '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;background:linear-gradient(135deg,#663af3,#027dea);border-radius:50%;opacity:.95"></div>' +
+        '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;background:linear-gradient(135deg,#2f6f3a,#cb5521);border-radius:50%;opacity:.95"></div>' +
         '<div style="position:absolute;left:38%;top:30%;width:24%;height:34%;border-radius:50%;border:2px solid rgba(216,236,248,.4)"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#9fe3c5">只留主体 · 干净</div>'
       )
@@ -747,20 +747,20 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "一段文字干摆，手动排半天还不好看。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:18%;width:50%;height:6%;background:rgba(255,255,255,.3);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:28%;width:84%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:34%;width:84%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:40%;width:60%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:18%;width:50%;height:6%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:28%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:34%;width:84%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:40%;width:60%;height:3%;background:#777777);border-radius:3px"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">手动排 · 不好看</div>'
       )
     },
     after: {
       tag: "改后", desc: "右侧 AI 给多个版式，挑一个套用。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:20%;width:46%;height:7%;background:#663af3;border-radius:4px;opacity:.9"></div>' +
-        '<div style="position:absolute;left:8%;top:34%;width:46%;height:3%;background:rgba(255,255,255,.2);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:8%;top:42%;width:46%;height:3%;background:rgba(255,255,255,.13);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:60%;top:20%;width:30%;height:50%;background:linear-gradient(135deg,#663af3,#027dea);border-radius:6px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:8%;top:20%;width:46%;height:7%;background:#2f6f3a;border-radius:4px;opacity:.9"></div>' +
+        '<div style="position:absolute;left:8%;top:34%;width:46%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:42%;width:46%;height:3%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:60%;top:20%;width:30%;height:50%;background:linear-gradient(135deg,#2f6f3a,#cb5521);border-radius:6px;opacity:.9"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#9fe3c5">AI 版式一键套用</div>'
       )
     },
@@ -782,16 +782,16 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "直接放映，备注看不见，讲到哪了自己都迷。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:16%;width:84%;height:50%;background:rgba(255,255,255,.06);border:1px solid rgba(216,236,248,.25);border-radius:8px"></div>' +
-        '<div style="position:absolute;left:16%;top:30%;width:40%;height:6%;background:rgba(255,255,255,.25);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:16%;top:42%;width:60%;height:3%;background:rgba(255,255,255,.14);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:8%;top:16%;width:84%;height:50%;background:#777777);border:1px solid rgba(216,236,248,.25);border-radius:8px"></div>' +
+        '<div style="position:absolute;left:16%;top:30%;width:40%;height:6%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:16%;top:42%;width:60%;height:3%;background:#777777);border-radius:3px"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">备注看不到 · 易翻车</div>'
       )
     },
     after: {
       tag: "改后", desc: "演讲者视图：你见备注，观众见干净页。",
       visual: slide(
-        '<div style="position:absolute;left:8%;top:16%;width:50%;height:50%;background:rgba(255,255,255,.05);border:1px solid rgba(216,236,248,.2);border-radius:8px"></div>' +
+        '<div style="position:absolute;left:8%;top:16%;width:50%;height:50%;background:#777777);border:1px solid rgba(216,236,248,.2);border-radius:8px"></div>' +
         '<div style="position:absolute;left:62%;top:16%;width:30%;height:24%;background:rgba(102,58,243,.18);border:1px solid rgba(102,58,243,.5);border-radius:6px"></div>' +
         '<div style="position:absolute;left:62%;top:44%;width:30%;height:22%;background:rgba(2,125,234,.16);border:1px solid rgba(2,125,234,.5);border-radius:6px"></div>' +
         '<div style="position:absolute;left:8%;top:70%;font:11px var(--font-mono);color:#9fe3c5">备注区 · 下一页预览</div>'
@@ -813,18 +813,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "多个对象要同款动画，一个个重加很烦。",
       visual: slide(
-        '<div style="position:absolute;left:14%;top:30%;width:18%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
-        '<div style="position:absolute;left:42%;top:30%;width:18%;height:14%;background:rgba(255,255,255,.3);border-radius:6px;opacity:.6"></div>' +
-        '<div style="position:absolute;left:70%;top:30%;width:18%;height:14%;background:rgba(255,255,255,.3);border-radius:6px;opacity:.6"></div>' +
+        '<div style="position:absolute;left:14%;top:30%;width:18%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
+        '<div style="position:absolute;left:42%;top:30%;width:18%;height:14%;background:#777777);border-radius:6px;opacity:.6"></div>' +
+        '<div style="position:absolute;left:70%;top:30%;width:18%;height:14%;background:#777777);border-radius:6px;opacity:.6"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#f0a59a">逐个加 · 重复劳动</div>'
       )
     },
     after: {
       tag: "改后", desc: "动画刷一吸一刷，三个对象同节奏。",
       visual: slide(
-        '<div style="position:absolute;left:14%;top:30%;width:18%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
-        '<div style="position:absolute;left:42%;top:30%;width:18%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
-        '<div style="position:absolute;left:70%;top:30%;width:18%;height:14%;background:#663af3;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
+        '<div style="position:absolute;left:14%;top:30%;width:18%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
+        '<div style="position:absolute;left:42%;top:30%;width:18%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
+        '<div style="position:absolute;left:70%;top:30%;width:18%;height:14%;background:#2f6f3a;border-radius:6px;opacity:.9;box-shadow:0 0 0 2px rgba(159,227,197,.5)"></div>' +
         '<div style="position:absolute;left:8%;top:74%;font:12px var(--font-mono);color:#9fe3c5">同款动画 · 统一节奏</div>'
       )
     },
@@ -846,20 +846,20 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "量（销售额）和率（增长率）分两张图，不好对比。",
       visual: slide(
-        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:rgba(255,255,255,.3)"></div>' +
-        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:rgba(255,255,255,.3)"></div>' +
-        '<div style="position:absolute;left:44%;top:22%;width:8%;height:58%;background:rgba(255,255,255,.3)"></div>' +
-        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:rgba(255,255,255,.3)"></div>' +
+        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:#777777)"></div>' +
+        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:#777777)"></div>' +
+        '<div style="position:absolute;left:44%;top:22%;width:8%;height:58%;background:#777777)"></div>' +
+        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:#777777)"></div>' +
         '<div style="position:absolute;left:8%;top:84%;font:11px var(--font-mono);color:#f0a59a">只有柱 · 率另算</div>'
       )
     },
     after: {
       tag: "改后", desc: "柱是量、线是率，双轴同框一眼看清。",
       visual: slide(
-        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:#663af3;border-radius:3px 3px 0 0"></div>' +
-        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:#663af3;border-radius:3px 3px 0 0"></div>' +
-        '<div style="position:absolute;left:44%;top:22%;width:8%;height:58%;background:#663af3;border-radius:3px 3px 0 0"></div>' +
-        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:#663af3;border-radius:3px 3px 0 0"></div>' +
+        '<div style="position:absolute;left:12%;top:30%;width:8%;height:50%;background:#2f6f3a;border-radius:3px 3px 0 0"></div>' +
+        '<div style="position:absolute;left:28%;top:46%;width:8%;height:34%;background:#2f6f3a;border-radius:3px 3px 0 0"></div>' +
+        '<div style="position:absolute;left:44%;top:22%;width:8%;height:58%;background:#2f6f3a;border-radius:3px 3px 0 0"></div>' +
+        '<div style="position:absolute;left:60%;top:38%;width:8%;height:42%;background:#2f6f3a;border-radius:3px 3px 0 0"></div>' +
         '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polyline points="16,26 32,42 48,18 64,34" fill="none" stroke="#9fe3c5" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>' +
         '<div style="position:absolute;left:8%;top:84%;font:11px var(--font-mono);color:#9fe3c5">柱=量 · 线=率</div>'
       )
@@ -881,7 +881,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "想做水滴/箭头/不规则遮罩，只能找现成图标，套不上就放弃。",
       visual: slide(
-        '<div style="position:absolute;left:34%;top:30%;width:32%;height:40%;background:rgba(255,255,255,.2);border:1px dashed rgba(255,255,255,.4)"></div>' +
+        '<div style="position:absolute;left:34%;top:30%;width:32%;height:40%;background:#777777);border:1px dashed #777777)"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">方方正正 · 改不了</div>'
       )
     },
@@ -908,15 +908,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "Logo 带白底、图标颜色不搭，强行放上去很丑。",
       visual: slide(
-        '<div style="position:absolute;left:30%;top:28%;width:40%;height:44%;background:#fff;border-radius:8px"></div>' +
-        '<div style="position:absolute;left:38%;top:36%;width:24%;height:28%;background:#e46d4c;border-radius:50%"></div>' +
+        '<div style="position:absolute;left:30%;top:28%;width:40%;height:44%;background:#3a8a8a;border-radius:8px"></div>' +
+        '<div style="position:absolute;left:38%;top:36%;width:24%;height:28%;background:#cb5521;border-radius:50%"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">白底 + 色不对</div>'
       )
     },
     after: {
       tag: "改后", desc: "「设置透明色」点白底即透；「重新着色」一键换成主题紫。",
       visual: slide(
-        '<div style="position:absolute;left:38%;top:32%;width:24%;height:30%;background:#663af3;border-radius:50%"></div>' +
+        '<div style="position:absolute;left:38%;top:32%;width:24%;height:30%;background:#2f6f3a;border-radius:50%"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:#9fe3c5">透明底 + 主题色</div>'
       )
     },
@@ -936,18 +936,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "十几个文本框颜色字体各不同，逐个改调到崩溃。",
       visual: slide(
-        '<div style="position:absolute;left:14%;top:24%;width:30%;height:10%;background:rgba(255,255,255,.25);border-radius:4px"></div>' +
-        '<div style="position:absolute;left:14%;top:42%;width:30%;height:10%;background:rgba(255,255,255,.15);border-radius:4px"></div>' +
-        '<div style="position:absolute;left:14%;top:60%;width:30%;height:10%;background:rgba(255,255,255,.3);border-radius:4px"></div>' +
+        '<div style="position:absolute;left:14%;top:24%;width:30%;height:10%;background:#777777);border-radius:4px"></div>' +
+        '<div style="position:absolute;left:14%;top:42%;width:30%;height:10%;background:#777777);border-radius:4px"></div>' +
+        '<div style="position:absolute;left:14%;top:60%;width:30%;height:10%;background:#777777);border-radius:4px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">各改各的 · 乱</div>'
       )
     },
     after: {
       tag: "改后", desc: "刷一次，所有对象同款填充+字体，统一只需一秒。",
       visual: slide(
-        '<div style="position:absolute;left:14%;top:24%;width:30%;height:10%;background:#663af3;border-radius:4px"></div>' +
-        '<div style="position:absolute;left:14%;top:42%;width:30%;height:10%;background:#663af3;border-radius:4px"></div>' +
-        '<div style="position:absolute;left:14%;top:60%;width:30%;height:10%;background:#663af3;border-radius:4px"></div>' +
+        '<div style="position:absolute;left:14%;top:24%;width:30%;height:10%;background:#2f6f3a;border-radius:4px"></div>' +
+        '<div style="position:absolute;left:14%;top:42%;width:30%;height:10%;background:#2f6f3a;border-radius:4px"></div>' +
+        '<div style="position:absolute;left:14%;top:60%;width:30%;height:10%;background:#2f6f3a;border-radius:4px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:#9fe3c5">一键同款</div>'
       )
     },
@@ -967,18 +967,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "每页手动摆标题位置，改个样式要翻几十页。",
       visual: slide(
-        '<div style="position:absolute;left:10%;top:12%;width:40%;height:9%;background:rgba(255,255,255,.3);border-radius:4px"></div>' +
-        '<div style="position:absolute;left:10%;top:30%;width:70%;height:6%;background:rgba(255,255,255,.18);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:10%;top:42%;width:60%;height:6%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:10%;top:12%;width:40%;height:9%;background:#777777);border-radius:4px"></div>' +
+        '<div style="position:absolute;left:10%;top:30%;width:70%;height:6%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:10%;top:42%;width:60%;height:6%;background:#777777);border-radius:3px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">逐页摆 · 累</div>'
       )
     },
     after: {
       tag: "改后", desc: "在母版定好占位符版式，全篇自动套用，换版式内容不乱。",
       visual: slide(
-        '<div style="position:absolute;left:10%;top:12%;width:42%;height:9%;background:#663af3;border-radius:4px;opacity:.85"></div>' +
-        '<div style="position:absolute;left:10%;top:30%;width:70%;height:6%;background:rgba(255,255,255,.18);border-radius:3px"></div>' +
-        '<div style="position:absolute;left:10%;top:42%;width:60%;height:6%;background:rgba(255,255,255,.12);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:10%;top:12%;width:42%;height:9%;background:#2f6f3a;border-radius:4px;opacity:.85"></div>' +
+        '<div style="position:absolute;left:10%;top:30%;width:70%;height:6%;background:#777777);border-radius:3px"></div>' +
+        '<div style="position:absolute;left:10%;top:42%;width:60%;height:6%;background:#777777);border-radius:3px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:#9fe3c5">占位符 · 一处改</div>'
       )
     },
@@ -998,18 +998,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "给老板讲精简版、给同事讲细节，得存两份 PPT。",
       visual: slide(
-        '<div style="position:absolute;left:12%;top:22%;width:24%;height:50%;background:rgba(255,255,255,.18);border-radius:6px"></div>' +
-        '<div style="position:absolute;left:40%;top:22%;width:24%;height:50%;background:rgba(255,255,255,.18);border-radius:6px"></div>' +
-        '<div style="position:absolute;left:68%;top:22%;width:22%;height:50%;background:rgba(255,255,255,.18);border-radius:6px"></div>' +
+        '<div style="position:absolute;left:12%;top:22%;width:24%;height:50%;background:#777777);border-radius:6px"></div>' +
+        '<div style="position:absolute;left:40%;top:22%;width:24%;height:50%;background:#777777);border-radius:6px"></div>' +
+        '<div style="position:absolute;left:68%;top:22%;width:22%;height:50%;background:#777777);border-radius:6px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">两份 PPT · 易乱</div>'
       )
     },
     after: {
       tag: "改后", desc: "「自定义放映」勾选子集，一套文件现场切不同版本。",
       visual: slide(
-        '<div style="position:absolute;left:12%;top:22%;width:24%;height:50%;background:#663af3;border-radius:6px;opacity:.8"></div>' +
-        '<div style="position:absolute;left:40%;top:22%;width:24%;height:50%;background:rgba(255,255,255,.18);border-radius:6px"></div>' +
-        '<div style="position:absolute;left:68%;top:22%;width:22%;height:50%;background:#663af3;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:12%;top:22%;width:24%;height:50%;background:#2f6f3a;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:40%;top:22%;width:24%;height:50%;background:#777777);border-radius:6px"></div>' +
+        '<div style="position:absolute;left:68%;top:22%;width:22%;height:50%;background:#2f6f3a;border-radius:6px;opacity:.8"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:#9fe3c5">勾选子集 · 一套多讲</div>'
       )
     },
@@ -1029,14 +1029,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "想发个带讲解的片子，只能另开录屏软件，对嘴型累。",
       visual: slide(
-        '<div style="position:absolute;left:34%;top:26%;width:32%;height:30%;background:rgba(255,255,255,.18);border-radius:8px"></div>' +
+        '<div style="position:absolute;left:34%;top:26%;width:32%;height:30%;background:#777777);border-radius:8px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">另开录屏 · 对嘴型</div>'
       )
     },
     after: {
       tag: "改后", desc: "「录制幻灯片放映」直接录旁白+计时，存进 PPT 自播放。",
       visual: slide(
-        '<div style="position:absolute;left:34%;top:26%;width:32%;height:30%;background:#663af3;border-radius:8px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:34%;top:26%;width:32%;height:30%;background:#2f6f3a;border-radius:8px;opacity:.8"></div>' +
         '<div style="position:absolute;left:36%;top:70%;width:28%;height:5%;background:rgba(159,227,197,.6);border-radius:3px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:#9fe3c5">内录旁白 · 自播放</div>'
       )
@@ -1057,18 +1057,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "默认表格灰底网格线，数据密密麻麻看不下去。",
       visual: slide(
-        '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25)">' +
-        '<div style="position:absolute;left:0;top:25%;width:100%;height:1px;background:rgba(255,255,255,.25)"></div>' +
-        '<div style="position:absolute;left:0;top:50%;width:100%;height:1px;background:rgba(255,255,255,.25)"></div>' +
-        '<div style="position:absolute;left:0;top:75%;width:100%;height:1px;background:rgba(255,255,255,.25)"></div></div>' +
+        '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:#777777);border:1px solid #777777)">' +
+        '<div style="position:absolute;left:0;top:25%;width:100%;height:1px;background:#777777)"></div>' +
+        '<div style="position:absolute;left:0;top:50%;width:100%;height:1px;background:#777777)"></div>' +
+        '<div style="position:absolute;left:0;top:75%;width:100%;height:1px;background:#777777)"></div></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">灰网格 · 闷</div>'
       )
     },
     after: {
       tag: "改后", desc: "透明底+斑马纹+首行强调，重点行高亮，一眼找到关键。",
       visual: slide(
-        '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden">' +
-        '<div style="position:absolute;left:0;top:0;width:100%;height:25%;background:#663af3;opacity:.85"></div>' +
+        '<div style="position:absolute;left:14%;top:22%;width:72%;height:54%;background:#777777);border-radius:6px;overflow:hidden">' +
+        '<div style="position:absolute;left:0;top:0;width:100%;height:25%;background:#2f6f3a;opacity:.85"></div>' +
         '<div style="position:absolute;left:0;top:50%;width:100%;height:25%;background:rgba(159,227,197,.18)"></div></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:#9fe3c5">斑马纹 + 强调行</div>'
       )
@@ -1089,16 +1089,16 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "塞了几张大图，文件 50MB 卡成 PPT，发给同事半天传不完。",
       visual: slide(
-        '<div style="position:absolute;left:16%;top:24%;width:26%;height:34%;background:rgba(255,255,255,.2);border-radius:6px"></div>' +
-        '<div style="position:absolute;left:48%;top:24%;width:26%;height:34%;background:rgba(255,255,255,.2);border-radius:6px"></div>' +
+        '<div style="position:absolute;left:16%;top:24%;width:26%;height:34%;background:#777777);border-radius:6px"></div>' +
+        '<div style="position:absolute;left:48%;top:24%;width:26%;height:34%;background:#777777);border-radius:6px"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:rgba(216,236,248,.5)">50MB · 卡+传不动</div>'
       )
     },
     after: {
       tag: "改后", desc: "「压缩图片」选 150ppi + 勾「删除裁剪区域」，体积砍半。",
       visual: slide(
-        '<div style="position:absolute;left:16%;top:24%;width:26%;height:34%;background:#663af3;border-radius:6px;opacity:.8"></div>' +
-        '<div style="position:absolute;left:48%;top:24%;width:26%;height:34%;background:#663af3;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:16%;top:24%;width:26%;height:34%;background:#2f6f3a;border-radius:6px;opacity:.8"></div>' +
+        '<div style="position:absolute;left:48%;top:24%;width:26%;height:34%;background:#2f6f3a;border-radius:6px;opacity:.8"></div>' +
         '<div style="position:absolute;left:8%;top:82%;font:11px var(--font-mono);color:#9fe3c5">12MB · 轻快</div>'
       )
     },
@@ -1119,18 +1119,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "在画布上逐个文本框敲，结构乱、改标题累、调顺序更烦。",
       visual: slide(
-        r(10,18,80,8,'rgba(255,255,255,.16)') + r(10,32,80,5,'rgba(255,255,255,.1)') +
-        r(10,42,80,5,'rgba(255,255,255,.1)') + r(10,52,62,5,'rgba(255,255,255,.1)') +
+        r(10,18,80,8,'#777777)') + r(10,32,80,5,'#777777)') +
+        r(10,42,80,5,'#777777)') + r(10,52,62,5,'#777777)') +
         txt(10,70,80,'零散文本框，结构看不清','11','rgba(216,236,248,.5)',1)
       )
     },
     after: {
       tag: "改后", desc: "切到大纲视图，标题/要点层级一目了然，拖拽即排序。",
       visual: slide(
-        r(8,14,30,72,'rgba(255,255,255,.07)') +
+        r(8,14,30,72,'#777777)') +
         txt(11,18,26,'● 标题一','11','#9fe3c5',1) + txt(13,30,24,'○ 要点 A','10','rgba(216,236,248,.7)') + txt(13,40,24,'○ 要点 B','10','rgba(216,236,248,.7)') +
         txt(11,54,26,'● 标题二','11','#9fe3c5',1) + txt(13,66,24,'○ 要点 C','10','rgba(216,236,248,.7)') +
-        r(44,20,48,46,'rgba(255,255,255,.14)') + txt(46,24,44,'画布只放内容','10','rgba(216,236,248,.6)')
+        r(44,20,48,46,'#777777)') + txt(46,24,44,'画布只放内容','10','rgba(216,236,248,.6)')
       )
     },
     steps: [
@@ -1149,16 +1149,16 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "把 Word 方案手动一页页抄进 PPT，费时还易漏。",
       visual: slide(
-        r(10,16,80,9,'rgba(255,255,255,.16)') + r(10,30,80,5,'rgba(255,255,255,.1)') +
-        r(10,40,80,5,'rgba(255,255,255,.1)') + r(10,50,80,5,'rgba(255,255,255,.1)') +
+        r(10,16,80,9,'#777777)') + r(10,30,80,5,'#777777)') +
+        r(10,40,80,5,'#777777)') + r(10,50,80,5,'#777777)') +
         txt(10,70,80,'大段 Word，手抄进 PPT 累','11','rgba(216,236,248,.5)',1)
       )
     },
     after: {
       tag: "改后", desc: "标题样式一键变骨架页，再填设计与图。",
       visual: slide(
-        r(10,18,38,30,'rgba(255,255,255,.14)') + txt(13,20,32,'标题一','11','#9fe3c5',1) + txt(13,34,32,'· 要点','10','rgba(216,236,248,.7)') +
-        r(52,18,38,30,'rgba(255,255,255,.14)') + txt(55,20,32,'标题二','11','#9fe3c5',1) + txt(55,34,32,'· 要点','10','rgba(216,236,248,.7)')
+        r(10,18,38,30,'#777777)') + txt(13,20,32,'标题一','11','#9fe3c5',1) + txt(13,34,32,'· 要点','10','rgba(216,236,248,.7)') +
+        r(52,18,38,30,'#777777)') + txt(55,20,32,'标题二','11','#9fe3c5',1) + txt(55,34,32,'· 要点','10','rgba(216,236,248,.7)')
       )
     },
     steps: [
@@ -1177,15 +1177,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "干讲无字幕，外语听众和外放环境都吃力。",
       visual: slide(
-        r(10,18,80,40,'rgba(255,255,255,.14)') +
+        r(10,18,80,40,'#777777)') +
         txt(14,40,72,'讲者：…（无声的现场）','11','rgba(216,236,248,.6)',0)
       )
     },
     after: {
       tag: "改后", desc: "开启字幕，讲什么即时浮现文字，还能翻英文。",
       visual: slide(
-        r(10,18,80,40,'rgba(255,255,255,.14)') +
-        r(10,62,80,13,'rgba(0,0,0,.55)') + txt(14,65,72,'实时字幕：大家好，欢迎来到本场分享','11','#fff',0)
+        r(10,18,80,40,'#777777)') +
+        r(10,62,80,13,'rgba(0,0,0,.55)') + txt(14,65,72,'实时字幕：大家好，欢迎来到本场分享','11','#3a8a8a',0)
       )
     },
     steps: [
@@ -1204,15 +1204,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "方图硬放，边是方的总差点意思。",
       visual: slide(
-        r(30,28,40,40,'#663af3',.25) +
-        r(30,28,40,40,'rgba(255,255,255,.16)') +
+        r(30,28,40,40,'#2f6f3a',.25) +
+        r(30,28,40,40,'#777777)') +
         txt(28,74,44,'方图硬放','11','rgba(216,236,248,.5)',1)
       )
     },
     after: {
       tag: "改后", desc: "裁成圆形头像/六边形卡片，异形窗一步到位。",
       visual: slide(
-        r(28,26,44,44,'#663af3',.18) +
+        r(28,26,44,44,'#2f6f3a',.18) +
         '<div style="position:absolute;left:33%;top:30%;width:34%;height:34%;border-radius:50%;background:#9fe3c5;opacity:.85"></div>' +
         txt(30,76,40,'裁成圆形','11','#9fe3c5',1)
       )
@@ -1233,18 +1233,18 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "目录只能看不能点，翻页靠手动找。",
       visual: slide(
-        r(12,18,76,10,'rgba(255,255,255,.14)') + txt(16,20,70,'1 公司概况','11','rgba(216,236,248,.7)',1) +
-        r(12,34,76,10,'rgba(255,255,255,.1)') + txt(16,36,70,'2 产品方案','11','rgba(216,236,248,.7)',1) +
-        r(12,50,76,10,'rgba(255,255,255,.1)') + txt(16,52,70,'3 路线图','11','rgba(216,236,248,.7)',1)
+        r(12,18,76,10,'#777777)') + txt(16,20,70,'1 公司概况','11','rgba(216,236,248,.7)',1) +
+        r(12,34,76,10,'#777777)') + txt(16,36,70,'2 产品方案','11','rgba(216,236,248,.7)',1) +
+        r(12,50,76,10,'#777777)') + txt(16,52,70,'3 路线图','11','rgba(216,236,248,.7)',1)
       )
     },
     after: {
       tag: "改后", desc: "点条目即跳对应页，还能跳网页/文件。",
       visual: slide(
-        r(12,18,76,10,'rgba(255,255,255,.14)') + txt(16,20,70,'1 公司概况','11','#9fe3c5',1) +
-        r(12,34,76,10,'rgba(255,255,255,.1)') + txt(16,36,70,'2 产品方案','11','rgba(216,236,248,.7)',1) +
-        r(12,50,76,10,'rgba(255,255,255,.1)') + txt(16,52,70,'3 路线图','11','rgba(216,236,248,.7)',1) +
-        txt(16,70,70,'点条目即跳转对应页 ↗','10','#027dea',0)
+        r(12,18,76,10,'#777777)') + txt(16,20,70,'1 公司概况','11','#9fe3c5',1) +
+        r(12,34,76,10,'#777777)') + txt(16,36,70,'2 产品方案','11','rgba(216,236,248,.7)',1) +
+        r(12,50,76,10,'#777777)') + txt(16,52,70,'3 路线图','11','rgba(216,236,248,.7)',1) +
+        txt(16,70,70,'点条目即跳转对应页 ↗','10','#cb5521',0)
       )
     },
     steps: [
@@ -1263,16 +1263,16 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "想标重点只能下张重画，现场没法随手圈。",
       visual: slide(
-        r(20,22,44,30,'rgba(255,255,255,.14)') +
+        r(20,22,44,30,'#777777)') +
         txt(24,60,40,'干讲指空气','11','rgba(216,236,248,.5)',0)
       )
     },
     after: {
       tag: "改后", desc: "随手圈画重点，激光笔引视线不落痕。",
       visual: slide(
-        r(20,22,44,30,'rgba(255,255,255,.14)') +
-        '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><ellipse cx="42" cy="52" rx="22" ry="14" fill="none" stroke="#e4483c" stroke-width="2.5"/></svg>' +
-        circ(72,30,8,'#e4483c')
+        r(20,22,44,30,'#777777)') +
+        '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><ellipse cx="42" cy="52" rx="22" ry="14" fill="none" stroke="#cb5521" stroke-width="2.5"/></svg>' +
+        circ(72,30,8,'#cb5521')
       )
     },
     steps: [
@@ -1291,15 +1291,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "对象只会直跳或淡入，缺「沿轨迹移动」。",
       visual: slide(
-        r(12,72,9,9,'#9fe3c5',.95) + r(84,16,9,9,'#027dea',.95) +
+        r(12,72,9,9,'#9fe3c5',.95) + r(84,16,9,9,'#cb5521',.95) +
         txt(12,60,76,'直跳，没有路线感','11','rgba(216,236,248,.5)',0)
       )
     },
     after: {
       tag: "改后", desc: "沿自定义曲线轨迹平滑移动，路线一目了然。",
       visual: slide(
-        '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M12,78 C40,30 60,70 88,22" fill="none" stroke="#663af3" stroke-width="2" stroke-dasharray="4 3"/></svg>' +
-        r(10,72,9,9,'#9fe3c5',.95) + r(84,16,9,9,'#027dea',.95)
+        '<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M12,78 C40,30 60,70 88,22" fill="none" stroke="#2f6f3a" stroke-width="2" stroke-dasharray="4 3"/></svg>' +
+        r(10,72,9,9,'#9fe3c5',.95) + r(84,16,9,9,'#cb5521',.95)
       )
     },
     steps: [
@@ -1318,15 +1318,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "高频命令藏在功能区深处，每次翻菜单找。",
       visual: slide(
-        r(8,22,84,10,'rgba(255,255,255,.1)') +
+        r(8,22,84,10,'#777777)') +
         txt(10,44,80,'每次翻功能区找「对齐/格式刷」','11','rgba(216,236,248,.5)',1)
       )
     },
     after: {
       tag: "改后", desc: "常用命令钉到顶栏，一键点直达。",
       visual: slide(
-        r(8,22,84,10,'rgba(255,255,255,.1)') +
-        r(10,24,9,6,'#663af3',.9) + r(22,24,9,6,'#663af3',.9) + r(34,24,9,6,'#663af3',.9) +
+        r(8,22,84,10,'#777777)') +
+        r(10,24,9,6,'#2f6f3a',.9) + r(22,24,9,6,'#2f6f3a',.9) + r(34,24,9,6,'#2f6f3a',.9) +
         txt(10,40,80,'常用命令钉到顶栏，一键点','11','#9fe3c5',1)
       )
     },
@@ -1346,15 +1346,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "柱状图无标签，观众要歪头对坐标轴读数。",
       visual: slide(
-        r(10,24,24,48,'#663af3',.7) + r(38,36,24,36,'#663af3',.7) + r(66,20,24,52,'#663af3',.7) +
-        r(6,72,88,1,'rgba(255,255,255,.2)') + r(6,72,1,-8,'rgba(255,255,255,.2)')
+        r(10,24,24,48,'#2f6f3a',.7) + r(38,36,24,36,'#2f6f3a',.7) + r(66,20,24,52,'#2f6f3a',.7) +
+        r(6,72,88,1,'#777777)') + r(6,72,1,-8,'#777777)')
       )
     },
     after: {
       tag: "改后", desc: "柱顶标注数值，一眼看懂。",
       visual: slide(
-        r(10,24,24,48,'#663af3',.7) + r(38,36,24,36,'#663af3',.7) + r(66,20,24,52,'#663af3',.7) +
-        r(6,72,88,1,'rgba(255,255,255,.2)') + r(6,72,1,-8,'rgba(255,255,255,.2)') +
+        r(10,24,24,48,'#2f6f3a',.7) + r(38,36,24,36,'#2f6f3a',.7) + r(66,20,24,52,'#2f6f3a',.7) +
+        r(6,72,88,1,'#777777)') + r(6,72,1,-8,'#777777)') +
         txt(12,18,20,'120','12','#9fe3c5',1) + txt(40,30,20,'85','12','#9fe3c5',1) + txt(68,14,20,'198','12','#9fe3c5',1)
       )
     },
@@ -1374,15 +1374,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "动画一股脑弹出，层次全无。",
       visual: slide(
-        r(10,36,24,18,'#663af3',.5) + r(38,36,24,18,'#663af3',.5) + r(66,36,24,18,'#663af3',.5) +
+        r(10,36,24,18,'#2f6f3a',.5) + r(38,36,24,18,'#2f6f3a',.5) + r(66,36,24,18,'#2f6f3a',.5) +
         txt(12,18,76,'三块同时飞出→乱','11','#f0a59a',1)
       )
     },
     after: {
       tag: "改后", desc: "时间轴控制：先第1块→延迟 0.3s 后第2块→再第3块。",
       visual: slide(
-        r(10,36,24,18,'#663af3',.9) + r(38,36,24,18,'#663af3',.5) + r(66,36,24,18,'#663af3',.2) +
-        r(8,64,84,10,'rgba(255,255,255,.05)') + r(12,65,22,8,'#663af3') + r(36,65,22,8,'#663af3',.6) + r(60,65,22,8,'#663af3',.25) +
+        r(10,36,24,18,'#2f6f3a',.9) + r(38,36,24,18,'#2f6f3a',.5) + r(66,36,24,18,'#2f6f3a',.2) +
+        r(8,64,84,10,'#777777)') + r(12,65,22,8,'#2f6f3a') + r(36,65,22,8,'#2f6f3a',.6) + r(60,65,22,8,'#2f6f3a',.25) +
         txt(14,66,18,'块1 0s','8','#9fe3c5',1) + txt(38,66,18,'块2 0.3s','8','rgba(216,236,248,.5)',1) + txt(62,66,18,'块3 0.6s','8','rgba(216,236,248,.4)',1)
       )
     },
@@ -1402,15 +1402,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "两页不同形状，切页时直接闪现，无过渡。",
       visual: slide(
-        r(18,34,28,18,'#663af3',.7) + r(60,34,14,20,'#9fe3c5',.7) + txt(18,58,28,'第1页：方块','9','rgba(216,236,248,.4)',1) +
-        r(4,4,92,1,'rgba(255,255,255,.1)') + txt(40,8,20,'无过渡','10','#f0a59a',1)
+        r(18,34,28,18,'#2f6f3a',.7) + r(60,34,14,20,'#9fe3c5',.7) + txt(18,58,28,'第1页：方块','9','rgba(216,236,248,.4)',1) +
+        r(4,4,92,1,'#777777)') + txt(40,8,20,'无过渡','10','#f0a59a',1)
       )
     },
     after: {
       tag: "改后", desc: "选择窗格命名 !!shape → 两页对象平滑变。",
       visual: slide(
-        r(18,34,28,18,'#663af3',.7) + r(60,34,14,20,'#9fe3c5',.7) + txt(18,58,28,'第1页：!!shape','9','rgba(216,236,248,.4)',1) +
-        r(4,4,92,1,'rgba(255,255,255,.1)') + txt(40,8,20,'平滑缩放 →','10','#9fe3c5',1)
+        r(18,34,28,18,'#2f6f3a',.7) + r(60,34,14,20,'#9fe3c5',.7) + txt(18,58,28,'第1页：!!shape','9','rgba(216,236,248,.4)',1) +
+        r(4,4,92,1,'#777777)') + txt(40,8,20,'平滑缩放 →','10','#9fe3c5',1)
       )
     },
     steps: [
@@ -1429,17 +1429,17 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "元素靠眼对齐，间距不一致。",
       visual: slide(
-        r(8,22,18,16,'rgba(255,255,255,.12)') + r(34,18,18,18,'rgba(255,255,255,.12)') + r(60,26,18,14,'rgba(255,255,255,.12)') +
-        r(76,38,18,12,'rgba(255,255,255,.12)')
+        r(8,22,18,16,'#777777)') + r(34,18,18,18,'#777777)') + r(60,26,18,14,'#777777)') +
+        r(76,38,18,12,'#777777)')
       )
     },
     after: {
       tag: "改后", desc: "参考线 + 网格辅助下，元素整齐对齐。",
       visual: slide(
         r(6,18,82,1,'#9fe3c5',.25) + r(6,44,82,1,'#9fe3c5',.25) +
-        r(20,4,1,70,'#663af3',.25) + r(52,4,1,70,'#663af3',.25) +
-        r(22,20,28,14,'rgba(255,255,255,.15)') + r(22,46,28,14,'rgba(255,255,255,.15)') +
-        r(54,20,28,14,'rgba(255,255,255,.15)') + r(54,46,28,14,'rgba(255,255,255,.15)')
+        r(20,4,1,70,'#2f6f3a',.25) + r(52,4,1,70,'#2f6f3a',.25) +
+        r(22,20,28,14,'#777777)') + r(22,46,28,14,'#777777)') +
+        r(54,20,28,14,'#777777)') + r(54,46,28,14,'#777777)')
       )
     },
     steps: [
@@ -1458,16 +1458,16 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "观众问到第8页内容，你狂翻页找。",
       visual: slide(
-        r(10,40,24,16,'rgba(255,255,255,.1)') + r(38,40,24,16,'rgba(255,255,255,.1)') + r(66,40,24,16,'rgba(255,255,255,.1)') +
+        r(10,40,24,16,'#777777)') + r(38,40,24,16,'#777777)') + r(66,40,24,16,'#777777)') +
         txt(18,44,8,'1','10','rgba(216,236,248,.3)',1) + txt(46,44,8,'→8','10','#f0a59a',1) + txt(74,44,8,'?','10','#f0a59a',1)
       )
     },
     after: {
       tag: "改后", desc: "缩放定位面板出现，点任意页直接跳。",
       visual: slide(
-        r(4,10,30,22,'rgba(255,255,255,.08)') + r(36,10,30,22,'rgba(255,255,255,.08)') + r(68,10,30,22,'rgba(255,255,255,.08)') +
-        r(4,36,30,22,'rgba(255,255,255,.08)') + r(36,36,30,22,'rgba(255,255,255,.08)') + r(68,36,30,22,'rgba(255,255,255,.08)') +
-        r(52,12,28,18,'#663af3',.4) + txt(54,18,24,'数据明细','9','#fff',1)
+        r(4,10,30,22,'#777777)') + r(36,10,30,22,'#777777)') + r(68,10,30,22,'#777777)') +
+        r(4,36,30,22,'#777777)') + r(36,36,30,22,'#777777)') + r(68,36,30,22,'#777777)') +
+        r(52,12,28,18,'#2f6f3a',.4) + txt(54,18,24,'数据明细','9','#3a8a8a',1)
       )
     },
     steps: [
@@ -1486,13 +1486,13 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "平面截图六面图，旋转感全靠脑补。",
       visual: slide(
-        r(30,26,40,36,'rgba(255,255,255,.08)') + txt(34,42,32,'产品六面图×6','12','rgba(216,236,248,.4)',1)
+        r(30,26,40,36,'#777777)') + txt(34,42,32,'产品六面图×6','12','rgba(216,236,248,.4)',1)
       )
     },
     after: {
       tag: "改后", desc: "3D 模型拖旋转任意角度，展示立体结构。",
       visual: slide(
-        '<svg viewBox="0 0 100 100" style="position:absolute;left:25%;top:12%;width:50%;height:64%"><polygon points="50,10 90,34 90,66 50,90 10,66 10,34" fill="rgba(102,58,243,.25)" stroke="#663af3" stroke-width="1"/><polygon points="50,10 90,34 50,42 10,34" fill="rgba(102,58,243,.4)"/><line x1="50" y1="42" x2="50" y2="90" stroke="#663af3" stroke-width="1"/><line x1="10" y1="34" x2="10" y2="66" stroke="#663af3" stroke-width=".5"/><line x1="90" y1="34" x2="90" y2="66" stroke="#663af3" stroke-width=".5"/></svg>' +
+        '<svg viewBox="0 0 100 100" style="position:absolute;left:25%;top:12%;width:50%;height:64%"><polygon points="50,10 90,34 90,66 50,90 10,66 10,34" fill="rgba(102,58,243,.25)" stroke="#2f6f3a" stroke-width="1"/><polygon points="50,10 90,34 50,42 10,34" fill="rgba(102,58,243,.4)"/><line x1="50" y1="42" x2="50" y2="90" stroke="#2f6f3a" stroke-width="1"/><line x1="10" y1="34" x2="10" y2="66" stroke="#2f6f3a" stroke-width=".5"/><line x1="90" y1="34" x2="90" y2="66" stroke="#2f6f3a" stroke-width=".5"/></svg>' +
         circ(68,68,8,'#9fe3c5',.3) + txt(66,66,12,'↻','11','#9fe3c5',1)
       )
     },
@@ -1513,7 +1513,7 @@ const TECHNIQUES = [
       tag: "改前", desc: "一套蓝紫配色从头用到尾，换风格要逐页改。",
       visual: slide(
         r(4,16,42,60,'#1a1a4e') + r(50,16,46,60,'#1a1a4e') +
-        r(10,24,30,18,'#663af3',.8) + r(56,24,34,18,'#663af3',.8) +
+        r(10,24,30,18,'#2f6f3a',.8) + r(56,24,34,18,'#2f6f3a',.8) +
         r(10,48,30,10,'rgba(102,58,243,.3)') + r(56,48,34,10,'rgba(102,58,243,.3)')
       )
     },
@@ -1523,7 +1523,7 @@ const TECHNIQUES = [
         r(4,16,42,60,'#1a2e1a') + r(50,16,46,60,'#1a2e1a') +
         r(10,24,30,18,'#269684',.8) + r(56,24,34,18,'#269684',.8) +
         r(10,48,30,10,'rgba(38,150,132,.3)') + r(56,48,34,10,'rgba(38,150,132,.3)') +
-        r(78,68,14,8,'rgba(255,255,255,.06)') + txt(79,69,12,'绿色变体','8','#9fe3c5',1)
+        r(78,68,14,8,'#777777)') + txt(79,69,12,'绿色变体','8','#9fe3c5',1)
       )
     },
     steps: [
@@ -1542,15 +1542,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "普通照片做封面背景，太写实没设计感。",
       visual: slide(
-        r(10,16,36,52,'rgba(255,255,255,.12)') + r(54,16,36,52,'rgba(255,255,255,.15)') +
-        circ(28,32,18,'#663af3',.15) + circ(28,32,18,'#663af3',.3)
+        r(10,16,36,52,'#777777)') + r(54,16,36,52,'#777777)') +
+        circ(28,32,18,'#2f6f3a',.15) + circ(28,32,18,'#2f6f3a',.3)
       )
     },
     after: {
       tag: "改后", desc: "艺术效果→铅笔素描/水彩/虚化，秒变插画风。",
       visual: slide(
-        r(10,16,36,52,'rgba(255,255,255,.12)') + r(54,16,36,52,'rgba(255,255,255,.06)') +
-        circ(28,32,18,'#663af3',.15) + circ(28,32,18,'#663af3',.3) +
+        r(10,16,36,52,'#777777)') + r(54,16,36,52,'#777777)') +
+        circ(28,32,18,'#2f6f3a',.15) + circ(28,32,18,'#2f6f3a',.3) +
         '<svg viewBox="0 0 100 100" style="position:absolute;left:54%;top:16%;width:36%;height:52%"><line x1="20" y1="30" x2="36" y2="28" stroke="#9fe3c5" stroke-width=".5" opacity=".5"/><line x1="22" y1="34" x2="40" y2="32" stroke="#9fe3c5" stroke-width=".5" opacity=".5"/><line x1="18" y1="38" x2="42" y2="36" stroke="#9fe3c5" stroke-width=".5" opacity=".5"/><line x1="50" y1="42" x2="68" y2="40" stroke="#f0a59a" stroke-width=".5" opacity=".5"/><line x1="48" y1="46" x2="70" y2="44" stroke="#f0a59a" stroke-width=".5" opacity=".5"/></svg>' +
         txt(60,70,28,'铅笔素描','9','#9fe3c5',1)
       )
@@ -1571,15 +1571,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "照片偏暗看不清细节。",
       visual: slide(
-        r(20,20,60,48,'#1a1a2e') + circ(50,44,20,'rgba(255,255,255,.06)') +
+        r(20,20,60,48,'#1a1a2e') + circ(50,44,20,'#777777)') +
         txt(36,70,28,'太暗看不清','10','#f0a59a',1)
       )
     },
     after: {
       tag: "改后", desc: "提高亮度+对比度，画面清晰。",
       visual: slide(
-        r(20,20,60,48,'#2a2a4e') + circ(50,44,20,'rgba(255,255,255,.18)') +
-        r(52,18,6,3,'rgba(255,255,255,.08)') + txt(53,19,4,'亮度+30','6','#9fe3c5',1)
+        r(20,20,60,48,'#2a2a4e') + circ(50,44,20,'#777777)') +
+        r(52,18,6,3,'#777777)') + txt(53,19,4,'亮度+30','6','#9fe3c5',1)
       )
     },
     steps: [
@@ -1598,14 +1598,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "图片直愣愣放上去，没层次感。",
       visual: slide(
-        r(30,24,40,40,'rgba(255,255,255,.12)')
+        r(30,24,40,40,'#777777)')
       )
     },
     after: {
       tag: "改后", desc: "套图片样式→柔化边缘+投影，立体有质感。",
       visual: slide(
-        r(30,24,40,40,'rgba(255,255,255,.15)') +
-        r(28,22,40,40,'rgba(102,58,243,.12)') + r(30,24,40,40,'rgba(255,255,255,.18)') +
+        r(30,24,40,40,'#777777)') +
+        r(28,22,40,40,'rgba(102,58,243,.12)') + r(30,24,40,40,'#777777)') +
         txt(36,70,28,'柔化边缘+投影','9','#9fe3c5',1)
       )
     },
@@ -1625,14 +1625,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "换素材→删图→插新图→重设裁剪/边框/位置，超麻烦。",
       visual: slide(
-        r(24,20,24,40,'rgba(255,255,255,.12)') + circ(36,38,18,'rgba(255,255,255,.08)') +
+        r(24,20,24,40,'#777777)') + circ(36,38,18,'#777777)') +
         txt(12,70,52,'删→插→重调格式','9','#f0a59a',1)
       )
     },
     after: {
       tag: "改后", desc: "右键「更改图片」→新图自动继承所有格式。",
       visual: slide(
-        r(24,20,24,40,'rgba(255,255,255,.12)') + circ(36,38,18,'#9fe3c5',.2) +
+        r(24,20,24,40,'#777777)') + circ(36,38,18,'#9fe3c5',.2) +
         txt(42,20,46,'格式原封不动继承','9','#9fe3c5',1)
       )
     },
@@ -1652,15 +1652,15 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "Excel 数据改了，PPT 图要重新复制粘帖。",
       visual: slide(
-        r(8,30,36,28,'rgba(255,255,255,.06)') + r(52,30,40,28,'rgba(255,255,255,.06)') +
+        r(8,30,36,28,'#777777)') + r(52,30,40,28,'#777777)') +
         txt(12,38,28,'Excel 数据','10','rgba(216,236,248,.4)',1) + txt(56,38,28,'PPT 图表','10','rgba(216,236,248,.4)',1) +
-        r(26,60,1,12,'rgba(255,255,255,.15)') + txt(30,64,8,'手动','7','#f0a59a',1)
+        r(26,60,1,12,'#777777)') + txt(30,64,8,'手动','7','#f0a59a',1)
       )
     },
     after: {
       tag: "改后", desc: "粘贴为链接→源数据更新→PPT 点刷新自动同步。",
       visual: slide(
-        r(8,30,36,28,'rgba(255,255,255,.06)') + r(52,30,40,28,'rgba(255,255,255,.06)') +
+        r(8,30,36,28,'#777777)') + r(52,30,40,28,'#777777)') +
         txt(12,38,28,'Excel 数据','10','rgba(216,236,248,.4)',1) + txt(56,38,28,'PPT 图表','10','rgba(216,236,248,.4)',1) +
         r(26,56,1,20,'#9fe3c5',.4) + txt(30,64,8,'⇄','12','#9fe3c5',1) +
         txt(58,60,32,'右键刷新','9','#9fe3c5',1)
@@ -1682,7 +1682,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "表格里只有数字，对比不直观。",
       visual: slide(
-        r(12,24,76,8,'rgba(255,255,255,.06)') + r(12,36,76,8,'rgba(255,255,255,.04)') + r(12,48,76,8,'rgba(255,255,255,.06)') +
+        r(12,24,76,8,'#777777)') + r(12,36,76,8,'#777777)') + r(12,48,76,8,'#777777)') +
         txt(16,25,15,'Q1','10','rgba(216,236,248,.5)',1) + txt(52,25,15,'120','12','rgba(216,236,248,.7)',1) +
         txt(16,37,15,'Q2','10','rgba(216,236,248,.5)',1) + txt(52,37,15,'85','12','rgba(216,236,248,.7)',1) +
         txt(16,49,15,'Q3','10','rgba(216,236,248,.5)',1) + txt(52,49,15,'198','12','rgba(216,236,248,.7)',1)
@@ -1691,10 +1691,10 @@ const TECHNIQUES = [
     after: {
       tag: "改后", desc: "表格内嵌数据条，数字大小一眼可见。",
       visual: slide(
-        r(12,24,76,8,'rgba(255,255,255,.06)') + r(12,36,76,8,'rgba(255,255,255,.04)') + r(12,48,76,8,'rgba(255,255,255,.06)') +
-        r(34,25,36,6,'#663af3',.5) + txt(16,25,15,'Q1','10','rgba(216,236,248,.5)',1) + txt(72,25,15,'120','12','#fff',1) +
-        r(34,37,26,6,'#663af3',.35) + txt(16,37,15,'Q2','10','rgba(216,236,248,.5)',1) + txt(72,37,15,'85','12','rgba(216,236,248,.7)',1) +
-        r(34,49,46,6,'#663af3',.6) + txt(16,49,15,'Q3','10','rgba(216,236,248,.5)',1) + txt(72,49,15,'198','12','#fff',1)
+        r(12,24,76,8,'#777777)') + r(12,36,76,8,'#777777)') + r(12,48,76,8,'#777777)') +
+        r(34,25,36,6,'#2f6f3a',.5) + txt(16,25,15,'Q1','10','rgba(216,236,248,.5)',1) + txt(72,25,15,'120','12','#3a8a8a',1) +
+        r(34,37,26,6,'#2f6f3a',.35) + txt(16,37,15,'Q2','10','rgba(216,236,248,.5)',1) + txt(72,37,15,'85','12','rgba(216,236,248,.7)',1) +
+        r(34,49,46,6,'#2f6f3a',.6) + txt(16,49,15,'Q3','10','rgba(216,236,248,.5)',1) + txt(72,49,15,'198','12','#3a8a8a',1)
       )
     },
     steps: [
@@ -1713,14 +1713,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "放着放着要切出去开播放器拖进度条。",
       visual: slide(
-        r(6,28,88,8,'rgba(255,255,255,.08)') + r(6,28,40,8,'#663af3',.15) +
-        r(76,20,8,4,'rgba(255,255,255,.08)') + txt(78,21,4,'1:30','6','rgba(216,236,248,.4)')
+        r(6,28,88,8,'#777777)') + r(6,28,40,8,'#2f6f3a',.15) +
+        r(76,20,8,4,'#777777)') + txt(78,21,4,'1:30','6','rgba(216,236,248,.4)')
       )
     },
     after: {
       tag: "改后", desc: "内嵌播放器→裁剪头尾+书签跳点→自动播。",
       visual: slide(
-        r(6,28,88,8,'rgba(255,255,255,.08)') + r(36,28,28,8,'#663af3',.3) +
+        r(6,28,88,8,'#777777)') + r(36,28,28,8,'#2f6f3a',.3) +
         circ(36,32,3,'#9fe3c5') + circ(64,32,3,'#9fe3c5') +
         txt(54,18,24,'书签跳点','8','#9fe3c5',1) + txt(38,44,28,'自动播放','8','#9fe3c5',1)
       )
@@ -1770,14 +1770,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "从别的 PPT 复制粘贴→格式崩、母版不对。",
       visual: slide(
-        r(10,30,36,28,'rgba(255,255,255,.06)') + r(54,30,36,28,'rgba(255,255,255,.06)') +
+        r(10,30,36,28,'#777777)') + r(54,30,36,28,'#777777)') +
         r(32,36,1,16,'#f0a59a',.4) + txt(36,42,16,'格式崩','8','#f0a59a',1)
       )
     },
     after: {
       tag: "改后", desc: "重用幻灯片→浏览→点即插入，格式原样保留。",
       visual: slide(
-        r(10,30,36,28,'rgba(255,255,255,.06)') + r(54,30,36,28,'rgba(255,255,255,.06)') +
+        r(10,30,36,28,'#777777)') + r(54,30,36,28,'#777777)') +
         r(32,36,24,16,'rgba(102,58,243,.15)') + txt(34,46,20,'✓ 格式保留','8','#9fe3c5',1)
       )
     },
@@ -1804,7 +1804,7 @@ const TECHNIQUES = [
       tag: "改后", desc: "墨迹公式→手写 x²+bx+c→自动转标准排版。",
       visual: slide(
         txt(14,28,72,'x² + bx + c = 0','18','#9fe3c5',1) +
-        circ(74,68,8,'rgba(255,255,255,.08)') + txt(72,66,12,'✎ 手写','8','#9fe3c5',1)
+        circ(74,68,8,'#777777)') + txt(72,66,12,'✎ 手写','8','#9fe3c5',1)
       )
     },
     steps: [
@@ -1823,7 +1823,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "各地区数据列在表格里，看不出地理分布。",
       visual: slide(
-        r(10,28,40,36,'rgba(255,255,255,.06)') + r(60,28,30,20,'rgba(255,255,255,.04)') +
+        r(10,28,40,36,'#777777)') + r(60,28,30,20,'#777777)') +
         txt(14,32,32,'地区 / 销量','10','rgba(216,236,248,.4)',1) +
         txt(14,42,32,'A区 340','9','rgba(216,236,248,.3)',1) +
         txt(14,48,32,'B区 210','9','rgba(216,236,248,.3)',1) +
@@ -1834,10 +1834,10 @@ const TECHNIQUES = [
       tag: "改后", desc: "地图图表→各省按数值深浅着色。",
       visual: slide(
         r(8,14,42,64,'rgba(102,58,243,.05)') +
-        r(14,20,12,10,'#663af3',.7) + r(30,20,12,10,'#663af3',.4) + r(14,34,12,12,'#663af3',.3) +
-        r(30,34,12,12,'#663af3',.5) + r(14,50,12,10,'#663af3',.2) + r(30,50,12,10,'#663af3',.6) +
-        r(56,20,34,12,'rgba(255,255,255,.06)') + txt(58,22,30,'数值越深','9','#9fe3c5',1) +
-        r(56,36,34,4,'#663af3',.7) + r(56,42,34,4,'#663af3',.4) + r(56,48,34,4,'#663af3',.2) +
+        r(14,20,12,10,'#2f6f3a',.7) + r(30,20,12,10,'#2f6f3a',.4) + r(14,34,12,12,'#2f6f3a',.3) +
+        r(30,34,12,12,'#2f6f3a',.5) + r(14,50,12,10,'#2f6f3a',.2) + r(30,50,12,10,'#2f6f3a',.6) +
+        r(56,20,34,12,'#777777)') + txt(58,22,30,'数值越深','9','#9fe3c5',1) +
+        r(56,36,34,4,'#2f6f3a',.7) + r(56,42,34,4,'#2f6f3a',.4) + r(56,48,34,4,'#2f6f3a',.2) +
         txt(92,50,6,'深 → 浅','7','rgba(216,236,248,.4)',1)
       )
     },
@@ -1860,8 +1860,8 @@ const TECHNIQUES = [
       tag: "改前", desc: "亮色科技图上直接放字，对比太低，字看不清。",
       visual: slide(
         '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover" />' +
-        txt(10, 40, 82, 'AI 驱动未来', 26, 'rgba(255,255,255,.50)', 0) +
-        txt(10, 57, 70, '让数据自己说话', 13, 'rgba(255,255,255,.42)', 0)
+        txt(10, 40, 82, 'AI 驱动未来', 26, '#777777)', 0) +
+        txt(10, 57, 70, '让数据自己说话', 13, '#777777)', 0)
       )
     },
     after: {
@@ -1869,8 +1869,8 @@ const TECHNIQUES = [
       visual: slide(
         '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover" />' +
         '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(5,6,15,.12),rgba(5,6,15,.72))"></div>' +
-        txt(10, 40, 82, 'AI 驱动未来', 26, '#ffffff', 1) +
-        txt(10, 57, 70, '让数据自己说话', 13, 'rgba(255,255,255,.84)', 0)
+        txt(10, 40, 82, 'AI 驱动未来', 26, '#3a8a8a', 1) +
+        txt(10, 57, 70, '让数据自己说话', 13, '#777777)', 0)
       )
     },
     steps: [
@@ -1889,22 +1889,22 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "备用页混在正文里，放映时会突然冒出来，打断节奏。",
       visual: slide(
-        r(4, 30, 20, 40, 'rgba(255,255,255,.10)') + txt(6, 70, 18, '1', 10, 'rgba(216,236,248,.6)', 0) +
-        r(28, 30, 20, 40, 'rgba(255,255,255,.10)') + txt(30, 70, 18, '2', 10, 'rgba(216,236,248,.6)', 0) +
-        r(52, 30, 20, 40, '#e46d4c') + txt(53, 70, 18, '备用', 9, '#fff', 1) +
-        r(76, 30, 20, 40, 'rgba(255,255,255,.10)') + txt(78, 70, 18, '3', 10, 'rgba(216,236,248,.6)', 0) +
+        r(4, 30, 20, 40, '#777777)') + txt(6, 70, 18, '1', 10, 'rgba(216,236,248,.6)', 0) +
+        r(28, 30, 20, 40, '#777777)') + txt(30, 70, 18, '2', 10, 'rgba(216,236,248,.6)', 0) +
+        r(52, 30, 20, 40, '#cb5521') + txt(53, 70, 18, '备用', 9, '#3a8a8a', 1) +
+        r(76, 30, 20, 40, '#777777)') + txt(78, 70, 18, '3', 10, 'rgba(216,236,248,.6)', 0) +
         txt(4, 14, 92, '放映时会冒出「备用页」', 12, 'rgba(240,165,154,.92)', 1)
       )
     },
     after: {
       tag: "改后", desc: "把备用页设为隐藏，放映自动跳过；需要时再显示。",
       visual: slide(
-        r(4, 30, 20, 40, 'rgba(255,255,255,.10)') + txt(6, 70, 18, '1', 10, 'rgba(216,236,248,.6)', 0) +
-        r(28, 30, 20, 40, 'rgba(255,255,255,.10)') + txt(30, 70, 18, '2', 10, 'rgba(216,236,248,.6)', 0) +
-        r(52, 30, 20, 40, 'rgba(255,255,255,.04)') +
+        r(4, 30, 20, 40, '#777777)') + txt(6, 70, 18, '1', 10, 'rgba(216,236,248,.6)', 0) +
+        r(28, 30, 20, 40, '#777777)') + txt(30, 70, 18, '2', 10, 'rgba(216,236,248,.6)', 0) +
+        r(52, 30, 20, 40, '#777777)') +
         '<div style="position:absolute;left:52%;top:30%;width:20%;height:40%;overflow:hidden"><div style="position:absolute;left:50%;top:-10%;width:2px;height:120%;background:rgba(228,77,60,.85);transform:rotate(35deg)"></div></div>' +
         txt(53, 70, 18, '已隐藏', 9, 'rgba(159,227,197,.95)', 1) +
-        r(76, 30, 20, 40, 'rgba(255,255,255,.10)') + txt(78, 70, 18, '3', 10, 'rgba(216,236,248,.6)', 0) +
+        r(76, 30, 20, 40, '#777777)') + txt(78, 70, 18, '3', 10, 'rgba(216,236,248,.6)', 0) +
         txt(4, 14, 92, '放映自动跳过 · 需要时再显示', 12, 'rgba(159,227,197,.92)', 1)
       )
     },
@@ -1932,7 +1932,7 @@ const TECHNIQUES = [
       tag: "改后", desc: "转轮廓成矢量，可填渐变、改节点，且不再依赖字体。",
       visual: slide(
         '<div style="position:absolute;left:18%;top:34%;width:64%;height:32%;border-radius:6px;display:grid;place-items:center;background:rgba(102,58,243,.08)">' +
-        '<span style="font:600 24px var(--font-body);background:linear-gradient(90deg,#a78bfa,#663af3);-webkit-background-clip:text;background-clip:text;color:transparent">标题文字</span></div>' +
+        '<span style="font:600 24px var(--font-body);background:linear-gradient(90deg,#2f6f3a,#2f6f3a);-webkit-background-clip:text;background-clip:text;color:transparent">标题文字</span></div>' +
         txt(18, 18, 64, '转轮廓 · 矢量可改色 · 不依赖字体', 12, 'rgba(159,227,197,.92)', 0)
       )
     },
@@ -1952,7 +1952,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "SmartArt 是个整体，想单独挪一个框、改一个色都不行。",
       visual: slide(
-        r(10, 32, 22, 16, '#663af3', .85) + r(39, 32, 22, 16, '#663af3', .85) + r(68, 32, 22, 16, '#663af3', .85) +
+        r(10, 32, 22, 16, '#2f6f3a', .85) + r(39, 32, 22, 16, '#2f6f3a', .85) + r(68, 32, 22, 16, '#2f6f3a', .85) +
         r(30, 40, 9, 2, 'rgba(216,236,248,.5)') + r(59, 40, 9, 2, 'rgba(216,236,248,.5)') +
         txt(10, 64, 80, 'SmartArt 整体锁定 · 单框不能改', 11, 'rgba(240,165,154,.92)', 0)
       )
@@ -1960,7 +1960,7 @@ const TECHNIQUES = [
     after: {
       tag: "改后", desc: "转成形状后，每个元素独立，随便改。",
       visual: slide(
-        r(8, 28, 20, 15, '#663af3', .9) + r(42, 42, 20, 15, '#027dea', .9) + r(72, 30, 18, 14, '#269684', .9) +
+        r(8, 28, 20, 15, '#2f6f3a', .9) + r(42, 42, 20, 15, '#cb5521', .9) + r(72, 30, 18, 14, '#269684', .9) +
         '<div style="position:absolute;left:60%;top:54%;width:16%;height:2px;background:rgba(216,236,248,.4);transform:rotate(-32deg)"></div>' +
         txt(8, 64, 84, '转形状后 · 可单独拖 / 改色 / 删', 11, 'rgba(159,227,197,.92)', 0)
       )
@@ -1980,8 +1980,8 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "大红大蓝纯色块，平、土、没设计感。",
       visual: slide(
-        '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#663af3"></div>' +
-        txt(10, 40, 80, '纯色太单调', 22, 'rgba(255,255,255,.85)', 1)
+        '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#2f6f3a"></div>' +
+        txt(10, 40, 80, '纯色太单调', 22, '#777777)', 1)
       )
     },
     after: {
@@ -1989,7 +1989,7 @@ const TECHNIQUES = [
       visual: slide(
         '<img src="img/tech2.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover" />' +
         '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(102,58,243,.78),rgba(2,125,234,.42))"></div>' +
-        txt(10, 40, 80, '渐变更高级', 22, '#ffffff', 1)
+        txt(10, 40, 80, '渐变更高级', 22, '#3a8a8a', 1)
       )
     },
     steps: [
@@ -2050,8 +2050,8 @@ const TECHNIQUES = [
     after: {
       tag: "改后", desc: "导出 MP4，双击就播，动画切换全在。",
       visual: slide(
-        '<div style="position:absolute;left:34%;top:20%;width:32%;height:38%;border-radius:8px;background:linear-gradient(135deg,#0b1020,#101830);border:1px solid rgba(102,58,243,.5);display:grid;place-items:center">' +
-        '<div style="width:34px;height:34px;border-radius:50%;background:#663af3;display:grid;place-items:center;color:#fff;font:14px sans-serif">▶</div></div>' +
+        '<div style="position:absolute;left:34%;top:20%;width:32%;height:38%;border-radius:8px;background:linear-gradient(135deg,#1a3300,#1a3300);border:1px solid rgba(102,58,243,.5);display:grid;place-items:center">' +
+        '<div style="width:34px;height:34px;border-radius:50%;background:#2f6f3a;display:grid;place-items:center;color:#3a8a8a;font:14px sans-serif">▶</div></div>' +
         txt(20, 62, 60, '导出 MP4 · 双击就播', 12, 'rgba(159,227,197,.92)', 0)
       )
     },
@@ -2072,13 +2072,13 @@ const TECHNIQUES = [
       tag: "改前", desc: "讲着讲着要留白思考，只能尴尬站着，画面还亮着。",
       visual: slide(
         '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:.55" />' +
-        txt(10, 42, 80, '放映中 · 画面还亮着', 14, '#ffffff', 1)
+        txt(10, 42, 80, '放映中 · 画面还亮着', 14, '#3a8a8a', 1)
       )
     },
     after: {
       tag: "改后", desc: "按 B 整屏变黑（或 W 变白），讲完按任意键秒回。",
       visual: slide(
-        '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#05060f"></div>' +
+        '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#1a3300"></div>' +
         txt(10, 44, 84, '按 B 黑屏 / W 白屏 · 任意键继续', 14, 'rgba(216,236,248,.7)', 1)
       )
     },
@@ -2097,7 +2097,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "领导要可编辑 Word，你只能一张张截图贴，又慢又乱。",
       visual: slide(
-        r(10, 14, 80, 54, "rgba(255,255,255,.06)", 1) +
+        r(10, 14, 80, 54, "#777777)", 1) +
         '<div style="position:absolute;left:14%;top:18%;width:18%;height:24%;background:rgba(228,77,60,.18);border:1px solid rgba(228,77,60,.5);border-radius:6px;display:grid;place-items:center;color:#f0a59a;font:11px var(--font-body)">.pptx</div>' +
         '<div style="position:absolute;left:40%;top:30%;width:46%;height:3%;background:rgba(216,236,248,.4);border-radius:2px"></div>' +
         '<div style="position:absolute;left:40%;top:38%;width:40%;height:3%;background:rgba(216,236,248,.28);border-radius:2px"></div>' +
@@ -2107,7 +2107,7 @@ const TECHNIQUES = [
     after: {
       tag: "改后", desc: "文件 → 导出 → 创建讲义（含备注）→ 用 Word 打开，版式工整。",
       visual: slide(
-        r(10, 14, 80, 54, "rgba(255,255,255,.06)", 1) +
+        r(10, 14, 80, 54, "#777777)", 1) +
         '<div style="position:absolute;left:14%;top:18%;width:18%;height:24%;background:rgba(102,58,243,.18);border:1px solid rgba(102,58,243,.55);border-radius:6px;display:grid;place-items:center;color:#b9a6ff;font:11px var(--font-body)">.docx</div>' +
         '<div style="position:absolute;left:40%;top:22%;width:46%;height:30%;background:rgba(159,227,197,.12);border:1px dashed rgba(159,227,197,.5);border-radius:4px"></div>' +
         txt(40, 24, 46, '幻灯片 + 备注', 11, 'rgba(159,227,197,.92)', 0) +
@@ -2158,7 +2158,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "4:3 旧稿直接投 16:9 屏，上下留黑边、内容被裁。",
       visual: slide(
-        '<div style="position:absolute;left:14%;top:8%;width:72%;height:84%;background:rgba(255,255,255,.05);border:1px solid rgba(216,236,248,.25);border-radius:4px"></div>' +
+        '<div style="position:absolute;left:14%;top:8%;width:72%;height:84%;background:#777777);border:1px solid rgba(216,236,248,.25);border-radius:4px"></div>' +
         '<div style="position:absolute;left:20%;top:18%;width:60%;height:8%;background:rgba(228,77,60,.5);border-radius:3px"></div>' +
         '<div style="position:absolute;left:20%;top:34%;width:60%;height:5%;background:rgba(216,236,248,.3);border-radius:2px"></div>' +
         '<div style="position:absolute;left:20%;top:44%;width:46%;height:5%;background:rgba(216,236,248,.2);border-radius:2px"></div>' +
@@ -2190,7 +2190,7 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "想录一段操作演示，还得另外装录屏软件、导出再插入。",
       visual: slide(
-        '<div style="position:absolute;left:26%;top:24%;width:48%;height:34%;border-radius:8px;background:rgba(255,255,255,.05);border:1px dashed rgba(216,236,248,.35);display:grid;place-items:center;color:rgba(216,236,248,.6);font:11px var(--font-body)">外部录屏软件</div>' +
+        '<div style="position:absolute;left:26%;top:24%;width:48%;height:34%;border-radius:8px;background:#777777);border:1px dashed rgba(216,236,248,.35);display:grid;place-items:center;color:rgba(216,236,248,.6);font:11px var(--font-body)">外部录屏软件</div>' +
         txt(26, 64, 48, '还要装软件？', 12, 'rgba(240,165,154,.9)', 0)
       )
     },
@@ -2248,14 +2248,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "一页一张打印，100 页装订成砖头，还费纸。",
       visual: slide(
-        '<div style="position:absolute;left:20%;top:16%;width:60%;height:46%;border:1px dashed rgba(228,77,60,.4);border-radius:4px;background:rgba(255,255,255,.04)"></div>' +
+        '<div style="position:absolute;left:20%;top:16%;width:60%;height:46%;border:1px dashed rgba(228,77,60,.4);border-radius:4px;background:#777777)"></div>' +
         txt(26, 66, 48, '1 页 1 张 · 费纸', 11, 'rgba(240,165,154,.9)', 0)
       )
     },
     after: {
       tag: "改后", desc: "讲义一页 6 张 + 框线，A4 正反打，轻便好翻。",
       visual: slide(
-        '<div style="position:absolute;left:18%;top:14%;width:64%;height:50%;background:rgba(255,255,255,.04);border-radius:4px"></div>' +
+        '<div style="position:absolute;left:18%;top:14%;width:64%;height:50%;background:#777777);border-radius:4px"></div>' +
         '<div style="position:absolute;left:20%;top:18%;width:18%;height:18%;border:1px solid rgba(159,227,197,.5);border-radius:3px"></div>' +
         '<div style="position:absolute;left:40%;top:18%;width:18%;height:18%;border:1px solid rgba(159,227,197,.5);border-radius:3px"></div>' +
         '<div style="position:absolute;left:60%;top:18%;width:18%;height:18%;border:1px solid rgba(159,227,197,.5);border-radius:3px"></div>' +
@@ -2280,14 +2280,14 @@ const TECHNIQUES = [
     before: {
       tag: "改前", desc: "扁平色块贴上去，像没设计过。",
       visual: slide(
-        '<div style="position:absolute;left:30%;top:30%;width:40%;height:34%;background:#663af3;border-radius:8px"></div>' +
+        '<div style="position:absolute;left:30%;top:30%;width:40%;height:34%;background:#2f6f3a;border-radius:8px"></div>' +
         txt(30, 70, 40, '纯色 · 平', 12, 'rgba(216,236,248,.6)', 0)
       )
     },
     after: {
       tag: "改后", desc: "加外阴影 + 柔光，立刻浮起来有质感。",
       visual: slide(
-        '<div style="position:absolute;left:30%;top:26%;width:40%;height:34%;background:linear-gradient(135deg,#7c5cff,#663af3);border-radius:8px;box-shadow:0 14px 30px rgba(102,58,243,.45)"></div>' +
+        '<div style="position:absolute;left:30%;top:26%;width:40%;height:34%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:8px;box-shadow:0 14px 30px rgba(102,58,243,.45)"></div>' +
         '<div style="position:absolute;left:30%;top:60%;width:40%;height:8%;background:linear-gradient(180deg,rgba(124,92,255,.35),transparent);border-radius:0 0 8px 8px;filter:blur(2px)"></div>' +
         txt(30, 74, 40, '阴影+发光', 11, 'rgba(185,166,255,.95)', 0)
       )
@@ -2379,9 +2379,9 @@ const TECHNIQUES = [
     after: {
       tag: "改后", desc: "右键→设为默认形状，后续插入自动带样式。",
       visual: slide(
-        '<div style="position:absolute;left:18%;top:22%;width:24%;height:22%;background:linear-gradient(135deg,#7c5cff,#663af3);border-radius:6px;box-shadow:0 8px 18px rgba(102,58,243,.4)"></div>' +
-        '<div style="position:absolute;left:46%;top:22%;width:24%;height:22%;background:linear-gradient(135deg,#7c5cff,#663af3);border-radius:6px;box-shadow:0 8px 18px rgba(102,58,243,.4)"></div>' +
-        '<div style="position:absolute;left:74%;top:22%;width:10%;height:22%;background:linear-gradient(135deg,#7c5cff,#663af3);border-radius:6px;box-shadow:0 8px 18px rgba(102,58,243,.4)"></div>' +
+        '<div style="position:absolute;left:18%;top:22%;width:24%;height:22%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:6px;box-shadow:0 8px 18px rgba(102,58,243,.4)"></div>' +
+        '<div style="position:absolute;left:46%;top:22%;width:24%;height:22%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:6px;box-shadow:0 8px 18px rgba(102,58,243,.4)"></div>' +
+        '<div style="position:absolute;left:74%;top:22%;width:10%;height:22%;background:linear-gradient(135deg,#2f6f3a,#2f6f3a);border-radius:6px;box-shadow:0 8px 18px rgba(102,58,243,.4)"></div>' +
         txt(18, 52, 66, '插入即套用 ✓', 11, 'rgba(159,227,197,.92)', 0)
       )
     },

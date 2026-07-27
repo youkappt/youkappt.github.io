@@ -4,11 +4,11 @@
  */
 (function () {
   const BC = {
-    ice: '#eaf2fb', mist: '#c2cfe0', fog: '#7e8aa0',
-    accent: '#8a6bff', accent2: '#663af3', blue: '#027dea', orange: '#e46d4c', red: '#e4483c', green: '#269684',
+    ice: '#3a8a8a', mist: '#c2cfe0', fog: '#7e8aa0',
+    accent: '#2f6f3a', accent2: '#2f6f3a', blue: '#cb5521', orange: '#e46d4c', red: '#cb5521', green: '#269684',
     ok: '#9fe3c5', bad: '#f0a59a',
     muted: 'rgba(186,214,247,0.16)', muted2: 'rgba(186,214,247,0.09)',
-    line: 'rgba(186,214,247,0.28)', barok: '#8a6bff', barbad: '#56657f'
+    line: 'rgba(186,214,247,0.28)', barok: '#2f6f3a', barbad: '#56657f'
   };
 
   // ---- 基础图元 ----
@@ -91,8 +91,8 @@
       slide(`<div style="display:flex;gap:10px">${box(78, 70, BC.muted, 'border:1px solid rgba(186,214,247,.25)')}${box(78, 70, BC.muted, 'border:1px solid rgba(186,214,247,.25)')}</div>`)
     ),
     'full-image': () => baGrid(
-      slide(`<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#2a3550,#2a3550 6px,#33405e 6px,#33405e 12px)"></div><div style="position:absolute;left:16px;top:70px;font:13px 'Space Grotesk';color:#cdd6e6;text-shadow:0 1px 3px #000">文字压在复杂图上，读不清</div>`),
-      slide(`<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#16203a,#16203a 6px,#1d2945 6px,#1d2945 12px);box-shadow:inset 0 0 60px 30px rgba(3,5,12,.85)"></div><div style="position:absolute;left:16px;bottom:18px;font:14px 'Space Grotesk';color:#eaf2fb;font-weight:600;text-shadow:0 2px 6px #000">压暗+文字，清楚</div>`)
+      slide(`<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#2a3550,#2a3550 6px,#33405e 6px,#33405e 12px)"></div><div style="position:absolute;left:16px;top:70px;font:13px 'Space Grotesk';color:#cdd6e6;text-shadow:0 1px 3px #1a3300">文字压在复杂图上，读不清</div>`),
+      slide(`<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#16203a,#16203a 6px,#1d2945 6px,#1d2945 12px);box-shadow:inset 0 0 60px 30px rgba(3,5,12,.85)"></div><div style="position:absolute;left:16px;bottom:18px;font:14px 'Space Grotesk';color:#3a8a8a;font-weight:600;text-shadow:0 2px 6px #1a3300">压暗+文字，清楚</div>`)
     ),
     'visual-balance': () => baGrid(
       slide(`<div style="position:absolute;left:18px;top:24px;width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,${BC.accent},${BC.blue})"></div><div style="position:absolute;right:18px;top:90px;font:11px 'Space Grotesk';color:${BC.fog}">右空</div>`),
@@ -125,7 +125,7 @@
       slide(row([box(44, 60, '#3a6ea5'), box(44, 60, '#2e8b8b'), box(44, 60, '#3aa0a0'), rbox(16, 16, '#e46d4c', 'margin-left:6px')], 8, 'align-items:center'))
     ),
     'complementary': () => baGrid(
-      slide(row([box(70, 56, '#e23b3b'), box(70, 56, '#2faa3f')], 0)),
+      slide(row([box(70, 56, '#cb5521'), box(70, 56, '#2faa3f')], 0)),
       slide(`<div style="width:140px;height:56px;border-radius:6px;background:#c95a5a;display:flex;align-items:center;justify-content:center"><div style="width:34px;height:34px;border-radius:6px;background:#2faa3f;opacity:.9"></div></div>`)
     ),
     'tri-color': () => baGrid(
@@ -133,20 +133,20 @@
       slide(row([box(96, 56, BC.accent2), box(34, 56, BC.blue), rbox(16, 16, BC.orange, 'margin-left:4px')], 8, 'align-items:center'))
     ),
     'gradient': () => baGrid(
-      slide(box(150, 56, 'linear-gradient(90deg,#e23b3b,#2faa3f,#3a6ea5)', 'border-radius:8px')),
-      slide(box(150, 56, 'linear-gradient(90deg,#663af3,#8a6bff,#b9a6ff)', 'border-radius:8px'))
+      slide(box(150, 56, 'linear-gradient(90deg,#cb5521,#2faa3f,#3a6ea5)', 'border-radius:8px')),
+      slide(box(150, 56, 'linear-gradient(90deg,#2f6f3a,#2f6f3a,#b9a6ff)', 'border-radius:8px'))
     ),
     'muted-color': () => baGrid(
-      slide(row([box(40, 40, '#e23b3b'), box(40, 40, '#2faa3f'), box(40, 40, '#3a6ea5')], 8)),
+      slide(row([box(40, 40, '#cb5521'), box(40, 40, '#2faa3f'), box(40, 40, '#3a6ea5')], 8)),
       slide(row([box(40, 40, '#c98b8b'), box(40, 40, '#9bb39b'), box(40, 40, '#8fa3b8')], 8))
     ),
     'color-wheel': () => baGrid(
-      slide(row([rbox(26, 26, '#e23b3b', 'margin-top:20px'), rbox(26, 26, '#2faa3f', 'margin-top:-6px'), rbox(26, 26, '#3a6ea5', 'margin-top:18px'), rbox(26, 26, '#e0a93b')], 10, 'align-items:flex-start')),
+      slide(row([rbox(26, 26, '#cb5521', 'margin-top:20px'), rbox(26, 26, '#2faa3f', 'margin-top:-6px'), rbox(26, 26, '#3a6ea5', 'margin-top:18px'), rbox(26, 26, '#e0a93b')], 10, 'align-items:flex-start')),
       slide(row([rbox(26, 26, '#6a8fd8'), rbox(26, 26, '#5fa0c8'), rbox(26, 26, '#4fb0b8'), rbox(26, 26, '#3aa0a0')], 10))
     ),
     'monochrome': () => baGrid(
       slide(row([box(40, 52, '#5a6b85'), box(40, 52, '#5a6b85'), box(40, 52, '#5a6b85')], 8)),
-      slide(row([box(40, 52, '#3a2f66'), box(40, 52, '#663af3'), box(40, 52, '#b9a6ff')], 8))
+      slide(row([box(40, 52, '#3a2f66'), box(40, 52, '#2f6f3a'), box(40, 52, '#b9a6ff')], 8))
     ),
     'golden-ratio': () => baGrid(
       slide(`<div style="display:flex;gap:0">${box(70, 80, BC.muted2)}${box(70, 80, BC.muted2)}</div>`),
@@ -225,7 +225,7 @@
       slide(`<div style="display:flex;gap:12px;align-items:center">${box(30, 30, BC.muted, 'border-radius:6px')}${box(30, 30, BC.muted, 'border-radius:6px')}${box(30, 30, BC.muted, 'border-radius:6px')}</div><div style="font:11px 'Space Grotesk';color:${BC.ice};margin-top:10px">统一一种风格</div>`)
     ),
     'chart-beauty': () => baGrid(
-      slide(`<div style="display:flex;align-items:flex-end;gap:10px;height:80px;margin-top:16px">${bar(22, 40, '#e23b3b')}${bar(22, 64, '#2faa3f')}${bar(22, 30, '#3a6ea5')}${bar(22, 52, '#e0a93b')}</div><div style="font:11px 'Space Grotesk';color:${BC.fog};margin-top:6px">默认彩柱+网格</div>`),
+      slide(`<div style="display:flex;align-items:flex-end;gap:10px;height:80px;margin-top:16px">${bar(22, 40, '#cb5521')}${bar(22, 64, '#2faa3f')}${bar(22, 30, '#3a6ea5')}${bar(22, 52, '#e0a93b')}</div><div style="font:11px 'Space Grotesk';color:${BC.fog};margin-top:6px">默认彩柱+网格</div>`),
       slide(`<div style="display:flex;align-items:flex-end;gap:10px;height:80px;margin-top:16px">${bar(22, 40, BC.barok)}${bar(22, 64, BC.barok)}${bar(22, 30, BC.barok)}${bar(22, 52, BC.barok)}</div><div style="font:11px 'Space Grotesk';color:${BC.ice};margin-top:6px">去网格·单色系</div>`)
     ),
     'image-mask': () => baGrid(
@@ -265,7 +265,7 @@
       slide(`<div style="display:flex;flex-direction:column;gap:6px">${row([rbox(14, 14, BC.accent), line(90, BC.barok, 8)])}${row([rbox(14, 14, BC.accent, 'margin-left:20px'), line(80, BC.barok, 8)])}${row([rbox(14, 14, BC.accent, 'margin-left:40px'), line(70, BC.barok, 8)])}</div><div style="font:11px 'Space Grotesk';color:${BC.ice}">时间轴/流程一眼懂</div>`)
     ),
     'brand-vi': () => baGrid(
-      slide(`<div style="display:flex;flex-direction:column;gap:8px">${line(110, '#e23b3b', 12)}${line(90, '#2faa3f', 12)}${txt('每页不同色字', '#e0a93b', 12)}</div><div style="font:11px 'Space Grotesk';color:${BC.fog}">每页不同色字</div>`),
+      slide(`<div style="display:flex;flex-direction:column;gap:8px">${line(110, '#cb5521', 12)}${line(90, '#2faa3f', 12)}${txt('每页不同色字', '#e0a93b', 12)}</div><div style="font:11px 'Space Grotesk';color:${BC.fog}">每页不同色字</div>`),
       slide(`<div style="display:flex;flex-direction:column;gap:8px">${line(110, BC.accent, 12)}${line(90, BC.accent, 12)}${txt('统一 VI 专业', BC.accent, 12)}</div><div style="font:11px 'Space Grotesk';color:${BC.ice}">统一 VI 专业</div>`)
     ),
     'loop-anim': () => baGrid(
@@ -273,7 +273,7 @@
       slide(`<div style="display:flex;align-items:center;justify-content:center;height:90px">${box(50, 50, BC.accent, 'border-radius:50%;box-shadow:0 0 16px rgba(138,107,255,.5);animation:baPulse 1.6s ease-in-out infinite')}</div><div style="font:11px 'Space Grotesk';color:${BC.ice}">轻微循环点睛</div>`)
     ),
     'font-license': () => baGrid(
-      slide(`<div style="display:flex;align-items:center;gap:8px">${txt('商业字体', '#e23b3b', 14, 'font-weight:700')}<span style="font:11px 'Space Grotesk';color:${BC.fog}">随手用 ⚠</span></div>`),
+      slide(`<div style="display:flex;align-items:center;gap:8px">${txt('商业字体', '#cb5521', 14, 'font-weight:700')}<span style="font:11px 'Space Grotesk';color:${BC.fog}">随手用 ⚠</span></div>`),
       slide(`<div style="display:flex;align-items:center;gap:8px">${txt('免费商用字体', BC.green, 14, 'font-weight:700')}<span style="font:11px 'Space Grotesk';color:${BC.ice}">已授权 ✓</span></div>`)
     ),
 
