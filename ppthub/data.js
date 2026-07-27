@@ -1276,14 +1276,6 @@ const TERMS = [
     related: ["notes-page", "presenter-view", "export-pdf", "notes-master"], demo: "print"
   },
   {
-    id: "color-603010", name: "60-30-10 配色法则", alias: "60-30-10 Rule",
-    category: "字体与配色", level: "进阶",
-    summary: "主色 60% + 辅色 30% + 点缀 10% 的经典配色比例，让页面稳而不乱。",
-    detail: "60-30-10 是室内与视觉设计的经典配色法则：60% 给主色（通常是背景/大色块，定调性）、30% 给辅色（次级元素，制造对比层次）、10% 给点缀色（强调关键数据/按钮，画龙点睛）。用在 PPT 上：背景与大面积用主色、卡片与图表用辅色、关键数字用点缀色。比例稳，画面就不花；点缀超 10% 会喧宾夺主。",
-    scenario: "深蓝主色铺背景(60%)、浅蓝卡片(30%)、橙色高亮核心数字(10%)，页面稳又跳。",
-    related: ["color-psychology", "color-wheel", "tri-color"], demo: "color-603010"
-  },
-  {
     id: "autoshape", name: "自选图形 / 形状", alias: "AutoShapes",
     category: "图形与图示", level: "入门",
     summary: "PPT 最基础的矢量元素——矩形/圆/箭头/流程图符号，搭一切图形的积木。",
@@ -1364,22 +1356,6 @@ const TERMS = [
     related: ["alignment", "autoshape", "group"], demo: "smart-guides"
   },
   {
-    id: "3d-model", name: "3D 模型", alias: "3D Model",
-    category: "图形与图示", level: "进阶",
-    summary: "插入可旋转的 3D 模型(365)——产品/结构展示比平面更质感。",
-    detail: "「插入 → 3D 模型」可插入内置或本地 .glb/.fbx 模型，选中后能拖动旋转、缩放，甚至加「转盘」动画让它自转。适合展示产品外观、分子结构、建筑。区别于「图片」(死的平面图)，3D 是可交互旋转的；也区别于「图标」(小符号)。注意非 365 版本可能无此功能。",
-    scenario: "插一个产品 3D 模型，加转盘动画让它慢慢自转，演示更有科技感。",
-    related: ["autoshape", "rotate-flip", "image-mask"], demo: "3d-model"
-  },
-  {
-    id: "zoom", name: "缩放定位", alias: "Zoom & Summary Zoom",
-    category: "输出与放映", level: "进阶",
-    summary: "缩放定位——点缩略图跳转章节，做非线性、可回看的演示导航。",
-    detail: "「插入 → 缩放定位」有「幻灯片缩放」(单页缩略图,点它跳过去)、「摘要缩放」(把多节缩略图拼成菜单)、「节缩放」。适合目录页：点哪节跳哪节，讲完还能回到目录，实现非线性放映。区别于「超链接」(文字跳转)，缩放是可视化缩略图；也区别于「自定义放映」(预设顺序)，缩放是现场自由导航。",
-    scenario: "封面放摘要缩放菜单，现场按听众兴趣点不同章节，自由穿梭。",
-    related: ["presenter-view", "section", "custom-show"], demo: "zoom"
-  },
-  {
     id: "watermark", name: "水印", alias: "Watermark",
     category: "母版与版式", level: "入门",
     summary: "母版里加 Logo/「机密」水印——全篇统一、改一次全更新。",
@@ -1404,14 +1380,6 @@ const TERMS = [
     related: ["textbox-placeholder", "para-spacing", "slide-size"], demo: "autofit"
   },
   {
-    id: "bullets", name: "项目符号", alias: "Bullets & Numbering",
-    category: "排版与布局", level: "入门",
-    summary: "列表的圆点/数字符号——条理清晰，比纯文字段落好读。",
-    detail: "「开始 → 项目符号/编号」给列表加圆点、方块、箭头或 1.2.3 编号；还能「定义新项目符号」换图标。相较于整段文字，列表更好扫读，编号适合步骤/排名。区别于「段落间距」(行距留白)，符号是每行的标记；也区别于「多级列表」，那是带缩进的层级。",
-    scenario: "三点建议用圆点列表，一屏扫完；步骤用 1.2.3 编号显顺序。",
-    related: ["para-spacing", "alignment", "repetition"], demo: "bullets"
-  },
-  {
     id: "pptx-format", name: "文件格式", alias: "PPTX / PPTM / PPSX",
     category: "软件功能", level: "入门",
     summary: "存成哪种格式——发给别人/自动放映/存宏，选错就翻车。",
@@ -1428,52 +1396,108 @@ const TERMS = [
     related: ["chart-beauty", "chart-edit", "data-viz"], demo: "chart-beauty"
   },
   {
-    id: "narrate", name: "录制旁白", alias: "Record Narration",
-    category: "放映与演讲", level: "进阶",
-    summary: "放映前录好讲解旁白、练准每页时长，生成可自动播放的宣讲片。",
-    detail: "「录制幻灯片放映」边讲边把旁白和每页停留时长存进 PPT；「排练计时」练准节奏并自动保存时间。配合自动/循环放映，可生成无需现场讲解的自播放影片。区别于「演示者视图」(现场看备注讲)，录制旁白产出的是可分发的内容。",
-    scenario: "做教学视频、异步宣讲、发给同事即看即懂的带声片子时。",
-    related: ["presenter-view"], demo: "narrate"
-  },
-  {
-    id: "outline", name: "大纲视图", alias: "Outline View",
-    category: "排版与图示", level: "入门",
-    summary: "左侧大纲里直接写文字、拖层级，比在画布上敲快十倍。",
-    detail: "大纲视图（Outline View）把幻灯片还原成纯文字层级：一级是标题、二级是正文要点。在这里写稿能专注内容、批量改标题、拖拽调整页顺序，不被排版干扰。区别于「母版版式」(管样式)，大纲管的是内容结构与层级。",
-    scenario: "长汇报先在大纲里列完所有标题和要点，再回画布美化。",
-    related: ["smartart", "layout"], demo: "outline"
-  },
-  {
     id: "word-to-ppt", name: "Word 转 PPT", alias: "Send to PowerPoint",
-    category: "效率与交付", level: "入门",
+    category: "效率与技巧", level: "入门",
     summary: "Word 用标题样式排好大纲，一键生成 PPT 骨架页。",
     detail: "在 Word 里用「标题 1/2/3」样式把文档排成层级，通过「发送到 Microsoft PowerPoint」(或导入大纲) 一键生成每页一个标题/要点的骨架 PPT。长文档转演示最高频的起手式，和「大纲视图」是同一思路的不同入口（一个在 Word、一个在 PPT 内）。",
     scenario: "把一份方案 Word 直接变成演示骨架，再填设计与图。",
-    related: ["outline", "template"], demo: "word-to-ppt"
-  },
-  {
-    id: "crop-shape", name: "裁剪为形状", alias: "Crop to Shape",
-    category: "图形与图像", level: "入门",
-    summary: "把图片直接裁成圆/心形/六边形，比布尔去背更轻量。",
-    detail: "「裁剪 → 裁剪为形状」让图片瞬间变成任意预设形状（圆、圆角矩形、心形、六边形…），边缘平滑且可再调。区别于「删除背景」(识别复杂轮廓去背) 和「布尔运算」(图形相交)，裁剪为形状是「给图片套个异形窗」，最轻量。",
-    scenario: "团队照裁成圆形头像、产品图裁成六边形卡片时。",
-    related: ["remove-bg", "boolean"], demo: "crop-shape"
+    related: ["outline-view", "template"], demo: "word-to-ppt"
   },
   {
     id: "ink", name: "墨迹批注", alias: "Ink & Laser Pointer",
-    category: "放映与演讲", level: "入门",
+    category: "输出与放映", level: "入门",
     summary: "放映时随手圈画、激光笔指引，重点当场标出来。",
     detail: "放映视图下的「墨迹」工具可随手画线、圈重点；「激光笔」是一个随光标移动的红色光点，指引观众视线而不留下痕迹。配合「黑板/白板」(按 B/W 临时黑屏) 更能聚焦。区别于「触发器/动画」(预先设计)，墨迹是现场即兴标注。",
     scenario: "答辩/教学现场边讲边圈重点、用激光笔指图时。",
     related: ["presenter-view", "zoom-loc"], demo: "ink"
   },
   {
-    id: "qat", name: "快速访问工具栏", alias: "Quick Access Toolbar",
-    category: "效率与交付", level: "入门",
-    summary: "把常用命令钉到顶栏，一键点，不记快捷键也快。",
-    detail: "快速访问工具栏（QAT）是窗口左上角那条常驻按钮栏，可右键任意命令「添加到快速访问工具栏」，把「保存/格式刷/对齐」等高频操作钉在顶栏，无需记住快捷键。区别于「快捷键」(键盘流)，QAT 是「把按钮钉出来」的鼠标流效率。",
-    scenario: "每天反复用的几个命令，钉到顶栏省去翻功能区。",
-    related: ["compress", "template"], demo: "qat"
+    id: "data-label", name: "数据标签", alias: "Data Labels",
+    category: "图形与图示", level: "入门",
+    summary: "在图表柱/线/扇区上直接显示数值、百分比或类别名，观众不用对坐标轴读数。",
+    detail: "数据标签（Data Labels）是图表的「直接标注层」，可以显示数值、百分比、系列名或类别名。标签位置可灵活调整（外/内/居中/轴内侧），也支持单独设置字体/颜色/数字格式。区别于「图表美化」关注配色与样式，「数据标签」关注信息的直接传达。",
+    scenario: "柱状图想标出精确数字、饼图想标百分比、折线图想标关键拐点数值时。",
+    related: ["chart-beauty", "combo-chart"], demo: "data-label"
+  },
+  {
+    id: "morph-force", name: "平滑切换强制配对", alias: "!! Morph Forced Pairing",
+    category: "动画与切换", level: "进阶",
+    summary: "给跨页两个不同对象取同名（前缀 !!），PPT 会把它们认成同一个做平滑过渡。",
+    detail: "平滑切换（Morph）默认按对象相似度自动匹配，但想跨页把「方块平滑变成圆形」这种完全不同形状时，自动匹配会失败。解决方案是给两页的目标对象在「选择窗格」里改成相同名字，并在名字前加 !!（如 !!icon），PPT 检测到 !! 前缀后会强制将这俩对象配对，差值（位置/大小/旋转/形状）全部被插值动画化。",
+    scenario: "封面标题变大、图标变形、产品图从侧面滑到正面等跨页对象平滑过渡。",
+    related: ["morph", "selection-pane"], demo: "morph-force"
+  },
+  {
+    id: "artistic-effect", name: "艺术效果", alias: "Artistic Effects",
+    category: "图片与多媒体", level: "入门",
+    summary: "图片→艺术效果，一键把照片变成铅笔素描/水彩/虚化/胶片颗粒等风格。",
+    detail: "艺术效果（Artistic Effects）是 PowerPoint 内置的图片滤镜集，位于「图片格式→艺术效果」。支持铅笔素描、水彩、虚化、胶片颗粒、影印、发光边缘等 20+ 种效果，每种可调强度。区别于「更正」调曝光，「艺术效果」换的是整体画风和肌理。",
+    scenario: "想做封面背景但照片太写实→加虚化降透明度做底纹；想让产品图有插画感→套铅笔素描。",
+    related: ["remove-bg", "recolor"], demo: "artistic-effect"
+  },
+  {
+    id: "picture-correct", name: "图片更正", alias: "Picture Corrections",
+    category: "图片与多媒体", level: "入门",
+    summary: "图片→更正：调亮度/对比度/锐化/柔化，照片太暗太灰不用开 PS。",
+    detail: "图片更正（Corrections）位于「图片格式→更正」，提供亮度/对比度的预设组合（如「亮度+20% 对比度+20%」），也可在右侧面板精调滑块。锐化让边缘更清晰、柔化让画面更平滑。区别于「艺术效果」换风格，「更正」调的是客观画质参数。",
+    scenario: "手机拍的PPT素材偏暗→提亮度；产品图边缘模糊→加锐化；人物背景太乱→柔化做虚化。",
+    related: ["remove-bg", "recolor"], demo: "picture-correct"
+  },
+  {
+    id: "picture-style", name: "图片样式", alias: "Picture Styles",
+    category: "图片与多媒体", level: "入门",
+    summary: "图片→图片样式库，一键套预置边框+阴影+投影+圆角+倒影组合。",
+    detail: "图片样式（Picture Styles）是「图片格式」下的一组预置视觉框架，含柔化边缘矩形、金属椭圆、投影圆角、旋转白色等 28 种预设。点一个即可同时设定边框/阴影/投影/圆角/倒影/3D 旋转等多项属性，再通过「图片边框」「图片效果」微调。一句话：给图片穿衣服。",
+    scenario: "全篇产品图要统一白边框+投影→套同一个图片样式；封面主图要立体感→套金属框+阴影。",
+    related: ["image-mask", "remove-bg"], demo: "picture-style"
+  },
+  {
+    id: "change-picture", name: "更换图片保留格式", alias: "Change Picture",
+    category: "图片与多媒体", level: "入门",
+    summary: "右键→更改图片，新图继承原图的裁剪比/大小/位置/边框/效果，不用重调。",
+    detail: "更改图片（Change Picture）是图片右键菜单中的一项：选中图片右键「更改图片→从文件/在线/剪贴板」，新图自动继承原图的所有格式属性——裁剪比例与位置、边框粗细与颜色、阴影/倒影/发光、大小和坐标。尤其是在模板或版式中先用占位图设好格式，定稿时批量更换图。",
+    scenario: "模板里的产品图占位→定稿换成真实产品照；版本迭代更新截图素材。",
+    related: ["compress", "picture-style"], demo: "change-picture"
+  },
+  {
+    id: "excel-link", name: "Excel 数据链接", alias: "Excel Data Link",
+    category: "图形与图示", level: "进阶",
+    summary: "Excel 数据粘贴为「链接」到 PPT 图表，源数据更新后 PPT 右键刷新自动同步。",
+    detail: "在 Excel 复制数据或图表→PPT 粘贴时选「使用目标主题和链接数据」，PPT 内部保存了一个指向 Excel 文件的链接。源 Excel 的数据更新后，在 PPT 中右键图表「更新链接」，图表数值/标签/系列全部自动刷新。区别于「手动复制粘贴」每次都要重做，「链接」建立了一条活的管道。",
+    scenario: "月度销售汇报图表链到 Excel 数据表，每月只改 Excel→PPT 一键刷新。",
+    related: ["chart-beauty", "combo-chart"], demo: "excel-link"
+  },
+  {
+    id: "data-bars", name: "数据条", alias: "Data Bars",
+    category: "图形与图示", level: "入门",
+    summary: "PPT 表格内用条件格式画数据条/色阶/图标集，不另外做图表也能可视化。",
+    detail: "数据条（Data Bars）是表格「条件格式」的子功能：选中数值列→条件格式→数据条，PPT 自动按数值比例在单元格内画彩色横条，最大值满格、最小值最短。还有色阶（渐变着色）和图标集（方向箭头/红绿灯/星标）可选。区别在于它不是独立图表，而是「嵌在表格里的可视化层」。",
+    scenario: "季度对比表每行嵌个数据条→数字大小一眼可见，不用另画柱形图。",
+    related: ["table-beauty", "chart-beauty"], demo: "data-bars"
+  },
+  {
+    id: "video-trim", name: "视频裁剪与书签", alias: "Video Trim & Bookmarks",
+    category: "输出与放映", level: "入门",
+    summary: "PPT 内裁剪视频头尾+加书签跳点+设自动播放，放映时不跳出。",
+    detail: "插入视频后，在「播放」标签下可裁剪视频（拖起止滑块裁掉不需要的头尾片段）、添加书签（跳到视频中任意位置并点「添加书签」→放映时点书签直接跳到该位置）、设「自动」播放（切到该页自动开始播）。注意选「嵌入」而非「链接」视频，文件自带发给别人也能播。",
+    scenario: "产品 Demo 视频只需中间 15 秒→裁剪头尾后嵌入 PPT；教学视频加书签分知识点跳。",
+    related: ["narration", "presenter-view"], demo: "video-trim"
+  },
+  {
+    id: "ink-math", name: "墨迹公式", alias: "Ink Equation",
+    category: "软件功能", level: "进阶",
+    summary: "插入→公式→墨迹公式，手写数学式自动转成标准排版公式。",
+    detail: "墨迹公式（Ink Equation）是 PowerPoint 公式工具中的手写识别功能：弹出一个黄色手写板→用鼠标/触控笔/手指写公式→上方的预览区实时显示识别结果→可擦除重写→点插入转为标准 Office 公式格式。支持积分/求和/矩阵/分式/根号等各种复杂数学符号。比打 LaTeX 快、比拼字符准。",
+    scenario: "论文答辩写到复杂积分公式→手写秒转标准排版；教学课件写物理方程式。",
+    related: ["smartart"], demo: "ink-math"
+  },
+  {
+    id: "map-chart", name: "地图图表", alias: "Map Chart",
+    category: "图形与图示", level: "进阶",
+    summary: "插入→图表→地图，按省/市/国自动填色显示地理分布数据。",
+    detail: "地图图表（Map Chart）是 PowerPoint 内置的图表类型，选中插入后弹出 Excel 数据表→填写标准行政区划名和数值→关闭 Excel→地图自动按数值深浅着色。支持省/市/国家级别的行政区划识别，颜色方案和标签可在「图表设计」里调。需要联网（基于 Bing 地理数据），区域名必须用标准名称。",
+    scenario: "全国各区域销售数据→地图图表按省着色，比柱状图直观 10 倍。",
+    related: ["chart-beauty", "combo-chart"], demo: "map-chart"
   }
 ];
 
