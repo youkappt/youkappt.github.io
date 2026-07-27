@@ -1418,6 +1418,62 @@ const TERMS = [
     detail: "常见格式：.pptx(默认,可编辑)、.pdf(发给客户防改)、.ppsx(双击直接放映,适合交给别人播)、.pptm(含宏,普通 pptx 装不了宏会丢)、.potx(模板)。发终稿给别人用 pdf 或 ppsx；要带宏必须存 pptm；当模板分发用 potx。区别于「导出图片/视频」，那是转成媒体文件。",
     scenario: "给客户的终稿存 pdf 防改；交会务播的存 ppsx 双击就放。",
     related: ["template", "export-pdf", "export-media"], demo: "pptx-format"
+  },
+  {
+    id: "combo-chart", name: "组合图表", alias: "Combo Chart",
+    category: "图形与图示", level: "进阶",
+    summary: "同一张图里既有柱（量）又有线（率），双坐标轴各讲一件事。",
+    detail: "组合图表（Combo Chart）把两种图表类型叠在一张图：柱形表「量」(如销售额)、折线表「率」(如增长率)，并为折线启用「次坐标轴」让量纲互不干扰。适合「既要看绝对值又要看占比/趋势」的汇报场景。区别于「普通图表」(单类型单轴)，组合图靠次坐标轴解决量纲冲突。",
+    scenario: "月度销售额(柱)配上同比增长率(折线)，一张图讲清「卖多少」和「涨多快」。",
+    related: ["chart-beauty", "chart-edit", "data-viz"], demo: "chart-beauty"
+  },
+  {
+    id: "narrate", name: "录制旁白", alias: "Record Narration",
+    category: "放映与演讲", level: "进阶",
+    summary: "放映前录好讲解旁白、练准每页时长，生成可自动播放的宣讲片。",
+    detail: "「录制幻灯片放映」边讲边把旁白和每页停留时长存进 PPT；「排练计时」练准节奏并自动保存时间。配合自动/循环放映，可生成无需现场讲解的自播放影片。区别于「演示者视图」(现场看备注讲)，录制旁白产出的是可分发的内容。",
+    scenario: "做教学视频、异步宣讲、发给同事即看即懂的带声片子时。",
+    related: ["presenter-view"], demo: "narrate"
+  },
+  {
+    id: "outline", name: "大纲视图", alias: "Outline View",
+    category: "排版与图示", level: "入门",
+    summary: "左侧大纲里直接写文字、拖层级，比在画布上敲快十倍。",
+    detail: "大纲视图（Outline View）把幻灯片还原成纯文字层级：一级是标题、二级是正文要点。在这里写稿能专注内容、批量改标题、拖拽调整页顺序，不被排版干扰。区别于「母版版式」(管样式)，大纲管的是内容结构与层级。",
+    scenario: "长汇报先在大纲里列完所有标题和要点，再回画布美化。",
+    related: ["smartart", "layout"], demo: "outline"
+  },
+  {
+    id: "word-to-ppt", name: "Word 转 PPT", alias: "Send to PowerPoint",
+    category: "效率与交付", level: "入门",
+    summary: "Word 用标题样式排好大纲，一键生成 PPT 骨架页。",
+    detail: "在 Word 里用「标题 1/2/3」样式把文档排成层级，通过「发送到 Microsoft PowerPoint」(或导入大纲) 一键生成每页一个标题/要点的骨架 PPT。长文档转演示最高频的起手式，和「大纲视图」是同一思路的不同入口（一个在 Word、一个在 PPT 内）。",
+    scenario: "把一份方案 Word 直接变成演示骨架，再填设计与图。",
+    related: ["outline", "template"], demo: "word-to-ppt"
+  },
+  {
+    id: "crop-shape", name: "裁剪为形状", alias: "Crop to Shape",
+    category: "图形与图像", level: "入门",
+    summary: "把图片直接裁成圆/心形/六边形，比布尔去背更轻量。",
+    detail: "「裁剪 → 裁剪为形状」让图片瞬间变成任意预设形状（圆、圆角矩形、心形、六边形…），边缘平滑且可再调。区别于「删除背景」(识别复杂轮廓去背) 和「布尔运算」(图形相交)，裁剪为形状是「给图片套个异形窗」，最轻量。",
+    scenario: "团队照裁成圆形头像、产品图裁成六边形卡片时。",
+    related: ["remove-bg", "boolean"], demo: "crop-shape"
+  },
+  {
+    id: "ink", name: "墨迹批注", alias: "Ink & Laser Pointer",
+    category: "放映与演讲", level: "入门",
+    summary: "放映时随手圈画、激光笔指引，重点当场标出来。",
+    detail: "放映视图下的「墨迹」工具可随手画线、圈重点；「激光笔」是一个随光标移动的红色光点，指引观众视线而不留下痕迹。配合「黑板/白板」(按 B/W 临时黑屏) 更能聚焦。区别于「触发器/动画」(预先设计)，墨迹是现场即兴标注。",
+    scenario: "答辩/教学现场边讲边圈重点、用激光笔指图时。",
+    related: ["presenter-view", "zoom-loc"], demo: "ink"
+  },
+  {
+    id: "qat", name: "快速访问工具栏", alias: "Quick Access Toolbar",
+    category: "效率与交付", level: "入门",
+    summary: "把常用命令钉到顶栏，一键点，不记快捷键也快。",
+    detail: "快速访问工具栏（QAT）是窗口左上角那条常驻按钮栏，可右键任意命令「添加到快速访问工具栏」，把「保存/格式刷/对齐」等高频操作钉在顶栏，无需记住快捷键。区别于「快捷键」(键盘流)，QAT 是「把按钮钉出来」的鼠标流效率。",
+    scenario: "每天反复用的几个命令，钉到顶栏省去翻功能区。",
+    related: ["compress", "template"], demo: "qat"
   }
 ];
 
