@@ -1,9 +1,25 @@
 /* ============================================================
-   PPT 技巧页 — App：渲染、搜索、场景筛选、Modal、分步播放、相关术语
+   PPT 技巧页 — App：渲染、搜索、分类筛选、Modal、分步播放、相关术语
    ============================================================ */
 (function () {
   const techs = window.TECHNIQUES || [];
   const DEMOS = window.DEMOS || {};
+
+  // 分类逻辑顺序：设计 → 内容 → 数据 → 动效 → 放映 → 交付
+  const CATEGORY_ORDER = [
+    '统一风格与母版',
+    '排版与图示',
+    '图形与图像',
+    '数据与图表',
+    '动画与交互',
+    '放映与演讲',
+    '效率与交付'
+  ];
+  techs.sort((a, b) => {
+    const ia = CATEGORY_ORDER.indexOf(a.scenario);
+    const ib = CATEGORY_ORDER.indexOf(b.scenario);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+  });
 
   // 相关术语 id → 中文名（用于跳转芯片文案）
   const TERM_NAMES = {
@@ -13,7 +29,11 @@
     alignment: '对齐', layout: '版式', 'icon-style': '图标风格', 'color-reuse': '配色复用',
     'embed-font': '嵌入字体', shortcut: '快捷键', 'format-painter': '格式刷',
     compress: '图片压缩', 'export-dpi': '导出分辨率', morph: '平滑切换',
-    'transition-fx': '切换效果', 'chart-beauty': '图表美化', trigger: '触发器', 'anim-type': '进入/退出/强调'
+    'transition-fx': '切换效果', 'chart-beauty': '图表美化', trigger: '触发器', 'anim-type': '进入/退出/强调',
+    'replace-font': '替换字体', 'selection-pane': '选择窗格', 'group': '组合', 'remove-bg': '删除背景',
+    'presenter-view': '演示者视图', 'designer': '设计灵感', 'combo-chart': '组合图表', 'anim-painter': '动画刷',
+    'edit-points': '编辑顶点', 'recolor': '重新着色', 'custom-show': '自定义放映', 'narrate': '录制旁白', 'table-beauty': '表格美化',
+    'outline': '大纲视图', 'word-to-ppt': 'Word转PPT', 'live-caption': '实时字幕', 'crop-shape': '裁剪为形状', 'hyperlink': '超链接', 'ink': '墨迹批注', 'motion-path': '路径动画', 'qat': '快速访问栏'
   };
 
   const els = {
@@ -29,11 +49,11 @@
   let query = '';
   let currentId = null;
 
-  // 使用场景顺序（按 data.js 出现顺序）
+  // 分类顺序（按 CATEGORY_ORDER 逻辑顺序，由已排序的 techs 推导）
   const presentScenes = Array.from(new Set(techs.map(t => t.scenario)));
   const scenarios = ['全部', ...presentScenes];
 
-  /* ---- 场景导航 ---- */
+  /* ---- 分类导航 ---- */
   function buildNav() {
     els.nav.innerHTML = '';
     scenarios.forEach(sc => {
@@ -98,7 +118,7 @@
     if (!list.length) {
       const e = document.createElement('div');
       e.className = 'empty-state';
-      e.textContent = '没有匹配的技巧，换个关键词或场景试试。';
+      e.textContent = '没有匹配的技巧，换个关键词或分类试试。';
       els.grid.appendChild(e);
       els.count.textContent = '共 0 个技巧';
       return;
@@ -165,7 +185,7 @@
       <button class="modal-close" id="modalClose" aria-label="关闭">✕</button>
       <div class="modal-head">
         <div class="modal-title">${esc(t.name)}</div>
-        <div class="modal-alias">${esc(t.scenario)} 场景</div>
+        <div class="modal-alias">${esc(t.scenario)} 分类</div>
         <div class="modal-meta">
           <span class="badge badge-level">${esc(t.level)}</span>
           <span class="badge">${esc(t.scenario)}</span>
