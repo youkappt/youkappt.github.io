@@ -1080,6 +1080,747 @@
       render(false);
       c.querySelector('#qatPin').onclick = () => { render(true); c.querySelector('#qatPin').classList.add('active'); c.querySelector('#qatReset').classList.remove('active'); };
       c.querySelector('#qatReset').onclick = () => { render(false); c.querySelector('#qatReset').classList.add('active'); c.querySelector('#qatPin').classList.remove('active'); };
+    },
+    dataLabel(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">图表数据标签：开启前后</div><div class="demo-row"><button class="demo-btn active" id="dlOff">无标签</button><button class="demo-btn" id="dlOn">显示标签</button></div><div class="mini-slide" id="dlSlide"></div></div>';
+      function render(on) {
+        let h = '<div style="position:absolute;left:10%;top:24%;width:22%;height:48%;background:#663af3;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:38%;top:36%;width:22%;height:36%;background:#663af3;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:66%;top:20%;width:22%;height:52%;background:#663af3;opacity:.7;border-radius:4px 4px 0 0"></div><div style="position:absolute;left:6%;top:72%;width:88%;height:1%;background:rgba(255,255,255,.2)"></div>';
+        if (on) h += '<div style="position:absolute;left:11%;top:16%;width:20%;text-align:center;color:#9fe3c5;font:bold 12px var(--font-mono)">120</div><div style="position:absolute;left:39%;top:28%;width:20%;text-align:center;color:#9fe3c5;font:bold 12px var(--font-mono)">85</div><div style="position:absolute;left:67%;top:12%;width:20%;text-align:center;color:#9fe3c5;font:bold 12px var(--font-mono)">198</div>';
+        document.getElementById('dlSlide').innerHTML = h;
+      }
+      render(false);
+      c.querySelector('#dlOff').onclick = () => { render(false); c.querySelector('#dlOff').classList.add('active'); c.querySelector('#dlOn').classList.remove('active'); };
+      c.querySelector('#dlOn').onclick = () => { render(true); c.querySelector('#dlOn').classList.add('active'); c.querySelector('#dlOff').classList.remove('active'); };
+    },
+    timeline(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">动画时间轴：按延迟依次出现</div><div class="demo-row"><button class="demo-btn" id="tlAll">一股脑</button><button class="demo-btn" id="tlSeq">分步延迟</button></div><div class="mini-slide" id="tlSlide"></div></div>';
+      let tlTimer;
+      function play(delays) {
+        clearInterval(tlTimer);
+        document.getElementById('tlSlide').innerHTML = '<div style="position:absolute;left:10%;top:30%;width:24%;height:22%;background:#663af3;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl1"></div><div style="position:absolute;left:38%;top:30%;width:24%;height:22%;background:#663af3;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl2"></div><div style="position:absolute;left:66%;top:30%;width:24%;height:22%;background:#663af3;opacity:.15;border-radius:6px;transition:opacity .3s" id="tl3"></div>';
+        let i = 0;
+        tlTimer = setInterval(() => {
+          if (i >= delays.length) { clearInterval(tlTimer); return; }
+          document.getElementById('tl' + (i + 1)).style.opacity = '.9';
+          i++;
+        }, delays[i] || 0);
+        if (window.__demoTimers) window.__demoTimers.push(tlTimer);
+      }
+      play([0,0,0]);
+      c.querySelector('#tlAll').onclick = () => { play([0,0,0]); c.querySelector('#tlAll').classList.add('active'); c.querySelector('#tlSeq').classList.remove('active'); };
+      c.querySelector('#tlSeq').onclick = () => { play([0,400,400]); c.querySelector('#tlSeq').classList.add('active'); c.querySelector('#tlAll').classList.remove('active'); };
+    },
+    morphForce(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">!!前缀强制配对 → 方块平滑变圆形</div><div class="demo-row"><button class="demo-btn active" id="mfReset">方块</button><button class="demo-btn" id="mfMorph">平滑变</button></div><div class="mini-slide" id="mfSlide"></div></div>';
+      function render(morphed) {
+        if (morphed) document.getElementById('mfSlide').innerHTML = '<div style="position:absolute;left:30%;top:26%;width:40%;height:48%;background:#663af3;border-radius:50%;transition:all .6s cubic-bezier(.4,0,.2,1);opacity:.9"></div><div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">!!shape 配对 → 平滑变</div>';
+        else document.getElementById('mfSlide').innerHTML = '<div style="position:absolute;left:20%;top:30%;width:35%;height:40%;background:#663af3;border-radius:8px;opacity:.9"></div><div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#f0a59a;font:11px var(--font-mono)">不同形状 → 无过渡</div>';
+      }
+      render(false);
+      c.querySelector('#mfReset').onclick = () => { render(false); c.querySelector('#mfReset').classList.add('active'); c.querySelector('#mfMorph').classList.remove('active'); };
+      c.querySelector('#mfMorph').onclick = () => { render(true); c.querySelector('#mfMorph').classList.add('active'); c.querySelector('#mfReset').classList.remove('active'); };
+    },
+    guides(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">参考线 + 网格吸附</div><div class="demo-row"><button class="demo-btn active" id="gdFree">自由摆放</button><button class="demo-btn" id="gdSnap">吸附对齐</button></div><div class="mini-slide" id="gdSlide"></div></div>';
+      function render(snap) {
+        if (snap) {
+          document.getElementById('gdSlide').innerHTML = '<div style="position:absolute;left:6%;top:18%;width:88%;height:1%;background:#9fe3c5;opacity:.25"></div><div style="position:absolute;left:6%;top:48%;width:88%;height:1%;background:#9fe3c5;opacity:.25"></div><div style="position:absolute;left:22%;top:6%;width:1%;height:62%;background:#663af3;opacity:.25"></div><div style="position:absolute;left:55%;top:6%;width:1%;height:62%;background:#663af3;opacity:.25"></div><div style="position:absolute;left:24%;top:20%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div><div style="position:absolute;left:24%;top:50%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div><div style="position:absolute;left:57%;top:20%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div><div style="position:absolute;left:57%;top:50%;width:29%;height:14%;background:rgba(255,255,255,.15);border-radius:6px"></div>';
+        } else {
+          document.getElementById('gdSlide').innerHTML = '<div style="position:absolute;left:8%;top:22%;width:18%;height:16%;background:rgba(255,255,255,.12);border-radius:6px"></div><div style="position:absolute;left:34%;top:18%;width:18%;height:18%;background:rgba(255,255,255,.12);border-radius:6px"></div><div style="position:absolute;left:60%;top:26%;width:18%;height:14%;background:rgba(255,255,255,.12);border-radius:6px"></div><div style="position:absolute;left:76%;top:38%;width:18%;height:12%;background:rgba(255,255,255,.12);border-radius:6px"></div>';
+        }
+      }
+      render(false);
+      c.querySelector('#gdFree').onclick = () => { render(false); c.querySelector('#gdFree').classList.add('active'); c.querySelector('#gdSnap').classList.remove('active'); };
+      c.querySelector('#gdSnap').onclick = () => { render(true); c.querySelector('#gdSnap').classList.add('active'); c.querySelector('#gdFree').classList.remove('active'); };
+    },
+    summaryZoom(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">摘要缩放：点缩略图跳转</div><div class="mini-slide" id="szSlide"></div></div>';
+      const pages = ['产品概述','市场分析','功能对比','定价方案','Q&A'];
+      function render(active) {
+        let h = '';
+        pages.forEach((p,i) => {
+          const x = 4 + (i % 3) * 32; const y = i < 3 ? 10 : 50;
+          h += '<div style="position:absolute;left:' + x + '%;top:' + y + '%;width:28%;height:28%;background:' + (i === active ? 'rgba(102,58,243,.4)' : 'rgba(255,255,255,.08)') + ';border-radius:8px;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center" data-sz="' + i + '"><span style="color:' + (i === active ? '#fff' : 'rgba(216,236,248,.5)') + ';font:12px var(--font-body)">' + p + '</span></div>';
+        });
+        h += '<div style="position:absolute;left:4%;top:82%;width:92%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">点击卡片跳转到对应节</div>';
+        document.getElementById('szSlide').innerHTML = h;
+        document.querySelectorAll('#szSlide [data-sz]').forEach(el => {
+          el.onclick = () => render(parseInt(el.dataset.sz));
+        });
+      }
+      render(-1);
+    },
+    ['3dModel'](c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">3D 立方体旋转</div><div class="demo-row"><button class="demo-btn active" id="d3Reset">正面</button><button class="demo-btn" id="d3Rotate">旋转</button></div><div class="mini-slide" id="d3Slide"></div></div>';
+      const faces = [
+        { points: '50,16 82,36 82,68 50,88 18,68 18,36', fill: 'rgba(102,58,243,.35)', stroke: '#663af3' },
+        { points: '50,16 82,36 50,42 18,36', fill: 'rgba(102,58,243,.55)', stroke: '#663af3' }
+      ];
+      function render(rotated) {
+        let h = '<svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%">';
+        if (rotated) {
+          h += '<polygon points="50,10 88,34 88,66 50,90 12,66 12,34" fill="rgba(102,58,243,.25)" stroke="#663af3" stroke-width="1"/>';
+          h += '<polygon points="50,10 88,34 50,44 12,34" fill="rgba(102,58,243,.5)" stroke="#663af3" stroke-width="1"/>';
+          h += '<line x1="50" y1="44" x2="50" y2="90" stroke="#663af3" stroke-width="1"/>';
+          h += '<text x="82" y="28" fill="#9fe3c5" font-size="10">↻</text>';
+        } else {
+          h += '<polygon points="50,18 80,36 80,68 50,86 20,68 20,36" fill="rgba(102,58,243,.4)" stroke="#663af3" stroke-width="1"/>';
+          h += '<polygon points="50,18 80,36 50,44 20,36" fill="rgba(102,58,243,.6)" stroke="#663af3" stroke-width="1"/>';
+        }
+        h += '</svg>';
+        document.getElementById('d3Slide').innerHTML = h;
+      }
+      render(false);
+      c.querySelector('#d3Reset').onclick = () => { render(false); c.querySelector('#d3Reset').classList.add('active'); c.querySelector('#d3Rotate').classList.remove('active'); };
+      c.querySelector('#d3Rotate').onclick = () => { render(true); c.querySelector('#d3Rotate').classList.add('active'); c.querySelector('#d3Reset').classList.remove('active'); };
+    },
+    variants(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">主题变体：切换配色方案</div><div class="demo-row"><button class="demo-btn active" id="vrPurple">蓝紫</button><button class="demo-btn" id="vrGreen">绿色</button><button class="demo-btn" id="vrOrange">暖橙</button></div><div class="mini-slide" id="vrSlide"></div></div>';
+      const schemes = {
+        purple: { bg: '#1a1a4e', accent: '#663af3', accent2: 'rgba(102,58,243,.3)' },
+        green: { bg: '#1a2e1a', accent: '#269684', accent2: 'rgba(38,150,132,.3)' },
+        orange: { bg: '#2e2217', accent: '#e07b4c', accent2: 'rgba(224,123,76,.3)' }
+      };
+      function render(scheme) {
+        const s = schemes[scheme];
+        document.getElementById('vrSlide').innerHTML = '<div style="position:absolute;inset:0;background:' + s.bg + ';border-radius:8px"></div><div style="position:absolute;left:12%;top:18%;width:76%;height:8%;background:' + s.accent2 + ';border-radius:4px"></div><div style="position:absolute;left:12%;top:36%;width:36%;height:20%;background:' + s.accent + ';opacity:.8;border-radius:6px"></div><div style="position:absolute;left:52%;top:36%;width:36%;height:20%;background:' + s.accent + ';opacity:.8;border-radius:6px"></div><div style="position:absolute;left:12%;top:64%;width:36%;height:12%;background:' + s.accent2 + ';border-radius:4px"></div><div style="position:absolute;left:52%;top:64%;width:36%;height:12%;background:' + s.accent2 + ';border-radius:4px"></div>';
+      }
+      render('purple');
+      c.querySelector('#vrPurple').onclick = () => { render('purple'); c.querySelector('#vrPurple').classList.add('active'); c.querySelector('#vrGreen').classList.remove('active'); c.querySelector('#vrOrange').classList.remove('active'); };
+      c.querySelector('#vrGreen').onclick = () => { render('green'); c.querySelector('#vrGreen').classList.add('active'); c.querySelector('#vrPurple').classList.remove('active'); c.querySelector('#vrOrange').classList.remove('active'); };
+      c.querySelector('#vrOrange').onclick = () => { render('orange'); c.querySelector('#vrOrange').classList.add('active'); c.querySelector('#vrPurple').classList.remove('active'); c.querySelector('#vrGreen').classList.remove('active'); };
+    },
+    artisticEffect(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">艺术效果：图片风格化</div><div class="demo-row"><button class="demo-btn active" id="aeOrig">原图</button><button class="demo-btn" id="aeSketch">素描</button><button class="demo-btn" id="aeBlur">虚化</button></div><div class="mini-slide" id="aeSlide"></div></div>';
+      const styles = {
+        orig: 'background:linear-gradient(135deg,rgba(102,58,243,.25),rgba(38,150,132,.15));border-radius:8px',
+        sketch: 'background:linear-gradient(135deg,rgba(102,58,243,.1),rgba(38,150,132,.08));border-radius:8px;filter:grayscale(.6) contrast(1.4)',
+        blur: 'background:linear-gradient(135deg,rgba(102,58,243,.15),rgba(38,150,132,.1));border-radius:8px;filter:blur(3px)'
+      };
+      function render(style) {
+        document.getElementById('aeSlide').innerHTML = '<div style="position:absolute;left:20%;top:16%;width:60%;height:60%;' + styles[style] + '"></div>' + (style !== 'orig' ? '<div style="position:absolute;left:8%;top:82%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">' + (style === 'sketch' ? '铅笔素描' : '虚化效果') + '</div>' : '');
+      }
+      render('orig');
+      c.querySelector('#aeOrig').onclick = () => { render('orig'); c.querySelector('#aeOrig').classList.add('active'); c.querySelector('#aeSketch').classList.remove('active'); c.querySelector('#aeBlur').classList.remove('active'); };
+      c.querySelector('#aeSketch').onclick = () => { render('sketch'); c.querySelector('#aeSketch').classList.add('active'); c.querySelector('#aeOrig').classList.remove('active'); c.querySelector('#aeBlur').classList.remove('active'); };
+      c.querySelector('#aeBlur').onclick = () => { render('blur'); c.querySelector('#aeBlur').classList.add('active'); c.querySelector('#aeOrig').classList.remove('active'); c.querySelector('#aeSketch').classList.remove('active'); };
+    },
+    pictureCorrect(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">图片更正：亮度+对比度</div><div class="demo-row"><button class="demo-btn active" id="pcDark">偏暗</button><button class="demo-btn" id="pcBright">提亮</button></div><div class="mini-slide" id="pcSlide"></div></div>';
+      function render(bright) {
+        document.getElementById('pcSlide').innerHTML = '<div style="position:absolute;left:20%;top:16%;width:60%;height:56%;border-radius:8px;background:linear-gradient(135deg,rgba(102,58,243,' + (bright ? '.35' : '.08') + '),rgba(38,150,132,' + (bright ? '.25' : '.04') + '))"></div>' + (bright ? '<div style="position:absolute;left:8%;top:80%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">亮度+30% 对比度+20%</div>' : '');
+      }
+      render(false);
+      c.querySelector('#pcDark').onclick = () => { render(false); c.querySelector('#pcDark').classList.add('active'); c.querySelector('#pcBright').classList.remove('active'); };
+      c.querySelector('#pcBright').onclick = () => { render(true); c.querySelector('#pcBright').classList.add('active'); c.querySelector('#pcDark').classList.remove('active'); };
+    },
+    pictureStyle(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">图片样式：一键套框</div><div class="demo-row"><button class="demo-btn active" id="psPlain">朴素</button><button class="demo-btn" id="psStyled">套样式</button></div><div class="mini-slide" id="psSlide"></div></div>';
+      function render(styled) {
+        if (styled) {
+          document.getElementById('psSlide').innerHTML = '<div style="position:absolute;left:24%;top:12%;width:52%;height:48%;border-radius:10px;background:linear-gradient(135deg,rgba(102,58,243,.15),rgba(38,150,132,.1));box-shadow:0 4px 18px rgba(0,0,0,.4),0 0 0 3px rgba(102,58,243,.25)"></div><div style="position:absolute;left:22%;top:10%;width:52%;height:48%;border-radius:10px;background:linear-gradient(135deg,rgba(102,58,243,.1),rgba(38,150,132,.05));opacity:.4;transform:scaleY(-1);filter:blur(2px)"></div>';
+        } else {
+          document.getElementById('psSlide').innerHTML = '<div style="position:absolute;left:28%;top:18%;width:44%;height:44%;border-radius:4px;background:rgba(255,255,255,.08)"></div>';
+        }
+      }
+      render(false);
+      c.querySelector('#psPlain').onclick = () => { render(false); c.querySelector('#psPlain').classList.add('active'); c.querySelector('#psStyled').classList.remove('active'); };
+      c.querySelector('#psStyled').onclick = () => { render(true); c.querySelector('#psStyled').classList.add('active'); c.querySelector('#psPlain').classList.remove('active'); };
+    },
+    changePicture(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">更改图片：格式原封不动继承</div><div class="demo-row"><button class="demo-btn active" id="cpOrig">原图A</button><button class="demo-btn" id="cpChange">换图B</button></div><div class="mini-slide" id="cpSlide"></div></div>';
+      function render(changed) {
+        const shape = 'border-radius:50%;width:40%;height:44%;position:absolute;left:30%;top:16%';
+        if (changed) {
+          document.getElementById('cpSlide').innerHTML = '<div style="' + shape + ';background:linear-gradient(135deg,#269684,rgba(38,150,132,.4));box-shadow:0 0 0 3px rgba(102,58,243,.3),0 4px 18px rgba(0,0,0,.4);border-radius:50%"></div><div style="position:absolute;left:8%;top:72%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">边框+投影保留→换图</div>';
+        } else {
+          document.getElementById('cpSlide').innerHTML = '<div style="' + shape + ';background:linear-gradient(135deg,#663af3,rgba(102,58,243,.4));box-shadow:0 0 0 3px rgba(102,58,243,.3),0 4px 18px rgba(0,0,0,.4);border-radius:50%"></div>';
+        }
+      }
+      render(false);
+      c.querySelector('#cpOrig').onclick = () => { render(false); c.querySelector('#cpOrig').classList.add('active'); c.querySelector('#cpChange').classList.remove('active'); };
+      c.querySelector('#cpChange').onclick = () => { render(true); c.querySelector('#cpChange').classList.add('active'); c.querySelector('#cpOrig').classList.remove('active'); };
+    },
+    excelLink(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">Excel→PPT 链接刷新</div><div class="demo-row"><button class="demo-btn active" id="elStatic">静态</button><button class="demo-btn" id="elLinked">链接</button></div><div class="mini-slide" id="elSlide"></div></div>';
+      function render(linked) {
+        let h = '<div style="position:absolute;left:8%;top:20%;width:36%;height:40%;background:rgba(255,255,255,.04);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(216,236,248,.4);font:11px var(--font-body)">Excel</div><div style="position:absolute;left:56%;top:20%;width:36%;height:40%;background:rgba(102,58,243,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font:12px var(--font-body)">📊</div>';
+        h += '<div style="position:absolute;left:48%;top:28%;color:' + (linked ? '#9fe3c5' : '#f0a59a') + ';font:bold 18px var(--font-mono)">' + (linked ? '⇄' : '→') + '</div>';
+        if (linked) h += '<div style="position:absolute;left:8%;top:72%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">源数据更新 → 右键刷新</div>';
+        document.getElementById('elSlide').innerHTML = h;
+      }
+      render(false);
+      c.querySelector('#elStatic').onclick = () => { render(false); c.querySelector('#elStatic').classList.add('active'); c.querySelector('#elLinked').classList.remove('active'); };
+      c.querySelector('#elLinked').onclick = () => { render(true); c.querySelector('#elLinked').classList.add('active'); c.querySelector('#elStatic').classList.remove('active'); };
+    },
+    dataBars(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">条件格式：表格内嵌数据条</div><div class="demo-row"><button class="demo-btn active" id="dbPlain">纯数字</button><button class="demo-btn" id="dbBars">数据条</button></div><div class="mini-slide" id="dbSlide"></div></div>';
+      const data = [{ n:'Q1', v:120 },{ n:'Q2', v:85 },{ n:'Q3', v:198 }];
+      function render(bars) {
+        let h = '';
+        data.forEach((d,i) => {
+          const y = 16 + i * 24, w = bars ? Math.round(d.v / 200 * 60) : 0;
+          h += '<div style="position:absolute;left:8%;top:' + y + '%;width:84%;height:14%;background:rgba(255,255,255,' + (i % 2 ? '.03' : '.06') + ');border-radius:4px"></div>';
+          h += '<div style="position:absolute;left:10%;top:' + (y + 3) + '%;color:rgba(216,236,248,.5);font:10px var(--font-body)">' + d.n + '</div>';
+          if (bars) h += '<div style="position:absolute;left:24%;top:' + (y + 3) + '%;width:' + w + '%;height:8%;background:#663af3;opacity:.5;border-radius:3px"></div>';
+          h += '<div style="position:absolute;right:8%;top:' + (y + 3) + '%;color:#fff;font:bold 11px var(--font-mono);text-align:right">' + d.v + '</div>';
+        });
+        document.getElementById('dbSlide').innerHTML = h;
+      }
+      render(false);
+      c.querySelector('#dbPlain').onclick = () => { render(false); c.querySelector('#dbPlain').classList.add('active'); c.querySelector('#dbBars').classList.remove('active'); };
+      c.querySelector('#dbBars').onclick = () => { render(true); c.querySelector('#dbBars').classList.add('active'); c.querySelector('#dbPlain').classList.remove('active'); };
+    },
+    videoTrim(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">视频裁剪+书签</div><div class="demo-row"><button class="demo-btn active" id="vtFull">全长</button><button class="demo-btn" id="vtTrim">裁剪</button></div><div class="mini-slide" id="vtSlide"></div></div>';
+      function render(trimmed) {
+        let h = '<div style="position:absolute;left:6%;top:30%;width:88%;height:12%;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden">';
+        if (trimmed) {
+          h += '<div style="position:absolute;left:30%;top:0;width:28%;height:100%;background:#663af3;opacity:.35;border-radius:3px"></div>';
+          h += '<div style="position:absolute;left:28%;top:50%;width:2px;height:100%;background:#9fe3c5;transform:translateY(-50%)"></div>';
+          h += '<div style="position:absolute;left:56%;top:50%;width:2px;height:100%;background:#9fe3c5;transform:translateY(-50%)"></div>';
+        } else {
+          h += '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#663af3;opacity:.2;border-radius:3px"></div>';
+        }
+        h += '</div>';
+        if (trimmed) h += '<div style="position:absolute;left:6%;top:50%;width:88%;text-align:center;color:#9fe3c5;font:10px var(--font-mono)">裁剪 30%-58% + 书签</div>';
+        document.getElementById('vtSlide').innerHTML = h;
+      }
+      render(false);
+      c.querySelector('#vtFull').onclick = () => { render(false); c.querySelector('#vtFull').classList.add('active'); c.querySelector('#vtTrim').classList.remove('active'); };
+      c.querySelector('#vtTrim').onclick = () => { render(true); c.querySelector('#vtTrim').classList.add('active'); c.querySelector('#vtFull').classList.remove('active'); };
+    },
+    a11yCheck(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">辅助功能检查器</div><div class="demo-row"><button class="demo-btn active" id="acWarn">有问题</button><button class="demo-btn" id="acPass">全通过</button></div><div class="mini-slide" id="acSlide"></div></div>';
+      function render(ok) {
+        const items = ['图片 Alt 文本','阅读顺序','颜色对比度'];
+        let h = '';
+        items.forEach((item,i) => {
+          h += '<div style="position:absolute;left:8%;top:' + (16 + i * 24) + '%;width:84%;height:16%;background:rgba(255,255,255,.04);border-radius:6px;display:flex;align-items:center;padding:0 12px">';
+          h += '<span style="color:' + (ok ? '#9fe3c5' : '#f0a59a') + ';font:11px var(--font-body)">' + (ok ? '✓' : '⚠') + ' ' + item + '</span>';
+          h += '</div>';
+        });
+        if (ok) h += '<div style="position:absolute;left:8%;top:68%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">检查通过 ✓</div>';
+        else h += '<div style="position:absolute;left:8%;top:68%;width:84%;text-align:center;color:#f0a59a;font:11px var(--font-mono)">3 个问题需修复</div>';
+        document.getElementById('acSlide').innerHTML = h;
+      }
+      render(false);
+      c.querySelector('#acWarn').onclick = () => { render(false); c.querySelector('#acWarn').classList.add('active'); c.querySelector('#acPass').classList.remove('active'); };
+      c.querySelector('#acPass').onclick = () => { render(true); c.querySelector('#acPass').classList.add('active'); c.querySelector('#acWarn').classList.remove('active'); };
+    },
+    reuseSlides(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">幻灯片重用：从库拉页</div><div class="demo-row"><button class="demo-btn" id="rsNone">空页</button><button class="demo-btn" id="rsImport">导入</button></div><div class="mini-slide" id="rsSlide"></div></div>';
+      function render(hasSlide) {
+        if (hasSlide) {
+          document.getElementById('rsSlide').innerHTML = '<div style="position:absolute;left:8%;top:12%;width:84%;height:60%;background:rgba(255,255,255,.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px"><div style="width:60%;height:8%;background:rgba(102,58,243,.3);border-radius:3px"></div><div style="width:40%;height:6%;background:rgba(255,255,255,.08);border-radius:3px"></div><div style="width:50%;height:6%;background:rgba(255,255,255,.06);border-radius:3px"></div></div><div style="position:absolute;left:8%;top:80%;width:84%;text-align:center;color:#9fe3c5;font:11px var(--font-mono)">格式原样保留 ✓</div>';
+        } else {
+          document.getElementById('rsSlide').innerHTML = '<div style="position:absolute;left:8%;top:12%;width:84%;height:60%;border:1px dashed rgba(255,255,255,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(216,236,248,.2);font:12px var(--font-body)">空白页</div>';
+        }
+      }
+      render(false);
+      c.querySelector('#rsNone').onclick = () => { render(false); c.querySelector('#rsNone').classList.add('active'); c.querySelector('#rsImport').classList.remove('active'); };
+      c.querySelector('#rsImport').onclick = () => { render(true); c.querySelector('#rsImport').classList.add('active'); c.querySelector('#rsNone').classList.remove('active'); };
+    },
+    inkMath(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">墨迹公式：手写→标准公式</div><div class="demo-row"><button class="demo-btn active" id="imType">打字</button><button class="demo-btn" id="imInk">墨迹</button></div><div class="mini-slide" id="imSlide"></div></div>';
+      function render(ink) {
+        if (ink) {
+          document.getElementById('imSlide').innerHTML = '<div style="position:absolute;left:10%;top:16%;width:80%;height:52%;background:rgba(255,255,180,.05);border-radius:8px"></div><div style="position:absolute;left:16%;top:28%;color:#9fe3c5;font:italic 24px serif">x² + bx + c = 0</div><div style="position:absolute;left:8%;top:78%;width:84%;text-align:center;color:#9fe3c5;font:10px var(--font-mono)">✎ 手写公式 → 标准排版</div>';
+        } else {
+          document.getElementById('imSlide').innerHTML = '<div style="position:absolute;left:14%;top:28%;color:rgba(216,236,248,.4);font:14px var(--font-body)">x = (-b ± √(b²-4ac)) / 2a</div>';
+        }
+      }
+      render(false);
+      c.querySelector('#imType').onclick = () => { render(false); c.querySelector('#imType').classList.add('active'); c.querySelector('#imInk').classList.remove('active'); };
+      c.querySelector('#imInk').onclick = () => { render(true); c.querySelector('#imInk').classList.add('active'); c.querySelector('#imType').classList.remove('active'); };
+    },
+    mapChart(c) {
+      c.innerHTML = '<div class="demo-stack"><div class="demo-label">地图图表：区域着色</div><div class="demo-row"><button class="demo-btn active" id="mcTable">表格</button><button class="demo-btn" id="mcMap">地图</button></div><div class="mini-slide" id="mcSlide"></div></div>';
+      function render(map) {
+        if (map) {
+          document.getElementById('mcSlide').innerHTML = '<div style="position:absolute;left:8%;top:8%;width:84%;height:72%;background:rgba(102,58,243,.04);border-radius:8px"><div style="position:absolute;left:10%;top:14%;width:20%;height:20%;background:#663af3;opacity:.7;border-radius:4px"></div><div style="position:absolute;left:34%;top:18%;width:18%;height:18%;background:#663af3;opacity:.5;border-radius:4px"></div><div style="position:absolute;left:56%;top:10%;width:22%;height:22%;background:#663af3;opacity:.6;border-radius:4px"></div><div style="position:absolute;left:14%;top:40%;width:16%;height:18%;background:#663af3;opacity:.3;border-radius:4px"></div><div style="position:absolute;left:38%;top:44%;width:20%;height:16%;background:#663af3;opacity:.4;border-radius:4px"></div><div style="position:absolute;left:62%;top:38%;width:18%;height:20%;background:#663af3;opacity:.7;border-radius:4px"></div></div><div style="position:absolute;left:6%;top:86%;display:flex;gap:8px;align-items:center"><div style="width:16px;height:6px;background:#663af3;opacity:.7;border-radius:2px"></div><div style="width:16px;height:6px;background:#663af3;opacity:.3;border-radius:2px"></div><span style="color:rgba(216,236,248,.4);font:9px var(--font-mono)">深 ← 数值 → 浅</span></div>';
+        } else {
+          document.getElementById('mcSlide').innerHTML = '<div style="position:absolute;left:8%;top:18%;width:84%;height:52%;background:rgba(255,255,255,.04);border-radius:8px"><div style="position:absolute;left:10%;top:14%;color:rgba(216,236,248,.4);font:11px var(--font-body)">地区  |  销量</div><div style="position:absolute;left:10%;top:34%;color:rgba(216,236,248,.3);font:10px var(--font-body)">A区  |  340</div><div style="position:absolute;left:10%;top:52%;color:rgba(216,236,248,.3);font:10px var(--font-body)">B区  |  210</div><div style="position:absolute;left:10%;top:70%;color:rgba(216,236,248,.3);font:10px var(--font-body)">C区  |  580</div></div>';
+        }
+      }
+      render(false);
+      c.querySelector('#mcTable').onclick = () => { render(false); c.querySelector('#mcTable').classList.add('active'); c.querySelector('#mcMap').classList.remove('active'); };
+      c.querySelector('#mcMap').onclick = () => { render(true); c.querySelector('#mcMap').classList.add('active'); c.querySelector('#mcTable').classList.remove('active'); };
+    },
+
+    /* 2026-07-27 新增 · 8 个交互演示 */
+
+    /* 图片半透明蒙版：拖动滑杆调蒙版深浅 */
+    imageMask(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">拖动滑杆调蒙版深浅，看白字何时变清晰</div>
+        <div class="demo-row"><input type="range" min="0" max="80" value="0" class="demo-slider" id="imMask"></div>
+        <div class="mini-slide" id="imSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#imSlide');
+      const range = c.querySelector('#imMask');
+      function render(op) {
+        const dark = op / 100;
+        const clear = op > 20;
+        slide.innerHTML =
+          '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover">' +
+          '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(5,6,15,' + dark + ')"></div>' +
+          '<div style="position:absolute;left:8%;top:38%;width:84%;font:600 ' + (clear ? 22 : 20) + 'px var(--font-body);color:' + (clear ? '#fff' : 'rgba(255,255,255,.5)') + ';text-shadow:' + (clear ? '0 2px 8px rgba(0,0,0,.5)' : 'none') + '">AI 驱动未来</div>' +
+          '<div style="position:absolute;left:8%;top:56%;width:72%;font:13px var(--font-body);color:' + (clear ? 'rgba(255,255,255,.85)' : 'rgba(255,255,255,.42)') + '">让数据自己说话</div>';
+      }
+      render(0);
+      range.oninput = () => render(+range.value);
+    },
+
+    /* 隐藏幻灯片：切换备用页的隐藏状态 */
+    hideSlide(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「隐藏备用页」让放映跳过它</div>
+        <div class="demo-row"><button class="demo-btn" id="hsToggle">隐藏备用页</button></div>
+        <div class="mini-slide" id="hsSlide" style="aspect-ratio:auto;height:120px"></div>
+      </div>`;
+      const slide = c.querySelector('#hsSlide');
+      const btn = c.querySelector('#hsToggle');
+      let hidden = false;
+      function render() {
+        slide.innerHTML = '';
+        const cells = [1, 2, 'backup', 3];
+        cells.forEach((v, i) => {
+          const cell = document.createElement('div');
+          const isBackup = v === 'backup';
+          cell.style.cssText = 'position:absolute;left:' + (4 + i * 23) + '%;top:25%;width:19%;height:50%;border-radius:6px;' +
+            (isBackup && hidden ? 'background:rgba(255,255,255,.04);' : 'background:' + (isBackup ? '#e46d4c' : 'rgba(255,255,255,.10)') + ';');
+          if (isBackup && hidden) {
+            const slash = document.createElement('div');
+            slash.style.cssText = 'position:absolute;left:50%;top:-12%;width:2px;height:124%;background:rgba(228,77,60,.85);transform:rotate(35deg)';
+            cell.appendChild(slash);
+            cell.innerHTML += '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:rgba(159,227,197,.95);font:9px var(--font-body)">隐藏</div>';
+          } else if (isBackup) {
+            cell.innerHTML = '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:#fff;font:9px var(--font-body)">备用</div>';
+          } else {
+            cell.innerHTML = '<div style="position:absolute;left:0;right:0;bottom:4px;text-align:center;color:rgba(216,236,248,.6);font:10px var(--font-body)">' + v + '</div>';
+          }
+          slide.appendChild(cell);
+        });
+      }
+      render();
+      btn.onclick = () => { hidden = !hidden; btn.classList.toggle('active', hidden); btn.textContent = hidden ? '显示备用页' : '隐藏备用页'; render(); };
+    },
+
+    /* 文字转形状/轮廓化 */
+    textOutline(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「转轮廓」把文字变矢量形状</div>
+        <div class="demo-row"><button class="demo-btn" id="toToggle">转轮廓</button><button class="demo-btn" id="toRecolor" disabled style="opacity:.5">换渐变色</button></div>
+        <div class="mini-slide" id="toSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#toSlide');
+      const btn = c.querySelector('#toToggle');
+      const rc = c.querySelector('#toRecolor');
+      let outlined = false, grad = false;
+      function render() {
+        if (!outlined) {
+          slide.innerHTML = '<div style="position:absolute;left:18%;top:34%;width:64%;height:32%;border:1px dashed rgba(216,236,248,.5);border-radius:6px;display:grid;place-items:center"><span style="color:rgba(216,236,248,.85);font:600 22px var(--font-body)">标题文字</span></div>';
+        } else {
+          const col = grad ? 'linear-gradient(90deg,#a78bfa,#663af3)' : '#663af3';
+          slide.innerHTML = '<div style="position:absolute;left:18%;top:34%;width:64%;height:32%;border-radius:6px;display:grid;place-items:center;background:rgba(102,58,243,.08)"><span style="font:600 24px var(--font-body);background:' + col + ';-webkit-background-clip:text;background-clip:text;color:transparent">标题文字</span></div>';
+        }
+      }
+      render();
+      btn.onclick = () => { outlined = !outlined; btn.classList.toggle('active', outlined); btn.textContent = outlined ? '还原文本' : '转轮廓'; rc.disabled = !outlined; rc.style.opacity = outlined ? '1' : '.5'; render(); };
+      rc.onclick = () => { grad = !grad; rc.classList.toggle('active', grad); render(); };
+    },
+
+    /* SmartArt 转形状后自由编辑 */
+    smartartUngroup(c) {
+      function box(x, y, w, h, col, op) {
+        return '<div style="position:absolute;left:' + x + '%;top:' + y + '%;width:' + w + '%;height:' + h + '%;background:' + col + ';border-radius:6px;opacity:' + op + '"></div>';
+      }
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「转换为形状」释放每个元素</div>
+        <div class="demo-row"><button class="demo-btn" id="saToggle">转换为形状</button></div>
+        <div class="mini-slide" id="saSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#saSlide');
+      const btn = c.querySelector('#saToggle');
+      let ungrouped = false;
+      function render() {
+        if (!ungrouped) {
+          slide.innerHTML = box(10, 32, 22, 16, '#663af3', .85) + box(39, 32, 22, 16, '#663af3', .85) + box(68, 32, 22, 16, '#663af3', .85) +
+            box(30, 40, 9, 2, 'rgba(216,236,248,.5)', 1) + box(59, 40, 9, 2, 'rgba(216,236,248,.5)', 1);
+        } else {
+          slide.innerHTML = box(8, 28, 20, 15, '#663af3', .9) + box(42, 42, 20, 15, '#027dea', .9) + box(72, 30, 18, 14, '#269684', .9) +
+            '<div style="position:absolute;left:60%;top:54%;width:16%;height:2px;background:rgba(216,236,248,.4);transform:rotate(-32deg)"></div>';
+        }
+      }
+      render();
+      btn.onclick = () => { ungrouped = !ungrouped; btn.classList.toggle('active', ungrouped); btn.textContent = ungrouped ? '还原 SmartArt' : '转换为形状'; render(); };
+    },
+
+    /* 渐变填充做高级背景/文字（真实图片 + 渐变蒙版） */
+    gradientFill(c) {
+      const presets = [
+        { name: '紫罗兰', c: 'linear-gradient(135deg,#663af3,#9a6bff)' },
+        { name: '蓝紫', c: 'linear-gradient(135deg,#663af3,#027dea)' },
+        { name: '青绿', c: 'linear-gradient(135deg,#027dea,#269684)' }
+      ];
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点预设切换背景渐变（真实图片 + 渐变蒙版）</div>
+        <div class="demo-row" id="gfBtns"></div>
+        <div class="mini-slide" id="gfSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#gfSlide');
+      const row = c.querySelector('#gfBtns');
+      let cur = 1;
+      function render() {
+        const p = presets[cur];
+        slide.innerHTML = '<img src="img/tech2.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover">' +
+          '<div style="position:absolute;left:0;top:0;width:100%;height:100%;background:' + p.c + ';opacity:.6"></div>' +
+          '<div style="position:absolute;left:8%;top:40%;width:84%;font:600 22px var(--font-body);color:#fff">渐变更高级</div>';
+      }
+      presets.forEach((p, i) => {
+        const b = document.createElement('button');
+        b.className = 'demo-btn' + (i === cur ? ' active' : '');
+        b.textContent = p.name;
+        b.onclick = () => { cur = i; row.querySelectorAll('.demo-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); render(); };
+        row.appendChild(b);
+      });
+      render();
+    },
+
+    /* 段落行距/段距一键优化 */
+    paraBreath(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「优化行距」给文字呼吸感</div>
+        <div class="demo-row"><button class="demo-btn" id="pbToggle">优化行距</button></div>
+        <div class="mini-slide" id="pbSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#pbSlide');
+      const btn = c.querySelector('#pbToggle');
+      let airy = false;
+      function cramped() {
+        return '<div style="position:absolute;left:8%;top:18%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:25%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:32%;width:70%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:39%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:46%;width:60%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:53%;width:84%;height:3%;background:rgba(216,236,248,.5);border-radius:2px"></div>';
+      }
+      function airyLines() {
+        return '<div style="position:absolute;left:8%;top:14%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:22%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:30%;width:70%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:42%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:50%;width:60%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>' +
+          '<div style="position:absolute;left:8%;top:62%;width:84%;height:3.4%;background:rgba(159,227,197,.7);border-radius:2px"></div>';
+      }
+      slide.innerHTML = cramped();
+      btn.onclick = () => { airy = !airy; btn.classList.toggle('active', airy); btn.textContent = airy ? '还原紧凑' : '优化行距'; slide.innerHTML = airy ? airyLines() : cramped(); };
+    },
+
+    /* 导出为视频（MP4 自动播放） */
+    exportVideo(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「导出为视频」生成可自动播放的 MP4</div>
+        <div class="demo-row"><button class="demo-btn" id="evBtn">导出为视频</button></div>
+        <div class="mini-slide" id="evSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#evSlide');
+      const btn = c.querySelector('#evBtn');
+      function idle() {
+        slide.innerHTML = '<div style="position:absolute;left:38%;top:22%;width:24%;height:34%;border-radius:6px;background:rgba(228,77,60,.18);border:1px solid rgba(228,77,60,.5);display:grid;place-items:center;color:#f0a59a;font:600 12px var(--font-body)">.pptx</div>';
+      }
+      function playing() {
+        slide.innerHTML = '<div style="position:absolute;left:34%;top:20%;width:32%;height:38%;border-radius:8px;background:linear-gradient(135deg,#0b1020,#101830);border:1px solid rgba(102,58,243,.5);overflow:hidden"><div style="position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:600 13px var(--font-body)">▶ 自动播放中</div></div>';
+      }
+      idle();
+      btn.onclick = () => {
+        btn.disabled = true; btn.textContent = '渲染中…';
+        slide.innerHTML = '<div style="position:absolute;left:20%;top:46%;width:60%;height:8px;border-radius:6px;background:rgba(255,255,255,.1)"><div id="evBar" style="height:100%;width:0;background:#663af3;border-radius:6px;transition:width 1.6s ease"></div></div>';
+        requestAnimationFrame(() => { const bar = slide.querySelector('#evBar'); if (bar) bar.style.width = '100%'; });
+        setTimeout(() => { btn.disabled = false; btn.textContent = '重新导出'; playing(); }, 1700);
+      };
+    },
+
+    /* 黑屏/白屏快捷键 B/W */
+    bwBlank(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">放映时点 B / W 制造留白，任意键继续</div>
+        <div class="demo-row"><button class="demo-btn" id="bwB">按 B 黑屏</button><button class="demo-btn" id="bwW">按 W 白屏</button><button class="demo-btn" id="bwR">继续放映</button></div>
+        <div class="mini-slide" id="bwSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#bwSlide');
+      function show(mode) {
+        if (mode === 'black') {
+          slide.innerHTML = '<div style="position:absolute;inset:0;background:#05060f"></div><div style="position:absolute;left:8%;top:44%;width:84%;text-align:center;color:rgba(216,236,248,.7);font:14px var(--font-body)">屏幕已黑 · 任意键继续</div>';
+        } else if (mode === 'white') {
+          slide.innerHTML = '<div style="position:absolute;inset:0;background:#f4f7fb"></div><div style="position:absolute;left:8%;top:44%;width:84%;text-align:center;color:rgba(40,50,70,.7);font:14px var(--font-body)">屏幕已白 · 任意键继续</div>';
+        } else {
+          slide.innerHTML = '<img src="img/tech1.png" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:.6"><div style="position:absolute;left:8%;top:42%;width:84%;color:#fff;font:600 14px var(--font-body)">放映中 · 画面正常</div>';
+        }
+      }
+      show('normal');
+      c.querySelector('#bwB').onclick = () => show('black');
+      c.querySelector('#bwW').onclick = () => show('white');
+      c.querySelector('#bwR').onclick = () => show('normal');
+    },
+
+    /* PPT 一键导出 Word / 讲义 */
+    pptToWord(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「导出为 Word」把幻灯片+备注变成可编辑文档</div>
+        <div class="demo-row"><button class="demo-btn" id="pwBtn">导出为 Word</button></div>
+        <div class="mini-slide" id="pwSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#pwSlide');
+      const btn = c.querySelector('#pwBtn');
+      let done = false;
+      function render() {
+        slide.innerHTML = done
+          ? '<div style="position:absolute;left:30%;top:20%;width:18%;height:26%;background:rgba(102,58,243,.18);border:1px solid rgba(102,58,243,.55);border-radius:6px;display:grid;place-items:center;color:#b9a6ff;font:11px var(--font-body)">.docx</div>'
+            + '<div style="position:absolute;left:52%;top:26%;width:30%;height:30%;background:rgba(159,227,197,.1);border:1px dashed rgba(159,227,197,.5);border-radius:4px"></div>'
+            + '<div style="position:absolute;left:52%;top:64%;width:30%;height:3%;background:rgba(159,227,197,.4);border-radius:2px"></div>'
+          : '<div style="position:absolute;left:38%;top:22%;width:24%;height:30%;background:rgba(228,77,60,.15);border:1px solid rgba(228,77,60,.5);border-radius:6px;display:grid;place-items:center;color:#f0a59a;font:11px var(--font-body)">.pptx</div>'
+            + '<div style="position:absolute;left:14%;top:64%;width:72%;height:3%;background:rgba(216,236,248,.3);border-radius:2px"></div>';
+      }
+      render();
+      btn.onclick = () => { done = !done; btn.classList.toggle('active', done); btn.textContent = done ? '还原 PPT' : '导出为 Word'; render(); };
+    },
+
+    /* 自动保存 & 恢复未保存 */
+    autoRecover(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「模拟崩溃」看如何从自动保存里找回</div>
+        <div class="demo-row"><button class="demo-btn" id="arBtn">模拟崩溃</button></div>
+        <div class="mini-slide" id="arSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#arSlide');
+      const btn = c.querySelector('#arBtn');
+      let crashed = false;
+      function render() {
+        slide.innerHTML = crashed
+          ? '<div style="position:absolute;left:14%;top:18%;width:72%;height:30%;background:rgba(38,150,132,.1);border:1px solid rgba(38,150,132,.5);border-radius:6px;padding:6px 8px;box-sizing:border-box"><div style="color:#9be3c3;font:11px var(--font-body)">↻ 自动恢复版本</div><div style="color:rgba(216,236,248,.6);font:10px var(--font-body);margin-top:4px">演示文稿1（10分钟前）</div></div>'
+            + '<div style="position:absolute;left:14%;top:54%;width:72%;height:3%;background:rgba(159,227,197,.4);border-radius:2px"></div>'
+          : '<div style="position:absolute;left:36%;top:26%;width:28%;height:24%;border-radius:50%;border:3px solid rgba(228,77,60,.6);display:grid;place-items:center;color:#f0a59a;font:600 18px var(--font-body)">✕</div>'
+            + '<div style="position:absolute;left:24%;top:58%;width:52%;height:3%;background:rgba(216,236,248,.25);border-radius:2px"></div>';
+      }
+      render();
+      btn.onclick = () => { crashed = !crashed; btn.classList.toggle('active', crashed); btn.textContent = crashed ? '恢复正常' : '模拟崩溃'; render(); };
+    },
+
+    /* 幻灯片尺寸/比例切换 */
+    slideSize(c) {
+      const ratio = [
+        { n: '4:3', w: 64, h: 78, col: 'rgba(228,77,60,.5)' },
+        { n: '16:9', w: 84, h: 64, col: 'rgba(102,58,243,.6)' }
+      ];
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「切换比例」看内容如何自适应铺满</div>
+        <div class="demo-row"><button class="demo-btn" id="ssBtn">切换为 16:9</button></div>
+        <div class="mini-slide" id="ssSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#ssSlide');
+      const btn = c.querySelector('#ssBtn');
+      let wide = false;
+      function render() {
+        const r = ratio[wide ? 1 : 0];
+        slide.innerHTML = '<div style="position:absolute;left:' + (50 - r.w / 2) + '%;top:' + (50 - r.h / 2) + '%;width:' + r.w + '%;height:' + r.h + '%;background:' + r.col + ';border-radius:4px;opacity:.85"></div>'
+          + '<div style="position:absolute;left:' + (50 - r.w / 2 + 6) + '%;top:' + (50 - r.h / 2 + 6) + '%;width:' + (r.w - 12) + '%;height:6%;background:rgba(255,255,255,.25);border-radius:3px"></div>'
+          + '<div style="position:absolute;left:6%;top:80%;width:88%;text-align:center;color:rgba(216,236,248,.7);font:11px var(--font-body)">' + r.n + ' · ' + (wide ? '最大化铺满' : '投宽屏被裁') + '</div>';
+      }
+      render();
+      btn.onclick = () => { wide = !wide; btn.classList.toggle('active', wide); btn.textContent = wide ? '切回 4:3' : '切换为 16:9'; render(); };
+    },
+
+    /* 屏幕录制 */
+    screenRecord(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「开始录制」框选区域录进幻灯片</div>
+        <div class="demo-row"><button class="demo-btn" id="srBtn">开始录制</button></div>
+        <div class="mini-slide" id="srSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#srSlide');
+      const btn = c.querySelector('#srBtn');
+      let rec = false;
+      function render() {
+        slide.innerHTML = rec
+          ? '<div style="position:absolute;left:24%;top:22%;width:52%;height:34%;border-radius:8px;background:linear-gradient(135deg,rgba(102,58,243,.2),rgba(2,125,234,.2));border:1px solid rgba(102,58,243,.5);display:grid;place-items:center;color:#b9a6ff;font:11px var(--font-body)">● REC 录制中</div>'
+          : '<div style="position:absolute;left:24%;top:26%;width:52%;height:30%;border-radius:8px;background:rgba(255,255,255,.05);border:1px dashed rgba(216,236,248,.35);display:grid;place-items:center;color:rgba(216,236,248,.6);font:11px var(--font-body)">插入 → 屏幕录制</div>';
+      }
+      render();
+      btn.onclick = () => { rec = !rec; btn.classList.toggle('active', rec); btn.textContent = rec ? '停止并落入页面' : '开始录制'; render(); };
+    },
+
+    /* 排练计时 */
+    rehearse(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「开始排练」模拟逐页计时</div>
+        <div class="demo-row"><button class="demo-btn" id="rhBtn">开始排练</button><span id="rhTime" style="color:rgba(216,236,248,.7);font:12px var(--font-body)">0:00</span></div>
+        <div class="mini-slide" id="rhSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#rhSlide');
+      const btn = c.querySelector('#rhBtn');
+      const tlabel = c.querySelector('#rhTime');
+      let t = 0, timer = null;
+      function render() {
+        tlabel.textContent = '0:' + (t < 10 ? '0' + t : t);
+        slide.innerHTML = '<div style="position:absolute;left:30%;top:30%;width:40%;height:36%;border-radius:50%;background:rgba(38,150,132,.12);border:3px solid rgba(38,150,132,.5);display:grid;place-items:center;color:#9be3c3;font:600 16px var(--font-body)">' + (timer ? '录制中' : '0:' + (t < 10 ? '0' + t : t)) + '</div>'
+          + '<div style="position:absolute;left:14%;top:74%;width:72%;height:4%;background:rgba(159,227,197,.3);border-radius:2px"></div>';
+      }
+      render();
+      btn.onclick = () => {
+        if (!timer) {
+          btn.classList.add('active'); btn.textContent = '停止';
+          timer = reg(setInterval(() => { t++; render(); }, 1000));
+        } else {
+          clearInterval(timer); const i = __timers.indexOf(timer); if (i >= 0) __timers.splice(i, 1); timer = null;
+          btn.classList.remove('active'); btn.textContent = '开始排练'; render();
+        }
+      };
+    },
+
+    /* 打印/导出PDF讲义 */
+    printHandout(c) {
+      const per = [1, 3, 6];
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">选每页张数，看讲义排版</div>
+        <div class="demo-row" id="phBtns"></div>
+        <div class="mini-slide" id="phSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#phSlide');
+      const row = c.querySelector('#phBtns');
+      let cur = 2;
+      function render() {
+        const n = per[cur];
+        const cols = n <= 1 ? 1 : (n <= 3 ? 1 : 3);
+        const rows = Math.ceil(n / cols);
+        let html = '';
+        for (let i = 0; i < n; i++) {
+          const cx = 14 + (i % cols) * (76 / cols);
+          const cy = 16 + Math.floor(i / cols) * (68 / rows);
+          html += '<div style="position:absolute;left:' + cx + '%;top:' + cy + '%;width:' + (76 / cols - 3) + '%;height:' + (68 / rows - 3) + '%;border:1px solid rgba(159,227,197,.5);border-radius:3px"></div>';
+        }
+        slide.innerHTML = html + '<div style="position:absolute;left:8%;top:88%;width:84%;text-align:center;color:rgba(159,227,197,.85);font:11px var(--font-body)">一页 ' + n + ' 张 · 带框线</div>';
+      }
+      per.forEach((p, i) => {
+        const b = document.createElement('button');
+        b.className = 'demo-btn' + (i === cur ? ' active' : '');
+        b.textContent = p + ' 张/页';
+        b.onclick = () => { cur = i; row.querySelectorAll('.demo-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); render(); };
+        row.appendChild(b);
+      });
+      render();
+    },
+
+    /* 形状效果：阴影/发光/映像 */
+    shapeEffect(c) {
+      const fx = [
+        { n: '无', s: 'background:#663af3' },
+        { n: '阴影', s: 'background:linear-gradient(135deg,#7c5cff,#663af3);box-shadow:0 14px 30px rgba(102,58,243,.45)' },
+        { n: '发光', s: 'background:linear-gradient(135deg,#7c5cff,#663af3);box-shadow:0 0 22px rgba(124,92,255,.75)' },
+        { n: '映像', s: 'background:linear-gradient(135deg,#7c5cff,#663af3)' }
+      ];
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点效果按钮，看色块质感变化</div>
+        <div class="demo-row" id="seBtns"></div>
+        <div class="mini-slide" id="seSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#seSlide');
+      const row = c.querySelector('#seBtns');
+      let cur = 0;
+      function render() {
+        const f = fx[cur];
+        slide.innerHTML = '<div style="position:absolute;left:34%;top:24%;width:32%;height:34%;border-radius:8px;' + f.s + '"></div>'
+          + (f.n === '映像' ? '<div style="position:absolute;left:34%;top:60%;width:32%;height:8%;background:linear-gradient(180deg,rgba(124,92,255,.4),transparent);border-radius:0 0 8px 8px;filter:blur(2px)"></div>' : '')
+          + '<div style="position:absolute;left:8%;top:86%;width:84%;text-align:center;color:rgba(216,236,248,.7);font:11px var(--font-body)">效果：' + f.n + '</div>';
+      }
+      fx.forEach((f, i) => {
+        const b = document.createElement('button');
+        b.className = 'demo-btn' + (i === cur ? ' active' : '');
+        b.textContent = f.n;
+        b.onclick = () => { cur = i; row.querySelectorAll('.demo-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); render(); };
+        row.appendChild(b);
+      });
+      render();
+    },
+
+    /* 竖排文字 */
+    verticalText(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点「竖排」切换标题文字方向</div>
+        <div class="demo-row"><button class="demo-btn" id="vtBtn">竖排</button></div>
+        <div class="mini-slide" id="vtSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#vtSlide');
+      const btn = c.querySelector('#vtBtn');
+      let vert = false;
+      function render() {
+        slide.innerHTML = vert
+          ? '<div style="position:absolute;left:42%;top:16%;width:16%;height:64%;writing-mode:vertical-rl;text-orientation:upright;display:grid;place-items:center;color:#b9a6ff;font:600 22px var(--font-body);letter-spacing:4px">年度盛典</div><div style="position:absolute;left:40%;top:16%;width:2px;height:64%;background:rgba(185,166,255,.6)"></div>'
+          : '<div style="position:absolute;left:20%;top:34%;width:60%;text-align:center;color:rgba(216,236,248,.8);font:600 20px var(--font-body)">年度盛典</div><div style="position:absolute;left:20%;top:54%;width:60%;height:3%;background:rgba(216,236,248,.3);border-radius:2px"></div>';
+      }
+      render();
+      btn.onclick = () => { vert = !vert; btn.classList.toggle('active', vert); btn.textContent = vert ? '横排' : '竖排'; render(); };
+    },
+
+    /* 自定义项目符号 */
+    customBullet(c) {
+      const syms = [
+        { n: '默认圆点', s: '●', col: 'rgba(216,236,248,.5)' },
+        { n: '品牌方块', s: '■', col: 'rgba(102,58,243,.9)' },
+        { n: '勾选', s: '✓', col: 'rgba(38,150,132,.9)' },
+        { n: '箭头', s: '➜', col: 'rgba(2,125,234,.9)' }
+      ];
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">点符号按钮，换列表项目符号</div>
+        <div class="demo-row" id="cbBtns"></div>
+        <div class="mini-slide" id="cbSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#cbSlide');
+      const row = c.querySelector('#cbBtns');
+      let cur = 0;
+      function render() {
+        const f = syms[cur];
+        let html = '';
+        const ys = [22, 40, 58];
+        ys.forEach(y => {
+          html += '<div style="position:absolute;left:18%;top:' + y + '%;width:6%;text-align:center;color:' + f.col + ';font:14px var(--font-body)">' + f.s + '</div>'
+            + '<div style="position:absolute;left:28%;top:' + (y + 1) + '%;width:50%;height:3%;background:rgba(216,236,248,.3);border-radius:2px"></div>';
+        });
+        slide.innerHTML = html;
+      }
+      syms.forEach((f, i) => {
+        const b = document.createElement('button');
+        b.className = 'demo-btn' + (i === cur ? ' active' : '');
+        b.textContent = f.n;
+        b.onclick = () => { cur = i; row.querySelectorAll('.demo-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); render(); };
+        row.appendChild(b);
+      });
+      render();
+    },
+
+    /* 设为默认形状 */
+    defaultShape(c) {
+      c.innerHTML = `<div class="demo-stack">
+        <div class="demo-label">先「设为默认」再插入，看是否自动套用</div>
+        <div class="demo-row"><button class="demo-btn" id="dsSet">设为默认形状</button><button class="demo-btn" id="dsAdd">插入新形状</button></div>
+        <div class="mini-slide" id="dsSlide"></div>
+      </div>`;
+      const slide = c.querySelector('#dsSlide');
+      const setBtn = c.querySelector('#dsSet');
+      const addBtn = c.querySelector('#dsAdd');
+      let set = false, count = 0;
+      function render() {
+        let html = '';
+        for (let i = 0; i < count; i++) {
+          const x = 16 + i * 22;
+          html += '<div style="position:absolute;left:' + x + '%;top:30%;width:18%;height:30%;border-radius:6px;' + (set ? 'background:linear-gradient(135deg,#7c5cff,#663af3);box-shadow:0 8px 18px rgba(102,58,243,.4)' : 'border:1px solid rgba(216,236,248,.4)') + '"></div>';
+        }
+        slide.innerHTML = html + '<div style="position:absolute;left:10%;top:74%;width:80%;text-align:center;color:rgba(216,236,248,.7);font:11px var(--font-body)">' + (set ? '已设为默认 · 新形状自动套用' : '未设默认 · 插入是空心框') + '</div>';
+      }
+      render();
+      setBtn.onclick = () => { set = !set; setBtn.classList.toggle('active', set); setBtn.textContent = set ? '取消默认' : '设为默认形状'; render(); };
+      addBtn.onclick = () => { if (count < 3) { count++; render(); } };
     }
   };
 
