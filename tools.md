@@ -20,6 +20,8 @@
 - [Gamma](https://gamma.app/) — 全球最火 AI PPT 生成器，输入主题/文档秒出可编辑幻灯片。｜免费
 - [讯飞智文](https://zhiwen.xfyun.cn/) — 科大讯飞出品，文档/主题一键生成 PPT，自带 AI 配图与演讲稿。｜免费
 - [MindShow](https://www.mindshow.fun/) — 思维导图/文档/Markdown 一键转 PPT，导入即生成框架、改稿高效。｜免费
+- [Tome](https://tome.app/) — AI 叙事演示工具，输入主题生成带视觉的讲故事式 PPT。｜免费
+- [AiPPT](https://www.aippt.cn/) — 国内免费 AI PPT 生成，输入主题 3 分钟出可编辑幻灯片。｜免费
 
 ### 模板商城 (STORE)
 - [Envato Elements](https://elements.envato.com/presentation-templates/compatible-with-powerpoint) — 订阅制 PPT 模板库，海量优质模板无限下载。｜付费
@@ -37,6 +39,7 @@
 - [Ideogram](https://ideogram.ai) — 专长图像内文字排版，海报标语神器。｜免费
 - [通义万相](https://tongyi.aliyun.com/wanxiang/) — 阿里通义系列 AI 绘画，中文提示词友好、风格多样。｜免费
 - [文心一格](https://yige.baidu.com/) — 百度文心大模型生图，国风/插画/海报等多场景中文创作。｜免费
+- [Leonardo.Ai](https://leonardo.ai/) — 国际主流 AI 绘画，游戏资产/插画训练与生成一体。｜免费
 
 ### 生图工具 (TOOLS)
 - [即梦AI](https://jimeng.jianying.com/ai-tool/home) — 字节旗下，中文提示词友好，图像视频一体。｜免费
@@ -59,16 +62,20 @@
 - [剪映专业版](https://jianying.com/) — 抖音系国民剪辑器，PPT 动态视频、片头片尾、字幕一键搞定。｜免费
 - [CapCut](https://capcut.com/) — 剪映海外版，模板丰富、跨端同步，短视频剪辑利器。｜免费
 - [腾讯智影](https://zhiying.tencent.com/) — 网页端智能剪辑，字幕/去水印/数字人一条龙。｜免费
+- [万兴喵影](https://miao.wondershare.cn/) — 国产易上手剪辑神器，功能强、模板多，PPT 动态视频好搭档。｜免费
 
 ## 视频素材 (VIDEO-MAT)
 - [Pexels Video](https://www.pexels.com/videos/) — 免费可商用视频素材，做 PPT 片头/转场直接下载。｜免费
 - [Coverr](https://coverr.co/) — 精选免费视频素材，无需署名、画质高，分类清晰好检索。｜免费
 - [Mixkit](https://mixkit.co/) — 免费视频与动效素材库，转场/背景片段直接嵌入幻灯片。｜免费
+- [Videezy](https://www.videezy.com/) — 免费高清 HD/4K 视频素材，转场/背景片段直接下载。｜免费
 
 ## 音乐 / 音效 (AUDIO)
 - [爱给网](https://www.aigei.com/) — 国内音效素材站老大，PPT 转场音/背景乐最常用的免费音效库。｜免费
 - [Pixabay Music](https://pixabay.com/music/) — Pixabay 旗下 CC0 免费可商用音乐，与图库同源、检索顺手。｜免费
 - [淘声网](https://tosound.com/) — 聚合全球免费音效与音乐，翻页声/提示音等小音效好找。｜免费
+- [Jamendo](https://www.jamendo.com/) — 高质量免费可商用音乐，CC 授权、分类清晰。｜免费
+- [Bensound](https://www.bensound.com/) — 质感免费背景音乐，视频/PPT 配乐常用。｜免费
 
 ## 数字人 (AVATAR)
 - [HeyGen](https://heygen.com/) — 最火 AI 数字人视频，上传 PPT/文档即生成带真人讲解口播的视频。｜免费
@@ -84,6 +91,8 @@
 - [ChatGPT](https://chatgpt.com/) — OpenAI 通用 AI 标杆，写稿/脑暴/答疑/代码全能，全球最常用。｜免费
 - [Claude](https://claude.ai/) — Anthropic 出品，长文写作与逻辑推理极强，PPT 大纲与文案利器。｜免费
 - [Gemini](https://gemini.google.com/) — Google 多模态大模型，超长上下文与图文理解突出。｜免费
+- [DeepSeek](https://www.deepseek.com/) — 国产最强开源大模型，写稿/代码/推理全能，国民级 AI 助手。｜免费
+- [文心一言](https://yiyan.baidu.com/) — 百度知识增强大模型，中文创作与多模态对话第一梯队。｜免费
 
 ## AI 搜索 (SEARCH)
 - [秘塔 AI 搜索](https://metaso.cn/) — 国内无广告 AI 搜索，答案带引用，写稿查资料神器。｜免费
@@ -126,10 +135,16 @@
 - [TypeScale](https://typescale.com) — 可视化搭建排版比例与字号层级。｜免费
 - [字魂](https://izihun.com/) — 国内商用字体库，海量中文字体按需授权下载。｜付费
 - [猫啃网](https://www.maoken.com/) — 精选免费商用字体导航，可商用、无版权风险。｜免费
+- [字由](https://www.hellofont.cn/) — 设计师装机必备字体管理，上千款中英文字体一键试用调用。｜免费
+- [DaFont](https://www.dafont.com/) — 国际知名免费英文字体站，装饰/手写/标题字体丰富。｜免费
 
 ### 配色 (COLOR)
 - [Coolors](https://coolors.co/) — 一键生成配色方案，设计师天天用的配色神器。｜免费
 - [中国色](https://zhongguose.com/) — 中国传统色卡，国风 PPT 配色参考。｜免费
+- [Adobe Color](https://color.adobe.com/zh/) — 行业标配配色工具，提取/生成/和谐配色一键搞定。｜免费
+- [UI Gradients](https://uigradients.com/) — 精选渐变配色，PPT 背景与卡片渐变直接复制。｜免费
+- [ColorHunt](https://colorhunt.co/) — 每日精选配色方案，轻量高频、一键复制色值。｜免费
+- [Huemint](https://huemint.com/) — AI 生成多种和谐配色，效果实时预览。｜免费
 
 ## 数据可视化 (DATA)
 - [镝数图表](https://dycharts.com/) — 免费在线图表制作，动态条形/地图等模板多，PPT 数据页直接出图。｜免费
@@ -150,6 +165,11 @@
 - [Liblib](https://www.liblib.art) — 国内 AI 绘画模型与 LoRA 分享社区。｜免费
 - [Civitai](https://civitai.com) — 开源 AI 模型仓库，Stable Diffusion 资源集散地。｜免费
 - [Mobbin](https://mobbin.com/) — 真实 App / Web UI 设计灵感库，海量产品界面截图按品类检索。｜免费
+- [Pinterest](https://www.pinterest.com/) — 全球最大创意灵感图库，找风格/配色/版式一搜即得。｜免费
+- [花瓣网](https://huaban.com/) — 国内设计师灵感采集站，中文素材与画板管理顺手。｜免费
+- [Blush](https://blush.design/zh-CN) — 免费可商用矢量插画，PPT 配图缺插画时的好来源。｜免费
+- [Mockupworld](https://www.mockupworld.co/) — 免费高清样机素材库，作品集/PPT 展示图套壳利器。｜免费
+- [Shots](https://shots.so/) — 一键给图片套精美设备外壳 Mockup，社媒/PPT 展示即出片。｜免费
 
 ## 脑图 / 流程图 (MIND)
 - [ProcessOn](https://www.processon.com/) — 在线流程图/思维导图，结构梳理即转 PPT 框架。｜免费
@@ -209,6 +229,9 @@
 - [Remove.bg](https://www.remove.bg/) — 一键自动去背景行业标准，人像/商品抠图秒级完成。｜免费
 - [TinyPNG](https://tinypng.com/) — 智能压缩 PNG/JPG，画质几乎无损、体积大减，设计必用。｜免费
 - [佐糖](https://picwish.cn/) — AI 图片编辑，一键抠图/消除/扩图/画质修复，比单纯去背景更全能。｜免费
+- [Photopea](https://www.photopea.com) — 免费在线 Photoshop，图层/蒙版/修图全功能，PPT 配图编辑神器。｜免费
+- [Upscayl](https://www.upscayl.org/) — 开源免费 AI 图片无损放大，模糊图秒变超清。｜免费
+- [Palette.fm](https://palette.fm/) — 黑白照片一键 AI 上色，10 秒出 20 种配色方案。｜免费
 
 ### 翻译 (TRANSLATE)
 - [DeepL](https://www.deepl.com/) — 译文最自然的翻译引擎，PPT 英文素材翻译标配。｜免费
@@ -217,3 +240,7 @@
 ## AI资讯 (NEWS)
 - [AI HOT](https://aihot.virxact.com/) — 中文 AI 资讯聚合，每日热点、新品发布与前沿论文速览一站看。｜免费
 - [WaytoAGI](https://waytoagi.com/) — 通往 AGI 之路，国内最大 AI 学习/工具导航社区，系统性 AI 资源合集。｜免费
+- [Hugging Face](https://huggingface.co/) — 全球最大 AI/ML 模型社区，开源模型与数据集集散地。｜免费
+- [Product Hunt](https://www.producthunt.com/) — 每日发现最新 AI 工具产品，离硅谷创新最近。｜免费
+- [PromptHero](https://prompthero.com/) — 最受欢迎的 AI 提示词社区，生图/生视频 prompt 直接抄。｜免费
+- [据意查句](https://wantquotes.net/) — 清华出品 AI 金句工具，让 PPT 文案瞬间变高级。｜免费
