@@ -6,9 +6,9 @@
 > 格式约定：
 > - 二级标题 `##` = 一个分类（名称后可跟 `(英文)` 作为小标签）
 > - 三级标题 `###` = 子分类（挂在上方最近的 `##` 分类下，同样可跟 `(英文)` 标签）
-> - 列表项 = `- [工具名称](链接) — 一句话简介 ｜付费` 或 `｜免费`
->   - 末尾 `｜付费` / `｜免费` 为是否付费字段（枚举值仅此两项）
-> - 想增删工具，直接在本文件里加/删行即可；排序由网页自动处理（同分类/子分类内免费在前、付费在后）。
+> - 列表项 = `- [工具名称](链接) — 一句话简介 ｜免费` / `｜每日免费额度` / `｜每日免费额度` / `｜付费`
+>   - 末尾付费字段（枚举值四选一）：`免费`=功能全免费使用；`每日免费额度`=每天有免费额度，用完需等第二天重置；`每月免费额度`=每月有免费额度，用完需等次月重置；`付费`=须订阅/购买才能用核心功能
+> - 想增删工具，直接在本文件里加/删行即可；排序由网页自动处理（同分类/子分类内 免费 → 每日/每月免费额度 → 付费，免费在前、付费在后）。
 
 ## PPT模板 (PPT)
 - [OfficePlus](https://www.officeplus.cn/PPT/template/?popularity=Total&industry=&purpose=&color=&paymentMethod=0&keywords=&number=) — 微软官方免费 PPT 模板库，质量稳定、覆盖商务与教育多场景。｜免费
@@ -19,10 +19,9 @@
 
 ### AI PPT 生成 (AIPPT)
 - [Gamma](https://gamma.app/) — 全球最火 AI PPT 生成器，输入主题/文档秒出可编辑幻灯片。｜免费
-- [讯飞智文](https://zhiwen.xfyun.cn/) — 科大讯飞出品，文档/主题一键生成 PPT，自带 AI 配图与演讲稿。｜免费
-- [MindShow](https://www.mindshow.fun/) — 思维导图/文档/Markdown 一键转 PPT，导入即生成框架、改稿高效。｜免费
-- [Tome](https://tome.app/) — AI 叙事演示工具，输入主题生成带视觉的讲故事式 PPT。｜免费
-- [AiPPT](https://www.aippt.cn/) — 国内免费 AI PPT 生成，输入主题 3 分钟出可编辑幻灯片。｜免费
+- [讯飞智文](https://zhiwen.xfyun.cn/) — 科大讯飞出品，文档/主题一键生成 PPT，自带 AI 配图与演讲稿。｜每日免费额度
+- [MindShow](https://www.mindshow.fun/) — 思维导图/文档/Markdown 一键转 PPT，导入即生成框架、改稿高效。｜每日免费额度
+- [AiPPT](https://www.aippt.cn/) — 国内免费 AI PPT 生成，输入主题 3 分钟出可编辑幻灯片。｜每日免费额度
 
 ### 模板商城 (STORE)
 - [Envato Elements](https://elements.envato.com/presentation-templates/compatible-with-powerpoint) — 订阅制 PPT 模板库，海量优质模板无限下载。｜付费
@@ -36,28 +35,29 @@
 ## AI生图 (IMAGE)
 - [Midjourney](https://www.midjourney.com) — 社群最强质感的图像生成模型，出图即壁纸级。｜付费
 - [DALL·E 3](https://openai.com/dall-e-3) — OpenAI 文生图，语义理解精准、文字渲染稳。｜付费
-- [Recraft](https://www.recraft.ai) — 矢量 + 图像一体，带品牌风格集的设计向工具。｜免费
-- [Ideogram](https://ideogram.ai) — 专长图像内文字排版，海报标语神器。｜免费
-- [通义万相](https://tongyi.aliyun.com/wanxiang/) — 阿里通义系列 AI 绘画，中文提示词友好、风格多样。｜免费
-- [文心一格](https://yige.baidu.com/) — 百度文心大模型生图，国风/插画/海报等多场景中文创作。｜免费
-- [Leonardo.Ai](https://leonardo.ai/) — 国际主流 AI 绘画，游戏资产/插画训练与生成一体。｜免费
+- [Recraft](https://www.recraft.ai) — 矢量 + 图像一体，带品牌风格集的设计向工具。｜每日免费额度
+- [Ideogram](https://ideogram.ai) — 专长图像内文字排版，海报标语神器。｜每日免费额度
+- [通义万相](https://tongyi.aliyun.com/wanxiang/) — 阿里通义系列 AI 绘画，中文提示词友好、风格多样。｜每日免费额度
+- [文心一格](https://yige.baidu.com/) — 百度文心大模型生图，国风/插画/海报等多场景中文创作。｜每日免费额度
+- [Leonardo.Ai](https://leonardo.ai/) — 国际主流 AI 绘画，游戏资产/插画训练与生成一体。｜每日免费额度
 
 ### 生图工具 (TOOLS)
-- [即梦AI](https://jimeng.jianying.com/ai-tool/home) — 字节旗下，中文提示词友好，图像视频一体。｜免费
+- [Lovart](https://www.lovart.ai/) — 全球首个 AI 设计代理（design agent），一句话生成海报/插画/品牌物料，多风格一体化输出。｜每日免费额度
+- [即梦AI](https://jimeng.jianying.com/ai-tool/home) — 字节旗下，中文提示词友好，图像视频一体。｜每日免费额度
 
 ### 提示词 (PROMPT)
 - [AiWind](https://www.aiwind.org/) — AI 图像提示词库，海报/插画/摄影等风格 prompt 直接复制可用。｜免费
 - [Timi AI](https://www.timi.ai/zh) — 中文 AI 提示词生成与优化平台，文生图/文案等多场景 prompt 一键产出。｜免费
 
 ## 视频生成 (VIDEO)
-- [可灵](https://klingai.com) — 快手出品，长时长高清视频生成，运动稳定。｜免费
+- [可灵](https://klingai.com) — 快手出品，长时长高清视频生成，运动稳定。｜每日免费额度
 - [Runway](https://runwayml.com) — Gen-2/Gen-3 老牌视频模型，专业创作首选。｜免费
-- [Pika](https://pika.art) — 轻量易用，特效与局部重绘玩法定制强。｜免费
-- [Luma Dream Machine](https://lumalabs.ai/dream-machine) — 物理感自然的文生视频，运镜流畅。｜免费
+- [Pika](https://pika.art) — 轻量易用，特效与局部重绘玩法定制强。｜每月免费额度
+- [Luma Dream Machine](https://lumalabs.ai/dream-machine) — 物理感自然的文生视频，运镜流畅。｜付费
 - [Sora](https://sora.com) — OpenAI 视频模型，长镜头叙事能力突出。｜付费
-- [Vidu](https://www.vidu.cn/) — 生数科技出品，参考生视频/多主体一致性突出，动漫与广告利器。｜免费
-- [智谱清影](https://chat.zhipuai.cn/) — 智谱 AI 视频生成，文本/图片转高清视频，长镜头连贯。｜免费
-- [海螺AI](https://hailuoai.video/) — MiniMax 出品，AI 文生视频与图像，运镜自然、上手快。｜免费
+- [Vidu](https://www.vidu.cn/) — 生数科技出品，参考生视频/多主体一致性突出，动漫与广告利器。｜每日免费额度
+- [智谱清影](https://chat.zhipuai.cn/) — 智谱 AI 视频生成，文本/图片转高清视频，长镜头连贯。｜每日免费额度
+- [海螺AI](https://hailuoai.video/) — MiniMax 出品，AI 文生视频与图像，运镜自然、上手快。｜每日免费额度
 
 ## 视频剪辑 (EDIT)
 - [剪映专业版](https://jianying.com/) — 抖音系国民剪辑器，PPT 动态视频、片头片尾、字幕一键搞定。｜免费
@@ -79,54 +79,54 @@
 - [Bensound](https://www.bensound.com/) — 质感免费背景音乐，视频/PPT 配乐常用。｜免费
 
 ## 数字人 (AVATAR)
-- [HeyGen](https://heygen.com/) — 最火 AI 数字人视频，上传 PPT/文档即生成带真人讲解口播的视频。｜免费
-- [D-ID](https://www.d-id.com/) — 照片变会说话的数字人，适合做讲师口播与代言形象。｜免费
+- [HeyGen](https://heygen.com/) — 最火 AI 数字人视频，上传 PPT/文档即生成带真人讲解口播的视频。｜每月免费额度
+- [D-ID](https://www.d-id.com/) — 照片变会说话的数字人，适合做讲师口播与代言形象。｜付费
 
 ## Logo / 品牌 (LOGO)
-- [Looka](https://looka.com/) — AI 生成 Logo + 整套品牌视觉，做 PPT 封面品牌区很实用。｜付费
-- [标智客](https://www.logomaker.com.cn/) — 国内 AI Logo 设计，中文品牌命名+Logo+VI 物料一条龙。｜免费
+- [Looka](https://looka.com/) — AI 生成 Logo + 整套品牌视觉，做 PPT 封面品牌区很实用。｜每日免费额度
+- [标智客](https://www.logomaker.com.cn/) — 国内 AI Logo 设计，中文品牌命名+Logo+VI 物料一条龙。｜每日免费额度
 
 ## AI 助手 (ASSISTANT)
-- [豆包](https://www.doubao.com/) — 字节系国民 AI，写 PPT 大纲/润色/答疑快人一步。｜免费
-- [通义千问](https://qianwen.aliyun.com/) — 阿里系大模型，长文档理解与中文创作能力强。｜免费
-- [ChatGPT](https://chatgpt.com/) — OpenAI 通用 AI 标杆，写稿/脑暴/答疑/代码全能，全球最常用。｜免费
-- [Claude](https://claude.ai/) — Anthropic 出品，长文写作与逻辑推理极强，PPT 大纲与文案利器。｜免费
-- [Gemini](https://gemini.google.com/) — Google 多模态大模型，超长上下文与图文理解突出。｜免费
-- [DeepSeek](https://www.deepseek.com/) — 国产最强开源大模型，写稿/代码/推理全能，国民级 AI 助手。｜免费
-- [文心一言](https://yiyan.baidu.com/) — 百度知识增强大模型，中文创作与多模态对话第一梯队。｜免费
+- [豆包](https://www.doubao.com/) — 字节系国民 AI，写 PPT 大纲/润色/答疑快人一步。｜每日免费额度
+- [通义千问](https://qianwen.aliyun.com/) — 阿里系大模型，长文档理解与中文创作能力强。｜每日免费额度
+- [ChatGPT](https://chatgpt.com/) — OpenAI 通用 AI 标杆，写稿/脑暴/答疑/代码全能，全球最常用。｜每日免费额度
+- [Claude](https://claude.ai/) — Anthropic 出品，长文写作与逻辑推理极强，PPT 大纲与文案利器。｜每日免费额度
+- [Gemini](https://gemini.google.com/) — Google 多模态大模型，超长上下文与图文理解突出。｜每日免费额度
+- [DeepSeek](https://www.deepseek.com/) — 国产最强开源大模型，写稿/代码/推理全能，国民级 AI 助手。｜每日免费额度
+- [文心一言](https://yiyan.baidu.com/) — 百度知识增强大模型，中文创作与多模态对话第一梯队。｜每日免费额度
 
 ## AI 搜索 (SEARCH)
-- [秘塔 AI 搜索](https://metaso.cn/) — 国内无广告 AI 搜索，答案带引用，写稿查资料神器。｜免费
-- [Perplexity](https://www.perplexity.ai/) — 全球 AI 搜索标杆，研究型提问与溯源首选。｜免费
+- [秘塔 AI 搜索](https://metaso.cn/) — 国内无广告 AI 搜索，答案带引用，写稿查资料神器。｜每日免费额度
+- [Perplexity](https://www.perplexity.ai/) — 全球 AI 搜索标杆，研究型提问与溯源首选。｜每日免费额度
 
 ## 录屏演示 (RECORD)
 - [OBS Studio](https://obsproject.com/) — 免费开源录屏，录 PPT 讲解/教程首选，支持多场景切换。｜免费
-- [Loom](https://www.loom.com/) — 网页端一键录屏+出链接，分享 PPT 演示超方便。｜免费
+- [Loom](https://www.loom.com/) — 网页端一键录屏+出链接，分享 PPT 演示超方便。｜每日免费额度
 
 ## 配音 / 语音 (VOICE)
-- [ElevenLabs](https://elevenlabs.io/) — 全球最自然的 AI 配音与音色克隆，旁白/有声内容首选。｜免费
-- [讯飞配音](https://peiyin.xunfei.cn/) — 科大讯飞 AI 配音（讯飞智作），多风格多语种、超拟人 TTS。｜免费
+- [ElevenLabs](https://elevenlabs.io/) — 全球最自然的 AI 配音与音色克隆，旁白/有声内容首选。｜每月免费额度
+- [讯飞配音](https://peiyin.xunfei.cn/) — 科大讯飞 AI 配音（讯飞智作），多风格多语种、超拟人 TTS。｜每日免费额度
 
 ## AI 写作 (WRITE)
-- [Kimi](https://kimi.moonshot.cn/) — 月之暗面出品，长文理解强，丢文档出 PPT 大纲神器。｜免费
-- [秘塔写作猫](https://xiezuocat.com/) — 中文 AI 写作与润色校对，PPT 文案精修常用。｜免费
+- [Kimi](https://kimi.moonshot.cn/) — 月之暗面出品，长文理解强，丢文档出 PPT 大纲神器。｜每日免费额度
+- [秘塔写作猫](https://xiezuocat.com/) — 中文 AI 写作与润色校对，PPT 文案精修常用。｜每日免费额度
 
 ## UI / 界面设计 (UI)
 - [Galileo AI](https://www.usegalileo.ai) — 文本生成可编辑 UI 界面，草图秒变设计稿。｜付费
-- [Uizard](https://uizard.io) — 手绘草图转高保真原型，非设计也能上手。｜免费
-- [Figma AI](https://www.figma.com) — 原生嵌入 Figma，生成 / 梳理 / 改稿一条龙。｜免费
+- [Uizard](https://uizard.io) — 手绘草图转高保真原型，非设计也能上手。｜每月免费额度
+- [Figma AI](https://www.figma.com) — 原生嵌入 Figma，生成 / 梳理 / 改稿一条龙。｜每日免费额度
 - [Magician](https://magician.design) — Figma 插件，图标、文案、配图 AI 补全。｜免费
-- [即时 AI](https://js.design) — 即时设计出品，中文描述生成可编辑界面。｜免费
-- [v0.dev](https://v0.dev/) — Vercel 出品，提示词生成可运行 React/UI 代码，前端圈现象级工具。｜免费
-- [蓝湖](https://lanhuapp.com/) — 国内设计协作与标注平台，切图/标注/原型一站式。｜免费
-- [墨刀](https://modao.cc/) — 国内原型设计与协作工具，拖拽搭可交互原型。｜免费
-- [MasterGo 莫高](https://mastergo.com/) — 国内主流设计协作平台，团队实时协作与组件库一体。｜免费
-- [Pixso](https://pixso.cn/) — 国产 Figma 替代品，设计/原型/协作一站式，组件库丰富。｜免费
+- [即时 AI](https://js.design) — 即时设计出品，中文描述生成可编辑界面。｜每日免费额度
+- [v0.dev](https://v0.dev/) — Vercel 出品，提示词生成可运行 React/UI 代码，前端圈现象级工具。｜每月免费额度
+- [蓝湖](https://lanhuapp.com/) — 国内设计协作与标注平台，切图/标注/原型一站式。｜每日免费额度
+- [墨刀](https://modao.cc/) — 国内原型设计与协作工具，拖拽搭可交互原型。｜每日免费额度
+- [MasterGo 莫高](https://mastergo.com/) — 国内主流设计协作平台，团队实时协作与组件库一体。｜每日免费额度
+- [Pixso](https://pixso.cn/) — 国产 Figma 替代品，设计/原型/协作一站式，组件库丰富。｜每日免费额度
 
 ## 在线设计 (DESIGN)
-- [Canva 可画](https://www.canva.com/) — 全球第一在线设计平台，拖拽做海报/PPT/社媒图，模板海量。｜免费
-- [创客贴](https://www.chuangkit.com/) — 国内在线设计标配，中文模板多、团队协作强。｜免费
-- [稿定设计](https://www.gaoding.com/) — 国内电商/新媒体设计主力，套模板出图快。｜免费
+- [Canva 可画](https://www.canva.com/) — 全球第一在线设计平台，拖拽做海报/PPT/社媒图，模板海量。｜每月免费额度
+- [创客贴](https://www.chuangkit.com/) — 国内在线设计标配，中文模板多、团队协作强。｜每日免费额度
+- [稿定设计](https://www.gaoding.com/) — 国内电商/新媒体设计主力，套模板出图快。｜每日免费额度
 
 ## 字体 / 排版 (TYPE)
 - [Fontjoy](https://fontjoy.com) — AI 一键生成协调的字体搭配组合。｜免费
@@ -152,12 +152,12 @@
 - [Flourish](https://flourish.studio/) — 国际数据可视化平台，动态图表与交互故事，嵌入幻灯片高级感强。｜免费
 
 ## 3D / 模型 (3D)
-- [Tripo](https://www.tripo3d.ai) — 图 / 文生 3D 模型，秒级出可编辑网格。｜免费
-- [Meshy](https://www.meshy.ai) — 文本图像转带贴图 3D，游戏资产友好。｜免费
+- [Tripo](https://www.tripo3d.ai) — 图 / 文生 3D 模型，秒级出可编辑网格。｜每月免费额度
+- [Meshy](https://www.meshy.ai) — 文本图像转带贴图 3D，游戏资产友好。｜每月免费额度
 - [Spline AI](https://spline.design) — 在 3D 画布里用提示词生成场景与物体。｜免费
-- [Luma Genie](https://lumalabs.ai/genie) — 提示词生成 3D 对象，细节与质感俱佳。｜免费
-- [MasterpieceX](https://www.masterpiecex.com) — 浏览器内生成可下载 3D 模型，无需安装。｜免费
-- [混元3D](https://3d.hunyuan.tencent.com/) — 腾讯混元 AI 3D 生成，图/文转带贴图模型，国产代表。｜免费
+- [Luma Genie](https://lumalabs.ai/genie) — 提示词生成 3D 对象，细节与质感俱佳。｜付费
+- [MasterpieceX](https://www.masterpiecex.com) — 浏览器内生成可下载 3D 模型，无需安装。｜每日免费额度
+- [混元3D](https://3d.hunyuan.tencent.com/) — 腾讯混元 AI 3D 生成，图/文转带贴图模型，国产代表。｜每日免费额度
 
 ## 灵感 / 素材 (INSPIRATION)
 - [Dribbble](https://dribbble.com) — 全球设计师作品社区，UI/品牌灵感源头。｜免费
@@ -208,7 +208,7 @@
 - [SplitShire](https://www.splitshire.com/) — 免费高质摄影图库，自然人文素材可商用。｜免费
 - [UTO IMAGE](https://www.utoimage.com/) — 国内图片素材站，中文检索、分类清晰。｜免费
 - [摄图网](https://699pic.com) — 国内图库，VIP 会员制，海量中文素材与模板。｜付费
-- [Freepik](https://www.freepik.com/) — 国际综合素材站，免费+会员的图/矢量/PSD/视频资源海量。｜免费
+- [Freepik](https://www.freepik.com/) — 国际综合素材站，免费+会员的图/矢量/PSD/视频资源海量。｜每日免费额度
 - [包图网](https://ibaotu.com/) — 国内综合素材站，中文模板/PSD/插画/视频会员制海量。｜付费
 - [千图网](https://www.58pic.com/) — 国内老牌素材站，海报/UI/电商模板与图片资源齐全。｜付费
 - [CNU 视觉联盟](http://www.cnu.cc/) — 国内摄影社区，高质量摄影作品与专题，找图与版式灵感源。｜免费
@@ -227,27 +227,27 @@
 ## 格式转换 / 文件处理 (CONVERT)
 - [FabConvert](https://fabconvert.com/cn/convert/ai#convert) — 免费在线文件格式转换器，AI / PDF / 图片等多格式互转。｜免费
 - [Turnscribe](https://turnscribe.com/) — 基于 Whisper 的免费 AI 音视频转写，粘贴链接或上传文件即出原文文字稿、无需注册。｜免费
-- [CloudConvert](https://cloudconvert.com/) — 在线格式转换全能选手，支持 200+ 格式互转、API 友好。｜免费
+- [CloudConvert](https://cloudconvert.com/) — 在线格式转换全能选手，支持 200+ 格式互转、API 友好。｜每日免费额度
 
 ### PDF处理 (PDF)
-- [LlamaParse](https://www.llamaindex.ai/llamaparse) — LlamaIndex 出品的 GenAI 文档解析，精准抽取表格图表与版面结构为 LLM 可用格式。｜付费
-- [Smallpdf](https://smallpdf.com/) — PDF 万能工具箱，压缩/合并/转 Word 等常用操作一站式搞定。｜免费
-- [iLovePDF](https://www.ilovepdf.com/) — 同类全能 PDF 处理，免费额度友好、批量操作顺手。｜免费
+- [LlamaParse](https://www.llamaindex.ai/llamaparse) — LlamaIndex 出品的 GenAI 文档解析，精准抽取表格图表与版面结构为 LLM 可用格式。｜每月免费额度
+- [Smallpdf](https://smallpdf.com/) — PDF 万能工具箱，压缩/合并/转 Word 等常用操作一站式搞定。｜每日免费额度
+- [iLovePDF](https://www.ilovepdf.com/) — 同类全能 PDF 处理，免费额度友好、批量操作顺手。｜每日免费额度
 
 ### 图片处理 (IMAGE)
 - [LZL 工具箱·改 PNG 透明度](https://www.lzltool.cn/Toolkit/ChangePngOpacity) — 在线修改 PNG 图片透明度，一键去底/调透明，轻量免安装。｜免费
-- [Remove.bg](https://www.remove.bg/) — 一键自动去背景行业标准，人像/商品抠图秒级完成。｜免费
-- [TinyPNG](https://tinypng.com/) — 智能压缩 PNG/JPG，画质几乎无损、体积大减，设计必用。｜免费
-- [佐糖](https://picwish.cn/) — AI 图片编辑，一键抠图/消除/扩图/画质修复，比单纯去背景更全能。｜免费
+- [Remove.bg](https://www.remove.bg/) — 一键自动去背景行业标准，人像/商品抠图秒级完成。｜每日免费额度
+- [TinyPNG](https://tinypng.com/) — 智能压缩 PNG/JPG，画质几乎无损、体积大减，设计必用。｜每日免费额度
+- [佐糖](https://picwish.cn/) — AI 图片编辑，一键抠图/消除/扩图/画质修复，比单纯去背景更全能。｜每日免费额度
 - [Photopea](https://www.photopea.com) — 免费在线 Photoshop，图层/蒙版/修图全功能，PPT 配图编辑神器。｜免费
 - [Upscayl](https://www.upscayl.org/) — 开源免费 AI 图片无损放大，模糊图秒变超清。｜免费
-- [Palette.fm](https://palette.fm/) — 黑白照片一键 AI 上色，10 秒出 20 种配色方案。｜免费
-- [Pixian](https://pixian.ai/) — AI 一键去背景，国内访问比 Remove.bg 更稳，人像/商品抠图利器。｜免费
-- [抠图兔](https://www.koukoutu.com/removebgtool/all) — 国产 AI 抠图工具，批量去背景、国内访问快。｜免费
+- [Palette.fm](https://palette.fm/) — 黑白照片一键 AI 上色，10 秒出 20 种配色方案。｜每日免费额度
+- [Pixian](https://pixian.ai/) — AI 一键去背景，国内访问比 Remove.bg 更稳，人像/商品抠图利器。｜每日免费额度
+- [抠图兔](https://www.koukoutu.com/removebgtool/all) — 国产 AI 抠图工具，批量去背景、国内访问快。｜每日免费额度
 
 ### 翻译 (TRANSLATE)
-- [DeepL](https://www.deepl.com/) — 译文最自然的翻译引擎，PPT 英文素材翻译标配。｜免费
-- [有道 AI 翻译](https://fanyi.youdao.com/) — 国内文档翻译，术语准确、支持 AI 润色与改写。｜免费
+- [DeepL](https://www.deepl.com/) — 译文最自然的翻译引擎，PPT 英文素材翻译标配。｜每日免费额度
+- [有道 AI 翻译](https://fanyi.youdao.com/) — 国内文档翻译，术语准确、支持 AI 润色与改写。｜每日免费额度
 
 ## AI资讯 (NEWS)
 - [AI HOT](https://aihot.virxact.com/) — 中文 AI 资讯聚合，每日热点、新品发布与前沿论文速览一站看。｜免费

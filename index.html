@@ -239,6 +239,7 @@
   .tool-tag { margin-left: auto; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; white-space: nowrap; letter-spacing: 0.02em; border: 1px solid var(--color-forest-ink); }
   .tag-free { color: var(--color-forest-ink); background: var(--color-sticky-note-mint); }
   .tag-paid { color: var(--color-forest-ink); background: var(--color-sticky-note-blush); }
+  .tag-daily { color: var(--color-forest-ink); background: #ffd9a0; }
   .tool-desc { font-size: 14px; color: var(--color-forest-ink); opacity: 0.78; line-height: 1.5; flex: 1; }
 
   .no-result { text-align: center; color: var(--color-pencil-gray); font-size: 15px; padding: 60px 0; display: none; }
@@ -603,7 +604,9 @@
   function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
   function toolTagHtml(t) {
     if (!t.paid) return '';
-    const cls = t.paid === '付费' ? 'tag-paid' : 'tag-free';
+    let cls = 'tag-free';
+    if (t.paid === '付费') cls = 'tag-paid';
+    else if (t.paid === '每日免费额度' || t.paid === '每月免费额度') cls = 'tag-daily';
     return '<span class="tool-tag ' + cls + '">' + escapeHtml(t.paid) + '</span>';
   }
   function catEnHtml(cat) {
@@ -665,13 +668,14 @@
       if (li && cur) {
         let desc = li[3].trim();
         let paid = '';
-        const pm = desc.match(/\s*[｜|]\s*(付费|免费)\s*$/);
+        const pm = desc.match(/\s*[｜|]\s*(付费|免费|每日免费额度|每月免费额度)\s*$/);
         if (pm) { paid = pm[1]; desc = desc.replace(pm[0], '').trim(); }
         const tool = { name: li[1].trim(), url: li[2].trim(), desc, paid, color: colorFor(li[1]) };
         (sub ? sub.tools : cur.tools).push(tool);
       }
     }
-    const byPaid = (a, b) => (a.paid === '付费') - (b.paid === '付费');
+    const rankOf = p => p === '付费' ? 2 : (p === '每日免费额度' || p === '每月免费额度' ? 1 : 0);
+    const byPaid = (a, b) => rankOf(a.paid) - rankOf(b.paid);
     cats.forEach(c => {
       c.tools.sort(byPaid);
       c.subs.forEach(s => s.tools.sort(byPaid));
