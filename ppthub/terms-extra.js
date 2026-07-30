@@ -1,7 +1,7 @@
 /* ============================================================
    PPThub — 词条补充字段（不污染 data.js）
    字段：pitfall 常见误区 / shortcut 快捷键调出 / checklist 自检清单(数组)
-        / beforeafter 改前改后 / mnemonic 记忆口诀 / combo 进阶组合技 / etymology 词源小注
+        / mnemonic 记忆口诀 / combo 进阶组合技 / etymology 词源小注
    由 app.js 在运行时合并进 TERMS。
    ============================================================ */
 
@@ -108,19 +108,16 @@ const TERM_EXTRA = {
   /* ============ 设计原则 ============ */
   'alignment': {
     pitfall: '只对齐左边，右边参差；或元素间没对齐参照，整体散。',
-    beforeafter: '改前：标题、正文、图片各对齐各的，边沿参差 → 改后：统一以参考线对齐，边沿成线，立刻整齐。',
     mnemonic: '对齐就是「让边和边成一条线」。',
     combo: '对齐 + 参考线：开智能参考线，拖动自动吸附。'
   },
   'proximity': {
     pitfall: '相关内容散落各处，读者不知谁和谁是一组。',
-    beforeafter: '改前：标题、说明、图三处分离 → 改后：归为一组、拉开组间距，关系一眼清。',
     mnemonic: '亲密性＝「相关的靠在一起」。',
     etymology: 'Proximity 意为「邻近」，设计中指视觉上的靠近分组。'
   },
   'contrast': {
     pitfall: '对比做成五颜六色却无主次，反而糊。',
-    beforeafter: '改前：所有字同色同大小 → 改后：关键信息加大加色，主次分明。',
     mnemonic: '对比是「制造差异突出重点」。',
     combo: '对比 + 视觉层级：用大小/色差直接画出阅读顺序。'
   },
@@ -131,207 +128,171 @@ const TERM_EXTRA = {
   },
   'hierarchy': {
     pitfall: '所有信息同等重要地铺开，读者不知道先看哪。',
-    beforeafter: '改前：标题正文一样大 → 改后：标题大、要点中、注释小，视线有落点。',
     mnemonic: '视觉层级＝「给信息排座次」。',
     combo: '层级 + 字号阶梯：用 type-scale 直接拉开档次。'
   },
   'whitespace': {
     pitfall: '留白留成空洞——元素缩一角，旁边大片空却无呼吸感。',
-    beforeafter: '改前：元素塞满、边距小 → 改后：内容聚中、四周留白，显高级。',
     mnemonic: '留白不是「没东西」，是「主动的呼吸空间」。',
     etymology: 'Negative Space 直译「负空间」，即被主动留出的空白。'
   },
   'focus': {
     pitfall: '用一大圈红框硬标，反而破坏画面。',
-    beforeafter: '改前：满页重点 → 改后：只一处高亮，其余弱化，焦点清晰。',
     mnemonic: '焦点引导＝「把眼睛牵到该看的地方」。',
     combo: '焦点 + 对比：用色彩/大小差异自然吸睛。'
   },
   'grid': {
     pitfall: '凭感觉排，结果栏宽不一、对不齐。',
-    beforeafter: '改前：自由散排 → 改后：套栅格，元素落在线交点，整齐有依据。',
     mnemonic: '栅格是「隐形的排版坐标」。',
     combo: '栅格 + 栏宽：定好栏数，内容自动对齐。'
   },
   'less-is-more': {
     pitfall: '减成「啥都没了」，信息也没了。',
-    beforeafter: '改前：堆满装饰 → 改后：砍掉多余，只留核心，反而更清楚。',
     mnemonic: '减法＝「去掉干扰，留下重点」。'
   },
 
   /* ============ 字体与配色 ============ */
   'serif-sans': {
     pitfall: '正文用衬线小字屏显发虚，或标题用无衬线显单薄。',
-    beforeafter: '改前：正文衬线小字，屏幕发虚 → 改后：正文无衬线，标题衬线，各司其职。',
     mnemonic: '衬线有「脚」显传统，无衬线干净显现代。'
   },
   'type-scale': {
     pitfall: '字号乱跳没规律，层级靠感觉。',
     shortcut: '开始 → 字号（或用样式统一）',
-    beforeafter: '改前：标题24、小标题23、正文22，没差 → 改后：32/24/16 拉开，层级清楚。',
     mnemonic: '字号阶梯＝「给文字排尺寸档位」。',
     combo: '字号阶梯 + 视觉层级：尺寸差直接表达主次。'
   },
   'font-weight': {
     pitfall: '整页一个字重，靠加粗堆重点，乱。',
-    beforeafter: '改前：全 Regular，重点也靠加粗 → 改后：标题 Bold、正文 Regular，节奏稳。',
     mnemonic: '字重是「字的粗细档」。'
   },
   'tracking': {
     pitfall: '标题字距过紧显挤，或过松显散。',
     shortcut: '开始 → 字符间距（或字体对话框）',
-    beforeafter: '改前：标题字距默认挤 → 改后：大字距，显大气。',
     mnemonic: '字间距＝「字与字的呼吸」。',
     etymology: 'Tracking（字距）/ Kerning（字偶距）是两个不同概念。'
   },
   'line-height': {
     pitfall: '行距过紧读着喘，过松段落散。',
-    beforeafter: '改前：行距 1.0 挤 → 改后：1.5 左右，舒服。',
     mnemonic: '行距是「行的上下呼吸」。'
   },
   'analogous': {
     pitfall: '邻近色用太多显单调没重点。',
-    beforeafter: '改前：邻近色堆满无焦点 → 改后：邻近色打底 + 一点对比色点睛。',
     mnemonic: '邻近色＝「色环上挨着的友邻色」。'
   },
   'complementary': {
     pitfall: '红配绿高饱和直接撞，刺眼。',
-    beforeafter: '改前：纯红纯绿对半 → 改后：降饱和、面积不等，撞色也和谐。',
     mnemonic: '对比色＝「色环对面的互补色」。',
     etymology: 'Complementary 源自「互补」，混合成灰。'
   },
   'tri-color': {
     pitfall: '主辅点三等大，没有主导色。',
-    beforeafter: '改前：三色均分 → 改后：主色 70%、辅色 25%、点缀 5%，有主有次。',
     mnemonic: '主辅点＝「7:2.5:0.5 的配色比例」。',
     combo: '三色 + 品牌VI：主色定调，辅色支撑，点缀提神。'
   },
   'gradient': {
     pitfall: '多色渐变脏兮兮，或角度乱显廉价。',
-    beforeafter: '改前：红绿蓝三色渐变 → 改后：同色系深浅渐变，高级。',
     mnemonic: '渐变是「颜色的平滑过渡」。'
   },
   'muted-color': {
     pitfall: '灰用太暗显脏，或太亮没「高级」感。',
-    beforeafter: '改前：高饱和原色 → 改后：降饱和加灰，莫兰迪感。',
     mnemonic: '高级灰＝「降饱和带灰调」。',
     etymology: 'Morandi（莫兰迪）是意大利画家，以灰调静物闻名。'
   },
   'color-wheel': {
     pitfall: '只凭感觉配色，不懂色环关系易翻车。',
-    beforeafter: '改前：随机选色 → 改后：按色轮选邻近/对比，协调。',
     mnemonic: '色轮是「把颜色排成环的地图」。',
     combo: '色轮 + 取色器：先定关系再吸色，效率翻倍。'
   },
   'monochrome': {
     pitfall: '单色但深浅没拉开，平。',
-    beforeafter: '改前：同一明度单色 → 改后：同色深浅拉层次，干净有变。',
     mnemonic: '单色＝「一种色相的不同深浅」。'
   },
 
   /* ============ 排版与布局 ============ */
   'golden-ratio': {
     pitfall: '硬套 1.618 把画面切得死板，或只用一次就完事。',
-    beforeafter: '改前：内容均分两栏 → 改后：按 0.618 分，主区大次区小，自然。',
     mnemonic: '黄金比例＝「约 0.618 的分割，公认好看」。',
     etymology: 'Golden Ratio 即黄金分割，数学上约 1.618。'
   },
   'rule-of-thirds': {
     pitfall: '主体死放交叉点，反而呆；或全放正中显平。',
-    beforeafter: '改前：主体居中 → 改后：落三分线交点，画面有张力。',
     mnemonic: '三分法＝「九宫格，主体放线或交点」。'
   },
   'f-pattern': {
     pitfall: '把重点放右下或底部，读者视线早走了。',
-    beforeafter: '改前：关键信息在右下 → 改后：沿 F 顶部+左侧放重点。',
     mnemonic: 'F 型＝「视线先横扫顶部，再沿左竖向下」。',
     etymology: 'F-Pattern 来自网页眼动研究，PPT 同样适用。'
   },
   'center-sym': {
     pitfall: '啥都居中，全对称显呆板没重点。',
-    beforeafter: '改前：所有元素居中堆叠 → 改后：中心对称保稳重，留一个非对称点睛。',
     mnemonic: '中心对称＝「沿中轴镜像，稳重」。'
   },
   'margin': {
     pitfall: '内容顶到边，显挤显廉价。',
-    beforeafter: '改前：元素贴边 → 改后：留足页边距，呼吸感来。',
     mnemonic: '页边距＝「内容离画布边的距离」。'
   },
   'column': {
     pitfall: '栏宽不等，文字对不齐读数乱。',
-    beforeafter: '改前：双栏宽不一 → 改后：等宽栏，整齐。',
     mnemonic: '栏宽＝「分栏后每栏的宽度」。',
     combo: '栏宽 + 栅格：定栏数自动等宽。'
   },
   'bleed': {
     pitfall: '满版图留白边，显小气；或超出裁剪区被切。',
-    beforeafter: '改前：图留白边显小 → 改后：图出血到边，大气。',
     mnemonic: '出血＝「图超出裁切线，印刷不被切白」。',
     etymology: 'Bleed 指印刷时图像溢出裁切边。'
   },
   'card-layout': {
     pitfall: '卡片间距不一、圆角乱，显乱。',
-    beforeafter: '改前：信息平铺 → 改后：分卡片，信息成块好读。',
     mnemonic: '卡片＝「把信息装进小方块容器」。'
   },
   'full-image': {
     pitfall: '字直接压图上显糊，没留安全区。',
-    beforeafter: '改前：字压复杂图 → 改后：图+半透明压暗+字，清楚。',
     mnemonic: '全图型＝「整页一张图，字浮其上」。'
   },
   'visual-balance': {
     pitfall: '一边重一边空，画面要倒。',
-    beforeafter: '改前：大图全在左，右空 → 改后：右放文字/小元素配重，稳。',
     mnemonic: '视觉平衡＝「重量在画面上分布均匀」。'
   },
 
   /* ============ 动画与切换 ============ */
   'anim-type': {
     pitfall: '啥都用「飞入」，动画没意义。',
-    beforeafter: '改前：全飞入 → 改后：进入用淡入、强调用放大，各司其职。',
     mnemonic: '进入=出现，退出=消失，强调=中途突出。'
   },
   'smooth-vs-abrupt': {
     pitfall: '突然切换显生硬，像跳帧。',
-    beforeafter: '改前：突然出现 → 改后：平滑过渡，舒服。',
     mnemonic: '平滑＝「有过程的渐变」，突然＝「无过程直切」。'
   },
   'easing': {
     pitfall: '全用线性，动画机械像机器人。',
-    beforeafter: '改前：匀速直线 → 改后：缓入缓出，自然。',
     mnemonic: '缓动＝「加减速的节奏曲线」。',
     etymology: 'Easing 指动画速度随时间变化的函数。'
   },
   'trigger': {
     pitfall: '全设「单击开始」，复杂序列失控。',
-    beforeafter: '改前：全单击 → 改后：用「与上一动画同时/之后」排序列。',
     mnemonic: '触发＝「动画什么时候动」。'
   },
   'transition-fx': {
     pitfall: '每页不同花哨切换，喧宾夺主。',
-    beforeafter: '改前：每页换切换 → 改后：统一 1-2 种，克制。',
     mnemonic: '切换＝「页与页之间的过场」。'
   },
   'timeline': {
     pitfall: '动画窗格里顺序乱，时间对不上。',
     shortcut: '动画 → 动画窗格（拖拽排顺序）',
-    beforeafter: '改前：凭添加顺序 → 改后：时间轴拖出先后，节奏可控。',
     mnemonic: '时间轴＝「动画播放的先后时钟」。'
   },
   'morph': {
     pitfall: '两页对象没对应，morph 变成乱飞。',
-    beforeafter: '改前：两页元素名不同 → 改后：同名元素，morph 平滑变形。',
     mnemonic: '平滑切换＝「同元素跨页变形」（高手向）。',
     etymology: 'Morph 意为「变形」，PPT 中专指对象跨页平滑过渡。'
   },
   'motion-path': {
     pitfall: '路径画太绕，元素飞出画面。',
-    beforeafter: '改前：默认直线 → 改后：自定义曲线，沿设定路径走。',
     mnemonic: '路径动画＝「让对象沿一条线走」。'
   },
   'anim-timing': {
     pitfall: '时长太长显拖沓，太短看不清。',
-    beforeafter: '改前：默认 0.5s 全一样 → 改后：按内容调 0.3-1s。',
     mnemonic: '计时＝「动画走多久、延迟多久」。'
   },
 
@@ -348,7 +309,6 @@ const TERM_EXTRA = {
   },
   'distribute': {
     pitfall: '只对齐不分布，元素间距仍乱。',
-    beforeafter: '改前：对齐但间距不等 → 改后：分布使间距相等。',
     mnemonic: '分布＝「让多个元素间距相等」。'
   },
   'color-reuse': {
@@ -358,7 +318,6 @@ const TERM_EXTRA = {
   },
   'vector-vs-raster': {
     pitfall: '放大位图变马赛克，还怪软件。',
-    beforeafter: '改前：用位图放大糊 → 改后：用矢量/图标，放大清晰。',
     mnemonic: '矢量=放大不糊，位图=放大出格。',
     etymology: 'Vector 用数学描述，Raster 用像素点阵。'
   },
@@ -386,12 +345,10 @@ const TERM_EXTRA = {
   /* ============ 图形与图示 ============ */
   'icon-style': {
     pitfall: '线框图标和实心图标混用，乱。',
-    beforeafter: '改前：线+面混用 → 改后：统一一种风格，干净。',
     mnemonic: '图标统一＝「同描边同风格」。'
   },
   'chart-beauty': {
     pitfall: '默认图表花花绿绿，网格线抢戏。',
-    beforeafter: '改前：默认彩柱+网格 → 改后：去网格、单色系、突出数据。',
     mnemonic: '图表美化＝「减干扰，突出数据」。',
     combo: '图表美化 + 数据可视化：先选对图再美化。'
   },
@@ -403,28 +360,23 @@ const TERM_EXTRA = {
   },
   'image-mask': {
     pitfall: '直接拉伸图片变形，人物被压扁。',
-    beforeafter: '改前：拉伸变形 → 改后：裁剪为形状/遮罩，不变形。',
     mnemonic: '蒙版＝「用形状框住图片」。'
   },
   'flat-vs-skeu': {
     pitfall: '拟物过度，像贴纸；扁平过度，没质感。',
-    beforeafter: '改前：全拟物重阴影 → 改后：扁平为主，局部微质感。',
     mnemonic: '扁平=简洁，拟物=仿真带质感。'
   },
   'data-viz': {
     pitfall: '用错图：构成用柱状、趋势用饼图。',
-    beforeafter: '改前：饼图看趋势 → 改后：趋势用折线、构成用饼。',
     mnemonic: '选对图＝「比大小用柱、看占比用饼、看趋势用线」。',
     combo: '数据可视化 + 图表美化：先对图再美化。'
   },
   'table-beauty': {
     pitfall: '默认表格线密密麻麻，读着累。',
-    beforeafter: '改前：全框线 → 改后：去竖线、隔行底色，清爽。',
     mnemonic: '表格美化＝「减线、留白、对齐」。'
   },
   'model-3d': {
     pitfall: '3D 转太花，喧宾夺主。',
-    beforeafter: '改前：复杂 3D 占满 → 改后：简洁模型点睛。',
     mnemonic: '3D 模型＝「可旋转的立体对象」。'
   },
 
@@ -450,7 +402,6 @@ const TERM_EXTRA = {
   'hyperlink': {
     pitfall: '链接到删掉的页，点了报错。',
     checklist: ['链接目标页仍存在', '放映模式下才生效', '用完测试一遍'],
-    beforeafter: '改前：目录不能跳 → 改后：点目录直达对应页。',
     mnemonic: '超链接＝「页内或对外跳转」。'
   },
   'autoplay': {
@@ -500,35 +451,29 @@ const TERM_EXTRA = {
   },
   'font-pairing': {
     pitfall: '标题正文用同一字体，没层次。',
-    beforeafter: '改前：全一种字体 → 改后：标题无衬线+正文衬线，有对比。',
     mnemonic: '字体配对＝「标题正文搭一套协调字体」。',
     combo: '字体配对 + 字号阶梯：字体差+尺寸差双重层级。'
   },
   'symmetry': {
     pitfall: '啥都对称，显呆；全非对称又显乱。',
-    beforeafter: '改前：全居中对称 → 改后：对称保稳、局部非对称点睛。',
     mnemonic: '对称=稳重，非对称=灵动。'
   },
   'diagonal-flow': {
     pitfall: '元素平铺，视线没方向。',
-    beforeafter: '改前：元素居中散排 → 改后：沿对角线摆，视线被牵着走。',
     mnemonic: '对角线＝「利用眼睛天然斜扫习惯」。'
   },
   'remove-bg': {
     pitfall: '直接贴带背景方图，和页面打架。',
-    beforeafter: '改前：实拍图带杂背景 → 改后：去背悬浮，干净。',
     mnemonic: '去背＝「只留主体，丢背景」。',
     combo: '去背 + 蒙版：去背后用形状遮罩更精致。'
   },
   'infographic': {
     pitfall: '文字堆成长段落，没人看。',
-    beforeafter: '改前：三段话 → 改后：时间轴/流程图，一眼懂。',
     mnemonic: '信息图＝「用图代替长文字」。',
     combo: '信息图 + 数据可视化：数据类直接上图。'
   },
   'brand-vi': {
     pitfall: '即兴用色用字，像不同人拼的。',
-    beforeafter: '改前：每页不同色字 → 改后：统一 VI，专业。',
     mnemonic: 'VI＝「企业视觉识别规范」。',
     combo: '品牌VI + 母版：把 VI 固化进母版，永不乱。'
   },
@@ -545,7 +490,6 @@ const TERM_EXTRA = {
   },
   'loop-anim': {
     pitfall: '循环动画太抢戏，晃眼。',
-    beforeafter: '改前：静态显死 → 改后：轻微循环（如呼吸）点睛。',
     mnemonic: '循环＝「一直重复播的动画」。'
   },
   'custom-show': {
@@ -568,7 +512,6 @@ const TERM_EXTRA = {
   },
   'font-license': {
     pitfall: '用未授权字体对外发布，吃侵权。',
-    beforeafter: '改前：随手用商业字体 → 改后：换免费商用或购授权。',
     mnemonic: '字体版权＝「这字能不能商用」。',
     combo: '字体版权 + 嵌入字体：可商用且嵌入，双保险。'
   },
@@ -613,13 +556,11 @@ const TERM_EXTRA = {
   'wordart': {
     pitfall: '正文用艺术字，廉价又难读。',
     shortcut: '插入 → 艺术字',
-    beforeafter: '改前：普通黑字标题 → 改后：渐变描边艺术字，质感拉满。',
     mnemonic: '艺术字＝「会发光的标题」。'
   },
   'object-effect': {
     pitfall: '阴影发光全堆上，变「立体感大杂烩」。',
     shortcut: '格式 → 形状效果（阴影/发光/映像）',
-    beforeafter: '改前：平涂色块 → 改后：淡淡投影「浮」起来。',
     mnemonic: '对象效果＝「给形状打光的化妆盒」。'
   },
   'textbox-placeholder': {
@@ -630,7 +571,6 @@ const TERM_EXTRA = {
   'bullet': {
     pitfall: '长句套多级符号，又长又乱。',
     shortcut: '开始 → 项目符号 / 编号',
-    beforeafter: '改前：一段糊在一起 → 改后：圆点并列、编号分步骤。',
     mnemonic: '项目符号＝「让要点排队」。'
   },
   'hide-slide': {
@@ -647,7 +587,6 @@ const TERM_EXTRA = {
   'transparency': {
     pitfall: '透明度拉太低，元素糊进背景看不清。',
     combo: '透明度 + 对象效果：半透叠压出层次与景深。',
-    beforeafter: '改前：白块完全盖住底图 → 改后：半透白块透出底图。',
     mnemonic: '透明度＝「让底层透上来」。'
   },
 
@@ -660,7 +599,6 @@ const TERM_EXTRA = {
   'replace-font': {
     pitfall: '只换字体忘了对方没装，打开又变宋体。',
     shortcut: '开始 → 编辑 → 替换字体',
-    beforeafter: '改前：特殊字体在他电脑变宋体 → 改后：先替换成通用字体再发。',
     mnemonic: '替换字体＝「全篇一键换衣」。'
   },
   'gridlines': {
@@ -671,7 +609,6 @@ const TERM_EXTRA = {
   'recolor': {
     pitfall: '直接改原图颜色，想还原还得重找素材。',
     combo: '重新着色 + 透明度：单色点缀叠压出层次。',
-    beforeafter: '改前：彩色截图和主题不搭 → 改后：一键紫调单色融入。',
     mnemonic: '重新着色＝「不碰原图换色调」。'
   },
   'coauthor': {
@@ -695,7 +632,6 @@ const TERM_EXTRA = {
   'consistency': {
     pitfall: '每页自创风格，十页像十个模板拼的。',
     combo: '一致性 + 母版/主题：从源头锁死统一规则。',
-    beforeafter: '改前：三种图标五种主色 → 改后：统一后像专业出品。',
     mnemonic: '一致性＝「一套规则管全部」。'
   },
 
@@ -763,338 +699,277 @@ const TERM_EXTRA = {
   'para-spacing': {
     pitfall: '在段落间狂敲回车留空，改字号或复制时全乱套。',
     combo: '段间距 + 行距：一个管段与段，一个管段内行，两层呼吸感都调。',
-    beforeafter: '改前：段落贴死、靠回车硬撑 → 改后：设 6pt 段后间距，整齐有节奏。',
     mnemonic: '段前/段后＝「段与段之间的呼吸」。'
   },
   'chart-edit': {
     pitfall: '截图别人图表当图片，数据变了没法改还得重做。',
     combo: '图表 + 数据可视化：先选对图（原则），再插入编辑（功能）。',
-    beforeafter: '改前：Excel 数字干摆 → 改后：插成柱状图，双击改数图形跟着变。',
     mnemonic: '图表＝「让数字自己说话」。'
   },
   'audio-insert': {
     pitfall: '用旁白录背景音乐，音质差还占空间；背景乐该插文件。',
     combo: '音频 + 切换/自动播放：开场乐接内容页自然过渡。',
-    beforeafter: '改前：安静开场 → 改后：插 15s 乐 + 淡出，气氛一下起来。',
     mnemonic: '音频插入＝「放现成的声音，控怎么播」。'
   },
   'video-insert': {
     pitfall: '把视频当图片嵌，播不了还糊；要用插入视频对象。',
     combo: '视频 + 自动播放/全屏：发布会现场效果拉满。',
-    beforeafter: '改前：贴张视频截图 → 改后：插入可播视频，设全屏自动播。',
     mnemonic: '视频插入＝「把片子放进页面里播」。'
   },
   'a11y': {
     pitfall: '图片没 alt 文本，视障用户和检查器都读不到。',
     combo: '辅助功能 + 对比度：既合规又让大屏看得清。',
-    beforeafter: '改前：图无 alt、顺序乱 → 改后：跑检查器补齐，合规专业。',
     mnemonic: '辅助功能＝「让所有人，包括视障，都能读」。'
   },
   'excel-table': {
     pitfall: '把数据截图当表格，源数据一改全得重做。',
     combo: '嵌入表 + 链接更新：源 Excel 改了，PPT 点更新就同步。',
-    beforeafter: '改前：每月手抄数据 → 改后：嵌入活表，更新链接即同步。',
     mnemonic: '嵌入 Excel 表＝「活的表，能改能更新」。'
-  },
-  'text-link': {
-    pitfall: '装不下就缩字号或硬拆两框手抄，错位还难维护。',
-    combo: '文本框链接 + 分栏：长文自动续接，不用手抄。',
-    beforeafter: '改前：一个框溢出、手动拆 → 改后：链接两框，文字自动流。',
-    mnemonic: '文本框链接＝「一个框满了，字流向下一个」。'
   },
   'section-view': {
     pitfall: '长文档不分节，大纲里几十页挤一长条，找页靠滚。',
     combo: '节 + 折叠：分章后折叠，长文档变章节树。',
-    beforeafter: '改前：80 页一整条 → 改后：按节折叠，只展开要讲的。',
     mnemonic: '节视图＝「长文档的折叠章节树」。'
   },
   'ai-gen': {
     pitfall: 'AI 生成直接交，事实错、配色乱、结构空。',
     combo: 'AI 生成 + 人工把关：它出草稿，你定重点和配图。',
-    beforeafter: '改前：空白页发呆 → 改后：丢文档出 10 页初稿，只改重点。',
     mnemonic: 'AI 辅助＝「出草稿，人把关，不代劳」。'
   },
   'gestalt': {
     pitfall: '相关元素东一个西一个，观众读不出谁和谁一组。',
     combo: '格式塔 + 亲密性/重复：底层原理撑起分组原则。',
-    beforeafter: '改前：元素散落 → 改后：相关靠拢、样式统一，一眼成组。',
     mnemonic: '格式塔＝「人脑自动把近的、像的看成一组」。'
   },
   'embed-link': {
     pitfall: '默认就是嵌入，但插大视频时有人手滑勾了「链接」，发给客户全图裂。',
     combo: '嵌入 + 压缩：大图先压缩再嵌入，体积质量两不误。',
-    beforeafter: '改前：勾「链接到文件」，换电脑图片全空白 → 改后：用嵌入，到哪都能放。',
     mnemonic: '嵌入＝「打包带走」，链接＝「只记地址」。'
   },
   'theme-palette': {
     pitfall: '手填死颜色，甲方一换品牌色全页重改；该用主题色。',
     shortcut: '设计 → 变体 ▾ → 颜色 → 自定义颜色',
     combo: '主题色板 + 母版：色板一定，母版里全用主题色，全局秒换。',
-    beforeafter: '改前：逐页手改 30 个红 → 改后：改色板 1 格，全篇联动。',
     mnemonic: '主题色板＝「12 格活色，改一格全篇动」。'
   },
   'doc-inspector': {
     pitfall: '把带吐槽备注的稿直接发客户，社死。',
     shortcut: '文件 → 信息 → 检查问题 → 检查文档',
     combo: '检查器 + 批注：清完隐私再交付，评论沟通过程不留痕。',
-    beforeafter: '改前：备注 / 批注随文件发出 → 改后：检查器一键清空，只留干净页。',
     mnemonic: '文档检查器＝「交付前的隐私大扫除」。'
   },
   'live-caption': {
     pitfall: '以为要提前录字幕，其实放映时实时生成，开开关就行。',
     shortcut: '放映 → 字幕（可设翻译语言）',
     combo: '实时字幕 + 演讲者视图：观众看译文，你看备注不冲突。',
-    beforeafter: '改前：外文听众听不懂 → 改后：开字幕译英，你说中文他看英文。',
     mnemonic: '实时字幕＝「你开口，字就出，还能翻」。'
   },
   'version-history': {
     pitfall: '本地草稿没同步 365，根本没有版本历史，改崩找不回。',
     shortcut: '文件 → 信息 → 版本历史（需存在 OneDrive / 365）',
     combo: '版本历史 + 自动保存：一个防丢、一个能回到过去。',
-    beforeafter: '改前：改崩重做两小时 → 改后：还原到两小时前的版本。',
     mnemonic: '版本历史＝「文件的时光机」。'
   },
   'ink-draw': {
     pitfall: '用标注笔圈完退出就没了；要留痕得用墨迹书写存进文件。',
     shortcut: '绘图 → 荧光笔 / 钢笔（触屏或手写笔）',
     combo: '墨迹 + 批注：圈画重点再转成批注，评审闭环。',
-    beforeafter: '改前：白板写满擦掉 → 改后：墨迹存文件，下次接着聊。',
     mnemonic: '墨迹书写＝「写在幻灯片上的笔迹」。'
   },
   'color-psychology': {
     pitfall: '只看好不好看选色，没想观众该什么感觉。',
     combo: '色彩心理 + 主辅点：先定情绪，再按 60-30-10 铺。',
-    beforeafter: '改前：随机配色没记忆点 → 改后：金融用蓝建信任，促销用红造紧迫。',
     mnemonic: '色彩心理＝「颜色在悄悄影响情绪」。'
   },
   'warm-cool': {
     pitfall: '暖冷混用没主次，画面平、重点跳不出来。',
     combo: '冷暖 + 视觉层级：暖色放重点往前，冷色退背景。',
-    beforeafter: '改前：重点和背景同温，分不出 → 改后：暖重点冷背景，层次立现。',
     mnemonic: '冷暖色＝「暖的前进、冷的后退」。'
   },
   'stagger': {
     pitfall: '一堆对象同时啪一下全出现，没节奏也没重点。',
     shortcut: '动画窗格里给每个对象设递增「延迟」',
     combo: '错落 + 进入动画：同款淡入，0.15s 间隔出波浪感。',
-    beforeafter: '改前：四个要点同时弹出 → 改后：依次 0.15s 淡入，视线跟着点。',
     mnemonic: '错落＝「同款动画，错开时间点」。'
   },
   'package': {
     pitfall: '直接拷 pptx 去客户电脑，字体图片全丢。',
     shortcut: '文件 → 导出 → 打包成 CD（或导出为视频）',
     combo: '打包 + 嵌入字体：双保险，换电脑零翻车。',
-    beforeafter: '改前：换电脑字体裂图 → 改后：打包一体，原样放映。',
     mnemonic: '打包＝「把字体图片视频全带走」。'
   },
   'rotate-flip': {
     pitfall: '旋转后文字也跟着斜，要正文字时得把文字单独放。',
     shortcut: '选中 → 拖顶部手柄自由转；右键旋转 → 水平/垂直翻转',
     combo: '翻转 + 对称构图：左右镜像做平衡版面。',
-    beforeafter: '改前：箭头朝向不对硬凑 → 改后：水平翻转一键调向。',
     mnemonic: '翻转＝「把图形左右/上下镜像」。'
   },
   'print': {
     pitfall: '只看整页幻灯片，忘了讲义/备注页这些打印刚需场景。',
     shortcut: '文件 → 打印 → 选版式(讲义/备注页)/颜色(灰度)',
     combo: '讲义母版 + 打印：提前定好每页张数和页眉。',
-    beforeafter: '改前：发学员整页大图浪费纸 → 改后：讲义每页 6 张省纸。',
     mnemonic: '打印＝「把幻灯片印到纸上」。'
   },
   'autoshape': {
     pitfall: '用图片代替形状，放大就糊、不能改色。',
     combo: '形状 + 布尔运算：拼出专属图标/信息图。',
-    beforeafter: '改前：贴位图做卡片糊 → 改后：自选图形矢量清晰可改。',
     mnemonic: '自选图形＝「搭一切图形的矢量积木」。'
   },
   'chart-elements': {
     pitfall: '图例网格坐标轴全开，信息过载看不懂。',
     shortcut: '图表旁 +号 → 勾选要显示的构件',
     combo: '数据标签 + 删冗余图例：让关键数一眼可见。',
-    beforeafter: '改前：构件全开乱 → 改后：只留标签，清爽读懂。',
     mnemonic: '图表元素＝「图表里头显示什么」。'
   },
   'text-anim-level': {
     pitfall: '整批一起出，没节奏也没仪式感。',
     shortcut: '动画 → 效果选项 → 整批/按段落/按词/按字',
     combo: '按字浮现 + 错落：标题有仪式、要点逐条点。',
-    beforeafter: '改前：整段啪一下 → 改后：按字淡入，开场有戏。',
     mnemonic: '分级＝「文本框内部怎么拆着出」。'
   },
   'image-crop': {
     pitfall: '只记得裁成形状，普通裁切和艺术效果也常用。',
     shortcut: '图片格式 → 裁剪 / 更正 / 颜色 / 艺术效果',
     combo: '裁剪去边 + 艺术效果：救暗图、做质感封面。',
-    beforeafter: '改前：原图带杂边偏暗 → 改后：裁边+虚化，高级感。',
     mnemonic: '裁剪＝「切掉多余、不透明」。'
   },
   'header-footer': {
     pitfall: '每页手打页码，易错还改不动。',
     shortcut: '插入 → 页眉和页脚（或母版里设）',
     combo: '母版 + 自动页码：设一次全篇统一。',
-    beforeafter: '改前：手打页码页页错 → 改后：母版自动，改日期一键全改。',
     mnemonic: '页脚＝「母版里设一次的自动编号」。'
   },
   'connector': {
     pitfall: '用普通直线连流程图，移框就脱节。',
     shortcut: '插入 → 形状 → 线条 → 连接符（肘形/曲线）',
     combo: '连接符 + 流程图：拖动方框线自动重排。',
-    beforeafter: '改前：普通线移框脱钩 → 改后：连接符智能跟随。',
     mnemonic: '连接符＝「吸在图形上、会自己跟的线」。'
   },
   'macro-vba': {
     pitfall: '重复操作手动做，慢还漏，尤其几十页批量。',
     shortcut: '视图 → 宏 → 录制（复杂可写 VBA）',
     combo: '宏 + 批量规整：录一次一键套全部。',
-    beforeafter: '改前：手改 80 页半小时 → 改后：录宏 3 秒全搞定。',
     mnemonic: '宏＝「把重复操作录成一键脚本」。'
   },
   'exit-anim': {
     pitfall: '只加进入动画，要点越积越多、画面变乱。',
     shortcut: '动画 → 退出（飞出/淡出/缩小）',
     combo: '进入 + 退出：当前要点讲完淡出，始终只留重点。',
-    beforeafter: '改前：要点全堆着 → 改后：讲完退出，画面清爽。',
     mnemonic: '退出＝「对象怎么从舞台走掉」。'
   },
   'chart-anim': {
     pitfall: '整图淡入，没节奏也没故事感。',
     shortcut: '图表动画 → 效果选项 → 按系列/按类别',
     combo: '按系列长出 + 边讲边出：数据有层次。',
-    beforeafter: '改前：整图啪一下 → 改后：柱子一根根长出来。',
     mnemonic: '图表动画＝「图表怎么动出来」。'
   },
   'smart-guides': {
     pitfall: '纯手拖对齐，歪歪扭扭还费时。',
     shortcut: '拖动对象时看紫色虚线（视图→参考线可开关）',
     combo: '智能参考线 + 对齐工具：又快又准。',
-    beforeafter: '改前：凭手感对不齐 → 改后：虚线一亮自动吸附。',
     mnemonic: '智能参考线＝「对象出现时才亮的动态对齐线」。'
   },
   'watermark': {
     pitfall: '每页手贴水印，改一次累、还容易漏页。',
     shortcut: '幻灯片母版里放半透明 Logo/文字',
     combo: '母版水印 + 页眉页脚：全篇标记统一。',
-    beforeafter: '改前：逐页手贴 → 改后：母版设一次全篇带。',
     mnemonic: '水印＝「母版里的半透明装饰层」。'
   },
   'screenshot': {
     pitfall: '截图还要存盘再插入，多绕两步。',
     shortcut: '插入 → 屏幕截图（窗口/屏幕剪辑）',
     combo: '截图 + 裁剪/艺术效果：引用界面一步到位。',
-    beforeafter: '改前：截图→存盘→插入 → 改后：直接截进幻灯片。',
     mnemonic: '屏幕截图＝「现截现贴」。'
   },
   'autofit': {
     pitfall: '字多溢出文本框，丢字还难看。',
     shortcut: '文本框右下角图标 → 自动调整（缩字/溢出警告）',
     combo: '自动缩字 + 手动分框：塞得下又不挤。',
-    beforeafter: '改前：文字溢出框外丢字 → 改后：自动缩字塞进框。',
     mnemonic: '自动适配＝「文本框对内容的智能响应」。'
   },
   'pptx-format': {
     pitfall: '终稿发 pptx，客户能改能乱版。',
     shortcut: '另存为：pdf(防改) / ppsx(直接放映) / pptm(含宏)',
     combo: 'pdf 终稿 + ppsx 放映：发给谁都不翻车。',
-    beforeafter: '改前：发 pptx 被改花 → 改后：发 pdf 稳如山。',
     mnemonic: '文件格式＝「按用途选扩展名」。'
   },
   'combo-chart': {
     pitfall: '量(销售额)和率(增长率)分两张图，对比时要来回翻，还难看出关联。',
     shortcut: '插入图表 → 组合图（或柱形图里把某系列改折线并设次坐标轴）',
     combo: '组合图 + 数据标签：量率同框，关键数直接标出。',
-    beforeafter: '改前：量一张图、率另一张图 → 改后：柱是量、线是率，一张图讲两件事。',
     mnemonic: '组合图＝「柱量 + 折线率，双轴各管各」。'
   },
   'word-to-ppt': {
     pitfall: '把 Word 方案手动一页页抄进 PPT，费时还易漏。',
     shortcut: 'Word 用标题样式排好 → 发送到 PowerPoint / 导入大纲',
     combo: 'Word 转 PPT + 母版：骨架生成后一键套品牌版式。',
-    beforeafter: '改前：手抄方案 → 改后：标题样式一键变骨架页。',
     mnemonic: 'Word 转 PPT＝「标题样式即页结构」。'
   },
   'ink': {
     pitfall: '放映想标重点只能下张重画，现场没法随手圈。',
     shortcut: '放映 → 指针选项 → 笔/荧光笔；激光笔随时指',
     combo: '墨迹 + 演示者视图：现场圈画，备注照看不慌。',
-    beforeafter: '改前：干讲指空气 → 改后：随手圈画、激光笔引视线。',
     mnemonic: '墨迹批注＝「现场圈重点，激光笔引视线」。'
   },
   'data-label': {
     pitfall: '图表做完不加标签，观众要歪头对坐标轴读数。',
     shortcut: '图表 → ＋ → 数据标签 → 选位置',
     combo: '数据标签 + 图表美化：先美化再标数，标签颜色和图表统一。',
-    beforeafter: '改前：柱状图无标签 → 改后：柱顶标数值，一目了然。',
     mnemonic: '数据标签＝「数字直接标在图上」。'
   },
   'morph-force': {
     pitfall: '想跨页把方块变圆形，普通平滑切换根本认不出。',
     shortcut: '选择窗格 → 两页对象改名 !!名字 → 加平滑切换',
     combo: '!!配对 + 平滑切换：形状/图标/产品图间的自由过渡。',
-    beforeafter: '改前：方块变圆形直接闪现 → 改后：!!配对后平滑过渡。',
     mnemonic: '!!配对＝「两个对象强行认亲，做平滑过渡」。'
   },
   'artistic-effect': {
     pitfall: '照片做封面背景太写实，用艺术效果秒变插画风。',
     shortcut: '图片格式 → 艺术效果 → 选效果',
     combo: '艺术效果 + 透明度：加铅笔素描/虚化后降透明度当背景底纹。',
-    beforeafter: '改前：普通照片 → 改后：铅笔素描/水彩/虚化。',
     mnemonic: '艺术效果＝「给照片换画风」。'
   },
   'picture-correct': {
     pitfall: '照片太暗太灰就重拍，其实 PPT 内就能调。',
     shortcut: '图片格式 → 更正 → 亮度/对比度',
     combo: '更正 + 柔化：提亮后加柔化做背景。',
-    beforeafter: '改前：暗沉看不清 → 改后：明亮清晰。',
     mnemonic: '图片更正＝「PPT 内置 PS 曝光调节」。'
   },
   'picture-style': {
     pitfall: '图片裸放没质感，手动加边框投影好麻烦。',
     shortcut: '图片格式 → 图片样式库 → 悬停预览点选',
     combo: '图片样式 + 格式刷：设好一个样式，格式刷批量复制。',
-    beforeafter: '改前：光秃秃 → 改后：有边框+阴影+倒影。',
     mnemonic: '图片样式＝「给照片穿衣服」。'
   },
   'change-picture': {
     pitfall: '素材更新→删旧图→插新图→重调所有格式→烦死人。',
     shortcut: '右键图片 → 更改图片 → 选新素材',
     combo: '更改图片 + 模板占位：用占位图调好格式，批量更换真素材。',
-    beforeafter: '改前：全重做 → 改后：格式原封不动继承。',
     mnemonic: '更改图片＝「换素材不换格式」。'
   },
   'excel-link': {
     pitfall: 'Excel 数据更新后 PPT 图还要手动重做一遍。',
     shortcut: 'Excel 复制 → PPT 粘贴选项「链接数据」→ 右键刷新',
     combo: 'Excel 链接 + 图表美化：链接数据后用图表美化精调外观。',
-    beforeafter: '改前：复制粘贴手改 → 改后：改 Excel 自动刷新。',
     mnemonic: 'Excel 链接＝「给 PPT 图表接根数据水管」。'
   },
   'data-bars': {
     pitfall: '表格只有数字看不出大小关系，另画图表又占地方。',
     shortcut: '表格设计 → 条件格式 → 数据条',
     combo: '数据条 + 表格美化：先做斑马纹再做数据条。',
-    beforeafter: '改前：纯数字表 → 改后：内嵌数据条一眼看大小。',
     mnemonic: '数据条＝「表格里画迷你柱状图」。'
   },
   'video-trim': {
     pitfall: '视频太长，放映时要拖进度条或切出去播放器。',
     shortcut: '选中视频 → 播放 → 裁剪视频',
     combo: '视频裁剪 + 书签：剪短后加书签做分知识点跳点。',
-    beforeafter: '改前：全长拖进度 → 改后：裁剪+书签精准跳。',
     mnemonic: '视频裁剪＝「只留精彩片段，放映不跳出」。'
   },
   'ink-math': {
     pitfall: '复杂公式打 LaTeX 慢、拼字符丑、截图放进去糊。',
     shortcut: '插入 → 公式 → 墨迹公式 → 手写',
     combo: '墨迹公式 + 公式编号：手写转标准格式后加编号。',
-    beforeafter: '改前：打字/拼凑 → 改后：手写秒转标准排版。',
     mnemonic: '墨迹公式＝「手写数学式，PPT 帮你认」。'
-  },
-  'map-chart': {
-    pitfall: '各地区数据列在表格看不出地理分布，画柱状图又不对味。',
-    shortcut: '插入 → 图表 → 地图 → 填区域名+数值',
-    combo: '地图图表 + 图表美化：地图着色后再调配色方案。',
-    beforeafter: '改前：表格里的数字 → 改后：地图按省深浅着色。',
-    mnemonic: '地图图表＝「数据落到地图上，深浅一目了然」。'
   }
 };
 

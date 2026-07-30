@@ -1,4 +1,4 @@
-<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 172 个工具 · 单 commit 同步 (Git Data API) -->
+<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 175 个工具 · 单 commit 同步 (Git Data API) -->
 # 优卡导航 · 工具数据
 
 > 本文件是「优卡导航」网站的唯一数据源。修改后刷新页面（或重新部署）即自动更新，无需改代码。
@@ -94,6 +94,8 @@
 - [Gemini](https://gemini.google.com/) — Google 多模态大模型，超长上下文与图文理解突出。｜每日免费额度
 - [DeepSeek](https://www.deepseek.com/) — 国产最强开源大模型，写稿/代码/推理全能，国民级 AI 助手。｜每日免费额度
 - [文心一言](https://yiyan.baidu.com/) — 百度知识增强大模型，中文创作与多模态对话第一梯队。｜每日免费额度
+- [千问办公](https://qwenwork.cn/) — 阿里一站式 AI Agent 办公工具，一句话交付 PPT/Word/Excel/网页/代码，深度接入钉钉。｜每日免费额度
+- [WorkBuddy](https://workbuddy365.com.cn/) — 腾讯 AI 办公智能体，一句话下达任务，自主交付文档/表格/PPT，支持手机远程遥控。｜每日免费额度
 
 ## AI 搜索 (SEARCH)
 - [秘塔 AI 搜索](https://metaso.cn/) — 国内无广告 AI 搜索，答案带引用，写稿查资料神器。｜每日免费额度
@@ -189,6 +191,7 @@
 - [Notion](https://www.notion.so/) — 全球流行的文档+数据库协作工具，搭 PPT 大纲与资料库利器。｜免费
 
 ## 网页设计 (WEB)
+- [VibeHub](https://vibe-hub.org/) — 前端 / vibe coding 术语图解库，用大白话+图示讲清组件、表单、CSS 布局、动效等概念，AI 辅助写前端查词必备。｜免费
 ### 灵感参考 (REF)
 - [68Design 酷站](https://www.68design.net/cool/) — 国内老牌设计门户的网页灵感频道，精选酷站与优秀案例。｜免费
 - [Awwwards](https://www.awwwards.com/) — 国际网页设计奖项站，年度最佳交互与视觉案例集散地。｜免费

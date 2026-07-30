@@ -1148,14 +1148,6 @@ const TERMS = [
     related: ["table-beauty", "infographic", "chart-edit"], demo: "excel-table"
   },
   {
-    id: "text-link", name: "文本框链接 / 文字溢出", alias: "Linked Text Boxes",
-    category: "排版与布局", level: "进阶",
-    summary: "一个框装不下，让文字自动流向下一个框，断页不断意。",
-    detail: "文本框链接让多个框共享同一段文字流：前一个框满了，剩余文字自动流到下一个框。适合杂志式多栏、长文跨页。区别于「文本框内部边距」（框内留白），这条讲框与框之间的文字流动。",
-    scenario: "一页放不下的长稿件，用两个链接框做左右分栏，文字自动续接不手抄。",
-    related: ["textbox-placeholder", "text-margin", "margin"], demo: "text-link"
-  },
-  {
     id: "section-view", name: "节视图 / 折叠展开", alias: "Section View",
     category: "软件功能", level: "入门",
     summary: "用「节」把长文档分块，在大纲/浏览视图里折叠收起，清爽管理。",
@@ -1393,7 +1385,7 @@ const TERMS = [
     summary: "同一张图里既有柱（量）又有线（率），双坐标轴各讲一件事。",
     detail: "组合图表（Combo Chart）把两种图表类型叠在一张图：柱形表「量」(如销售额)、折线表「率」(如增长率)，并为折线启用「次坐标轴」让量纲互不干扰。适合「既要看绝对值又要看占比/趋势」的汇报场景。区别于「普通图表」(单类型单轴)，组合图靠次坐标轴解决量纲冲突。",
     scenario: "月度销售额(柱)配上同比增长率(折线)，一张图讲清「卖多少」和「涨多快」。",
-    related: ["chart-beauty", "chart-edit", "data-viz"], demo: "chart-beauty"
+    related: ["chart-beauty", "chart-edit", "data-viz"], demo: "combo-chart"
   },
   {
     id: "word-to-ppt", name: "Word 转 PPT", alias: "Send to PowerPoint",
@@ -1491,14 +1483,6 @@ const TERMS = [
     scenario: "论文答辩写到复杂积分公式→手写秒转标准排版；教学课件写物理方程式。",
     related: ["smartart"], demo: "ink-math"
   },
-  {
-    id: "map-chart", name: "地图图表", alias: "Map Chart",
-    category: "图形与图示", level: "进阶",
-    summary: "插入→图表→地图，按省/市/国自动填色显示地理分布数据。",
-    detail: "地图图表（Map Chart）是 PowerPoint 内置的图表类型，选中插入后弹出 Excel 数据表→填写标准行政区划名和数值→关闭 Excel→地图自动按数值深浅着色。支持省/市/国家级别的行政区划识别，颜色方案和标签可在「图表设计」里调。需要联网（基于 Bing 地理数据），区域名必须用标准名称。",
-    scenario: "全国各区域销售数据→地图图表按省着色，比柱状图直观 10 倍。",
-    related: ["chart-beauty", "combo-chart"], demo: "map-chart"
-  }
 ];
 
 if (typeof window !== "undefined") window.TERMS = TERMS;

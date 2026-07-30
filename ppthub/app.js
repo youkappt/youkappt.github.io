@@ -189,7 +189,6 @@
       ${t.pitfall ? `<div class="modal-section modal-pitfall"><h4>常见误区</h4><div class="modal-pit">⚠ ${esc(t.pitfall)}</div></div>` : ''}
       ${t.shortcut ? `<div class="modal-section"><h4>快捷键 / 调出</h4><div class="modal-kbd">${esc(t.shortcut)}</div></div>` : ''}
       ${t.checklist ? `<div class="modal-section"><h4>自检清单</h4><ul class="modal-check">${t.checklist.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
-      ${t.beforeafter ? `<div class="modal-section"><h4>改前 vs 改后</h4>${(window.BA_VISUALS && window.BA_VISUALS[t.id]) ? window.BA_VISUALS[t.id]() : `<div class="modal-ba">${esc(t.beforeafter)}</div>`}</div>` : ''}
       ${t.mnemonic ? `<div class="modal-section"><h4>记忆口诀</h4><div class="modal-extra">${esc(t.mnemonic)}</div></div>` : ''}
       ${t.combo ? `<div class="modal-section"><h4>进阶组合技</h4><div class="modal-extra">${esc(t.combo)}</div></div>` : ''}
       ${t.etymology ? `<div class="modal-section"><h4>词源小注</h4><div class="modal-extra">${esc(t.etymology)}</div></div>` : ''}
@@ -204,7 +203,9 @@
     // mount demo
     if (t.demo && DEMOS[t.demo]) {
       const body = document.getElementById('demoBody');
+      window.__currentTermId = t.id;
       try { DEMOS[t.demo](body); } catch (e) { body.innerHTML = '<div style="color:var(--color-fog-veil);font:13px var(--font-body)">演示加载失败</div>'; }
+      stripDemoCaseControls(body);
       initDemoActiveStates(body);
     }
 
@@ -248,6 +249,48 @@
     }, true);
   }
 
+  function stripDemoCaseControls(body) {
+    if (!body) return;
+    const textOf = el => (el.textContent || '').replace(/\s+/g, ' ').trim();
+    const caseButtonRe = /换一个真实案例/;
+    const caseLabelRe = /^(案例加载中|案例[：:])/;
+    const rows = new Set();
+
+    body.querySelectorAll('.demo-btn').forEach(btn => {
+      if (caseButtonRe.test(textOf(btn))) {
+        const row = btn.closest('.demo-row');
+        if (row) rows.add(row);
+        else btn.remove();
+      }
+    });
+    body.querySelectorAll('.demo-label').forEach(label => {
+      if (caseLabelRe.test(textOf(label))) {
+        const row = label.closest('.demo-row');
+        if (row) rows.add(row);
+        else label.remove();
+      }
+    });
+
+    rows.forEach(row => {
+      if (!row || !body.contains(row)) return;
+      const activeControls = Array.from(row.querySelectorAll('button,input,select,textarea,a'))
+        .filter(el => !caseButtonRe.test(textOf(el)));
+      const hasCaseUi = caseButtonRe.test(textOf(row)) || /案例加载中|案例[：:]/.test(textOf(row));
+      const hasRichContent = row.querySelector('svg,canvas,img,video,audio,.mini-slide');
+      if (hasCaseUi && activeControls.length === 0 && !hasRichContent) row.remove();
+    });
+
+    body.querySelectorAll('.demo-btn').forEach(btn => {
+      if (caseButtonRe.test(textOf(btn))) btn.remove();
+    });
+    body.querySelectorAll('.demo-label').forEach(label => {
+      if (caseLabelRe.test(textOf(label))) label.remove();
+    });
+    body.querySelectorAll('.demo-row').forEach(row => {
+      if (!textOf(row) && !row.querySelector('button,input,select,textarea,a,svg,canvas,img,video,audio,.mini-slide')) row.remove();
+    });
+  }
+
   function cleanupDemo() {
     if (window.__scHandler) {
       document.removeEventListener('keydown', window.__scHandler);
@@ -258,6 +301,7 @@
       window.__demoTimers.forEach(id => { clearInterval(id); clearTimeout(id); });
       window.__demoTimers = [];
     }
+    window.__currentTermId = null;
   }
 
   els.overlay.addEventListener('click', (e) => { if (e.target === els.overlay) closeModal(); });
