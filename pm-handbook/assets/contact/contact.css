@@ -1,0 +1,67 @@
+.f-contact-shared {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.f-contact-shared .f-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(26,51,0,.05);
+  border: 1px solid rgba(26,51,0,.15);
+  color: var(--color-forest-ink, #1a3300);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  text-decoration: none;
+  font-family: inherit;
+}
+.f-contact-shared .f-chip:hover { background: var(--color-highlighter-yellow, #ffe95c); border-color: rgba(26,51,0,.35); }
+.f-contact-shared .f-chip svg { width: 13px; height: 13px; }
+.f-qr-modal-shared {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,51,0,.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.f-qr-modal-shared.is-open { display: flex; }
+.f-qr-modal-shared .f-qr-card {
+  background: rgba(255,255,255,.98);
+  border: 1px solid rgba(26,51,0,.15);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(26,51,0,.18);
+}
+.f-qr-modal-shared .f-qr-card img {
+  max-width: min(280px, 70vw);
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.f-qr-modal-shared .f-qr-card .f-qr-name { margin-top: 14px; color: var(--color-forest-ink, #1a3300); font-size: 14px; font-weight: 600; }
+.f-qr-modal-shared .f-qr-card .f-qr-id { color: var(--color-fog-veil, #6b6b6b); font-size: 12px; margin-top: 4px; letter-spacing: .5px; }
+.f-qr-modal-shared .f-qr-card .f-qr-hint { color: var(--color-fog-veil, #6b6b6b); font-size: 11px; margin-top: 10px; }
+.f-qr-modal-shared .f-qr-card .f-qr-close { margin-top: 14px; color: var(--color-fog-veil, #6b6b6b); font-size: 11px; cursor: pointer; background: none; border: none; padding: 4px 10px; font-family: inherit; }
+@media (max-width: 640px) {
+  .f-contact-shared { gap: 10px; }
+  .f-contact-shared .f-chip { padding: 5px 10px; font-size: 11px; }
+}

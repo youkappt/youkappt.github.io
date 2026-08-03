@@ -185,6 +185,7 @@
         <h4>常见场景</h4>
         <div class="modal-scenario">${esc(t.scenario)}</div>
       </div>
+      ${renderBeforeAfter(t)}
       ${t.demo && DEMOS[t.demo] ? `<div class="modal-section"><h4>动手试试</h4><div class="demo-mount"><div class="demo-hint">◆ 专属图示 / 交互演示</div><div id="demoBody"></div></div></div>` : ''}
       ${t.pitfall ? `<div class="modal-section modal-pitfall"><h4>常见误区</h4><div class="modal-pit">⚠ ${esc(t.pitfall)}</div></div>` : ''}
       ${t.shortcut ? `<div class="modal-section"><h4>快捷键 / 调出</h4><div class="modal-kbd">${esc(t.shortcut)}</div></div>` : ''}
@@ -200,7 +201,7 @@
     });
     document.getElementById('modalClose').onclick = closeModal;
 
-    // mount demo
+    // mount demo（改前改后真实图 + 动手试试 SVG 演示 并存；动手试试 排在 改前改后 之后）
     if (t.demo && DEMOS[t.demo]) {
       const body = document.getElementById('demoBody');
       window.__currentTermId = t.id;
@@ -342,6 +343,31 @@
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function renderBeforeAfter(t) {
+    if (typeof BEFORE_AFTER === 'undefined' || !BEFORE_AFTER[t.id]) return '';
+    const ba = BEFORE_AFTER[t.id];
+    return `
+      <div class="modal-section modal-ba">
+        <h4>改前 vs 改后（真实案例）</h4>
+        ${ba.caption ? `<div class="ba-caption">${esc(ba.caption)}</div>` : ''}
+        <div class="ba-grid">
+          <figure class="ba-cell">
+            <div class="ba-img-wrap">
+              <img src="${esc(ba.before)}" alt="${esc(t.name)} 改前" loading="lazy">
+            </div>
+            <figcaption>改前</figcaption>
+          </figure>
+          <figure class="ba-cell">
+            <div class="ba-img-wrap">
+              <img src="${esc(ba.after)}" alt="${esc(t.name)} 改后" loading="lazy">
+            </div>
+            <figcaption>改后</figcaption>
+          </figure>
+        </div>
+      </div>
+    `;
   }
 
   /* ---- init ---- */

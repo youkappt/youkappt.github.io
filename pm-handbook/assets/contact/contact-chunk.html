@@ -1,0 +1,34 @@
+<!-- ⚠️ 用法约定（2026-07-26 定稿）：
+  1. <link> 放在 <footer> 标签之前（或 head 里）。
+  2. .f-contact-shared 必须放在页脚 <footer> 内部、紧跟页脚文字之后（与主站一致，间距 18px）。
+     不要放在 </footer> 之后——页脚有大 padding，会把芯片推得离文字很远、悬在边框外。
+  3. .f-qr-modal-shared 与 <script> 放在 </footer> 之后即可。
+  4. 相对路径按子页层级调整（assets/... 或 ../assets/...），且子页目录里必须有 assets/contact/ 四件套。
+-->
+<link rel="stylesheet" href="assets/contact/contact.css" />
+<div class="f-contact-shared">
+  <button class="f-chip" data-qr="wechat-gzh" type="button">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.4 4 2 6.7 2 10.1c0 1.9 1.1 3.6 2.9 4.7L4 17l2.5-1.3c.5.1 1 .2 1.5.2.2 0 .4 0 .6-.1-.1-.5-.2-1-.2-1.5 0-3.5 3.3-6.3 7.4-6.3h.5C15.5 5.7 12.8 4 9.5 4zm-2.8 4.5c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm5.5 0c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zM15.5 9c-3.6 0-6.5 2.4-6.5 5.5s2.9 5.5 6.5 5.5c.6 0 1.2-.1 1.8-.2L19 21l-.6-1.8c1.5-.9 2.6-2.5 2.6-4.2C21 11.4 18.5 9 15.5 9zm-2 3c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7zm4 0c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/></svg>
+    微信公众号：优卡说PPT
+  </button>
+  <a class="f-chip" href="https://www.xiaohongshu.com/user/profile/55e286c0c2bdeb696556a64a" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6.5C3 4.6 4.6 3 6.5 3h11C19.4 3 21 4.6 21 6.5v11c0 1.9-1.6 3.5-3.5 3.5h-11C4.6 21 3 19.4 3 17.5v-11zM6 8v8h2v-3h2l1.5 3H14l-1.7-3.4c1-.4 1.7-1.3 1.7-2.4 0-1.4-1.1-2.5-2.5-2.5H6zm2 2h2v1H8v-1zm6-2v8h2v-3h2v3h2V8h-2v3h-2V8h-2z"/></svg>
+    小红书：优卡
+  </a>
+  <button class="f-chip" data-qr="wechat-personal" type="button">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.4 4 2 6.7 2 10.1c0 1.9 1.1 3.6 2.9 4.7L4 17l2.5-1.3c.5.1 1 .2 1.5.2.2 0 .4 0 .6-.1-.1-.5-.2-1-.2-1.5 0-3.5 3.3-6.3 7.4-6.3h.5C15.5 5.7 12.8 4 9.5 4zM15.5 9c-3.6 0-6.5 2.4-6.5 5.5s2.9 5.5 6.5 5.5c.6 0 1.2-.1 1.8-.2L19 21l-.6-1.8c1.5-.9 2.6-2.5 2.6-4.2C21 11.4 18.5 9 15.5 9z"/></svg>
+    个人微信：YOUKAPPT
+  </button>
+</div>
+
+<div class="f-qr-modal-shared" role="dialog" aria-hidden="true">
+  <div class="f-qr-card">
+    <img alt="二维码" />
+    <div class="f-qr-name"></div>
+    <div class="f-qr-id"></div>
+    <div class="f-qr-hint">长按图片识别 / 截图后用对应 App 扫码</div>
+    <button class="f-qr-close" type="button">关闭</button>
+  </div>
+</div>
+
+<!-- contact.js 由 app.js 动态注入，data-base="" 指向本地 assets/contact/ -->

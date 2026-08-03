@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>产品经理手册 · 优卡导航子页面</title>
+  <meta name="description" content="产品经理手册：按产品全生命周期讲清 PM 在需求探索→规划→设计→开发→测试→发布→复盘每个环节该干啥、用什么方法、产出啥、怎么制作、标准模板是什么，附字节 / Amazon / Google / 阿里 / 腾讯 / Spotify 真实案例。" />
+  <link rel="canonical" href="https://youkappt.com/pm-handbook/" />
+  <link rel="icon" type="image/png" href="./logo.png" />
+  <link rel="apple-touch-icon" href="./logo.png" />
+  <meta name="theme-color" content="#fcfaf5" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="优卡导航" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="产品经理手册 · 优卡导航子页面" />
+  <meta property="og:description" content="PM 全生命周期实操手册 + 大厂真实案例 + 可一键复制的标准模板。" />
+  <meta property="og:url" content="https://youkappt.com/pm-handbook/" />
+  <meta property="og:image" content="https://youkappt.com/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="产品经理手册 · 优卡导航子页面" />
+  <meta name="twitter:description" content="PM 全生命周期实操手册 + 大厂真实案例 + 可复制标准模板。" />
+  <meta name="twitter:image" content="https://youkappt.com/og-cover.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "优卡导航", "item": "https://youkappt.com/"},
+      {"@type": "ListItem", "position": 2, "name": "产品经理手册", "item": "https://youkappt.com/pm-handbook/"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-layer"></div>
+
+  <!-- 顶部浮动导航 -->
+  <header>
+    <div class="header-pill">
+      <a class="brand" href="../">
+        <span class="mark"><img src="./logo.png" alt="优卡导航" /></span>
+        <span>优卡导航</span>
+      </a>
+      <div class="header-actions">
+        <span class="back-link">产品经理手册</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="eyebrow">📘 产品经理手册</span>
+    <h1>把产品从 <span class="hl">0 到 1</span> 跑通</h1>
+    <p>一个项目里 PM 到底要干啥？方法、产出物、标准模板、大厂真实案例，一站讲清，照着就能做。</p>
+    <a class="btn-primary" href="#discover">从需求探索开始 →</a>
+    <div class="reassure">7 个阶段 · 每阶段 5 个区块 · 模板一键复制</div>
+  </section>
+
+  <!-- 横向流程轴（JS 渲染） -->
+  <nav class="flow-axis" id="flowAxis" aria-label="产品全生命周期"></nav>
+
+  <!-- 阶段详情（JS 渲染） -->
+  <main id="phases"></main>
+
+  <!-- 页脚联系方式区（JS 注入 assets/contact） -->
+  <footer id="contact"></footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>战略模型画布 · 优卡导航</title>
+  <meta name="description" content="战略模型画布：按经典流派浏览波特五力、波士顿矩阵、安索夫矩阵等商业分析模型，在线填写画布、缩放平移并导出 PNG/SVG。" />
+  <link rel="canonical" href="https://youkappt.com/strategy-models/" />
+  <link rel="icon" type="image/png" href="./logo.png" />
+  <link rel="apple-touch-icon" href="./logo.png" />
+  <meta name="theme-color" content="#fcfaf5" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="优卡导航" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="战略模型画布 · 优卡导航子页面" />
+  <meta property="og:description" content="按流派浏览商业分析模型，在线填画布、缩放平移、导出 PNG/SVG。" />
+  <meta property="og:url" content="https://youkappt.com/strategy-models/" />
+  <meta property="og:image" content="https://youkappt.com/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="战略模型画布 · 优卡导航子页面" />
+  <meta name="twitter:description" content="按流派浏览商业分析模型，在线填画布、导出图片。" />
+  <meta name="twitter:image" content="https://youkappt.com/og-cover.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=8" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "优卡导航", "item": "https://youkappt.com/"},
+    {"@type": "ListItem", "position": 2, "name": "战略模型画布", "item": "https://youkappt.com/strategy-models/"}
+  ]
+}
+</script>
+</head>
+<body>
+  <div class="bg-layer"></div>
+  <div class="bg-spotlight"></div>
+
+  <!-- Top navigation -->
+  <header>
+    <div class="header-pill">
+      <a class="brand" href="../">
+        <span class="mark"><img src="./logo.png" alt="优卡导航" /></span>
+        <span>战略模型画布</span>
+      </a>
+      <div class="header-actions">
+        <a class="back-link" href="../ppthub/" title="PPT 术语图鉴">术语图鉴</a>
+        <a class="back-link" href="../ppt-tips/" title="PPT 制作技巧">制作技巧</a>
+        <form class="search-wrap" id="searchForm" role="search">
+          <span class="ico" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <input type="text" id="searchInput" placeholder="搜索模型…" autocomplete="off" />
+          <span id="searchCount" class="search-count"></span>
+          <button type="submit" class="search-btn" id="searchBtn">搜索</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero container">
+    <div class="eyebrow">「优卡说PPT 出品」</div>
+    <h1 class="hero-wordmark">战略模型<span class="hl">画布</span></h1>
+    <p class="hero-sub">看懂经典商业分析模型，在线填画布、缩放平移，<br>一键导出 PNG / SVG，直接放进你的方案里。</p>
+  </header>
+
+  <!-- Content layout: school sidebar (left) + model grid (right) -->
+  <div class="layout container">
+    <aside class="side-col">
+      <div class="cat-panel">
+        <div class="cat-panel-title">按流派浏览</div>
+        <nav id="catNav" class="cat-nav"></nav>
+        <div class="cat-panel-title" style="margin-top:24px">按用途筛选</div>
+        <div id="useFilter" class="use-filter"></div>
+      </div>
+    </aside>
+    <main class="main-col">
+      <div id="resultCount" class="result-count"></div>
+      <div id="modelGrid" class="model-grid"></div>
+      <div id="emptyState" class="empty-state" hidden>没有匹配的模型，换个关键词试试。</div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <link rel="stylesheet" href="assets/contact/contact.css?v=8" />
+  <footer class="site-footer container">
+    <p><strong>战略模型画布</strong> · 优卡导航子页面</p>
+    <p style="margin-top:8px;font-size:13px">内容由「优卡」起草，持续补全中。</p>
+    <div class="f-contact-shared">
+    <button class="f-chip" data-qr="wechat-gzh" type="button">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.4 4 2 6.7 2 10.1c0 1.9 1.1 3.6 2.9 4.7L4 17l2.5-1.3c.5.1 1 .2 1.5.2.2 0 .4 0 .6-.1-.1-.5-.2-1-.2-1.5 0-3.5 3.3-6.3 7.4-6.3h.5C15.5 5.7 12.8 4 9.5 4zm-2.8 4.5c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm5.5 0c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zM15.5 9c-3.6 0-6.5 2.4-6.5 5.5s2.9 5.5 6.5 5.5c.6 0 1.2-.1 1.8-.2L19 21l-.6-1.8c1.5-.9 2.6-2.5 2.6-4.2C21 11.4 18.5 9 15.5 9zm-2 3c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7zm4 0c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/></svg>
+      微信公众号：优卡说PPT
+    </button>
+    <a class="f-chip" href="https://www.xiaohongshu.com/user/profile/55e286c0c2bdeb696556a64a" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6.5C3 4.6 4.6 3 6.5 3h11C19.4 3 21 4.6 21 6.5v11c0 1.9-1.6 3.5-3.5 3.5h-11C4.6 21 3 19.4 3 17.5v-11zM6 8v8h2v-3h2l1.5 3H14l-1.7-3.4c1-.4 1.7-1.3 1.7-2.4 0-1.4-1.1-2.5-2.5-2.5H6zm2 2h2v1H8v-1zm6-2v8h2v-3h2v3h2V8h-2v3h-2V8h-2z"/></svg>
+      小红书：优卡
+    </a>
+    <button class="f-chip" data-qr="wechat-personal" type="button">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 4C5.4 4 2 6.7 2 10.1c0 1.9 1.1 3.6 2.9 4.7L4 17l2.5-1.3c.5.1 1 .2 1.5.2.2 0 .4 0 .6-.1-.1-.5-.2-1-.2-1.5 0-3.5 3.3-6.3 7.4-6.3h.5C15.5 5.7 12.8 4 9.5 4zM15.5 9c-3.6 0-6.5 2.4-6.5 5.5s2.9 5.5 6.5 5.5c.6 0 1.2-.1 1.8-.2L19 21l-.6-1.8c1.5-.9 2.6-2.5 2.6-4.2C21 11.4 18.5 9 15.5 9z"/></svg>
+      个人微信：YOUKAPPT
+    </button>
+  </div>
+  </footer>
+  <div class="f-qr-modal-shared" role="dialog" aria-hidden="true">
+    <div class="f-qr-card">
+      <img alt="二维码" />
+      <div class="f-qr-name"></div>
+      <div class="f-qr-id"></div>
+      <div class="f-qr-hint">长按图片识别 / 截图后用对应 App 扫码</div>
+      <button class="f-qr-close" type="button">关闭</button>
+    </div>
+  </div>
+  <script src="assets/contact/contact.js?v=8" data-base="./"></script>
+
+  <!-- Canvas Modal -->
+  <div id="canvasModal" class="cm-overlay" aria-hidden="true">
+    <div class="cm-card" role="dialog" aria-modal="true">
+      <button class="cm-close" id="cmClose" aria-label="关闭">×</button>
+      <div class="cm-body">
+        <div class="cm-stage" id="cmStage">
+          <div class="cm-viewport" id="cmViewport"></div>
+          <div class="cm-toolbar">
+            <button id="addText" type="button">+ 文本</button>
+            <button id="addImage" type="button">+ 图片</button>
+            <input id="imageInput" type="file" accept="image/*" hidden />
+          </div>
+          <div class="cm-zoom">
+            <button data-zoom="out" title="缩小">−</button>
+            <span id="cmZoomLabel">100%</span>
+            <button data-zoom="in" title="放大">+</button>
+            <button data-zoom="reset" title="重置视图">重置视图</button>
+          </div>
+          <div class="cm-hint">空白处拖动平移 · 滚轮缩放 · 点击文字直接编辑 · 可粘贴图片/文字到空余位置 · 自由元素可拖拽/缩放</div>
+        </div>
+        <aside class="cm-info">
+          <div class="cm-info-head">
+            <span class="cm-school" id="cmSchool"></span>
+            <h2 id="cmName"></h2>
+            <div class="cm-uses" id="cmUses"></div>
+          </div>
+          <div class="cm-section"><h3>简介</h3><p id="cmIntro"></p></div>
+          <div class="cm-section"><h3>适用场景</h3><p id="cmScenario"></p></div>
+          <div class="cm-section"><h3>案例</h3><ul id="cmCases"></ul></div>
+          <div class="cm-actions">
+            <button id="cmReset" class="btn-outline" type="button">重置内容</button>
+            <button id="cmExportPng" class="btn-primary" type="button">导出 PNG</button>
+            <button id="cmExportSvg" class="btn-outline" type="button">导出 SVG</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js?v=8"></script>
+  <script src="canvas-renderers.js?v=8"></script>
+  <script src="app.js?v=8"></script>
+</body>
+</html>

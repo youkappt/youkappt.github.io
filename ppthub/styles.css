@@ -723,8 +723,8 @@ body {
   margin-bottom: var(--spacing-12);
   font-weight: 600;
 }
-.modal-detail { font-size: 16px; color: var(--color-frost-glow); line-height: 1.7; }
-.modal-scenario { font-size: 15px; color: var(--color-moon-mist); line-height: 1.6; }
+.modal-detail { font-size: 15px; color: var(--color-frost-glow); line-height: 1.7; }
+.modal-scenario { font-size: 15px; color: var(--color-frost-glow); line-height: 1.7; }
 
 /* 补充区块（速记/误区/快捷键/清单/对比/口诀…） */
 .modal-lead {
@@ -834,6 +834,55 @@ body {
   border: 1px solid var(--color-glass-edge);
   border-radius: 10px;
   overflow: hidden;
+}
+
+/* 改前 vs 改后 真实生图对照 */
+.modal-ba .ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-16);
+}
+.ba-cell {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+.ba-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #f7f7f5;
+  border: 1px solid var(--color-glass-edge);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ba-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.ba-cell figcaption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-moon-mist);
+  text-align: center;
+}
+.ba-cell:last-child figcaption {
+  color: var(--color-terracotta);
+}
+.ba-caption {
+  margin: var(--spacing-12) 0;
+  font-size: 15px;
+  color: var(--color-frost-glow);
+  line-height: 1.7;
+}
+@media (max-width: 640px) {
+  .modal-ba .ba-grid { grid-template-columns: 1fr; }
 }
 
 /* 版式 demo（layout）内衬：真实内容在 mini-slide 中的落位骨架 */
@@ -1013,7 +1062,8 @@ header:not(.hero) {
 .modal-title { color: var(--color-forest-ink); }
 .modal-alias { color: var(--color-fog-veil); }
 .modal-detail { color: var(--color-forest-ink); }
-.modal-scenario { color: var(--color-moon-mist); }
+.modal-scenario { color: var(--color-forest-ink); }
+.ba-caption { color: var(--color-forest-ink); }
 .modal-section h4 { color: var(--color-terracotta); }
 .modal-lead { color: var(--color-forest-ink); background: rgba(255,233,92,0.18); border-left: 3px solid var(--color-highlighter-yellow); }
 .modal-pitfall .modal-pit { color: var(--color-moon-mist); background: rgba(203,85,33,0.10); border-left: 3px solid var(--color-terracotta); }

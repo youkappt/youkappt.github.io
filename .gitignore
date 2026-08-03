@@ -1,0 +1,6 @@
+.workbuddy/
+.DS_Store
+__pycache__/
+*.pyc
+assets/ip/
+generated-images/

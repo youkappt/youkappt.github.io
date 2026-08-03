@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { margin: 0; background: #0b0d18; }
+    /* 截图时每个 .ba-slide 独立渲染，去掉缩放容器 */
+    #wrap { display: flex; flex-wrap: wrap; gap: 0; }
+    .ba-slide { margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="wrap"></div>
+  <script src="data.js"></script>
+  <script>
+    const wrap = document.getElementById('wrap');
+    const mk = (html, id) => {
+      const d = document.createElement('div');
+      d.innerHTML = html;
+      const el = d.firstChild;
+      el.id = id;
+      wrap.appendChild(el);
+    };
+    TECHNIQUES.forEach(t => {
+      mk(t.before.visual, 'cap_' + t.id + '_before');
+      mk(t.after.visual, 'cap_' + t.id + '_after');
+    });
+  </script>
+</body>
+</html>

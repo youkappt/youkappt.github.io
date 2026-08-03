@@ -1,4 +1,4 @@
-<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 181 个工具 · 单 commit 同步 (Git Data API) -->
+<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 187 个工具 · 单 commit 同步 (Git Data API) -->
 # 优卡导航 · 工具数据
 
 > 本文件是「优卡导航」网站的唯一数据源。修改后刷新页面（或重新部署）即自动更新，无需改代码。
@@ -22,6 +22,7 @@
 - [讯飞智文](https://zhiwen.xfyun.cn/) — 科大讯飞出品，文档/主题一键生成 PPT，自带 AI 配图与演讲稿。｜每日免费额度
 - [MindShow](https://www.mindshow.fun/) — 思维导图/文档/Markdown 一键转 PPT，导入即生成框架、改稿高效。｜每日免费额度
 - [AiPPT](https://www.aippt.cn/) — 国内免费 AI PPT 生成，输入主题 3 分钟出可编辑幻灯片。｜每日免费额度
+- [可赞AI](https://kezign.cn) — 文字一键生成图表/脑图/卡片/PPT，中文办公可视化、导出 PPT/PDF。｜每日免费额度
 
 ### 模板商城 (STORE)
 - [Envato Elements](https://elements.envato.com/presentation-templates/compatible-with-powerpoint) — 订阅制 PPT 模板库，海量优质模板无限下载。｜付费
@@ -59,6 +60,8 @@
 - [Vidu](https://www.vidu.cn/) — 生数科技出品，参考生视频/多主体一致性突出，动漫与广告利器。｜每日免费额度
 - [智谱清影](https://chat.zhipuai.cn/) — 智谱 AI 视频生成，文本/图片转高清视频，长镜头连贯。｜每日免费额度
 - [海螺AI](https://hailuoai.video/) — MiniMax 出品，AI 文生视频与图像，运镜自然、上手快。｜每日免费额度
+- [Pollo AI](https://pollo.ai) — 聚合 Sora2/Kling 等顶尖模型的 AI 视频+图像创意工坊，一句话出片。｜免费
+- [DomoAI](https://domoai.app) — 文字/图/视频生成高质量动画与影片，风格迁移与口型同步一体。｜免费
 
 ## 视频剪辑 (EDIT)
 - [剪映专业版](https://jianying.com/) — 抖音系国民剪辑器，PPT 动态视频、片头片尾、字幕一键搞定。｜免费
@@ -130,6 +133,7 @@
 - [Canva 可画](https://www.canva.com/) — 全球第一在线设计平台，拖拽做海报/PPT/社媒图，模板海量。｜每月免费额度
 - [创客贴](https://www.chuangkit.com/) — 国内在线设计标配，中文模板多、团队协作强。｜每日免费额度
 - [稿定设计](https://www.gaoding.com/) — 国内电商/新媒体设计主力，套模板出图快。｜每日免费额度
+- [星流 Xingliu](https://www.xingliu.art) — LiblibAI 旗下 AI 设计 Agent，一句话生成海报/品牌视觉/音视频，中文指令友好。｜每日免费额度
 
 ## 字体 / 排版 (TYPE)
 - [Fontjoy](https://fontjoy.com) — AI 一键生成协调的字体搭配组合。｜免费
@@ -252,6 +256,8 @@
 - [Palette.fm](https://palette.fm/) — 黑白照片一键 AI 上色，10 秒出 20 种配色方案。｜每日免费额度
 - [Pixian](https://pixian.ai/) — AI 一键去背景，国内访问比 Remove.bg 更稳，人像/商品抠图利器。｜每日免费额度
 - [抠图兔](https://www.koukoutu.com/removebgtool/all) — 国产 AI 抠图工具，批量去背景、国内访问快。｜每日免费额度
+- [椒图AI](https://www.jiaotuai.cn) — 中文 AI 修图智能体，一句话完成人像美化/背景替换/商业海报，免复杂提示词。｜每日免费额度
+- [Vectorizer.AI](https://vectorizer.ai) — 像素图一键转无限缩放 SVG 矢量，Logo/插画矢量化神器。｜免费
 
 ### 翻译 (TRANSLATE)
 - [DeepL](https://www.deepl.com/) — 译文最自然的翻译引擎，PPT 英文素材翻译标配。｜每日免费额度
