@@ -1,4 +1,4 @@
-<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 177 个工具 · 单 commit 同步 (Git Data API) -->
+<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 181 个工具 · 单 commit 同步 (Git Data API) -->
 # 优卡导航 · 工具数据
 
 > 本文件是「优卡导航」网站的唯一数据源。修改后刷新页面（或重新部署）即自动更新，无需改代码。
@@ -182,6 +182,10 @@
 - [Brand Style Guides](https://brandingstyleguides.com/language/chinese/) — 全球品牌视觉规范库（含中文），Logo/色彩/字体标准参考。｜免费
 - [Mitapix 样机](https://mockup.mitapix.com/) — 在线样机生成器，一键给作品套设备外壳，PPT/作品集展示利器。｜免费
 - [LS Graphics 样机](https://www.ls.graphics/free-mockups) — 免费高质量样机素材包，手机/电脑/海报展示模板齐全。｜免费
+- [Freebiesbug](https://freebiesbug.com/) — 综合免费设计素材站，字体/网页模板/图标/样机 2180+ 资源，免登录直接下。｜免费
+- [Graphberry](https://www.graphberry.com/) — 免费样机与图形素材库，个人/商业用途全免费，无需注册。｜免费
+- [GraphicsFuel](https://www.graphicsfuel.com/category/mockup-templates/) — 免费 PSD 样机模板下载，包装/设备/海报/名片场景齐全。｜免费
+- [Screenzy](https://screenzy.io/) — 在线截图/样机生成工具，上传图片即套精美展示外壳，浏览器即用、无需下载。｜免费
 
 ## 脑图 / 流程图 (MIND)
 - [ProcessOn](https://www.processon.com/) — 在线流程图/思维导图，结构梳理即转 PPT 框架。｜免费
