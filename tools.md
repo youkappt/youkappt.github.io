@@ -1,4 +1,4 @@
-<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 175 个工具 · 单 commit 同步 (Git Data API) -->
+<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 177 个工具 · 单 commit 同步 (Git Data API) -->
 # 优卡导航 · 工具数据
 
 > 本文件是「优卡导航」网站的唯一数据源。修改后刷新页面（或重新部署）即自动更新，无需改代码。
@@ -44,6 +44,7 @@
 ### 生图工具 (TOOLS)
 - [Lovart](https://www.lovart.ai/) — 全球首个 AI 设计代理（design agent），一句话生成海报/插画/品牌物料，多风格一体化输出。｜每日免费额度
 - [即梦AI](https://jimeng.jianying.com/ai-tool/home) — 字节旗下，中文提示词友好，图像视频一体。｜每日免费额度
+- [SceneMint](https://image.sunls.de/) — 个人开发者用 AI 做的免登录文生图网站，界面清爽、中文提示词友好，输入文字即出图，免费使用、签到得生成额度。｜免费
 
 ### 提示词 (PROMPT)
 - [AiWind](https://www.aiwind.org/) — AI 图像提示词库，海报/插画/摄影等风格 prompt 直接复制可用。｜免费
@@ -251,6 +252,9 @@
 ### 翻译 (TRANSLATE)
 - [DeepL](https://www.deepl.com/) — 译文最自然的翻译引擎，PPT 英文素材翻译标配。｜每日免费额度
 - [有道 AI 翻译](https://fanyi.youdao.com/) — 国内文档翻译，术语准确、支持 AI 润色与改写。｜每日免费额度
+
+## AI 检测 (DETECT)
+- [朱雀 AI 检测助手](https://matrix.tencent.com/ai-detect/) — 腾讯出品，免费在线检测文本/图片/视频是否 AI 生成，论文鉴伪、社媒 AI 图识别、素材去伪一器搞定。｜免费
 
 ## AI资讯 (NEWS)
 - [AI HOT](https://aihot.virxact.com/) — 中文 AI 资讯聚合，每日热点、新品发布与前沿论文速览一站看。｜免费
