@@ -839,8 +839,10 @@ body {
 /* 改前 vs 改后 真实生图对照 */
 .modal-ba .ba-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-16);
+  grid-template-columns: 1fr;
+  gap: var(--spacing-24);
+  max-width: 720px;
+  margin: 0 auto;
 }
 .ba-cell {
   margin: 0;
@@ -880,9 +882,6 @@ body {
   font-size: 15px;
   color: var(--color-frost-glow);
   line-height: 1.7;
-}
-@media (max-width: 640px) {
-  .modal-ba .ba-grid { grid-template-columns: 1fr; }
 }
 
 /* 版式 demo（layout）内衬：真实内容在 mini-slide 中的落位骨架 */
