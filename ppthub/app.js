@@ -3,7 +3,21 @@
    ============================================================ */
 (function () {
   const terms = window.TERMS || [];
-  const DEMOS = window.DEMOS || {};
+
+  /* ---- 懒加载 demos.js：首屏不下载 528KB，首次打开弹窗才拉取 ---- */
+  let _demosPromise = null;
+  function ensureDemos() {
+    if (_demosPromise) return _demosPromise;
+    _demosPromise = new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'demos.js';
+      s.async = true;
+      s.onload = () => resolve(window.DEMOS || {});
+      s.onerror = () => reject(new Error('demos.js load failed'));
+      document.head.appendChild(s);
+    });
+    return _demosPromise;
+  }
   // 合并补充字段（误区/快捷键/清单/对比/口诀…，来自 terms-extra.js，不污染 data.js）
   if (window.TERM_EXTRA) {
     const ex = window.TERM_EXTRA;
@@ -222,7 +236,7 @@
         <div class="modal-scenario">${esc(t.scenario)}</div>
       </div>
       ${renderBeforeAfter(t)}
-      ${t.demo && DEMOS[t.demo] ? `<div class="modal-section"><h4>动手试试</h4><div class="demo-mount"><div class="demo-hint">◆ 专属图示 / 交互演示</div><div id="demoBody"></div></div></div>` : ''}
+      ${t.demo ? `<div class="modal-section"><h4>动手试试</h4><div class="demo-mount"><div class="demo-hint">◆ 专属图示 / 交互演示</div><div id="demoBody"></div></div></div>` : ''}
       ${t.pitfall ? `<div class="modal-section modal-pitfall"><h4>常见误区</h4><div class="modal-pit">⚠ ${esc(t.pitfall)}</div></div>` : ''}
       ${t.shortcut ? `<div class="modal-section"><h4>快捷键 / 调出</h4><div class="modal-kbd">${esc(t.shortcut)}</div></div>` : ''}
       ${t.checklist ? `<div class="modal-section"><h4>自检清单</h4><ul class="modal-check">${t.checklist.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
@@ -238,12 +252,24 @@
     document.getElementById('modalClose').onclick = closeModal;
 
     // mount demo（改前改后真实图 + 动手试试 SVG 演示 并存；动手试试 排在 改前改后 之后）
-    if (t.demo && DEMOS[t.demo]) {
+    // demos.js 懒加载：先渲染弹窗骨架，脚本到位后再填充交互演示
+    if (t.demo) {
       const body = document.getElementById('demoBody');
-      window.__currentTermId = t.id;
-      try { DEMOS[t.demo](body); } catch (e) { body.innerHTML = '<div style="color:var(--color-fog-veil);font:13px var(--font-body)">演示加载失败</div>'; }
-      stripDemoCaseControls(body);
-      initDemoActiveStates(body);
+      if (body) {
+        window.__currentTermId = t.id;
+        ensureDemos().then(D => {
+          if (!body.isConnected) return; // 弹窗已切换，放弃挂载
+          if (D[t.demo]) {
+            try { D[t.demo](body); } catch (e) { body.innerHTML = '<div style="color:var(--color-fog-veil);font:13px var(--font-body)">演示加载失败</div>'; }
+            stripDemoCaseControls(body);
+            initDemoActiveStates(body);
+          } else {
+            body.innerHTML = '<div style="color:var(--color-fog-veil);font:13px var(--font-body)">该术语暂无交互演示</div>';
+          }
+        }).catch(() => {
+          if (body.isConnected) body.innerHTML = '<div style="color:var(--color-fog-veil);font:13px var(--font-body)">演示加载失败</div>';
+        });
+      }
     }
 
     els.overlay.classList.add('open');

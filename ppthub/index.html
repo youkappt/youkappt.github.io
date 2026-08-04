@@ -20,10 +20,8 @@
   <meta name="twitter:title" content="PPT 术语图鉴 · 优卡导航子页面" />
   <meta name="twitter:description" content="用大白话 + 交互演示，搞懂 PPT 黑话。" />
   <meta name="twitter:image" content="https://youkappt.com/og-cover.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
+  <!-- 字体自托管：仅拉丁字体走本地 woff2；中文回退到系统黑体（PingFang/微软雅黑），零外部请求 -->
+  <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .hub-banner {
@@ -144,7 +142,6 @@
   </div>
 
   <script src="data.js" defer></script>
-  <script src="demos.js" defer></script>
   <script src="terms-extra.js" defer></script>
   <script src="beforeafter.js" defer></script>
   <script src="app.js" defer></script>
