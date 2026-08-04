@@ -1,4 +1,4 @@
-<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 187 个工具 · 单 commit 同步 (Git Data API) -->
+<!-- 优卡导航 · AI×DESIGN×PPT 工具清单 · 共 217 个工具 · 单 commit 同步 (Git Data API) -->
 # 优卡导航 · 工具数据
 
 > 本文件是「优卡导航」网站的唯一数据源。修改后刷新页面（或重新部署）即自动更新，无需改代码。
@@ -22,6 +22,7 @@
 - [讯飞智文](https://zhiwen.xfyun.cn/) — 科大讯飞出品，文档/主题一键生成 PPT，自带 AI 配图与演讲稿。｜每日免费额度
 - [MindShow](https://www.mindshow.fun/) — 思维导图/文档/Markdown 一键转 PPT，导入即生成框架、改稿高效。｜每日免费额度
 - [AiPPT](https://www.aippt.cn/) — 国内免费 AI PPT 生成，输入主题 3 分钟出可编辑幻灯片。｜每日免费额度
+- [二狗PPT](https://www.2dogppt.com) — 专攻体制内/国央企汇报场景的 AI PPT 生成，Word/PDF 转 PPT，"去 AI 味"风格。｜每日免费额度
 - [可赞AI](https://kezign.cn) — 文字一键生成图表/脑图/卡片/PPT，中文办公可视化、导出 PPT/PDF。｜每日免费额度
 
 ### 模板商城 (STORE)
@@ -46,6 +47,9 @@
 - [Lovart](https://www.lovart.ai/) — 全球首个 AI 设计代理（design agent），一句话生成海报/插画/品牌物料，多风格一体化输出。｜每日免费额度
 - [即梦AI](https://jimeng.jianying.com/ai-tool/home) — 字节旗下，中文提示词友好，图像视频一体。｜每日免费额度
 - [SceneMint](https://image.sunls.de/) — 个人开发者用 AI 做的免登录文生图网站，界面清爽、中文提示词友好，输入文字即出图，免费使用、签到得生成额度。｜免费
+- [RunningHub](https://www.runninghub.com) — 云端 ComfyUI 平台，免本地 GPU，预装海量模型与节点，AI 生图工作流利器。｜每日免费额度
+- [Diffus](https://diffus.me) — 浏览器直接调用 7 万+ AI 模型，精细化控图，免本地高配显卡。｜每日免费额度
+- [Dzine](https://dzine.ai) — AI 设计工具（原 Stylar），设计导向的生图与编辑，偏编辑控图而非纯生成。｜每日免费额度
 
 ### 提示词 (PROMPT)
 - [AiWind](https://www.aiwind.org/) — AI 图像提示词库，海报/插画/摄影等风格 prompt 直接复制可用。｜免费
@@ -62,12 +66,16 @@
 - [海螺AI](https://hailuoai.video/) — MiniMax 出品，AI 文生视频与图像，运镜自然、上手快。｜每日免费额度
 - [Pollo AI](https://pollo.ai) — 聚合 Sora2/Kling 等顶尖模型的 AI 视频+图像创意工坊，一句话出片。｜免费
 - [DomoAI](https://domoai.app) — 文字/图/视频生成高质量动画与影片，风格迁移与口型同步一体。｜免费
+- [PixVerse](https://pixverse.ai) — AI 视频生成，风格化与特效能力突出，短视频创作友好。｜每日免费额度
+- [Muse Video](https://musevideo.ai) — Meta 出品 4K 电影级 AI 视频，原生音效同步，文/图转视频。｜付费
+- [TapVid](https://tapvid.ai) — 文本/PDF/链接一键转动态图形讲解视频，自动配音与字幕，做 PPT 演示视频利器。｜付费
 
 ## 视频剪辑 (EDIT)
 - [剪映专业版](https://jianying.com/) — 抖音系国民剪辑器，PPT 动态视频、片头片尾、字幕一键搞定。｜免费
 - [CapCut](https://capcut.com/) — 剪映海外版，模板丰富、跨端同步，短视频剪辑利器。｜免费
 - [腾讯智影](https://zhiying.tencent.com/) — 网页端智能剪辑，字幕/去水印/数字人一条龙。｜免费
 - [万兴喵影](https://miao.wondershare.cn/) — 国产易上手剪辑神器，功能强、模板多，PPT 动态视频好搭档。｜免费
+- [一起剪](https://www.yiqijian.com) — 全球首个免费 AI 视频创作智能体，输入文案/链接/想法自动完成视频策划/配音/字幕/剪辑全流程。｜免费
 
 ## 视频素材 (VIDEO-MAT)
 - [Pexels Video](https://www.pexels.com/videos/) — 免费可商用视频素材，做 PPT 片头/转场直接下载。｜免费
@@ -81,10 +89,13 @@
 - [淘声网](https://tosound.com/) — 聚合全球免费音效与音乐，翻页声/提示音等小音效好找。｜免费
 - [Jamendo](https://www.jamendo.com/) — 高质量免费可商用音乐，CC 授权、分类清晰。｜免费
 - [Bensound](https://www.bensound.com/) — 质感免费背景音乐，视频/PPT 配乐常用。｜免费
+- [Mureka](https://www.mureka.ai) — AI 音乐生成平台，文生音乐，支持多风格，PPT/视频配乐一键生成。｜每日免费额度
+- [AIVA](https://www.aiva.ai) — AI 音乐作曲，25+ 风格，老牌 AI 作曲工具，PPT/视频配乐与主题曲生成。｜每日免费额度
 
 ## 数字人 (AVATAR)
 - [HeyGen](https://heygen.com/) — 最火 AI 数字人视频，上传 PPT/文档即生成带真人讲解口播的视频。｜每月免费额度
 - [D-ID](https://www.d-id.com/) — 照片变会说话的数字人，适合做讲师口播与代言形象。｜付费
+- [Tavus](https://www.tavus.com) — AI 视频个性化与数字人口播，批量生成定制化讲解视频。｜付费
 
 ## Logo / 品牌 (LOGO)
 - [Looka](https://looka.com/) — AI 生成 Logo + 整套品牌视觉，做 PPT 封面品牌区很实用。｜每日免费额度
@@ -100,10 +111,12 @@
 - [文心一言](https://yiyan.baidu.com/) — 百度知识增强大模型，中文创作与多模态对话第一梯队。｜每日免费额度
 - [千问办公](https://qwenwork.cn/) — 阿里一站式 AI Agent 办公工具，一句话交付 PPT/Word/Excel/网页/代码，深度接入钉钉。｜每日免费额度
 - [WorkBuddy](https://workbuddy365.com.cn/) — 腾讯 AI 办公智能体，一句话下达任务，自主交付文档/表格/PPT，支持手机远程遥控。｜每日免费额度
+- [扣子 Coze](https://www.coze.cn) — 字节旗下全能 AI 平台，多 Agent 协作，支持 PPT/代码/视频/设计/数据分析，免费使用。｜免费
 
 ## AI 搜索 (SEARCH)
 - [秘塔 AI 搜索](https://metaso.cn/) — 国内无广告 AI 搜索，答案带引用，写稿查资料神器。｜每日免费额度
 - [Perplexity](https://www.perplexity.ai/) — 全球 AI 搜索标杆，研究型提问与溯源首选。｜每日免费额度
+- [Felo](https://felo.ai) — AI 搜索引擎，支持多语言、深度研究，日语/中文友好。｜免费
 
 ## 录屏演示 (RECORD)
 - [OBS Studio](https://obsproject.com/) — 免费开源录屏，录 PPT 讲解/教程首选，支持多场景切换。｜免费
@@ -116,6 +129,8 @@
 ## AI 写作 (WRITE)
 - [Kimi](https://kimi.moonshot.cn/) — 月之暗面出品，长文理解强，丢文档出 PPT 大纲神器。｜每日免费额度
 - [秘塔写作猫](https://xiezuocat.com/) — 中文 AI 写作与润色校对，PPT 文案精修常用。｜每日免费额度
+- [讯飞绘文](https://turbodesk.xfyun.cn) — 科大讯飞 AIGC 内容运营平台，AI 写作+配图+排版+多平台发布一站式。｜每日免费额度
+- [超级简历](https://wondercv.com) — AI 简历生成，一键优化排版与内容，求职面试必备。｜每日免费额度
 
 ## UI / 界面设计 (UI)
 - [Galileo AI](https://www.usegalileo.ai) — 文本生成可编辑 UI 界面，草图秒变设计稿。｜付费
@@ -128,6 +143,10 @@
 - [墨刀](https://modao.cc/) — 国内原型设计与协作工具，拖拽搭可交互原型。｜每日免费额度
 - [MasterGo 莫高](https://mastergo.com/) — 国内主流设计协作平台，团队实时协作与组件库一体。｜每日免费额度
 - [Pixso](https://pixso.cn/) — 国产 Figma 替代品，设计/原型/协作一站式，组件库丰富。｜每日免费额度
+- [Lovable](https://lovable.dev) — AI 对话式全栈 App/网站构建器，一键部署上线，Vibe coding 标杆。｜每日免费额度
+- [Bolt.new](https://bolt.new) — StackBlitz 出品 AI Web 应用构建器，浏览器内全栈开发，与 Lovable 互补。｜每日免费额度
+- [Builder.io](https://builder.io) — AI 可视化开发平台，连接设计与代码，Figma→代码一键转换。｜每日免费额度
+- [Cursor](https://cursor.com) — AI 原生 IDE，代码生成与编辑，开发者圈现象级工具。｜每日免费额度
 
 ## 在线设计 (DESIGN)
 - [Canva 可画](https://www.canva.com/) — 全球第一在线设计平台，拖拽做海报/PPT/社媒图，模板海量。｜每月免费额度
@@ -157,6 +176,7 @@
 ## 数据可视化 (DATA)
 - [镝数图表](https://dycharts.com/) — 免费在线图表制作，动态条形/地图等模板多，PPT 数据页直接出图。｜免费
 - [Flourish](https://flourish.studio/) — 国际数据可视化平台，动态图表与交互故事，嵌入幻灯片高级感强。｜免费
+- [Napkin AI](https://napkin.ai) — 粘贴文字自动生成流程图/思维导图/信息图表，支持导出 PPT/PDF/SVG，文本转可视化图表神器。｜每日免费额度
 
 ## 3D / 模型 (3D)
 - [Tripo](https://www.tripo3d.ai) — 图 / 文生 3D 模型，秒级出可编辑网格。｜每月免费额度
@@ -194,6 +214,7 @@
 ## 脑图 / 流程图 (MIND)
 - [ProcessOn](https://www.processon.com/) — 在线流程图/思维导图，结构梳理即转 PPT 框架。｜免费
 - [Xmind](https://xmind.cn/) — 经典脑图工具，搭 PPT 大纲与演讲结构好帮手。｜免费
+- [Miro](https://miro.com) — 全球主流协作白板，可视化协作/脑图/流程图/便利贴，团队协作首选。｜免费
 
 ## 文档协作 (DOC)
 - [飞书](https://www.feishu.cn/) — 字节系 AI 办公平台，云文档/多维表格/知识库协作写稿顺手。｜免费
@@ -201,6 +222,11 @@
 
 ## 网页设计 (WEB)
 - [VibeHub](https://vibe-hub.org/) — 前端 / vibe coding 术语图解库，用大白话+图示讲清组件、表单、CSS 布局、动效等概念，AI 辅助写前端查词必备。｜免费
+- [Readdy](https://readdy.ai) — AI 网站构建器，输入想法几分钟生成网站，快速原型与落地页利器。｜每日免费额度
+- [Wegic](https://wegic.ai) — 对话式 AI 建站，自然语言生成多语言网站，一键发布上线。｜每日免费额度
+- [Wix](https://www.wix.com) — 老牌网站构建器，AI 建站功能，模板丰富、上手快。｜免费
+- [Webflow](https://webflow.com) — 专业网站设计平台，可视化建站，设计师与开发者协作首选。｜免费
+
 ### 灵感参考 (REF)
 - [68Design 酷站](https://www.68design.net/cool/) — 国内老牌设计门户的网页灵感频道，精选酷站与优秀案例。｜免费
 - [Awwwards](https://www.awwwards.com/) — 国际网页设计奖项站，年度最佳交互与视觉案例集散地。｜免费
@@ -228,6 +254,7 @@
 ## 图标素材 (ICON)
 - [Magnific Icons](https://www.magnific.com/icons#from_element=mainmenu) — Magnific 出品的 AI 图标库，风格统一、检索下载便捷，配套图像增强能力。｜付费
 - [Iconfont](https://www.iconfont.cn/) — 阿里矢量图标库，国内设计师标配，海量图标与在线项目管理。｜免费
+- [IconGen](https://www.icongen.io) — AI 图标生成器，输入创意快速生成 12 种风格高质量图标，新用户免费体验。｜免费
 
 ## 视频下载 (DOWNLOAD)
 - [SnapDouyin](https://snapdouyin.app) — 抖音视频解析下载，支持无水印保存。｜免费
@@ -240,11 +267,14 @@
 - [FabConvert](https://fabconvert.com/cn/convert/ai#convert) — 免费在线文件格式转换器，AI / PDF / 图片等多格式互转。｜免费
 - [Turnscribe](https://turnscribe.com/) — 基于 Whisper 的免费 AI 音视频转写，粘贴链接或上传文件即出原文文字稿、无需注册。｜免费
 - [CloudConvert](https://cloudconvert.com/) — 在线格式转换全能选手，支持 200+ 格式互转、API 友好。｜每日免费额度
+- [Convertio](https://convertio.co) — 老牌在线文件转换器，支持音频/视频/图片/文档等多格式互转。｜每日免费额度
+- [LocalSend](https://localsend.org) — 局域网文件传输，开源免费，跨平台手机/电脑互传无需网络。｜免费
 
 ### PDF处理 (PDF)
 - [LlamaParse](https://www.llamaindex.ai/llamaparse) — LlamaIndex 出品的 GenAI 文档解析，精准抽取表格图表与版面结构为 LLM 可用格式。｜每月免费额度
 - [Smallpdf](https://smallpdf.com/) — PDF 万能工具箱，压缩/合并/转 Word 等常用操作一站式搞定。｜每日免费额度
 - [iLovePDF](https://www.ilovepdf.com/) — 同类全能 PDF 处理，免费额度友好、批量操作顺手。｜每日免费额度
+- [PDF Candy](https://pdfcandy.com) — PDF 工具套件，压缩/合并/转换/编辑等 40+ PDF 操作一站式。｜每日免费额度
 
 ### 图片处理 (IMAGE)
 - [LZL 工具箱·改 PNG 透明度](https://www.lzltool.cn/Toolkit/ChangePngOpacity) — 在线修改 PNG 图片透明度，一键去底/调透明，轻量免安装。｜免费
@@ -258,6 +288,7 @@
 - [抠图兔](https://www.koukoutu.com/removebgtool/all) — 国产 AI 抠图工具，批量去背景、国内访问快。｜每日免费额度
 - [椒图AI](https://www.jiaotuai.cn) — 中文 AI 修图智能体，一句话完成人像美化/背景替换/商业海报，免复杂提示词。｜每日免费额度
 - [Vectorizer.AI](https://vectorizer.ai) — 像素图一键转无限缩放 SVG 矢量，Logo/插画矢量化神器。｜免费
+- [Evoto](https://www.evoto.ai) — AI 专业修图，批量人像/商拍后期，皮肤/体型/背景智能调整。｜每日免费额度
 
 ### 翻译 (TRANSLATE)
 - [DeepL](https://www.deepl.com/) — 译文最自然的翻译引擎，PPT 英文素材翻译标配。｜每日免费额度

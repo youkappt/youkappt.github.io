@@ -66,20 +66,26 @@
       const b = document.createElement('button');
       b.className = 'cat-pill' + (sc === activeScenario ? ' active' : '');
       b.textContent = sc;
-      b.onclick = () => { activeScenario = sc; buildNav(); render(); };
+      b.onclick = () => {
+        activeScenario = sc;
+        els.nav.querySelectorAll('.cat-pill').forEach(x => x.classList.toggle('active', x.textContent === sc));
+        applyFilter();
+      };
       els.nav.appendChild(b);
     });
   }
 
   /* ---- 过滤 ---- */
+  function hayOf(t) {
+    return [t.name, t.summary, t.scenario, (t.steps || []).map(s => s.text).join(' ')].join(' ').toLowerCase();
+  }
   function filtered() {
     const q = query.trim().toLowerCase();
     return techs.filter(t => {
       const scOk = activeScenario === '全部' || t.scenario === activeScenario;
       if (!scOk) return false;
       if (!q) return true;
-      const hay = [t.name, t.summary, t.scenario, (t.steps || []).map(s => s.text).join(' ')].join(' ').toLowerCase();
-      return hay.includes(q);
+      return hayOf(t).includes(q);
     });
   }
 
@@ -87,6 +93,10 @@
   function card(t) {
     const c = document.createElement('div');
     c.className = 'term-card';
+    c.dataset.id = t.id;
+    c.dataset.cat = t.scenario;
+    c.dataset.level = t.level;
+    c.dataset.kw = hayOf(t);
     c.innerHTML = `
       <div class="term-card-head"><span class="term-name">${esc(t.name)}</span></div>
       <div class="tech-thumbs">
@@ -116,32 +126,59 @@
     return h;
   }
 
-  function render() {
-    const list = filtered();
+  /* ---- 一次性构建全部卡片（筛选时只切 class，不重建 DOM）---- */
+  const allCards = [];
+  let beginnerHeader = null, advancedHeader = null;
+  function build() {
     els.grid.innerHTML = '';
-    const navCount = document.getElementById('searchCount');
-    if (navCount) navCount.textContent = (query.trim() && list.length) ? `${list.length} 个结果` : '';
-    if (!list.length) {
-      const e = document.createElement('div');
-      e.className = 'empty-state';
-      e.textContent = '没有匹配的技巧，换个关键词或分类试试。';
-      els.grid.appendChild(e);
-      els.count.textContent = '共 0 个技巧';
-      return;
-    }
-
-    // 拆成 入门 / 进阶 两组，分组头与 ppthub 一致
-    const beginner = list.filter(t => t.level === '入门');
-    const advanced = list.filter(t => t.level !== '入门');
+    allCards.length = 0;
+    beginnerHeader = advancedHeader = null;
+    const beginner = techs.filter(t => t.level === '入门');
+    const advanced = techs.filter(t => t.level !== '入门');
     if (beginner.length) {
-      els.grid.appendChild(sectionHeader(LEVEL_GROUPS[0].label, beginner.length));
-      beginner.forEach(t => els.grid.appendChild(card(t)));
+      beginnerHeader = sectionHeader(LEVEL_GROUPS[0].label, beginner.length);
+      els.grid.appendChild(beginnerHeader);
+      beginner.forEach(t => { const c = card(t); allCards.push(c); els.grid.appendChild(c); });
     }
     if (advanced.length) {
-      els.grid.appendChild(sectionHeader(LEVEL_GROUPS[1].label, advanced.length));
-      advanced.forEach(t => els.grid.appendChild(card(t)));
+      advancedHeader = sectionHeader(LEVEL_GROUPS[1].label, advanced.length);
+      els.grid.appendChild(advancedHeader);
+      advanced.forEach(t => { const c = card(t); allCards.push(c); els.grid.appendChild(c); });
     }
-    els.count.textContent = `共 ${list.length} 个技巧`;
+  }
+
+  /* ---- 筛选：仅切换 .is-hidden，零 DOM 重建 ---- */
+  function applyFilter() {
+    const q = query.trim().toLowerCase();
+    let visible = 0, bVis = 0, aVis = 0;
+    allCards.forEach(c => {
+      const show = (activeScenario === '全部' || c.dataset.cat === activeScenario) && (!q || c.dataset.kw.includes(q));
+      c.classList.toggle('is-hidden', !show);
+      if (show) { visible++; if (c.dataset.level === '入门') bVis++; else aVis++; }
+    });
+    if (beginnerHeader) beginnerHeader.classList.toggle('is-hidden', bVis === 0);
+    if (advancedHeader) advancedHeader.classList.toggle('is-hidden', aVis === 0);
+    const navCount = document.getElementById('searchCount');
+    if (navCount) navCount.textContent = (q && visible) ? `${visible} 个结果` : '';
+    let emptyEl = els.grid.querySelector('.empty-state');
+    if (visible === 0) {
+      if (!emptyEl) {
+        emptyEl = document.createElement('div');
+        emptyEl.className = 'empty-state';
+        emptyEl.textContent = '没有匹配的技巧，换个关键词或分类试试。';
+        els.grid.appendChild(emptyEl);
+      }
+      emptyEl.classList.remove('is-hidden');
+    } else if (emptyEl) {
+      emptyEl.classList.add('is-hidden');
+    }
+    els.count.textContent = visible ? `共 ${visible} 个技巧` : '共 0 个技巧';
+  }
+
+  let fTick = 0;
+  function scheduleFilter() {
+    const my = ++fTick;
+    setTimeout(() => { if (my === fTick) applyFilter(); }, 120);
   }
 
   /* ---- 顺序（用于弹窗左右切换） ---- */
@@ -306,9 +343,9 @@
   if (modalNext) modalNext.onclick = () => goAdjacent(1);
 
   /* ---- 搜索 ---- */
-  els.search.addEventListener('input', (e) => { query = e.target.value; render(); });
+  els.search.addEventListener('input', (e) => { query = e.target.value; scheduleFilter(); });
   const searchForm = document.getElementById('searchForm');
-  if (searchForm) searchForm.addEventListener('submit', (e) => { e.preventDefault(); query = els.search.value; render(); });
+  if (searchForm) searchForm.addEventListener('submit', (e) => { e.preventDefault(); query = els.search.value; applyFilter(); });
 
   /* ---- util ---- */
   function esc(s) {
@@ -319,5 +356,6 @@
 
   /* ---- init ---- */
   buildNav();
-  render();
+  build();
+  applyFilter();
 })();

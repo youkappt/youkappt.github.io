@@ -469,6 +469,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing-24);
+  contain: layout style;
 }
 
 /* Level section headers (入门 / 进阶 分组，与 PPT 术语图鉴一致) */
@@ -518,6 +519,8 @@ body {
   min-height: 150px;
   position: relative;
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
 }
 .term-card::after {
   content: "";
@@ -535,6 +538,17 @@ body {
   box-shadow: var(--shadow-card), var(--shadow-glow);
 }
 .term-card:hover::after { opacity: 1; }
+/* 流畅度：搜索/分类筛选只切 class，不重建 DOM */
+.term-card.is-hidden,
+.level-section-header.is-hidden,
+.empty-state.is-hidden { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .term-card, .cat-pill, .demo-btn, .f-chip, .modal-card, .modal-overlay {
+    transition: none !important;
+    animation: none !important;
+  }
+}
 .term-card-head {
   display: flex;
   align-items: baseline;

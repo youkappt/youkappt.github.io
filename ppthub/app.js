@@ -42,20 +42,26 @@
       const b = document.createElement('button');
       b.className = 'cat-pill' + (cat === activeCat ? ' active' : '');
       b.textContent = cat;
-      b.onclick = () => { activeCat = cat; buildNav(); render(); };
+      b.onclick = () => {
+        activeCat = cat;
+        els.nav.querySelectorAll('.cat-pill').forEach(x => x.classList.toggle('active', x.textContent === cat));
+        applyFilter();
+      };
       els.nav.appendChild(b);
     });
   }
 
   /* ---- filter ---- */
+  function hayOf(t) {
+    return [t.name, t.alias, t.summary, t.detail, t.scenario, (t.related || []).join(' ')].join(' ').toLowerCase();
+  }
   function filtered() {
     const q = query.trim().toLowerCase();
     return terms.filter(t => {
       const catOk = activeCat === '全部' || t.category === activeCat;
       if (!catOk) return false;
       if (!q) return true;
-      const hay = [t.name, t.alias, t.summary, t.detail, t.scenario, (t.related || []).join(' ')].join(' ').toLowerCase();
-      return hay.includes(q);
+      return hayOf(t).includes(q);
     });
   }
 
@@ -65,33 +71,59 @@
     { key: '进阶', label: '🚀 进阶提升' },
   ];
 
-  function render() {
-    const list = filtered();
+  /* ---- 一次性构建全部卡片（筛选时只切 class，不重建 DOM）---- */
+  const allCards = [];
+  let beginnerHeader = null, advancedHeader = null;
+  function build() {
     els.grid.innerHTML = '';
-    const navCount = document.getElementById('searchCount');
-    if (navCount) navCount.textContent = (query.trim() && list.length) ? `${list.length} 个结果` : '';
-    if (!list.length) {
-      const e = document.createElement('div');
-      e.className = 'empty-state';
-      e.textContent = '没有匹配的术语，换个关键词或分类试试。';
-      els.grid.appendChild(e);
-      els.count.textContent = '共 0 个术语';
-      return;
-    }
-
-    // split into level groups: 入门 | 进阶
-    const beginner = list.filter(t => t.level === '入门');
-    const advanced = list.filter(t => t.level !== '入门');
-
+    allCards.length = 0;
+    beginnerHeader = advancedHeader = null;
+    const beginner = terms.filter(t => t.level === '入门');
+    const advanced = terms.filter(t => t.level !== '入门');
     if (beginner.length) {
-      els.grid.appendChild(sectionHeader(LEVEL_GROUPS[0].label, beginner.length));
-      beginner.forEach(t => els.grid.appendChild(card(t)));
+      beginnerHeader = sectionHeader(LEVEL_GROUPS[0].label, beginner.length);
+      els.grid.appendChild(beginnerHeader);
+      beginner.forEach(t => { const c = card(t); allCards.push(c); els.grid.appendChild(c); });
     }
     if (advanced.length) {
-      els.grid.appendChild(sectionHeader(LEVEL_GROUPS[1].label, advanced.length));
-      advanced.forEach(t => els.grid.appendChild(card(t)));
+      advancedHeader = sectionHeader(LEVEL_GROUPS[1].label, advanced.length);
+      els.grid.appendChild(advancedHeader);
+      advanced.forEach(t => { const c = card(t); allCards.push(c); els.grid.appendChild(c); });
     }
-    els.count.textContent = `共 ${list.length} 个术语`;
+  }
+
+  /* ---- 筛选：仅切换 .is-hidden，零 DOM 重建 ---- */
+  function applyFilter() {
+    const q = query.trim().toLowerCase();
+    let visible = 0, bVis = 0, aVis = 0;
+    allCards.forEach(c => {
+      const show = (activeCat === '全部' || c.dataset.cat === activeCat) && (!q || c.dataset.kw.includes(q));
+      c.classList.toggle('is-hidden', !show);
+      if (show) { visible++; if (c.dataset.level === '入门') bVis++; else aVis++; }
+    });
+    if (beginnerHeader) beginnerHeader.classList.toggle('is-hidden', bVis === 0);
+    if (advancedHeader) advancedHeader.classList.toggle('is-hidden', aVis === 0);
+    const navCount = document.getElementById('searchCount');
+    if (navCount) navCount.textContent = (q && visible) ? `${visible} 个结果` : '';
+    let emptyEl = els.grid.querySelector('.empty-state');
+    if (visible === 0) {
+      if (!emptyEl) {
+        emptyEl = document.createElement('div');
+        emptyEl.className = 'empty-state';
+        emptyEl.textContent = '没有匹配的术语，换个关键词或分类试试。';
+        els.grid.appendChild(emptyEl);
+      }
+      emptyEl.classList.remove('is-hidden');
+    } else if (emptyEl) {
+      emptyEl.classList.add('is-hidden');
+    }
+    els.count.textContent = visible ? `共 ${visible} 个术语` : '共 0 个术语';
+  }
+
+  let fTick = 0;
+  function scheduleFilter() {
+    const my = ++fTick;
+    setTimeout(() => { if (my === fTick) applyFilter(); }, 120);
   }
 
   function sectionHeader(label, count) {
@@ -104,6 +136,10 @@
   function card(t) {
     const c = document.createElement('div');
     c.className = 'term-card';
+    c.dataset.id = t.id;
+    c.dataset.cat = t.category;
+    c.dataset.level = t.level;
+    c.dataset.kw = hayOf(t);
     c.innerHTML = `
       <div class="term-card-head">
         <span class="term-name">${esc(t.name)}</span>
@@ -320,13 +356,13 @@
   if (modalNext) modalNext.onclick = () => goAdjacent(1);
 
   /* ---- search ---- */
-  els.search.addEventListener('input', (e) => { query = e.target.value; render(); });
+  els.search.addEventListener('input', (e) => { query = e.target.value; scheduleFilter(); });
   const searchForm = document.getElementById('searchForm');
   if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
       query = els.search.value;
-      render();
+      applyFilter();
     });
   }
 
@@ -372,7 +408,8 @@
 
   /* ---- init ---- */
   buildNav();
-  render();
+  build();
+  applyFilter();
 
   /* ---- 深链：?term=<id> 打开对应术语 Modal（供 PPT 制作技巧页互链跳转） ---- */
   window.openTermById = openModal;

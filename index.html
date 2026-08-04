@@ -220,13 +220,13 @@
   .section-head p { font-size: 16px; color: var(--color-forest-ink); opacity: 0.8; max-width: 640px; margin: 0 auto; }
   .result-count { font-family: var(--font-mono); font-size: 13px; color: var(--color-pencil-gray); margin-top: 14px; letter-spacing: 0.04em; }
 
-  .category { margin-bottom: 64px; content-visibility: auto; contain-intrinsic-size: auto 640px; scroll-margin-top: 90px; }
+  .category { margin-bottom: 64px; content-visibility: auto; contain-intrinsic-size: auto 900px; scroll-margin-top: 90px; }
   .category-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--color-pencil-gray); }
   .category-head .cat-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--color-highlighter-yellow); display: grid; place-items: center; color: var(--color-forest-ink); flex-shrink: 0; border: 1px solid var(--color-forest-ink); }
   .category-head h3 { font-family: var(--font-display); font-weight: 800; font-size: 24px; color: var(--color-forest-ink); letter-spacing: 0.02em; }
   .category-head .cat-en { font-family: var(--font-mono); font-size: 12px; color: var(--color-pencil-gray); letter-spacing: 0.08em; margin-left: auto; text-transform: uppercase; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; contain: layout style; }
   .subcategory { margin-top: 28px; }
   .subcategory-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
   .subcategory-head h4 { font-family: var(--font-body); font-weight: 600; font-size: 16px; color: var(--color-forest-ink); }
@@ -234,6 +234,7 @@
   .subcategory-head .cat-en { font-family: var(--font-mono); font-size: 11px; color: var(--color-pencil-gray); letter-spacing: 0.08em; }
   .tool-card { background: #fff; border: 1px solid var(--color-pencil-gray); border-radius: var(--radius-cards); padding: var(--card-padding); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden; text-decoration: none; }
   .tool-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-subtle-2); border-color: var(--color-forest-ink); }
+  .tool-card.is-hidden, .category.is-hidden, .subcategory.is-hidden, .sn-link.is-hidden { display: none !important; }
   .tool-top { display: flex; align-items: center; gap: 12px; }
   .tool-logo { width: 40px; height: 40px; border-radius: 10px; object-fit: contain; background: #fff; border: 1px solid var(--color-pencil-gray); flex-shrink: 0; padding: 4px; }
   .tool-logo-fallback { display: grid; place-items: center; color: var(--color-cream-paper); font-family: var(--font-display); font-weight: 800; font-size: 16px; }
@@ -260,6 +261,10 @@
   .cn-link { font-family: var(--font-display); font-weight: 600; color: var(--color-forest-ink); font-size: 15px; text-decoration: none; transition: color .2s; }
   .cn-link:hover { color: var(--color-terracotta); }
   .cn-tools { font-size: 12px; color: var(--color-forest-ink); opacity: 0.6; line-height: 1.55; }
+  @media (hover: hover) and (pointer: fine) {
+    .cn-tools { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .2s ease, opacity .2s ease; }
+    .cn-item:hover .cn-tools, .cn-item:focus-within .cn-tools { max-height: 320px; opacity: 0.6; }
+  }
 
   /* Layout: 左侧 sticky 分类导航 + 右侧主内容 */
   .layout-grid {
@@ -421,6 +426,17 @@
     white-space: nowrap;
   }
   .search-count b { color: var(--color-terracotta); font-weight: 600; }
+
+  /* 尊重"减少动态效果"系统偏好：关闭平滑滚动与过渡动画，避免晕动不适 */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -700,11 +716,13 @@
   }
 
   // ---------- Render ----------
+  let CARD_KEYS = [];   // 与卡片渲染顺序一致的搜索键，render 后挂到 DOM（避免 innerHTML 序列化转义问题）
   const catsRoot = document.getElementById("categories");
   const notice = document.getElementById("notice");
   const loading = document.getElementById("loading");
 
   function toolCardHtml(t) {
+    CARD_KEYS.push((t.name + ' ' + t.desc + ' ' + t.url).toLowerCase());
     return '<a class="tool-card" href="' + escapeHtml(t.url) + '" target="_blank" rel="noopener">'
       + '<div class="tool-top">'
       + logoHtml(t)
@@ -714,9 +732,11 @@
       + '<div class="tool-desc">' + escapeHtml(t.desc) + '</div>'
       + '</a>';
   }
-  function render(list) {
+  async function render(list) {
+    CARD_KEYS = [];
     catsRoot.innerHTML = "";
     let total = 0;
+    const sections = [];
     list.forEach(cat => {
       const subs = (cat.subs || []).filter(s => s.tools.length);
       const count = cat.tools.length + subs.reduce((a, s) => a + s.tools.length, 0);
@@ -743,8 +763,17 @@
           + '</div>';
       });
       sec.innerHTML = html;
-      catsRoot.appendChild(sec);
+      sections.push(sec);
     });
+    // 分批 append（每帧 3 个），避免一次性同步长任务阻塞主线程，提升慢设备 INP
+    const CHUNK = 3;
+    for (let i = 0; i < sections.length; i += CHUNK) {
+      const end = Math.min(i + CHUNK, sections.length);
+      for (let j = i; j < end; j++) catsRoot.appendChild(sections[j]);
+      if (end < sections.length) await new Promise(r => requestAnimationFrame(r));
+    }
+    const _cards = catsRoot.querySelectorAll('.tool-card');
+    _cards.forEach(function (el, i) { el.dataset.k = CARD_KEYS[i] || ''; });
     document.getElementById("resultCount").textContent = list === ALL
       ? `共收录 ${total} 款工具`
       : `匹配到 ${total} 款工具`;
@@ -754,39 +783,74 @@
   // ---------- Load (single source of truth: tools.md) ----------
   let ALL = [];
   let LOGO_MAP = {};
-  async function load() {
+  const TOOLS_CACHE_KEY = 'youka_nav_tools_md_v1';
+  function readToolsCache() {
     try {
-      loading.style.display = 'block';
-      const res = await fetch('./tools.md');
+      const raw = localStorage.getItem(TOOLS_CACHE_KEY);
+      if (!raw) return null;
+      const obj = JSON.parse(raw);
+      return (obj && typeof obj.text === 'string') ? obj.text : null;
+    } catch (e) { return null; }
+  }
+  function writeToolsCache(text) {
+    try { localStorage.setItem(TOOLS_CACHE_KEY, JSON.stringify({ text: text, t: Date.now() })); } catch (e) {}
+  }
+  function loadLogoMap() {
+    return fetch('./logos/manifest.json').then(r => { if (r.ok) return r.json(); throw new Error('bad'); })
+      .then(j => { LOGO_MAP = j; }).catch(() => { LOGO_MAP = {}; });
+  }
+  async function applyData() {
+    await render(ALL);
+    injectSEOMeta(ALL);
+    injectItemList(ALL);
+    fillCatNav(ALL);
+    fillSideNav(ALL);
+    // 应用 URL ?q= 预搜索（让 Schema.org SearchAction / 分享链接真实可用）
+    try {
+      const q = new URLSearchParams(location.search).get('q');
+      if (q) { input.value = q; filter(q); }
+    } catch (e) {}
+  }
+  async function load() {
+    const cached = readToolsCache();
+    let rendered = false;
+    if (cached) {
+      try {
+        ALL = parseMarkdown(cached);
+        if (ALL.length) {
+          await loadLogoMap();                 // 始终加载本地 logo 清单（静态、体积小）
+          notice.style.display = 'none';
+          loading.style.display = 'none';
+          await applyData();                   // 有缓存先秒开
+          rendered = true;
+        }
+      } catch (e) { ALL = []; }
+    }
+    if (!rendered) { loading.style.display = 'block'; notice.style.display = 'none'; }
+    // 后台重新校验（stale-while-revalidate）：缓存秒开后静默拉取最新
+    try {
+      const res = await fetch('./tools.md', { cache: 'no-cache' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const text = await res.text();
+      if (text === cached) return;             // 未变化，缓存已是最新
+      await loadLogoMap();
+      writeToolsCache(text);
       ALL = parseMarkdown(text);
       if (!ALL.length) throw new Error('empty');
-      // 加载本地 logo 清单（best-effort，缺失则全部走色块降级）
-      try {
-        const mres = await fetch('./logos/manifest.json');
-        if (mres.ok) LOGO_MAP = await mres.json();
-      } catch (e) { LOGO_MAP = {}; }
       notice.style.display = 'none';
       loading.style.display = 'none';
-      render(ALL);
-      injectSEOMeta(ALL);
-      injectItemList(ALL);
-      fillCatNav(ALL);
-      fillSideNav(ALL);
-      // 应用 URL ?q= 预搜索（让 Schema.org SearchAction / 分享链接真实可用）
-      try {
-        const q = new URLSearchParams(location.search).get('q');
-        if (q) { input.value = q; filter(q); }
-      } catch (e) {}
+      await applyData();
     } catch (err) {
-      loading.style.display = 'none';
-      notice.style.display = 'block';
-      notice.innerHTML = '⚠️ 未能加载 <code>tools.md</code>（' + escapeHtml(String(err.message || err)) + '）。<br>' +
-        '浏览器在 <code>file://</code> 直接打开时会拦截本地文件读取。请用本地服务器预览：<br>' +
-        '在本目录运行 <code>python3 -m http.server 8000</code>，再访问 <code>http://localhost:8000</code>；<br>' +
-        '或把整个文件夹部署到任意静态托管（GitHub Pages / Vercel / 腾讯云等），即可自动读取并更新。';
-      catsRoot.innerHTML = '';
+      if (!rendered) {
+        loading.style.display = 'none';
+        notice.style.display = 'block';
+        notice.innerHTML = '⚠️ 未能加载 <code>tools.md</code>（' + escapeHtml(String(err.message || err)) + '）。<br>' +
+          '浏览器在 <code>file://</code> 直接打开时会拦截本地文件读取。请用本地服务器预览：<br>' +
+          '在本目录运行 <code>python3 -m http.server 8000</code>，再访问 <code>http://localhost:8000</code>；<br>' +
+          '或把整个文件夹部署到任意静态托管（GitHub Pages / Vercel / 腾讯云等），即可自动读取并更新。';
+        catsRoot.innerHTML = '';
+      }
+      // 若已用缓存渲染，则静默保留缓存内容（离线也可浏览）
     }
   }
 
@@ -876,10 +940,10 @@
         const selRect = sel.getBoundingClientRect();
         if (scroller.scrollWidth > scroller.clientWidth + 1) {   // 移动端：横向导航条 → 横向居中
           const delta = (selRect.left + selRect.width / 2) - (navRect.left + navRect.width / 2);
-          scroller.scrollBy({ left: delta, behavior: 'smooth' });
+          scroller.scrollBy({ left: delta, behavior: 'auto' });
         } else if (scroller.scrollHeight > scroller.clientHeight + 1) {  // 桌面端：竖直侧栏 → 纵向居中（仅滚容器）
           const delta = (selRect.top + selRect.height / 2) - (navRect.top + navRect.height / 2);
-          scroller.scrollBy({ top: delta, behavior: 'smooth' });
+          scroller.scrollBy({ top: delta, behavior: 'auto' });
         }
       } catch (e) {}
     }
@@ -995,25 +1059,61 @@
   }
   function filter(q) {
     q = q.trim();
-    if (!q) { render(ALL); updateCount(0, ''); return; }
+    if (!q) {
+      render(ALL).then(function () {
+        const _nav = document.getElementById('sideNav');
+        if (_nav) _nav.querySelectorAll('.sn-link.is-hidden').forEach(a => a.classList.remove('is-hidden'));
+        updateCount(0, '');
+        refreshSideSections();
+      });
+      return;
+    }
     const qs = tokens(norm(q));
-    const match = (t, cat, subName) => {
-      const hay = (t.name + ' ' + t.desc + ' ' + cat.name + ' ' + cat.en + ' ' + (subName || '') + ' ' + t.url).toLowerCase();
-      return hit(hay, qs);
-    };
-    const out = ALL.map(cat => {
-      const tools = cat.tools.filter(t => match(t, cat, ''));
-      const subs = (cat.subs || []).map(s => ({ ...s, tools: s.tools.filter(t => match(t, cat, s.name + ' ' + s.en)) }))
-        .filter(s => s.tools.length);
-      return { ...cat, tools, subs };
-    }).filter(cat => cat.tools.length || cat.subs.length);
-    render(out);
-    fillSideNav(out);
-    const n = out.reduce((a, c) => a + c.tools.length + c.subs.reduce((x, s) => x + s.tools.length, 0), 0);
+    let n = 0;
+    catsRoot.querySelectorAll('.tool-card').forEach(function (el) {
+      const hit = !qs.length || qs.every(function (tk) { return (el.dataset.k || '').indexOf(tk) !== -1; });
+      el.classList.toggle('is-hidden', !hit);
+      if (hit) n++;
+    });
+    catsRoot.querySelectorAll('.category, .subcategory').forEach(function (sec) {
+      const vis = sec.querySelectorAll('.tool-card:not(.is-hidden)').length;
+      sec.classList.toggle('is-hidden', vis === 0);
+    });
+    const nav = document.getElementById('sideNav');
+    if (nav) {
+      nav.querySelectorAll('.sn-link').forEach(function (a) {
+        let hide = false;
+        const href = a.getAttribute('href') || '';
+        if (href.indexOf('#cat-') === 0 || href.indexOf('#subcat-') === 0) {
+          const target = document.querySelector(href);
+          hide = !target || target.classList.contains('is-hidden');
+        }
+        a.classList.toggle('is-hidden', hide);
+      });
+    }
     updateCount(n, q);
+    refreshSideSections();
   }
   form.addEventListener("submit", e => { e.preventDefault(); filter(input.value); });
-  input.addEventListener("input", () => filter(input.value));
+  let fTick;
+  input.addEventListener("input", () => { clearTimeout(fTick); fTick = setTimeout(() => filter(input.value), 120); });
+
+  // 显式滚动到目标区块：用 getBoundingClientRect 计算 document 坐标，
+  // 规避 content-visibility 占位高度导致的 scrollIntoView 跳错位；并做一帧二次校正。
+  function smoothScrollToEl(el) {
+    if (!el) return;
+    const dyTop = 90;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const go = () => {
+      const top = el.getBoundingClientRect().top + window.scrollY - dyTop;
+      window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
+    };
+    go();
+    if (!reduce) requestAnimationFrame(function () {
+      const top = el.getBoundingClientRect().top + window.scrollY - dyTop;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  }
 
   // ---------- Hero cards scroll ----------
   document.getElementById("heroCards").addEventListener("click", e => {
@@ -1022,7 +1122,7 @@
     if (card.classList.contains("is-static")) return;  // 个人业务展示卡，不触发跳转
     const idx = parseInt(card.dataset.index, 10);
     const sec = catsRoot.children[idx];
-    if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    smoothScrollToEl(sec);
   });
 
   load();
