@@ -42,9 +42,29 @@ const BEFORE_AFTER = {
     caption: '同一页内容：小标题「核心结论」+ 大字「转化率提升 23%」+ 说明「本季度重点优化落地页」。改前所有字都一样大、一样灰，看不出重点；改后把「23%」放大、改成醒目的橙色，核心结论一眼就能抓住。'
   },
   'card-layout': {
-    before: 'images/beforeafter/card-layout-before.png',
+    before: 'images/beforeafter/card-layout-before.jpg',
     after: 'images/beforeafter/card-layout-after.png',
-    caption: '同一页标题「三大产品线」+ 云办公、云会议、云存储三个模块。改前三个模块散在页面上，图标形状、颜色、大小都不统一，看着乱；改后把每个模块装进一样的圆角卡片，图标用统一的线框风格，三列整整齐齐，信息分组清楚。'
+    caption: '同一页内容：标题「服务优势」+ 响应快、定制强、数据稳、支持全四项。改前四项纯文字段落堆在一起，没有卡片分隔，看着累；改后每项装进圆角卡片，配上图标和一句说明，四列整整齐齐，扫一眼就能抓到重点。'
+  },
+  'font-pairing': {
+    before: 'images/beforeafter/font-pairing-before.png',
+    after: 'images/beforeafter/font-pairing-after.jpg',
+    caption: '同一页内容：标题「年度设计趋势」+ 极简主义、动态图形、品牌色系统三段正文。改前标题和正文都用同一种宋体，标题没特点、正文像看书，整体老气；改后标题用粗黑体，正文用常规无衬线体，中英文字体搭配，像杂志一样有设计感。'
+  },
+  monochrome: {
+    before: 'images/beforeafter/monochrome-before.jpg',
+    after: 'images/beforeafter/monochrome-after.png',
+    caption: '同一页内容：标题「销售漏斗分析」+ 访问 10000 / 注册 3500 / 付费 800 / 复购 240。改前四个数据卡片用红、黄、蓝、绿四种不搭调的颜色，像幼儿园展板；改后全部用同一蓝色的不同深浅，色调统一，数字层级清楚，看起来高级专业。'
+  },
+  margin: {
+    before: 'images/beforeafter/margin-before.jpg',
+    after: 'images/beforeafter/margin-after.png',
+    caption: '同一页内容：标题「市场洞察」+ 目标用户年轻化、移动端占比超 70%、内容种草成决策关键。改前文字紧紧贴到页面四周边缘，像要溢出去，版面拥挤；改后四周留出充足页边距，内容被约束在中间，呼吸感好、稳重专业。'
+  },
+  'rule-of-thirds': {
+    before: 'images/beforeafter/rule-of-thirds-before.png',
+    after: 'images/beforeafter/rule-of-thirds-after.jpg',
+    caption: '同一页内容：标题「旅行企划」+ 风景照片 + 口号「出发，就现在」。改前标题、照片、口号全部挤在页面正中央，上下空着中间挤，呆板没张力；改后照片放到左侧约三分之二，标题和口号分别放在右侧上下三分位，构图平衡、有呼吸感。'
   },
   repetition: {
     before: 'images/beforeafter/repetition-before.jpg',
