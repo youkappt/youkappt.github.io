@@ -7,7 +7,7 @@
 PPT 术语图鉴（ppthub）：纯静态单页工具站，182 个 PPT 术语，每个详情含「动手试试」真实案例 demo。是 youka-nav 的子页，挂在 `youkappt.com/ppthub/`。
 
 ## 怎么跑
-- 本地预览（在仓库根 `youka-nav` 起服务）：`python3 -m http.server 8042`，访问 `http://localhost:8042/ppthub/`。深链：`/ppthub/?term=<id>`。
+- 本地预览（在仓库根 `youka-nav` 起服务）：`python3 -m http.server 8000`，访问 `http://localhost:8000/ppthub/`。深链：`/ppthub/?term=<id>`。
 - 改完必跑三道门禁（见 `docs/自查规范.md` §1）：
   1. `node --check data.js demos.js terms-extra.js app.js`
   2. `node tests/verify_ppthub.js`（12 项）
