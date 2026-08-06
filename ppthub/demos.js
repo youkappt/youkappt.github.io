@@ -6709,36 +6709,6 @@ const DEMOS = {
 
   },
 
-  'excel-link'(c) {
-    let ci = Math.floor(Math.random() * CASES.length);
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row demo-top">
-          <span class="demo-label" id="elName">案例加载中…</span>
-          <button class="demo-btn" data-m="el">↻ 换一个真实案例</button>
-        </div>
-        <div class="mini-slide" id="elStage"></div>
-        <div class="demo-row"><button class="demo-btn" data-m="linked">已链接</button><button class="demo-btn" data-m="broken">已断开</button></div>
-      </div>`;
-    const stage = c.querySelector('#elStage');
-    const nameEl = c.querySelector('#elName');
-    function fill() { nameEl.textContent = '案例：' + CASES[ci].title; }
-    function render(m) {
-    const cs=CASES[ci];
-    const items=cs.points.slice(0,4).map(function(p,i){return {v:[0.7,0.45,0.9,0.6][i%4]};});
-    let s='<svg viewBox="0 0 220 100" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%"><line x1="15" y1="85" x2="210" y2="85" stroke="#56657f"/>';
-    const n=items.length, slot=190/n;
-    items.forEach(function(it,i){ const h=12+it.v*68; const x=20+i*slot+4; s+='<rect x="'+x+'" y="'+(85-h)+'" width="'+(slot-10)+'" height="'+h+'" rx="2" fill="#3a8a8a"/>'; });
-    s+='</svg>';
-    const pill = m==='linked' ? '<span style="font:10px Inter,sans-serif;color:#9fe3c5;background:rgba(159,227,197,.15);padding:2px 8px;border-radius:10px">● 已链接 case.xlsx</span>' : '<span style="font:10px Inter,sans-serif;color:#f0a59a;background:rgba(240,165,154,.15);padding:2px 8px;border-radius:10px">● 链接已断开</span>';
-    stage.innerHTML='<div style="height:100%;padding:12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font:700 12px var(--font-display);color:#3a8a8a">'+cs.title+'</span>'+pill+'</div><div style="flex:1">'+s+'</div><div style="font:11px Inter,sans-serif;color:#7e8aa0;text-align:center">'+(m==='linked'?'数据随 Excel 自动更新':'需手动刷新数据')+'</div></div>';
-
-    }
-    fill(); render('linked');
-    c.querySelectorAll('[data-m]:not([data-m="el"])').forEach(function(b) { b.onclick = function() { c.querySelectorAll('[data-m]:not([data-m="el"])').forEach(function(x) { x.classList.remove('active'); }); b.classList.add('active'); render(b.dataset.m); }; });
-    const initBtn = c.querySelector('[data-m="linked"]'); if (initBtn) initBtn.classList.add('active');
-    c.querySelector('[data-m="el"]').onclick = function() { ci = Math.floor(Math.random()*CASES.length); fill(); const act = c.querySelector('[data-m].active:not([data-m="el"])'); render(act ? act.dataset.m : 'linked'); };
-  },
   'data-bars'(c) {
     let ci = Math.floor(Math.random() * CASES.length);
     c.innerHTML = `

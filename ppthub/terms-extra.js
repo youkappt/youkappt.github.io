@@ -947,12 +947,6 @@ const TERM_EXTRA = {
     combo: '更改图片 + 模板占位：用占位图调好格式，批量更换真素材。',
     mnemonic: '更改图片＝「换素材不换格式」。'
   },
-  'excel-link': {
-    pitfall: 'Excel 数据更新后 PPT 图还要手动重做一遍。',
-    shortcut: 'Excel 复制 → PPT 粘贴选项「链接数据」→ 右键刷新',
-    combo: 'Excel 链接 + 图表美化：链接数据后用图表美化精调外观。',
-    mnemonic: 'Excel 链接＝「给 PPT 图表接根数据水管」。'
-  },
   'data-bars': {
     pitfall: '表格只有数字看不出大小关系，另画图表又占地方。',
     shortcut: '表格设计 → 条件格式 → 数据条',

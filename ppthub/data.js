@@ -1452,14 +1452,6 @@ const TERMS = [
     related: ["compress", "picture-style"], demo: "change-picture"
   },
   {
-    id: "excel-link", name: "Excel 数据链接", alias: "Excel Data Link",
-    category: "图形与图示", level: "进阶",
-    summary: "Excel 数据粘贴为「链接」到 PPT 图表，源数据更新后 PPT 右键刷新自动同步。",
-    detail: "在 Excel 复制数据或图表→PPT 粘贴时选「使用目标主题和链接数据」，PPT 内部保存了一个指向 Excel 文件的链接。源 Excel 的数据更新后，在 PPT 中右键图表「更新链接」，图表数值/标签/系列全部自动刷新。区别于「手动复制粘贴」每次都要重做，「链接」建立了一条活的管道。",
-    scenario: "月度销售汇报图表链到 Excel 数据表，每月只改 Excel→PPT 一键刷新。",
-    related: ["chart-beauty", "combo-chart"], demo: "excel-link"
-  },
-  {
     id: "data-bars", name: "数据条", alias: "Data Bars",
     category: "图形与图示", level: "入门",
     summary: "PPT 表格内用条件格式画数据条/色阶/图标集，不另外做图表也能可视化。",
