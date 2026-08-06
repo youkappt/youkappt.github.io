@@ -137,8 +137,8 @@ const BEFORE_AFTER = {
     caption: '同一页「季度报告」+ 三项关键数据。改前左竖列表+右折线图，元素无框无缩进散落、不知先看哪；改后三数据拢成上排卡片、下柱状图、底分析色块，每块被框住成视觉组，符合格式塔「接近+封闭」原理，主次清晰。'
   },
   'serif-sans': {
-    before: 'images/beforeafter/serif-sans-after.webp',
-    after: 'images/beforeafter/serif-sans-before.webp',
+    before: 'images/beforeafter/serif-sans-before.webp',
+    after: 'images/beforeafter/serif-sans-after.webp',
     caption: '同一份「市场数据」+ 20 项指标。改前黑字堆成纯文字表、仅靠字号差勉强分主次，扫一眼全是字、关键数字得逐行找；改后核心数字分进彩色卡片、标题加色块条装饰，靠颜色一眼分出主次、扫一眼抓到关键。'
   },
   'type-scale': {
@@ -360,5 +360,80 @@ const BEFORE_AFTER = {
     before: 'images/beforeafter/data-bars-before.webp',
     after: 'images/beforeafter/data-bars-after.webp',
     caption: '同一组「达成率排行」5 人数据。改前纯百分比数字，大小得一行行比；改后在单元格里加蓝色数据条，长短一眼看出高低。'
+  },
+  'layout': {
+    before: 'images/beforeafter/layout-before.webp',
+    after: 'images/beforeafter/layout-after.webp',
+    caption: '同一页「项目汇报」。改前周报版把 bullet、图表、进度说明挤成两栏，信息密到喘不上气；改后概览版用卡片网格把四项进展分区展示，呼吸感更好。'
+  },
+  'placeholder': {
+    before: 'images/beforeafter/placeholder-before.webp',
+    after: 'images/beforeafter/placeholder-after.webp',
+    caption: '同一页「章节页」。改前还留着「点击输入章节名」的默认占位符，像没做完；改后换成真实标题「认识自我」与引言，手绘风格统一完整。'
+  },
+  'master': {
+    before: 'images/beforeafter/master-before.webp',
+    after: 'images/beforeafter/master-after.webp',
+    caption: '同一页「封面」。改前是几个零散文本框，标题、副标题、演讲人各管各；改后应用母版，位置、字体、装饰线一气呵成，专业感出来了。'
+  },
+  'theme': {
+    before: 'images/beforeafter/theme-before.webp',
+    after: 'images/beforeafter/theme-after.webp',
+    caption: '同一页「产品介绍」。改前是常规蓝白企业风，容易淹没在模板海里；改后换成红色撕纸品牌主题，配色、质感、图形元素统一，记忆点强。'
+  },
+  'notes-master': {
+    before: 'images/beforeafter/notes-master-before.webp',
+    after: 'images/beforeafter/notes-master-after.webp',
+    caption: '同一页「演讲备注」。改前备注堆在编辑侧边栏，字号忽大忽小、层次乱；改后讲义母版输出成整齐打印页，开场、核心、案例、过渡句分区清晰。'
+  },
+  'theme-variant': {
+    before: 'images/beforeafter/theme-variant-before.webp',
+    after: 'images/beforeafter/theme-variant-after.webp',
+    caption: '同一页「公司介绍」。改前是蓝色调主题；改后切换成绿色调主题变体，Logo、装饰线、强调色跟着一起换。'
+  },
+  'textbox-placeholder': {
+    before: 'images/beforeafter/textbox-placeholder-before.webp',
+    after: 'images/beforeafter/textbox-placeholder-after.webp',
+    caption: '同一页「周会纪要」。改前用手绘文本框随便堆，大小高低不齐；改后改用占位符版式，标题、要点位置固定，一键就能统一对齐。'
+  },
+  'template': {
+    before: 'images/beforeafter/template-before.webp',
+    after: 'images/beforeafter/template-after.webp',
+    caption: '同一套「融资路演」。改前是深色科技模板，背景沉、文字压；改后换成浅色渐变模板，整份 deck 统一清爽，投影更透亮。'
+  },
+  'header-footer': {
+    before: 'images/beforeafter/header-footer-before.webp',
+    after: 'images/beforeafter/header-footer-after.webp',
+    caption: '同一份「年度报告」。改前打印版页码、日期、标题各放各，散落桌面；改后电子版统一页眉公司名称、页脚日期与编号，翻阅不会乱。'
+  },
+  'bg-format': {
+    before: 'images/beforeafter/bg-format-before.webp',
+    after: 'images/beforeafter/bg-format-after.webp',
+    caption: '同一套「新员工培训」。改前每页背景色块都不一样，拼贴感重；改后统一浅灰弧线背景格式，封面与内容页风格一致，更像正式课件。'
+  },
+  'watermark': {
+    before: 'images/beforeafter/watermark-before.webp',
+    after: 'images/beforeafter/watermark-after.webp',
+    caption: '同一份「战略规划」。改前页面干净无标识，发出去容易泄露归属；改后加上「内部资料」斜向水印和保密提示，传播风险一眼可控。'
+  },
+  'guides': {
+    before: 'images/beforeafter/guides-before.webp',
+    after: 'images/beforeafter/guides-after.webp',
+    caption: '同一页「Q2 业务复盘」。改前三栏卡左缘参差、大标题与卡片没对齐；改后打开参考线，卡片左缘和基线贴齐虚线，版式整齐。'
+  },
+  'eyedropper': {
+    before: 'images/beforeafter/eyedropper-before.webp',
+    after: 'images/beforeafter/eyedropper-after.webp',
+    caption: '同一页「拾光 X1 相机」。改前标题、图标、按钮各用各的颜色，花哨不统一；改后用取色器吸品牌紫，标题、卖点、按钮统一成同一色系。'
+  },
+  'group': {
+    before: 'images/beforeafter/group-before.webp',
+    after: 'images/beforeafter/group-after.webp',
+    caption: '同一页「会员四大权益」。改前四个图标和标签散落歪斜，移动时老是对不齐；改后组合成一个整体，横向均匀排列，一次拖动全部同步。'
+  },
+  'designer': {
+    before: 'images/beforeafter/designer-before.webp',
+    after: 'images/beforeafter/designer-after.webp',
+    caption: '同一页「心理学导论」。改前只有标题和三条干巴巴文字，像 Word；改后设计器自动生成带图标的卡片页，目录清晰、视觉统一。'
   },
 };

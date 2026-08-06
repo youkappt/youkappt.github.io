@@ -1132,14 +1132,6 @@ const TERMS = [
     related: ["export-media", "narration", "autoplay"], demo: "video-insert"
   },
   {
-    id: "a11y", name: "辅助功能检查器", alias: "Accessibility Checker",
-    category: "软件功能", level: "进阶",
-    summary: "一键扫出无障碍问题：缺 alt 文本、阅读顺序乱、对比度不够。",
-    detail: "辅助功能检查器会扫描幻灯片，标出图片没有替代文本、标题阅读顺序错乱、文字与背景对比度不足等问题。做对外 / 政府 / 大屏内容时尤其重要——既照顾视障用户，也避免大屏上看不清。检查器在「审阅」选项卡。",
-    scenario: "交政府汇报材料前跑一遍检查器，补上所有图片的 alt 文本，合规又专业。",
-    related: ["color-wheel", "type-scale", "hierarchy"], demo: "a11y"
-  },
-  {
     id: "excel-table", name: "数据表（嵌入 Excel）", alias: "Embedded Excel Table",
     category: "图形与图示", level: "进阶",
     summary: "嵌一张活的 Excel 表，数据随源文件改，区别于静态美化表。",
@@ -1154,14 +1146,6 @@ const TERMS = [
     detail: "节不仅能给幻灯片分组、加标题，还可以在大纲视图或幻灯片浏览视图里折叠/展开整节，长文档（几十上百页）瞬间从「一长条」变成「可折叠的章节树」。区别于「节」那条只讲分组概念，这条强调「视图里的折叠展开」这种管理方式。",
     scenario: "80 页方案按章节折叠，汇报前只展开「执行摘要」一节，聚焦又不乱。",
     related: ["section", "slide-sorter", "outline-view"], demo: "section-view"
-  },
-  {
-    id: "ai-gen", name: "AI 辅助生成", alias: "AI-Assisted Generation",
-    category: "软件功能", level: "进阶",
-    summary: "Copilot 类一键从主题/文档生成草稿、重排版面，人把关不代劳。",
-    detail: "现代 PPT 内置 AI（如 Copilot）：给个主题或丢进一份 Word，它能生成大纲、起草多页、重排版面、润色文案。但它产出的是「草稿」——结构、配色、事实仍需人来把关。和「设计器」（单页配色建议）不同，AI 辅助是端到端的从 0 到 1。",
-    scenario: "把年度总结文档丢给 AI，三分钟出 10 页初稿，你只改重点和配图。",
-    related: ["designer", "template", "reuse-slides"], demo: "ai-gen"
   },
   {
     id: "gestalt", name: "格式塔原理", alias: "Gestalt Principles",

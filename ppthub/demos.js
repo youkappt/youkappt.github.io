@@ -5345,34 +5345,6 @@ const DEMOS = {
     c.querySelector('[data-m="vi"]').onclick = function(){ ci = (ci + 1) % CASES.length; fill(); render(); };
 
   },
-  'a11y'(c) {
-    let ci = Math.floor(Math.random() * CASES.length);
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row" style="justify-content:space-between;gap:8px">
-          <span class="demo-label" id="axName" style="font-size:13px;color:var(--color-moon-mist)">案例加载中…</span>
-          <button class="demo-btn" data-m="ax">↻ 换一个真实案例</button>
-        </div>
-        <div class="demo-row"><button class="demo-btn active" data-m="bad">问题多</button><button class="demo-btn" data-m="ok">检查通过</button></div>
-        <div class="mini-slide" id="axStage" style="align-items:center;justify-content:center"></div>
-      </div>`;
-    const s = c.querySelector('#axStage'), nameEl = c.querySelector('#axName');
-    function render(m) {
-      const ok = m === 'ok';
-      const cs = CASES[ci];
-      s.innerHTML = `<div style="display:flex;align-items:center;gap:14px">
-        <div style="position:relative;width:96px;height:64px;border-radius:8px;background:linear-gradient(135deg,#2f6f3a,#2f6f3a)">
-          <div style="position:absolute;top:6px;left:6px;right:6px;font:10px var(--font-mono);color:#e3ecd9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${cs.title}</div>
-          <div style="position:absolute;bottom:4px;left:4px;font:10px var(--font-mono);color:${ok ? '#e3ecd9' : '#cb5521'};background:rgba(26,51,0,.45);padding:1px 4px;border-radius:3px">alt ${ok ? '✓' : '✗'}</div>
-        </div>
-        <div style="font:13px var(--font-body);color:${ok ? '#e3ecd9' : '#cb5521'};text-align:left">${ok ? 'alt 齐全 · 对比度达标<br>阅读顺序正确' : '缺 alt · 对比度不足<br>顺序错乱'}</div>
-      </div>`;
-    }
-    function fill() { nameEl.textContent = '案例：' + CASES[ci].title; }
-    fill(); render('bad');
-    c.querySelectorAll('[data-m]:not([data-m="ax"])').forEach(btn => btn.onclick = () => { c.querySelectorAll('[data-m]:not([data-m="ax"])').forEach(x => x.classList.remove('active')); btn.classList.add('active'); render(btn.dataset.m); });
-    c.querySelector('[data-m="ax"]').onclick = () => { ci = Math.floor(Math.random() * CASES.length); fill(); render(c.querySelector('[data-m].active:not([data-m="ax"])').dataset.m); };
-  },
   'excel-table'(c) {
     const twCases = CASES.filter(x => x.tw && x.tw.aPts && x.tw.bPts);
     let ci = Math.floor(Math.random() * twCases.length);
@@ -5442,35 +5414,6 @@ const DEMOS = {
     fill(); render('flat');
     c.querySelectorAll('[data-m]:not([data-m="sv"])').forEach(btn => btn.onclick = () => { c.querySelectorAll('[data-m]:not([data-m="sv"])').forEach(x => x.classList.remove('active')); btn.classList.add('active'); render(btn.dataset.m); });
     c.querySelector('[data-m="sv"]').onclick = () => { ci = Math.floor(Math.random() * CASES.length); fill(); render(c.querySelector('[data-m].active:not([data-m="sv"])').dataset.m); };
-  },
-  'ai-gen'(c) {
-    let ci = Math.floor(Math.random() * CASES.length);
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row" style="justify-content:space-between;gap:8px">
-          <span class="demo-label" id="agName" style="font-size:13px;color:var(--color-moon-mist)">案例加载中…</span>
-          <button class="demo-btn" data-m="ag">↻ 换一个真实案例</button>
-        </div>
-        <div class="demo-row"><button class="demo-btn active" data-m="blank">空白发呆</button><button class="demo-btn" data-m="gen">AI 出初稿</button></div>
-        <div class="mini-slide" id="agStage" style="align-items:center;justify-content:center"></div>
-      </div>`;
-    const s = c.querySelector('#agStage'), nameEl = c.querySelector('#agName');
-    function render(m) {
-      const cs = CASES[ci];
-      const gen = m === 'gen';
-      if (!gen) {
-        s.innerHTML = `<div style="width:220px;height:140px;border:2px dashed var(--color-glass-edge);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;font:14px var(--font-body);color:var(--color-fog-veil);padding:10px;line-height:1.5">${cs.title}…<br>从哪下手？</div>`;
-      } else {
-        s.innerHTML = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:200px">
-          ${cs.points.slice(0, 6).map(p => `<div style="height:30px;border-radius:4px;background:rgba(47,111,58,.3);border:1px solid rgba(47,111,58,.5);display:flex;align-items:center;justify-content:center;font:9px var(--font-body);color:#fff;text-align:center;padding:0 3px;overflow:hidden">${p}</div>`).join('')}
-          <div style="grid-column:1/4;font:11px var(--font-body);color:#2f6f3a">AI 出初稿 · 你改重点</div>
-        </div>`;
-      }
-    }
-    function fill() { nameEl.textContent = '案例：' + CASES[ci].title; }
-    fill(); render('blank');
-    c.querySelectorAll('[data-m]:not([data-m="ag"])').forEach(btn => btn.onclick = () => { c.querySelectorAll('[data-m]:not([data-m="ag"])').forEach(x => x.classList.remove('active')); btn.classList.add('active'); render(btn.dataset.m); });
-    c.querySelector('[data-m="ag"]').onclick = () => { ci = Math.floor(Math.random() * CASES.length); fill(); render(c.querySelector('[data-m].active:not([data-m="ag"])').dataset.m); };
   },
   'gestalt'(c) {
     const cs = CASES.find(x => x.id === 'gestalt-list') || CASES[0];
