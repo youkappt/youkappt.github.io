@@ -698,7 +698,7 @@ const TERM_EXTRA = {
       menu: '幻灯片放映 → 自定义放映'
     },
     mnemonic: '自定义放映＝「同一份挑几页组成子放映」。',
-    mnemonicImg: 'images/mnemonic/screen-blank-pen.webp',
+    mnemonicImg: 'images/mnemonic/custom-show.webp',
     etymology: 'Custom Show 即自定义节目单。'
   },
   'screen-blank-pen': {
@@ -710,7 +710,8 @@ const TERM_EXTRA = {
         { key: 'Ctrl+P', name: '画笔/指针', scope: 'Office 放映' }
       ]
     },
-    mnemonic: '放映＝「B黑W白，Ctrl+P当笔」。'
+    mnemonic: '放映＝「B黑W白，Ctrl+P当笔」。',
+    mnemonicImg: 'images/mnemonic/screen-blank-pen.webp'
   },
   'font-license': {
     pitfall: '用未授权字体对外发布，吃侵权。',
@@ -757,14 +758,16 @@ const TERM_EXTRA = {
     shortcut: {
       menu: '视图 → 标尺（勾选）'
     },
-    mnemonic: '标尺＝「精确摆放的刻度尺」。'
+    mnemonic: '标尺＝「精确摆放的刻度尺」。',
+    mnemonicImg: 'images/mnemonic/ruler.webp',
   },
   'template': {
     pitfall: '被花哨模板绑架，内容迁就装饰反而难读。',
     shortcut: {
       menu: '文件 → 新建 → 搜索模板 / 本机模板'
     },
-    mnemonic: '模板＝「带版式的空壳子」。'
+    mnemonic: '模板＝「带版式的空壳子」。',
+    mnemonicImg: 'images/mnemonic/template.webp',
   },
   'compare-merge': {
     pitfall: '直接覆盖别人的稿，他的改动全没了。',
@@ -785,28 +788,32 @@ const TERM_EXTRA = {
     shortcut: {
       menu: '格式 → 形状效果（阴影/发光/映像）'
     },
-    mnemonic: '对象效果＝「给形状打光的化妆盒」。'
+    mnemonic: '对象效果＝「给形状打光的化妆盒」。',
+    mnemonicImg: 'images/mnemonic/object-effect.webp',
   },
   'textbox-placeholder': {
     pitfall: '量产文字用文本框，改风格要一页页改。',
     shortcut: {
       menu: '占位符来自母版；文本框用插入→文本框'
     },
-    mnemonic: '占位符跟母版、文本框是散兵。'
+    mnemonic: '占位符跟母版、文本框是散兵。',
+    mnemonicImg: 'images/mnemonic/textbox-placeholder.webp',
   },
   'bullet': {
     pitfall: '长句套多级符号，又长又乱。',
     shortcut: {
       menu: '开始 → 项目符号 / 编号'
     },
-    mnemonic: '项目符号＝「让要点排队」。'
+    mnemonic: '项目符号＝「让要点排队」。',
+    mnemonicImg: 'images/mnemonic/bullet.webp',
   },
   'hide-slide': {
     pitfall: '真删了备用页，想用时要重做。',
     shortcut: {
       menu: '右键幻灯片 → 隐藏幻灯片'
     },
-    mnemonic: '隐藏幻灯片＝「藏在口袋里的备用页」。'
+    mnemonic: '隐藏幻灯片＝「藏在口袋里的备用页」。',
+    mnemonicImg: 'images/mnemonic/hide-slide.webp',
   },
   'narration': {
     pitfall: '录音环境吵，旁白听着像菜市场。',
@@ -814,12 +821,14 @@ const TERM_EXTRA = {
       menu: '幻灯片放映 → 录制旁白'
     },
     checklist: ['安静环境', '麦克风测试', '逐页讲清', '保存进文件'],
-    mnemonic: '旁白＝「把讲解录进片子」。'
+    mnemonic: '旁白＝「把讲解录进片子」。',
+    mnemonicImg: 'images/mnemonic/narration.webp',
   },
   'transparency': {
     pitfall: '透明度拉太低，元素糊进背景看不清。',
     combo: '透明度 + 对象效果：半透叠压出层次与景深。',
-    mnemonic: '透明度＝「让底层透上来」。'
+    mnemonic: '透明度＝「让底层透上来」。',
+    mnemonicImg: 'images/mnemonic/transparency.webp',
   },
 
   /* ============ 补充：按优先级新增（2026-07-25） ============ */
@@ -828,14 +837,16 @@ const TERM_EXTRA = {
     shortcut: {
       menu: '设计 → 幻灯片大小'
     },
-    mnemonic: '幻灯片大小＝「先定画布再作画」。'
+    mnemonic: '幻灯片大小＝「先定画布再作画」。',
+    mnemonicImg: 'images/mnemonic/slide-size.webp',
   },
   'replace-font': {
     pitfall: '只换字体忘了对方没装，打开又变宋体。',
     shortcut: {
       menu: '开始 → 编辑 → 替换字体'
     },
-    mnemonic: '替换字体＝「全篇一键换衣」。'
+    mnemonic: '替换字体＝「全篇一键换衣」。',
+    mnemonicImg: 'images/mnemonic/replace-font.webp',
   },
   'gridlines': {
     pitfall: '不开网格线硬对齐，间距总有 1–2px 误差。',
@@ -843,12 +854,14 @@ const TERM_EXTRA = {
       win: 'Shift+F9',
       menu: '视图 → 显示 → 网格线（可勾选吸附）'
     },
-    mnemonic: '网格线＝「看不见的尺子阵」。'
+    mnemonic: '网格线＝「看不见的尺子阵」。',
+    mnemonicImg: 'images/mnemonic/gridlines.webp',
   },
   'recolor': {
     pitfall: '直接改原图颜色，想还原还得重找素材。',
     combo: '重新着色 + 透明度：单色点缀叠压出层次。',
-    mnemonic: '重新着色＝「不碰原图换色调」。'
+    mnemonic: '重新着色＝「不碰原图换色调」。',
+    mnemonicImg: 'images/mnemonic/recolor.webp',
   },
   'coauthor': {
     pitfall: '不共享就各改各的，最后两份对不上。',
@@ -862,20 +875,24 @@ const TERM_EXTRA = {
     shortcut: {
       menu: '右键文本框 → 设置形状格式 → 文本框 → 内部边距'
     },
-    mnemonic: '内部边距＝「框里留白，不用敲空格」。'
+    mnemonic: '内部边距＝「框里留白，不用敲空格」。',
+    mnemonicImg: 'images/mnemonic/text-margin.webp',
   },
   'visual-flow': {
     pitfall: '重点和装饰一样大，视线不知道先看哪。',
-    mnemonic: '视觉流＝「牵着眼睛走的路线」。'
+    mnemonic: '视觉流＝「牵着眼睛走的路线」。',
+    mnemonicImg: 'images/mnemonic/visual-flow.webp',
   },
   'info-density': {
     pitfall: '一页塞满，观众读不动；太空又显单薄。',
-    mnemonic: '信息密度＝「该密密、该疏疏」。'
+    mnemonic: '信息密度＝「该密密、该疏疏」。',
+    mnemonicImg: 'images/mnemonic/info-density.webp',
   },
   'consistency': {
     pitfall: '每页自创风格，十页像十个模板拼的。',
     combo: '一致性 + 母版/主题：从源头锁死统一规则。',
-    mnemonic: '一致性＝「一套规则管全部」。'
+    mnemonic: '一致性＝「一套规则管全部」。',
+    mnemonicImg: 'images/mnemonic/consistency.webp',
   },
 
   /* ============ 扩容补充（最该补 + 实用进阶） ============ */
@@ -884,65 +901,76 @@ const TERM_EXTRA = {
     shortcut: {
       menu: '视图 → 幻灯片浏览（或底部状态栏切换）'
     },
-    mnemonic: '浏览视图＝「全篇缩略图总览台」。'
+    mnemonic: '浏览视图＝「全篇缩略图总览台」。',
+    mnemonicImg: 'images/mnemonic/slide-sorter.webp',
   },
   'notes-page': {
     pitfall: '把演讲稿直接写进文本框，观众投影上也看得见，穿帮。',
     shortcut: {
       menu: '视图 → 备注页（或直接在下方的备注区写）'
     },
-    mnemonic: '备注页＝「台下稿，台上藏」。'
+    mnemonic: '备注页＝「台下稿，台上藏」。',
+    mnemonicImg: 'images/mnemonic/notes-page.webp',
   },
   'reading-view': {
     pitfall: '自查用正式放映，一不小心点到黑屏/标注还不好退。',
     shortcut: {
       menu: '视图 → 阅读视图（Esc 退出）'
     },
-    mnemonic: '阅读视图＝「轻量自看版放映」。'
+    mnemonic: '阅读视图＝「轻量自看版放映」。',
+    mnemonicImg: 'images/mnemonic/reading-view.webp',
   },
   'fill-rate': {
     pitfall: '一页塞到满，看起来像海报不像幻灯片；太空又显空。',
     combo: '版面率 + 留白：靠面积差制造呼吸感。',
-    mnemonic: '版面率＝「图文占了多少地」。'
+    mnemonic: '版面率＝「图文占了多少地」。',
+    mnemonicImg: 'images/mnemonic/fill-rate.webp',
   },
   'cmyk-rgb': {
     pitfall: '屏幕艳蓝直接拿去印，出来发灰发暗才知色差。',
     combo: 'CMYK + 导出PDF：交付印刷前先校色。',
-    mnemonic: 'RGB 发光、CMYK 吸光，色域本就不同。'
+    mnemonic: 'RGB 发光、CMYK 吸光，色域本就不同。',
+    mnemonicImg: 'images/mnemonic/cmyk-rgb.webp',
   },
   'text-outline': {
     pitfall: '只改字色压不住花底，字糊成一团。',
     combo: '描边 + 字重：细描边勾边、加粗提存在感。',
-    mnemonic: '描边＝「给字勾一道边，立住」。'
+    mnemonic: '描边＝「给字勾一道边，立住」。',
+    mnemonicImg: 'images/mnemonic/text-outline.webp',
   },
   'bg-format': {
     pitfall: '用铺满的形状当背景，结果老被误选、挡文字。',
     shortcut: {
       menu: '右键页面 → 设置背景格式（可「应用到全部」）'
     },
-    mnemonic: '背景格式＝「铺底不挡内容」。'
+    mnemonic: '背景格式＝「铺底不挡内容」。',
+    mnemonicImg: 'images/mnemonic/bg-format.webp',
   },
   'action-settings': {
     pitfall: '只知超链接，不会悬停触发和加音效，交互做不活。',
     shortcut: {
       menu: '选中对象 → 插入 → 动作（或右键「超链接」旁）'
     },
-    mnemonic: '动作设置＝「点/划一下就响应」。'
+    mnemonic: '动作设置＝「点/划一下就响应」。',
+    mnemonicImg: 'images/mnemonic/action-settings.webp',
   },
   'vertical-text': {
     pitfall: '竖排后没调行距和标点，字挤成一柱。',
     combo: '竖排 + 行距：古风标题靠间距透气。',
-    mnemonic: '竖排＝「从上往下念的中文味」。'
+    mnemonic: '竖排＝「从上往下念的中文味」。',
+    mnemonicImg: 'images/mnemonic/vertical-text.webp',
   },
   'emphasis-fx': {
     pitfall: '想强调就加进入动画，结果对象进来又出去，反而乱。',
     combo: '强调 + 触发：讲到关键点一下让它原地跳。',
-    mnemonic: '强调动画＝「原地动一下」。'
+    mnemonic: '强调动画＝「原地动一下」。',
+    mnemonicImg: 'images/mnemonic/emphasis-fx.webp',
   },
   'icons': {
     pitfall: '图标风格混搭（线框配实底），页面显杂乱。',
     combo: '图标 + 图标风格统一：同线宽同色系才高级。',
-    mnemonic: '图标＝「一眼懂的图形符号」。'
+    mnemonic: '图标＝「一眼懂的图形符号」。',
+    mnemonicImg: 'images/mnemonic/icons.webp',
   },
   'autosave': {
     pitfall: '关了自动保存又不手动存，崩一次白干几小时。',
@@ -954,42 +982,50 @@ const TERM_EXTRA = {
   'para-spacing': {
     pitfall: '在段落间狂敲回车留空，改字号或复制时全乱套。',
     combo: '段间距 + 行距：一个管段与段，一个管段内行，两层呼吸感都调。',
-    mnemonic: '段前/段后＝「段与段之间的呼吸」。'
+    mnemonic: '段前/段后＝「段与段之间的呼吸」。',
+    mnemonicImg: 'images/mnemonic/para-spacing.webp',
   },
   'chart-edit': {
     pitfall: '截图别人图表当图片，数据变了没法改还得重做。',
     combo: '图表 + 数据可视化：先选对图（原则），再插入编辑（功能）。',
-    mnemonic: '图表＝「让数字自己说话」。'
+    mnemonic: '图表＝「让数字自己说话」。',
+    mnemonicImg: 'images/mnemonic/chart-edit.webp',
   },
   'audio-insert': {
     pitfall: '用旁白录背景音乐，音质差还占空间；背景乐该插文件。',
     combo: '音频 + 切换/自动播放：开场乐接内容页自然过渡。',
-    mnemonic: '音频插入＝「放现成的声音，控怎么播」。'
+    mnemonic: '音频插入＝「放现成的声音，控怎么播」。',
+    mnemonicImg: 'images/mnemonic/audio-insert.webp',
   },
   'video-insert': {
     pitfall: '把视频当图片嵌，播不了还糊；要用插入视频对象。',
     combo: '视频 + 自动播放/全屏：发布会现场效果拉满。',
-    mnemonic: '视频插入＝「把片子放进页面里播」。'
+    mnemonic: '视频插入＝「把片子放进页面里播」。',
+    mnemonicImg: 'images/mnemonic/video-insert.webp',
   },
   'excel-table': {
     pitfall: '把数据截图当表格，源数据一改全得重做。',
     combo: '嵌入表 + 链接更新：源 Excel 改了，PPT 点更新就同步。',
-    mnemonic: '嵌入 Excel 表＝「活的表，能改能更新」。'
+    mnemonic: '嵌入 Excel 表＝「活的表，能改能更新」。',
+    mnemonicImg: 'images/mnemonic/excel-table.webp',
   },
   'section-view': {
     pitfall: '长文档不分节，大纲里几十页挤一长条，找页靠滚。',
     combo: '节 + 折叠：分章后折叠，长文档变章节树。',
-    mnemonic: '节视图＝「长文档的折叠章节树」。'
+    mnemonic: '节视图＝「长文档的折叠章节树」。',
+    mnemonicImg: 'images/mnemonic/section-view.webp',
   },
   'gestalt': {
     pitfall: '相关元素东一个西一个，观众读不出谁和谁一组。',
     combo: '格式塔 + 亲密性/重复：底层原理撑起分组原则。',
-    mnemonic: '格式塔＝「人脑自动把近的、像的看成一组」。'
+    mnemonic: '格式塔＝「人脑自动把近的、像的看成一组」。',
+    mnemonicImg: 'images/mnemonic/gestalt.webp',
   },
   'embed-link': {
     pitfall: '默认就是嵌入，但插大视频时有人手滑勾了「链接」，发给客户全图裂。',
     combo: '嵌入 + 压缩：大图先压缩再嵌入，体积质量两不误。',
-    mnemonic: '嵌入＝「打包带走」，链接＝「只记地址」。'
+    mnemonic: '嵌入＝「打包带走」，链接＝「只记地址」。',
+    mnemonicImg: 'images/mnemonic/embed-link.webp',
   },
   'theme-palette': {
     pitfall: '手填死颜色，甲方一换品牌色全页重改；该用主题色。',
@@ -997,7 +1033,8 @@ const TERM_EXTRA = {
       menu: '设计 → 变体 ▾ → 颜色 → 自定义颜色'
     },
     combo: '主题色板 + 母版：色板一定，母版里全用主题色，全局秒换。',
-    mnemonic: '主题色板＝「12 格活色，改一格全篇动」。'
+    mnemonic: '主题色板＝「12 格活色，改一格全篇动」。',
+    mnemonicImg: 'images/mnemonic/theme-palette.webp',
   },
   'doc-inspector': {
     pitfall: '把带吐槽备注的稿直接发客户，社死。',
@@ -1021,7 +1058,8 @@ const TERM_EXTRA = {
       menu: '文件 → 信息 → 版本历史（需存在 OneDrive / 365）'
     },
     combo: '版本历史 + 自动保存：一个防丢、一个能回到过去。',
-    mnemonic: '版本历史＝「文件的时光机」。'
+    mnemonic: '版本历史＝「文件的时光机」。',
+    mnemonicImg: 'images/mnemonic/version-history.webp',
   },
   'ink-draw': {
     pitfall: '用标注笔圈完退出就没了；要留痕得用墨迹书写存进文件。',
@@ -1029,12 +1067,14 @@ const TERM_EXTRA = {
       menu: '绘图 → 荧光笔 / 钢笔（触屏或手写笔）'
     },
     combo: '墨迹 + 批注：圈画重点再转成批注，评审闭环。',
-    mnemonic: '墨迹书写＝「写在幻灯片上的笔迹」。'
+    mnemonic: '墨迹书写＝「写在幻灯片上的笔迹」。',
+    mnemonicImg: 'images/mnemonic/ink-draw.webp',
   },
   'color-psychology': {
     pitfall: '只看好不好看选色，没想观众该什么感觉。',
     combo: '色彩心理 + 主辅点：先定情绪，再按 60-30-10 铺。',
-    mnemonic: '色彩心理＝「颜色在悄悄影响情绪」。'
+    mnemonic: '色彩心理＝「颜色在悄悄影响情绪」。',
+    mnemonicImg: 'images/mnemonic/color-psychology.webp',
   },
   'warm-cool': {
     pitfall: '暖冷混用没主次，画面平、重点跳不出来。',
@@ -1047,7 +1087,8 @@ const TERM_EXTRA = {
       menu: '动画窗格里给每个对象设递增「延迟」'
     },
     combo: '错落 + 进入动画：同款淡入，0.15s 间隔出波浪感。',
-    mnemonic: '错落＝「同款动画，错开时间点」。'
+    mnemonic: '错落＝「同款动画，错开时间点」。',
+    mnemonicImg: 'images/mnemonic/stagger.webp',
   },
   'package': {
     pitfall: '直接拷 pptx 去客户电脑，字体图片全丢。',
@@ -1214,7 +1255,8 @@ const TERM_EXTRA = {
       menu: '选择窗格 → 两页对象改名 !!名字 → 加平滑切换'
     },
     combo: '!!配对 + 平滑切换：形状/图标/产品图间的自由过渡。',
-    mnemonic: '!!配对＝「两个对象强行认亲，做平滑过渡」。'
+    mnemonic: '!!配对＝「两个对象强行认亲，做平滑过渡」。',
+    mnemonicImg: 'images/mnemonic/morph-force.webp',
   },
   'artistic-effect': {
     pitfall: '照片做封面背景太写实，用艺术效果秒变插画风。',
@@ -1222,7 +1264,8 @@ const TERM_EXTRA = {
       menu: '图片格式 → 艺术效果 → 选效果'
     },
     combo: '艺术效果 + 透明度：加铅笔素描/虚化后降透明度当背景底纹。',
-    mnemonic: '艺术效果＝「给照片换画风」。'
+    mnemonic: '艺术效果＝「给照片换画风」。',
+    mnemonicImg: 'images/mnemonic/artistic-effect.webp',
   },
   'picture-correct': {
     pitfall: '照片太暗太灰就重拍，其实 PPT 内就能调。',
