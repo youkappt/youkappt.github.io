@@ -124,12 +124,11 @@ def main():
         plan_staging()
         return
 
-    if not secret_id or not secret_key:
-        print("[ERR] 部署需要 TCB_SECRET_ID / TCB_SECRET_KEY 环境变量")
-        raise SystemExit(1)
-
-    print("=> tcb login (apiKey)")
-    tcb("login", "--apiKeyId", secret_id, "--apiKey", secret_key)
+    if secret_id and secret_key:
+        print("=> tcb login (apiKey)")
+        tcb("login", "--apiKeyId", secret_id, "--apiKey", secret_key)
+    else:
+        print("=> 未提供 TCB_SECRET_ID/KEY，尝试使用已缓存的 tcb 登录态")
 
     tmp = tempfile.mkdtemp(prefix="cb-deploy-")
     print(f"=> staging -> {tmp}")

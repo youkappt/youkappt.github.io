@@ -6208,44 +6208,6 @@ const DEMOS = {
     const initBtn = c.querySelector('[data-m="gOn"]'); if (initBtn) initBtn.classList.add('active');
     c.querySelector('[data-m="sg"]').onclick = function() { ci = Math.floor(Math.random()*CASES.length); fill(); const act = c.querySelector('[data-m].active:not([data-m="sg"])'); render(act ? act.dataset.m : 'gOn'); };
   },
-  'screenshot'(c) {
-    let ci = Math.floor(Math.random() * CASES.length);
-    c.innerHTML = `
-      <div class="demo-stack">
-        <div class="demo-row" style="justify-content:space-between;gap:8px">
-          <span class="demo-label" id="scName" style="font-size:13px;color:#c2cfe0">案例加载中…</span>
-          <button class="demo-btn" data-m="sc">↻ 换一个真实案例</button>
-        </div>
-        <div class="demo-row">
-          <button class="demo-btn active" data-m="sel">框选区域</button>
-          <button class="demo-btn" data-m="done">完成截取</button>
-        </div>
-        <div class="demo-row" id="scStage" style="justify-content:center;align-items:center;min-height:140px;background:rgba(10,14,24,.32);border-radius:10px"></div>
-        <div class="demo-label" id="scHint" style="text-align:center;color:#c2cfe0"></div>
-      </div>`;
-    const nameEl = c.querySelector('#scName');
-    const stage = c.querySelector('#scStage');
-    const hint = c.querySelector('#scHint');
-    let cur = 'sel';
-    function fill(){ nameEl.textContent = '案例：' + CASES[ci].title; }
-    function render(){
-      const cs = CASES[ci];
-      if (cur === 'sel') {
-        stage.innerHTML = '<div style="position:relative;width:180px;height:110px;border-radius:8px;background:linear-gradient(135deg,#2a3550,#3a4a6a);overflow:hidden">'
-          + '<div style="position:absolute;left:10px;top:8px;font:11px sans-serif;color:#c2cfe0">源页面：' + cs.title + '</div>'
-          + '<div style="position:absolute;left:24px;top:30px;width:120px;height:60px;border:2px dashed #e8924a"></div></div>';
-        hint.textContent = '框选要截取的区域。';
-      } else {
-        stage.innerHTML = '<div style="position:relative;width:120px;height:60px;border-radius:6px;background:linear-gradient(135deg,#6a8cff,#b06ab3);box-shadow:0 6px 18px rgba(0,0,0,.35)"></div>';
-        hint.textContent = '截取到的片段，可直接贴进「' + cs.title + '」页面。';
-      }
-    }
-    function applyMode(m){ cur = m; render(); }
-    fill(); render();
-    c.querySelectorAll('[data-m]:not([data-m="sc"])').forEach(function(b){ b.onclick = function(){ c.querySelectorAll('[data-m]:not([data-m="sc"])').forEach(function(x){ x.classList.remove('active'); }); b.classList.add('active'); applyMode(b.dataset.m); }; });
-    c.querySelector('[data-m="sc"]').onclick = function(){ ci = (ci + 1) % CASES.length; fill(); render(); };
-
-  },
   'autofit'(c) {
     const cs = CASES.find(x => x.title === '科研项目中期检查') || CASES[31];
     let mode = 'good';

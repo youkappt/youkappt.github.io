@@ -15,7 +15,7 @@ const TERM_EXTRA = {
     },
     combo: '母版 + 版式：给不同章节建多套版式，切换比手动复制快得多。',
     mnemonic: '母版像「总模板」，共性放这，个性留单页。',
-    mnemonicImg: 'images/mnemonic/master.jpg',
+    mnemonicImg: 'images/mnemonic/master.webp',
   },
   'layout': {
     pitfall: '在空白版式上手动拖框，不如选对版式继承统一风格。',
@@ -24,12 +24,12 @@ const TERM_EXTRA = {
     },
     combo: '版式 + 占位符：换版式时内容自动归位，不乱。',
     mnemonic: '版式是页面的「骨架预设」。',
-    mnemonicImg: 'images/mnemonic/layout.jpg',
+    mnemonicImg: 'images/mnemonic/layout.webp',
   },
   'placeholder': {
     pitfall: '用普通文本框替代占位符，后续无法整体改标题样式。',
     mnemonic: '占位符是「带类型的框」，标题就是标题。',
-    mnemonicImg: 'images/mnemonic/placeholder.jpg',
+    mnemonicImg: 'images/mnemonic/placeholder.webp',
   },
   'animation-pane': {
     pitfall: '只在「添加动画」里点，不懂用动画窗格调速序，动画全堆一起。',
@@ -39,7 +39,7 @@ const TERM_EXTRA = {
     },
     combo: '动画窗格 + 触发：把动画绑到别的对象点击上，做交互。',
     mnemonic: '动画窗格是动画的「时间轴中控台」。',
-    mnemonicImg: 'images/mnemonic/animation-pane.jpg',
+    mnemonicImg: 'images/mnemonic/animation-pane.webp',
   },
   'guides': {
     pitfall: '凭肉眼对齐，差几像素肉眼看不出但一眼乱。',
@@ -48,7 +48,7 @@ const TERM_EXTRA = {
       menu: '视图 → 参考线 / 智能参考线（拖动对象时自动出现）'
     },
     mnemonic: '参考线是「临时吸附辅助线」，不打印。',
-    mnemonicImg: 'images/mnemonic/guides.jpg',
+    mnemonicImg: 'images/mnemonic/guides.webp',
   },
   'boolean': {
     pitfall: '用「组合」代替「合并形状」，结果不能单独改某个形状的颜色。',
@@ -58,7 +58,7 @@ const TERM_EXTRA = {
     combo: '布尔 + 编辑顶点：拼出复杂形状后还能微调轮廓。',
     etymology: '布尔（Boolean）源自数学家布尔，指集合的并/交/差运算。',
     mnemonic: '布尔是「形状的集合运算」。',
-    mnemonicImg: 'images/mnemonic/boolean.jpg',
+    mnemonicImg: 'images/mnemonic/boolean.webp',
   },
   'eyedropper': {
     pitfall: '截图去 PS 取色再填，其实 PPT 自带吸管直接吸页面任意颜色。',
@@ -66,7 +66,7 @@ const TERM_EXTRA = {
       menu: '颜色下拉 → 取色器（吸管图标）'
     },
     mnemonic: '取色器就是「颜色吸管」。',
-    mnemonicImg: 'images/mnemonic/eyedropper.jpg',
+    mnemonicImg: 'images/mnemonic/eyedropper.webp',
   },
   'smartart': {
     pitfall: '用一堆文本框拼流程图，改起来要逐个调。',
@@ -75,7 +75,7 @@ const TERM_EXTRA = {
     },
     combo: 'SmartArt + 转形状：定型后转成可自由编辑的形状。',
     mnemonic: 'SmartArt 是「现成的图示库」。',
-    mnemonicImg: 'images/mnemonic/smartart.jpg',
+    mnemonicImg: 'images/mnemonic/smartart.webp',
   },
   'section': {
     pitfall: '用空白标题页当分隔，导航里一堆无名页难以管理。',
@@ -83,7 +83,7 @@ const TERM_EXTRA = {
       menu: '开始 → 节（或右键缩略图「新增节」）'
     },
     mnemonic: '节是「给幻灯片分组」。',
-    mnemonicImg: 'images/mnemonic/section.jpg',
+    mnemonicImg: 'images/mnemonic/section.webp',
   },
   'zoom-loc': {
     pitfall: '用超链接跳到别页，回不来或路径乱。',
@@ -92,7 +92,7 @@ const TERM_EXTRA = {
     },
     combo: '缩放定位 + 节：做非线性目录，点哪进哪。',
     mnemonic: '缩放定位是「可点击的缩略图入口」。',
-    mnemonicImg: 'images/mnemonic/zoom-loc.jpg',
+    mnemonicImg: 'images/mnemonic/zoom-loc.webp',
   },
   'theme': {
     pitfall: '每页手动改配色，全盘换风格时崩溃。',
@@ -100,7 +100,7 @@ const TERM_EXTRA = {
       menu: '设计 → 主题（及右侧变体）'
     },
     mnemonic: '主题是「整套配色字体包」。',
-    mnemonicImg: 'images/mnemonic/theme.jpg',
+    mnemonicImg: 'images/mnemonic/theme.webp',
   },
   'selection-pane': {
     pitfall: '层层叠叠找不到对象，靠盲点乱选。',
@@ -109,7 +109,7 @@ const TERM_EXTRA = {
       menu: '开始 → 选择 → 选择窗格'
     },
     mnemonic: '选择窗格是「对象图层列表」。',
-    mnemonicImg: 'images/mnemonic/selection-pane.jpg',
+    mnemonicImg: 'images/mnemonic/selection-pane.webp',
   },
   'z-order': {
     pitfall: '叠压顺序调反，重要对象被遮住。',
@@ -120,7 +120,7 @@ const TERM_EXTRA = {
       ]
     },
     mnemonic: '叠压顺序＝「谁在谁上面」。',
-    mnemonicImg: 'images/mnemonic/z-order.jpg',
+    mnemonicImg: 'images/mnemonic/z-order.webp',
   },
   'group': {
     pitfall: '组合后忘记取消组合，导致单个子对象改不了。',
@@ -131,7 +131,7 @@ const TERM_EXTRA = {
       ]
     },
     mnemonic: '组合＝「把多个对象当成一个」。',
-    mnemonicImg: "images/mnemonic/group.jpg"
+    mnemonicImg: "images/mnemonic/group.webp"
   },
   'designer': {
     pitfall: '无视右侧设计灵感，手动排半天还不好看。',
@@ -139,7 +139,7 @@ const TERM_EXTRA = {
       menu: '设计 → 设计灵感（选中图片/文字后右侧出现）'
     },
     mnemonic: '设计器是「AI 排版助手」。',
-    mnemonicImg: "images/mnemonic/designer.jpg"
+    mnemonicImg: "images/mnemonic/designer.webp"
   },
   'reuse-slides': {
     pitfall: '从别处全选复制，把原格式也带乱。',
@@ -147,7 +147,7 @@ const TERM_EXTRA = {
       menu: '开始 → 新建幻灯片 → 重用幻灯片（可勾选保留源格式）'
     },
     mnemonic: '复用幻灯片是「借用别处页」。',
-    mnemonicImg: "images/mnemonic/reuse-slides.jpg"
+    mnemonicImg: "images/mnemonic/reuse-slides.webp"
   },
   'screen-record': {
     pitfall: '用第三方录屏再导入，其实 PPT 内置就能直接录。',
@@ -155,7 +155,7 @@ const TERM_EXTRA = {
       menu: '插入 → 屏幕录制（选区域后录制）'
     },
     mnemonic: '屏幕录制是「PPT 内置录屏」。',
-    mnemonicImg: "images/mnemonic/screen-record.jpg"
+    mnemonicImg: "images/mnemonic/screen-record.webp"
   },
   'notes-master': {
     pitfall: '打印讲义前才调版式，手忙脚乱。',
@@ -164,33 +164,32 @@ const TERM_EXTRA = {
     },
     combo: '讲义母版 + 导出 PDF：一键出带笔记区的讲义。',
     mnemonic: '讲义母版管「打印出来的样子」。',
-    mnemonicImg: 'images/mnemonic/notes-master.jpg',
+    mnemonicImg: 'images/mnemonic/notes-master.webp',
   },
 
   /* ============ 设计原则 ============ */
   'alignment': {
     pitfall: '只对齐左边，右边参差；或元素间没对齐参照，整体散。',
     mnemonic: '对齐就是「让边和边成一条线」。',
-    mnemonicImg: 'images/mnemonic/notes-master.jpg',
-    mnemonicImg: "images/mnemonic/alignment.jpg",
+    mnemonicImg: "images/mnemonic/alignment.webp",
     combo: '对齐 + 参考线：开智能参考线，拖动自动吸附。'
   },
   'proximity': {
     pitfall: '相关内容散落各处，读者不知谁和谁是一组。',
     mnemonic: '亲密性＝「相关的靠在一起」。',
-    mnemonicImg: 'images/mnemonic/proximity.jpg',
+    mnemonicImg: 'images/mnemonic/proximity.webp',
     etymology: 'Proximity 意为「邻近」，设计中指视觉上的靠近分组。'
   },
   'contrast': {
     pitfall: '对比做成五颜六色却无主次，反而糊。',
     mnemonic: '对比是「制造差异突出重点」。',
-    mnemonicImg: 'images/mnemonic/contrast.jpg',
+    mnemonicImg: 'images/mnemonic/contrast.webp',
     combo: '对比 + 视觉层级：用大小/色差直接画出阅读顺序。'
   },
   'repetition': {
     pitfall: '重复变成「到处一样」的杂乱，而非统一的节奏。',
     mnemonic: '重复是「用统一元素形成节奏」。',
-    mnemonicImg: 'images/mnemonic/repetition.jpg',
+    mnemonicImg: 'images/mnemonic/repetition.webp',
     combo: '重复 + 品牌VI：同色同字体贯穿，专业感就来了。'
   },
   'hierarchy': {
@@ -201,32 +200,32 @@ const TERM_EXTRA = {
   'whitespace': {
     pitfall: '留白留成空洞——元素缩一角，旁边大片空却无呼吸感。',
     mnemonic: '留白不是「没东西」，是「主动的呼吸空间」。',
-    mnemonicImg: 'images/mnemonic/whitespace.jpg',
+    mnemonicImg: 'images/mnemonic/whitespace.webp',
     etymology: 'Negative Space 直译「负空间」，即被主动留出的空白。'
   },
   'focus': {
     pitfall: '用一大圈红框硬标，反而破坏画面。',
     mnemonic: '焦点引导＝「把眼睛牵到该看的地方」。',
-    mnemonicImg: 'images/mnemonic/focus.jpg',
+    mnemonicImg: 'images/mnemonic/focus.webp',
     combo: '焦点 + 对比：用色彩/大小差异自然吸睛。'
   },
   'grid': {
     pitfall: '凭感觉排，结果栏宽不一、对不齐。',
     mnemonic: '栅格是「隐形的排版坐标」。',
-    mnemonicImg: 'images/mnemonic/grid.jpg',
+    mnemonicImg: 'images/mnemonic/grid.webp',
     combo: '栅格 + 栏宽：定好栏数，内容自动对齐。'
   },
   'less-is-more': {
     pitfall: '减成「啥都没了」，信息也没了。',
     mnemonic: '减法＝「去掉干扰，留下重点」。',
-    mnemonicImg: 'images/mnemonic/less-is-more.jpg',
+    mnemonicImg: 'images/mnemonic/less-is-more.webp',
   },
 
   /* ============ 字体与配色 ============ */
   'serif-sans': {
     pitfall: '正文用衬线小字屏显发虚，或标题用无衬线显单薄。',
     mnemonic: '衬线有「脚」显传统，无衬线干净显现代。',
-    mnemonicImg: 'images/mnemonic/serif-sans.jpg',
+    mnemonicImg: 'images/mnemonic/serif-sans.webp',
   },
   'type-scale': {
     pitfall: '字号只敢用 12/14/16，不敢拉开层级。',
@@ -241,12 +240,12 @@ const TERM_EXTRA = {
       ]
     },
     mnemonic: '字号＝「大中小三级跳」。',
-    mnemonicImg: 'images/mnemonic/type-scale.jpg',
+    mnemonicImg: 'images/mnemonic/type-scale.webp',
   },
   'font-weight': {
     pitfall: '整页一个字重，靠加粗堆重点，乱。',
     mnemonic: '字重是「字的粗细档」。',
-    mnemonicImg: 'images/mnemonic/font-weight.jpg',
+    mnemonicImg: 'images/mnemonic/font-weight.webp',
   },
   'tracking': {
     pitfall: '标题字距过紧显挤，或过松显散。',
@@ -254,136 +253,136 @@ const TERM_EXTRA = {
       menu: '开始 → 字符间距（或字体对话框）'
     },
     mnemonic: '字间距＝「字与字的呼吸」。',
-    mnemonicImg: 'images/mnemonic/tracking.jpg',
+    mnemonicImg: 'images/mnemonic/tracking.webp',
     etymology: 'Tracking（字距）/ Kerning（字偶距）是两个不同概念。'
   },
   'line-height': {
     pitfall: '行距过紧读着喘，过松段落散。',
     mnemonic: '行距是「行的上下呼吸」。',
-    mnemonicImg: 'images/mnemonic/line-height.jpg',
+    mnemonicImg: 'images/mnemonic/line-height.webp',
   },
   'analogous': {
     pitfall: '邻近色用太多显单调没重点。',
     mnemonic: '邻近色＝「色环上挨着的友邻色」。',
-    mnemonicImg: 'images/mnemonic/analogous.jpg',
+    mnemonicImg: 'images/mnemonic/analogous.webp',
   },
   'complementary': {
     pitfall: '红配绿高饱和直接撞，刺眼。',
     mnemonic: '对比色＝「色环对面的互补色」。',
-    mnemonicImg: 'images/mnemonic/complementary.jpg',
+    mnemonicImg: 'images/mnemonic/complementary.webp',
     etymology: 'Complementary 源自「互补」，混合成灰。'
   },
   'tri-color': {
     pitfall: '主辅点三等大，没有主导色。',
     mnemonic: '主辅点＝「7:2.5:0.5 的配色比例」。',
-    mnemonicImg: 'images/mnemonic/tri-color.jpg',
+    mnemonicImg: 'images/mnemonic/tri-color.webp',
     combo: '三色 + 品牌VI：主色定调，辅色支撑，点缀提神。'
   },
   'gradient': {
     pitfall: '多色渐变脏兮兮，或角度乱显廉价。',
     mnemonic: '渐变是「颜色的平滑过渡」。',
-    mnemonicImg: 'images/mnemonic/gradient.jpg',
+    mnemonicImg: 'images/mnemonic/gradient.webp',
   },
   'muted-color': {
     pitfall: '灰用太暗显脏，或太亮没「高级」感。',
     mnemonic: '高级灰＝「降饱和带灰调」。',
-    mnemonicImg: 'images/mnemonic/muted-color.jpg',
+    mnemonicImg: 'images/mnemonic/muted-color.webp',
     etymology: 'Morandi（莫兰迪）是意大利画家，以灰调静物闻名。'
   },
   'color-wheel': {
     pitfall: '只凭感觉配色，不懂色环关系易翻车。',
     mnemonic: '色轮是「把颜色排成环的地图」。',
-    mnemonicImg: 'images/mnemonic/color-wheel.jpg',
+    mnemonicImg: 'images/mnemonic/color-wheel.webp',
     combo: '色轮 + 取色器：先定关系再吸色，效率翻倍。'
   },
   'monochrome': {
     pitfall: '单色但深浅没拉开，平。',
     mnemonic: '单色＝「一种色相的不同深浅」。',
-    mnemonicImg: 'images/mnemonic/monochrome.jpg',
+    mnemonicImg: 'images/mnemonic/monochrome.webp',
   },
 
   /* ============ 排版与布局 ============ */
   'golden-ratio': {
     pitfall: '硬套 1.618 把画面切得死板，或只用一次就完事。',
     mnemonic: '黄金比例＝「约 0.618 的分割，公认好看」。',
-    mnemonicImg: 'images/mnemonic/golden-ratio.jpg',
+    mnemonicImg: 'images/mnemonic/golden-ratio.webp',
     etymology: 'Golden Ratio 即黄金分割，数学上约 1.618。'
   },
   'rule-of-thirds': {
     pitfall: '主体死放交叉点，反而呆；或全放正中显平。',
     mnemonic: '三分法＝「九宫格，主体放线或交点」。',
-    mnemonicImg: 'images/mnemonic/rule-of-thirds.jpg',
+    mnemonicImg: 'images/mnemonic/rule-of-thirds.webp',
   },
   'f-pattern': {
     pitfall: '把重点放右下或底部，读者视线早走了。',
     mnemonic: 'F 型＝「视线先横扫顶部，再沿左竖向下」。',
-    mnemonicImg: 'images/mnemonic/f-pattern.jpg',
+    mnemonicImg: 'images/mnemonic/f-pattern.webp',
     etymology: 'F-Pattern 来自网页眼动研究，PPT 同样适用。'
   },
   'center-sym': {
     pitfall: '啥都居中，全对称显呆板没重点。',
     mnemonic: '中心对称＝「沿中轴镜像，稳重」。',
-    mnemonicImg: 'images/mnemonic/center-sym.jpg',
+    mnemonicImg: 'images/mnemonic/center-sym.webp',
   },
   'margin': {
     pitfall: '内容顶到边，显挤显廉价。',
     mnemonic: '页边距＝「内容离画布边的距离」。',
-    mnemonicImg: 'images/mnemonic/margin.jpg',
+    mnemonicImg: 'images/mnemonic/margin.webp',
   },
   'column': {
     pitfall: '栏宽不等，文字对不齐读数乱。',
     mnemonic: '栏宽＝「分栏后每栏的宽度」。',
-    mnemonicImg: 'images/mnemonic/column.jpg',
+    mnemonicImg: 'images/mnemonic/column.webp',
     combo: '栏宽 + 栅格：定栏数自动等宽。'
   },
   'bleed': {
     pitfall: '满版图留白边，显小气；或超出裁剪区被切。',
     mnemonic: '出血＝「图超出裁切线，印刷不被切白」。',
-    mnemonicImg: 'images/mnemonic/bleed.jpg',
+    mnemonicImg: 'images/mnemonic/bleed.webp',
     etymology: 'Bleed 指印刷时图像溢出裁切边。'
   },
   'card-layout': {
     pitfall: '卡片间距不一、圆角乱，显乱。',
     mnemonic: '卡片＝「把信息装进小方块容器」。',
-    mnemonicImg: 'images/mnemonic/card-layout.jpg'
+    mnemonicImg: 'images/mnemonic/card-layout.webp'
   },
   'full-image': {
     pitfall: '字直接压图上显糊，没留安全区。',
     mnemonic: '全图型＝「整页一张图，字浮其上」。',
-    mnemonicImg: 'images/mnemonic/full-image.jpg'
+    mnemonicImg: 'images/mnemonic/full-image.webp'
   },
   'visual-balance': {
     pitfall: '一边重一边空，画面要倒。',
     mnemonic: '视觉平衡＝「重量在画面上分布均匀」。',
-    mnemonicImg: 'images/mnemonic/visual-balance.jpg',
+    mnemonicImg: 'images/mnemonic/visual-balance.webp',
   },
 
   /* ============ 动画与切换 ============ */
   'anim-type': {
     pitfall: '啥都用「飞入」，动画没意义。',
     mnemonic: '进入=出现，退出=消失，强调=中途突出。',
-    mnemonicImg: 'images/mnemonic/anim-type.jpg',
+    mnemonicImg: 'images/mnemonic/anim-type.webp',
   },
   'smooth-vs-abrupt': {
     pitfall: '突然切换显生硬，像跳帧。',
     mnemonic: '平滑＝「有过程的渐变」，突然＝「无过程直切」。',
-    mnemonicImg: 'images/mnemonic/smooth-vs-abrupt.jpg',
+    mnemonicImg: 'images/mnemonic/smooth-vs-abrupt.webp',
   },
   'easing': {
     pitfall: '全用线性，动画机械像机器人。',
     mnemonic: '缓动＝「加减速的节奏曲线」。',
-    mnemonicImg: 'images/mnemonic/easing.jpg',
+    mnemonicImg: 'images/mnemonic/easing.webp',
     etymology: 'Easing 指动画速度随时间变化的函数。'
   },
   'trigger': {
     pitfall: '全设「单击开始」，复杂序列失控。',
     mnemonic: '触发＝「动画什么时候动」。',
-    mnemonicImg: 'images/mnemonic/trigger.jpg',
+    mnemonicImg: 'images/mnemonic/trigger.webp',
   },
   'transition-fx': {
     pitfall: '每页不同花哨切换，喧宾夺主。',
     mnemonic: '切换＝「页与页之间的过场」。',
-    mnemonicImg: 'images/mnemonic/transition-fx.jpg',
+    mnemonicImg: 'images/mnemonic/transition-fx.webp',
   },
   'timeline': {
     pitfall: '动画窗格里顺序乱，时间对不上。',
@@ -391,23 +390,23 @@ const TERM_EXTRA = {
       menu: '动画 → 动画窗格（拖拽排顺序）'
     },
     mnemonic: '时间轴＝「动画播放的先后时钟」。',
-    mnemonicImg: 'images/mnemonic/timeline.jpg',
+    mnemonicImg: 'images/mnemonic/timeline.webp',
   },
   'morph': {
     pitfall: '两页对象没对应，morph 变成乱飞。',
     mnemonic: '平滑切换＝「同元素跨页变形」（高手向）。',
-    mnemonicImg: 'images/mnemonic/morph.jpg',
+    mnemonicImg: 'images/mnemonic/morph.webp',
     etymology: 'Morph 意为「变形」，PPT 中专指对象跨页平滑过渡。'
   },
   'motion-path': {
     pitfall: '路径画太绕，元素飞出画面。',
     mnemonic: '路径动画＝「让对象沿一条线走」。',
-    mnemonicImg: 'images/mnemonic/motion-path.jpg',
+    mnemonicImg: 'images/mnemonic/motion-path.webp',
   },
   'anim-timing': {
     pitfall: '时长太长显拖沓，太短看不清。',
     mnemonic: '计时＝「动画走多久、延迟多久」。',
-    mnemonicImg: 'images/mnemonic/anim-timing.jpg',
+    mnemonicImg: 'images/mnemonic/anim-timing.webp',
   },
 
   /* ============ 效率与技巧 ============ */
@@ -417,7 +416,7 @@ const TERM_EXTRA = {
       menu: '开始 → 格式刷（双击可连续刷多个）'
     },
     mnemonic: '格式刷＝「复制格式的工具」。',
-    mnemonicImg: 'images/mnemonic/format-painter.jpg',
+    mnemonicImg: 'images/mnemonic/format-painter.webp',
   },
   'shortcut': {
     pitfall: '只会 Ctrl+C/V，其他全靠鼠标点。',
@@ -438,23 +437,23 @@ const TERM_EXTRA = {
       ]
     },
     mnemonic: '快捷键＝「键盘一步到位」。',
-    mnemonicImg: 'images/mnemonic/shortcut.jpg',
+    mnemonicImg: 'images/mnemonic/shortcut.webp',
   },
   'distribute': {
     pitfall: '只对齐不分布，元素间距仍乱。',
     mnemonic: '分布＝「让多个元素间距相等」。',
-    mnemonicImg: 'images/mnemonic/distribute.jpg',
+    mnemonicImg: 'images/mnemonic/distribute.webp',
   },
   'color-reuse': {
     pitfall: '每次重新选色，整篇色不一致。',
     combo: '取色复用 + 主题：定好色板反复吸，统一。',
     mnemonic: '取色复用＝「吸一次，处处用同色」。',
-    mnemonicImg: 'images/mnemonic/color-reuse.jpg',
+    mnemonicImg: 'images/mnemonic/color-reuse.webp',
   },
   'vector-vs-raster': {
     pitfall: '放大位图变马赛克，还怪软件。',
     mnemonic: '矢量=放大不糊，位图=放大出格。',
-    mnemonicImg: 'images/mnemonic/vector-vs-raster.jpg',
+    mnemonicImg: 'images/mnemonic/vector-vs-raster.webp',
     etymology: 'Vector 用数学描述，Raster 用像素点阵。'
   },
   'compress': {
@@ -463,7 +462,7 @@ const TERM_EXTRA = {
       menu: '图片格式 → 压缩图片'
     },
     mnemonic: '压缩＝「减小图体积保清晰」。',
-    mnemonicImg: 'images/mnemonic/compress.jpg',
+    mnemonicImg: 'images/mnemonic/compress.webp',
   },
   'anim-painter': {
     pitfall: '逐个加相同动画，重复劳动。',
@@ -471,13 +470,13 @@ const TERM_EXTRA = {
       menu: '动画 → 动画刷（吸一个动画刷给别的）'
     },
     mnemonic: '动画刷＝「格式刷的动画版」。',
-    mnemonicImg: 'images/mnemonic/anim-painter.jpg',
+    mnemonicImg: 'images/mnemonic/anim-painter.webp',
   },
   'plugins': {
     pitfall: '装一堆插件不维护，版本冲突。',
     combo: '插件 + 母版：用 iSlide 批量美化后回归母版控风格。',
     mnemonic: '增效插件＝「给 PPT 加外挂能力」。',
-    mnemonicImg: 'images/mnemonic/plugins.jpg',
+    mnemonicImg: 'images/mnemonic/plugins.webp',
   },
   'smart-align': {
     pitfall: '手动挪，差几像素对不齐。',
@@ -485,19 +484,19 @@ const TERM_EXTRA = {
       menu: '拖动时智能参考线自动吸附'
     },
     mnemonic: '智能对齐＝「靠近自动吸到参考线」。',
-    mnemonicImg: 'images/mnemonic/smart-align.jpg',
+    mnemonicImg: 'images/mnemonic/smart-align.webp',
   },
 
   /* ============ 图形与图示 ============ */
   'icon-style': {
     pitfall: '线框图标和实心图标混用，乱。',
     mnemonic: '图标统一＝「同描边同风格」。',
-    mnemonicImg: 'images/mnemonic/icon-style.jpg',
+    mnemonicImg: 'images/mnemonic/icon-style.webp',
   },
   'chart-beauty': {
     pitfall: '默认图表花花绿绿，网格线抢戏。',
     mnemonic: '图表美化＝「减干扰，突出数据」。',
-    mnemonicImg: 'images/mnemonic/chart-beauty.jpg',
+    mnemonicImg: 'images/mnemonic/chart-beauty.webp',
     combo: '图表美化 + 数据可视化：先选对图再美化。'
   },
   'smartart-to-shape': {
@@ -506,34 +505,34 @@ const TERM_EXTRA = {
       menu: '右键 SmartArt → 转换为形状 → 取消组合'
     },
     mnemonic: '转形状＝「把图示拆成可编辑图形」（高手向）。',
-    mnemonicImg: 'images/mnemonic/smartart-to-shape.jpg',
+    mnemonicImg: 'images/mnemonic/smartart-to-shape.webp',
     etymology: 'Convert to Shapes 即转为原生形状。'
   },
   'image-mask': {
     pitfall: '直接拉伸图片变形，人物被压扁。',
     mnemonic: '蒙版＝「用形状框住图片」。',
-    mnemonicImg: 'images/mnemonic/image-mask.jpg',
+    mnemonicImg: 'images/mnemonic/image-mask.webp',
   },
   'flat-vs-skeu': {
     pitfall: '拟物过度，像贴纸；扁平过度，没质感。',
     mnemonic: '扁平=简洁，拟物=仿真带质感。',
-    mnemonicImg: 'images/mnemonic/flat-vs-skeu.jpg',
+    mnemonicImg: 'images/mnemonic/flat-vs-skeu.webp',
   },
   'data-viz': {
     pitfall: '用错图：构成用柱状、趋势用饼图。',
     mnemonic: '选对图＝「比大小用柱、看占比用饼、看趋势用线」。',
-    mnemonicImg: 'images/mnemonic/data-viz.jpg',
+    mnemonicImg: 'images/mnemonic/data-viz.webp',
     combo: '数据可视化 + 图表美化：先对图再美化。'
   },
   'table-beauty': {
     pitfall: '默认表格线密密麻麻，读着累。',
     mnemonic: '表格美化＝「减线、留白、对齐」。',
-    mnemonicImg: 'images/mnemonic/table-beauty.jpg',
+    mnemonicImg: 'images/mnemonic/table-beauty.webp',
   },
   'model-3d': {
     pitfall: '3D 转太花，喧宾夺主。',
     mnemonic: '3D 模型＝「可旋转的立体对象」。',
-    mnemonicImg: 'images/mnemonic/model-3d.jpg',
+    mnemonicImg: 'images/mnemonic/model-3d.webp',
   },
 
   /* ============ 输出与放映 ============ */
@@ -544,7 +543,7 @@ const TERM_EXTRA = {
     },
     checklist: ['确认投影/屏幕比例是 16:9 还是 4:3', '改大小前先备份原版式', '改后检查元素是否溢出'],
     mnemonic: '16:9 是「宽屏标准比例」。',
-    mnemonicImg: 'images/mnemonic/widescreen.jpg',
+    mnemonicImg: 'images/mnemonic/widescreen.webp',
   },
   'export-pdf': {
     pitfall: '直接打印丢动画/字体。',
@@ -553,7 +552,7 @@ const TERM_EXTRA = {
     },
     checklist: ['字体已嵌入或转曲', '备注/讲义模式选对', '图片分辨率足够'],
     mnemonic: '导出 PDF＝「定稿的安全格式」。',
-    mnemonicImg: 'images/mnemonic/export-pdf.jpg',
+    mnemonicImg: 'images/mnemonic/export-pdf.webp',
   },
   'presenter-view': {
     pitfall: '没开演讲者视图，观众看到你的备注。',
@@ -563,19 +562,19 @@ const TERM_EXTRA = {
     },
     checklist: ['双屏扩展已设置', '备注已写好', '计时/下一页可见'],
     mnemonic: '演讲者视图＝「你见备注，观众见幻灯片」。',
-    mnemonicImg: 'images/mnemonic/presenter-view.jpg',
+    mnemonicImg: 'images/mnemonic/presenter-view.webp',
   },
   'hyperlink': {
     pitfall: '链接到删掉的页，点了报错。',
     checklist: ['链接目标页仍存在', '放映模式下才生效', '用完测试一遍'],
     mnemonic: '超链接＝「页内或对外跳转」。',
-    mnemonicImg: 'images/mnemonic/hyperlink.jpg',
+    mnemonicImg: 'images/mnemonic/hyperlink.webp',
   },
   'autoplay': {
     pitfall: '自动播放没排好计时，翻页乱。',
     checklist: ['已用排练计时记录时长', '换片方式设为「按计时」', '循环选项按需开'],
     mnemonic: '自动播放＝「无人值守自己翻」。',
-    mnemonicImg: 'images/mnemonic/autoplay.jpg',
+    mnemonicImg: 'images/mnemonic/autoplay.webp',
   },
   'embed-font': {
     pitfall: '没嵌字体，到别的电脑全变样。',
@@ -584,7 +583,7 @@ const TERM_EXTRA = {
     },
     checklist: ['已嵌入字体（或转曲）', '对方无需装同款字体', '文件体积可接受'],
     mnemonic: '嵌入字体＝「把字体打包进文件」。',
-    mnemonicImg: 'images/mnemonic/embed-font.jpg',
+    mnemonicImg: 'images/mnemonic/embed-font.webp',
   },
   'export-media': {
     pitfall: '导出分辨率低，长图发虚。',
@@ -594,7 +593,7 @@ const TERM_EXTRA = {
     checklist: ['选对分辨率（长图要高清）', '透明背景需求选 PNG', 'GIF 适合小动图'],
     combo: '导出图片 + 导出DPI：调高 DPI 再导出才清晰。',
     mnemonic: '导出图片＝「页变图，方便发」。',
-    mnemonicImg: 'images/mnemonic/export-media.jpg',
+    mnemonicImg: 'images/mnemonic/export-media.webp',
   },
   'speaker-notes': {
     pitfall: '备注写满念稿，像读课本。',
@@ -603,7 +602,7 @@ const TERM_EXTRA = {
     },
     checklist: ['只写关键词/提醒', '和幻灯片要点对应', '别把机密写进去'],
     mnemonic: '演讲备注＝「给自己看的提词」。',
-    mnemonicImg: 'images/mnemonic/speaker-notes.jpg',
+    mnemonicImg: 'images/mnemonic/speaker-notes.webp',
   },
   'rehearse': {
     pitfall: '不排练，现场超时或太快。',
@@ -613,7 +612,7 @@ const TERM_EXTRA = {
     checklist: ['完整讲一遍记时长', '超时页已精简', '保留计时用于自动播放'],
     combo: '排练计时 + 自动播放：练完直接生成无人值守放映。',
     mnemonic: '排练计时＝「彩排时记下每页多久」。',
-    mnemonicImg: 'images/mnemonic/rehearse.jpg',
+    mnemonicImg: 'images/mnemonic/rehearse.webp',
   },
   'export-dpi': {
     pitfall: '默认 96 DPI，放大/印刷就糊。',
@@ -622,7 +621,7 @@ const TERM_EXTRA = {
     },
     checklist: ['目标用途定 DPI（屏 150 / 印 300）', '源文件元素够清晰', '文件别过大'],
     mnemonic: 'DPI＝「每英寸点数，越高越清晰」。',
-    mnemonicImg: 'images/mnemonic/export-dpi.jpg',
+    mnemonicImg: 'images/mnemonic/export-dpi.webp',
   },
 
   /* ============ 本轮新增 15 条补字段（notes-master 已写入软件功能） ============ */
@@ -632,41 +631,41 @@ const TERM_EXTRA = {
       menu: '视图 → 大纲视图'
     },
     mnemonic: '大纲视图＝「只写文字层级，先想清楚讲什么」。',
-    mnemonicImg: 'images/mnemonic/outline-view.jpg',
+    mnemonicImg: 'images/mnemonic/outline-view.webp',
     combo: '大纲 + 母版：先大纲填内容，再母版定风格。'
   },
   'font-pairing': {
     pitfall: '标题正文用同一字体，没层次。',
     mnemonic: '字体配对＝「标题正文搭一套协调字体」。',
-    mnemonicImg: 'images/mnemonic/font-pairing.jpg',
+    mnemonicImg: 'images/mnemonic/font-pairing.webp',
     combo: '字体配对 + 字号阶梯：字体差+尺寸差双重层级。'
   },
   'symmetry': {
     pitfall: '啥都对称，显呆；全非对称又显乱。',
     mnemonic: '对称=稳重，非对称=灵动。',
-    mnemonicImg: 'images/mnemonic/symmetry.jpg',
+    mnemonicImg: 'images/mnemonic/symmetry.webp',
   },
   'diagonal-flow': {
     pitfall: '元素平铺，视线没方向。',
     mnemonic: '对角线＝「利用眼睛天然斜扫习惯」。',
-    mnemonicImg: 'images/mnemonic/diagonal-flow.jpg',
+    mnemonicImg: 'images/mnemonic/diagonal-flow.webp',
   },
   'remove-bg': {
     pitfall: '直接贴带背景方图，和页面打架。',
     mnemonic: '去背＝「只留主体，丢背景」。',
-    mnemonicImg: 'images/mnemonic/remove-bg.jpg',
+    mnemonicImg: 'images/mnemonic/remove-bg.webp',
     combo: '去背 + 蒙版：去背后用形状遮罩更精致。'
   },
   'infographic': {
     pitfall: '文字堆成长段落，没人看。',
     mnemonic: '信息图＝「用图代替长文字」。',
-    mnemonicImg: 'images/mnemonic/infographic.jpg',
+    mnemonicImg: 'images/mnemonic/infographic.webp',
     combo: '信息图 + 数据可视化：数据类直接上图。'
   },
   'brand-vi': {
     pitfall: '即兴用色用字，像不同人拼的。',
     mnemonic: 'VI＝「企业视觉识别规范」。',
-    mnemonicImg: 'images/mnemonic/brand-vi.jpg',
+    mnemonicImg: 'images/mnemonic/brand-vi.webp',
     combo: '品牌VI + 母版：把 VI 固化进母版，永不乱。'
   },
   'quick-access': {
@@ -675,7 +674,7 @@ const TERM_EXTRA = {
       menu: '右键命令 → 添加到快速访问工具栏'
     },
     mnemonic: 'QAT＝「窗口左上角的常用命令条」。',
-    mnemonicImg: 'images/mnemonic/quick-access.jpg',
+    mnemonicImg: 'images/mnemonic/quick-access.webp',
   },
   'find-replace': {
     pitfall: '逐页手动改词，漏改还累。',
@@ -685,13 +684,13 @@ const TERM_EXTRA = {
       menu: '开始 → 编辑 → 查找/替换'
     },
     mnemonic: '查找替换＝「全文一键换词换色」。',
-    mnemonicImg: 'images/mnemonic/find-replace.jpg',
+    mnemonicImg: 'images/mnemonic/find-replace.webp',
     combo: '查找替换 + 主题：批量统一字体/颜色。'
   },
   'loop-anim': {
     pitfall: '循环动画太抢戏，晃眼。',
     mnemonic: '循环＝「一直重复播的动画」。',
-    mnemonicImg: 'images/mnemonic/loop-anim.jpg',
+    mnemonicImg: 'images/mnemonic/loop-anim.webp',
   },
   'custom-show': {
     pitfall: '为不同观众复制多份文件。',
@@ -699,6 +698,7 @@ const TERM_EXTRA = {
       menu: '幻灯片放映 → 自定义放映'
     },
     mnemonic: '自定义放映＝「同一份挑几页组成子放映」。',
+    mnemonicImg: 'images/mnemonic/screen-blank-pen.webp',
     etymology: 'Custom Show 即自定义节目单。'
   },
   'screen-blank-pen': {
@@ -715,6 +715,7 @@ const TERM_EXTRA = {
   'font-license': {
     pitfall: '用未授权字体对外发布，吃侵权。',
     mnemonic: '字体版权＝「这字能不能商用」。',
+    mnemonicImg: 'images/mnemonic/font-license.webp',
     combo: '字体版权 + 嵌入字体：可商用且嵌入，双保险。'
   },
   /* ============ 本轮新增补充 ============ */
@@ -724,7 +725,8 @@ const TERM_EXTRA = {
       menu: '选中形状 → 右键「编辑顶点」(或格式→编辑形状→编辑顶点)'
     },
     combo: '编辑顶点 + 布尔运算：先拼再微调轮廓，曲线随心。',
-    mnemonic: '编辑顶点＝「把形状捏成任意形」。'
+    mnemonic: '编辑顶点＝「把形状捏成任意形」。',
+    mnemonicImg: 'images/mnemonic/edit-points.webp',
   },
   'theme-variant': {
     pitfall: '切变体只换配色字体，版式不动——别指望它改布局。',
@@ -732,7 +734,8 @@ const TERM_EXTRA = {
       menu: '设计 → 变体（右侧下拉）→ 选配色/字体'
     },
     combo: '主题变体 + 母版：变体调色、母版调结构，各司其职。',
-    mnemonic: '主题变体＝「同主题换皮肤」。'
+    mnemonic: '主题变体＝「同主题换皮肤」。',
+    mnemonicImg: 'images/mnemonic/theme-variant.webp',
   },
   'action-button': {
     pitfall: '动作设置错对象，点了没反应；放映外点击不触发。',
@@ -1157,14 +1160,6 @@ const TERM_EXTRA = {
     combo: '母版水印 + 页眉页脚：全篇标记统一。',
     mnemonic: '水印＝「母版里的半透明装饰层」。'
   },
-  'screenshot': {
-    pitfall: '截图还要存盘再插入，多绕两步。',
-    shortcut: {
-      menu: '插入 → 屏幕截图（窗口/屏幕剪辑）'
-    },
-    combo: '截图 + 裁剪/艺术效果：引用界面一步到位。',
-    mnemonic: '屏幕截图＝「现截现贴」。'
-  },
   'autofit': {
     pitfall: '字多溢出文本框，丢字还难看。',
     shortcut: {
@@ -1235,7 +1230,8 @@ const TERM_EXTRA = {
       menu: '图片格式 → 更正 → 亮度/对比度'
     },
     combo: '更正 + 柔化：提亮后加柔化做背景。',
-    mnemonic: '图片更正＝「PPT 内置 PS 曝光调节」。'
+    mnemonic: '图片更正＝「PPT 内置 PS 曝光调节」。',
+    mnemonicImg: 'images/mnemonic/picture-correct.webp',
   },
   'picture-style': {
     pitfall: '图片裸放没质感，手动加边框投影好麻烦。',
@@ -1243,7 +1239,8 @@ const TERM_EXTRA = {
       menu: '图片格式 → 图片样式库 → 悬停预览点选'
     },
     combo: '图片样式 + 格式刷：设好一个样式，格式刷批量复制。',
-    mnemonic: '图片样式＝「给照片穿衣服」。'
+    mnemonic: '图片样式＝「给照片穿衣服」。',
+    mnemonicImg: 'images/mnemonic/picture-style.webp',
   },
   'change-picture': {
     pitfall: '素材更新→删旧图→插新图→重调所有格式→烦死人。',
@@ -1251,7 +1248,8 @@ const TERM_EXTRA = {
       menu: '右键图片 → 更改图片 → 选新素材'
     },
     combo: '更改图片 + 模板占位：用占位图调好格式，批量更换真素材。',
-    mnemonic: '更改图片＝「换素材不换格式」。'
+    mnemonic: '更改图片＝「换素材不换格式」。',
+    mnemonicImg: 'images/mnemonic/change-picture.webp',
   },
   'data-bars': {
     pitfall: '表格只有数字看不出大小关系，另画图表又占地方。',
@@ -1259,7 +1257,8 @@ const TERM_EXTRA = {
       menu: '表格设计 → 条件格式 → 数据条'
     },
     combo: '数据条 + 表格美化：先做斑马纹再做数据条。',
-    mnemonic: '数据条＝「表格里画迷你柱状图」。'
+    mnemonic: '数据条＝「表格里画迷你柱状图」。',
+    mnemonicImg: 'images/mnemonic/data-bars.webp',
   },
   'video-trim': {
     pitfall: '视频太长，放映时要拖进度条或切出去播放器。',
@@ -1267,7 +1266,8 @@ const TERM_EXTRA = {
       menu: '选中视频 → 播放 → 裁剪视频'
     },
     combo: '视频裁剪 + 书签：剪短后加书签做分知识点跳点。',
-    mnemonic: '视频裁剪＝「只留精彩片段，放映不跳出」。'
+    mnemonic: '视频裁剪＝「只留精彩片段，放映不跳出」。',
+    mnemonicImg: 'images/mnemonic/video-trim.webp',
   },
   'ink-math': {
     pitfall: '复杂公式打 LaTeX 慢、拼字符丑、截图放进去糊。',
@@ -1275,7 +1275,8 @@ const TERM_EXTRA = {
       menu: '插入 → 公式 → 墨迹公式 → 手写'
     },
     combo: '墨迹公式 + 公式编号：手写转标准格式后加编号。',
-    mnemonic: '墨迹公式＝「手写数学式，PPT 帮你认」。'
+    mnemonic: '墨迹公式＝「手写数学式，PPT 帮你认」。',
+    mnemonicImg: 'images/mnemonic/ink-math.webp',
   }
 };
 

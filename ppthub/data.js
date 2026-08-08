@@ -1332,14 +1332,6 @@ const TERMS = [
     related: ["master", "layout", "notes-master"], demo: "watermark"
   },
   {
-    id: "screenshot", name: "屏幕截图", alias: "Screenshot",
-    category: "图片与多媒体", level: "入门",
-    summary: "直接截屏贴进幻灯片——不用先存图再插入，一步到位。",
-    detail: "「插入 → 屏幕截图」可截取当前打开的窗口(缩略图直接选)或「屏幕剪辑」(框选区域)，截图立刻进幻灯片。适合引用网页、软件界面、聊天记录，省去「截图→存盘→插入」三步。区别于「图片」(插入已有文件)，截图是现截现用；也区别于「屏幕录制」(录视频)，截图是静态。",
-    scenario: "讲竞品时直接截它官网窗口贴进 PPT，对比一目了然。",
-    related: ["image-crop", "compress", "remove-bg"], demo: "screenshot"
-  },
-  {
     id: "autofit", name: "文本自动适配", alias: "AutoFit Text",
     category: "排版与布局", level: "入门",
     summary: "文本框自动缩字/溢出提示——文字多了不爆框、不丑。",
