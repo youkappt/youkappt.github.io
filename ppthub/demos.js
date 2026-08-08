@@ -4091,41 +4091,6 @@ const DEMOS = {
   c.querySelector('[data-m="xsb"]').onclick = function(){ ci = (ci + 1) % CASES.length; fill(); var act = c.querySelector('[data-m].active:not([data-m="xsb"])'); render(act ? act.dataset.m : 'normal'); };
 },
 
-  'present-online'(c) {
-  let ci = Math.floor(Math.random() * CASES.length);
-  c.innerHTML =
-    '<div class="demo-stack">'
-    + '<div class="demo-row demo-top">'
-      + '<span class="demo-label" id="xxName">案例加载中…</span>'
-      + '<button class="demo-btn" data-m="xpo">↻ 换一个真实案例</button>'
-    + '</div>'
-    + '<div class="mini-slide" id="xxStage"></div>'
-    + '<div class="demo-row"><button class="demo-btn" data-m="local">本地放映</button><button class="demo-btn" data-m="online">联机放映</button></div>'
-    + '<div class="demo-label" style="text-align:center">联机放映：扫码即看，无需拷文件</div>'
-    + '</div>';
-  const stage = c.querySelector('#xxStage');
-  const nameEl = c.querySelector('#xxName');
-  function fill(){ nameEl.textContent = '案例：' + CASES[ci].title; }
-  function render(m){
-  const cs = CASES[ci];
-  if (m === 'online') {
-    stage.innerHTML = '<div style="position:absolute;inset:0;display:flex;gap:10px;padding:12px;background:#16203a">'
-      + '<div style="width:54px;height:54px;border-radius:8px;background:#0c1322;border:1px solid #2f6f3a;display:flex;align-items:center;justify-content:center;font:8px var(--font-mono);color:#9fe3c5;text-align:center">扫码<br>加入</div>'
-      + '<div style="flex:1;display:flex;flex-direction:column;gap:5px">'
-        + '<div style="font:700 12px var(--font-display);color:#eef3e6">' + cs.title + ' · 直播中</div>'
-        + '<div style="font:10px var(--font-body);color:#bcd99b">🔗 ' + cs.footer + '/live</div>'
-        + '<div style="font:10px var(--font-body);color:#7e8aa0">观众 12 人已连接</div>'
-      + '</div>'
-    + '</div>';
-  } else {
-    stage.innerHTML = '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#16203a"><div style="font:700 14px var(--font-display);color:#eef3e6">' + cs.title + '</div></div>';
-  }
-  }
-  fill(); render('online');
-  c.querySelectorAll('[data-m]:not([data-m="xpo"])').forEach(function(b){ b.onclick = function(){ c.querySelectorAll('[data-m]:not([data-m="xpo"])').forEach(function(x){ x.classList.remove('active'); }); b.classList.add('active'); render(b.dataset.m); }; });
-  var initBtn = c.querySelector('[data-m="online"]'); if (initBtn) initBtn.classList.add('active');
-  c.querySelector('[data-m="xpo"]').onclick = function(){ ci = (ci + 1) % CASES.length; fill(); var act = c.querySelector('[data-m].active:not([data-m="xpo"])'); render(act ? act.dataset.m : 'online'); };
-},
 
   'font-license'(c) {
     const cs = CASES.find(x => x.id === 'font-license') || CASES[0];

@@ -712,14 +712,6 @@ const TERM_EXTRA = {
     },
     mnemonic: '放映＝「B黑W白，Ctrl+P当笔」。'
   },
-  'present-online': {
-    pitfall: '先导出视频再传，麻烦还慢。',
-    shortcut: {
-      menu: '幻灯片放映 → 联机演示'
-    },
-    mnemonic: '联机放映＝「把正在放的同步给远程」。',
-    checklist: ['网络稳定', '观众拿到链接', '用演讲者视图保护备注']
-  },
   'font-license': {
     pitfall: '用未授权字体对外发布，吃侵权。',
     mnemonic: '字体版权＝「这字能不能商用」。',

@@ -211,22 +211,6 @@ if (m === 'blank') {
 stage.innerHTML = inner;
 '''
 
-R_present_online = r'''
-const cs = CASES[ci];
-if (m === 'online') {
-  stage.innerHTML = '<div style="position:absolute;inset:0;display:flex;gap:10px;padding:12px;background:#16203a">'
-    + '<div style="width:54px;height:54px;border-radius:8px;background:#0c1322;border:1px solid #2f6f3a;display:flex;align-items:center;justify-content:center;font:8px var(--font-mono);color:#9fe3c5;text-align:center">扫码<br>加入</div>'
-    + '<div style="flex:1;display:flex;flex-direction:column;gap:5px">'
-      + '<div style="font:700 12px var(--font-display);color:#eef3e6">' + cs.title + ' · 直播中</div>'
-      + '<div style="font:10px var(--font-body);color:#bcd99b">🔗 ' + cs.footer + '/live</div>'
-      + '<div style="font:10px var(--font-body);color:#7e8aa0">观众 12 人已连接</div>'
-    + '</div>'
-  + '</div>';
-} else {
-  stage.innerHTML = '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#16203a"><div style="font:700 14px var(--font-display);color:#eef3e6">' + cs.title + '</div></div>';
-}
-'''
-
 R_hide_slide = r'''
 const cs = CASES[ci];
 const hide = m === 'hide';
@@ -337,7 +321,6 @@ GEN = {
   'export-dpi': ('72', '<button class="demo-btn" data-m="72">72 dpi</button><button class="demo-btn" data-m="150">150 dpi</button><button class="demo-btn" data-m="300">300 dpi</button>', '300', R_export_dpi, '切换分辨率，看印刷清晰度差异'),
   'custom-show': ('all', '<button class="demo-btn" data-m="all">全部放映</button><button class="demo-btn" data-m="pick">自定义(1·3·5)</button>', 'all', R_custom_show, '勾选子集，自定义只放筛选的页'),
   'screen-blank-pen': ('normal', '<button class="demo-btn" data-m="normal">正常</button><button class="demo-btn" data-m="blank">黑屏</button><button class="demo-btn" data-m="pen">荧光笔</button>', 'normal', R_screen_blank_pen, '黑屏/荧光笔，演示中的临场控制'),
-  'present-online': ('local', '<button class="demo-btn" data-m="local">本地放映</button><button class="demo-btn" data-m="online">联机放映</button>', 'online', R_present_online, '联机放映：扫码即看，无需拷文件'),
   'hide-slide': ('show', '<button class="demo-btn" data-m="show">全部显示</button><button class="demo-btn" data-m="hide">隐藏第 3 页</button>', 'show', R_hide_slide, '隐藏某页，放映时自动跳过'),
   'narration': ('off', '<button class="demo-btn" data-m="off">无旁白</button><button class="demo-btn" data-m="rec">录制旁白</button>', 'rec', R_narration, '录制旁白，给幻灯片配上人声'),
   'cmyk-rgb': ('rgb', '<button class="demo-btn" data-m="rgb">屏幕 RGB</button><button class="demo-btn" data-m="cmyk">印刷 CMYK</button>', 'cmyk', R_cmyk_rgb, '对比同一品牌色在屏幕与印刷上的差异'),
@@ -565,8 +548,6 @@ BA = {
                   col(line(100,'BC.barok',8) + ", " + line(100,'BC.barok',8,"margin-top:6px;opacity:.4") + ", " + line(100,'BC.barok',8,"margin-top:6px;opacity:.4"))),
   'screen-blank-pen': (col(txt('讲机密仍在放','BC.bad','11') + ", " + txt('无标注','BC.bad','11','margin-top:6px')),
                        col(txt('一键黑屏','BC.green','11') + ", " + txt('荧光笔标注','BC.green','11','margin-top:6px'))),
-  'present-online': (col(txt('现场拷文件','BC.fog','11') + ", " + txt('版本乱','BC.fog','11','margin-top:6px')),
-                     col(txt('联机放映','BC.green','11') + ", " + txt('扫码即看','BC.green','11','margin-top:6px'))),
   'hide-slide': (col(line(110,'BC.barbad',8) + ", " + line(110,'BC.barbad',8,"margin-top:6px") + ", " + line(110,'BC.barbad',8,"margin-top:6px")),
                  col(line(110,'BC.barok',8) + ", " + txt('（第3页已隐藏）','BC.green','10','margin-top:6px') + ", " + line(110,'BC.barok',8,"margin-top:6px"))),
   'narration': (col(txt('干讲','BC.fog','12') + ", " + txt('无配音','BC.fog','11','margin-top:6px')),
@@ -588,7 +569,7 @@ BA = {
 # (video-trim entry already correct; BC_prefix defined above)
 
 ORDER = ['widescreen','export-pdf','presenter-view','hyperlink','autoplay','embed-font','export-media',
-         'speaker-notes','rehearse','export-dpi','custom-show','screen-blank-pen','present-online','hide-slide',
+         'speaker-notes','rehearse','export-dpi','custom-show','screen-blank-pen','hide-slide',
          'narration','cmyk-rgb','live-caption','package','print','ink','video-trim']
 
 ba_entries = ''
@@ -622,7 +603,6 @@ BA_TEXT = {
   'export-dpi': '改前：72dpi 印刷发虚 → 改后：300dpi 印刷清晰。',
   'custom-show': '改前：全放一遍 → 改后：只放筛选的子集。',
   'screen-blank-pen': '改前：讲机密时还在放映 → 改后：一键黑屏/荧光笔标注。',
-  'present-online': '改前：现场拷文件 → 改后：联机放映，观众扫码看。',
   'hide-slide': '改前：不相关的也放 → 改后：隐藏页放映时跳过。',
   'narration': '改前：干讲 → 改后：录旁白，自动配音。',
   'cmyk-rgb': '改前：屏幕鲜亮→印刷偏暗 → 改后：提前转 CMYK 校对。',

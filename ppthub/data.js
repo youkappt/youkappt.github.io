@@ -799,14 +799,6 @@ const TERMS = [
     related: ["presenter-view", "shortcut", "rehearse"], demo: "screen-blank-pen"
   },
   {
-    id: "present-online", name: "联机 / 远程放映", alias: "Present Online",
-    category: "输出与放映", level: "进阶",
-    summary: "把正在放的幻灯片「直播」出去，异地同事点链接就能同步看、还能看你讲。",
-    detail: "联机放映（Present Online）生成一个链接，远程观众打开就能看到你正在放映的页面，和你翻页同步。适合异地会议、线上路演，省去先导出视频再传的麻烦。它和演讲者视图配合，观众只看到幻灯片、看不到你的备注。",
-    scenario: "居家给外地客户提案，发个链接，对方实时跟着你翻页，讲到哪看到哪，像同处一室。",
-    related: ["presenter-view", "autoplay", "speaker-notes"], demo: "present-online"
-  },
-  {
     id: "font-license", name: "字体版权", alias: "Font License",
     category: "字体与配色", level: "进阶",
     summary: "好看的字体不一定能商用——用错可能吃官司，先搞清楚授权再嵌。",
@@ -917,7 +909,7 @@ const TERMS = [
     summary: "给每页录语音讲解，放映时自动播放。",
     detail: "幻灯片放映→录制旁白可对着每页说话，声音嵌进文件，后续自动放映即带解说。适合做课件、自学材料、无人值守展播。",
     scenario: "录一套产品讲解，客户自己点开就能听完整推介。",
-    related: ["rehearse", "present-online"], demo: "narration"
+    related: ["rehearse"], demo: "narration"
   },
   {
     id: "transparency", name: "透明度", alias: "Transparency",
@@ -967,7 +959,7 @@ const TERMS = [
     summary: "多人同时在线编辑同一份 PPT，各自光标实时可见、改动即时合并。",
     detail: "共同创作（存在 OneDrive/SharePoint 后「共享」）让团队成员同时打开编辑，能看到别人的选区光标与输入，改动自动合并、可看版本历史。告别「最终版_v3_真final.pptx」的邮件拉锯。",
     scenario: "你和同事分头做不同章节，同一份文件并行推进，结束直接是成品。",
-    related: ["present-online", "comment", "compare-merge"], demo: "coauthor"
+    related: ["comment", "compare-merge"], demo: "coauthor"
   },
   {
     id: "text-margin", name: "文本框内部边距", alias: "Internal Margin",
@@ -1185,7 +1177,7 @@ const TERMS = [
     summary: "放映时用 AI 实时生成中/英文字幕，双语演讲神器。",
     detail: "放映选项卡里有「字幕」功能：开启后 PPT 用语音识别把你说的每句话实时转成字幕显示在画面上，还能选择翻译语言（比如你讲中文、观众看英文）。适合面向外文听众、或现场收音不清时兜底。区别于「旁白录音」（那是提前录好的声音），这是放映时实时生成的文字。",
     scenario: "给外国客户做英文发布会，开实时字幕翻译成英文，你说中文观众看英文字幕。",
-    related: ["presenter-view", "narration", "present-online"], demo: "live-caption"
+    related: ["presenter-view", "narration"], demo: "live-caption"
   },
   {
     id: "version-history", name: "版本历史", alias: "Version History",
