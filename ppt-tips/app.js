@@ -235,19 +235,25 @@
         </div>
       </div>
       ${t.summary ? `<div class="modal-lead">${esc(t.summary)}</div>` : ''}
-      <div class="modal-section">
+      <div class="modal-section modal-ba">
         <h4>改前 vs 改后</h4>
         <div class="ba-grid">
-          <div class="ba-panel">
+          <figure class="ba-cell">
             <span class="ba-tag before">${esc(t.before.tag)}</span>
-            <img class="ba-shot" src="thumbs/${t.id}_before.png" alt="${esc(t.before.tag)}">
-            <div class="modal-ba" style="margin-top:8px">${esc(t.before.desc)}</div>
-          </div>
-          <div class="ba-panel">
+            <div class="ba-img-wrap">
+              <img class="ba-shot" src="thumbs/${t.id}_before.png" alt="${esc(t.before.tag)}" loading="lazy" decoding="async">
+            </div>
+            <figcaption>改前</figcaption>
+            <div class="ba-desc">${esc(t.before.desc)}</div>
+          </figure>
+          <figure class="ba-cell">
             <span class="ba-tag after">${esc(t.after.tag)}</span>
-            <img class="ba-shot" src="thumbs/${t.id}_after.png" alt="${esc(t.after.tag)}">
-            <div class="modal-ba" style="margin-top:8px">${esc(t.after.desc)}</div>
-          </div>
+            <div class="ba-img-wrap">
+              <img class="ba-shot" src="thumbs/${t.id}_after.png" alt="${esc(t.after.tag)}" loading="lazy" decoding="async">
+            </div>
+            <figcaption>改后</figcaption>
+            <div class="ba-desc">${esc(t.after.desc)}</div>
+          </figure>
         </div>
       </div>
       <div class="modal-section">

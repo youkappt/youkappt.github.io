@@ -161,7 +161,7 @@
       </div>
       <div class="term-summary">${esc(t.summary)}</div>
       <div class="term-meta">
-        <span class="badge badge-level">${esc(t.level)}</span>
+        <span class="badge ${levelClass(t.level)}">${esc(t.level)}</span>
         <span class="badge">${esc(t.category)}</span>
       </div>`;
     c.onclick = () => openModal(t.id);
@@ -223,7 +223,7 @@
         <div class="modal-title">${esc(t.name)}</div>
         <div class="modal-alias">${esc(t.alias)} · ${esc(t.category)}</div>
         <div class="modal-meta">
-          <span class="badge badge-level">${esc(t.level)}</span>
+          <span class="badge ${levelClass(t.level)}">${esc(t.level)}</span>
         </div>
       </div>
       ${t.summary ? `<div class="modal-lead">${esc(t.summary)}</div>` : ''}
@@ -238,9 +238,9 @@
       ${renderBeforeAfter(t)}
       ${t.demo ? `<div class="modal-section"><h4>动手试试</h4><div class="demo-mount"><div class="demo-hint">◆ 专属图示 / 交互演示</div><div id="demoBody"></div></div></div>` : ''}
       ${t.pitfall ? `<div class="modal-section modal-pitfall"><h4>常见误区</h4><div class="modal-pit">⚠ ${esc(t.pitfall)}</div></div>` : ''}
-      ${t.shortcut ? `<div class="modal-section"><h4>快捷键 / 调出</h4><div class="modal-kbd">${esc(t.shortcut)}</div></div>` : ''}
+      ${renderShortcut(t.shortcut)}
       ${t.checklist ? `<div class="modal-section"><h4>自检清单</h4><ul class="modal-check">${t.checklist.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
-      ${t.mnemonic ? `<div class="modal-section"><h4>记忆口诀</h4><div class="modal-extra">${esc(t.mnemonic)}</div></div>` : ''}
+      ${(t.mnemonic || t.mnemonicImg) ? `<div class="modal-section"><h4>记忆口诀</h4>${t.mnemonic ? `<div class="modal-extra">${esc(t.mnemonic)}</div>` : ''}${t.mnemonicImg ? `<div class="modal-mnemonic-wrap"><img class="modal-mnemonic-img" src="${esc(t.mnemonicImg)}" alt="${esc(t.name)} 记忆口诀配图" loading="lazy"></div>` : ''}</div>` : ''}
       ${t.combo ? `<div class="modal-section"><h4>进阶组合技</h4><div class="modal-extra">${esc(t.combo)}</div></div>` : ''}
       ${t.etymology ? `<div class="modal-section"><h4>词源小注</h4><div class="modal-extra">${esc(t.etymology)}</div></div>` : ''}
       ${related.length ? `<div class="modal-section"><h4>关联概念</h4><div class="related-list">${related.map(r => `<span class="related-chip" data-id="${r.id}">${esc(r.name)}</span>`).join('')}</div></div>` : ''}
@@ -405,6 +405,36 @@
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function levelClass(level) {
+    return level === '进阶' ? 'badge-level-advanced' : 'badge-level-beginner';
+  }
+
+  function renderShortcut(sc) {
+    if (!sc) return '';
+    if (typeof sc === 'string') {
+      return `<div class="modal-section"><h4>快捷键 / 菜单路径</h4><div class="modal-kbd">${esc(sc)}</div></div>`;
+    }
+    const rows = [];
+    if (sc.win)  rows.push(renderShortcutBlock('Win', sc.win));
+    if (sc.mac)  rows.push(renderShortcutBlock('Mac', sc.mac));
+    if (sc.menu) rows.push(`<div class="kbd-row"><span class="kbd-label">菜单路径</span><span class="kbd-val">${esc(sc.menu)}</span></div>`);
+    if (!rows.length) return '';
+    return `<div class="modal-section"><h4>快捷键 / 菜单路径</h4><div class="modal-kbd">${rows.join('')}</div></div>`;
+  }
+
+  function renderShortcutBlock(label, val) {
+    if (Array.isArray(val)) {
+      const header = `<div class="kbd-row kbd-table-header"><span class="kbd-td kbd-td-key">快捷键</span><span class="kbd-td kbd-td-name">功能说明</span></div>`;
+      const body = val.map(item => {
+        const key = typeof item === 'string' ? item : (item.key || '');
+        const name = typeof item === 'string' ? '' : (item.name || '');
+        return `<div class="kbd-row kbd-table-row"><span class="kbd-td kbd-td-key">${esc(key)}</span><span class="kbd-td kbd-td-name">${esc(name)}</span></div>`;
+      }).join('');
+      return `<div class="kbd-block"><div class="kbd-block-label">${esc(label)}</div><div class="kbd-table">${header}${body}</div></div>`;
+    }
+    return `<div class="kbd-row"><span class="kbd-label">${esc(label)}</span><span class="kbd-val">${esc(val)}</span></div>`;
   }
 
   function renderBeforeAfter(t) {

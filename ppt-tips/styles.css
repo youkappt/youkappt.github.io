@@ -765,12 +765,47 @@ body {
 .modal-ba { font-size: 15px; color: var(--color-frost-glow); line-height: 1.6; }
 .modal-extra { font-size: 15px; color: var(--color-frost-glow); line-height: 1.6; }
 
-/* 改前 vs 改后 · 上下排版 + 放大区域（竖排更清晰） */
-.ba-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-24); margin-top: var(--spacing-16); }
-.ba-panel { display: flex; flex-direction: column; gap: var(--spacing-10); min-width: 0; }
-/* 详情页改前/改后大图：直接用与卡片同款的 PNG 截图，固定 480:270 舞台 + object-fit:cover */
-.ba-shot { width: 100%; max-width: 680px; aspect-ratio: 480 / 270; object-fit: cover; display: block;
-  border: 1px solid var(--color-glass-edge); border-radius: var(--radius-cards); background: #f1f1f1; }
+/* 改前 vs 改后 · 与 PPT 术语图鉴保持一致的图框 + 标签 + 居中排版 */
+.modal-ba .ba-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-24);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.ba-cell {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+.ba-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #f7f7f5;
+  border: 1px solid var(--color-glass-edge);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ba-img-wrap .ba-shot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.ba-cell figcaption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-moon-mist);
+  text-align: center;
+}
+.ba-cell:last-child figcaption {
+  color: var(--color-terracotta);
+}
 .ba-tag {
   align-self: flex-start;
   font-family: var(--font-mono);
@@ -779,8 +814,9 @@ body {
   padding: 3px 10px;
   border-radius: 999px;
 }
-.ba-tag.before { color: #cb5521; background: rgba(203, 85, 33, 0.12); border: 1px solid rgba(203, 85, 33, 0.35); }
-.ba-tag.after  { color: #1a3300; background: rgba(168, 229, 229, 0.14); border: 1px solid rgba(168, 229, 229, 0.40); }
+.ba-tag.before { color: var(--color-terracotta); background: rgba(203,85,33,0.12); border: 1px solid rgba(203,85,33,0.35); }
+.ba-tag.after  { color: var(--color-forest-ink); background: rgba(168,229,229,0.30); border: 1px solid rgba(168,229,229,0.7); }
+.ba-desc { font-size: 14px; color: var(--color-frost-glow); line-height: 1.6; margin-top: 2px; }
 .ba-slide {
   position: relative;
   width: 480px;

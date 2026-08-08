@@ -436,4 +436,99 @@ const BEFORE_AFTER = {
     after: 'images/beforeafter/designer-after.webp',
     caption: '同一页「心理学导论」。改前只有标题和三条干巴巴文字，像 Word；改后设计器自动生成带图标的卡片页，目录清晰、视觉统一。'
   },
+  'picture-correct': {
+    before: 'images/beforeafter/picture-correct-before.webp',
+    after: 'images/beforeafter/picture-correct-after.webp',
+    caption: '同一页「极光 Air 笔记本」。改前产品图偏暗发灰，看不清金属质感；改后用图片更正调亮曝光和对比度，机身轮廓和接口细节更清楚。'
+  },
+  'artistic-effect': {
+    before: 'images/beforeafter/artistic-effect-before.webp',
+    after: 'images/beforeafter/artistic-effect-after.webp',
+    caption: '同一页「山水之城 重庆」。改前是普通城市照片，和常见风景图没区别；改后叠加水彩艺术效果，轮廓柔和、像手绘插画，更有辨识度。'
+  },
+  'image-crop': {
+    before: 'images/beforeafter/image-crop-before.webp',
+    after: 'images/beforeafter/image-crop-after.webp',
+    caption: '同一页「对话张教授」。改前人物照完整但重点不突出，留白多；改后裁剪到上半身，手势和表情更聚焦，页面更紧凑。'
+  },
+  'recolor': {
+    before: 'images/beforeafter/recolor-before.webp',
+    after: 'images/beforeafter/recolor-after.webp',
+    caption: '同一页「城市印象」。改前晨午暮夜四张图颜色五花八门，红黄蓝绿杂乱；改后重新着成统一紫色调，四张图像一套，视觉更协调。'
+  },
+  'picture-style': {
+    before: 'images/beforeafter/picture-style-before.webp',
+    after: 'images/beforeafter/picture-style-after.webp',
+    caption: '同一页「2025 优秀员工」。改前人物照是直角证件照、贴进页面显生硬；改后套用圆角边框+紫色描边样式，并换成背景虚化的商务形象照，更像荣誉海报。'
+  },
+  'change-picture': {
+    before: 'images/beforeafter/change-picture-before.webp',
+    after: 'images/beforeafter/change-picture-after.webp',
+    caption: '同一页「上海静安店」。改前是「更改图片」默认占位框；改后替换为 PURPLE 门店实景照，原图的圆角边框、紫色描边和投影格式完整保留。'
+  },
+  'golden-ratio': {
+    before: 'images/beforeafter/golden-ratio-before.webp',
+    after: 'images/beforeafter/golden-ratio-after.webp',
+    caption: '同一页「栖溪·山间慢生活」。改前图片横平铺满右侧，版面呆板；改后按黄金比例斜切构图，左文右图留白更舒服，画面更有层次感。'
+  },
+  'format-painter': {
+    before: 'images/beforeafter/format-painter-before.webp',
+    after: 'images/beforeafter/format-painter-after.webp',
+    caption: '同一页「财务五要素」。改前五个词大小位置各不同，「成本」特别大显得乱；改后用格式刷统一字号和样式，再横向等距排齐。'
+  },
+  'distribute': {
+    before: 'images/beforeafter/distribute-before.webp',
+    after: 'images/beforeafter/distribute-after.webp',
+    caption: '同一页「生态合作伙伴」。改前五个紫色圆间距宽窄不一，看起来歪斜；改后横向对齐并等距分布，五个 Logo 整齐如一排。'
+  },
+  'column': {
+    before: 'images/beforeafter/column-before.webp',
+    after: 'images/beforeafter/column-after.webp',
+    caption: '同一页「直播电商进入存量时代」。改前正文铺满整页，一行太长读起来累；改后分成两栏，每栏宽度适中，右侧配上增长图表，信息更透气。'
+  },
+  'word-to-ppt': {
+    before: 'images/beforeafter/word-to-ppt-before.webp',
+    after: 'images/beforeafter/word-to-ppt-after.webp',
+    caption: '同一份「2025 年度总结」。改前是 Word 里密密麻麻的三栏文字，重点不突出；改后转成 PPT，变成 01 业绩回顾 / 02 团队成长 / 03 明年规划三个卡片页，结构清晰。'
+  },
+  'vector-vs-raster': {
+    before: 'images/beforeafter/vector-vs-raster-before.webp',
+    after: 'images/beforeafter/vector-vs-raster-after.webp',
+    caption: '同一页「客户 Logo」。改前 Nike 位图放大后边缘锯齿明显、发虚；改后换成 Nubefy 矢量 Logo，放大仍边缘锐利、无像素感。'
+  },
+  'boolean': {
+    before: 'images/beforeafter/boolean-before.webp',
+    after: 'images/beforeafter/boolean-after.webp',
+    caption: '同一页「图标设计：对话气泡」。改前只有单一圆角矩形气泡，形状呆板；改后用圆形、圆角矩形、三角形通过布尔运算拼出更活泼的叠加对话气泡图标。'
+  },
+  'ink-math': {
+    before: 'images/beforeafter/ink-math-before.webp',
+    after: 'images/beforeafter/ink-math-after.webp',
+    caption: '同一页「勾股定理」。改前用手写墨迹公式，字母大小不一、排版潦草；改后转成标准 Office 公式 a²+b²=c²，配合直角三角形图示，清晰规范。'
+  },
+  'embed-font': {
+    before: 'images/beforeafter/embed-font-before.webp',
+    after: 'images/beforeafter/embed-font-after.webp',
+    caption: '同一页「OREO 设计系统」。改前特殊字体没嵌入，标题变成一堆方块乱码；改后嵌入字体，Typography Guide 花体字正常显示，排版完整。'
+  },
+  'speaker-notes': {
+    before: 'images/beforeafter/speaker-notes-before.webp',
+    after: 'images/beforeafter/speaker-notes-after.webp',
+    caption: '同一页「为什么是现在」。改前只有普通幻灯片，演讲时容易忘词；改后开启演讲者视图，右侧显示「演讲要点（备注区）」逐条提示，上台更稳。'
+  },
+  'cmyk-rgb': {
+    before: 'images/beforeafter/cmyk-rgb-before.webp',
+    after: 'images/beforeafter/cmyk-rgb-after.webp',
+    caption: '同一页「夏日音乐节」。改前按屏幕 RGB 显示，亮紫色很艳；改后切换 CMYK 印刷预览调准，印刷成品颜色与屏幕预览更接近，避免印出来偏色。'
+  },
+  'hide-slide': {
+    before: 'images/beforeafter/hide-slide-before.webp',
+    after: 'images/beforeafter/hide-slide-after.webp',
+    caption: '同一套「方案总览」。改前「内部成本测算」备用页和正文页混在一起放映，容易误播；改后隐藏该页，在缩略图里淡色显示，放映时自动跳过。'
+  },
+  'export-dpi': {
+    before: 'images/beforeafter/export-dpi-before.webp',
+    after: 'images/beforeafter/export-dpi-after.webp',
+    caption: '同一页「极光 Pro 旗舰本」。改前低 DPI 导出，只有大标题和电脑，卖点图标和文字细节发虚；改后按高分辨率导出，副标题、图标和屏幕纹理都清晰锐利。'
+  },
 };

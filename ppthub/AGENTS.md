@@ -20,7 +20,7 @@ PPT 术语图鉴（ppthub）：纯静态单页工具站，182 个 PPT 术语，�
 ## 目录与约定
 - `data.js` — `TERMS` 数组，182 条，字段 `id/name/alias/category/level/summary/detail/scenario/related/demo`。
 - `demos.js` — 顶部 `const CASES`（真实中文 PPT 案例库）；`DEMOS[id](c)` 动手试试渲染函数应使用真实内容，完整页 demo 优先按术语稳定分配案例；不要在 UI 顶部露出「案例：」标签或「↻ 换一个真实案例」按钮。范式见自查规范 §6。
-- `terms-extra.js` — `TERM_EXTRA[id]` 补字段：`pitfall`/`mnemonic` 必填，`shortcut`/`combo`/`checklist`/`etymology` 可选。
+- `terms-extra.js` — `TERM_EXTRA[id]` 补字段：`pitfall`/`mnemonic` 必填，`shortcut`/`combo`/`checklist`/`etymology` 可选。`shortcut` 为结构化对象 `{ win, mac, menu }`（字段均可省略）：`win`=Windows 键盘快捷键，`mac`=Mac 键盘快捷键，`menu`=菜单路径；菜单型术语只填 `menu`，键盘型补 `win`/`mac`。
 - 闭合约定：各对象末条无逗号 + `};`；插入新块时先给上一末条补逗号。
 
 ## 当前状态与下一步
